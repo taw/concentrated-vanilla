@@ -3099,7 +3099,7 @@ building hinterland_mines
             convert_to 0
             capability
             {
-                mine_resource 4
+                mine_resource 8
             }
             material wooden
             construction  1 
@@ -3115,7 +3115,7 @@ building hinterland_mines
             convert_to 1
             capability
             {
-                mine_resource 7
+                mine_resource 14
             }
             material wooden
             construction  1 
@@ -3140,7 +3140,7 @@ building hinterland_castle_mines
             convert_to 0
             capability
             {
-                mine_resource 4
+                mine_resource 8
             }
             material wooden
             construction  1 
@@ -3156,7 +3156,7 @@ building hinterland_castle_mines
             convert_to 1
             capability
             {
-                mine_resource 7
+                mine_resource 14
             }
             material wooden
             construction  1 

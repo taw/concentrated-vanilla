@@ -3,8 +3,8 @@
 <folder>data/fmv</folder>
 
 
-    <movie name=../../mymod/data/fmv"faction/game_intro.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="faction/game_intro.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/Game_Intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -13,8 +13,8 @@
     </movie> 
 
     
-    <movie name=../../mymod/data/fmv"faction/prologue_intro.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="faction/prologue_intro.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/prologue_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -23,32 +23,32 @@
     </movie> 
 
 
-    <movie name=../../mymod/data/fmv"faction/major_intro.bik">
-        <faction name=../../mymod/data/fmv"england">
+    <movie name="faction/major_intro.bik">
+        <faction name="england">
             <track>0</track>
             <timing>fmv_timings/english_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"france">
+        <faction name="france">
             <track>1</track>
             <timing>fmv_timings/french_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"hre">
+        <faction name="hre">
             <track>2</track>
             <timing>fmv_timings/hre_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"spain">
+        <faction name="spain">
             <track>3</track>
             <timing>fmv_timings/Spanish_Intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"venice">
+        <faction name="venice">
             <track>4</track>
             <timing>fmv_timings/venice_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -56,74 +56,74 @@
         </faction>
    </movie>
 
-    <movie name=../../mymod/data/fmv"faction/minor_intro.bik">
-        <faction name=../../mymod/data/fmv"byzantium">
+    <movie name="faction/minor_intro.bik">
+        <faction name="byzantium">
             <track>0</track>
             <timing>fmv_timings/byzantium_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"denmark">
+        <faction name="denmark">
             <track>1</track>
             <timing>fmv_timings/denmark_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"egypt">
+        <faction name="egypt">
             <track>2</track>
             <timing>fmv_timings/egyptian_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"hungary">
+        <faction name="hungary">
             <track>3</track>
             <timing>fmv_timings/hungary_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"milan">
+        <faction name="milan">
             <track>4</track>
             <timing>fmv_timings/milan_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"moors">
+        <faction name="moors">
             <track>5</track>
             <timing>fmv_timings/moors_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"poland">
+        <faction name="poland">
             <track>6</track>
             <timing>fmv_timings/poland_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"portugal">
+        <faction name="portugal">
             <track>7</track>
             <timing>fmv_timings/portugal_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"russia">
+        <faction name="russia">
             <track>8</track>
             <timing>fmv_timings/russia_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"scotland">
+        <faction name="scotland">
             <track>9</track>
             <timing>fmv_timings/scottish_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"sicily">
+        <faction name="sicily">
             <track>10</track>
             <timing>fmv_timings/sicily_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"turks">
+        <faction name="turks">
             <track>11</track>
             <timing>fmv_timings/turkey_intro_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -131,8 +131,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"faction/england_win.bik">
-        <faction name=../../mymod/data/fmv"england">
+    <movie name="faction/england_win.bik">
+        <faction name="england">
             <track>0</track>
             <timing>fmv_timings/england_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -140,8 +140,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"faction/france_win.bik">
-        <faction name=../../mymod/data/fmv"france">
+    <movie name="faction/france_win.bik">
+        <faction name="france">
             <track>0</track>
             <timing>fmv_timings/france_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -149,8 +149,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"faction/hre_win.bik">
-        <faction name=../../mymod/data/fmv"hre">
+    <movie name="faction/hre_win.bik">
+        <faction name="hre">
             <track>0</track>
             <timing>fmv_timings/hre_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -158,8 +158,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"faction/spain_win.bik">
-        <faction name=../../mymod/data/fmv"spain">
+    <movie name="faction/spain_win.bik">
+        <faction name="spain">
             <track>0</track>
             <timing>fmv_timings/spain_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -167,8 +167,8 @@
         </faction>
     </movie>      
         
-    <movie name=../../mymod/data/fmv"faction/venice_win.bik">
-        <faction name=../../mymod/data/fmv"venice">
+    <movie name="faction/venice_win.bik">
+        <faction name="venice">
             <track>0</track>
             <timing>fmv_timings/venice_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -176,85 +176,85 @@
         </faction>
     </movie>        
         
-    <movie name=../../mymod/data/fmv"faction/minor_win.bik">
-        <faction name=../../mymod/data/fmv"byzantium">
+    <movie name="faction/minor_win.bik">
+        <faction name="byzantium">
             <track>0</track>
             <track>1</track>
             <timing>fmv_timings/byzantium_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"denmark">
+        <faction name="denmark">
             <track>0</track>
             <track>2</track>
             <timing>fmv_timings/denmark_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"egypt">
+        <faction name="egypt">
             <track>0</track>
             <track>3</track>
             <timing>fmv_timings/egypt_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"hungary">
+        <faction name="hungary">
             <track>0</track>
             <track>4</track>
             <timing>fmv_timings/hungary_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"milan">
+        <faction name="milan">
             <track>0</track>
             <track>5</track>
             <timing>fmv_timings/milan_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"moors">
+        <faction name="moors">
             <track>0</track>
             <track>6</track>
             <timing>fmv_timings/moors_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"poland">
+        <faction name="poland">
             <track>0</track>
             <track>7</track>
             <timing>fmv_timings/poland_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"portugal">
+        <faction name="portugal">
             <track>0</track>
             <track>8</track>
             <timing>fmv_timings/portugal_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"russia">
+        <faction name="russia">
             <track>0</track>
             <track>9</track>
             <timing>fmv_timings/russia_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"scotland">
+        <faction name="scotland">
             <track>0</track>
             <track>10</track>
             <timing>fmv_timings/scotland_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"sicily">
+        <faction name="sicily">
             <track>0</track>
             <track>11</track>
             <timing>fmv_timings/sicily_outro_win_Subtitle_Timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"turks">
+        <faction name="turks">
             <track>0</track>
             <track>12</track>
             <timing>fmv_timings/turks_outro_win_Subtitle_Timing.txt</timing>
@@ -263,8 +263,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"faction/england_lose.bik">
-        <faction name=../../mymod/data/fmv"england">
+    <movie name="faction/england_lose.bik">
+        <faction name="england">
             <track>0</track>
             <timing>fmv_timings/england_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -272,8 +272,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"faction/france_lose.bik">
-        <faction name=../../mymod/data/fmv"france">
+    <movie name="faction/france_lose.bik">
+        <faction name="france">
             <track>0</track>
             <timing>fmv_timings/france_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -281,8 +281,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"faction/hre_lose.bik">
-        <faction name=../../mymod/data/fmv"hre">
+    <movie name="faction/hre_lose.bik">
+        <faction name="hre">
             <track>0</track>
             <timing>fmv_timings/hre_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -290,8 +290,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"faction/spain_lose.bik">
-        <faction name=../../mymod/data/fmv"spain">
+    <movie name="faction/spain_lose.bik">
+        <faction name="spain">
             <track>0</track>
             <timing>fmv_timings/spain_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -299,8 +299,8 @@
         </faction>
     </movie>      
         
-    <movie name=../../mymod/data/fmv"faction/venice_lose.bik">
-        <faction name=../../mymod/data/fmv"venice">
+    <movie name="faction/venice_lose.bik">
+        <faction name="venice">
             <track>0</track>
             <timing>fmv_timings/venice_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -308,85 +308,85 @@
         </faction>
     </movie>        
         
-    <movie name=../../mymod/data/fmv"faction/minor_lose.bik">
-        <faction name=../../mymod/data/fmv"byzantium">
+    <movie name="faction/minor_lose.bik">
+        <faction name="byzantium">
             <track>0</track>
             <track>1</track>
             <timing>fmv_timings/byzantium_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"denmark">
+        <faction name="denmark">
             <track>0</track>
             <track>2</track>
             <timing>fmv_timings/denmark_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"egypt">
+        <faction name="egypt">
             <track>0</track>
             <track>3</track>
             <timing>fmv_timings/egypt_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"hungary">
+        <faction name="hungary">
             <track>0</track>
             <track>4</track>
             <timing>fmv_timings/hungary_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"milan">
+        <faction name="milan">
             <track>0</track>
             <track>5</track>
             <timing>fmv_timings/milan_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"moors">
+        <faction name="moors">
             <track>0</track>
             <track>6</track>
             <timing>fmv_timings/moors_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"poland">
+        <faction name="poland">
             <track>0</track>
             <track>7</track>
             <timing>fmv_timings/poland_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"portugal">
+        <faction name="portugal">
             <track>0</track>
             <track>8</track>
             <timing>fmv_timings/portugal_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"russia">
+        <faction name="russia">
             <track>0</track>
             <track>9</track>
             <timing>fmv_timings/russia_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"scotland">
+        <faction name="scotland">
             <track>0</track>
             <track>10</track>
             <timing>fmv_timings/scotland_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"sicily">
+        <faction name="sicily">
             <track>0</track>
             <track>11</track>
             <timing>fmv_timings/sicily_outro_lose_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
             <lookup>FactionIntroSubTitles_lookup.txt</lookup>
         </faction>
-        <faction name=../../mymod/data/fmv"turks">
+        <faction name="turks">
             <track>0</track>
             <track>12</track>
             <timing>fmv_timings/turkey_outro_lose_subtitle_timing.txt</timing>
@@ -395,8 +395,8 @@
         </faction>
     </movie>
     
-    <movie name=../../mymod/data/fmv"event/aztecs_contacted.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/aztecs_contacted.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/aztecs_contacted_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -404,8 +404,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"event/america_discovered.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/america_discovered.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/america_discovered_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -413,8 +413,8 @@
         </faction>
     </movie>
         
-    <movie name=../../mymod/data/fmv"event/first_crusade.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/first_crusade.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/first_crusade_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -422,8 +422,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"event/black_death.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/black_death.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/black_death_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -431,8 +431,8 @@
         </faction>
     </movie>
 
-    <movie name=../../mymod/data/fmv"event/mongols_invade.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/mongols_invade.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/mongols_invade_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -440,8 +440,8 @@
         </faction>
     </movie>                        
 
-    <movie name=../../mymod/data/fmv"event/huge_cathedral_built.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/huge_cathedral_built.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/huge_cathedral_built_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -449,8 +449,8 @@
         </faction>
     </movie>                        
 
-    <movie name=../../mymod/data/fmv"event/inquisition.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/inquisition.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/inquisition_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -458,8 +458,8 @@
         </faction>
     </movie>   
 
-    <movie name=../../mymod/data/fmv"event/gunpowder_invented.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/gunpowder_invented.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/gunpowder_invented_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
@@ -467,8 +467,8 @@
         </faction>
     </movie>  
 
-    <movie name=../../mymod/data/fmv"event/timurids_invade.bik">
-        <faction name=../../mymod/data/fmv"none">
+    <movie name="event/timurids_invade.bik">
+        <faction name="none">
             <track>0</track>
             <timing>fmv_timings/timurids_invade_subtitle_timing.txt</timing>
             <text>FactionIntroSubTitles.txt</text>
