@@ -304,7 +304,7 @@ resource	grain,	94,	128
 faction	england, balanced smith
 ai_label		 catholic 
 denari	10000
-denari_kings_purse	2500
+denari_kings_purse	5000
 settlement
 {
 	level large_town
@@ -455,7 +455,7 @@ relative 	William, 	Matilda,		Rufus,	Cecilia,	Robert,	Henry,	end
 faction	france, balanced smith
 ai_label		 catholic 
 denari	8000
-denari_kings_purse	1500
+denari_kings_purse	3000
 settlement
 {
 	level large_town
@@ -657,7 +657,7 @@ relative 	Philip, 	Bertrada de Montfort,		Louis,	Constance,	Michiel,	Henry,	end
 faction	hre, balanced smith
 ai_label		 catholic 
 denari	6000
-denari_kings_purse	1500
+denari_kings_purse	3000
 settlement
 {
 	level large_town
@@ -888,7 +888,7 @@ relative 	Heinrich, 	Bertrada,		Henry,	Agnes,	Leopold,	end
 faction	spain, balanced smith
 ai_label		 catholic 
 denari	9000
-denari_kings_purse	2500
+denari_kings_purse	5000
 settlement
 {
 	level large_town
@@ -992,7 +992,7 @@ relative 	Alfonso el Valiente, 	Constance,		Rodrigo,	Urraca,	Teresa,	end
 faction	venice, balanced smith
 ai_label		 catholic 
 denari	8000
-denari_kings_purse	2500
+denari_kings_purse	5000
 settlement
 {
 	level city
@@ -1170,7 +1170,7 @@ relative 	Alessandro Selvo, 	Alegreza,		Barbus Selvo,	end
 faction	sicily, balanced smith
 ai_label		 catholic 
 denari	9000
-denari_kings_purse	1500
+denari_kings_purse	3000
 settlement castle
 {
 	level large_town
@@ -1298,7 +1298,7 @@ relative 	Roger, 	Judith,		Simon,	Matilda,	Adelisa,	end
 faction	milan, balanced smith
 ai_label		 catholic 
 denari	6000
-denari_kings_purse	2000
+denari_kings_purse	4000
 settlement
 {
 	level city
@@ -1427,7 +1427,7 @@ relative 	Cristoforo Rossi, 	Bella,		Simona,	Agostino Rossi,	end
 faction	scotland, balanced smith
 ai_label		 catholic 
 denari 8000
-denari_kings_purse	1500
+denari_kings_purse	3000
 settlement
 {
 	level large_town
@@ -1518,7 +1518,7 @@ relative 	Malcolm Canmore, 	Margaret,		Edward Canmore,	Edmund Canmore,	Alexander
 faction	byzantium, balanced smith
 ai_label	default 
 denari	6000
-denari_kings_purse	2000
+denari_kings_purse	4000
 settlement
 {
 	level large_city
@@ -1721,7 +1721,7 @@ relative 	Alexius Comnenus, 	Irene,		John Comnenus,	Anna,	Andronicus Comnenus,	I
 faction	russia, balanced smith
 ai_label	default 
 denari	11000
-denari_kings_purse	2500
+denari_kings_purse	5000
 settlement
 {
 	level city
@@ -1805,7 +1805,7 @@ relative 	Vladimir, 	Gravriia,		Miroslav,	Ivan,	end
 faction	moors, balanced smith
 ai_label	default 
 denari	7000
-denari_kings_purse	1500
+denari_kings_purse	3000
 settlement
 {
 	level city
@@ -1961,7 +1961,7 @@ relative 	Qasim, 	Saheena,		Zizi,	end
 faction	turks, balanced smith
 ai_label	default 
 denari	8000
-denari_kings_purse	2000
+denari_kings_purse	4000
 settlement
 {
 	level large_town
@@ -2108,7 +2108,7 @@ relative 	Jalal ad-Dawlah, 	Islah,		Mustafa ad-Dawlah,	Tutush ad-Dawlah,	Nefise 
 faction	egypt, balanced smith
 ai_label	default 
 denari	8000
-denari_kings_purse	1500
+denari_kings_purse	3000
 settlement
 {
 	level city
@@ -2248,7 +2248,7 @@ relative 	Mubarak, 	Zaynab,		Moussa,	end
 faction	denmark, balanced smith
 ai_label		 catholic 
 denari	10000
-denari_kings_purse	2000
+denari_kings_purse	4000
 settlement
 {
 	level large_town
@@ -2339,7 +2339,7 @@ relative 	Knud, 	Adela,		Charles,	Ingrid,	Cecile,	end
 faction	portugal, balanced smith
 ai_label		 catholic 
 denari	9000
-denari_kings_purse	2000
+denari_kings_purse	4000
 settlement
 {
 	level large_town
@@ -2467,7 +2467,7 @@ relative 	Henrique, 	Teresa,		Affonso,	Maria,	end
 faction	poland, balanced smith
 ai_label		 catholic 
 denari	12000
-denari_kings_purse	2500
+denari_kings_purse	5000
 settlement
 {
 	level large_town
@@ -2567,7 +2567,7 @@ relative 	Wladyslaw Herman, 	Judith,		Zbigniew Herman,	Boleslaw Herman,	Agnes,	e
 faction	hungary, balanced smith
 ai_label		 catholic 
 denari	11000
-denari_kings_purse	2500
+denari_kings_purse	5000
 settlement
 {
 	level large_town
@@ -2677,7 +2677,7 @@ relative 	Laszlo, 	Adelaide,		Kalman,	Pioska,	end
 faction	papal_states, balanced smith
 ai_label	papal_faction 
 denari	5000
-denari_kings_purse	1500
+denari_kings_purse	3000
 settlement
 {
 	level city
@@ -2746,7 +2746,7 @@ faction	aztecs, balanced smith
 ai_label	default 
 undiscovered
 denari	50000
-denari_kings_purse	10000
+denari_kings_purse	20000
 settlement
 {
 	level city
@@ -2967,20 +2967,20 @@ faction	mongols, balanced smith
 ai_label	default 
 dead_until_resurrected
 denari	10000
-denari_kings_purse	3000
+denari_kings_purse	6000
 
 
 faction	timurids, balanced smith
 ai_label	default 
 dead_until_resurrected
 denari	10000
-denari_kings_purse	3000
+denari_kings_purse	6000
 
 
 faction	slave, balanced smith
 ai_label	slave_faction 
 denari	5000
-denari_kings_purse	500
+denari_kings_purse	1000
 settlement
 {
 	level town

@@ -808,7 +808,7 @@ stat_mental      9, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 680, 250, 120, 95, 680, 4, 170
+stat_cost        1, 1020, 375, 180, 142, 1020, 4, 255
 armour_ug_levels 2, 3
 armour_ug_models Mailed_Knights, Mailed_Knights_ug1
 ownership        england, scotland, france, hre, spain, portugal, milan, venice, papal_states, sicily, slave, normans
@@ -846,7 +846,7 @@ stat_mental      9, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 730, 250, 120, 95, 730, 4, 180
+stat_cost        1, 1095, 375, 180, 142, 1095, 4, 270
 armour_ug_levels 3, 4
 armour_ug_models Feudal_Knights, Feudal_Knights_ug1
 ownership        england, scotland, france, hre, denmark, spain, portugal, milan, venice, papal_states, hungary, slave
@@ -883,7 +883,7 @@ stat_mental      11, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 250, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 375, 195, 150, 1320, 4, 330
 armour_ug_levels 3, 4
 armour_ug_models Norman_Knights, Norman_Knights_ug1
 ownership        sicily, slave
@@ -919,7 +919,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 860, 250, 120, 95, 860, 4, 210
+stat_cost        1, 1290, 375, 180, 142, 1290, 4, 315
 armour_ug_levels 4, 5
 armour_ug_models English_Knights, English_Knights_ug1
 ownership        england, slave
@@ -956,7 +956,7 @@ stat_mental      11, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 930, 250, 130, 100, 930, 4, 230
+stat_cost        1, 1395, 375, 195, 150, 1395, 4, 345
 armour_ug_levels 4, 5
 armour_ug_models Chivalric_Knights, Chivalric_Knights_ug1
 ownership        france, denmark, spain, sicily, slave
@@ -993,7 +993,7 @@ stat_mental      9, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 700, 250, 120, 95, 700, 4, 170
+stat_cost        1, 1050, 375, 180, 142, 1050, 4, 255
 armour_ug_levels 4, 5
 armour_ug_models Portuguese_Knights, Portuguese_Knights_ug1
 ownership        portugal
@@ -1030,7 +1030,7 @@ stat_mental      9, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 750, 250, 120, 95, 750, 4, 180
+stat_cost        1, 1125, 375, 180, 142, 1125, 4, 270
 armour_ug_levels 4, 5
 armour_ug_models Imperial_Knights, Imperial_Knights_ug1
 ownership        hre, slave
@@ -1067,7 +1067,7 @@ stat_mental      11, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 930, 320, 130, 100, 930, 4, 230
+stat_cost        1, 1395, 480, 195, 150, 1395, 4, 345
 armour_ug_levels 4, 5
 armour_ug_models Noble_Knights, Noble_Knights_ug1
 ownership        france
@@ -1104,7 +1104,7 @@ stat_mental      11, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 930, 320, 130, 100, 930, 4, 230
+stat_cost        1, 1395, 480, 195, 150, 1395, 4, 345
 armour_ug_levels 6
 armour_ug_models Lancers
 ownership        france
@@ -1140,7 +1140,7 @@ stat_mental      11, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 1000, 320, 130, 100, 1000, 4, 250
+stat_cost        1, 1500, 480, 195, 150, 1500, 4, 375
 armour_ug_levels 6
 armour_ug_models Gothic_Knights
 ownership        hre
@@ -1176,7 +1176,7 @@ stat_mental      11, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 700, 250, 130, 100, 700, 4, 170
+stat_cost        1, 1050, 375, 195, 150, 1050, 4, 255
 armour_ug_levels 3, 4
 armour_ug_models Demi_Lancers, Demi_Lancers_ug1
 ownership        england
@@ -1212,7 +1212,7 @@ stat_mental      9, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 770, 320, 120, 95, 770, 4, 190
+stat_cost        1, 1155, 480, 180, 142, 1155, 4, 285
 armour_ug_levels 6
 armour_ug_models Gendarmes
 ownership        france, spain
@@ -1248,7 +1248,7 @@ stat_mental      5, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 580, 250, 100, 75, 580, 4, 140
+stat_cost        1, 870, 375, 150, 112, 870, 4, 210
 armour_ug_levels 4, 5, 6
 armour_ug_models Italian_MAA, Italian_MAA_ug1, Italian_MAA_ug2
 ownership        milan, venice, papal_states, slave
@@ -1284,7 +1284,7 @@ stat_mental      9, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 730, 320, 120, 95, 730, 4, 180
+stat_cost        1, 1095, 480, 180, 142, 1095, 4, 270
 armour_ug_levels 5, 6
 armour_ug_models Broken_Lances, Broken_Lances_ug1
 ownership        milan, venice, papal_states
@@ -1320,7 +1320,7 @@ stat_mental      11, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 320, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 480, 195, 150, 1320, 4, 330
 armour_ug_levels 5, 6
 armour_ug_models Famiglia_Ducale, Famiglia_Ducale_ug1
 ownership        milan
@@ -1357,7 +1357,7 @@ stat_mental      5, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 540, 150, 100, 75, 540, 4, 130
+stat_cost        1, 810, 225, 150, 112, 810, 4, 195
 armour_ug_levels 3, 4
 armour_ug_models Italian_Cavalry_Militia, Italian_Cavalry_Militia_ug1
 ownership        milan, venice, papal_states, sicily
@@ -1394,7 +1394,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 690, 210, 120, 95, 690, 4, 170
+stat_cost        1, 1035, 315, 180, 142, 1035, 4, 255
 armour_ug_levels 2, 3
 armour_ug_models Druzhina, Druzhina_ug1
 ownership        russia
@@ -1431,7 +1431,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 840, 320, 130, 100, 840, 4, 210
+stat_cost        1, 1260, 480, 195, 150, 1260, 4, 315
 armour_ug_levels 4, 5
 armour_ug_models Tsars_Guard, Tsars_Guard_ug1
 ownership        russia
@@ -1467,7 +1467,7 @@ stat_mental      3, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 350, 150, 90, 70, 350, 4, 80
+stat_cost        1, 525, 225, 135, 105, 525, 4, 120
 armour_ug_levels 1, 2
 armour_ug_models EE_Cavalry_Militia, EE_Cavalry_Militia_ug1
 ownership        russia
@@ -1504,7 +1504,7 @@ stat_mental      9, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 790, 250, 120, 95, 790, 4, 190
+stat_cost        1, 1185, 375, 180, 142, 1185, 4, 285
 armour_ug_levels 4, 5
 armour_ug_models Kataphractoi, Kataphractoi_ug1
 ownership        byzantium
@@ -1542,7 +1542,7 @@ stat_mental      5, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 500, 210, 100, 75, 500, 4, 120
+stat_cost        1, 750, 315, 150, 112, 750, 4, 180
 armour_ug_levels 2, 3, 4, 5
 armour_ug_models Byzantine_Lancers, Byzantine_Lancers_ug1, Byzantine_Lancers_ug2, Byzantine_Lancers_ug3
 ownership        byzantium, slave
@@ -1580,7 +1580,7 @@ stat_mental      9, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 730, 250, 120, 95, 730, 4, 180
+stat_cost        1, 1095, 375, 180, 142, 1095, 4, 270
 armour_ug_levels 3, 4
 armour_ug_models Latinkon, Latinkon_ug1
 ownership        byzantium
@@ -1617,7 +1617,7 @@ stat_mental      11, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 250, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 375, 195, 150, 1320, 4, 330
 armour_ug_levels 4, 5
 armour_ug_models E_Chivalric_Knights, E_Chivalric_Knights_ug1
 ownership        hungary, slave
@@ -1654,7 +1654,7 @@ stat_mental      11, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 790, 320, 130, 100, 790, 4, 190
+stat_cost        1, 1185, 480, 195, 150, 1185, 4, 285
 armour_ug_levels 4, 5
 armour_ug_models Royal_Banderium, Royal_Banderium_ug1
 ownership        hungary
@@ -1690,7 +1690,7 @@ stat_mental      9, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 800, 210, 120, 95, 800, 4, 200
+stat_cost        1, 1200, 315, 180, 142, 1200, 4, 300
 armour_ug_levels 2, 3
 armour_ug_models Polish_Nobles, Polish_Nobles_ug1
 ownership        poland, slave
@@ -1727,7 +1727,7 @@ stat_mental      11, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 840, 250, 130, 100, 840, 4, 210
+stat_cost        1, 1260, 375, 195, 150, 1260, 4, 315
 armour_ug_levels 4, 5
 armour_ug_models Polish_Knights, Polish_Knights_ug1
 ownership        poland, slave
@@ -1764,7 +1764,7 @@ stat_mental      11, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 840, 320, 130, 100, 840, 4, 210
+stat_cost        1, 1260, 480, 195, 150, 1260, 4, 315
 armour_ug_levels 4, 5
 armour_ug_models Polish_Guard, Polish_Guard_ug1
 ownership        poland
@@ -1800,7 +1800,7 @@ stat_mental      9, low, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 650, 175, 120, 95, 650, 4, 160
+stat_cost        1, 975, 262, 180, 142, 975, 4, 240
 armour_ug_levels 3, 4
 armour_ug_models Polish_Retainers, Polish_Retainers_ug1
 ownership        poland
@@ -1837,7 +1837,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 250, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 375, 195, 150, 1320, 4, 330
 armour_ug_levels 3, 4
 armour_ug_models Conquistadores, Conquistadores_ug1
 ownership        spain, portugal
@@ -1873,7 +1873,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 690, 210, 120, 95, 690, 4, 170
+stat_cost        1, 1035, 315, 180, 142, 1035, 4, 255
 armour_ug_levels 2, 3
 armour_ug_models Huscarls, Huscarls_ug1
 ownership        denmark, slave
@@ -1910,7 +1910,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 750, 250, 120, 95, 750, 4, 180
+stat_cost        1, 1125, 375, 180, 142, 1125, 4, 270
 armour_ug_levels 4, 5
 armour_ug_models Armored_Clergy, Armored_Clergy_ug1
 ownership        denmark
@@ -1946,7 +1946,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 250, 120, 95, 820, 1, 200
+stat_cost        1, 615, 187, 90, 71, 615, 1, 150
 armour_ug_levels 3, 4
 armour_ug_models NE_Bodyguard, NE_Bodyguard_ug1
 ownership        england, scotland, france, hre, denmark, poland, hungary, normans, slave
@@ -1983,7 +1983,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 870, 250, 120, 95, 870, 1, 210
+stat_cost        1, 652, 187, 90, 71, 652, 1, 157
 armour_ug_levels 5, 6
 armour_ug_models NE_Late_Bodyguard, NE_Late_Bodyguard_ug1
 ownership        england, scotland, france, hre, denmark, poland, hungary
@@ -2019,7 +2019,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 250, 120, 95, 820, 1, 200
+stat_cost        1, 615, 187, 90, 71, 615, 1, 150
 armour_ug_levels 3, 4
 armour_ug_models SE_Bodyguard, SE_Bodyguard_ug1
 ownership        spain, portugal, milan, venice, papal_states, sicily
@@ -2056,7 +2056,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 870, 250, 120, 95, 870, 1, 210
+stat_cost        1, 652, 187, 90, 71, 652, 1, 157
 armour_ug_levels 5, 6
 armour_ug_models SE_Late_Bodyguard, SE_Late_Bodyguard_ug1
 ownership        spain, portugal, milan, venice, papal_states, sicily
@@ -2092,7 +2092,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 250, 120, 95, 820, 1, 200
+stat_cost        1, 615, 187, 90, 71, 615, 1, 150
 armour_ug_levels 3, 4
 armour_ug_models EE_Bodyguard, EE_Bodyguard_ug1
 ownership        russia
@@ -2129,7 +2129,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 910, 250, 120, 95, 910, 1, 220
+stat_cost        1, 682, 187, 90, 71, 682, 1, 165
 armour_ug_levels 5
 armour_ug_models EE_Late_Bodyguard
 ownership        russia
@@ -2165,7 +2165,7 @@ stat_mental      11, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 250, 120, 95, 820, 1, 200
+stat_cost        1, 615, 187, 90, 71, 615, 1, 150
 armour_ug_levels 3, 4
 armour_ug_models Greek_Bodyguard, Greek_Bodyguard_ug1
 ownership        byzantium
@@ -2203,7 +2203,7 @@ stat_mental      11, impetuous, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 250, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 375, 195, 150, 1320, 4, 330
 armour_ug_levels 3, 4
 armour_ug_models Knights_Templar, Knights_Templar_ug1
 ownership        england, scotland, france, denmark, milan, venice, papal_states, sicily, poland, hungary
@@ -2238,7 +2238,7 @@ stat_mental      11, normal, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 250, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 375, 195, 150, 1320, 4, 330
 armour_ug_levels 3, 4, 5
 armour_ug_models Knights_Hospitaller, Knights_Hospitaller_ug1, Knights_Hospitaller_ug2
 ownership        england, scotland, france, denmark, milan, venice, papal_states, sicily, poland, hungary
@@ -2273,7 +2273,7 @@ stat_mental      3, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 370, 210, 90, 70, 370, 4, 90
+stat_cost        1, 555, 315, 135, 105, 555, 4, 135
 armour_ug_levels 3, 4, 5
 armour_ug_models Merchant_Cavalry_Militia, Merchant_Cavalry_Militia_ug1, Merchant_Cavalry_Militia_ug2
 ownership        england, scotland, france, hre, denmark, spain, portugal, poland, hungary
@@ -2308,7 +2308,7 @@ stat_mental      11, impetuous, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 950, 250, 130, 100, 950, 4, 230
+stat_cost        1, 1425, 375, 195, 150, 1425, 4, 345
 armour_ug_levels 3, 4, 5
 armour_ug_models Teutonic_Knights, Teutonic_Knights_ug1, Teutonic_Knights_ug2
 ownership        hre
@@ -2345,7 +2345,7 @@ stat_mental      11, low, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 250, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 375, 195, 150, 1320, 4, 330
 armour_ug_levels 3, 4, 5
 armour_ug_models Knights_of_Santiago, Knights_of_Santiago_ug1, Knights_of_Santiago_ug2
 ownership        spain, portugal
@@ -2382,7 +2382,7 @@ stat_mental      3, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 320, 150, 90, 70, 320, 4, 80
+stat_cost        1, 480, 225, 135, 105, 480, 4, 120
 armour_ug_levels 1, 2
 armour_ug_models Greek_Militia_Cavalry, Greek_Militia_Cavalry_ug1
 ownership        byzantium
@@ -2419,7 +2419,7 @@ stat_mental      9, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 730, 300, 120, 95, 730, 4, 180
+stat_cost        1, 1095, 450, 180, 142, 1095, 4, 270
 armour_ug_levels 3
 armour_ug_models Mercenary_Frankish_Knights
 ownership        slave
@@ -2455,7 +2455,7 @@ stat_mental      5, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 670, 300, 100, 75, 670, 4, 160
+stat_cost        1, 1005, 450, 150, 112, 1005, 4, 240
 armour_ug_levels 5
 armour_ug_models Mercenary_German_Knights
 ownership        slave
@@ -2491,7 +2491,7 @@ stat_mental      5, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 580, 300, 100, 75, 580, 4, 140
+stat_cost        1, 870, 450, 150, 112, 870, 4, 210
 armour_ug_levels 4
 armour_ug_models Mercenary_Knights
 ownership        slave
@@ -2527,7 +2527,7 @@ stat_mental      5, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 520, 400, 100, 75, 520, 4, 130
+stat_cost        1, 780, 600, 150, 112, 780, 4, 195
 armour_ug_levels 5
 armour_ug_models Condottieri
 ownership        slave, sicily
@@ -2564,7 +2564,7 @@ stat_mental      11, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 300, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 450, 195, 150, 1320, 4, 330
 armour_ug_levels 4
 armour_ug_models Serbian_Knights
 ownership        slave
@@ -2600,7 +2600,7 @@ stat_mental      11, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 880, 300, 130, 100, 880, 4, 220
+stat_cost        1, 1320, 450, 195, 150, 1320, 4, 330
 armour_ug_levels 3
 armour_ug_models Crusader_Knights
 ownership        slave
@@ -2635,7 +2635,7 @@ stat_mental      5, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 470, 175, 100, 75, 470, 4, 110
+stat_cost        1, 705, 262, 150, 112, 705, 4, 165
 armour_ug_levels 1, 2
 armour_ug_models Mounted_Sergeants, Mounted_Sergeants_ug1
 ownership        france, hre, milan, venice, papal_states, sicily, normans
@@ -2672,7 +2672,7 @@ stat_mental      5, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 390, 150, 100, 75, 390, 4, 90
+stat_cost        1, 585, 225, 150, 112, 585, 4, 135
 armour_ug_levels 1, 2
 armour_ug_models Border_Horse, Border_Horse_ug1
 ownership        scotland, slave
@@ -2710,7 +2710,7 @@ stat_mental      3, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 280, 150, 90, 70, 280, 4, 70
+stat_cost        1, 420, 225, 135, 105, 420, 4, 105
 armour_ug_levels 1, 2
 armour_ug_models Hobilars, Hobilars_ug1
 ownership        england, slave
@@ -2747,7 +2747,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 920, 250, 120, 95, 920, 4, 230
+stat_cost        1, 1380, 375, 180, 142, 1380, 4, 345
 armour_ug_levels 3, 4
 armour_ug_models Reiters, Reiters_ug1
 ownership        hre
@@ -2783,7 +2783,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 610, 210, 120, 95, 610, 4, 150
+stat_cost        1, 915, 315, 180, 142, 915, 4, 225
 armour_ug_levels 1, 2
 armour_ug_models Stradiots, Stradiots_ug1
 ownership        venice
@@ -2819,7 +2819,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 750, 210, 130, 100, 750, 4, 180
+stat_cost        1, 1125, 315, 195, 150, 1125, 4, 270
 armour_ug_levels 2, 3
 armour_ug_models Hussars, Hussars_ug1
 ownership        poland, hungary
@@ -2855,7 +2855,7 @@ stat_mental      3, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 410, 150, 90, 70, 410, 4, 100
+stat_cost        1, 615, 225, 135, 105, 615, 4, 150
 armour_ug_levels 1, 2
 armour_ug_models Scouts, Scouts_ug1
 ownership        denmark
@@ -2893,7 +2893,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 610, 210, 120, 95, 610, 4, 150
+stat_cost        1, 915, 315, 180, 142, 915, 4, 225
 armour_ug_levels 1
 armour_ug_models Albanian_Cavalry
 ownership        slave
@@ -2929,7 +2929,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 830, 250, 130, 100, 830, 4, 200
+stat_cost        1, 1245, 375, 195, 150, 1245, 4, 300
 armour_ug_levels 2
 armour_ug_models Serbian_Hussars
 ownership        slave
@@ -2965,7 +2965,7 @@ stat_mental      9, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 550, 250, 120, 95, 550, 4, 130
+stat_cost        1, 825, 375, 180, 142, 825, 4, 195
 armour_ug_levels 1
 armour_ug_models Alan_Light_Cavalry
 ownership        slave, byzantium, turks
@@ -3003,7 +3003,7 @@ stat_mental      5, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 520, 175, 100, 75, 520, 4, 130
+stat_cost        1, 780, 262, 150, 112, 780, 4, 195
 armour_ug_levels 1, 2
 armour_ug_models Jinetes, Jinetes_ug1
 ownership        spain, portugal, slave
@@ -3040,7 +3040,7 @@ stat_mental      3, normal, trained
 stat_charge_dist 45
 stat_fire_delay  18
 stat_food        60, 300
-stat_cost        1, 470, 175, 90, 70, 470, 4, 110
+stat_cost        1, 705, 262, 135, 105, 705, 4, 165
 armour_ug_levels 2, 3
 armour_ug_models Mounted_Crossbowmen, Mounted_Crossbowmen_ug1
 ownership        hre, denmark, spain, portugal, milan, venice, papal_states, sicily
@@ -3077,7 +3077,7 @@ stat_mental      3, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 380, 150, 90, 70, 380, 4, 90
+stat_cost        1, 570, 225, 135, 105, 570, 4, 135
 armour_ug_levels 0, 1
 armour_ug_models Kazaks, Kazaks_ug1
 ownership        russia, slave
@@ -3114,7 +3114,7 @@ stat_mental      5, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 670, 210, 100, 75, 670, 4, 160
+stat_cost        1, 1005, 315, 150, 112, 1005, 4, 240
 armour_ug_levels 2, 3
 armour_ug_models Boyar_Sons, Boyar_Sons_ug1
 ownership        russia, slave
@@ -3152,7 +3152,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 800, 250, 120, 95, 800, 4, 200
+stat_cost        1, 1200, 375, 180, 142, 1200, 4, 300
 armour_ug_levels 2, 3, 4
 armour_ug_models Dvor_Cavalry, Dvor_Cavalry_ug1, Dvor_Cavalry_ug2
 ownership        russia
@@ -3189,7 +3189,7 @@ stat_mental      9, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 700, 150, 120, 95, 700, 4, 170
+stat_cost        1, 1050, 225, 180, 142, 1050, 4, 255
 armour_ug_levels 0, 1
 armour_ug_models Cossack_Cavalry, Cossack_Cavalry_ug1
 ownership        russia
@@ -3225,7 +3225,7 @@ stat_mental      3, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 530, 175, 90, 70, 530, 4, 130
+stat_cost        1, 795, 262, 135, 105, 795, 4, 195
 armour_ug_levels 1, 2, 3
 armour_ug_models Byzantine_Cavalry, Byzantine_Cavalry_ug1, Byzantine_Cavalry_ug2
 ownership        byzantium, slave
@@ -3263,7 +3263,7 @@ stat_mental      3, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 380, 175, 90, 70, 380, 4, 90
+stat_cost        1, 570, 262, 135, 105, 570, 4, 135
 armour_ug_levels 0, 1
 armour_ug_models Skythikon, Skythikon_ug1
 ownership        byzantium, slave
@@ -3301,7 +3301,7 @@ stat_mental      3, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 400, 175, 90, 70, 400, 4, 100
+stat_cost        1, 600, 262, 135, 105, 600, 4, 150
 armour_ug_levels 1, 2
 armour_ug_models Magyar_Cavalry, Magyar_Cavalry_ug1
 ownership        hungary, slave
@@ -3339,7 +3339,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 750, 210, 120, 95, 750, 4, 180
+stat_cost        1, 1125, 315, 180, 142, 1125, 4, 270
 armour_ug_levels 2, 3
 armour_ug_models Hungarian_Nobles, Hungarian_Nobles_ug1
 ownership        hungary
@@ -3376,7 +3376,7 @@ stat_mental      11, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 800, 250, 130, 100, 800, 4, 200
+stat_cost        1, 1200, 375, 195, 150, 1200, 4, 300
 armour_ug_levels 2, 3
 armour_ug_models Vardariotai, Vardariotai_ug1
 ownership        byzantium
@@ -3413,7 +3413,7 @@ stat_mental      5, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 500, 175, 100, 75, 500, 4, 120
+stat_cost        1, 750, 262, 150, 112, 750, 4, 180
 armour_ug_levels 0, 1
 armour_ug_models Lithuanian_Cavalry, Lithuanian_Cavalry_ug1
 ownership        poland, slave
@@ -3451,7 +3451,7 @@ stat_mental      3, normal, trained
 stat_charge_dist 45
 stat_fire_delay  18
 stat_food        60, 300
-stat_cost        1, 510, 175, 90, 70, 510, 4, 120
+stat_cost        1, 765, 262, 135, 105, 765, 4, 180
 armour_ug_levels 1, 2, 3
 armour_ug_models Polish_Shooters, Polish_Shooters_ug1, Polish_Shooters_ug2
 ownership        poland, slave
@@ -3490,7 +3490,7 @@ stat_mental      3, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 380, 180, 90, 70, 380, 4, 90
+stat_cost        1, 570, 270, 135, 105, 570, 4, 135
 armour_ug_levels 0
 armour_ug_models Cuman_Horse_Archers
 ownership        slave, byzantium
@@ -3526,7 +3526,7 @@ stat_mental      5, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 770, 210, 100, 75, 770, 4, 190
+stat_cost        1, 1155, 315, 150, 112, 1155, 4, 285
 armour_ug_levels 2, 3, 4
 armour_ug_models Mounted_Longbowmen, Mounted_Longbowmen_ug1, Mounted_Longbowmen_ug2
 ownership        england
@@ -3561,7 +3561,7 @@ stat_mental      9, normal, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 1030, 210, 120, 95, 1030, 4, 250
+stat_cost        1, 1545, 315, 180, 142, 1545, 4, 375
 armour_ug_levels 3, 4
 armour_ug_models French_Mounted_Archers, French_Mounted_Archers_ug1
 ownership        france
@@ -8563,7 +8563,7 @@ stat_mental      3, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 420, 150, 90, 70, 420, 4, 100
+stat_cost        1, 630, 225, 135, 105, 630, 4, 150
 armour_ug_levels 0, 1
 armour_ug_models Turkish_Horse_Archers, Turkish_Horse_Archers_ug1
 ownership        turks, timurids
@@ -8601,7 +8601,7 @@ stat_mental      3, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 510, 150, 90, 70, 510, 4, 120
+stat_cost        1, 765, 225, 135, 105, 765, 4, 180
 armour_ug_levels 0, 1, 2
 armour_ug_models Turkomans, Turkomans_ug1, Turkomans_ug2
 ownership        turks, timurids, slave
@@ -8639,7 +8639,7 @@ stat_mental      5, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 760, 175, 100, 75, 760, 4, 190
+stat_cost        1, 1140, 262, 150, 112, 1140, 4, 285
 armour_ug_levels 2, 3
 armour_ug_models Sipahis, Sipahis_ug1
 ownership        turks
@@ -8677,7 +8677,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 750, 210, 120, 95, 750, 4, 180
+stat_cost        1, 1125, 315, 180, 142, 1125, 4, 270
 armour_ug_levels 2, 3, 4
 armour_ug_models Sipahi_Lancers, Sipahi_Lancers_ug1, Sipahi_Lancers_ug2
 ownership        turks
@@ -8714,7 +8714,7 @@ stat_mental      11, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 1100, 250, 130, 100, 1100, 4, 270
+stat_cost        1, 1650, 375, 195, 150, 1650, 4, 405
 armour_ug_levels 4, 5
 armour_ug_models Quapukulu, Quapukulu_ug1
 ownership        turks
@@ -8750,7 +8750,7 @@ stat_mental      5, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 540, 150, 100, 75, 540, 4, 130
+stat_cost        1, 810, 225, 150, 112, 810, 4, 195
 armour_ug_levels 0, 1
 armour_ug_models Desert_Cavalry, Desert_Cavalry_ug1
 ownership        moors, egypt, slave
@@ -8789,7 +8789,7 @@ stat_mental      5, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 430, 180, 100, 75, 430, 4, 100
+stat_cost        1, 645, 270, 150, 112, 645, 4, 150
 armour_ug_levels 0, 1
 armour_ug_models Bedouin_Cavalry, Bedouin_Cavalry_ug1
 ownership        slave
@@ -8825,7 +8825,7 @@ stat_mental      5, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 630, 300, 100, 75, 630, 4, 150
+stat_cost        1, 945, 450, 150, 112, 945, 4, 225
 armour_ug_levels 0
 armour_ug_models Bedouin_Camel_Riders
 ownership        slave, egypt
@@ -8863,7 +8863,7 @@ stat_mental      5, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 510, 175, 100, 75, 510, 4, 120
+stat_cost        1, 765, 262, 150, 112, 765, 4, 180
 armour_ug_levels 1, 2, 3
 armour_ug_models Arab_Cavalry, Arab_Cavalry_ug1, Arab_Cavalry_ug2
 ownership        moors, egypt, slave
@@ -8901,7 +8901,7 @@ stat_mental      9, normal, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 900, 210, 120, 95, 900, 4, 220
+stat_cost        1, 1350, 315, 180, 142, 1350, 4, 330
 armour_ug_levels 2, 3
 armour_ug_models Mamluk_Archers, Mamluk_Archers_ug1
 ownership        egypt, slave
@@ -8939,7 +8939,7 @@ stat_mental      9, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 210, 120, 95, 820, 4, 200
+stat_cost        1, 1230, 315, 180, 142, 1230, 4, 300
 armour_ug_levels 3, 4, 5
 armour_ug_models Mamluks, Mamluks_ug1, Mamluks_ug2
 ownership        egypt, slave
@@ -8976,7 +8976,7 @@ stat_mental      11, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 1050, 250, 130, 100, 1050, 4, 260
+stat_cost        1, 1575, 375, 195, 150, 1575, 4, 390
 armour_ug_levels 3, 4, 5
 armour_ug_models Royal_Mamluks, Royal_Mamluks_ug1, Royal_Mamluks_ug2
 ownership        egypt
@@ -9013,7 +9013,7 @@ stat_mental      5, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 670, 175, 100, 75, 670, 4, 160
+stat_cost        1, 1005, 262, 150, 112, 1005, 4, 240
 armour_ug_levels 2, 3
 armour_ug_models Granadine_Jinetes, Granadine_Jinetes_ug1
 ownership        moors, slave
@@ -9051,7 +9051,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 750, 250, 120, 95, 750, 4, 180
+stat_cost        1, 1125, 375, 180, 142, 1125, 4, 270
 armour_ug_levels 2, 3
 armour_ug_models Granadine_Lancers, Granadine_Lancers_ug1
 ownership        moors
@@ -9088,7 +9088,7 @@ stat_mental      11, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 970, 250, 130, 100, 970, 4, 240
+stat_cost        1, 1455, 375, 195, 150, 1455, 4, 360
 armour_ug_levels 3
 armour_ug_models Christian_Guard
 ownership        moors
@@ -9125,7 +9125,7 @@ stat_mental      5, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  18
 stat_food        60, 300
-stat_cost        1, 580, 175, 100, 75, 580, 4, 140
+stat_cost        1, 870, 262, 150, 112, 870, 4, 210
 armour_ug_levels 2, 3
 armour_ug_models Granadine_CB_Cav, Granadine_CB_Cav_ug1
 ownership        moors
@@ -9161,7 +9161,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 1180, 300, 120, 95, 1180, 4, 290
+stat_cost        1, 1770, 450, 180, 142, 1770, 4, 435
 armour_ug_levels 0, 1
 armour_ug_models Camel_Gunners, Camel_Gunners_ug1
 ownership        moors
@@ -9197,7 +9197,7 @@ stat_mental      9, normal, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 600, 300, 120, 95, 600, 4, 150
+stat_cost        1, 900, 450, 180, 142, 900, 4, 225
 armour_ug_levels 0, 1
 armour_ug_models Tuareg_Camel_Spearmens, Tuareg_Camel_Spearmens_ug1
 ownership        moors, slave
@@ -9234,7 +9234,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 30
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 2090, 0, 400, 400, 2090, 1, 520
+stat_cost        1, 3135, 0, 600, 600, 3135, 1, 780
 armour_ug_levels 2
 armour_ug_models Elephant_Crew
 ownership        timurids
@@ -9272,7 +9272,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 30
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 2750, 0, 400, 400, 2750, 1, 680
+stat_cost        1, 4125, 0, 600, 600, 4125, 1, 1020
 armour_ug_levels 2
 armour_ug_models Elephant_Artillery_Crew
 ownership        timurids
@@ -9309,7 +9309,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 750, 300, 120, 95, 750, 4, 180
+stat_cost        1, 1125, 450, 180, 142, 1125, 4, 270
 armour_ug_levels 4
 armour_ug_models Kwarizmian_Cavalry
 ownership        slave, turks, egypt, timurids, mongols
@@ -9345,7 +9345,7 @@ stat_mental      11, disciplined, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 900, 250, 120, 95, 900, 1, 220
+stat_cost        1, 675, 187, 90, 71, 675, 1, 165
 armour_ug_levels 3, 4
 armour_ug_models ME_Bodyguard, ME_Bodyguard_ug1
 ownership        moors, egypt, turks
@@ -9382,7 +9382,7 @@ stat_mental      11, disciplined, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 1070, 250, 120, 95, 1070, 1, 260
+stat_cost        1, 802, 187, 90, 71, 802, 1, 195
 armour_ug_levels 5
 armour_ug_models ME_Late_Bodyguard
 ownership        moors, egypt, turks
@@ -9419,7 +9419,7 @@ stat_mental      9, impetuous, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 800, 300, 120, 95, 800, 4, 200
+stat_cost        1, 1200, 450, 180, 142, 1200, 4, 300
 armour_ug_levels 3
 armour_ug_models Armenian_Cavalry
 ownership        slave, turks
@@ -9457,7 +9457,7 @@ stat_mental      3, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 530, 210, 90, 70, 530, 4, 130
+stat_cost        1, 795, 315, 135, 105, 795, 4, 195
 armour_ug_levels 1
 armour_ug_models Turkopoles
 ownership        slave
@@ -9493,7 +9493,7 @@ stat_mental      3, impetuous, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 420, 150, 90, 70, 420, 4, 100
+stat_cost        1, 630, 225, 135, 105, 630, 4, 150
 armour_ug_levels 0
 armour_ug_models Akinjis
 ownership        slave
@@ -10892,7 +10892,7 @@ stat_mental      9, disciplined, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 590, 0, 120, 95, 590, 4, 140
+stat_cost        1, 885, 0, 180, 142, 885, 4, 210
 armour_ug_levels 0, 1
 armour_ug_models Mongol_Horse_Archers, Mongol_Horse_Archers_ug1
 ownership        mongols
@@ -10930,7 +10930,7 @@ stat_mental      9, disciplined, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 590, 0, 120, 95, 590, 4, 140
+stat_cost        1, 885, 0, 180, 142, 885, 4, 210
 armour_ug_levels 1, 2
 armour_ug_models Mongol_Light_Lancers, Mongol_Light_Lancers_ug1
 ownership        mongols
@@ -10968,7 +10968,7 @@ stat_mental      9, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 900, 0, 120, 95, 900, 4, 220
+stat_cost        1, 1350, 0, 180, 142, 1350, 4, 330
 armour_ug_levels 2, 3
 armour_ug_models Mongol_Heavy_Archers, Mongol_Heavy_Archers_ug1
 ownership        mongols, timurids
@@ -11006,7 +11006,7 @@ stat_mental      11, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 850, 0, 130, 100, 850, 4, 210
+stat_cost        1, 1275, 0, 195, 150, 1275, 4, 315
 armour_ug_levels 2, 3
 armour_ug_models Mongol_Heavy_Lancers, Mongol_Heavy_Lancers_ug1
 ownership        mongols, timurids
@@ -11043,7 +11043,7 @@ stat_mental      11, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 950, 250, 130, 100, 950, 4, 230
+stat_cost        1, 1425, 375, 195, 150, 1425, 4, 345
 armour_ug_levels 4
 armour_ug_models Khan's_Guard
 ownership        mongols, timurids
@@ -11187,7 +11187,7 @@ stat_mental      11, disciplined, highly_trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 860, 0, 120, 95, 860, 1, 210
+stat_cost        1, 645, 0, 90, 71, 645, 1, 157
 armour_ug_levels 4
 armour_ug_models Mongol_Bodyguard
 ownership        mongols, timurids
@@ -13813,7 +13813,7 @@ stat_mental      3, low, untrained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 510, 180, 90, 70, 510, 4, 120
+stat_cost        1, 765, 270, 135, 105, 765, 4, 180
 armour_ug_levels 0
 armour_ug_models Turkomans
 ownership        slave
@@ -13849,7 +13849,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 30
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 2090, 350, 400, 400, 2090, 4, 520
+stat_cost        1, 3135, 525, 600, 600, 3135, 4, 780
 armour_ug_levels 0
 armour_ug_models Elephant_Crew
 ownership        slave
@@ -13886,7 +13886,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 30
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 2750, 350, 400, 400, 2750, 4, 680
+stat_cost        1, 4125, 525, 600, 600, 4125, 4, 1020
 armour_ug_levels 0
 armour_ug_models Elephant_Artillery_Crew
 ownership        slave
@@ -14034,7 +14034,7 @@ stat_mental      9, normal, trained
 stat_charge_dist 30
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 2500, 350, 400, 400, 2500, 4, 620
+stat_cost        1, 3750, 525, 600, 600, 3750, 4, 930
 armour_ug_levels 0
 armour_ug_models Elephant_Rocket_Crew
 ownership        slave
@@ -14276,7 +14276,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 770, 250, 120, 95, 770, 4, 190
+stat_cost        1, 1155, 375, 180, 142, 1155, 4, 285
 armour_ug_levels 2
 armour_ug_models Mailed_Knights
 ownership        normans
@@ -14311,7 +14311,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 770, 250, 120, 95, 770, 4, 190
+stat_cost        1, 1155, 375, 180, 142, 1155, 4, 285
 armour_ug_levels 2
 armour_ug_models Mailed_Knights
 ownership        normans
@@ -14413,7 +14413,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 910, 250, 120, 95, 910, 4, 220
+stat_cost        1, 1365, 375, 180, 142, 1365, 4, 330
 armour_ug_levels 6
 armour_ug_models NE_Late_Bodyguard_ug1
 ownership        france
@@ -14448,7 +14448,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 250, 120, 95, 820, 4, 200
+stat_cost        1, 1230, 375, 180, 142, 1230, 4, 300
 armour_ug_levels 3
 armour_ug_models NE_Bodyguard
 ownership        england
@@ -14483,7 +14483,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 250, 120, 95, 820, 4, 200
+stat_cost        1, 1230, 375, 180, 142, 1230, 4, 300
 armour_ug_levels 3
 armour_ug_models NE_Bodyguard
 ownership        france
@@ -14518,7 +14518,7 @@ stat_mental      11, disciplined, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 870, 250, 120, 95, 870, 4, 210
+stat_cost        1, 1305, 375, 180, 142, 1305, 4, 315
 armour_ug_levels 4
 armour_ug_models ME_Bodyguard_ug1
 ownership        egypt
@@ -14553,7 +14553,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 580, 250, 80, 60, 580, 4, 140
+stat_cost        1, 870, 375, 120, 90, 870, 4, 210
 armour_ug_levels 4
 armour_ug_models Conquistadores_ug1
 ownership        spain
@@ -14588,7 +14588,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 770, 250, 120, 95, 770, 4, 190
+stat_cost        1, 1155, 375, 180, 142, 1155, 4, 285
 armour_ug_levels 2
 armour_ug_models Mailed_Knights
 ownership        france
@@ -14623,7 +14623,7 @@ stat_mental      11, disciplined, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 250, 120, 95, 820, 4, 200
+stat_cost        1, 1230, 375, 180, 142, 1230, 4, 300
 armour_ug_levels 3
 armour_ug_models ME_Bodyguard
 ownership        turks
@@ -14658,7 +14658,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 870, 250, 120, 95, 870, 4, 210
+stat_cost        1, 1305, 375, 180, 142, 1305, 4, 315
 armour_ug_levels 4
 armour_ug_models NE_Bodyguard_ug1
 ownership        poland
@@ -14693,7 +14693,7 @@ stat_mental      11, normal, trained
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 820, 250, 120, 95, 820, 4, 200
+stat_cost        1, 1230, 375, 180, 142, 1230, 4, 300
 armour_ug_levels 3
 armour_ug_models Teutonic_Knights
 ownership        hre
