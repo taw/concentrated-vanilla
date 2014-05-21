@@ -2148,6 +2148,10 @@ settlement
 	{
 		type core_building wooden_wall
 	}
+        building
+        {
+                type hinterland_roads roads
+        }
 }
 
 settlement castle
@@ -2965,6 +2969,111 @@ denari_kings_purse	500
 settlement
 {
 	level town
+	region Ancyra_Province
+
+	year_founded 0
+	population 2000
+	plan_set default_set
+	faction_creator byzantium
+	building
+	{
+		type core_building wooden_pallisade
+	}
+}
+
+settlement
+{
+	level town
+	region Belgrade_Province
+
+	year_founded 0
+	population 1250
+	plan_set default_set
+	faction_creator russia
+	building
+	{
+		type core_building wooden_pallisade
+	}
+}
+
+settlement
+{
+	level village
+	region Benghazi_Province
+
+	year_founded 0
+	population 600
+	plan_set default_set
+	faction_creator moors
+	building
+	{
+		type hinterland_roads roads
+	}
+}
+
+settlement
+{
+	level town
+	region Sijilmasa_Province
+
+	year_founded 0
+	population 1000
+	plan_set default_set
+	faction_creator moors
+	building
+	{
+		type core_building wooden_pallisade
+	}
+}
+
+settlement
+{
+	level town
+	region Kairouan_Province
+
+	year_founded 0
+	population 1500
+	plan_set default_set
+	faction_creator moors
+	building
+	{
+		type core_building wooden_pallisade
+	}
+}
+
+settlement
+{
+	level town
+	region Tlemcen_Province
+
+	year_founded 0
+	population 1200
+	plan_set default_set
+	faction_creator moors
+	building
+	{
+		type core_building wooden_pallisade
+	}
+}
+
+settlement
+{
+	level town
+	region Fes_Province
+
+	year_founded 0
+	population 1500
+	plan_set default_set
+	faction_creator moors
+	building
+	{
+		type core_building wooden_pallisade
+	}
+}
+
+settlement
+{
+	level town
 	region Dijon_Province
 
 	year_founded 0
@@ -3701,6 +3810,10 @@ settlement castle
 	{
 		type core_castle_building motte_and_bailey
 	}
+        building
+        {
+                type hinterland_roads roads
+        }
 }
 
 settlement
@@ -3818,6 +3931,107 @@ settlement castle
 		type core_castle_building motte_and_bailey
 	}
 }
+
+character	sub_faction byzantium, Modestos Elesbaam Chieftain, general, male, age 30, x 232, y 85
+army
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+
+character	sub_faction russia, Aleksei Kuritsev Chieftain, general, male, age 30, x 177, y 103
+army
+unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
+unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+
+character	sub_faction moors, Khaled Jalaf Chieftain, general, male, age 30, x 181, y 35
+army
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+
+character	sub_faction moors, Tashfin Mammeri Chieftain, general, male, age 30, x 71, y 49
+army
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+
+character	sub_faction moors, Da_ud Naybet Chieftain, general, male, age 30, x 135, y 55
+army
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+
+character	sub_faction moors, Galib Chiba Chieftain, general, male, age 30, x 83, y 59
+army
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+
+character	sub_faction moors, Yusuf Hissou Chieftain, general, male, age 30, x 65, y 62
+army
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction aztecs, Coanacoch, general, male, age 22, x 7, y 75 
 army

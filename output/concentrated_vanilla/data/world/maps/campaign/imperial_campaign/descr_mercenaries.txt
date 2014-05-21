@@ -243,7 +243,7 @@ pool West Balkans
 	unit Mercenary Monster Bombard	exp 0 cost 1900 replenish 0.24 - 0.48 max 8 initial 4  start_year 1400 events { gunpowder_discovered }
 
 pool East Balkans
-	regions Bucharest_Province Sofia_Province Iasi_Province Bran_Province
+	regions Belgrade_Province Bucharest_Province Sofia_Province Iasi_Province Bran_Province
 	unit merc galley,		exp 0 cost 200 replenish 2.88 - 8.0 max 4 initial 3 religions { catholic } crusading
 	unit merc galley,		exp 0 cost 200 replenish 2.88 - 8.0 max 4 initial 3 religions { islam } crusading
 	unit merc galley,			exp 0 cost 1040 replenish 0.08 - 0.4 max 4 initial 3
@@ -334,7 +334,7 @@ pool Greece
 	unit Mercenary Monster Bombard		exp 0 cost 1900 replenish 0.24 - 0.48 max 8 initial 4  start_year 1400 events { gunpowder_discovered }
 	
 pool Anatolia
-	regions Smyrna_Province Iconium_Province Isle_of_Cyprus Trebizond_Province Caesarea_Province Nicaea_Province
+	regions Ancyra_Province Smyrna_Province Iconium_Province Isle_of_Cyprus Trebizond_Province Caesarea_Province Nicaea_Province
 	unit merc galley,		exp 0 cost 200 replenish 2.88 - 8.0 max 8 initial 5 religions { islam } crusading
 	unit merc galley,			exp 0 cost 1040 replenish 0.48 - 1.44 max 4 initial 2
 	unit Alan Light Cavalry		exp 0 cost 830 replenish 0.32 - 1.04 max 8 initial 5
@@ -378,7 +378,7 @@ pool Brazil
 	unit Native Mercenaries		exp 0 cost 300 replenish 0.96 - 2.64 max 16 initial 8
 
 pool North_Africa
-	regions Tripoli_Province Marrakesh_Province Algiers_Province Tunis_Province	
+	regions Fes_Province Tlemcen_Province Kairouan_Province Benghazi_Province Tripoli_Province Marrakesh_Province Algiers_Province Tunis_Province	
 	unit merc galley,		exp 0 cost 200 replenish 2.88 - 8.0 max 4 initial 3 religions { islam } crusading
 	unit merc galley,		exp 0 cost 1040 replenish 0.48 - 1.44 max 4 initial 3
 	unit Bedouin Cavalry	exp 0 cost 630 replenish 0.32 - 1.04 max 8 initial 5 religions { islam }
@@ -413,7 +413,7 @@ pool Egypt
 	unit Sudanese Tribesmen Mercs	exp 0 cost 440 replenish 0.32 - 1.04 max 8 initial 5
 
 pool West_Africa
-	regions Timbuktu_Province Arguin_Province
+	regions Sijilmasa_Province Timbuktu_Province Arguin_Province
 	unit Sudanese Tribesmen Mercs	exp 0 cost 440 replenish 0.88 - 2.64 max 24 initial 13
 
 pool Nubia

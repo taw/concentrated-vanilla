@@ -1,0 +1,5 @@
+#!/bin/bash
+
+./make_vanilla_dynamic.rb 
+ssh umai@192.168.1.89 "rm -rf cv/data"
+scp -r "output/concentrated_vanilla/data" 'umai@192.168.1.89:cv'

@@ -539,7 +539,7 @@ Zagreb_Province
 	venice
 	Croatian_Rebels
 	58 173 177
-	gold, timber, iron, atlantic, explorers_guild, crusade, jihad, horde_target
+	iron, atlantic, explorers_guild, crusade, jihad, horde_target
 	5
 	3
 	religions { catholic 85 orthodox 14 islam 0 pagan 0 heretic 1 }
@@ -1011,3 +1011,66 @@ Dongola_Province
 	5
 	4
 	religions { catholic 0 orthodox 10 islam 80 pagan 5 heretic 5 }
+Fes_Province
+	Fes
+	moors
+	Saharan_Rebels
+	57 218 57
+	crusade, jihad, horde_target
+	5
+	3
+	religions { catholic 0 orthodox 0 islam 90 pagan 5 heretic 5 }
+Tlemcen_Province
+	Tlemcen
+	moors
+	Saharan_Rebels
+	189 62 175
+	iron, crusade, jihad, horde_target
+	5
+	3
+	religions { catholic 0 orthodox 0 islam 75 pagan 15 heretic 10 }
+Kairouan_Province
+	Kairouan
+	moors
+	Saharan_Rebels
+	51 208 219
+	crusade, jihad, horde_target
+	5
+	4
+	religions { catholic 0 orthodox 0 islam 65 pagan 33 heretic 2 }
+Sijilmasa_Province
+	Sijilmasa
+	moors
+	Saharan_Rebels
+	103 218 148
+	crusade, jihad, horde_target
+	5
+	2
+	religions { catholic 0 orthodox 0 islam 28 pagan 70 heretic 2 }
+Benghazi_Province
+	Benghazi
+	moors
+	Saharan_Rebels
+	230 247 18
+	crusade, jihad, horde_target
+	5
+	2
+	religions { catholic 0 orthodox 4 islam 60 pagan 23 heretic 13 }
+Belgrade_Province
+	Belgrade
+	russia
+	Bulgarian_Rebels
+	198 68 229
+	gold wood, crusade, jihad, horde_target
+	5
+	4
+	religions { catholic 8 orthodox 65 islam 0 pagan 25 heretic 2 }
+Ancyra_Province
+	Ancyra
+	byzantium
+	Anatolian_Rebels
+	56 53 103
+	crusade, jihad, horde_target
+	5
+	5
+	religions { catholic 0 orthodox 65 islam 30 pagan 2 heretic 3 }

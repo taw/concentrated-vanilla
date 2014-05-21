@@ -222,3 +222,17 @@ Cairo_Province
 Cairo
 Dongola_Province
 Dongola
+Fes_Province
+Fes
+Tlemcen_Province
+Tlemcen
+Kairouan_Province
+Kairouan
+Sijilmasa_Province
+Sijilmasa
+Benghazi_Province
+Benghazi
+Belgrade_Province
+Belgrade
+Ancyra_Province
+Ancyra

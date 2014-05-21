@@ -29,9 +29,26 @@ class Mod
   def initialize(&blk)
     @files = {}
     @save_as = {}
+    @encodings = {}
     open_files!
     instance_eval(&blk)
     save!
+  end
+
+  def encode_file(value, enc)
+    if enc == 'utf16'
+      value.gsub("\n", "\r\n").unpack("U*").pack("v*")
+    else
+      value.gsub("\n", "\r\n")
+    end
+  end
+  
+  def decode_file(value, enc)
+    if enc == 'utf16'
+      value.unpack("v*").pack("U*").gsub("\r", "")
+    else
+      value.gsub("\r", "")
+    end
   end
 
   def open(name, file_name, save_dir=nil)
@@ -42,12 +59,12 @@ class Mod
     included << 'better_bai'
     included << 'better_bai2' # this super-passive bai, but their 
     included << 'better_cai'
-    included << 'vanilla' << 'vanilla/packed' << 'vanilla/imperial-campaign'
+    included << 'vanilla' << 'vanilla/packed' << 'vanilla/imperial-campaign' << 'vanilla/text'
     
     included = included.map{|path| "data/#{path}" }
     source = File.first_matching(file_name, *included)
     puts source
-    @files[name] = File.open(source, 'rb').read.gsub("\r", "")
+    @files[name] = decode_file(File.open(source, 'rb').read, @encodings[name])
     @save_as[name] = save_as
   end
 
@@ -62,7 +79,7 @@ class Mod
   def save!
     @files.each{|name, value|
       FileUtils.mkdir_p File.dirname(@save_as[name])
-      File.write @save_as[name], value.gsub("\n", "\r\n")
+      File.write @save_as[name], encode_file(value, @encodings[name])
     }
   end
   
@@ -676,10 +693,285 @@ module SimplifyBuildingTree
   end
 end
 
+# All functionality related to adding new settlements/regions
+# It needs some serious cleanup but first let's see if it even works at all
+# 
+# CHECK: cat output/concentrated_vanilla/data/world/maps/base/descr_regions.txt  | gr '\d \d' | sort | uniq -d
+# 
+# FIXME: Add settlements:
+# * Caucasus/Black Sea coast
+# * maybe Damietta
+# 
+# FIXME:
+# * city vs castle
+# * do not default to just towns
+
+module CampaignMapModding
+  # Not idempotent, call just once
+  def add_regions_to_merc_pool!(new_regions)
+    ht = {}
+    new_regions.each{|region, pool|
+      ht[pool] ||= []
+      ht[pool] << region+"_Province"
+    }
+    modify('mercenaries'){|file|
+      file.gsub(/(.*\S.*\n)+/){|para|
+        next para unless para =~ /(\Apool\s+)([^\n]+)(\s+regions\s+)(.*\z)/m
+        new_regions = ht.delete($2)
+        next para unless new_regions
+        "#{$1}#{$2}#{$3}#{new_regions.join(" ")} #{$4}"
+      }
+    }
+    raise "Mercenary pools not found: #{ht.keys}" unless ht.empty?
+  end
+
+  def add_region!(opts)
+    name           = opts[:name]
+    faction        = opts[:faction]
+    rebels         = opts[:rebels]
+    color          = opts[:color]
+    resources      = opts[:resources]
+    # 5 seems to be victory points or something
+    farming        = opts[:farming]
+    religion       = opts[:religion]
+    level          = opts[:level]
+    population     = opts[:population]
+    buildings      = opts[:buildings]
+    
+    x              = opts[:x]
+    y              = opts[:y]
+    units          = opts[:units]
+    commander_name = opts[:commander_name]
+
+    total_religion = religion.inject(&:+)
+    warn "Total religion for #{name} doesn't add up to 100" unless total_religion == 100
+    religion = "religions { catholic #{religion[0]} orthodox #{religion[1]} islam #{religion[2]} pagan #{religion[3]} heretic #{religion[4]} }"
+
+    modify('region_name_lookup'){|file|
+      file + "#{name}_Province\n#{name}\n"
+    }
+    
+    modify('imperial_region_name_lookup'){|file|
+      file + "{#{name}}#{name}\n{#{name}_Province}#{name} Region\n"
+    }
+    
+    modify('regions'){|file|
+      file + "#{name}_Province
+\t#{name}
+\t#{faction}
+\t#{rebels}
+\t#{color}
+\t#{resources}
+\t5
+\t#{farming}
+\t#{religion}
+"
+    }
+    
+    modify('strat'){|file|
+      buildings = buildings.map{|b|
+"\tbuilding
+\t{
+\t\ttype #{b}
+\t}\n"
+      }.join
+      
+      raise "Parse errar" unless file =~ /(\A.*faction\s+slave.*?)(settlement.*\z)/m
+      a, b = $1, $2
+      
+      this_settlement = "settlement
+{
+\tlevel #{level}
+\tregion #{name}_Province
+
+\tyear_founded 0
+\tpopulation #{population}
+\tplan_set default_set
+\tfaction_creator #{faction}
+#{buildings}}
+
+"
+      a + this_settlement + b
+    }
+    
+    if x and y and units and commander_name
+      modify('strat'){|file|
+        raise "Parse errar" unless file =~ /(\A.*faction\s+slave.*?)(character.*\z)/m
+        a, b = $1, $2
+      
+        this_army = "character\tsub_faction #{faction}, #{commander_name} Chieftain, general, male, age 30, x #{x}, y #{y}\narmy\n" +
+        units.map{|u|
+          "unit\t\t#{u}\t\t\t\texp 0 armour 0 weapon_lvl 0\n"
+        }.join + "\n"
+
+        a + this_army + b
+      }
+    end
+  end
+  
+  def add_regions!
+    add_regions_to_merc_pool!({
+      "Fes"       => "North_Africa",
+      "Tlemcen"   => "North_Africa",
+      "Kairouan"  => "North_Africa",
+      "Sijilmasa" => "West_Africa",
+      "Benghazi"  => "North_Africa",
+      "Belgrade"  => "East Balkans",
+      "Ancyra"    => "Anatolia",
+    })
+    # Commander names need to be taken from descr_names.txt
+    add_region!({
+      :name => "Fes",
+      :faction => "moors",
+      :rebels => "Saharan_Rebels",
+      :color => "57 218 57",
+      :religion => [0, 0, 90, 5, 5],
+      :resources => "none",
+      :farming => 3,
+      :level => "town",
+      :population => 1500,
+      :buildings => ["core_building wooden_pallisade"],
+      :x => 65,
+      :y => 62,
+      :commander_name => "Yusuf Hissou",
+      :units => [
+        "Sudanese Tribesmen", "ME Town Militia", "ME Town Militia", "Desert Archers",
+      ]
+    })
+    add_region!({
+      :name => "Tlemcen",
+      :faction => "moors",
+      :rebels => "Saharan_Rebels",
+      :color => "189 62 175",
+      :religion => [0, 0, 75, 15, 10],
+      :resources => "iron",
+      :farming => 3,
+      :level => "town",
+      :population => 1200,
+      :buildings => ["core_building wooden_pallisade"],
+      :x => 83,
+      :y => 59,
+      :commander_name => "Galib Chiba",
+      :units => [
+        "Sudanese Tribesmen", "ME Town Militia", "ME Town Militia", "Desert Archers",
+      ],
+    })
+    add_region!({
+      :name => "Kairouan",
+      :faction => "moors",
+      :rebels => "Saharan_Rebels",
+      :color => "51 208 219",
+      :religion => [0, 0, 65, 33, 2],
+      :resources => "none",
+      :farming => 4,
+      :level => "town",
+      :population => 1500,
+      :buildings => ["core_building wooden_pallisade"],
+      :x => 135,
+      :y => 55,
+      :commander_name => "Da_ud Naybet",
+      :units => [
+        "Sudanese Tribesmen", "ME Town Militia", "ME Town Militia", "Desert Archers",
+      ]
+    })
+    add_region!({
+      :name => "Sijilmasa",
+      :faction => "moors",
+      :rebels => "Saharan_Rebels",
+      :color => "103 218 148",
+      :religion => [0, 0, 28, 70, 2],
+      :resources => "none",
+      :farming => 2,
+      :level => "town",
+      :buildings => ["core_building wooden_pallisade"],
+      :population => 1000,
+      :x => 65  + 6, 
+      :y => 62 - 13,
+      :commander_name => "Tashfin Mammeri",
+      :units => [
+        "Tuareg Camel Spearmens", "Sudanese Tribesmen", "Desert Archers", "Desert Archers",
+      ],
+    })
+    add_region!({
+      :name => "Benghazi",
+      :faction => "moors",
+      :rebels => "Saharan_Rebels",
+      :color => "230 247 18",
+      :religion => [0, 4, 60, 23, 13],
+      :resources => "none",
+      :farming => 2,
+      :level => "village",
+      :buildings => ["hinterland_roads roads"],
+      :population => 600,
+      :x => 181,
+      :y => 35,
+      :commander_name => "Khaled Jalaf",
+      :units => [
+        "Tuareg Camel Spearmens", "Tuareg Camel Spearmens", "Sudanese Tribesmen",
+      ],
+    })
+    add_region!({
+      :name => "Belgrade",
+      :faction => "russia",
+      :rebels => "Bulgarian_Rebels",
+      :color => "198 68 229",
+      :religion => [8, 65, 0, 25, 2],
+      :resources => "gold wood",
+      :farming => 4,
+      :level => "town",
+      :buildings => ["core_building wooden_pallisade"],
+      :population => 1250,
+      :x => 177,
+      :y => 103,
+      :commander_name => "Aleksei Kuritsev",
+      :units => [
+        "Magyar Cavalry", "Bulgarian Brigands", "Bulgarian Brigands", "Croat Axemen",
+      ],
+    })
+    add_region!({
+      :name => "Ancyra",
+      :faction => "byzantium",
+      :rebels => "Anatolian_Rebels",
+      :color => "56 53 103",
+      :religion => [0, 65, 30, 2, 3],
+    	:resources => "none", # FIXME
+      :farming => 5,
+      :level => "town",
+      :buildings => ["core_building wooden_pallisade"],
+      :population => 2000,
+      :x => 232,
+      :y => 85,
+      :commander_name => "Modestos Elesbaam",
+      :units => [
+        "Byzantine Cavalry", "Trebizond Archers", "Trebizond Archers",
+      ],
+    })
+    change_region_resources!{|name, res| # They end up being in Belgrade region
+      if name == "Zagreb"
+        res - ['gold', 'timber'] 
+      else
+        res
+      end
+    }
+
+    # Since Libya didn't have enough settlements, at least let's build roads there
+    add_buildings!({
+      "Tripoli"    => {"hinterland_roads" => 1},
+      "Alexandria" => {"hinterland_roads" => 1},
+    })
+
+    # (px, 186 - py)
+    # ADD: * South Sweden
+  end
+end
+
 class M2TW_Mod < Mod
   include CastlesAndCitiesAreSameThing
   include SimplifyBuildingTree
+  include CampaignMapModding
   def open_files!
+    @encodings['imperial_region_name_lookup'] = 'utf16'
+    
     open 'character', 'descr_character.txt'
     open 'engines', 'descr_engines.txt'
     open 'settlement', 'descr_settlement_mechanics.xml'
@@ -705,6 +997,9 @@ class M2TW_Mod < Mod
     open 'strat', 'descr_strat.txt', 'world/maps/campaign/imperial_campaign'
     open 'mercenaries', 'descr_mercenaries.txt', 'world/maps/campaign/imperial_campaign'
     open 'events', 'descr_events.txt', 'world/maps/campaign/imperial_campaign'
+    open 'win_conditions', 'descr_win_conditions.txt', 'world/maps/campaign/imperial_campaign'
+    open 'region_name_lookup', 'descr_regions_and_settlement_name_lookup.txt', 'world/maps/campaign/imperial_campaign'
+    open 'imperial_region_name_lookup', 'imperial_campaign_regions_and_settlement_names.txt', 'text'
     
     # We need to copy stuff from better_bai anyway
     open 'ai_battle', 'config_ai_battle.xml'
@@ -734,6 +1029,8 @@ class M2TW_Mod < Mod
         FileUtils.cp file, target
       end
     end
+    FileUtils.cp "data/more_regions/map_regions.tga",
+                 "output/concentrated_vanilla/data/world/maps/base/map_regions.tga"
   end
   
   def copy_new_models!
@@ -1067,9 +1364,6 @@ class M2TW_Mod < Mod
   end
   
   def fix_rubber_swords!
-    # Heavy cavalry 50% more expensive.
-    # Take bodyguards to 25% down because they're half as numerous and
-    # they were just insanely expensive without this.
     modify('units'){|file|
       file.gsub(/(.*\S.*\n)+/) {|para|
         if para =~ /^formation.*phalanx/
@@ -1095,7 +1389,8 @@ class M2TW_Mod < Mod
       st, en  = $1, $3
       resources = $2.split(/,\s+/)
       resources = [] if resources == ['none']
-      resources = yield(resources).uniq
+      name = lines[1].strip
+      resources = yield(name, resources).uniq
       resources = ['none'] if resources == []
       lines[5] = st + resources.join(', ') + en
       lines.join("\n") + "\n"
@@ -1103,13 +1398,13 @@ class M2TW_Mod < Mod
   end
 
   def no_rebels!
-    change_region_resources!{|res|
+    change_region_resources!{|name, res|
       res + ['no_brigands', 'no_pirates']
     }
   end
   
   def crusades_everywhere!
-    change_region_resources!{|res|
+    change_region_resources!{|name, res|
       res += ['crusade', 'jihad', 'horde_target'] unless res.include? 'america'
       res
     }
@@ -2190,6 +2485,18 @@ Trigger fertility_women
       }.join("\n")
     }
   end
+  
+  def long_campaign_regions_to_take!(count)
+    modify('win_conditions'){|file|
+      file.gsub(/(.*\S.*\n)+/) {|para|
+        if para =~ /slave|papal_states/
+          para
+        else
+          para.sub(/(^take_regions\s+)(\d+)/){"#{$1}#{count}"}
+        end
+      }
+    }
+  end
 end
 
 M2TW_Mod.new do
@@ -2237,8 +2544,10 @@ M2TW_Mod.new do
   ### Campaign
   # silicy_scenario!
   # start_wars!
+  add_regions!
   more_initial_rebels!
   # epic_armies!
+  long_campaign_regions_to_take!(50)
 
   ### Captain obvious
   reduce_captain_obvious!
