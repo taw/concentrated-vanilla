@@ -30,7 +30,7 @@ max_scale	5
 event		flood
 frequency	10
 winter		false
-summer		true
+summer		false
 warning		false
 climate		swamp
 climate		unused1

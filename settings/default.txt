@@ -37,7 +37,7 @@ checkbox-more_initial_rebels = true
 checkbox-epic_armies = false
 int-regions_to_take = 50
 float-cluster_allocation = 0.8
-
+checkbox-allocate_rebels_last = false
 range-region_count_byzantium = 4..9
 range-region_count_moors = 4..9
 range-region_count_turks = 4..9
@@ -102,6 +102,7 @@ float-unit_charge = 1.0
 checkbox-low_morale = false
 checkbox-increase_unit_defense = false
 checkbox-nerf_rams = true
+checkbox-do_not_start_skirmishing = true
 float-mercenary_recruitment = 1.25
 float-mercenary_upkeep = 1.25
 checkbox-free_unit_upgrade = true

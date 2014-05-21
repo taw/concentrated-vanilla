@@ -75,7 +75,7 @@ M2TW_Mod.new({
   #   "portugal"     => 2..7,
   #   "denmark"      => 2..7,
   #   "papal_states" => 2..7,
-  # }, 0.8)
+  # }, 1.0 - 0.8, false)
   # start_wars!
   more_initial_rebels!
   # epic_armies!
@@ -145,6 +145,7 @@ M2TW_Mod.new({
   increase_artillery_accuracy!(2.25)
   mod_mercenary_cost!(1.25, 1.25)
   mod_unit_upgrade_cost!(0.0)
+  do_not_start_skirmishing!
 
   ### Units - bug workarounds (with pretty massive balance implications)
   ### (pikes are extremely powerful with this as long as they stay in formation)

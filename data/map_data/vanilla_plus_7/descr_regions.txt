@@ -1061,7 +1061,7 @@ Belgrade_Province
 	russia
 	Bulgarian_Rebels
 	198 68 229
-	gold, timber, crusade, jihad, horde_target
+	gold wood, crusade, jihad, horde_target
 	5
 	4
 	religions { catholic 8 orthodox 65 islam 0 pagan 25 heretic 2 }

@@ -174,7 +174,7 @@ def build_mod!(settings)
       "portugal"     => s["region_count_portugal"],
       "denmark"      => s["region_count_denmark"],
       "papal_states" => s["region_count_papal_states"],
-    }, s["cluster_allocation"]) if s["random_scenario"]
+    }, 1.0 - s["cluster_allocation"], s["allocate_rebels_last"]) if s["random_scenario"]
     more_initial_rebels! if s["more_initial_rebels"]
     epic_armies! if s["epic_armies"]
     long_campaign_regions_to_take! s["regions_to_take"].to_i
@@ -237,6 +237,7 @@ def build_mod!(settings)
     mod_mercenary_cost! s["mercenary_recruitment"], s["mercenary_upkeep"]
     mod_unit_upgrade_cost!(0.0) if s["free_unit_upgrade"]
     nerf_rams! if s["nerf_rams"]
+    do_not_start_skirmishing! if s["do_not_start_skirmishing"]
     
     ### Units - bug workarounds
     fix_rubber_swords! if s["remove_rubber_swords"]
@@ -381,6 +382,10 @@ class ConcentratedVanillaBuilder
       }
     end
   end
+  
+  def command_map!
+    system "jruby", "./draw_political_map.rb"
+  end
 
   def build_menu!
     menu_bar { 
@@ -404,6 +409,9 @@ class ConcentratedVanillaBuilder
         }
         menu_item('Save...') {
           on_click { command_save! }
+        }
+        menu_item('Generate Map TGA') {
+          on_click { command_map! }
         }
         menu_item('Exit') {
           on_click { @frame.dispose }
@@ -500,8 +508,9 @@ class ConcentratedVanillaBuilder
     ###
     h3 "Included submods"
     help_text "CAI enchantments based on Lusted's Better CAI.
-    (not currently recommended since it might be causing excessively passive AI)"
-    checkbox :include_cai, "Lusted's AI mod"
+    They make AI smarter, but more passive, especially on highly random map,
+    so your choice."
+    checkbox :include_cai, "Lusted's CAI mod"
     help_text "BAI enchancements based on Sinuhet's Battle Mechanics and Lusted's Better BAI"
     checkbox :include_bai, "BAI improvements Sinuhet and Lusted"
     help_text "Agart's better settlement models for campaign maps (purely visual)"
@@ -615,6 +624,11 @@ class ConcentratedVanillaBuilder
     0.0 - fully random all over the map
     1.0 - near other settlements of same faction if possible"
     float_field :cluster_allocation, "Cluster allocation"
+    help_text "By default rebels are allocated randomly first.
+    You can make factions cluster even more if you make rebels get leftovers instead.
+    There's no point using this option unless your clustering setting is near 1.0
+    and you still want more clustering."
+    checkbox :allocate_rebels_last, "Allocate rebels last"
     help_text "How many settlements to give various factions (min..max)
     Each faction gets random number of settlements from its range.
     If too many settlements are allocated this way, reduce numbers proportionally,
@@ -703,7 +717,8 @@ class ConcentratedVanillaBuilder
     ###
     h3 "Guilds"
     help_text "Most guilds in vanilla are very easy to get.
-    This makes them a lot easier to get for quick workaround."
+    This makes them a lot easier to get for quick workaround.
+    It also reduced Thieves Guild proliferation more in like with other guilds."
     checkbox :easy_guilds, "Make guilds easier"
 
     ###
@@ -724,6 +739,9 @@ class ConcentratedVanillaBuilder
                but it can also be exploited against AI."
     checkbox :all_archers_stakes, "Give all archers stakes"
     float_field :missile_infantry_ammo, "Missile infantry ammo"
+    help_text "Increasing this number >1.0 won't work well due to limitations of Medieval 2 enigne.
+    (Kingdoms engine increases this limit, but is not yet used by this mod).
+    Numbers <=1.0 fully supported."
     float_field :missile_infantry_size, "Missile infantry size"
     help_text "Artillery is extremly weak in vanilla, so we can improve it.
     Only small range increases work because projectile physics aren't changed yet.
@@ -765,6 +783,12 @@ class ConcentratedVanillaBuilder
     help_text "Battering rams are extremely powerful.
     Nerfing them lets other siege equipment see more action."
     checkbox :nerf_rams, "Nerf battering rams"
+
+    help_text "In vanilla missile units start with skirmish mode on,
+    which makes them harder to control and not very effective.
+    You can make them start with skirmishing disabled instead.
+    You can always enable skirmishing manually if you want."
+    checkbox :do_not_start_skirmishing, "Do not start skirmishing"
 
     ###
     h3 "Minor Bug Fixes"

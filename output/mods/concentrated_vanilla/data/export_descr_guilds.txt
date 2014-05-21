@@ -891,7 +891,7 @@ Trigger 0211_Spy_On_Settlement
 Trigger 0212_Spy_Mission
     WhenToTest SpyMission
     Condition MissionSucceeded
-    Guild thiefs_guild a  10 
+    Guild thiefs_guild a  2 
 ;------------------------------------------
 Trigger 0220_Recruit_Guns
     WhenToTest UnitTrained

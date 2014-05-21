@@ -1,4 +1,4 @@
-require './find_file'
+require "./find_file"
 require 'fileutils'
 require "pathname"
 require "find"
@@ -49,8 +49,8 @@ end
 
 class CampaignMap
   def initialize
-    require "./map_information"
-    @data = MapInformation
+    require "./analyze_map"
+    @data = AnalyzeMap.new.run!("data/map_data/vanilla_plus_7")
     @regions = Hash.new{|ht,k| raise "Unknown settlement or region: #{k}" }
     @data.each{|r|
       @regions[r[:region]] = r
@@ -94,9 +94,11 @@ class Mod
     end
   end
 
-  def open(name, file_name, save_dir=nil)
-    save_as = File.join(*["output/mods/concentrated_vanilla/data",  save_dir, file_name].compact)
-    source = File.first_matching(file_name, *search_path.map{|path| "data/#{path}" })
+  def open(name, file_name, dir=nil)
+    save_as = File.join(*["output/mods/concentrated_vanilla/data", dir, file_name].compact)
+    source = File.first_matching(file_name,
+      *search_path.map{|path| File.join(["data", path, dir].compact) }
+    )
     # puts source
     @files[name] = decode_file(File.open(source, 'rb').read, @encodings[name])
     @save_as[name] = save_as
@@ -139,7 +141,7 @@ class GuildData
         raise "Wrong place - expected Guild, got: #{@entries[-1].inspect} | #{line.inspect}" unless @entries[-1][0] == :guild
         @entries[-1] << line
       else
-        p [:wut, line]
+        warn "Parse error for guild data: `#{line}'"
       end
     }
   end
@@ -561,7 +563,7 @@ module ScenarioBuilder
   
   def neighbour_settlements(settlements, lvl)
     lvl.times{
-      settlements = Set[*settlements.map{|s| campaign_map[s][:neighbours] }.inject([], &:+)]
+      settlements = Set[*settlements.map{|s| campaign_map[s][:neighbours] }.inject(Set[], &:+)]
     }
     settlements
   end
@@ -575,61 +577,57 @@ module ScenarioBuilder
     faction_sizes
   end
   
-  def prepare_allocation_requests(faction_size_ranges, settlements_count)
+  def prepare_allocation_requests(faction_size_ranges, settlements_count, allocate_rebels_last)
     faction_sizes = random_faction_sizes(faction_size_ranges, settlements_count)
     allocation_requests  = []
     faction_sizes.each{|name, sz|
-       if name == "slave"
-          sz.times{
-            allocation_requests << [1, rand, name]
-          }
-        else
-          allocation_requests << [0, rand, name]
-          (sz-1).times{
-            allocation_requests << [2, rand, name]
-          }
-        end
+      if name == "slave"
+       sz.times{
+          allocation_requests << [allocate_rebels_last ? 3 : 1, rand, name]
+        }
+      else
+        allocation_requests << [0, rand, name]
+        (sz-1).times{
+          allocation_requests << [2, rand, name]
+        }
+      end
     }   
     allocation_requests.sort.map{|req| req[-1]}
   end
   
-  def allocate_settlements_by_cluster!(factions, faction_size_ranges, fully_random_ratio)
+  def allocate_settlements_by_cluster!(factions, faction_size_ranges, fully_random_ratio, allocate_rebels_last)
     available = Set[*all_settlements_outside_americas(factions)]
     settlements = Hash[available.map{|s| [s, extract_settlement(factions, s)]}]
     
     allocation = Hash.new{|ht,k| ht[k] = []}
-    allocation_requests = prepare_allocation_requests(faction_size_ranges, settlements.size)
+    allocation_requests = prepare_allocation_requests(faction_size_ranges, settlements.size, allocate_rebels_last)
     
-    allocation_requests.each{|name|
+    until allocation_requests.empty?
       if available.empty?
-        warn "Trying to allocate settlements but none left"
+        warn "Trying to allocate #{allocation_requests.size} more settlements, but none left"
         break
       end
-      neighbour_settlements  = neighbour_settlements(allocation[name], 1) & available
-      neighbour_settlements2 = neighbour_settlements(allocation[name], 2) & available
+      name = allocation_requests.shift
+      cluster_pool, cluster_pool_name = nil, nil
+      (1..15).each{|i|
+        cluster_pool = neighbour_settlements(allocation[name], i) & available
+        cluster_pool_name = :"cluster#{i}"
+        break if !cluster_pool.empty?
+      }
       if name == "slave"
-        pool = available
-        pool_name = :random_slave
+        pool, pool_name = available, :random_slave
       elsif rand < fully_random_ratio
-        pool = available
-        pool_name = :random
-      elsif neighbour_settlements.empty?
-        if neighbour_settlements2.empty?
-          pool = available
-          pool_name = :random_forced
-        else
-          pool = neighbour_settlements2
-          pool_name = :cluster2
-        end
+        pool, pool_name = available, :random
+      elsif !cluster_pool.empty?
+        pool, pool_name = cluster_pool, cluster_pool_name
       else
-        pool = neighbour_settlements
-        pool_name = :cluster
+        pool, pool_name = available, :random_forced
       end
       s = pool.random_element
       allocation[name] << s
       available.delete s
       pp [:allocating_settlement_for, name, s, pool_name]
-    }
+    end
     
     allocation.each{|name, ss|
       # pp [:allocated, {name => ss}]
@@ -694,7 +692,7 @@ module ScenarioBuilder
       
       all_extra_slots = faction[:settlements].map{|s|
         campaign_map[s[0]][:extra_slots]
-      }.inject([], &:+).sort_by{rand}
+      }.inject([], &:+).shuffle
       
       main_characters.each_with_index{|c,i|
         xy = settlement_xys[i]
@@ -721,29 +719,13 @@ module ScenarioBuilder
   end
   
   def faction_name_to_religion
-    @faction_name_to_religion ||= {
-      "aztec"        => "pagan",
-      "byzantium"    => "orthodox",
-      "russia"       => "orthodox",
-      "moors"        => "muslim",
-      "turks"        => "muslim",
-      "egypt"        => "muslim",
-      "mongols"      => "muslim",
-      "timurids"     => "muslim",
-      "hre"          => "catholic",
-      "france"       => "catholic",
-      "scotland"     => "catholic",
-      "hungary"      => "catholic",
-      "venice"       => "catholic",
-      "milan"        => "catholic",
-      "spain"        => "catholic",
-      "sicily"       => "catholic",
-      "england"      => "catholic",
-      "poland"       => "catholic",
-      "portugal"     => "catholic",
-      "denmark"      => "catholic",
-      "papal_states" => "catholic",
-    }
+    unless @faction_name_to_religion
+       @faction_name_to_religion = Hash[
+         @files['factions'].
+           gsub("islam","muslim").
+           scan(/^faction\s+([a-zA-Z_]+).*?^religion\s+(\S+)/m)]
+    end
+    @faction_name_to_religion
   end
 
   def fix_temples_for_reassigned_settlements!(factions)
@@ -774,12 +756,13 @@ module ScenarioBuilder
     }
   end
   
-  def random_scenario!(faction_size_ranges, fully_random_ratio)
+  def random_scenario!(faction_size_ranges, fully_random_ratio, allocate_rebels_last)
     modify_scenario!{|factions|
       fix_durazzo! factions
       allocate_settlements_by_cluster! factions,
                                        faction_size_ranges,
-                                       fully_random_ratio
+                                       fully_random_ratio,
+                                       allocate_rebels_last
       relocate_characters_to_settlements! factions
       add_basic_garrisons! factions
       fix_temples_for_reassigned_settlements! factions
@@ -1004,8 +987,8 @@ module SimplifyBuildingTree
         "large_city" => 4,
         "huge_city" => 5,
       }
-      smin = level.map{|e| e[0] =~ /\Asettlement_min\s+(.*)/; $1}.compact[0]
-      raise "Settlement minimum unknown #{smin.inpect}" unless smintable[smin]
+      smin = level[1..-1].map{|e| e[0] =~ /\Asettlement_min\s+(.*)/; $1}.compact[0]
+      raise "Settlement minimum unknown #{smin.inspect}" unless smintable[smin]
       cap  = level.find{|e| e[0] == "capability"}[1..-1].flatten
       [name, smintable[smin], cap]
     }
@@ -1451,7 +1434,7 @@ module CampaignMapModding
       :rebels => "Bulgarian_Rebels",
       :color => "198 68 229",
       :religion => [8, 65, 0, 25, 2],
-      :resources => "gold wood",
+      :resources => "gold, timber",
       :farming => 4,
       :level => "village",
       :buildings => [],
@@ -1515,9 +1498,6 @@ class M2TW_Mod < Mod
       ('better_bai2' if @mod_settings[:bai]),
       ('better_cai' if @mod_settings[:cai]),
       'vanilla',
-      'vanilla/packed',
-      'vanilla/imperial-campaign',
-      'vanilla/text',
     ].compact
   end
   
@@ -3046,6 +3026,15 @@ Trigger fertility_women
       gd.guild_levels!("25 50 100")
       gd.no_excludes!
       gd.compact_comments!
+      # Reduce thieves guild spamming
+      gd.map_triggers!{|e, name, *data|
+        if name =~ /0212_Spy_Mission/
+          [e, name, *data.map{|d| d.sub(/(Guild\s+thiefs_guild\s+a\s+)\d+/){"#{$1}2"}}]
+        else
+          [e, name, *data]
+        end
+      }
+      # @@@
       gd.to_s
     }
   end
@@ -3103,6 +3092,17 @@ Trigger fertility_women
         "#{$1}#{income}#{$2}"
       }.sub(/(<factor name="SOF_DISTANCE_TO_CAPITAL">\s+<pip_modifier value=")1.0(")/){
         "#{$1}#{happiness}#{$2}"
+      }
+    }
+  end
+  
+  def do_not_start_skirmishing!
+    modify('units'){|file|
+      file.gsub(/(.*\S.*\n)+/) {|para|
+        next para if para !~ /^class\s+missile/ or
+                     para =~ /\bstart_not_skirmishing\b/ or
+                     para =~ /^category\s+siege/
+        para.sub(/^(attributes.*)/) { "#{$1}, start_not_skirmishing" }
       }
     }
   end
