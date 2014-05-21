@@ -1,0 +1,1625 @@
+; faction standing parameters
+; ===========================
+
+; initialisation parameters
+
+min_faction_standing	-1.0
+max_faction_standing	1.0
+
+relations_improved_thresholds
+{
+    0.25
+    0.4
+    0.6
+}
+
+relations_worsened_thresholds
+{
+    -0.8
+    -0.4
+    -0.25
+}
+
+; trigger information
+; faction_standing updated with the command:
+;   FactionStanding [AFFECTED_HANDLE] [affected_handle_parameters] opt:[MODIFER_HANDLE] opt:[modifier_handle_parameter_1] opt:[modifier_handle_parameter_1]
+;
+; Available AFFECTED_HANDLE's and their parameters are as follows:
+;
+;    factions { [faction_label_1] [faction_label_2] [etc] }		--> A list of factions to be affected, (own faction automatically excluded)
+;    target_faction							--> the target_faction attached to the event, (own faction automatically excluded)
+;    religion [religion_label]						--> all factions of the specified religion, (own faction automatically excluded)
+;    own_religion							--> all factions of the same religion as the faction of the event, (own faction automatically excluded)
+;    target_religion							--> all factions of the same religion as the target faction of the event, (own faction automatically excluded)
+;    global								--> the faction of the event (i.e. own faction)
+;    exclude_factions { [faction_label_1] [faction_label_2] [etc] }	--> A list of factions not to be affected, (own faction automatically excluded)
+;    allies								--> all factions allied with the faction attached to the trigger
+;    enemies								--> all factions at war with the faction attached to the trigger
+;    target_allies							--> all factions allied with the target faction attached to the trigger
+;    target_enemies							--> all factions at war with the target_faction attached to the trigger
+;
+; Available MODIFIER_HANDLE's and their corresponding parameters
+;
+;    [value]					--> add this 'value' to the affected faction standings
+;    amount [divisor] [value]			--> for every 'divisor' unit of the event amount, add 'value' to the affected faction standings
+;    income [divisor] [value]			--> for every 'divisor' unit of the event factions income, add 'value' to the affected faction standings
+;    normalise [target_faction_standing] [divisor]	--> for each affected faction standing, add (target_faction_standing - faction_standing)/divisor
+;    per_unit [value]				--> for each unit in the events army, add 'value' to the affected faction standings
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BUILD RELIGIOUS STRUCTURE ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;------------------------------------------
+Trigger 0001_P_Build_Small_Church
+    WhenToTest BuildingCompleted
+
+    Condition SettlementBuildingFinished = small_church
+
+    FactionStanding factions { papal_states } 0.02
+
+;------------------------------------------
+Trigger 0002_P_Build_Church
+    WhenToTest BuildingCompleted
+
+    Condition SettlementBuildingFinished = church
+
+    FactionStanding factions { papal_states } 0.04
+
+;------------------------------------------
+Trigger 0003_P_Build_Abbey
+    WhenToTest BuildingCompleted
+
+    Condition SettlementBuildingFinished = abbey
+
+    FactionStanding factions { papal_states } 0.06
+
+;------------------------------------------
+Trigger 0004_P_Build_Cathedral
+    WhenToTest BuildingCompleted
+
+    Condition SettlementBuildingFinished = cathedral
+
+    FactionStanding factions { papal_states } 0.16
+
+;------------------------------------------
+Trigger 0005_P_Build_Huge_Cathedral
+    WhenToTest BuildingCompleted
+
+    Condition SettlementBuildingFinished = huge_cathedral
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0006_P_Build_Small_Chapel
+    WhenToTest BuildingCompleted
+
+    Condition SettlementBuildingFinished = small_chapel
+
+    FactionStanding factions { papal_states } 0.02
+
+;------------------------------------------
+Trigger 0007_P_Build_Chapel
+    WhenToTest BuildingCompleted
+
+    Condition SettlementBuildingFinished = chapel
+
+    FactionStanding factions { papal_states } 0.04
+
+;------------------------------------------
+Trigger 0008_P_Built_First_Small_Church_Faction
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompletedFaction small_church = 1
+
+    FactionStanding factions { papal_states } 0.04
+
+;------------------------------------------
+Trigger 0009_P_Built_First_Church_Faction
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompletedFaction church = 1
+
+    FactionStanding factions { papal_states } 0.08
+
+;------------------------------------------
+Trigger 0010_P_Built_First_Abbey_Faction
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompletedFaction abbey = 1
+
+    FactionStanding factions { papal_states } 0.12
+
+;------------------------------------------
+Trigger 0011_P_Built_First_Cathedral_Faction
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompletedFaction cathedral = 1
+
+    FactionStanding factions { papal_states } 0.16
+
+;------------------------------------------
+Trigger 0012_P_Built_First_Huge_Cathedral_Faction
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompletedFaction huge_cathedral = 1
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0013_P_Built_First_Small_Chapel_Faction
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompletedFaction small_chapel = 1
+
+    FactionStanding factions { papal_states } 0.04
+
+;------------------------------------------
+Trigger 0014_P_Built_First_Chapel_Faction
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompletedFaction chapel = 1
+
+    FactionStanding factions { papal_states } 0.08
+
+;------------------------------------------
+Trigger 0015_P_Built_First_Cathedral_World
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompleted cathedral = 1
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0016_P_Built_First_Huge_Cathedral_World
+    WhenToTest BuildingCompleted
+
+    Condition NumBuildingsCompleted huge_cathedral = 1
+
+    FactionStanding factions { papal_states } 0.2
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DESTROY RELIGIOUS STRUCTURE ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0017_P_Destroy_Small_Church
+    WhenToTest BuildingDestroyed
+
+    Condition BuildingName = small_church
+
+    FactionStanding factions { papal_states } -0.1
+
+;------------------------------------------
+Trigger 0018_P_Destroy_Church
+    WhenToTest BuildingDestroyed
+
+    Condition BuildingName = church
+
+    FactionStanding factions { papal_states } -0.2
+
+;------------------------------------------
+Trigger 0019_P_Destroy_Abbey
+    WhenToTest BuildingDestroyed
+
+    Condition BuildingName = abbey
+
+    FactionStanding factions { papal_states } -0.4
+
+;------------------------------------------
+Trigger 0020_P_Destroy_Cathedral
+    WhenToTest BuildingDestroyed
+
+    Condition BuildingName = cathedral
+
+    FactionStanding factions { papal_states } -0.6
+
+;------------------------------------------
+Trigger 0021_P_Destroy_Huge_Cathedral
+    WhenToTest BuildingDestroyed
+
+    Condition BuildingName = huge_cathedral
+
+    FactionStanding factions { papal_states } -1.0
+
+;------------------------------------------
+Trigger 0022_P_Destroy_Small_Chapel
+    WhenToTest BuildingDestroyed
+
+    Condition BuildingName = small_chapel
+
+    FactionStanding factions { papal_states } -0.1
+
+;------------------------------------------
+Trigger 0023_P_Destroy_Chapel
+    WhenToTest BuildingDestroyed
+
+    Condition BuildingName = chapel
+
+    FactionStanding factions { papal_states } -0.2
+
+;
+;;;; TBD buildings destroyed in battle
+
+
+;;;;;;;;;;;;;;
+;; CRUSADES ;;
+;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0050_P_General_Arrives_Crusade_Target
+    WhenToTest GeneralArrivesCrusadeTargetRegion
+
+    Condition IsCrusade
+
+    FactionStanding factions { papal_states } 0.02
+    FactionStanding factions { papal_states } per_unit 0.002
+
+;------------------------------------------
+Trigger 0051_P_Heir_Arrives_Crusade_Target
+    WhenToTest GeneralArrivesCrusadeTargetRegion
+
+    Condition IsCrusade
+              and IsFactionHeir
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0052_P_King_Arrives_Crusade_Target
+    WhenToTest GeneralArrivesCrusadeTargetRegion
+
+    Condition IsCrusade
+              and IsFactionLeader
+
+    FactionStanding factions { papal_states } 0.6
+
+;------------------------------------------
+Trigger 0053_P_General_Takes_Crusade_Target
+    WhenToTest GeneralTakesCrusadeTarget
+
+    Condition IsCrusade
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0054_P_Heir_Takes_Crusade_Target
+    WhenToTest GeneralTakesCrusadeTarget
+
+    Condition IsCrusade
+              and IsFactionHeir
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0055_P_King_Takes_Crusade_Target
+    WhenToTest GeneralTakesCrusadeTarget
+
+    Condition IsCrusade
+              and IsFactionLeader
+
+    FactionStanding factions { papal_states } 0.6
+
+;------------------------------------------
+Trigger 0056_P_Army_Takes_Crusade_Target
+    WhenToTest ArmyTakesCrusadeTarget
+
+    Condition IsCrusade
+
+    FactionStanding factions { papal_states } per_unit 0.002
+
+;------------------------------------------
+Trigger 0057_P_Character_Attacks_Crusading_General
+    WhenToTest CharacterAttacksCrusadingGeneral
+
+    Condition IsTargetOnCrusade
+
+    FactionStanding factions { papal_states } -0.4
+
+;------------------------------------------
+Trigger 0058_P_Crusade_Attacks_Orthodox_General
+	WhenToTest GeneralAssaultsGeneral
+	
+	Condition IsOnCrusade
+			  and TargetFactionReligion orthodox
+	
+	FactionStanding factions { papal_states } -0.4
+
+;------------------------------------------
+;Trigger 0059_P_Crusade_Attacks_Orthodox_Residence
+;	WhenToTest GeneralAssaultsResidence
+;	
+;	Condition IsOnCrusade
+;			  and TargetFactionReligion orthodox
+;	
+;	FactionStanding factions { papal_states } -0.4
+
+	
+;;;;;;;;;;;;;;;;
+;; CHARACTERS ;;
+;;;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0030_P_Recruit_Priest_Papal
+    WhenToTest AgentCreated
+
+    Condition TrainedAgentType = priest
+        and FactionReligion catholic
+
+    FactionStanding factions { papal_states } 0.02
+
+;------------------------------------------
+Trigger 0031_P_Faction_Excommunicated
+    WhenToTest FactionExcommunicated
+
+    FactionStanding factions { papal_states } -1.0
+
+
+
+;;;;;;;;;;;;;;
+;; MISSIONS ;;
+;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0100_Success_Pope_Min_Reward_Only
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_min_reward_only
+	
+    FactionStanding factions { papal_states } 0.1
+
+;------------------------------------------
+Trigger 0101_Success_Pope_Min_Penalty_Min_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_min_penalty_min_reward
+	
+    FactionStanding factions { papal_states } 0.1
+
+;------------------------------------------
+Trigger 0102_Success_Pope_Mod_Penalty_Min_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_mod_penalty_min_reward
+	
+    FactionStanding factions { papal_states } 0.1
+
+;------------------------------------------
+Trigger 0103_Success_Pope_Rome_Min_Penalty_Min_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_rome_min_penalty_min_reward
+
+    FactionStanding factions { papal_states } 0.1
+
+;------------------------------------------
+Trigger 0104_Success_Pope_Cardinal_Mod_Penalty_Min_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_cardinal_mod_penalty_min_reward
+
+    FactionStanding factions { papal_states } 0.1
+
+;------------------------------------------
+Trigger 0104_Success_Pope_Cardinal_Min_Penalty_Min_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_cardinal_min_penalty_min_reward
+
+    FactionStanding factions { papal_states } 0.1
+
+;------------------------------------------
+Trigger 0105_Success_Pope_Mod_Reward_Only
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_mod_reward_only
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0106_Success_Pope_Min_Penalty_Mod_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_min_penalty_mod_reward
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0107_Success_Pope_Rome_Min_Penalty_Mod_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_rome_min_penalty_mod_reward
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0108_Success_Pope_Cardinal_Min_Penalty_Mod_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_cardinal_min_penalty_mod_reward
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0109_Success_Pope_Cardinal_Mod_Reward_Only
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_cardinal_mod_reward_only
+
+    FactionStanding factions { papal_states } 0.2
+
+;------------------------------------------
+Trigger 0110_Success_Pope_Major_Reward_Only
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_major_reward_only
+
+    FactionStanding factions { papal_states } 0.4
+
+;------------------------------------------
+Trigger 0111_Success_Pope_Rome_Min_Penalty_Major_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_rome_min_penalty_major_reward
+
+    FactionStanding factions { papal_states } 0.4
+
+;------------------------------------------
+Trigger 0112_Success_Pope_Cardinal_Major_Reward_Only
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_cardinal_major_reward_only
+
+    FactionStanding factions { papal_states } 0.4
+
+;------------------------------------------
+Trigger 0113_Success_Pope_Cardinal_Min_Penalty_Major_Reward
+    WhenToTest LeaderMissionSuccess
+
+    Condition PaybackID pope_cardinal_min_penalty_major_reward
+
+    FactionStanding factions { papal_states } 0.4
+
+;------------------------------------------
+Trigger 0120_Fail_Pope_Min_Penalty_Only
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_min_penalty_only
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0121_Fail_Pope_Min_Penalty_Min_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_min_penalty_min_reward
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0122_Fail_Pope_Min_Penalty_Mod_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_min_penalty_mod_reward
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0123_Fail_Pope_Rome_Min_Penalty_Only
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_rome_min_penalty_only
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0124_Fail_Pope_Rome_Min_Penalty_Min_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_rome_min_penalty_min_reward
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0125_Fail_Pope_Rome_Min_Penalty_Mod_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_rome_min_penalty_mod_reward
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0126_Fail_Pope_Rome_Min_Penalty_Major_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_rome_min_penalty_major_reward
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0127_Fail_Pope_Cardinal_Min_Penalty_Min_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_cardinal_min_penalty_min_reward
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0128_Fail_Pope_Cardinal_Min_Penalty_Only
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_cardinal_min_penalty_only
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0129_Fail_Pope_Cardinal_Min_Penalty_Mod_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_cardinal_min_penalty_mod_reward
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0130_Fail_Pope_Cardinal_Min_Penalty_Major_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_cardinal_min_penalty_major_reward
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0131_Fail_Pope_Mod_Penalty_Only
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_mod_penalty_only
+
+    FactionStanding factions { papal_states } -0.1
+
+;------------------------------------------
+Trigger 0132_Fail_Pope_Mod_Penalty_Min_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_mod_penalty_min_reward
+
+    FactionStanding factions { papal_states } -0.1
+
+;------------------------------------------
+Trigger 0133_Fail_Pope_Rome_Mod_Penalty_Only
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_rome_mod_penalty_only
+
+    FactionStanding factions { papal_states } -0.1
+
+;------------------------------------------
+Trigger 0134_Fail_Pope_Cardinal_Mod_Penalty_Only
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_cardinal_mod_penalty_only
+
+    FactionStanding factions { papal_states } -0.1
+
+;------------------------------------------
+Trigger 0135_Fail_Pope_Cardinal_Mod_Penalty_Min_Reward
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_cardinal_mod_penalty_min_reward
+
+    FactionStanding factions { papal_states } -0.1
+
+;------------------------------------------
+Trigger 0136_Fail_Pope_Major_Penalty_Only
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_major_penalty_only
+
+    FactionStanding factions { papal_states } -0.2
+
+;------------------------------------------
+Trigger 0137_Fail_Pope_Rome_Major_Penalty_Only
+    WhenToTest LeaderMissionFailed
+
+    Condition PaybackID pope_rome_major_penalty_only
+
+    FactionStanding factions { papal_states } -0.2
+
+    
+
+;;;;;;;;;;;;;;;
+;; DIPLOMACY ;;
+;;;;;;;;;;;;;;;
+
+
+;------------------------------------------
+Trigger 0033_P_Give_Money
+    WhenToTest GiveMoney
+
+    Condition  TargetFactionType papal_states
+	  and  DiplomaticStanceFromFaction papal_states < AtWar
+
+    FactionStanding factions { papal_states } amount 50 0.002
+
+
+;------------------------------------------
+Trigger 0034_P_Give_Settlement
+    WhenToTest GiveSettlement
+
+    Condition  TargetFactionType papal_states
+	  and  DiplomaticStanceFromFaction papal_states < AtWar
+
+    FactionStanding factions { papal_states } income 1000 0.06
+
+
+;------------------------------------------
+Trigger 0035_P_Give_Rome
+    WhenToTest GiveSettlement
+
+    Condition  TargetFactionType papal_states
+          and  SettlementName Rome
+	  and  DiplomaticStanceFromFaction papal_states < AtWar
+
+    FactionStanding factions { papal_states } 0.6
+
+
+;------------------------------------------
+Trigger 0036_P_Alliance_Declared
+    WhenToTest FactionAllianceDeclared
+
+    Condition  TargetFactionType papal_states
+
+    FactionStanding factions { papal_states } 0.4
+
+
+;------------------------------------------
+Trigger 0037_P_Break_Alliance
+    WhenToTest FactionBreakAlliance
+
+    Condition  TargetFactionType papal_states
+
+    FactionStanding factions { papal_states } -0.6
+
+
+;------------------------------------------
+Trigger 0038_P_Successful_Diplomacy
+    WhenToTest DiplomacyMission
+
+    Condition MissionSucceeded
+          and TargetFactionType papal_states
+
+    FactionStanding factions { papal_states } 0.06
+
+;------------------------------------------
+Trigger 0039_P_War_Declared
+    WhenToTest FactionWarDeclared
+
+    Condition  TargetFactionType papal_states
+
+    FactionStanding factions { papal_states } -0.3
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CARDINALS AND ELECTIONS ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;------------------------------------------
+Trigger 0040_P_Cardinal_Promoted
+    WhenToTest CardinalPromoted
+
+    FactionStanding factions { papal_states } 0.1
+
+;------------------------------------------
+Trigger 0041_P_Cardinal_Removed
+    WhenToTest CardinalRemoved
+
+    FactionStanding factions { papal_states } -0.1
+
+;------------------------------------------
+Trigger 0042_P_Own_Pope_Elected
+    WhenToTest PopeElected
+
+    Condition FactionEqualsTarget
+
+    FactionStanding factions { papal_states } 0.8
+
+;------------------------------------------
+Trigger 0043_P_Allied_Pope_Elected
+    WhenToTest PopeElected
+
+    Condition DiplomaticStanceWithNewPope = Allied
+          and not FactionEqualsTarget
+
+    FactionStanding factions { papal_states } 0.4
+
+;------------------------------------------
+Trigger 0044_P_At_War_Pope_Elected
+    WhenToTest PopeElected
+
+    Condition DiplomaticStanceWithNewPope = AtWar
+          and not FactionEqualsTarget
+
+    FactionStanding factions { papal_states } -0.6
+
+;------------------------------------------
+Trigger 0045_P_Voted_For_Pope
+    WhenToTest VotedForPope
+
+    FactionStanding factions { papal_states } 0.2
+
+
+;;;;;;;;;;
+;; MISC ;;
+;;;;;;;;;;
+
+
+;------------------------------------------
+Trigger 0046_P_Normalise
+    WhenToTest FactionTurnStart
+
+    FactionStanding factions { papal_states } normalise 0 50
+
+;------------------------------------------
+Trigger 0047_P_Inquisitor_Appointed
+    WhenToTest InquisitorAppointed
+
+    FactionStanding factions { papal_states } -0.2
+
+;------------------------------------------
+Trigger 0048_P_Assassin_Caught_Attacking_Pope
+    WhenToTest AssassinCaughtAttackingPope
+
+    FactionStanding factions { papal_states } -1.0
+
+; Make the papal states dislike other religions
+;------------------------------------------
+Trigger 0049_P_Normalise_Non_catholic
+    WhenToTest FactionTurnStart
+
+    Condition not FactionReligion catholic
+
+    FactionStanding factions { papal_states } normalise -1 50
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; TRANSGRESSIONS AGAINST CATHOLICS ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0100_T_Invaded_Settlement
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INVADED_SETTLEMENT
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.08
+
+;------------------------------------------
+Trigger 0101_T_Invaded_Fort
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INVADED_FORT
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.03
+
+;------------------------------------------
+Trigger 0102_T_Invaded_Watchtower
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INVADED_WATCHTOWER
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.03
+
+;------------------------------------------
+Trigger 0103_T_Declared_War
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_DECLARED_WAR
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.08
+
+;------------------------------------------
+Trigger 0104_T_Instigate_Siege
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INSTIGATE_SIEGE
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.02
+
+;------------------------------------------
+Trigger 0105_T_Threaten_War
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_THREATEN_WAR
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.02
+
+;------------------------------------------
+Trigger 0106_T_Undeclared_Attack
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_UNDECLARED_ATTACK
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.05
+
+;------------------------------------------
+Trigger 0107_T_INSTIGATE_ASSAULT
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INSTIGATE_ASSAULT
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.01
+
+;------------------------------------------
+Trigger 0108_T_BLOCKADE
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BLOCKADE
+		and TargetFactionReligion catholic
+		and not TargetFactionExcommunicated
+
+    FactionStanding factions { papal_states } -0.03
+
+    
+  
+;;;;;;;;;;;;;;;;;;;;
+;; TRANSGRESSIONS ;;
+;;;;;;;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0049_T_Attacking_Crusading_General
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_ATTACKING_CRUSADING_GENERAL
+
+    FactionStanding target_religion normalise -1.0 10
+
+;------------------------------------------
+Trigger 0050_T_Invaded_Fort
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INVADED_FORT
+
+    FactionStanding target_faction normalise -1.0 10
+    FactionStanding target_allies normalise -1.0 80
+
+;------------------------------------------
+Trigger 0051_T_Stole_Back_Settlement
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_STOLE_BACK_SETTLEMENT
+
+    FactionStanding global -1.0
+    FactionStanding target_faction normalise -1.0 2
+    FactionStanding target_allies normalise -1.0 20
+
+;------------------------------------------
+Trigger 0052_T_Invaded_Settlement
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INVADED_SETTLEMENT
+
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0053_T_Invaded_Watchtower
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INVADED_WATCHTOWER
+
+    FactionStanding target_faction normalise -1.0 20
+    FactionStanding target_allies normalise -1.0 80
+
+;------------------------------------------
+Trigger 0055_T_Invasion_Neutral
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INVASION
+        and not DiplomaticStanceFactions = Allied
+
+    FactionStanding target_faction normalise -1.0 50
+
+;------------------------------------------
+Trigger 0055a_T_Invasion
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INVASION
+        and DiplomaticStanceFactions = Allied
+
+    FactionStanding target_faction normalise -1.0 100
+
+;------------------------------------------
+Trigger 0055b_T_Invasion_Flee
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_FLEE_INVASION
+
+    FactionStanding target_faction normalise -1.0 200
+
+;------------------------------------------
+Trigger 0055c_T_Invasion_Crusade
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_CRUSADE_INVASION
+		and FactionReligion catholic
+		and not TargetFactionReligion catholic
+		and not TargetFactionReligion orthodox
+
+    FactionStanding target_faction normalise -1.0 50
+    FactionStanding target_religion normalise -1.0 200
+
+;------------------------------------------
+Trigger 0055d_T_Invasion_Jihad
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_CRUSADE_INVASION
+		and FactionReligion islam
+		and not TargetFactionReligion islam
+
+    FactionStanding target_faction normalise -1.0 50
+    FactionStanding target_religion normalise -1.0 200
+
+;------------------------------------------
+Trigger 0056_T_Nullified_Alliance
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_NULLIFIED_ALLIANCE
+
+    FactionStanding global -0.1
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 20
+    FactionStanding target_enemies normalise 1.0 20
+
+;------------------------------------------
+Trigger 0057_T_Broke_Treaty_terms
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BROKE_TREATY_TERMS
+
+    FactionStanding global -0.15
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+;Trigger 0058_T_Diplomatic_Insult	; fired for every 1000 gold diplomacy proposal under balanced - 1
+;    WhenToTest Transgression
+;
+;    Condition TransgressionName = TC_DIPLOMATIC_INSULT
+;
+;    FactionStanding target_faction -0.07
+
+;------------------------------------------
+Trigger 0059_T_Dishonour
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_DISHONOUR
+
+    FactionStanding target_faction normalise -1.0 10
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0060_T_Declared_War
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_DECLARED_WAR
+
+    FactionStanding target_faction normalise -1.0 4
+    FactionStanding target_allies normalise -1.0 20
+    FactionStanding target_enemies normalise 1.0 20
+
+;------------------------------------------
+Trigger 0061_T_Major_Assassination_Attempt
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_MAJOR_ASSASSINATION_ATTEMPT
+
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0062_T_Minor_Assassination_Attempt
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_MINOR_ASSASSINATION_ATTEMPT
+
+    FactionStanding target_faction normalise -1.0 20
+    FactionStanding target_allies normalise -1.0 80
+
+;------------------------------------------
+Trigger 0063_T_Sabotage
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_SABOTAGE
+
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0064_T_Bribed_Away_Army
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BRIBED_AWAY_ARMY
+
+    FactionStanding target_faction normalise -1.0 10
+
+;------------------------------------------
+Trigger 0065_T_Bribed_Away_Character
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BRIBED_AWAY_CHARACTER
+
+    FactionStanding target_faction normalise -1.0 5
+
+;------------------------------------------
+Trigger 0066_T_Bribed_Away_Settlement
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BRIBED_AWAY_SETTLEMENT
+
+    FactionStanding global -0.15
+    FactionStanding target_faction normalise -1.0 5
+
+;------------------------------------------
+Trigger 0067_T_Bribed_Away_Fort
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BRIBED_AWAY_FORT
+
+    FactionStanding target_faction normalise -1.0 10
+
+;------------------------------------------
+Trigger 0068_T_Battle_Engagement
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BATTLE_ENGAGEMENT
+        and not TargetFactionType slave
+
+    FactionStanding target_faction normalise -1.0 10
+    FactionStanding target_allies normalise -1.0 80
+    FactionStanding target_enemies normalise 1.0 80
+
+;------------------------------------------
+Trigger 0069_T_Instigate_Siege
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INSTIGATE_SIEGE
+
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0070_T_Spying
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_SPYING
+
+    FactionStanding target_faction normalise -1.0 20
+    FactionStanding target_allies normalise -1.0 80
+
+;------------------------------------------
+Trigger 0071_T_Threaten_War
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_THREATEN_WAR
+
+    FactionStanding target_faction normalise -1.0 5
+
+;------------------------------------------
+Trigger 0072_T_Undeclared_Attack
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_UNDECLARED_ATTACK
+
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0072_T_Undeclared_Attack_Withdraw
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_UNDECLARED_ATTACK_WITHDRAW
+
+    FactionStanding target_faction normalise -1.0 10
+    FactionStanding target_allies normalise -1.0 80
+
+;------------------------------------------
+Trigger 0073_T_INSTIGATE_ASSAULT
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_INSTIGATE_ASSAULT
+
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0074_T_BLOCKADE
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BLOCKADE
+
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 40
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DISHONEST TRANSGRESSIONS ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0078b_DT_Break_Alliance_War
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BROKE_ALLIANCE
+        and DiplomaticStanceFactions = AtWar
+
+    FactionStanding global -0.5
+    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_allies normalise -1.0 20
+
+;------------------------------------------
+Trigger 0078c_DT_Break_Alliance_Neutral
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BROKE_ALLIANCE
+        and DiplomaticStanceFactions = Neutral
+
+    FactionStanding global -0.1
+    FactionStanding target_faction normalise -1.0 10
+    FactionStanding target_allies normalise -1.0 40
+
+
+
+
+;;;;;;;;;;;;;;;;;
+;; FORGIVENESS ;;
+;;;;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0079_F_Trade_Agreement
+    WhenToTest FactionTradeAgreementMade
+
+    FactionStanding target_faction 0.07
+    FactionStanding target_allies normalise 1.0 50
+
+;------------------------------------------
+Trigger 0080_F_Military_Assistance
+    WhenToTest Forgiveness
+
+    Condition ForgivenessName = FC_MILITARY_ASSISTANCE
+
+    FactionStanding global 0.1
+    FactionStanding target_faction 0.2
+    FactionStanding target_allies normalise 1.0 20
+
+;------------------------------------------
+Trigger 0081_F_Obvious_Bribe	; fired for every 1000 gold given as gift
+    WhenToTest Forgiveness
+
+    Condition ForgivenessName = FC_OBVIOUS_BRIBE
+
+    FactionStanding target_faction normalise 1.0 50
+
+;------------------------------------------
+;Trigger 0082_F_Update_Attitude
+;    WhenToTest UpdateAttitude
+;
+;    Condition FactionStanding > 0.0
+;
+;    FactionStanding target_faction 0.01
+
+; Forming an alliance increases relationships (papal states already factored in above)
+;------------------------------------------
+Trigger 0082b_F_Alliance_Declared
+    WhenToTest FactionAllianceDeclared
+
+    Condition not TargetFactionType papal_states
+
+    FactionStanding target_faction 0.2
+    FactionStanding target_allies normalise 1.0 50
+
+; Inter faction marriage increases relationships
+;------------------------------------------
+Trigger 0082c_P_Faction_Marriage
+    WhenToTest InterFactionMarriage
+
+    FactionStanding target_faction 0.2
+
+
+
+;;;;;;;;;;;;;;;
+;; DEMEANOUR ;;
+;;;;;;;;;;;;;;;
+
+;------------------------------------------
+Trigger 0083_Demeanour
+    WhenToTest Demeanour
+
+    FactionStanding target_faction amount 1.0 0.005
+    FactionStanding target_allies amount 1.0 0.001
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; AI Relationships ;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+
+; Make allied factions like us a bit more
+;------------------------------------------
+Trigger 0083b_Update_Allies
+    WhenToTest FactionTurnStart
+
+    FactionStanding allies normalise 1.0 20
+
+
+; Make enemy factions like us a bit less
+;------------------------------------------
+Trigger 0084b_Update_Enemies
+    WhenToTest FactionTurnStart
+
+    Condition not FactionType slave
+
+    FactionStanding enemies normalise -1.0 20
+
+
+; Make allies of our allies like us a bit more
+;------------------------------------------
+Trigger 0083c_Update_Allies_Allies
+    WhenToTest UpdateAttitude
+
+    Condition DiplomaticStanceFactions = Allied
+
+    FactionStanding target_allies normalise 1.0 100
+
+
+; Make enemies of our allies like us a bit less
+;------------------------------------------
+Trigger 0084c_Update_Allies_Enemies
+    WhenToTest UpdateAttitude
+
+    Condition DiplomaticStanceFactions = Allied
+
+    FactionStanding target_enemies normalise -1.0 100
+
+
+; Make allies of our enemies like us a bit less
+;------------------------------------------
+Trigger 0083d_Update_Enemies_Allies
+    WhenToTest UpdateAttitude
+
+    Condition DiplomaticStanceFactions = AtWar
+
+    FactionStanding target_allies normalise -1.0 100
+
+
+; Make enemies of our enemies like us a bit more
+;------------------------------------------
+Trigger 0084d_Update_Enemies_Enemies
+    WhenToTest UpdateAttitude
+
+    Condition DiplomaticStanceFactions = AtWar
+          and not TargetFactionType slave
+
+    FactionStanding target_enemies normalise 1.0 100
+
+
+; Make other Catholic factions like the pope a bit more
+;------------------------------------------
+Trigger 0084_Update_Papal
+    WhenToTest FactionTurnStart
+
+    Condition FactionType Papal_States
+
+    FactionStanding own_religion normalise 1.0 50
+
+
+; Make other factions like factions of the same religion a bit more
+;------------------------------------------
+Trigger 0085_Update_Religion
+    WhenToTest FactionTurnStart
+
+    FactionStanding own_religion normalise 1.0 100
+
+
+; Make factions get a case of the 'tall poppy' syndrome.  get narky about the larger factions
+;------------------------------------------
+Trigger 0086_Update_Tall_Poppy1
+    WhenToTest FactionTurnStart
+
+    Condition FactionHasRank
+        and FactionScorePercent overall > 90
+        and FactionScoreRank overall <= 1
+
+    FactionStanding exclude_factions { } normalise -1.0 90
+
+;------------------------------------------
+Trigger 0087_Update_Tall_Poppy2
+    WhenToTest FactionTurnStart
+
+    Condition FactionHasRank
+        and FactionScorePercent overall > 80
+        and FactionScoreRank overall <= 3
+
+    FactionStanding exclude_factions { } normalise -1.0 135
+
+;------------------------------------------
+Trigger 0088_Update_Tall_Poppy3
+    WhenToTest FactionTurnStart
+
+    Condition FactionHasRank
+        and FactionScorePercent overall > 70
+        and FactionScoreRank overall <= 5
+
+    FactionStanding exclude_factions { } normalise -1.0 180
+
+
+; Make factions try and band up with smaller factions
+;------------------------------------------
+Trigger 0089_Update_Band_Together1
+    WhenToTest FactionTurnStart
+
+    Condition FactionHasRank
+        and FactionScorePercent overall < 30
+        and FactionScoreRank overall > 3
+
+    FactionStanding exclude_factions { } normalise 1.0 60
+
+;------------------------------------------
+Trigger 0090_Update_Band_Together2
+    WhenToTest FactionTurnStart
+
+    Condition FactionHasRank
+        and FactionScorePercent overall < 20
+        and FactionScoreRank overall > 4
+
+    FactionStanding exclude_factions { } normalise 1.0 45
+
+;------------------------------------------
+Trigger 0091_Update_BandTogether3
+    WhenToTest FactionTurnStart
+
+    Condition FactionHasRank
+        and FactionScorePercent overall < 10
+        and FactionScoreRank overall > 5
+
+    FactionStanding exclude_factions { } normalise 1.0 30
+
+
+; Adjust the AI relationships towards each faction based on difficulty level (AI factions have normal difficulty)
+;------------------------------------------
+Trigger 0092_Update_Easy_Difficulty
+    WhenToTest FactionTurnStart
+
+    Condition CampaignDifficulty = easy
+
+    FactionStanding exclude_factions { } normalise 1.0 50
+
+;------------------------------------------
+Trigger 0093_Update_Normal_Difficulty
+    WhenToTest FactionTurnStart
+
+    Condition CampaignDifficulty = medium
+
+    FactionStanding exclude_factions { } normalise 0.0 50
+
+;------------------------------------------
+Trigger 0094_Update_Hard_Difficulty
+    WhenToTest FactionTurnStart
+
+    Condition CampaignDifficulty = hard
+
+    FactionStanding exclude_factions { } normalise -0.5 50
+
+;------------------------------------------
+Trigger 0095_Update_Very_Hard_Difficulty
+    WhenToTest FactionTurnStart
+
+    Condition CampaignDifficulty = very_hard
+
+    FactionStanding exclude_factions { } normalise -1.0 40
+
+;------------------------------------------
+Trigger 0096_Increase_Global_Standing_New_Turn
+    WhenToTest FactionTurnStart
+
+    FactionStanding global normalise 0.0 200
+
+;------------------------------------------
+Trigger 0097_Increase_Global_Standing_When_Allied
+    WhenToTest UpdateAttitude
+
+    Condition DiplomaticStanceFactions = Allied
+
+    FactionStanding global normalise 1.0 400
+
+;------------------------------------------
+Trigger 0098_Decrease_Global_Standing_When_War
+    WhenToTest UpdateAttitude
+
+    Condition DiplomaticStanceFactions = AtWar
+        and not TargetFactionType slave
+
+    FactionStanding global normalise -1.0 800
+
+
+
+;------------------------------------------
+Trigger 0099_prisoners_released_increase_global
+    WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+    Condition RansomType release
+          and NumCapturedSoldiers > 80
+
+    FactionStanding global 0.025
+    FactionStanding target_faction normalise 1.0 20
+    FactionStanding target_allies normalise 1.0 40
+
+;------------------------------------------
+Trigger 0100_prisoners_executed_decrease_global
+    WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+    Condition RansomType execute
+          and NumCapturedSoldiers > 80
+
+    FactionStanding global -0.025
+    FactionStanding target_faction normalise -1.0 20
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0099b_prisoners_released_increase_global
+    WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+    Condition RansomType release
+
+    FactionStanding global 0.01
+    FactionStanding target_faction normalise 1.0 80
+    FactionStanding target_allies normalise 1.0 160
+
+;------------------------------------------
+Trigger 0100b_prisoners_executed_decrease_global
+    WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+    Condition RansomType execute
+
+    FactionStanding global -0.01
+    FactionStanding target_faction normalise -1.0 80
+    FactionStanding target_allies normalise -1.0 160
+
+;------------------------------------------
+Trigger 0099c_characters_released_increase_global
+    WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+    Condition RansomType release
+          and NumCapturedCharacters > 0
+
+    FactionStanding global 0.025
+    FactionStanding target_faction normalise 1.0 20
+    FactionStanding target_allies normalise 1.0 40
+
+;------------------------------------------
+Trigger 0100c_characters_executed_decrease_global
+    WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+    Condition RansomType execute
+          and NumCapturedCharacters > 0
+
+    FactionStanding global -0.025
+    FactionStanding target_faction normalise -1.0 20
+    FactionStanding target_allies normalise -1.0 40
+
+;------------------------------------------
+Trigger 0101_sack_settlement_decrease_global
+    WhenToTest SackSettlement
+
+    FactionStanding global -0.02
+    FactionStanding target_faction normalise -1.0 20
+    FactionStanding target_allies normalise -1.0 40
+;    FactionStanding target_enemies normalise 1.0 40
+
+;------------------------------------------
+Trigger 0102_extermination_decrease_global
+    WhenToTest ExterminatePopulation
+
+    FactionStanding global -0.05
+    FactionStanding target_faction normalise -1.0 10
+    FactionStanding target_allies normalise -1.0 20
+;    FactionStanding target_enemies normalise 1.0 20
+
+;------------------------------------------
+Trigger 0103_occupy_settlement_increase_global
+    WhenToTest OccupySettlement
+
+    FactionStanding global 0.05
+    FactionStanding target_faction normalise 1.0 20
+    FactionStanding target_allies normalise 1.0 40
+;    FactionStanding target_enemies normalise -1.0 40
+
+;------------------------------------------
+;Trigger 0102_city_razed_decrease_global
+;    WhenToTest CitySacked
+;
+;    FactionStanding global -0.05
+;    FactionStanding target_faction normalise -1.0 10
+;    FactionStanding target_allies normalise -1.0 20
+;    FactionStanding target_enemies normalise 1.0 20
+;
+; make all other factions hate the rebels
+;------------------------------------------
+Trigger 0103_Update_Slaves
+    WhenToTest FactionTurnStart
+
+    Condition FactionType slave
+
+    FactionStanding exclude_factions { } normalise -1.0 1
+
+; make slaves hate all other factions
+;------------------------------------------
+;Trigger 0104_Update_Slaves_Reverse
+;    WhenToTest UpdateAttitude
+;
+;    Condition Not FactionType slave
+;	and TargetFactionType slave
+;
+;    FactionStanding target_faction normalise -1.0 1
+
+; make factions like trustworthy factions more
+;---------------------------------------------
+Trigger 0105_Update_Trustworthy_Factions_Major
+    WhenToTest FactionTurnStart
+
+    Condition GlobalStanding > 0.4
+
+    FactionStanding exclude_factions { } normalise 1.0 50
+
+Trigger 0106_Update_Trustworthy_Factions_Minor
+    WhenToTest FactionTurnStart
+
+    Condition GlobalStanding > 0.1
+
+    FactionStanding exclude_factions { } normalise 1.0 100
+
+; make factions like untrustworthy factions less
+;---------------------------------------------
+Trigger 0107_Update_Untrustworthy_Factions_Major
+    WhenToTest FactionTurnStart
+
+    Condition GlobalStanding < -0.4
+
+    FactionStanding exclude_factions { } normalise -1.0 50
+
+Trigger 0108_Update_Untrustworthy_Factions_Minor
+    WhenToTest FactionTurnStart
+
+    Condition GlobalStanding < 0.1
+
+    FactionStanding exclude_factions { } normalise -1.0 100
+
+; make existing inter faction marriages improve relationships
+;---------------------------------------------
+Trigger 0109_Update_Marriages
+    WhenToTest UpdateAttitude
+
+    Condition NumFactionMarriages > 0
+
+    FactionStanding target_faction normalise 1.0 20
