@@ -1,0 +1,1786 @@
+<?xml version="1.0"?>
+<root>
+	<!--
+
+		// The trusted ally global parameters specify the minimum faction standing thresholds for a target faction to be 
+		// considered a trusted ally.  We can use target faction standing parameters directly in invasion/defend decisions
+		// but the trusted ally data allows us to use additional entry parameters: trusted_ally_enemy and trusted_ally_protectorate
+		// that we cannot measure directly for a target faction.  An AI faction may also try and aid its trusted allies (hence the 
+		// reverse checks on standings to avoid helping allies it shouldn't)
+
+		<trusted_ally_fs_threshold float="0.5"/>                // min threshold for how much we like the target faction to consider them a trusted ally
+		<trusted_ally_target_fs_threshold float="0.5"/>         // min threshold for how much the target faction likes us to consider them a trusted ally
+		<trusted_ally_target_human_fs_threshold float="0.0"/>   // min threshold for how much the target (human) faction likes us to consider them a trusted ally
+		<trusted_ally_gs_threshold float="-1.0"/>               // min threshold for how trustworthy we are to consider the target faction a trusted ally
+		<trusted_ally_target_gs_threshold float="-0.1"/>        // min threshold for how trustworthy is the target faction to consider them a trusted ally
+		<trusted_ally_enemy_auto_war bool="false"/>        	// flag to indicate if a faction automatically goes to war with a trusted allies enemy
+
+		<use_cheat_overrides bool="true"/>                      // determines if cheat overrides (force peace with ai, force attack with humans) are applied
+		<invade_priority_fs_modifier float="-400.0"/>           // modifies the final invade priority for new faction targets by += (faction_standing * modifier) {makes factions more likely to start war with disliked targets}
+		<invade_priority_gs_modifier float="0.0f"/>             // modifies the final invade priority for new faction targets by += (global_standing * modifier) {makes factions more likely to start war with untrustworthy targets}
+		<invade_priority_assistance_offset int="200"/>          // modifies the final invade priority for new faction targets where military assistance has been asked by += (offset) {makes factions more likely to start war with military assistance targets}
+		<invade_priority_min int="50"/>                         // min clamp for final invade priorities calculated
+		<invade_priority_max int="1000"/>                       // max clamp for final invade priorities calculated
+
+
+		// Each faction has an 'ai_label' specified in the campaign descr_strat.txt.  This ai_label must correspond to a 'faction_ai_label' 
+		// entry specified in this database (e.g. 'default', 'catholic', 'papal_states').  The 'default' ai_label should always exist 
+		// and is used if a specified ai_label cannot be found.  Note that each ai_label is independent (i.e. 'catholic' ai_label does
+		// not inherit any data from 'default') hence care should be taken when adding new entries to ensure that any relevant global
+		// entries are added to all other ai_labels.  Additionally, the ai_labels can be tested through event conditions and set through
+		// a script command, potentially allowing ai behaviour to be changed dynamically in game depending on current game state.
+
+		<faction_ai_label name="default">	:: The label for a following set of campaign ai faction parameters
+		
+
+		// The ai_labels specify the structure of the long term goal director (LTGD) which drives the high level campaign AI.
+		// At the start of every factions turn (or when diplomacy changes), the LTGD is re-evaluated as follows:
+			// for every target faction (all other factions), evaluate the defend decisions
+			// for every target faction, evaluate the invasion decisions
+			// any invasion priorities are modified by the faction standing (relationship) towards the target
+			// depending on current game state, a new target with a high invasion priority may be selected to invade
+		// the LTGD can be debugged with the preferences '[log] level = ai.ltgd trace' and '[ai] ltgd_logging = true.
+
+			
+		// The 'defend_decisions' entry specifies a list of decision entries related to ai defence strategies.  To evaluate a defence
+		// strategy, a set of parameters is built and the list of decision entries is iterated until an entry satisfies the min and max
+		// conditions for the set of parameters.  As soon as an entry is satisfied (min <= current <= max), the iteration ends.  The decision
+		// is taken from the default 'faction_attitude' parameters with certain parameters overridden.  The 'min_entry' specifies the minimum
+		// thresholds specified for evaluation and the 'max_entry' specifies the maximum.  Note that care should be taken when entering new 
+		// entries since as soon as the thresholds for an entry are successfully met, the iteration ends.  An exception to this is the use of
+		// the 'continue' faction_attitude parameter, which allows the decision iteration to continue (This is useful for changing certain
+		// parameters of the faction_attitude but allowing the process to continue so other entries can apply additional modifications).
+
+		<defend_decisions>				:: List of ai defend decisions. when choosing a decision, code will iterate from first to last until a set of thresholds succeeds
+		
+			<decision_entry>				:: An individual decision entry
+			
+				<min_entry											:: The minimum threshold for decision comparison
+							frontline_balance="0.0"					:: ratio of factions frontline military strength vs the target
+							military_balance="0.0"					:: ratio of factions overall military strength vs the target
+							production_balance="0.0"				:: ratio of factions overall production strength vs the target
+							target_num_enemies="0"					:: the number of enemies the target has
+							num_enemies="0"							:: the number of enemies the faction has
+							has_alliance_against="false"			:: is the faction part of an alliance against target
+							military_balance_plus_enemies="0.0"		:: ratio of factions overall military strength vs the target (plus all of its enemies)
+							alliance_military_balance="0.0"			:: ratio of factions (plus its allies) overall military strength vs the target
+							strongest_neighbour="false"				:: is the target the factions strongest neighbour
+							most_desirable="false"					:: is the target the factions most desirable target
+							faction_standing="-1.0"					:: how much does the faction like the target
+							target_global_standing="-1.0"			:: how trustworthy is the target to the rest of the world
+							target_faction_standing="-1.0"			:: how much does the target faction like this faction
+							global_standing="-1.0"					:: how trustworthy is this faction to the rest of the world
+							target_religion="catholic"				:: the religion of the target (see descr_religions.txt)
+							enemy_excommunicated="false"			:: is the target excommunicated
+							excommunicated="false"			:: is this faction excommunicated
+							num_turns_allied="0"					:: the number of turns since the faction agreed to an alliance with the target
+							num_turns_ceasfire="0"					:: the number of turns since the faction has agreed to a ceasefire with the target (-1 for no agreement)
+							stance="Allied"							:: diplomatic stance with the target (Allied, Neutral, AtWar)
+							target_faction="england"				:: target faction label (see descr_sm_factions.txt)
+							target_human="false"					:: is the target a human player
+							target_is_shadow="false"				:: is the target this factions shadow faction
+							turn_number="0"							:: the game turn number (starting at 0)
+							is_protectorate="false"					:: is the target our protectorate
+							is_protectorate_of_catholic="false"		:: is the target a protectorate of a non-excommunicated catholic faction
+							free_strength_balance="0.0"				:: ratio of factions free military strength vs the target
+							borders_all_our_regions="false"			:: does the target border on all the factions region groups
+							target_weakest_neighbour="false"		:: is the faction the targets weakest neighbour
+							has_ceasehostilities="false"			:: does the faction have a cease hostilities mission against the target from the papal faction
+							is_neighbour="false"					:: does the target neighbour on any of the factions regions
+							trusted_ally="false"					:: is the target a trusted ally (they like us more than fs_thresh, and their global standing > gs_thresh, and they are allied)
+							trusted_ally_enemy="false"				:: is the target an enemy of a trusted ally
+							trusted_ally_protectorate="false"		:: is the target a protectorate of a trusted ally
+							num_settlements="0"						:: how many settlements does the faction own
+							rand="0.0"					:: a random value
+							difficulty="easy"/>			:: the chosen difficulty for the current local player (easy, medium, hard, very_hard)
+							
+				<max_entry											:: The maximum threshold for decision comparison
+							frontline_balance="999.0"
+							military_balance="999.0"
+							production_balance="999.0"
+							target_num_enemies="999"
+							num_enemies="999"
+							has_alliance_against="true"
+							military_balance_plus_enemies="999.0"
+							alliance_military_balance="999.0"
+							strongest_neighbour="true"
+							most_desirable="true"
+							faction_standing="1.0"
+							target_global_standing="1.0"
+							target_faction_standing="1.0"
+							global_standing="1.0"
+							target_religion="heretic"
+							enemy_excommunicated="true"
+							excommunicated="true"
+							num_turns_allied="999"
+							num_turns_ceasfire="999"
+							stance="AtWar"
+							target_faction="slave"
+							target_human="true"
+							target_is_shadow="true"
+							is_protectorate="true"
+							is_protectorate_of_catholic="true"
+							free_strength_balance="999.0"
+							borders_all_our_regions="true"
+							target_weakest_neighbour="true"
+							has_ceasehostilities="true"
+							is_neighbour="true"
+							trusted_ally="true"
+							trusted_ally_enemy="true"
+							trusted_ally_protectorate="true"
+							num_settlements="999"
+							rand="1.0"
+							difficulty="very_hard"/>
+							
+				<faction_attitude									:: A list of modifiers to apply if min and max entries above are successful
+									defense="defend_normal"			:: The long term defense type (defend_minimal, defend_normal, defend_raid, defend_frontline, defend_fortified, defend_deep)
+									defend_priority="0"				:: The defensive priority of achieving stance against this faction (NOT USED AT PRESENT) (additive with previous decisions this turn)
+									invade="invade_none"			:: The long term invade type (invade_buildup, invade_immediate, invade_raids, invade_opportunistic, invade_start, invade_none)
+									invade_priority="0"				:: priority of achieving invasion against this faction (additive with previous decisions this turn). Compared with priority for decisions against all other factions to choose highest.  Value modified internally by faction standing.
+									at_war="false"					:: are we at war with this enemy
+									want_peace="false"				:: do we want to be at peace with this faction
+									want_ally="false"				:: do we want to ally with this faction
+									want_be_protect="false"			:: do we want to be a protectorate of this faction
+									want_offer_protect="false"		:: do we want to offer protectorate status to this nation
+									force_invade="false"			:: must we invade now
+									alliance_against="0"			:: how much do we want to have an alliance against this nation (additive with previous decisions this turn)
+									pts_desire="0"					:: points total for measuring our desire for this faction's territory (additive with previous decisions this turn)
+									pts_alliance="0"				:: points total for measuring how much we want to be allies with these people (additive with previous decisions this turn)
+									can_force_invade="true"			:: can naval or forced invasion settings overwrite invade parameters
+									continue="false"/>				:: do we stop evaluating decision entries (false) or continue
+
+			</decision_entry>
+			
+		</defend_decisions>
+			
+	
+		// The 'invasion_decisions' entry specifies a list of invasion entries related to ai invasion strategies.  This process
+		// is virtually identical to the defence decision process but is evaluated as a separate stage.  
+
+		<invasion_decisions>				:: List of ai invasion decisions. when choosing a decision, code will iterate from first to last until a set of thresholds succeeds (uses identical data to defend decisions)
+
+			<decision_entry>				:: An individual decision entry
+				<min_entry/>											:: The minimum threshold for decision comparison
+				<max_entry/>											:: The maximum threshold for decision comparison
+				<faction_attitude/>									:: A list of modifiers to apply if min and max entries above are successful
+			</decision_entry>
+
+		</invasion_decisions>
+
+    -->
+    
+    
+	<!--
+	//////////////////////
+	// GLOBAL AI PARAMS //
+	//////////////////////
+	-->
+
+	<trusted_ally_fs_threshold float="0.5"/>
+	<trusted_ally_target_fs_threshold float="0.5"/>
+	<trusted_ally_target_human_fs_threshold float="0.0"/>
+	<trusted_ally_gs_threshold float="-0.1"/>
+	<trusted_ally_target_gs_threshold float="-0.1"/>
+	<trusted_ally_enemy_auto_war bool="false"/>
+	
+	<use_cheat_overrides bool="true"/>
+	<invade_priority_fs_modifier float="-400.0"/>
+	<invade_priority_gs_modifier float="-200.0f"/>
+	<invade_priority_assistance_offset int="200"/>
+	<invade_priority_min int="50"/>
+	<invade_priority_max int="1500"/>
+	
+	<!--
+	///////////////////////////////////////
+	// DEFAULT AI PARAMS.  DO NOT REMOVE //
+	///////////////////////////////////////
+	-->
+
+	<faction_ai_label name="default">
+	
+		<defend_decisions>
+		
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR FORCING want_peace WITH A FACTION UNDER CERTAIN CONDITIONS.  CONTINUES CHECKS FOR SUBSEQUENT DECISIONS
+			</decision_entry>
+			-->
+		
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	at_war="true" defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we have any settlements, and we are at the very start of the game, and target is not human (cannot trust humans) >>> minimal defense
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	stance="Neutral" turn_number="10" target_human="false"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, and we are at the start of the game >>> minimal defense
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	stance="Neutral" is_neighbour="false" turn_number="30"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, and we are at war, and they are not a trusted allies enemy, use defaults + want peace
+				-->
+				<min_entry	num_settlements="1" stance="AtWar" />
+				<max_entry	is_neighbour="false" trusted_ally_enemy="false"/>
+				<faction_attitude	want_peace="true"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, use defaults
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	is_neighbour="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && he borders all our groups && his frontline strength is more than thrice as large as ours &&
+					his free strength is more than four times as large as ours, AND IS NOT OUR SHADOW FACTION >>> propose become protectorate
+				-->
+				<min_entry	stance="AtWar" borders_all_our_regions="true"/>
+				<max_entry	frontline_balance="0.3" free_strength_balance="0.3" production_balance="0.5" target_is_shadow="false"/>
+				<faction_attitude	defense="defend_deep" want_peace="true" want_be_protect="true" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && he borders all our groups && his frontline strength is more than twice as large as ours &&
+					his free strength is greater than twice ours, && IS NOT OUR SHADOW FACTION >>> deep defense, sue for peace
+				-->
+				<min_entry	stance="AtWar" borders_all_our_regions="true"/>
+				<max_entry	frontline_balance="0.5" free_strength_balance="0.5" target_is_shadow="false"/>
+				<faction_attitude	defense="defend_deep" want_peace="true" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && he borders all our groups && his frontline strength is more than twice as large as ours &&
+					his free strength is greater than twice ours >>> deep defense, sue for peace
+				-->
+				<min_entry	stance="AtWar" borders_all_our_regions="true"/>
+				<max_entry	frontline_balance="0.5" free_strength_balance="0.5"/>
+				<faction_attitude	defense="defend_deep" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && his frontline strength is more than twice ours && our free strength is greater than his
+					then >>> deep defense
+				-->
+				<min_entry	stance="AtWar" free_strength_balance="1.0"/>
+				<max_entry	frontline_balance="0.5"/>
+				<faction_attitude	defense="defend_deep" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && his frontline strength is less than ours && his free strength is greater than ours,
+					then >>> conduct raids
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0" production_balance="1.0"/>
+				<max_entry	free_strength_balance="0.7"/>
+				<faction_attitude	defense="defend_raid" alliance_against="4"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war, and none of the previous rules apply,
+					then >>> frontline defense
+				-->
+				<min_entry	stance="AtWar"/>
+				<faction_attitude	defense="defend_frontline"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && his frontline strength is more than twice ours && our free strength is greater than his,
+					then >>> deep defense
+				-->
+				<min_entry	free_strength_balance="1.0"/>
+				<max_entry	frontline_balance="0.5"/>
+				<faction_attitude	defense="defend_deep"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && his frontline strength is more than twice ours && our free strength is less than his,
+					then >>> fortified defense
+				-->
+				<max_entry	frontline_balance="0.5" free_strength_balance="1.0"/>
+				<faction_attitude	defense="defend_fortified"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are not his weakest neighbour && we are allied to him,
+					then >>> minimal defense
+				-->
+				<max_entry	target_weakest_neighbour="false" stance="Allied"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are his weakest neighbour && he is not at war elsewhere && we are not at war elsewhere,
+					then >>> frontline defense
+				-->
+				<min_entry	target_weakest_neighbour="true"/>
+				<max_entry	target_num_enemies="0" num_enemies="0"/>
+				<faction_attitude	defense="defend_frontline"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are not his weakest neighbour && he is not at war elsewhere,
+					then >>> normal defense
+				-->
+				<max_entry	target_num_enemies="0" num_enemies="0"/>
+				<faction_attitude	defense="defend_normal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					DEFAULT: defend minimal
+				-->
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+		</defend_decisions>
+
+
+		<invasion_decisions>
+
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR 'CAN_ATTACK_FACTION', NO INVASION IF SO
+			</decision_entry>
+			-->
+		
+
+			<!--
+			DIPLOMATIC AGREEMENT AND FACTION STANDING ANALYSIS COMES FIRST (allows early out if conditions met)
+			-->
+		
+
+			<decision_entry>
+				<!--
+					If trusted ally, there is a 90% chance to use defaults (no invasion), cannot force invade.  allows even trusted allies to occasionally backstab
+				-->
+				<min_entry	trusted_ally="true"/>
+				<max_entry	rand="0.9"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					If we are allied, are somewhat trustworthy and have only been allied for a medium duration, no invasion set up, cannot force invade
+				-->
+				<min_entry	global_standing="0.25"/>
+				<max_entry	num_turns_allied="10" stance="Allied"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					If we are allied and have only been allied for a short duration, no invasion set up, cannot force invade
+				-->
+				<max_entry	num_turns_allied="3" stance="Allied"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we have agreed to a ceasefire only a medium time ago and are somewhat trustworthy, no invasion set up, cannot force invade
+				-->
+				<min_entry	num_turns_ceasfire="0" stance="Neutral" global_standing="0.25"/>
+				<max_entry	num_turns_ceasfire="10" stance="Neutral"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we have agreed to a ceasefire only a short time ago, no invasion set up, cannot force invade
+				-->
+				<min_entry	num_turns_ceasfire="0" stance="Neutral"/>
+				<max_entry	num_turns_ceasfire="3" stance="Neutral"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are allied and we are very trustworthy, there is a 80% chance to use defaults (no invasion), cannot force invade, (we are a trustworthy ally)
+				-->
+				<min_entry	global_standing="0.5"/>
+				<max_entry	stance="Allied" rand="0.8"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are allied, we like them a lot and we are not untrustworthy, there is a 80% chance to use defaults (no invasion), cannot force invade, (we are a friendly ally)
+				-->
+				<min_entry	faction_standing="0.5" global_standing="-0.1"/>
+				<max_entry	stance="Allied" rand="0.8"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are allied, we like them a bit and we are not very untrustworthy, there is a 65% chance to use defaults (no invasion), cannot force invade, (we are a friendly ally)
+				-->
+				<min_entry	faction_standing="0.25" global_standing="-0.25"/>
+				<max_entry	stance="Allied" rand="0.65"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are allied, we don't mind them and we are not very untrustworthy, there is a 50% chance to use defaults (no invasion), (we are a partially friendly ally)
+				-->
+				<min_entry	faction_standing="0.0" global_standing="-0.25"/>
+				<max_entry	stance="Allied" rand="0.5"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are neutral and we like them, there is a 75% chance to use defaults (no invasion), (we are a friendly neutral)
+				-->
+				<min_entry	faction_standing="0.5" stance="Neutral"/>
+				<max_entry	stance="Neutral" rand="0.75"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are neutral and we like them a bit, there is a 50% chance to use defaults (no invasion), (we are a friendly neutral)
+				-->
+				<min_entry	faction_standing="0.25" stance="Neutral"/>
+				<max_entry	stance="Neutral" rand="0.5"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are neutral and we don't hate them, there is a 25% chance to use defaults (no invasion), (we are a partially friendly neutral)
+				-->
+				<min_entry	faction_standing="0.0" stance="Neutral"/>
+				<max_entry	stance="Neutral" rand="0.25"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If they are our protectorate, use defaults
+				-->
+				<min_entry	is_protectorate="true"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					If they are a protectorate of a trusted ally, use defaults
+				-->
+				<min_entry	trusted_ally_protectorate="true"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					Not interested in factions that are not our neighbour, use defaults, may be overridden by forced/naval attacks
+				-->
+				<max_entry	is_neighbour="false"/>
+			</decision_entry>
+				
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	turn_number="30" target_faction="slave"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="1200"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+					if we've more than twice his frontline strength, then >>> invade immediate
+				-->
+				<min_entry	target_faction="slave" frontline_balance="2.0"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="850"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+					if we're superior on the frontline,	then >>> invade buildup
+				-->
+				<min_entry	target_faction="slave" frontline_balance="1.0"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="850"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="850"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					if we're not at war and it is very early in the game, do not invade (grabbing rebel regions instead)
+				-->
+				<max_entry	stance="Neutral" turn_number="10"/>
+			</decision_entry>
+		
+
+			<!--
+			AT WAR TARGET FACTIONS ANALYSED SECOND
+			-->
+		
+
+			<decision_entry>
+				<!--
+					if we're at war && we've more than five times his frontline strength && we're superior overall &&
+					we outproduce him, && IS NOT OUR SHADOW FACTION >>> propose he become vassal, invade immediate.  If not our shadow, also want to offer protectorate
+				-->
+					<min_entry	stance="AtWar" frontline_balance="5.0" military_balance="1.0" production_balance="1.0"/>
+				<max_entry	target_is_shadow="false"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="800" want_offer_protect="true"/>
+			</decision_entry>
+			
+			<decision_entry>
+				<!--
+					if we're at war && we've more than five times his frontline strength && we're superior overall &&
+					we outproduce him >>> propose he become vassal, invade immediate.  If our shadow, do not want to offer protectorate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="5.0" military_balance="1.0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="800" want_offer_protect="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we've more than twice his frontline strength && he outproduces us && he is 
+					at war with more than one faction, then >>> invade immediate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="2.0" target_num_enemies="2"/>
+				<max_entry	production_balance="1.0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="750"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we've more than twice his frontline strength && we outproduce him && alliance
+					against this faction, then >>> invade immediate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="2.0" production_balance="1.0" has_alliance_against="true"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="700"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we're superior on the frontline && we outproduce him,
+					then >>> invade buildup
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="650"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we're superior on the frontline && he outproduces us,
+					then >>> invade raids
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0"/>
+				<max_entry	production_balance="1.0"/>
+				<faction_attitude	invade="invade_raids" invade_priority="600" alliance_against="10"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war,
+					then >>> invade opportunistic
+				-->
+				<min_entry	stance="AtWar"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="550" alliance_against="8"/>
+			</decision_entry>
+		
+
+			<!--
+			NEUTRAL AND ALLIED TARGET FACTIONS ANALYSED LAST
+			-->
+		
+
+			<decision_entry>
+				<!--
+					if we're not at war with anyone else && our frontline strength is more than
+					thrice his && overall superior >>> invade immediate
+				-->
+				<min_entry	frontline_balance="3.0" military_balance="1.0"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="500"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are at war with someone else && our frontline strength is more than 
+					thrice his && we're 2:1 superior overall against these factions >>> invade immediate
+				-->
+				<min_entry	num_enemies="1" frontline_balance="3.0" military_balance_plus_enemies="2.0"/>
+				<max_entry	num_enemies="1"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="450"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than 
+					twice his && alliance against this faction && alliance is overall superior >>> invade immediate
+				-->
+				<min_entry	frontline_balance="2.0" has_alliance_against="true" alliance_military_balance="1.0"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="400"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than
+					1.5 times his && we outproduce him >>> invade buildup
+				-->
+				<min_entry	frontline_balance="1.5" production_balance="1.5"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="350" alliance_against="2"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && frontline superiority && alliance against 
+					this faction && alliance is superior overall && he is strongest neighbour >>> invade opportunistic
+				-->
+				<min_entry	frontline_balance="1.5" has_alliance_against="true" alliance_military_balance="1.0" strongest_neighbour="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="300"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than
+					twice his && he outproduces us && he is our strongest neighbour >>> invade raids
+				-->
+				<min_entry	frontline_balance="2.0" strongest_neighbour="true" target_num_enemies="2"/>
+				<max_entry	num_enemies="0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_raids" invade_priority="250" alliance_against="6"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && we outproduce him && he is our strongest
+					neighbour, then >>> plan future invasion
+				-->
+				<min_entry	production_balance="1.0" strongest_neighbour="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_start" invade_priority="200" alliance_against="1"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && we outproduce him && he is most desireable, 
+					then >>> plan future invasion
+				-->
+				<min_entry	production_balance="1.0" most_desirable="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_start" invade_priority="150" alliance_against="1"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					DEFAULT: invade_none
+				-->
+			</decision_entry>
+			
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR FORCING ATTACK ON HUMAN IF AT PEACE WITH EVERYONE FOR TOO LONG (hard = 4 turns, normal = 10 turns, easy = 20 turns)
+			</decision_entry>
+			-->
+			
+		</invasion_decisions>
+		
+		
+	</faction_ai_label>
+	
+
+	<!--
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// PAPAL FACTION AI PARAMS.  REQUIRES SPECIAL STUFF TO NOT ALLOW ATTACKING NON-EXCOMMUNICATED CATHOLIC FACTIONS //
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	-->
+
+	<faction_ai_label name="papal_faction">
+	
+		<defend_decisions>
+		
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR FORCING want_peace WITH A FACTION UNDER CERTAIN CONDITIONS.  CONTINUES CHECKS FOR SUBSEQUENT DECISIONS
+			</decision_entry>
+			-->
+		
+			<decision_entry>
+				<!--
+					if we have any settlements, and we are at the very start of the game, and target is not human (cannot trust humans) >>> minimal defense
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	stance="Neutral" turn_number="10" target_human="false"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, and we are at the start of the game >>> minimal defense
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	stance="Neutral" is_neighbour="false" turn_number="30"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if target is non-excommunicated catholic faction, and they don't mind us much, and they are not obviously untrustworthy, minimal defense required
+				-->
+				<min_entry	target_religion="catholic" target_faction_standing="-0.1" target_global_standing="-0.1"/>
+				<max_entry	stance="Neutral" target_religion="catholic" enemy_excommunicated="false"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	at_war="true" defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, and we are at war, and they are not a trusted allies enemy, use defaults + want peace
+				-->
+				<min_entry	num_settlements="1" stance="AtWar" />
+				<max_entry	is_neighbour="false" trusted_ally_enemy="false"/>
+				<faction_attitude	want_peace="true"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, use defaults
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	is_neighbour="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && he borders all our groups && his frontline strength is more than twice as large as ours &&
+					his free strength is greater than twice ours, && IS NOT OUR SHADOW FACTION >>> deep defense, sue for peace
+				-->
+				<min_entry	stance="AtWar" borders_all_our_regions="true"/>
+				<max_entry	frontline_balance="0.5" free_strength_balance="0.5" target_is_shadow="false"/>
+				<faction_attitude	defense="defend_deep" want_peace="true" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && he borders all our groups && his frontline strength is more than twice as large as ours &&
+					his free strength is greater than twice ours >>> deep defense, sue for peace
+				-->
+				<min_entry	stance="AtWar" borders_all_our_regions="true"/>
+				<max_entry	frontline_balance="0.5" free_strength_balance="0.5"/>
+				<faction_attitude	defense="defend_deep" want_peace="false" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && his frontline strength is more than twice ours && our free strength is greater than his
+					then >>> deep defense
+				-->
+				<min_entry	stance="AtWar" free_strength_balance="1.0"/>
+				<max_entry	frontline_balance="0.5"/>
+				<faction_attitude	defense="defend_deep" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && his frontline strength is less than ours && his free strength is greater than ours,
+					then >>> conduct raids
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0" production_balance="1.0"/>
+				<max_entry	free_strength_balance="0.7"/>
+				<faction_attitude	defense="defend_raid" alliance_against="4"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war, and none of the previous rules apply,
+					then >>> frontline defense
+				-->
+				<min_entry	stance="AtWar"/>
+				<faction_attitude	defense="defend_frontline"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && his frontline strength is more than twice ours && our free strength is greater than his,
+					then >>> deep defense
+				-->
+				<min_entry	free_strength_balance="1.0"/>
+				<max_entry	frontline_balance="0.5"/>
+				<faction_attitude	defense="defend_deep"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && his frontline strength is more than twice ours && our free strength is less than his,
+					then >>> fortified defense
+				-->
+				<max_entry	frontline_balance="0.5" free_strength_balance="1.0"/>
+				<faction_attitude	defense="defend_fortified"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are not his weakest neighbour && we are allied to him,
+					then >>> minimal defense
+				-->
+				<max_entry	target_weakest_neighbour="false" stance="Allied"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are his weakest neighbour && he is not at war elsewhere && we are not at war elsewhere,
+					then >>> frontline defense
+				-->
+				<min_entry	target_weakest_neighbour="true"/>
+				<max_entry	target_num_enemies="0" num_enemies="0"/>
+				<faction_attitude	defense="defend_frontline"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are not his weakest neighbour && he is not at war elsewhere,
+					then >>> normal defense
+				-->
+				<max_entry	target_num_enemies="0" num_enemies="0"/>
+				<faction_attitude	defense="defend_normal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					DEFAULT: defend minimal
+				-->
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+		</defend_decisions>
+
+
+		<invasion_decisions>
+
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR 'CAN_ATTACK_FACTION', NO INVASION IF SO
+			</decision_entry>
+			-->
+		
+			<decision_entry>
+				<!--
+					Stop papal states attacking anyone for the first 20 turns
+				-->
+				<max_entry	turn_number="20"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					if target is a non-excommunicated catholic faction, no invasion set up, cannot force invade
+				-->
+				<min_entry	target_religion="catholic"/>
+				<max_entry	target_religion="catholic" enemy_excommunicated="false"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					If we are allied and have only been allied for a short duration, no invasion set up, cannot force invade
+				-->
+				<max_entry	num_turns_allied="3" stance="Allied"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we have agreed to a ceasefire only a short time ago, no invasion set up, cannot force invade
+				-->
+				<min_entry	num_turns_ceasfire="0" stance="Neutral"/>
+				<max_entry	num_turns_ceasfire="3" stance="Neutral"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If they are our protectorate, use defaults
+				-->
+				<min_entry	is_protectorate="true"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					If they are a protectorate of a trusted ally, use defaults
+				-->
+				<min_entry	trusted_ally_protectorate="true"/>
+			</decision_entry>
+				
+			<decision_entry>
+				<!--
+					If they are a protectorate of a catholic faction, use defaults
+				-->
+				<min_entry	is_protectorate_of_catholic="true"/>
+			</decision_entry>
+				
+			<decision_entry>
+				<!--
+					Not interested in factions that are not our neighbour, use defaults, may be overridden by forced/naval attacks
+				-->
+				<max_entry	is_neighbour="false"/>
+			</decision_entry>
+				
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	turn_number="30" target_faction="slave"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="1200"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+					if we've more than twice his frontline strength, then >>> invade immediate
+				-->
+				<min_entry	target_faction="slave" frontline_balance="2.0"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="850"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+					if we're superior on the frontline,	then >>> invade buildup
+				-->
+				<min_entry	target_faction="slave" frontline_balance="1.0"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="850"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="850"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					if we're not at war and it is very early in the game, do not invade (grabbing rebel regions instead)
+				-->
+				<max_entry	stance="Neutral" turn_number="10"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					if target is catholic faction we are not at war with, no invasion set up
+				-->
+				<min_entry	target_religion="catholic"/>
+				<max_entry	target_religion="catholic" stance="Neutral"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					if we're at war && we've more than five times his frontline strength && we're superior overall &&
+					we outproduce him, && IS NOT OUR SHADOW FACTION && IS NOT CHRISTIAN >>> propose he become vassal, invade immediate.  If not our shadow, also want to offer protectorate
+				-->
+					<min_entry	stance="AtWar" frontline_balance="5.0" military_balance="1.0" production_balance="1.0" target_religion="islam"/>
+				<max_entry	target_is_shadow="false"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="800" want_offer_protect="true"/>
+			</decision_entry>
+			
+			<decision_entry>
+				<!--
+					if we're at war && we've more than five times his frontline strength && we're superior overall &&
+					we outproduce him >>> propose he become vassal, invade immediate.  If our shadow, do not want to offer protectorate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="5.0" military_balance="1.0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="800" want_offer_protect="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we've more than twice his frontline strength && he outproduces us && he is 
+					at war with more than one faction, then >>> invade immediate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="2.0" target_num_enemies="2"/>
+				<max_entry	production_balance="1.0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="750"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we've more than twice his frontline strength && we outproduce him && alliance
+					against this faction, then >>> invade immediate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="2.0" production_balance="1.0" has_alliance_against="true"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="700"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we're superior on the frontline && we outproduce him,
+					then >>> invade buildup
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="650"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we're superior on the frontline && he outproduces us,
+					then >>> invade raids
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0"/>
+				<max_entry	production_balance="1.0"/>
+				<faction_attitude	invade="invade_raids" invade_priority="600" alliance_against="10"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war,
+					then >>> invade opportunistic
+				-->
+				<min_entry	stance="AtWar"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="550" alliance_against="8"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war with anyone else && our frontline strength is more than
+					thrice his && overall superior >>> invade immediate
+				-->
+				<min_entry	frontline_balance="3.0" military_balance="1.0"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="500"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are at war with someone else && our frontline strength is more than 
+					thrice his && we're 2:1 superior overall against these factions >>> invade immediate
+				-->
+				<min_entry	num_enemies="1" frontline_balance="3.0" military_balance_plus_enemies="2.0"/>
+				<max_entry	num_enemies="1"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="450"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than 
+					twice his && alliance against this faction && alliance is overall superior >>> invade immediate
+				-->
+				<min_entry	frontline_balance="2.0" has_alliance_against="true" alliance_military_balance="1.0"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="400"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than
+					1.5 times his && we outproduce him >>> invade buildup
+				-->
+				<min_entry	frontline_balance="1.5" production_balance="1.5"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="350" alliance_against="2"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && frontline superiority && alliance against 
+					this faction && alliance is superior overall && he is strongest neighbour >>> invade opportunistic
+				-->
+				<min_entry	frontline_balance="1.5" has_alliance_against="true" alliance_military_balance="1.0" strongest_neighbour="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="300"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than
+					twice his && he outproduces us && he is our strongest neighbour >>> invade raids
+				-->
+				<min_entry	frontline_balance="2.0" strongest_neighbour="true" target_num_enemies="2"/>
+				<max_entry	num_enemies="0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_raids" invade_priority="250" alliance_against="6"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && we outproduce him && he is our strongest
+					neighbour, then >>> plan future invasion
+				-->
+				<min_entry	production_balance="1.0" strongest_neighbour="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_start" invade_priority="200" alliance_against="1"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && we outproduce him && he is most desireable, 
+					then >>> plan future invasion
+				-->
+				<min_entry	production_balance="1.0" most_desirable="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_start" invade_priority="150" alliance_against="1"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					DEFAULT: invade_none
+				-->
+			</decision_entry>
+			
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR FORCING ATTACK ON HUMAN IF AT PEACE WITH EVERYONE FOR TOO LONG (hard = 4 turns, normal = 10 turns, easy = 20 turns)
+			</decision_entry>
+			-->
+			
+		</invasion_decisions>
+		
+		
+	</faction_ai_label>
+	
+
+	<!--
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// CATHOLIC FACTION AI PARAMS.  REQUIRES SPECIAL STUFF TO REDUCE ATTACKING NON-EXCOMMUNICATED CATHOLIC FACTIONS //
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	-->
+
+	<faction_ai_label name="catholic">
+	
+		<defend_decisions>
+		
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR FORCING want_peace WITH A FACTION UNDER CERTAIN CONDITIONS.  CONTINUES CHECKS FOR SUBSEQUENT DECISIONS
+			</decision_entry>
+			-->
+		
+			<decision_entry>
+				<!--
+					if we have any settlements, and we are at the very start of the game, and target is not human (cannot trust humans) >>> minimal defense
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	stance="Neutral" turn_number="10" target_human="false"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, and we are at the start of the game >>> minimal defense
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	stance="Neutral" is_neighbour="false" turn_number="30" />
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if target is non-excommunicated catholic faction, and they don't mind us much, and they are not obviously untrustworthy, minimal defense required
+				-->
+				<min_entry	target_religion="catholic" target_faction_standing="-0.1" target_global_standing="-0.1"/>
+				<max_entry	stance="Neutral" target_religion="catholic" enemy_excommunicated="false" excommunicated="false"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					otherwise if target is non-excommunicated catholic faction, normal defense required
+				-->
+				<min_entry	target_religion="catholic"/>
+				<max_entry	stance="Neutral" target_religion="catholic" enemy_excommunicated="false" excommunicated="false"/>
+				<faction_attitude	defense="defend_normal"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	at_war="true" defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, and we are at war, and they are not a trusted allies enemy, use defaults + want peace
+				-->
+				<min_entry	num_settlements="1" stance="AtWar" />
+				<max_entry	is_neighbour="false" trusted_ally_enemy="false"/>
+				<faction_attitude	want_peace="true"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if not our neighbour, and we have any settlements, use defaults
+				-->
+				<min_entry	num_settlements="1"/>
+				<max_entry	is_neighbour="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && he borders all our groups && his frontline strength is more than thrice as large as ours &&
+					his free strength is more than four times as large as ours, AND IS NOT OUR SHADOW FACTION >>> propose become protectorate
+				-->
+				<min_entry	stance="AtWar" borders_all_our_regions="true"/>
+				<max_entry	frontline_balance="0.3" free_strength_balance="0.3" production_balance="0.5" target_is_shadow="false"/>
+				<faction_attitude	defense="defend_deep" want_peace="true" want_be_protect="true" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && he borders all our groups && his frontline strength is more than twice as large as ours &&
+					his free strength is greater than twice ours, && IS NOT OUR SHADOW FACTION >>> deep defense, sue for peace
+				-->
+				<min_entry	stance="AtWar" borders_all_our_regions="true"/>
+				<max_entry	frontline_balance="0.5" free_strength_balance="0.5" target_is_shadow="false"/>
+				<faction_attitude	defense="defend_deep" want_peace="true" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && he borders all our groups && his frontline strength is more than twice as large as ours &&
+					his free strength is greater than twice ours >>> deep defense, sue for peace
+				-->
+				<min_entry	stance="AtWar" borders_all_our_regions="true"/>
+				<max_entry	frontline_balance="0.5" free_strength_balance="0.5"/>
+				<faction_attitude	defense="defend_deep" want_peace="false" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && his frontline strength is more than twice ours && our free strength is greater than his
+					then >>> deep defense
+				-->
+				<min_entry	stance="AtWar" free_strength_balance="1.0"/>
+				<max_entry	frontline_balance="0.5"/>
+				<faction_attitude	defense="defend_deep" alliance_against="7"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && his frontline strength is less than ours && his free strength is greater than ours,
+					then >>> conduct raids
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0" production_balance="1.0"/>
+				<max_entry	free_strength_balance="0.7"/>
+				<faction_attitude	defense="defend_raid" alliance_against="4"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war, and none of the previous rules apply,
+					then >>> frontline defense
+				-->
+				<min_entry	stance="AtWar"/>
+				<faction_attitude	defense="defend_frontline"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && his frontline strength is more than twice ours && our free strength is greater than his,
+					then >>> deep defense
+				-->
+				<min_entry	free_strength_balance="1.0"/>
+				<max_entry	frontline_balance="0.5"/>
+				<faction_attitude	defense="defend_deep"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && his frontline strength is more than twice ours && our free strength is less than his,
+					then >>> fortified defense
+				-->
+				<max_entry	frontline_balance="0.5" free_strength_balance="1.0"/>
+				<faction_attitude	defense="defend_fortified"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are not his weakest neighbour && we are allied to him,
+					then >>> minimal defense
+				-->
+				<max_entry	target_weakest_neighbour="false" stance="Allied"/>
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are his weakest neighbour && he is not at war elsewhere && we are not at war elsewhere,
+					then >>> frontline defense
+				-->
+				<min_entry	target_weakest_neighbour="true"/>
+				<max_entry	target_num_enemies="0" num_enemies="0"/>
+				<faction_attitude	defense="defend_frontline"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are not his weakest neighbour && he is not at war elsewhere,
+					then >>> normal defense
+				-->
+				<max_entry	target_num_enemies="1" num_enemies="0"/>
+				<faction_attitude	defense="defend_normal"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					DEFAULT: defend minimal
+				-->
+				<faction_attitude	defense="defend_minimal"/>
+			</decision_entry>
+
+		</defend_decisions>
+
+
+		<invasion_decisions>
+
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR 'CAN_ATTACK_FACTION', NO INVASION IF SO
+			</decision_entry>
+			-->
+		
+			<decision_entry>
+				<!--
+					If trusted ally, there is a 90% chance to use defaults (no invasion), cannot force invade.  allows even trusted allies to occasionally backstab
+				-->
+				<min_entry	trusted_ally="true"/>
+				<max_entry	rand="0.9"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					If we are allied, are somewhat trustworthy and have only been allied for a medium duration, no invasion set up, cannot force invade
+				-->
+				<min_entry	global_standing="0.25"/>
+				<max_entry	num_turns_allied="10" stance="Allied"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					If we are allied and have only been allied for a short duration, no invasion set up, cannot force invade
+				-->
+				<max_entry	num_turns_allied="3" stance="Allied"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we have agreed to a ceasefire only a medium time ago and are somewhat trustworthy, no invasion set up, cannot force invade
+				-->
+				<min_entry	num_turns_ceasfire="0" stance="Neutral" global_standing="0.25"/>
+				<max_entry	num_turns_ceasfire="10" stance="Neutral"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we have agreed to a ceasefire only a short time ago, no invasion set up, cannot force invade
+				-->
+				<min_entry	num_turns_ceasfire="0" stance="Neutral"/>
+				<max_entry	num_turns_ceasfire="3" stance="Neutral"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are allied and we are very trustworthy, there is a 80% chance to use defaults (no invasion), cannot force invade, (we are a trustworthy ally)
+				-->
+				<min_entry	global_standing="0.5"/>
+				<max_entry	stance="Allied" rand="0.8"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are allied, we like them a lot and we are not untrustworthy, there is a 80% chance to use defaults (no invasion), cannot force invade, (we are a friendly ally)
+				-->
+				<min_entry	faction_standing="0.5" global_standing="-0.1"/>
+				<max_entry	stance="Allied" rand="0.8"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are allied, we like them a bit and we are not very untrustworthy, there is a 65% chance to use defaults (no invasion), cannot force invade, (we are a friendly ally)
+				-->
+				<min_entry	faction_standing="0.25" global_standing="-0.25"/>
+				<max_entry	stance="Allied" rand="0.65"/>
+				<faction_attitude	can_force_invade="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are allied, we don't mind them and we are not very untrustworthy, there is a 50% chance to use defaults (no invasion), (we are a partially friendly ally)
+				-->
+				<min_entry	faction_standing="0.0" global_standing="-0.25"/>
+				<max_entry	stance="Allied" rand="0.5"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are neutral and we like them, there is a 75% chance to use defaults (no invasion), (we are a friendly neutral)
+				-->
+				<min_entry	faction_standing="0.5" stance="Neutral"/>
+				<max_entry	stance="Neutral" rand="0.75"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are neutral and we like them a bit, there is a 50% chance to use defaults (no invasion), (we are a friendly neutral)
+				-->
+				<min_entry	faction_standing="0.25" stance="Neutral"/>
+				<max_entry	stance="Neutral" rand="0.5"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If we are neutral and we don't hate them, there is a 25% chance to use defaults (no invasion), (we are a partially friendly neutral)
+				-->
+				<min_entry	faction_standing="0.0" stance="Neutral"/>
+				<max_entry	stance="Neutral" rand="0.25"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					If they are our protectorate, use defaults
+				-->
+				<min_entry	is_protectorate="true"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					If they are a protectorate of a trusted ally, use defaults
+				-->
+				<min_entry	trusted_ally_protectorate="true"/>
+			</decision_entry>
+				
+			<decision_entry>
+				<!--
+					If they are the papal states and they like us, use defaults
+					(using their FS instead of ours, else it may not fire since papal states does not try to upset catholics)
+				-->
+				<min_entry	target_faction="papal_states" target_faction_standing="-0.5"/>
+				<max_entry	target_faction="papal_states"/>
+			</decision_entry>
+				
+			<decision_entry>
+				<!--
+					If we have a cease hostilities mission against the target, and we like them above a threshold, and our global standing is reasonable, use defaults
+					(this will stop factions from attacking some targets if it will cause excommunication)
+				-->
+				<min_entry	faction_standing="-0.25" has_ceasehostilities="true" global_standing="-0.25"/>
+			</decision_entry>
+				
+			<decision_entry>
+				<!--
+					If we have a cease hostilities mission against the target, 50% chance to use defaults
+					(this will reduce chance of factions attacking some targets if it will cause excommunication)
+				-->
+				<min_entry	has_ceasehostilities="true"/>
+				<max_entry	rand="0.5"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					Not interested in factions that are not our neighbour, use defaults, may be overridden by forced/naval attacks
+				-->
+				<max_entry	is_neighbour="false"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	turn_number="30" target_faction="slave"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="1200"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+					if we've more than twice his frontline strength, then >>> invade immediate
+				-->
+				<min_entry	target_faction="slave" frontline_balance="2.0"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="850"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+					if we're superior on the frontline,	then >>> invade buildup
+				-->
+				<min_entry	target_faction="slave" frontline_balance="1.0"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="850"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					special case the slaves faction - there are all sorts of things we don't want to do with the slaves
+				-->
+				<min_entry	target_faction="slave"/>
+				<max_entry	target_faction="slave"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="850"/>
+			</decision_entry>
+		
+			<decision_entry>
+				<!--
+					if we're not at war and it is very early in the game, do not invade (grabbing rebel regions instead)
+				-->
+				<max_entry	stance="Neutral" turn_number="10"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we've more than five times his frontline strength && we're superior overall &&
+					we outproduce him, && IS NOT OUR SHADOW FACTION >>> propose he become vassal, invade immediate.  If not our shadow, also want to offer protectorate
+				-->
+					<min_entry	stance="AtWar" frontline_balance="5.0" military_balance="1.0" production_balance="1.0"/>
+				<max_entry	target_is_shadow="false"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="800" want_offer_protect="true"/>
+			</decision_entry>
+			
+			<decision_entry>
+				<!--
+					if we're at war && we've more than five times his frontline strength && we're superior overall &&
+					we outproduce him >>> propose he become vassal, invade immediate.  If our shadow, do not want to offer protectorate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="5.0" military_balance="1.0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="800" want_offer_protect="false"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we've more than twice his frontline strength && he outproduces us && he is 
+					at war with more than one faction, then >>> invade immediate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="2.0" target_num_enemies="2"/>
+				<max_entry	production_balance="1.0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="750"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we've more than twice his frontline strength && we outproduce him && alliance
+					against this faction, then >>> invade immediate
+				-->
+				<min_entry	stance="AtWar" frontline_balance="2.0" production_balance="1.0" has_alliance_against="true"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="700"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we're superior on the frontline && we outproduce him,
+					then >>> invade buildup
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="650"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war && we're superior on the frontline && he outproduces us,
+					then >>> invade raids
+				-->
+				<min_entry	stance="AtWar" frontline_balance="1.0"/>
+				<max_entry	production_balance="1.0"/>
+				<faction_attitude	invade="invade_raids" invade_priority="600" alliance_against="10"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're at war,
+					then >>> invade opportunistic
+				-->
+				<min_entry	stance="AtWar"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="550" alliance_against="8"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war with anyone else && our frontline strength is more than
+					thrice his && overall superior >>> invade immediate
+				-->
+				<min_entry	frontline_balance="3.0" military_balance="1.0"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="500"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we are at war with someone else && our frontline strength is more than 
+					thrice his && we're 2:1 superior overall against these factions >>> invade immediate
+				-->
+				<min_entry	num_enemies="1" frontline_balance="3.0" military_balance_plus_enemies="2.0"/>
+				<max_entry	num_enemies="1"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="450"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than 
+					twice his && alliance against this faction && alliance is overall superior >>> invade immediate
+				-->
+				<min_entry	frontline_balance="2.0" has_alliance_against="true" alliance_military_balance="1.0"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_immediate" invade_priority="400"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than
+					1.5 times his && we outproduce him >>> invade buildup
+				-->
+				<min_entry	frontline_balance="1.5" production_balance="1.5"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_buildup" invade_priority="350" alliance_against="2"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && frontline superiority && alliance against 
+					this faction && alliance is superior overall && he is strongest neighbour >>> invade opportunistic
+				-->
+				<min_entry	frontline_balance="1.5" has_alliance_against="true" alliance_military_balance="1.0" strongest_neighbour="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_opportunistic" invade_priority="300"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && our frontline strength is more than
+					twice his && he outproduces us && he is our strongest neighbour >>> invade raids
+				-->
+				<min_entry	frontline_balance="2.0" strongest_neighbour="true" target_num_enemies="2"/>
+				<max_entry	num_enemies="0" production_balance="1.0"/>
+				<faction_attitude	invade="invade_raids" invade_priority="250" alliance_against="6"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && we outproduce him && he is our strongest
+					neighbour, then >>> plan future invasion
+				-->
+				<min_entry	production_balance="1.0" strongest_neighbour="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_start" invade_priority="200" alliance_against="1"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					if we're not at war && we're not at war with anyone else && we outproduce him && he is most desireable, 
+					then >>> plan future invasion
+				-->
+				<min_entry	production_balance="1.0" most_desirable="true"/>
+				<max_entry	num_enemies="0"/>
+				<faction_attitude	invade="invade_start" invade_priority="150" alliance_against="1"/>
+			</decision_entry>
+
+			<decision_entry>
+				<!--
+					DEFAULT: invade_none
+				-->
+			</decision_entry>
+			
+			<!--
+			<decision_entry>
+					SPECIAL CASE EXISTS HERE IN CODE FOR FORCING ATTACK ON HUMAN IF AT PEACE WITH EVERYONE FOR TOO LONG (hard = 4 turns, normal = 10 turns, easy = 20 turns)
+			</decision_entry>
+			-->
+			
+		</invasion_decisions>
+		
+		
+	</faction_ai_label>
+	
+
+	
+
+	<!--
+	/////////////////////////////////////////////////////////////
+	// SLAVE FACTION AI PARAMS.  THEY DON'T REALLY DO ANYTHING //
+	/////////////////////////////////////////////////////////////
+	-->
+
+	<faction_ai_label name="slave_faction">
+	
+		<invasion_decisions>
+
+			<decision_entry>
+				<!--
+					Just use defaults
+				-->
+			</decision_entry>
+
+		</invasion_decisions>
+		
+		
+		<defend_decisions>
+		
+			<decision_entry>
+				<!--
+					Always try and defend the settlements
+				-->
+				<faction_attitude	defense="defend_deep"/>
+			</decision_entry>
+
+		</defend_decisions>
+
+	</faction_ai_label>
+	
+	
+</root>

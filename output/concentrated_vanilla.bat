@@ -1,1 +1,1 @@
-medieval2.exe @concentrated_vanilla.cfg
+medieval2.exe @mods/concentrated_vanilla/concentrated_vanilla.cfg

@@ -1,0 +1,537 @@
+<?xml version="1.0"?>
+<root>
+   <item_modifiers>
+        <item name="offer_payment">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="offer_protectorate">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_alliance">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_recommunication">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.95"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="offer_cardinal_vote">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.25"/>
+        </item>
+        <item name="offer_marry_heir">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_marry_leader">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_marry_heir_to_princess">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_marry_leader_to_princess">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_ceasefire">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.9"/>
+        </item>
+        <item name="offer_trade_rights">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_military_access">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_map_information">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_yearly_payment">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.25"/>
+        </item>
+        <item name="offer_cede_region">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_attack_faction">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="offer_threat_of_attack">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="stopping_offer_payment">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="declare_nullify_alliance">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="declare_cancel_trade_rights">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="declare_cancel_military_access">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="demand_payment">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="demand_protectorate">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="demand_recommunication">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.95"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="demand_cardinal_vote">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.25"/>
+        </item>
+        <item name="demand_military_access">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="demand_map_information">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="stopping_demand_payment">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.0"/>
+			<global_standing    modifier="0.0"/>
+        </item>
+        <item name="demand_yearly_payment">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.25"/>
+        </item>
+        <item name="demand_cede_region">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+        <item name="demand_attack_faction">
+            <cost	            modifier="1.0"/>
+			<faction_standing   modifier="0.25"/>
+			<global_standing    modifier="0.5"/>
+        </item>
+   </item_modifiers>
+   
+   <demeanours>
+      <!--
+        <demeanour_state name="ai_accepts">
+			<demeanour_entry>
+				<upper_threshold upper_thresh="0.1"/>
+				<diplomacy_text	name="DDS_ACCEPT_LOW"/>
+				<character_voice name="Offer_Accepted_Close"/>
+			</demeanour_entry>
+        </demeanour_state>
+        -->
+        <demeanour_state name="new_offer">
+			<demeanour_entry>
+				<upper_threshold value="-5.0"/>
+				<diplomacy_text	name="DDS_NEW_OFFER_WORSE"/>
+				<character_voice name="New_Offer_Worse"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="5.0"/>
+				<diplomacy_text	name="DDS_NEW_OFFER_NEUTRAL"/>
+				<character_voice name="New_Offer_Neutral"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_NEW_OFFER_BETTER"/>
+				<character_voice name="New_Offer_Better"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="ai_accepts">
+			<demeanour_entry>
+				<upper_threshold value="0.0"/>
+				<diplomacy_text	name="DDS_ACCEPT_EXTORTION"/>
+				<character_voice name="Offer_Accepted_Extortion"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="1.0"/>
+				<diplomacy_text	name="DDS_ACCEPT_LOW"/>
+				<character_voice name="Offer_Accepted_Close"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="10.0"/>
+				<diplomacy_text	name="DDS_ACCEPT_MED"/>
+				<character_voice name="Offer_Accepted_Standard"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_ACCEPT_HIGH"/>
+				<character_voice name="Offer_Accepted_Generous"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="ai_declines">
+			<demeanour_entry>
+				<upper_threshold value="-10.0"/>
+				<diplomacy_text	name="DDS_DECLINE_HIGH"/>
+				<character_voice name="Offer_Declined_insulting"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="-1.0"/>
+				<diplomacy_text	name="DDS_DECLINE_MED"/>
+				<character_voice name="Offer_Declined_Standard"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_DECLINE_LOW"/>
+				<character_voice name="Offer_Declined_Close"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="ai_rejects">
+			<demeanour_entry>
+				<upper_threshold value="-10.0"/>
+				<diplomacy_text	name="DDS_REJECT_HIGH"/>
+				<character_voice name="Offer_Rejected_insulting"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="-1.0"/>
+				<diplomacy_text	name="DDS_REJECT_MED"/>
+				<character_voice name="Offer_Rejected_Standard"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_REJECT_LOW"/>
+				<character_voice name="Offer_Rejected_Close"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="ai_counters">
+			<demeanour_entry>
+				<upper_threshold value="-10.0"/>
+				<diplomacy_text	name="DDS_COUNTER_INSULTING"/>
+				<character_voice name="Offer_Countered_Insulting"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="-1.0"/>
+				<diplomacy_text	name="DDS_COUNTER_STANDARD"/>
+				<character_voice name="Offer_Countered_Standard"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_COUNTER_CLOSE"/>
+				<character_voice name="Offer_Countered_Close"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="ai_counters_open">
+			<demeanour_entry>
+				<upper_threshold value="-1.0"/>
+				<diplomacy_text	name="DDS_COUNTER_OPEN"/>
+				<character_voice name="Offer_Countered_Open_Negative"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="1.0"/>
+				<diplomacy_text	name="DDS_COUNTER_OPEN"/>
+				<character_voice name="Offer_Countered_Open_Neutral"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_COUNTER_OPEN"/>
+				<character_voice name="Offer_Countered_Open_Positive"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="ai_acknowledges_declare">
+			<demeanour_entry>
+				<upper_threshold value="-10.0"/>
+				<diplomacy_text	name="DDS_DECLARE_UPSET"/>
+				<character_voice name="Demeanour_Declare_Upset"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="-5.0"/>
+				<diplomacy_text	name="DDS_DECLARE_ANNOYED"/>
+				<character_voice name="Demeanour_Declare_Annoyed"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_DECLARE_UNCONCERNED"/>
+				<character_voice name="Demeanour_Declare_Unconcerned"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="player_rejects">
+			<demeanour_entry>
+				<upper_threshold value="-1.5"/>
+				<diplomacy_text	name="DDS_REACTION_OFFENDED"/>
+				<character_voice name="Demeanour_Reaction_Offended"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="-0.75"/>
+				<diplomacy_text	name="DDS_REACTION_DISAPPOINTED"/>
+				<character_voice name="Demeanour_Reaction_Disappointed"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_REACTION_NEUTRAL"/>
+				<character_voice name="Demeanour_Reaction_Neutral_Rejected"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="player_accepts">
+			<demeanour_entry>
+				<upper_threshold value="0.75"/>
+				<diplomacy_text	name="DDS_REACTION_NEUTRAL"/>
+				<character_voice name="Demeanour_Reaction_Neutral"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="1.5"/>
+				<diplomacy_text	name="DDS_REACTION_PLEASED"/>
+				<character_voice name="Demeanour_Reaction_Pleased"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_REACTION_ELATED"/>
+				<character_voice name="Demeanour_Reaction_Elated"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="ai_farewells">
+			<demeanour_entry>
+				<upper_threshold value="-5.0"/>
+				<character_voice name="Outro_Demeanour_Worse"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="5.0"/>
+				<character_voice name="Outro_Demeanour_Neutral"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<character_voice name="Outro_Demeanour_Better"/>
+			</demeanour_entry>        
+        </demeanour_state>
+        <demeanour_state name="proposal_balance">
+			<demeanour_entry>
+				<upper_threshold value="-10.0"/>
+				<diplomacy_text	name="DDS_BALANCE_VERY_DEMANDING"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="-5.0"/>
+				<diplomacy_text	name="DDS_BALANCE_DEMANDING"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="5.0"/>
+				<diplomacy_text	name="DDS_BALANCE_BALANCED"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<upper_threshold value="10.0"/>
+				<diplomacy_text	name="DDS_BALANCE_GENEROUS"/>
+			</demeanour_entry>
+			<demeanour_entry>
+				<diplomacy_text	name="DDS_BALANCE_VERY_GENEROUS"/>
+			</demeanour_entry>        
+        </demeanour_state>
+    </demeanours>
+    <diplomacy_text_fields>
+		<text_field name="relations">
+			<text_entry>
+				<upper_threshold value="-0.8"/>
+				<diplomacy_text name="DT_RELATIONS_0"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="-0.6"/>
+				<diplomacy_text name="DT_RELATIONS_1"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="-0.4"/>
+				<diplomacy_text name="DT_RELATIONS_2"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="-0.25"/>
+				<diplomacy_text name="DT_RELATIONS_3"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="-0.1"/>
+				<diplomacy_text name="DT_RELATIONS_4"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.1"/>
+				<diplomacy_text name="DT_RELATIONS_5"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.25"/>
+				<diplomacy_text name="DT_RELATIONS_6"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.4"/>
+				<diplomacy_text name="DT_RELATIONS_7"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.6"/>
+				<diplomacy_text name="DT_RELATIONS_8"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.8"/>
+				<diplomacy_text name="DT_RELATIONS_9"/>
+			</text_entry>
+			<text_entry>
+				<diplomacy_text name="DT_RELATIONS_10"/>
+			</text_entry>
+		</text_field>
+		<text_field name="reputation">
+			<text_entry>
+				<upper_threshold value="-0.8"/>
+				<diplomacy_text name="DT_REPUTATION_0"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="-0.6"/>
+				<diplomacy_text name="DT_REPUTATION_1"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="-0.4"/>
+				<diplomacy_text name="DT_REPUTATION_2"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="-0.25"/>
+				<diplomacy_text name="DT_REPUTATION_3"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="-0.1"/>
+				<diplomacy_text name="DT_REPUTATION_4"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.1"/>
+				<diplomacy_text name="DT_REPUTATION_5"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.25"/>
+				<diplomacy_text name="DT_REPUTATION_6"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.4"/>
+				<diplomacy_text name="DT_REPUTATION_7"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.6"/>
+				<diplomacy_text name="DT_REPUTATION_8"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="0.8"/>
+				<diplomacy_text name="DT_REPUTATION_9"/>
+			</text_entry>
+			<text_entry>
+				<diplomacy_text name="DT_REPUTATION_10"/>
+			</text_entry>
+		</text_field>
+		<text_field name="power">
+			<text_entry>
+				<upper_threshold value="5000.0"/>
+				<diplomacy_text name="DT_POWER_0"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="15000.0"/>
+				<diplomacy_text name="DT_POWER_1"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="25000.0"/>
+				<diplomacy_text name="DT_POWER_2"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="35000.0"/>
+				<diplomacy_text name="DT_POWER_3"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="45000.0"/>
+				<diplomacy_text name="DT_POWER_4"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="55000.0"/>
+				<diplomacy_text name="DT_POWER_5"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="65000.0"/>
+				<diplomacy_text name="DT_POWER_6"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="75000.0"/>
+				<diplomacy_text name="DT_POWER_7"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="85000.0"/>
+				<diplomacy_text name="DT_POWER_8"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="95000.0"/>
+				<diplomacy_text name="DT_POWER_9"/>
+			</text_entry>
+			<text_entry>
+				<diplomacy_text name="DT_POWER_10"/>
+			</text_entry>
+		</text_field>
+		<text_field name="wealth">
+			<text_entry>
+				<upper_threshold value="2500.0"/>
+				<diplomacy_text name="DT_WEALTH_0"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="7500.0"/>
+				<diplomacy_text name="DT_WEALTH_1"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="12500.0"/>
+				<diplomacy_text name="DT_WEALTH_2"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="17500.0"/>
+				<diplomacy_text name="DT_WEALTH_3"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="22500.0"/>
+				<diplomacy_text name="DT_WEALTH_4"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="27500.0"/>
+				<diplomacy_text name="DT_WEALTH_5"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="32500.0"/>
+				<diplomacy_text name="DT_WEALTH_6"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="37500.0"/>
+				<diplomacy_text name="DT_WEALTH_7"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="42500.0"/>
+				<diplomacy_text name="DT_WEALTH_8"/>
+			</text_entry>
+			<text_entry>
+				<upper_threshold value="47500.0"/>
+				<diplomacy_text name="DT_WEALTH_9"/>
+			</text_entry>
+			<text_entry>
+				<diplomacy_text name="DT_WEALTH_10"/>
+			</text_entry>
+		</text_field>
+    </diplomacy_text_fields>
+</root>

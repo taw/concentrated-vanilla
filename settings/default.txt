@@ -1,0 +1,118 @@
+selection-settlement_basic = normal
+
+checkbox-include_cai = false
+checkbox-include_bai = true
+checkbox-include_strat = true
+checkbox-display_year = true
+
+checkbox-construction_one_turn = true
+float-construction_cost = 1.5
+float-conversion_rate = 1.5
+float-resource_value = 1.0
+float-trade_bonus = 1.0
+float-mine_resource = 2.0
+float-mine_cost = 1.0
+checkbox-all_buildings_available = false
+checkbox-village_800_minimum = true
+checkbox-no_siege = false
+selection-settlement_size = normal
+float-distance_to_capital_corruption = 0.2
+float-distance_to_capital_unrest = 0.3
+
+checkbox-big_garrisons = true
+checkbox-more_recruitment_slots = true
+float-unit_cost = 1.0
+float-unit_upkeep = 0.6
+
+float-kings_purse = 1.0
+float-rebel_spawn_rates = 5.0
+float-plaza_capture_timeout = 1.0
+float-plaza_capture_ratio = 0.95
+checkbox-all_mercenaries_available = false
+checkbox-more_mercenaries = true
+
+text-random_seed = 0
+checkbox-random_scenario = false
+checkbox-more_initial_rebels = true
+checkbox-epic_armies = false
+int-regions_to_take = 50
+float-cluster_allocation = 0.8
+
+range-region_count_byzantium = 4..9
+range-region_count_moors = 4..9
+range-region_count_turks = 4..9
+range-region_count_egypt = 4..9
+range-region_count_russia = 4..9
+range-region_count_hre = 2..7
+range-region_count_france = 2..7
+range-region_count_scotland = 2..7
+range-region_count_hungary = 2..7
+range-region_count_venice = 2..7
+range-region_count_milan = 2..7
+range-region_count_spain = 2..7
+range-region_count_sicily = 2..7
+range-region_count_england = 2..7
+range-region_count_poland = 2..7
+range-region_count_portugal = 2..7
+range-region_count_denmark = 2..7
+range-region_count_papal_states = 2..7
+
+range-event_mongols = 1208..1224
+range-event_gunpowder = 1290..1300
+range-event_timurids = 1368..1384
+range-event_world_is_round = 1400..1408
+range-event_printing_press = 1454..1454
+
+checkbox-fast_crusades = true
+int-min_jihad_piety = 2
+checkbox-crusade_everywhere = true
+checkbox-no_crusade_disband = true
+checkbox-older_cardinals = true
+
+float-sally_out_ratio = 0.65
+
+checkbox-remove_merchant = true
+checkbox-remove_spy = false
+checkbox-remove_assassin = false
+float-campaign_speed = 1.5
+float-agent_speed_diplomat = 5.0
+float-agent_speed_princess = 5.0
+float-agent_speed_merchant = 3.0
+float-agent_speed_spy = 3.0
+float-agent_speed_assassin = 3.0
+float-agent_speed_priest = 3.0
+float-spy_cost = 1.0
+
+checkbox-easy_guilds = true
+
+float-bodyguard_size = 1.0
+float-bodyguard_cost = 1.0
+float-cavalry_size = 1.0
+float-cavalry_cost = 1.0
+checkbox-all_archers_stakes = true
+float-missile_infantry_ammo = 2.0
+float-missile_infantry_size = 1.0
+float-artillery_range = 1.0
+float-artillery_ammo = 2.5
+float-artillery_crew = 1.0
+float-artillery_engines = 1.5
+float-artillery_accuracy = 2.25
+float-unit_attack = 0.6
+float-unit_charge = 1.0
+checkbox-low_morale = false
+checkbox-increase_unit_defense = false
+checkbox-nerf_rams = true
+float-mercenary_recruitment = 1.25
+float-mercenary_upkeep = 1.25
+checkbox-free_unit_upgrade = true
+checkbox-checkbox-more_garrison_units_free = false
+
+checkbox-remove_rubber_swords = true
+checkbox-remove_gunpowder_fire_by_rank = true
+
+float-wall_control_area = 4.0
+float-wall_strength = 1.0
+float-tower_strength = 1.0
+float-tower_normal_arrows_rate = 3.0
+float-tower_flaming_arrows_rate = 1.0
+int-tower_arrow_attack = 3
