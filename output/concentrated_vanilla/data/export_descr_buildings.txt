@@ -3295,7 +3295,7 @@ building temple_catholic
                 agent priest  0  requires factions { hungary, poland, } 
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 happiness_bonus bonus 1
-                religion_level bonus 2
+                religion_level bonus 1
                 pope_disapproval 1
                 agent_limit priest 1
             }
@@ -3317,7 +3317,7 @@ building temple_catholic
                 agent priest  0  requires factions { hungary, poland, } 
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 happiness_bonus bonus 1
-                religion_level bonus 4
+                religion_level bonus 3
                 agent_limit priest 1
                 pope_disapproval 1
             }
@@ -3339,7 +3339,7 @@ building temple_catholic
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 recruit_pool "Armored Clergy"  1   0.2   2  0  requires factions { denmark, } 
                 happiness_bonus bonus 2
-                religion_level bonus 6
+                religion_level bonus 4
                 agent_limit priest 2
                 pope_disapproval 1
             }
@@ -3361,7 +3361,7 @@ building temple_catholic
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 recruit_pool "Armored Clergy"  1   0.4   3  0  requires factions { denmark, } 
                 happiness_bonus bonus 2
-                religion_level bonus 8
+                religion_level bonus 6
                 agent_limit priest 2
                 pope_disapproval 1
                 pope_approval 1
@@ -3385,7 +3385,7 @@ building temple_catholic
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 recruit_pool "Armored Clergy"  1   0.4   3  1  requires factions { denmark, } 
                 happiness_bonus bonus 3
-                religion_level bonus 10
+                religion_level bonus 7
                 agent_limit priest 2
                 pope_disapproval 1
                 pope_approval 1
@@ -3419,7 +3419,7 @@ building temple_catholic_castle
                 agent priest  0  requires factions { hungary, poland, } 
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 happiness_bonus bonus 1
-                religion_level bonus 4
+                religion_level bonus 3
                 pope_disapproval 1
                 agent_limit priest 1
             }
@@ -3441,7 +3441,7 @@ building temple_catholic_castle
                 agent priest  0  requires factions { hungary, poland, } 
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 happiness_bonus bonus 1
-                religion_level bonus 6
+                religion_level bonus 4
                 agent_limit priest 1
                 pope_disapproval 1
             }
@@ -3472,7 +3472,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 1
-                religion_level bonus 4
+                religion_level bonus 3
                 agent_limit priest 1
             }
             material wooden
@@ -3492,7 +3492,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 1
-                religion_level bonus 8
+                religion_level bonus 6
                 agent_limit priest 1
             }
             material wooden
@@ -3511,7 +3511,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 2
-                religion_level bonus 12
+                religion_level bonus 9
                 agent_limit priest 2
             }
             material wooden
@@ -3530,7 +3530,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 2
-                religion_level bonus 16
+                religion_level bonus 12
                 agent_limit priest 2
             }
             material wooden
@@ -3549,7 +3549,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 3
-                religion_level bonus 20
+                religion_level bonus 15
                 agent_limit priest 2
             }
             material wooden
@@ -3579,7 +3579,7 @@ building temple_orthodox_castle
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 1
-                religion_level bonus 8
+                religion_level bonus 6
                 agent_limit priest 1
             }
             material wooden
@@ -3599,7 +3599,7 @@ building temple_orthodox_castle
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 1
-                religion_level bonus 12
+                religion_level bonus 9
                 agent_limit priest 1
             }
             material wooden
@@ -3628,7 +3628,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 1
-                religion_level bonus 4
+                religion_level bonus 3
                 agent_limit priest 1
             }
             material wooden
@@ -3647,7 +3647,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 1
-                religion_level bonus 8
+                religion_level bonus 6
                 agent_limit priest 1
             }
             material wooden
@@ -3665,7 +3665,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 2
-                religion_level bonus 12
+                religion_level bonus 9
                 agent_limit priest 2
             }
             material wooden
@@ -3683,7 +3683,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 2
-                religion_level bonus 16
+                religion_level bonus 12
                 agent_limit priest 2
             }
             material wooden
@@ -3701,7 +3701,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 3
-                religion_level bonus 20
+                religion_level bonus 15
                 agent_limit priest 2
             }
             material wooden
@@ -3730,7 +3730,7 @@ building temple_muslim_castle
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 1
-                religion_level bonus 8
+                religion_level bonus 6
                 agent_limit priest 1
             }
             material wooden
@@ -3749,7 +3749,7 @@ building temple_muslim_castle
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 1
-                religion_level bonus 12
+                religion_level bonus 9
                 agent_limit priest 1
             }
             material wooden
@@ -5396,7 +5396,7 @@ building temple_pagan
             capability
             {
                 happiness_bonus bonus 2
-                religion_level bonus 20
+                religion_level bonus 15
                 law_bonus bonus 5
             }
             material wooden

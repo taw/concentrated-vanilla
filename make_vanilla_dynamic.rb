@@ -2,6 +2,8 @@
 
 require './find_file'
 require 'fileutils'
+require "pathname"
+require "find"
 require "pp"
 
 class File
@@ -37,8 +39,8 @@ class Mod
     included = []
     included << 'Cities_Castles_Strat_v1.0/data'
     # merge bai2+bai
-    included << 'better_bai2'
     included << 'better_bai'
+    included << 'better_bai2' # this super-passive bai, but their 
     included << 'better_cai'
     included << 'vanilla' << 'vanilla/packed' << 'vanilla/imperial-campaign'
     
@@ -322,7 +324,7 @@ module CastlesAndCitiesAreSameThing
       # stone_wall       - fortress
       # large_stone_wall - citadel
       # huge_stone_wall  - no equivalent
-      file = file.gsub(/^\s*building\s*\{\s*type core_castle_building motte_and_bailey\s*}\s*?\n/, "")
+      file = file.gsub(/^\s*building\s*\{\s*type core_castle_building motte_and_bailey\s*\}\s*?\n/, "")
       file = file.gsub("type core_castle_building wooden_castle", "type core_building wooden_pallisade")
       file = file.gsub("type core_castle_building castle", "type core_building wooden_wall")
       file
@@ -484,7 +486,7 @@ module SimplifyBuildingTree
           elsif c =~ /\Atower_level\s+(\d+)\s*\z/
             tower = [$1.to_i, tower].max
             nil
-          elsif c =~ /\A(recruit_pool\s+"[^"]+"\s+)(\d+)(\s+)([\.\d]+)(\s+)([\.\d]++)(\s+.*)\z/
+          elsif c =~ /\A(recruit_pool\s+"[^"]+"\s+)(\d+)(\s+)([\.\d]+)(\s+)([\.\d]+)(\s+.*)\z/
             pkey = [$1,$3,$5,$7]
             # initial, inrease, max (then experience but we fold it into reqs)
             # max can be 0.999 (= retrain ok, but no recruit)
@@ -717,7 +719,21 @@ class M2TW_Mod < Mod
     open' diplomacy', 'descr_diplomacy.xml'
     # +standing
     
+    copy_mod_skeleton!
     copy_new_models!
+  end
+  
+  def copy_mod_skeleton!
+    mod_skeleton = Pathname("data/mod_skeleton")
+    mod_build_dir = Pathname("output")
+    mod_skeleton.find do |file|
+      target = mod_build_dir + file.relative_path_from(mod_skeleton)
+      if file.directory?
+        FileUtils.mkdir_p target
+      else
+        FileUtils.cp file, target
+      end
+    end
   end
   
   def copy_new_models!
@@ -2161,11 +2177,11 @@ Trigger fertility_women
   end
   
   # arrows faster and strong against low level units, bad against heavily armored units
-  def rebalance_wall_arrows!
+  def rebalance_wall_arrows!(power)
     modify('walls'){|file|
       file.split(/\n/).map{|line|
         if line =~ /^\s+stat/ and line =~ /\barrow_tower\b/
-          line.sub(/(stat\s+)12/){ "#{$1}2" }
+          line.sub(/(stat\s+)12/){ "#{$1}#{power}" }
         # elsif line =~ /^(\s+fire_angle\s+)90/
         #   "#{$1}75"
         else
@@ -2185,7 +2201,7 @@ M2TW_Mod.new do
   ### Settlement
   construction_time_one_turn!
   building_cost!(1.5, 1.0)
-  religion_bonus!(2.0)
+  religion_bonus!(1.5)
   # rearrange_resource_values!
   # resource_value!(1.5) # 2.5 is way too much, especially with trade or mine bonuses
   # trade_bonus!(1.0)
@@ -2280,7 +2296,7 @@ M2TW_Mod.new do
   # low_morale!
   # cavalry_size!(0.75)
   # increase_unit_defense!
-  mod_unit_attack!(0.5)
+  mod_unit_attack!(0.6)
   # mod_unit_charge!(1.5)
   nerf_rams!
   increase_artillery_accuracy!(2.5)
@@ -2294,5 +2310,5 @@ M2TW_Mod.new do
   wall_control_area!(4.0) # Not sure if setting it lower than 1.0 actually does much, even if >1.0 definitely should
   # wall_strength!(3.0, 1.0)
   tower_fire_rate!(3.0, 1.0)
-  rebalance_wall_arrows!
+  rebalance_wall_arrows!(3)
 end

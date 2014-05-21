@@ -1,0 +1,84 @@
+
+; event			event_type
+; frequency		in years
+; winter		only occurs in winter
+; summer		only occurs in summer
+; warning		provides a one year warning
+; position		position event can occur in strat coords [can specify multiple positions on consecutive lines]
+; region		region event can occur by region name [can specify multiple regions on consecutive lines]
+; climate		climate event can occur by climate name [can specify multiple climates on consecutive lines]
+; min_scale		minimum size for event
+; max_scale		maximum size for event
+
+event		earthquake
+frequency	20
+winter		false
+summer		false
+warning		false
+climate		rocky_desert
+min_scale	2
+max_scale	5
+
+event		volcano
+frequency	50
+winter		false
+summer		false
+warning		true
+min_scale	2
+max_scale	5
+
+event		flood
+frequency	10
+winter		false
+summer		true
+warning		false
+climate		swamp
+climate		unused1
+min_scale	2
+max_scale	5
+
+event		storm
+frequency	4
+winter		true
+summer		false
+warning		false
+region		the sea
+min_scale	2
+max_scale	5
+
+event		horde
+frequency	10
+winter		false
+summer		false
+warning		false
+region		the sea
+climate		temperate_coniferous_forest
+min_scale	2
+max_scale	5
+
+event		dustbowl
+frequency	8
+winter		false
+summer		false
+warning		false
+climate		sandy_desert
+min_scale	2
+max_scale	5
+
+event		locusts
+frequency	30
+winter		false
+summer		false
+warning		false
+climate		sandy_desert
+climate		rocky_desert
+climate		semi_arid
+min_scale	2
+max_scale	5
+
+event		plague
+frequency	20
+winter		false
+summer		false
+min_scale	2
+max_scale	5

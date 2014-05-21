@@ -1,0 +1,95 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; This file should be in the same folder as descr_regions.txt 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+music_type northern_european
+	; england faction (see world\maps\base\descr_regions.txt)
+   	regions Dublin_Province York_Province Caernarvon_Province Nottingham_Province London_Province
+
+	; denmark
+	regions Oslo_Province Stockholm_Province Helsinki_Province Arhus_Province
+
+	; scotland
+	regions Inverness_Province Edinburgh_Province
+
+	; hre
+	regions Stettin_Province Hamburg_Province Antwerp_Province Magdeburg_Province Frankfurt_Province
+	regions Metz_Province Prague_Province Nuremburg_Province Hohenstauffen_Province Vienna_Province
+	regions Bern_Province Innsbruck_Province
+
+	; france
+	regions Bruges_Province Caen_Province Rheims_Province Rennes_Province Paris_Province
+	regions Angers_Province Dijon_Province Bordeaux_Province Toulouse_Province Marseille_Province
+
+	factions england normans denmark scotland hre saxons france
+
+music_type eastern_european
+
+	; hungary
+	regions Iasi_Province Budapest_Province Bran_Province Bucharest_Province Sofia_Province
+	regions Zagreb_Province Ragusa_Province
+
+	; russia
+	regions Novgorod_Province Moscow_Province Riga_Province Volga-Bulgar_Province Smolensk_Province
+	regions Ryazan_Province Sarkel_Province Kiev_Province
+
+	; poland
+	regions Vilnius_Province Thorn_Province Halych_Province Cracow_Province Breslau_Province
+
+	factions hungary russia poland
+
+music_type southern_european
+
+	; portugal
+	regions Lisbon_Province
+
+	; spain
+	regions Leon_Province Toledo_Province Pamplona_Province Zaragoza_Province Valencia_Province
+
+	; milan
+	regions Milan_Province Florence_Province Genoa_Province Ajaccio_Province Cagliari_Province
+
+	; venice
+	regions Venice_Province Bologna_Province
+
+	; sicily
+	regions Naples_Province Palermo_Province
+
+	;papal_states
+	regions Roman_Province
+
+	; byzantium
+	regions Caffa_Province Trebizond_Province Constantinople_Province Thessalonica_Province Nicaea_Province
+	regions Durazzo_Province Smyrna_Province Corinth_Province Isle_of_Cyprus Isle_of_Rhodes
+	regions Isle_of_Crete
+	
+	factions byzantium portugal spain milan venice sicily papal_states slave 
+
+music_type middle_eastern
+
+	; turks
+	regions Tbilisi_Province Yerevan_Province Caesarea_Province Baghdad_Province Iconium_Province
+	regions Mosul_Province Edessa_Province Adana_Province Antioch_Province Aleppo_Province
+	regions Acre_Province Jerusalem_Province Jedda_Province
+
+	; moors
+	regions Cordoba_Province Granada_Province Marrakesh_Province Algiers_Province Tunis_Province
+	regions Damascus_Province Timbuktu_Province Arguin_Province
+
+	; egypt
+	regions Gaza_Province Tripoli_Province Alexandria_Province Cairo_Province Dongola_Province
+
+	factions turks moors egypt mongols timurids
+
+music_type mesoamerican
+
+	; aztecs
+	regions North_America Caribbean_Isles Cholula_Province Tlaxcala_Province Tenochtitlan_Province
+	regions Brazil
+
+	factions aztecs
+
+
+
+
+

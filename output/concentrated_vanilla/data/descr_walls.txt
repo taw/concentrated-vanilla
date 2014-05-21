@@ -106,7 +106,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-			stat		2, 0, arrow, 100, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat		3, 0, arrow, 100, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
 			stat_attr	no
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	90
@@ -154,7 +154,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-			stat		2, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat		3, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
 			stat_attr	no
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	90
@@ -200,7 +200,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-		stat		2, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+		stat		3, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
 			stat_attr	no
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	90
@@ -258,7 +258,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-			stat		2, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat		3, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
 			stat_attr	no
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	90
@@ -330,7 +330,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-			stat		2, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat		3, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
 			stat_attr	no
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	90

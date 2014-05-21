@@ -1,0 +1,136 @@
+venice
+hold_regions Constantinople_Province
+take_regions 45
+short_campaign hold_regions ;Constantinople_Province
+take_regions 15
+outlive milan byzantium
+
+sicily
+hold_regions Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province
+take_regions 15
+outlive milan venice
+
+milan
+hold_regions Constantinople_Province
+take_regions 45
+short_campaign hold_regions ;Constantinople_Province
+take_regions 15
+outlive venice hre
+
+denmark
+hold_regions Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province
+take_regions 20
+outlive hre
+
+egypt
+hold_regions Constantinople_Province Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Constantinople_Province Jerusalem_Province
+take_regions 15
+outlive turks moors
+
+scotland
+hold_regions Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province
+take_regions 15
+outlive england
+
+aztecs
+hold_regions Roman_Province
+take_regions 45
+short_campaign hold_regions ;Roman_Province
+take_regions 15
+
+turks
+hold_regions Constantinople_Province Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Constantinople_Province Jerusalem_Province
+take_regions 20
+outlive byzantium
+
+france
+hold_regions Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province
+take_regions 20
+outlive england
+
+hre
+hold_regions Roman_Province
+take_regions 45
+short_campaign hold_regions ;Roman_Province
+take_regions 20
+outlive denmark milan
+
+england
+hold_regions Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province
+take_regions 15
+outlive france scotland
+
+portugal
+hold_regions Jerusalem_Province Granada_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province Granada_Province
+take_regions 15
+outlive moors spain
+
+poland
+hold_regions Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province
+take_regions 15
+outlive russia hungary
+
+byzantium
+hold_regions Roman_Province Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Roman_Province Jerusalem_Province
+take_regions 15
+outlive turks venice
+
+moors
+hold_regions Jerusalem_Province Toledo_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province Toledo_Province
+take_regions 15
+outlive spain portugal
+
+russia
+hold_regions Constantinople_Province Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Constantinople_Province Jerusalem_Province
+take_regions 15
+outlive poland hungary
+
+spain
+hold_regions Jerusalem_Province Granada_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province Granada_Province
+take_regions 15
+outlive moors portugal
+
+hungary
+hold_regions Jerusalem_Province
+take_regions 45
+short_campaign hold_regions ;Jerusalem_Province
+take_regions 15
+outlive poland hre
+
+papal_states
+hold_regions ;Roman_Province
+take_regions 100
+short_campaign hold_regions ;Roman_Province
+take_regions 80
+
+slave
+hold_regions Roman_Province Tenochtitlan_Province
+take_regions 100
+short_campaign hold_regions ;Roman_Province
+take_regions 80
