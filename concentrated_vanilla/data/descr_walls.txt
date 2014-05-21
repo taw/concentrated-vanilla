@@ -1,0 +1,374 @@
+;
+; Gates:  model plus left and right gate models, offsets and sizes.
+; Assumed the gates face outward along Z.
+; NO double gates, please.
+; Using none anywhere here means the items are simply ignored.
+;
+; Gate types:  wooden; reinforced; iron.
+; Short gate - wooden only
+; Medium gate - all three
+; Huge gate - all three
+;
+; Valid sounds are: none, knife, sword, spear, axe, mace, club, arrow_tower and ballista_tower
+;
+
+gates
+{
+	gate  short_wooden
+	{
+		full_health 200
+		height 10.0		; TODO -
+		pursuit_lockout_radius	80.0
+		blocked_lockout_radius	70.0
+	}
+
+	gate  medium_wooden
+	{
+		full_health 200
+		height 10.0		; TODO -
+		pursuit_lockout_radius	80.0
+		blocked_lockout_radius	70.0
+	}
+
+
+	gate  huge_wooden
+	{
+		full_health 300
+		height 10.0		; TODO -
+		pursuit_lockout_radius	80.0
+		blocked_lockout_radius	70.0
+	}
+
+	gate  medium_reinforced
+	{
+		full_health 300
+		height 10.0		; TODO -
+		pursuit_lockout_radius	80.0
+		blocked_lockout_radius	70.0
+	}
+
+	gate  huge_reinforced
+	{
+		full_health 400
+		height 10.0		; TODO -
+		pursuit_lockout_radius	80.0
+		blocked_lockout_radius	70.0
+	}
+
+
+	gate  medium_iron
+	{
+		full_health 400
+		height 10.0		; TODO -
+		pursuit_lockout_radius	80.0
+		blocked_lockout_radius	70.0
+	}
+
+	gate  huge_iron
+	{
+		full_health 500
+		height 10.0		; TODO -
+		pursuit_lockout_radius	80.0
+		blocked_lockout_radius	70.0
+	}
+
+}
+
+; SHORT WOODEN WALLS
+wall
+{
+	level 0
+	siege_tower_size too_small
+
+	wall
+	{
+		full_health 125
+		battle_stats flammability_medium impact_damage_high
+		localised_name wall
+	}
+
+	gateway
+	{
+		full_health 10
+		battle_stats  flammability_medium impact_damage_high
+		localised_name gateway
+		projectile_impacts_all_hit_gate
+		short_wooden	; Just one type allowed!
+	}
+	tower
+	{
+		full_health 60
+		control_area_radius 30
+		manned 1
+		battle_stats  flammability_medium impact_damage_high
+		localised_name tower
+		
+		; as in descr_unit.txt
+		level
+		{
+			stat		12, 0, arrow, 100, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat_attr	no
+			shot_sfx	TOWER_ARROW_FIRING
+			fire_angle	90
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  1000	   625
+			fire_rate normal 750	   625
+			fire_rate large  500       625
+			fire_rate huge   375       625
+		}
+	}
+}
+
+; TALL WOODEN WALLS
+wall
+{
+	level 1
+	siege_tower_size small
+
+	wall
+	{
+		full_health 250
+		battle_stats flammability_medium impact_damage_high
+		localised_name wall
+	}
+
+	gateway
+	{
+		full_health 10
+		battle_stats flammability_medium impact_damage_high
+		localised_name gateway
+		projectile_impacts_all_hit_gate
+		medium_wooden
+		medium_reinforced
+		medium_iron
+	}
+	tower
+	{
+		full_health 125
+		control_area_radius 30
+		manned 1
+		battle_stats  flammability_medium impact_damage_high
+		localised_name tower
+		
+		; as in descr_unit.txt
+		level
+		{
+			stat		12, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat_attr	no
+			shot_sfx	TOWER_ARROW_FIRING
+			fire_angle	90
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  1000	   625
+			fire_rate normal 750	   625
+			fire_rate large  500       625
+			fire_rate huge   375       625
+		}
+	}
+}
+
+; SMALL STONE/TOWN WALLS
+wall
+{
+	level 2
+	siege_tower_size medium
+
+	wall
+	{
+		full_health 500
+		battle_stats flammability_none impact_damage_high
+		localised_name wall
+	}
+	gateway
+	{
+		full_health 500
+		battle_stats flammability_none impact_damage_high
+		localised_name gateway
+		medium_wooden
+		medium_reinforced
+		medium_iron
+	}
+	tower
+	{
+		full_health 250
+		control_area_radius 30
+		manned 1
+		battle_stats flammability_none impact_damage_high
+		localised_name tower
+		
+		; as in descr_unit.txt
+		level
+		{
+		stat		12, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat_attr	no
+			shot_sfx	TOWER_ARROW_FIRING
+			fire_angle	90
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  1000	   625
+			fire_rate normal 750	   625
+			fire_rate large  500       625
+			fire_rate huge   375       625
+		}
+		level
+		{
+			stat		40, 0, tower_ballista, 150, 10, siege_missile, artillery_mechanical, piercing, ballista_tower, 350, 1
+			stat_attr	no
+			shot_sfx	TOWER_BALLISTA_FIRING	
+			fire_angle	45
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  2250	   	 3250		
+			fire_rate normal 1500	   	 2750
+			fire_rate large  1000        2250
+			fire_rate huge   750        1500
+		}
+	}
+}
+
+wall
+{
+	level 3
+	siege_tower_size medium
+
+	wall
+	{
+		full_health 1500
+		battle_stats flammability_none impact_damage_high
+		localised_name wall
+	}
+	gateway
+	{
+		full_health 1500
+		battle_stats flammability_none impact_damage_high
+		localised_name gateway
+		medium_wooden
+		medium_reinforced
+		medium_iron
+	}
+	tower
+	{
+		full_health 750
+		control_area_radius 30
+		manned 1
+		battle_stats flammability_none impact_damage_high
+		localised_name tower
+		
+		; as in descr_unit.txt
+		level
+		{
+			stat		12, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat_attr	no
+			shot_sfx	TOWER_ARROW_FIRING
+			fire_angle	90
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  2000	   625
+			fire_rate normal 750	   625
+			fire_rate large  750       625
+			fire_rate huge   500       625
+		}
+
+		level
+		{
+			stat		40, 0, tower_ballista, 150, 10, siege_missile, artillery_mechanical, piercing, ballista_tower, 350, 1
+			stat_attr	no
+			shot_sfx	TOWER_BALLISTA_FIRING	
+			fire_angle	45
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  2250	   	 3250		
+			fire_rate normal 1500	   	 2750
+			fire_rate large  1000        2250
+			fire_rate huge   750        1500
+		}
+		level
+		{
+			stat		40, 0, bombard_shot, 290, 10, siege_missile, artillery_gunpowder, piercing, cannon_tower, 80, 1
+			stat_attr	no
+			shot_sfx	CANNON_FIRING	
+			fire_angle	45
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  10000	   8000
+			fire_rate normal 8000	   8000
+			fire_rate large  7000        8000
+			fire_rate huge   6000        8000
+		}
+	}
+}
+
+wall
+{
+	level 4
+	siege_tower_size large
+
+	wall
+	{
+		full_health 2000
+		battle_stats flammability_none impact_damage_high
+		localised_name wall
+	}
+	gateway
+	{
+		full_health 2000
+		battle_stats flammability_none impact_damage_high
+		localised_name gateway
+		huge_wooden
+		huge_reinforced
+		huge_iron
+	}
+	tower
+	{
+		full_health 1000
+		control_area_radius 30
+		manned 1
+		battle_stats flammability_none impact_damage_high
+		localised_name tower
+		
+		; as in descr_unit.txt
+		level
+		{
+			stat		12, 0, arrow, 120, 10, missile, missile_mechanical, piercing, arrow_tower, 10, 1
+			stat_attr	no
+			shot_sfx	TOWER_ARROW_FIRING
+			fire_angle	90
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  2000	   625
+			fire_rate normal 750	   625
+			fire_rate large  750       625
+			fire_rate huge   500       625
+		}
+		level
+		{
+			stat		40, 0, tower_ballista, 150, 10, siege_missile, artillery_mechanical, piercing, ballista_tower, 350, 1
+			stat_attr	no
+			shot_sfx	TOWER_BALLISTA_FIRING	
+			fire_angle	45
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  2250	   	 3250		
+			fire_rate normal 1500	   	 2750
+			fire_rate large  1000        2250
+			fire_rate huge   750        1500
+		}
+		
+
+		level
+		{
+			stat		40, 0, bombard_shot, 290, 10, siege_missile, artillery_gunpowder, piercing, cannon_tower, 80, 1
+			stat_attr	no
+			shot_sfx	CANNON_FIRING	
+			fire_angle	45
+
+			; unit size 	 reload_ms flaming_reload_ms 
+			fire_rate small  10000	   8000
+			fire_rate normal 8000	   8000
+			fire_rate large  7000        8000
+			fire_rate huge   6000        8000
+		}
+	}
+}
+

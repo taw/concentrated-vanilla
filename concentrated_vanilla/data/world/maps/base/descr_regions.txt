@@ -1,0 +1,1013 @@
+;
+; regions list
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+North_America
+	Miccosukee
+	aztecs
+	Native_Rebels
+	212 198 206
+	tobacco, coal, america, no_pirates, no_brigands
+	5
+	3
+	religions { catholic 0 orthodox 0 islam 0 pagan 100 heretic 0 }
+Inverness_Province
+	Inverness
+	scotland
+	English_Rebels
+	20 25 225
+	atlantic, explorers_guild
+	5
+	2
+	religions { catholic 90 orthodox 0 islam 0 pagan 5 heretic 5 }
+Oslo_Province
+	Oslo
+	denmark
+	Norse_Rebels
+	255 180 190
+	fish, furs, timber, iron, amber, atlantic, explorers_guild
+	5
+	3
+	religions { catholic 80 orthodox 3 islam 0 pagan 15 heretic 2 }
+Stockholm_Province
+	Stockholm
+	denmark
+	Norse_Rebels
+	252 245 42
+	silver, furs, timber, iron, slaves, amber
+	5
+	3
+	religions { catholic 75 orthodox 8 islam 0 pagan 15 heretic 2 }
+Helsinki_Province
+	Helsinki
+	russia
+	Norse_Rebels
+	66 47 85
+	fish, furs, timber, dyes
+	5
+	1
+	religions { catholic 0 orthodox 25 islam 0 pagan 75 heretic 0 }
+Novgorod_Province
+	Novgorod
+	russia
+	Rus_Rebels
+	241 211 25
+	furs, timber, amber
+	5
+	4
+	religions { catholic 2 orthodox 74 islam 2 pagan 20 heretic 2 }
+Moscow_Province
+	Moscow
+	russia
+	Rus_Rebels
+	58 89 177
+	furs, timber
+	5
+	2
+	religions { catholic 0 orthodox 70 islam 6 pagan 24 heretic 0 }
+Volga-Bulgar_Province
+	Bulgar
+	russia
+	Steppe_Rebels
+	58 177 75
+	none
+	5
+	3
+	religions { catholic 0 orthodox 10 islam 85 pagan 4 heretic 1 }
+Riga_Province
+	Riga
+	russia
+	Livonian_Rebels
+	58 177 95
+	amber, crusade
+	5
+	3
+	religions { catholic 0 orthodox 10 islam 0 pagan 85 heretic 5 }
+Arhus_Province
+	Arhus
+	denmark
+	Norse_Rebels
+	232 41 55
+	fish, amber, atlantic, explorers_guild
+	5
+	4
+	religions { catholic 82 orthodox 5 islam 0 pagan 10 heretic 3 }
+Edinburgh_Province
+	Edinburgh
+	scotland
+	Scots_Rebels
+	220 225 255
+	dyes, atlantic, explorers_guild
+	5
+	4
+	religions { catholic 90 orthodox 0 islam 0 pagan 5 heretic 5 }
+Smolensk_Province
+	Smolensk
+	russia
+	Rus_Rebels
+	177 110 83
+	horde_target
+	5
+	2
+	religions { catholic 2 orthodox 74 islam 2 pagan 20 heretic 2 }
+Dublin_Province
+	Dublin
+	scotland
+	Irish_Rebels
+	10 232 10
+	silver, atlantic, explorers_guild
+	5
+	3
+	religions { catholic 96 orthodox 0 islam 0 pagan 2 heretic 2 }
+Vilnius_Province
+	Vilnius
+	russia
+	Livonian_Rebels
+	131 33 125
+	amber, atlantic, crusade
+	5
+	2
+	religions { catholic 4 orthodox 20 islam 0 pagan 75 heretic 1 }
+York_Province
+	York
+	england
+	English_Rebels
+	230 30 35
+	iron, coal, wool, atlantic, explorers_guild, woodsmens_guild
+	5
+	3
+	religions { catholic 90 orthodox 0 islam 0 pagan 5 heretic 5 }
+Caribbean_Isles
+	Caribbean
+	england
+	Native_Rebels
+	145 198 206
+	america, no_pirates, no_brigands
+	4
+	4
+	religions { catholic 0 orthodox 0 islam 0 pagan 100 heretic 0 }
+Ryazan_Province
+	Ryazan
+	russia
+	Rus_Rebels
+	177 58 83
+	timber
+	5
+	2
+	religions { catholic 2 orthodox 74 islam 2 pagan 20 heretic 2 }
+Caernarvon_Province
+	Caernarvon
+	england
+	Welsh_Rebels
+	41 232 63
+	coal, wool, atlantic, explorers_guild
+	4
+	2
+	religions { catholic 85 orthodox 0 islam 0 pagan 12 heretic 3 }
+Thorn_Province
+	Thorn
+	poland
+	Polish_Rebels
+	41 41 203
+	none
+	5
+	3
+	religions { catholic 20 orthodox 0 islam 0 pagan 75 heretic 5 }
+Nottingham_Province
+	Nottingham
+	england
+	English_Rebels
+	232 41 198
+	dyes, wool, atlantic, explorers_guild, woodsmens_guild
+	5
+	3
+	religions { catholic 90 orthodox 0 islam 0 pagan 5 heretic 5 }
+Stettin_Province
+	Stettin
+	poland
+	German_Rebels
+	203 41 232
+	teutonic_knights_chapter_house
+	5
+	3
+	religions { catholic 0 orthodox 10 islam 0 pagan 85 heretic 5 }
+Hamburg_Province
+	Hamburg
+	hre
+	German_Rebels
+	232 198 41
+	silver, atlantic, explorers_guild, teutonic_knights_chapter_house
+	5
+	3
+	religions { catholic 75 orthodox 0 islam 0 pagan 20 heretic 5 }
+Tlaxcala_Province
+	Tlaxcala
+	aztecs
+	Mexican_Rebels
+	95 185 236
+	gold, dyes, tobacco, america, no_pirates,  no_brigands
+	5
+	4
+	religions { catholic 0 orthodox 0 islam 0 pagan 100 heretic 0 }
+Sarkel_Province
+	Sarkel
+	russia
+	Steppe_Rebels
+	177 170 58
+	slaves
+	5
+	2
+	religions { catholic 0 orthodox 33 islam 5 pagan 60 heretic 2 }
+Antwerp_Province
+	Antwerp
+	france
+	Flemish_Rebels
+	41 162 232
+	textiles, dyes, atlantic, explorers_guild
+	5
+	4
+	religions { catholic 80 orthodox 0 islam 0 pagan 8 heretic 12 }
+Magdeburg_Province
+	Magdeburg
+	hre
+	German_Rebels
+	64 41 52
+	timber, teutonic_knights_chapter_house
+	5
+	3
+	religions { catholic 85 orthodox 0 islam 0 pagan 12 heretic 3 }
+Halych_Province
+	Halych
+	poland
+	Polish_Rebels
+	78 232 51
+	amber
+	5
+	2
+	religions { catholic 75 orthodox 6 islam 0 pagan 17 heretic 2 }
+Cracow_Province
+	Cracow
+	poland
+	Polish_Rebels
+	177 78 58
+	silver, sulfur, amber
+	5
+	3
+	religions { catholic 85 orthodox 3 islam 0 pagan 10 heretic 2 }
+London_Province
+	London
+	england
+	English_Rebels
+	232 41 46
+	dyes, tin, wool, atlantic, explorers_guild, woodsmens_guild
+	5
+	4
+	religions { catholic 85 orthodox 0 islam 0 pagan 13 heretic 2 }
+Breslau_Province
+	Breslau
+	poland
+	German_Rebels
+	141 160 233
+	timber
+	5
+	3
+	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
+Kiev_Province
+	Kiev
+	russia
+	Rus_Rebels
+	33 131 116
+	slaves, sulfur, horde_target
+	5
+	3
+	religions { catholic 2 orthodox 74 islam 2 pagan 20 heretic 2 }
+Bruges_Province
+	Bruges
+	england
+	Flemish_Rebels
+	232 90 41
+	textiles, dyes
+	5
+	4
+	religions { catholic 80 orthodox 0 islam 0 pagan 8 heretic 12 }
+Frankfurt_Province
+	Frankfurt
+	hre
+	German_Rebels
+	63 232 41
+	coal, teutonic_knights_chapter_house
+	5
+	4
+	religions { catholic 80 orthodox 0 islam 0 pagan 5 heretic 15 }
+Metz_Province
+	Metz
+	hre
+	Burgundian_Rebels
+	72 41 232
+	timber, iron
+	5
+	3
+	religions { catholic 75 orthodox 0 islam 0 pagan 5 heretic 20 }
+Cholula_Province
+	Cholula
+	aztecs
+	Mexican_Rebels
+	80 170 221
+	gold, silver, chocolate, tobacco, america, no_pirates,  no_brigands
+	5
+	5
+	religions { catholic 0 orthodox 0 islam 0 pagan 100 heretic 0 }
+Caen_Province
+	Caen
+	france
+	French_Rebels
+	170 170 11
+	timber, dyes, atlantic, explorers_guild, woodsmens_guild
+	5
+	2
+	religions { catholic 85 orthodox 0 islam 0 pagan 13 heretic 2 }
+Prague_Province
+	Prague
+	hre
+	Bohemian_Rebels
+	58 150 177
+	timber, tin, coal
+	5
+	3
+	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
+Rheims_Province
+	Rheims
+	france
+	French_Rebels
+	31 75 37
+	iron, coal
+	5
+	4
+	religions { catholic 80 orthodox 0 islam 0 pagan 10 heretic 10 }
+Rennes_Province
+	Rennes
+	france
+	French_Rebels
+	232 41 135
+	wine, atlantic, explorers_guild
+	5
+	4
+	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
+Nuremburg_Province
+	Nuremburg
+	hre
+	German_Rebels
+	230 41 232
+	timber, iron, wine, tin, atlantic, teutonic_knights_chapter_house
+	5
+	2
+	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
+Paris_Province
+	Paris
+	france
+	French_Rebels
+	203 202 201
+	none
+	5
+	5
+	religions { catholic 85 orthodox 0 islam 0 pagan 10 heretic 5 }
+Hohenstauffen_Province
+	Hohenstauffen
+	hre
+	German_Rebels
+	253 180 10
+	wine, teutonic_knights_chapter_house
+	5
+	3
+	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
+Iasi_Province
+	Iasi
+	hungary
+	Wallachian_Rebels
+	131 33 38
+	none
+	5
+	3
+	religions { catholic 5 orthodox 15 islam 0 pagan 75 heretic 5 }
+Tenochtitlan_Province
+	Tenochtitlan
+	aztecs
+	Mexican_Rebels
+	65 155 206
+	gold, silver, chocolate, dyes, tobacco, america, no_pirates, no_brigands
+	5
+	5
+	religions { catholic 0 orthodox 0 islam 0 pagan 100 heretic 0 }
+Budapest_Province
+	Budapest
+	hungary
+	Magyar_Rebels
+	33 100 131
+	none
+	5
+	5
+	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
+Angers_Province
+	Angers
+	france
+	French_Rebels
+	173 172 171
+	wine
+	5
+	4
+	religions { catholic 85 orthodox 0 islam 0 pagan 10 heretic 5 }
+Bran_Province
+	Bran
+	hungary
+	Wallachian_Rebels
+	72 177 58
+	none
+	5
+	3
+	religions { catholic 46 orthodox 2 islam 0 pagan 50 heretic 2 }
+Caffa_Province
+	Caffa
+	russia
+	Steppe_Rebels
+	17 74 202
+	slaves, sulfur
+	5
+	4
+	religions { catholic 0 orthodox 33 islam 5 pagan 60 heretic 2 }
+Vienna_Province
+	Vienna
+	hre
+	Bohemian_Rebels
+	131 61 33
+	silver, timber, iron, dyes
+	5
+	4
+	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
+Dijon_Province
+	Dijon
+	france
+	Burgundian_Rebels
+	85 114 141
+	iron, wine, coal
+	5
+	4
+	religions { catholic 75 orthodox 0 islam 0 pagan 5 heretic 20 }
+Bern_Province
+	Bern
+	hre
+	Swiss_Rebels
+	175 175 175
+	timber
+	5
+	4
+	religions { catholic 85 orthodox 0 islam 0 pagan 5 heretic 10 }
+Innsbruck_Province
+	Innsbruck
+	hre
+	Swiss_Rebels
+	150 150 150
+	teutonic_knights_chapter_house
+	5
+	3
+	religions { catholic 80 orthodox 0 islam 0 pagan 5 heretic 15 }
+Bordeaux_Province
+	Bordeaux
+	france
+	French_Rebels
+	68 232 41
+	wine, dyes, atlantic, explorers_guild
+	5
+	3
+	religions { catholic 85 orthodox 0 islam 0 pagan 5 heretic 10 }
+Tbilisi_Province
+	Tbilisi
+	turks
+	Steppe_Rebels
+	199 31 143
+	slaves
+	5
+	2
+	religions { catholic 0 orthodox 30 islam 30 pagan 30 heretic 10 }
+Bucharest_Province
+	Bucharest
+	hungary
+	Wallachian_Rebels
+	218 246 61
+	none
+	5
+	3
+	religions { catholic 60 orthodox 5 islam 0 pagan 35 heretic 0 }
+Milan_Province
+	Milan
+	milan
+	Italian_Rebels
+	221 232 41
+	textiles
+	5
+	5
+	religions { catholic 80 orthodox 0 islam 0 pagan 5 heretic 15 }
+Venice_Province
+	Venice
+	venice
+	Italian_Rebels
+	13 198 117
+	textiles
+	5
+	5
+	religions { catholic 95 orthodox 0 islam 0 pagan 3 heretic 2 }
+Toulouse_Province
+	Toulouse
+	france
+	French_Rebels
+	196 13 198
+	iron, dyes, crusade
+	5
+	4
+	religions { catholic 75 orthodox 0 islam 0 pagan 5 heretic 20 }
+Leon_Province
+	Leon
+	spain
+	Iberian_Rebels
+	13 157 198
+	coal, wool, atlantic, explorers_guild, knights_of_santiago_chapter_house
+	5
+	4
+	religions { catholic 90 orthodox 0 islam 0 pagan 10 heretic 0 }
+Zagreb_Province
+	Zagreb
+	venice
+	Croatian_Rebels
+	58 173 177
+	gold, timber, iron, atlantic, explorers_guild
+	5
+	3
+	religions { catholic 85 orthodox 14 islam 0 pagan 0 heretic 1 }
+Sofia_Province
+	Sofia
+	hungary
+	Bulgarian_Rebels
+	131 33 100
+	timber
+	5
+	4
+	religions { catholic 80 orthodox 5 islam 0 pagan 15 heretic 0 }
+Ragusa_Province
+	Ragusa
+	byzantium
+	Croatian_Rebels
+	177 83 58
+	none
+	5
+	3
+	religions { catholic 85 orthodox 5 islam 0 pagan 5 heretic 5 }
+Toledo_Province
+	Toledo
+	spain
+	Spanish_Rebels
+	198 13 35
+	iron, swordsmiths_guild, knights_of_santiago_chapter_house
+	5
+	3
+	religions { catholic 62 orthodox 0 islam 35 pagan 2 heretic 1 }
+Bologna_Province
+	Bologna
+	papal_states
+	Italian_Rebels
+	198 43 13
+	marble, atlantic, explorers_guild
+	5
+	4
+	religions { catholic 85 orthodox 0 islam 0 pagan 0 heretic 15 }
+Pamplona_Province
+	Pamplona
+	spain
+	Spanish_Rebels
+	31 100 37
+	marble, wool, atlantic, explorers_guild
+	5
+	3
+	religions { catholic 85 orthodox 0 islam 10 pagan 3 heretic 2 }
+Genoa_Province
+	Genoa
+	milan
+	Italian_Rebels
+	157 13 198
+	marble, textiles
+	5
+	3
+	religions { catholic 92 orthodox 0 islam 0 pagan 3 heretic 5 }
+Florence_Province
+	Florence
+	papal_states
+	Italian_Rebels
+	157 198 13
+	marble
+	5
+	4
+	religions { catholic 87 orthodox 0 islam 0 pagan 0 heretic 13 }
+Trebizond_Province
+	Trebizond
+	byzantium
+	Anatolian_Rebels
+	202 156 17
+	silver, sulfur
+	5
+	3
+	religions { catholic 0 orthodox 45 islam 45 pagan 10 heretic 0 }
+Marseille_Province
+	Marseille
+	france
+	French_Rebels
+	117 198 13
+	wine, dyes
+	5
+	5
+	religions { catholic 80 orthodox 0 islam 0 pagan 15 heretic 5 }
+Yerevan_Province
+	Yerevan
+	turks
+	Armenian_Rebels
+	202 61 17
+	none
+	5
+	3
+	religions { catholic 0 orthodox 8 islam 80 pagan 7 heretic 5 }
+Zaragoza_Province
+	Zaragoza
+	spain
+	Spanish_Rebels
+	13 196 198
+	iron
+	5
+	3
+	religions { catholic 55 orthodox 0 islam 35 pagan 5 heretic 5 }
+Constantinople_Province
+	Constantinople
+	byzantium
+	Greek_Rebels
+	118 131 33
+	grain, dyes, silk, atlantic, explorers_guild, crusade, horde_target, jihad
+	5
+	5
+	religions { catholic 0 orthodox 95 islam 2 pagan 2 heretic 1 }
+Lisbon_Province
+	Lisbon
+	portugal
+	Iberian_Rebels
+	13 198 30
+	marble, tin, atlantic, explorers_guild
+	5
+	4
+	religions { catholic 55 orthodox 0 islam 35 pagan 5 heretic 5 }
+Thessalonica_Province
+	Thessalonica
+	byzantium
+	Greek_Rebels
+	177 58 145
+	timber, marble, sulfur
+	5
+	4
+	religions { catholic 5 orthodox 90 islam 0 pagan 3 heretic 2 }
+Ajaccio_Province
+	Ajaccio
+	milan
+	Island_Rebels
+	255 225 220
+	wine
+	5
+	4
+	religions { catholic 80 orthodox 0 islam 10 pagan 5 heretic 5 }
+Nicaea_Province
+	Nicaea
+	byzantium
+	Greek_Rebels
+	33 59 131
+	silk
+	5
+	3
+	religions { catholic 0 orthodox 80 islam 15 pagan 3 heretic 2 }
+Roman_Province
+	Rome
+	papal_states
+	Italian_Rebels
+	52 13 198
+	crusade
+	5
+	4
+	religions { catholic 99 orthodox 0 islam 0 pagan 0 heretic 1 }
+Naples_Province
+	Naples
+	sicily
+	Italian_Rebels
+	198 13 174
+	wool
+	5
+	5
+	religions { catholic 90 orthodox 0 islam 0 pagan 10 heretic 0 }
+Caesarea_Province
+	Caesarea
+	turks
+	Anatolian_Rebels
+	177 58 148
+	none
+	5
+	3
+	religions { catholic 0 orthodox 15 islam 80 pagan 2 heretic 3 }
+Baghdad_Province
+	Baghdad
+	egypt
+	Seljuk_Rebels
+	177 58 167
+	silk, sulfur, jihad
+	5
+	5
+	religions { catholic 0 orthodox 0 islam 90 pagan 0 heretic 10 }
+Cordoba_Province
+	Cordoba
+	moors
+	Iberian_Rebels
+	17 13 198
+	sugar, coal, atlantic, explorers_guild, knights_of_santiago_chapter_house
+	5
+	5
+	religions { catholic 25 orthodox 0 islam 65 pagan 5 heretic 5 }
+Durazzo_Province
+	Durazzo
+	byzantium
+	Greek_Rebels
+	13 18 244
+	timber
+	5
+	2
+	religions { catholic 10 orthodox 80 islam 0 pagan 10 heretic 0 }
+Valencia_Province
+	Valencia
+	spain
+	Spanish_Rebels
+	187 198 13
+	knights_of_santiago_chapter_house
+	5
+	4
+	religions { catholic 55 orthodox 0 islam 40 pagan 3 heretic 2 }
+Iconium_Province
+	Iconium
+	turks
+	Anatolian_Rebels
+	17 165 202
+	sulfur, wool, jihad
+	5
+	4
+	religions { catholic 0 orthodox 15 islam 80 pagan 3 heretic 2 }
+Adana_Province
+	Adana
+	turks
+	Armenian_Rebels
+	17 202 52
+	sulfur
+	5
+	4
+	religions { catholic 0 orthodox 10 islam 85 pagan 3 heretic 2 }
+Mosul_Province
+	Mosul
+	turks
+	Seljuk_Rebels
+	41 232 225
+	cotton
+	5
+	3
+	religions { catholic 0 orthodox 2 islam 85 pagan 0 heretic 13 }
+Cagliari_Province
+	Cagliari
+	sicily
+	Island_Rebels
+	198 35 13
+	silver
+	5
+	4
+	religions { catholic 80 orthodox 0 islam 10 pagan 5 heretic 5 }
+Edessa_Province
+	Edessa
+	turks
+	Seljuk_Rebels
+	244 122 13
+	none
+	5
+	4
+	religions { catholic 0 orthodox 30 islam 70 pagan 0 heretic 0 }
+Smyrna_Province
+	Smyrna
+	byzantium
+	Anatolian_Rebels
+	61 177 58
+	none
+	5
+	2
+	religions { catholic 2 orthodox 50 islam 45 pagan 0 heretic 3 }
+Antioch_Province
+	Antioch
+	turks
+	Seljuk_Rebels
+	13 244 165
+	sugar, cotton, crusade, horde_target
+	5
+	5
+	religions { catholic 0 orthodox 2 islam 90 pagan 0 heretic 8 }
+Granada_Province
+	Granada
+	moors
+	Iberian_Rebels
+	180 198 180
+	knights_of_santiago_chapter_house
+	5
+	4
+	religions { catholic 25 orthodox 0 islam 70 pagan 0 heretic 5 }
+Brazil
+	Fortaleza
+	aztecs
+	Native_Rebels
+	0 223 255
+	gold, timber, iron, chocolate, dyes, tin, america, no_pirates, no_brigands
+	5
+	4
+	religions { catholic 0 orthodox 0 islam 0 pagan 100 heretic 0 }
+Aleppo_Province
+	Aleppo
+	turks
+	Seljuk_Rebels
+	175 171 244
+	none
+	5
+	4
+	religions { catholic 0 orthodox 2 islam 90 pagan 0 heretic 8 }
+Jedda_Province
+	Jedda
+	egypt
+	Arab_Rebels
+	13 171 244
+	none
+	5
+	1
+	religions { catholic 0 orthodox 0 islam 99 pagan 0 heretic 1 }
+Palermo_Province
+	Palermo
+	sicily
+	Island_Rebels
+	177 142 58
+	sugar, sulfur, cotton, amber
+	5
+	4
+	religions { catholic 75 orthodox 0 islam 20 pagan 3 heretic 2 }
+Corinth_Province
+	Corinth
+	byzantium
+	Greek_Rebels
+	225 192 192
+	none
+	5
+	4
+	religions { catholic 5 orthodox 90 islam 0 pagan 2 heretic 3 }
+Marrakesh_Province
+	Marrakesh
+	moors
+	Saharan_Rebels
+	202 126 17
+	iron, atlantic, explorers_guild
+	5
+	3
+	religions { catholic 0 orthodox 0 islam 96 pagan 2 heretic 2 }
+Isle_of_Cyprus
+	Nicosia
+	byzantium
+	Greek_Rebels
+	126 144 111
+	marble
+	5
+	5
+	religions { catholic 5 orthodox 80 islam 10 pagan 3 heretic 2 }
+Damascus_Province
+	Damascus
+	turks
+	Arab_Rebels
+	244 203 14
+	sugar, swordsmiths_guild
+	5
+	4
+	religions { catholic 0 orthodox 10 islam 80 pagan 10 heretic 0 }
+Algiers_Province
+	Algiers
+	moors
+	Saharan_Rebels
+	17 83 202
+	iron
+	5
+	3
+	religions { catholic 0 orthodox 0 islam 90 pagan 10 heretic 0 }
+Tunis_Province
+	Tunis
+	moors
+	Fatimid_Rebels
+	202 191 17
+	iron, crusade
+	5
+	4
+	religions { catholic 0 orthodox 0 islam 90 pagan 10 heretic 0 }
+Acre_Province
+	Acre
+	egypt
+	Arab_Rebels
+	33 131 128
+	none
+	5
+	3
+	religions { catholic 0 orthodox 5 islam 90 pagan 0 heretic 5 }
+Isle_of_Rhodes
+	Rhodes
+	byzantium
+	Greek_Rebels
+	131 33 77
+	wine
+	5
+	3
+	religions { catholic 0 orthodox 70 islam 20 pagan 10 heretic 0 }
+Isle_of_Crete
+	Iraklion
+	byzantium
+	Greek_Rebels
+	193 162 206
+	timber
+	5
+	3
+	religions { catholic 65 orthodox 30 islam 0 pagan 5 heretic 0 }
+Jerusalem_Province
+	Jerusalem
+	egypt
+	Arab_Rebels
+	244 13 29
+	crusade, jihad, horde_target
+	5
+	4
+	religions { catholic 2 orthodox 48 islam 35 pagan 0 heretic 15 }
+Gaza_Province
+	Gaza
+	egypt
+	Arab_Rebels
+	35 244 13
+	none
+	5
+	2
+	religions { catholic 0 orthodox 5 islam 80 pagan 10 heretic 5 }
+Tripoli_Province
+	Tripoli
+	moors
+	Saharan_Rebels
+	202 17 48
+	none
+	5
+	3
+	religions { catholic 10 orthodox 5 islam 70 pagan 10 heretic 5 }
+Alexandria_Province
+	Alexandria
+	egypt
+	Fatimid_Rebels
+	244 13 214
+	sugar, cotton
+	5
+	5
+	religions { catholic 0 orthodox 5 islam 80 pagan 5 heretic 10 }
+Arguin_Province
+	Arguin
+	moors
+	Saharan_Rebels
+	244 171 13
+	gold, ivory, slaves, atlantic, explorers_guild, arguin
+	5
+	2
+	religions { catholic 0 orthodox 0 islam 80 pagan 20 heretic 0 }
+Timbuktu_Province
+	Timbuktu
+	moors
+	Saharan_Rebels
+	244 13 138
+	gold, ivory, slaves
+	5
+	1
+	religions { catholic 0 orthodox 0 islam 3 pagan 97 heretic 0 }
+Cairo_Province
+	Cairo
+	egypt
+	Fatimid_Rebels
+	122 13 244
+	sugar, cotton, jihad, crusade
+	5
+	6
+	religions { catholic 0 orthodox 5 islam 80 pagan 5 heretic 10 }
+Dongola_Province
+	Dongola
+	egypt
+	Saharan_Rebels
+	42 232 77
+	ivory, slaves
+	5
+	4
+	religions { catholic 0 orthodox 10 islam 80 pagan 5 heretic 5 }

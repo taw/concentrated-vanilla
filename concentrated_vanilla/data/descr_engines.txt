@@ -1,0 +1,1626 @@
+;
+;	This file contains the engine linkages; it gets parsed on application
+;	startup but is not otherwise referred to. The data format is thus:
+;
+;	;						indicates a comment ;-)
+;
+;	Common Data
+;	-----------
+;	type				indicates a new engine type, must be followed by id name string,
+;								and id strings must be unique
+;	culture				permitted cultures - 'all' for any culture
+;	class				underlying engine class
+;       pathfinding_data		traversable network file containing the pathfinding data
+;	engine_collision		cas file detailing the 3D collision model
+;	engine_model			model(s) to be used for the engine, followed by distance in m or "max"
+;	engine_radius			2D radius for the engine
+;   engine_length
+;   engine_width
+;	engine_height			height of the engine
+;	engine_mass			total mass for the engine
+;   engine_dock_dist        engine docking distance (in m)
+;   engine_mob_dist         engine follow distance for soldiers (in m)
+;   engine_front_attacked   this engine can be attacked head-on
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				huge_bombard
+culture				all
+class				huge_bombard
+pathfinding_data		none
+reference_points		siege_engines/siege_huge_bombard.modelReferencePoints
+
+
+engine_model_group	normal
+engine_skeleton		huge_bombard
+engine_bone_map	siege_engines/BoneMaps/huge_bombard.xml
+engine_collision siege_engines/collision_models/siege_huge_bombard_collision.CAS
+engine_mesh		siege_engines/siege_huge_bombard.mesh, 40.0
+engine_mesh		siege_engines/lods/siege_huge_bombard_med.mesh, 80.0
+engine_mesh		siege_engines/lods/siege_huge_bombard_low.mesh, max
+
+
+engine_model_group	dying
+engine_skeleton		huge_bombard_dying
+engine_bone_map	siege_engines/BoneMaps/huge_bombard_destroy.xml
+engine_collision siege_engines/collision_models/siege_huge_bombard_collision.CAS
+engine_mesh		siege_engines/destroyed/siege_huge_bombard_destructuction.mesh, max
+
+engine_model_group	dead
+engine_collision siege_engines/collision_models/siege_huge_bombard_collision.CAS
+engine_mesh		siege_engines/destroyed/siege_huge_bombard_destroyed.mesh,  max
+
+engine_shadow		none
+
+
+engine_radius		4.5
+engine_visual_radius 6.5
+engine_length		9
+engine_width		5
+engine_height		5.3
+engine_mass			15
+engine_dock_dist	5
+engine_mob_dist		10.5
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_medium_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	2.5
+obstacle_y_radius	4.5
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy 0.0	-2.0
+engine_station		dummy  1.0    -2.0
+
+engine_health		15
+
+missile_pos			0.0 1.0 1.2
+
+crew_animations
+    crank            	Left_Stoke, crew_left
+    crank            	Right_Load, crew_right
+    crank            	Crew_Rear, crew_rear
+    fire            	Left_Stoke, crew_left_cover, crew_left
+    fire            	Right_Load, crew_right_cover, crew_right
+    fire            	Crew_Rear, crew_rear_fire_recover, crew_rear
+end
+
+
+shot_pfx_front		cannon_shot_huge_muzzle_flash_set
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+type				rocket_launcher
+culture				all
+class				rocket_launcher
+pathfinding_data		none
+reference_points	siege_engines/rocket_launcher.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		rocket_launcher
+engine_bone_map		siege_engines/BoneMaps/shared.xml
+engine_collision	siege_engines/collision_models/rocket_launcher_collision.CAS
+engine_mesh		siege_engines/rocket_launcher.mesh, 40.0
+engine_mesh		siege_engines/lods/rocket_launcher_med.mesh,  80.0
+engine_mesh		siege_engines/lods/rocket_launcher_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		rocket_launcher_dying
+engine_bone_map	siege_engines/BoneMaps/rocket_destroy.xml
+engine_collision	siege_engines/collision_models/rocket_launcher_collision.CAS
+engine_mesh		siege_engines/destroyed/rocket_launcher_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/rocket_launcher_collision.CAS
+engine_mesh		siege_engines/destroyed/rocket_launcher_destroyed.mesh,  max
+
+engine_shadow		none
+
+
+engine_radius		1.7      ;1.3
+engine_visual_radius 2.5
+engine_length		2.4
+engine_width		1.5
+engine_height		2.0
+engine_mass			3
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	0.75
+obstacle_y_radius	1.0
+
+engine_spo physical_obstacle
+
+engine_push_point	test	0.0	-1.85
+engine_station		test	-2.0	-1.93
+
+engine_health		10
+
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Crew_Rear, crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_rear
+    fire            	Crew_Rear, crew_rear, crew_right_load_3, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_5, crew_rear
+
+
+end
+
+normal_shots		36
+shot_delay			6
+
+shot_pfx_front		cannon_shot_rocket_launcher_front
+shot_pfx_back		cannon_shot_rocket_launcher_back
+shot_sfx			Rocket_Launcher_Fire
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type				monster_ribault
+culture				all
+class				monster_ribault
+pathfinding_data		none
+reference_points	siege_engines/siege_monster_ribault.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		monster_ribault
+engine_bone_map		siege_engines/BoneMaps/shared.xml
+engine_collision	siege_engines/collision_models/siege_monster_ribault_collision.CAS
+engine_mesh		siege_engines/siege_monster_ribault.mesh, 40.0
+engine_mesh		siege_engines/lods/siege_monster_ribault_med.mesh,  80.0
+engine_mesh		siege_engines/lods/siege_monster_ribault_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		monster_ribault_dying
+engine_bone_map	siege_engines/BoneMaps/monster_ribault_destroy.xml
+engine_collision	siege_engines/collision_models/siege_monster_ribault_collision.CAS
+engine_mesh		siege_engines/destroyed/siege_monster_ribault_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/siege_monster_ribault_collision.CAS
+engine_mesh		siege_engines/destroyed/siege_monster_ribault_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		2.6
+engine_visual_radius 3.0
+engine_length		5.3
+engine_width		1.9
+engine_height		2.5
+engine_mass			6
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	1.0
+obstacle_y_radius	1.5
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	0.0	-1.85
+engine_station		dummy	0.0	-1.93
+
+engine_health		10
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Crew_Rear, crew_rear
+    special_crank       Crew_Rear, crew_rear
+    fire            	Crew_Rear, crew_right_load_3, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_5, crew_rear, crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_rear
+    special_fire        Crew_Rear, crew_right_load_3, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_4cycle, crew_right_load_5, crew_rear, crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_3cycle, crew_left_stoke_3cycle, crew_left_stoke_3cycle, crew_left_stoke_3cycle, crew_left_stoke_3cycle, crew_left_stoke_4, crew_rear
+end
+
+normal_shots		6
+shot_delay			12
+special_shots		36
+
+shot_pfx_front		cannon_shot_rocket_launcher_front
+shot_pfx_back		cannon_shot_rocket_launcher_back
+shot_sfx			Monster_Ribault_Fire
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type				culverin
+culture				all
+class				culverin
+pathfinding_data		none
+reference_points		siege_engines/culverin.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		culverin
+engine_bone_map	siege_engines/BoneMaps/culverin.xml
+engine_collision	siege_engines/collision_models/culverin_collision.CAS
+engine_mesh		siege_engines/culverin.mesh, 40.0
+engine_mesh		siege_engines/lods/culverin_med.mesh,  80.0
+engine_mesh		siege_engines/lods/culverin_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		culverin_dying
+engine_bone_map	siege_engines/BoneMaps/culverin_die.xml
+engine_collision	siege_engines/collision_models/culverin_collision.CAS
+engine_mesh		siege_engines/destroyed/culverin_destuction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/culverin_collision.CAS
+engine_mesh		siege_engines/destroyed/culverin_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		2.2
+engine_visual_radius 3
+engine_length		3
+engine_width		1.2
+engine_height		1.3
+engine_mass			7
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	0.6
+obstacle_y_radius	1.5
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	0.0	-1.85
+engine_station		dummy	0.0	-1.93
+
+engine_health		10
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Left_Stoke, crew_left_stoke_1, crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_left
+    crank_attachment	Left_Stoke, ramrod
+    crank            	Right_Load, crew_right_load_1, crew_right_load_2, crew_right_load_3, crew_right_load_4cycle, crew_right_load_5, crew_right
+    crank_attachment	Right_Load, unarmed			 , load				, unarmed
+    crank            	Crew_Rear, crew_rear
+    crank_attachment	Crew_Rear, unarmed
+    fire            	Left_Stoke, crew_left_cover, crew_left
+    fire_attachment		Left_Stoke, ramrod
+    fire            	Right_Load, crew_right_cover, crew_right
+    fire_attachment		Right_Load, unarmed
+    fire            	Crew_Rear, crew_rear_fire_idle, crew_rear
+    fire_attachment		Crew_Rear, unarmed
+end
+
+shot_pfx_front		culverin_shot_small_muzzle_flash_set
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				serpentine
+culture				all
+class				serpentine
+pathfinding_data		none
+reference_points		siege_engines/siege_serpentine.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		serpentine
+engine_bone_map		siege_engines/BoneMaps/serpentine.xml
+engine_collision	siege_engines/collision_models/siege_serpentine_collision.CAS
+engine_mesh			siege_engines/siege_serpentine.mesh, 40.0
+engine_mesh			siege_engines/lods/siege_serpentine_med.mesh,  80.0
+engine_mesh			siege_engines/lods/siege_serpentine_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		serpentine_dying
+engine_bone_map	siege_engines/BoneMaps/serpentine_destroy.xml
+engine_collision	siege_engines/collision_models/siege_serpentine_collision.CAS
+engine_mesh		siege_engines/destroyed/siege_serpentine_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/siege_serpentine_collision.CAS
+engine_mesh		siege_engines/destroyed/siege_serpentine_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		1.8
+engine_visual_radius 2
+engine_length		3.0
+engine_width		1.0
+engine_height		1.4
+engine_mass			4
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		   engine_fire_small_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	0.5
+obstacle_y_radius	1.5
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	0.0	-1.85
+engine_station		dummy	0.0	-1.93
+
+engine_health		10
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Left_Stoke, crew_left_stoke_1,crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_left
+	crank_attachment    Left_Stoke, ramrod
+    crank            	Right_Load, crew_right_load_1, crew_right_load_2, crew_right_load_3, crew_right_load_4cycle, crew_right_load_5, crew_right
+	crank_attachment    Right_Load, unarmed, load, unarmed
+    crank            	Crew_Rear, crew_rear
+	crank_attachment    Crew_Rear, unarmed
+    fire            	Left_Stoke, crew_left_cover, crew_left
+    fire            	Right_Load, crew_right_cover, crew_right
+    fire            	Crew_Rear, crew_rear_fire_idle, crew_rear
+end
+
+shot_pfx_front		culverin_shot_small_muzzle_flash_set
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				catapult
+culture				all
+class				catapult
+pathfinding_data		none
+reference_points		siege_engines/catapult.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		catapult
+engine_bone_map	siege_engines/BoneMaps/catapult.xml
+engine_collision	siege_engines/collision_models/catapult_collision.CAS
+engine_mesh		siege_engines/catapult.mesh, 40.0
+engine_mesh		siege_engines/lods/catapult_med.mesh,  80.0
+engine_mesh		siege_engines/lods/catapult_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		catapult_dying
+engine_bone_map	siege_engines/BoneMaps/catapult_destroy.xml
+engine_collision	siege_engines/collision_models/catapult_collision.CAS
+engine_mesh		siege_engines/destroyed/catapult_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/catapult_collision.CAS
+engine_mesh		siege_engines/destroyed/catapult_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		3
+engine_visual_radius 5
+engine_length		5.8
+engine_width		3.5
+engine_height		5.0
+engine_mass			2
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_medium_set
+engine_front_attacked false
+
+sa_range            50.0
+sa_friendly_range   75.0
+
+obstacle_shape		rectangle
+obstacle_x_radius	2.0
+obstacle_y_radius	2.7
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	0.0	-1.85
+engine_station		dummy	0.0	-1.93
+
+engine_health		10
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Crew_Right, crew_right_load_1, crew_right_load_2, crew_right_load_3, crew_right
+    crank            	Crew_Left, crew_left_stoke_1, crew_left_stoke_2, crew_left_stoke_3cycle, crew_left
+    fire            	Crew_Right, crew_right
+    fire            	Crew_Left, crew_left_cover, crew_left
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				bombard
+culture				all
+class				bombard
+pathfinding_data		none
+reference_points		siege_engines/siege_bombard.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		bombard
+engine_bone_map	siege_engines/BoneMaps/bombard.xml
+engine_collision	siege_engines/collision_models/siege_bombard_collision.CAS
+engine_mesh		siege_engines/siege_bombard.mesh, 40.0
+engine_mesh		siege_engines/lods/siege_bombard_med.mesh,  80.0
+engine_mesh		siege_engines/lods/siege_bombard_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		bombard_dying
+engine_bone_map	siege_engines/BoneMaps/bombard_die.xml
+engine_collision	siege_engines/collision_models/siege_bombard_collision.CAS
+engine_mesh		siege_engines/destroyed/bombard_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/siege_bombard_collision.CAS
+engine_mesh		siege_engines/destroyed/bombard_destroyed.mesh,  max
+
+engine_shadow		none
+
+
+engine_radius		1.3       ;1.1
+engine_visual_radius 1.3
+engine_length		2.3
+engine_width		1.0
+engine_height		1.0
+engine_mass			4
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	0.7
+obstacle_y_radius	1.2
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	0.0	-1.85
+engine_station		dummy	0.0	-1.93
+
+engine_health		10
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Left_Stoke, crew_left_stoke_1,crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_left
+	crank_attachment    Left_Stoke, ramrod
+    crank            	Right_Load, crew_right_load_1, crew_right_load_2, crew_right_load_3, crew_right_load_4cycle, crew_right_load_5, crew_right
+	crank_attachment    Right_Load, unarmed, load, unarmed
+    crank            	Crew_Rear, crew_rear
+	crank_attachment    Crew_Rear, unarmed
+    fire            	Left_Stoke, crew_left_cover, crew_left
+    fire            	Right_Load, crew_right_cover, crew_right
+    fire            	Crew_Rear, crew_rear_fire_idle, crew_rear
+end
+
+shot_pfx_front		cannon_shot_small_muzzle_flash_dark_set
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type				mortar
+culture				all
+class				mortar
+pathfinding_data		none
+reference_points		siege_engines/siege_mortar.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		mortar
+engine_bone_map	siege_engines/BoneMaps/mortar.xml
+engine_collision	siege_engines/collision_models/mortar_collision.CAS
+engine_mesh		siege_engines/siege_mortar.mesh, 40.0
+engine_mesh		siege_engines/lods/siege_mortar_med.mesh,  80.0
+engine_mesh		siege_engines/lods/siege_mortar_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		mortar_dying
+engine_bone_map	siege_engines/BoneMaps/mortar_destroy.xml
+engine_collision	siege_engines/collision_models/mortar_collision.CAS
+engine_mesh		siege_engines/destroyed/mortar_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/mortar_collision.CAS
+engine_mesh		siege_engines/destroyed/mortar_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		1.0
+engine_visual_radius 2.0
+engine_length		1.3
+engine_width		1.1
+engine_height		1.5
+engine_mass			3
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	0.6
+obstacle_y_radius	0.7
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	0.0	-1.85
+engine_station		dummy	0.0	-1.93
+
+engine_health		10
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Left_Stoke, crew_left_stoke_1,crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_left
+	crank_attachment    Left_Stoke, ramrod
+    crank            	Right_Load, crew_right_load_1, crew_right_load_2, crew_right_load_3, crew_right_load_4cycle, crew_right_load_5, crew_right
+	crank_attachment    Right_Load, unarmed, load, unarmed
+    crank            	Crew_Rear, crew_rear
+	crank_attachment    Crew_Rear, unarmed
+    fire            	Left_Stoke, crew_left_cover, crew_left
+    fire            	Right_Load, crew_right_cover, crew_right
+    fire            	Crew_Rear, crew_rear_fire_idle, crew_rear
+end
+
+shot_pfx_front		mortar_shot_small_muzzle_flash_set
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				basilisk
+culture				all
+class				basilisk
+pathfinding_data		none
+reference_points		siege_engines/basilisk_idle.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton	basilisk
+engine_bone_map	siege_engines/BoneMaps/basilisk.xml
+engine_collision	siege_engines/collision_models/basilisk_collision.CAS
+engine_mesh		siege_engines/basilisk_idle.mesh, 40.0
+engine_mesh		siege_engines/lods/basilisk_med.mesh,  80.0
+engine_mesh		siege_engines/lods/basilisk_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton	basilisk_dying
+engine_bone_map	siege_engines/BoneMaps/basilisk_destroy.xml
+engine_collision	siege_engines/collision_models/basilisk_collision.CAS
+engine_mesh		siege_engines/destroyed/basilisk_destruction.mesh,	max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/basilisk_collision.CAS
+engine_mesh		siege_engines/destroyed/basilisk_destroyed.mesh,	max
+
+engine_shadow		none
+
+engine_radius		3.0
+engine_visual_radius 3.5
+engine_length		5.8
+engine_width		2
+engine_height		1.5
+engine_mass			8
+engine_dock_dist	5
+engine_mob_dist		7.5
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		drop
+obstacle_x_radius	1.0
+obstacle_y_radius	3.5
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	-1.0	-2.0
+engine_push_point	dummy	1.0	    -2.0
+
+engine_health		15
+missile_pos			0.0 1.4 0.0
+
+crew_animations
+    crank            	Left_Stoke, crew_left_stoke_1,crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_left
+	crank_attachment    Left_Stoke, ramrod
+    crank            	Right_Load, crew_right_load_1, crew_right_load_2, crew_right_load_3, crew_right_load_4cycle, crew_right_load_5, crew_right
+	crank_attachment    Right_Load, unarmed, load, unarmed
+    crank            	Crew_Rear, crew_rear
+	crank_attachment    Crew_Rear, unarmed
+    fire            	Left_Stoke, crew_left_cover, crew_left
+    fire            	Right_Load, crew_right_cover, crew_right
+    fire            	Crew_Rear, crew_rear_fire_idle, crew_rear
+end
+
+shot_pfx_front		cannon_shot_medium_muzzle_flash_set
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type				ballista
+culture				all
+class				ballista
+pathfinding_data		none
+reference_points		siege_engines/siege_ballista.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton	ballista
+engine_bone_map	siege_engines/BoneMaps/ballista.xml
+engine_collision	siege_engines/collision_models/ballista_collision.CAS
+engine_mesh		siege_engines/siege_ballista.mesh, 40.0
+engine_mesh		siege_engines/lods/siege_ballista_med.mesh,  80.0
+engine_mesh		siege_engines/lods/siege_ballista_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		ballista_dying
+engine_bone_map	siege_engines/BoneMaps/ballista_destruct.xml
+engine_mesh		siege_engines/destroyed/siege_ballista_destruction.mesh,	max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/ballista_collision.CAS
+engine_mesh		siege_engines/destroyed/ballista_destroyed.mesh,	max
+
+engine_shadow		none
+
+engine_radius		3.0
+engine_visual_radius 2.2
+engine_length		4.0
+engine_width		3.0
+engine_height		1.7
+engine_mass			8
+engine_dock_dist	5
+engine_mob_dist		7.5
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		drop
+obstacle_x_radius	1.7
+obstacle_y_radius	2.0
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	-1.0	-2.0
+engine_push_point	dummy	1.0	    -2.0
+
+engine_health		15
+missile_pos			0.0 1.4 0.0
+
+crew_animations
+    crank            	Crew_Left,	crew_left_stoke_2,	crew_left_stoke_3cycle,	crew_left,	crew_left,	crew_left
+	crank_attachment    Crew_Left,	arrow,				unarmed,				unarmed,	unarmed,	arrow
+    crank            	Crew_Right, crew_right
+	crank_attachment	Crew_Right,	unarmed
+    crank            	Crew_Rear, 	crew_rear_fire_idle, crew_rear_fire_commence, crew_rear_fire_recover, crew_rear
+	crank_attachment	Crew_Rear,	unarmed
+    fire            	Crew_Left,	crew_left
+	fire_attachment    	Crew_Left,	arrow
+    fire            	Crew_Right, crew_right
+	fire_attachment    	Crew_Right,	unarmed
+    fire            	Crew_Rear, 	crew_rear
+	fire_attachment    	Crew_Rear,	unarmed
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				great_bombard
+culture				all
+class				grand_bombard
+pathfinding_data		none
+reference_points		siege_engines/grand_bombard_rig.modelReferencePoints
+
+
+engine_model_group	normal
+engine_skeleton		Great_Bombard
+engine_bone_map	siege_engines/BoneMaps/great_bombard.xml
+engine_collision	siege_engines/collision_models/great_bombard_collision.CAS
+engine_mesh		siege_engines/grand_bombard_rig.mesh, 40.0
+engine_mesh		siege_engines/lods/grand_bombard_med.mesh,  80.0
+engine_mesh		siege_engines/lods/grand_bombard_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		Great_Bombard_dying
+engine_bone_map	siege_engines/BoneMaps/great_bombard_destroy.xml
+engine_collision	siege_engines/collision_models/great_bombard_collision.CAS
+engine_mesh		siege_engines/destroyed/grand_bombard_destroyed.mesh, max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/great_bombard_collision.CAS
+engine_mesh		siege_engines/destroyed/grand_bombard_dead.mesh,  max
+
+engine_shadow		none
+
+engine_radius		2.6
+engine_visual_radius 2.6
+engine_length		3.0
+engine_width		1.0
+engine_height		1.3
+engine_mass			5q
+engine_dock_dist	5
+engine_mob_dist		5.5
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_medium_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	0.5
+obstacle_y_radius	1.0
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	0.0	-2.0
+engine_station		dummy	1.0	-2.0
+
+engine_health		15
+missile_pos			0.0 1.0 1.2
+
+crew_animations
+    crank            	Left_Stoke, crew_left_stoke_1,crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_left
+	crank_attachment    Left_Stoke, ramrod
+    crank            	Right_Load, crew_right_load_1, crew_right_load_2, crew_right_load_3, crew_right_load_4cycle, crew_right_load_5, crew_right
+	crank_attachment    Right_Load, unarmed, load, unarmed
+    crank            	Crew_Rear, crew_rear
+	crank_attachment    Crew_Rear, unarmed
+    fire            	Left_Stoke, crew_left_cover, crew_left
+    fire            	Right_Load, crew_right_cover, crew_right
+    fire            	Crew_Rear, crew_rear_fire_idle, crew_rear
+end
+
+shot_pfx_front		cannon_shot_large_muzzle_flash_dark_set
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+type				trebuchet
+culture				all
+class				trebuchet
+pathfinding_data		none
+reference_points		siege_engines/siege_trebuchet.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		trebuchet
+engine_bone_map	siege_engines/BoneMaps/trebuchet.xml
+engine_collision	siege_engines/collision_models/siege_trebuchet_collision.CAS
+engine_mesh		siege_engines/siege_trebuchet.mesh, 40.0
+engine_mesh		siege_engines/lods/siege_trebuchet_med.mesh,  80.0
+engine_mesh		siege_engines/lods/siege_trebuchet_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		trebuchet_dying
+engine_bone_map	siege_engines/BoneMaps/trebuchet_die.xml
+engine_collision	siege_engines/collision_models/siege_trebuchet_collision.CAS
+engine_mesh			siege_engines/destroyed/trebuchet_destruction.mesh, max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/siege_trebuchet_collision.CAS
+engine_mesh			siege_engines/destroyed/trebuchet_destroyed.mesh, max
+
+engine_shadow		none
+
+engine_radius		4.5        ;2
+engine_visual_radius 16
+engine_length		10
+engine_width		4
+engine_height		8
+engine_mass			13
+engine_dock_dist	5
+engine_mob_dist		9
+engine_flammable    true
+engine_ignition		1.0
+fire_effect		    engine_fire_medium_trebuchet_set
+engine_front_attacked false
+
+sa_range            50.0
+sa_friendly_range   75.0
+
+obstacle_shape		rectangle
+obstacle_x_radius	1.5       ;1.0
+obstacle_y_radius	7.0
+
+engine_formation  9, 12
+
+
+engine_spo physical_obstacle
+
+engine_health		50
+missile_pos			0.0 20 1.2
+
+crew_animations
+    crank            	Left_Stoke, crew_left
+    crank            	Right_Load, crew_right
+    crank            	Crew_Rear, crew_rear
+    fire            	Left_Stoke, crew_left_stoke_1, crew_left
+    fire            	Right_Load, crew_right_load_1, crew_right
+    fire            	Crew_Rear, crew_rear_fire_recover, crew_rear
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				cannon
+culture				all
+class				cannon
+pathfinding_data		none
+reference_points		siege_engines/siege_cannon.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		cannon
+engine_bone_map	siege_engines/BoneMaps/culverin.xml
+engine_collision	siege_engines/collision_models/siege_cannon_collision.CAS
+engine_mesh		siege_engines/siege_cannon.mesh, 40.0
+engine_mesh		siege_engines/lods/siege_cannon_med.mesh,  80.0
+engine_mesh		siege_engines/lods/siege_cannon_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		cannon_dying
+engine_bone_map	siege_engines/BoneMaps/cannon_die.xml
+engine_collision	siege_engines/collision_models/siege_cannon_collision.CAS
+engine_mesh		siege_engines/destroyed/artillery_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/siege_cannon_collision.CAS
+engine_mesh		siege_engines/destroyed/artillery_destroyed.mesh,  max
+
+engine_shadow		none
+
+
+engine_radius		1.8
+engine_visual_radius 2.0
+engine_length		2.0
+engine_width		1.4
+engine_height		1.3
+engine_mass			5
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		drop
+obstacle_x_radius	0.5
+obstacle_y_radius	1.0
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	0.0	-1.85
+engine_station		dummy	0.0	-1.93
+
+engine_health		10
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Left_Stoke, crew_left_stoke_1,crew_left_stoke_2, crew_left_stoke_3cycle, crew_left_stoke_4, crew_left
+	crank_attachment    Left_Stoke, ramrod
+    crank            	Right_Load, crew_right_load_1, crew_right_load_2, crew_right_load_3, crew_right_load_4cycle, crew_right_load_5, crew_right
+	crank_attachment    Right_Load, unarmed, load, unarmed
+    crank            	Crew_Rear, crew_rear
+	crank_attachment    Crew_Rear, unarmed
+    fire            	Left_Stoke, crew_left_cover, crew_left
+    fire            	Right_Load, crew_right_cover, crew_right
+    fire            	Crew_Rear, crew_rear_fire_idle, crew_rear
+end
+
+shot_pfx_front		cannon_shot_medium_muzzle_flash_set
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				ribault
+culture				all
+class				ribault
+pathfinding_data		none
+reference_points		siege_engines/small_ribault.modelReferencePoints
+
+engine_model_group	normal
+engine_skeleton		ribault
+engine_bone_map	siege_engines/BoneMaps/culverin.xml
+engine_collision	siege_engines/collision_models/ribault_collision.CAS
+engine_mesh		siege_engines/small_ribault.mesh, 40.0
+engine_mesh		siege_engines/lods/small_ribault_low.mesh,  80.0
+engine_mesh		siege_engines/lods/small_ribault_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		ribault_dying
+engine_bone_map	siege_engines/BoneMaps/smlribault_destroy.xml
+engine_collision	siege_engines/collision_models/ribault_collision.CAS
+engine_mesh		siege_engines/destroyed/small_ribault_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/ribault_collision.CAS
+engine_mesh		siege_engines/destroyed/small_ribault_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		2.4
+engine_visual_radius 2.5
+engine_length		6.4
+engine_width		1.6
+engine_height		1.6
+engine_mass			6
+engine_dock_dist	5
+engine_mob_dist		7.5
+engine_flammable    true
+engine_ignition		2.5
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		drop
+obstacle_x_radius	1
+obstacle_y_radius	1.5
+
+engine_spo physical_obstacle
+
+engine_health		15
+missile_pos			0.0 1.0 0.0
+
+crew_animations
+    crank            	Crew_Rear, crew_rear_fire_idle, crew_rear_fire_commence, crew_rear_fire_recover, crew_rear
+    fire            	Crew_Rear, crew_left, crew_rear
+end
+
+normal_shots		9
+shot_delay			6
+;special_shots		6
+
+shot_pfx_front		cannon_shot_rocket_launcher_front
+shot_pfx_back		cannon_shot_rocket_launcher_back
+shot_sfx			Ribault_Fire
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				great_cross
+culture				all
+class				holy_cart
+pathfinding_data	none
+reference_points	siege_engines/great_cross_standard.modelReferencePoints
+area_effect         ae_holy_inspiration
+
+engine_model_group	normal
+engine_skeleton		Great_Cross_standard
+engine_bone_map		siege_engines/BoneMaps/Great_Cross_standard.xml
+engine_collision	siege_engines/collision_models/catapult_collision.CAS
+engine_mesh			siege_engines/great_cross_standard.mesh, 40.0
+engine_mesh			siege_engines/great_cross_standard.mesh,  80.0
+engine_mesh			siege_engines/great_cross_standard.mesh,  max
+
+engine_model_group	dying
+
+engine_skeleton		Great_Cross_standard_dying
+engine_bone_map		siege_engines/BoneMaps/great_cross_destroy.xml
+engine_collision	siege_engines/collision_models/standard_cross_collision.CAS
+engine_mesh			siege_engines/destroyed/great_cross_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/standard_cross_collision.CAS
+engine_mesh			siege_engines/destroyed/great_cross_standard_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		3      ;2.5
+engine_visual_radius 3.5
+engine_length		5
+engine_width		3.3
+engine_height		7.2
+engine_mass			6
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    false	;;; Bob. This'll probably come back as a bug. Please don't fix it as we're not aiming for an endorsement from the KKK
+engine_ignition		2.5
+fire_effect		    engine_fire_medium_set
+
+obstacle_shape		drop
+obstacle_x_radius	1.7
+obstacle_y_radius	2.5
+
+engine_formation  8, 7
+
+
+engine_spo physical_obstacle
+
+engine_health		10
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				great_standart_milan
+culture				all
+class				holy_cart
+pathfinding_data	none
+reference_points	siege_engines/great_bell_tower_standard_milan.modelReferencePoints
+area_effect         ae_holy_inspiration
+
+engine_model_group	normal
+engine_skeleton		Great_bell_tower_standard
+engine_bone_map		siege_engines/BoneMaps/Great_Bell_Tower_standard.xml
+engine_collision	siege_engines/collision_models/belltower_collide.CAS
+engine_mesh			siege_engines/great_bell_tower_standard_milan.mesh, 40.0
+engine_mesh			siege_engines/great_bell_tower_standard_milan.mesh,  80.0
+engine_mesh			siege_engines/great_bell_tower_standard_milan.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		Great_bell_dying
+engine_bone_map		siege_engines/BoneMaps/belltower_destruct.xml
+engine_collision	siege_engines/collision_models/belltower_collide.CAS
+engine_mesh			siege_engines/destroyed/greatbell_milan_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/belltower_collide.CAS
+engine_mesh			siege_engines/destroyed/greatbell_milan_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		3
+engine_visual_radius 3
+engine_length		5
+engine_width		3.2
+engine_height		11
+engine_mass			6
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		0.5
+fire_effect		    engine_fire_medium_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	1.6
+obstacle_y_radius	2.5
+
+engine_formation  8, 7
+
+engine_spo physical_obstacle
+
+engine_health		10
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				great_standart_venice
+culture				all
+class				holy_cart
+pathfinding_data	none
+reference_points	siege_engines/great_bell_tower_standard_milan.modelReferencePoints
+area_effect         ae_holy_inspiration
+
+engine_model_group	normal
+engine_skeleton		Great_bell_tower_standard
+engine_bone_map		siege_engines/BoneMaps/Great_Bell_Tower_standard.xml
+engine_collision	siege_engines/collision_models/catapult_collision.CAS
+engine_mesh			siege_engines/great_bell_tower_standard_venice.mesh, 40.0
+engine_mesh			siege_engines/great_bell_tower_standard_venice.mesh,  80.0
+engine_mesh			siege_engines/great_bell_tower_standard_venice.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		Great_bell_dying
+engine_bone_map		siege_engines/BoneMaps/belltower_destruct.xml
+engine_collision	siege_engines/collision_models/belltower_collide.CAS
+engine_mesh			siege_engines/destroyed/greatbell_venice_destruction.mesh,  max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/belltower_collide.CAS
+engine_mesh			siege_engines/destroyed/greatbell_venice_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		3       ;7.0
+engine_visual_radius	7.0
+engine_length		5
+engine_width		3.2
+engine_height		11
+engine_mass			6
+engine_dock_dist	1.5
+engine_mob_dist		4
+engine_flammable    true
+engine_ignition		0.5
+fire_effect		    engine_fire_medium_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	1.6
+obstacle_y_radius	2.5
+
+engine_formation  8, 7
+
+engine_spo physical_obstacle
+
+engine_health		10
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				siege_tower
+culture				all
+class				tower
+variant				small
+pathfinding_data    siege_engines/siege_tower_small.modelTraversableNetwork
+surface_occupants	20
+
+engine_model_group	normal
+engine_skeleton		siege_tower
+engine_bone_map	    siege_engines/BoneMaps/tower2.xml
+engine_collision	siege_engines/collision_models/siege_tower_small_collision.CAS
+engine_mesh		    siege_engines/siege_tower_small.mesh,			    100
+engine_mesh		    siege_engines/siege_tower_small.mesh,			    200
+engine_mesh		    siege_engines/siege_tower_small.mesh,			    400
+engine_mesh		    siege_engines/siege_tower_small.mesh,			    max
+
+engine_model_group	dying
+engine_skeleton		siege_tower_dying
+engine_bone_map	    siege_engines/BoneMaps/smalltower_die.xml
+engine_collision	siege_engines/collision_models/siege_tower_small_collision.CAS
+engine_mesh		siege_engines/destroyed/small_tower_destruct_def.mesh, max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/siege_tower_small_collision.CAS
+engine_mesh		siege_engines/destroyed/small_tower_destroyed.mesh, max
+
+engine_shadow		none
+
+engine_radius		5.5   ;3.5
+engine_visual_radius 20
+engine_length		7.0
+engine_width		7.2
+engine_height		19
+engine_mass			40
+engine_dock_dist	7.2
+engine_mob_dist		8.0
+engine_flammable    true
+engine_ignition		0.30
+fire_effect		    engine_fire_large_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	3.6
+obstacle_y_radius	3.5
+
+engine_formation  10, 10
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	-3.5	-4.5
+engine_push_point	dummy	-1.75	-4.5
+engine_push_point	dummy	0.0		-4.5
+engine_push_point	dummy	1.75	-4.5
+engine_push_point	dummy	3.5		-4.5
+engine_push_point	dummy	-3.5	-5.5
+engine_push_point	dummy	-1.75	-5.5
+engine_push_point	dummy	0.0		-5.5
+engine_push_point	dummy	1.75	-5.5
+engine_push_point	dummy	3.5		-5.5
+
+engine_health		130
+
+attack_stat         8, 2, arrow, 100, 100, missile, missile_mechanical, piercing
+attack_stat_attr    ap
+
+arrow_generator		2 21.8 3.3
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		1 21.8 3.3
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		0 21.8 3.3
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		-1 21.8 3.3
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		-2 21.8 3.3
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+missile_pos			0.0 22 0.0
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				middle_tower
+culture				all
+class				tower
+variant				medium
+pathfinding_data    siege_engines/siege_tower_town_high.modelTraversableNetwork
+surface_occupants	20
+
+engine_model_group	normal
+engine_skeleton		middle_tower
+engine_bone_map	    siege_engines/BoneMaps/tower2.xml
+engine_collision	siege_engines/collision_models/siege_tower_med_collision.CAS
+engine_mesh		    siege_engines/siege_tower_town_high.mesh,		200
+engine_mesh		    siege_engines/siege_tower_town_high.mesh,		400
+engine_mesh		    siege_engines/siege_tower_town_high.mesh,		800
+engine_mesh		    siege_engines/siege_tower_town_high.mesh,	    max
+
+engine_model_group	dying
+engine_skeleton		middle_tower_dying
+engine_bone_map	    siege_engines/BoneMaps/medtower_die.xml
+engine_collision	siege_engines/collision_models/siege_tower_med_collision.CAS
+engine_mesh		    siege_engines/destroyed/siege_tower_med_destruction.mesh,	    max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/siege_tower_med_collision.CAS
+engine_mesh		    siege_engines/destroyed/siege_tower_med_destroyed.mesh,	    max
+
+engine_shadow		none
+
+engine_radius		5.5     ;4
+engine_visual_radius 24
+engine_length		7
+engine_width		8
+engine_height		23
+engine_mass			40
+engine_dock_dist	7.2
+engine_mob_dist		12
+engine_flammable    true
+engine_ignition		0.30
+fire_effect		    engine_fire_large_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	4
+obstacle_y_radius	3.5
+
+engine_formation  10, 10
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	-3.5		-7.5
+engine_push_point	dummy	-1.75		-7.5
+engine_push_point	dummy	 0.0		-7.5
+engine_push_point	dummy	 1.75		-7.5
+engine_push_point	dummy	 3.5		-7.5
+
+engine_push_point	dummy	-3.5		-8.5
+engine_push_point	dummy	-1.75		-8.5
+engine_push_point	dummy	 0.0		-8.5
+engine_push_point	dummy	 1.75		-8.5
+engine_push_point	dummy	 3.5		-8.5
+
+engine_health		150
+
+attack_stat         12, 2, scorpion, 120, 30, siege_missile, artillery_mechanical, piercing
+attack_stat_attr    ap, bp, launching
+
+arrow_generator		0 35.7 4.8
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		1 35.7 4.8
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		2 35.7 4.8
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		-1 35.7 4.8
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		-2 35.7 4.8
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+missile_pos			0.0 22 0.0
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				heliopolis
+culture				all
+class				tower
+variant				large
+pathfinding_data    siege_engines/siege_tower_big.modelTraversableNetwork
+surface_occupants	20
+
+engine_model_group	normal
+engine_skeleton		heliopolis
+engine_bone_map	    siege_engines/BoneMaps/tower1.xml
+engine_collision	siege_engines/collision_models/siege_tower_big_collide.CAS
+engine_mesh			siege_engines/siege_tower_big.mesh,		200
+engine_mesh			siege_engines/siege_tower_big.mesh,		400
+engine_mesh			siege_engines/siege_tower_big.mesh,		800
+engine_mesh			siege_engines/siege_tower_big.mesh,	max
+
+engine_model_group	dying
+engine_skeleton		heliopolis_dying
+engine_bone_map	    siege_engines/BoneMaps/bigtower_die.xml
+engine_collision	siege_engines/collision_models/siege_tower_big_collide.CAS
+engine_mesh		    siege_engines/destroyed/siege_tower_big_destruciton.mesh,		        max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/siege_tower_big_collide.CAS
+engine_mesh			siege_engines/destroyed/siege_tower_big_destroyed.mesh, max
+
+engine_shadow		none
+
+
+engine_radius		9      ;6.8
+engine_visual_radius 30
+engine_length		13.8
+engine_width		10
+engine_height		31
+engine_mass			100
+engine_dock_dist	12.5
+engine_mob_dist		18
+engine_flammable    true
+engine_ignition		0.28
+fire_effect		    engine_fire_large_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	3.0
+obstacle_y_radius	6.0
+
+engine_formation  14, 16
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	-7.00		-11
+engine_push_point	dummy	-5.25		-11
+engine_push_point	dummy	-3.5		-11
+engine_push_point	dummy	-1.75		-11
+engine_push_point	dummy	 0.0		-11
+engine_push_point	dummy	 1.75		-11
+engine_push_point	dummy	 3.5		-11
+engine_push_point	dummy	 5.25		-11
+engine_push_point	dummy	 7.00		-11
+
+engine_push_point	dummy	-7.00		-13
+engine_push_point	dummy	-5.25		-13
+engine_push_point	dummy	-3.5		-13
+engine_push_point	dummy	-1.75		-13
+engine_push_point	dummy	 0.0		-13
+engine_push_point	dummy	 1.75		-13
+engine_push_point	dummy	 3.5		-13
+engine_push_point	dummy	 5.25		-13
+engine_push_point	dummy	 7.00		-13
+
+engine_health		1000
+
+attack_stat         12, 2, scorpion, 150, 30, siege_missile, artillery_mechanical, piercing
+attack_stat_attr    ap, bp, launching
+
+arrow_generator		0 44 6.4
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		1 44 6.4
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		2 44 6.4
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		-1 44 6.4
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		-2 44 6.4
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		0 31 9
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		0 24 9
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+arrow_generator		0 16 9
+aim_dir				0.0 0.0 1.0
+aim_arc				1.0
+fire_interval		1.5
+
+missile_pos			0.0 22 0.0
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				tortoise_ram
+culture				all
+class				ram
+pathfinding_data    none
+
+engine_model_group	normal
+engine_skeleton		tortoise_ram
+engine_bone_map	siege_engines/BoneMaps/ram.xml
+engine_collision	siege_engines/collision_models/ram_collision.CAS
+engine_mesh		siege_engines/ram_model.mesh, 40.0
+engine_mesh		siege_engines/lods/ram_model_med.mesh,  80.0
+engine_mesh		siege_engines/lods/ram_model_low.mesh,  max
+
+engine_model_group	dying
+engine_skeleton		tortoise_ram_dying
+engine_bone_map	siege_engines/BoneMaps/ram_destroy.xml
+engine_collision	siege_engines/collision_models/ram_collision.CAS
+engine_mesh		siege_engines/destroyed/ram_model_destruction.mesh,  max
+
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/ram_collision.CAS
+engine_mesh		siege_engines/destroyed/ram_model_destroyed.mesh,  max
+
+engine_shadow		none
+
+engine_radius		5    ;4.6
+engine_visual_radius 6
+engine_length		9.2
+engine_width		4
+engine_height		3.3
+engine_mass			16
+engine_dock_dist	5.0
+engine_mob_dist		6.3
+engine_flammable    true
+engine_ignition		0.52
+fire_effect		    engine_fire_medium_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	2.0
+obstacle_y_radius	4.6
+
+engine_formation  10, 10
+
+engine_spo physical_obstacle
+
+engine_push_point	dummy	-2.5		 0.0
+engine_push_point	dummy	-2.5		-2.3
+engine_push_point	dummy	-2.5		-4.6
+engine_push_point	dummy	 2.5		 0.0
+engine_push_point	dummy	 2.5		-2.3
+engine_push_point	dummy	 2.5		-4.6
+
+engine_health		75
+
+attack_stat         5, 2, no, 0, 0, melee, melee_simple, blunt
+attack_stat_attr    no
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				town_ladder
+culture				all
+class				ladder
+variant				small
+pathfinding_data	siege_engines/siege_ladder_small.modelTraversableNetwork
+
+engine_model_group	normal, dying
+engine_skeleton		town_ladder
+engine_bone_map     siege_engines/BoneMaps/ladders.xml
+engine_collision	siege_engines/collision_models/town_ladder_model.CAS
+engine_mesh         siege_engines/siege_ladder_small.mesh, max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/town_ladder_model.CAS
+engine_mesh         siege_engines/destroyed/siege_ladder_small_dead.mesh, max
+
+engine_shadow		none
+
+
+engine_radius		5
+engine_visual_radius 20
+engine_length		12
+engine_width		2
+engine_height		20.0
+engine_mass			10
+engine_dock_dist	11.7
+engine_mob_dist		10.5
+engine_flammable    false
+fire_effect		    engine_fire_small_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	1.0
+obstacle_y_radius	9.0
+
+engine_formation    3.9, 20
+
+engine_spo physical_obstacle
+
+engine_push_point	 dummy	-0.7		 5.25
+engine_push_point	 dummy	-0.7		 3.5
+engine_push_point	 dummy	-0.7		 1.75
+engine_push_point	 dummy	-0.7		 0.0
+engine_push_point	 dummy	-0.7		-1.75
+engine_push_point	 dummy	-0.7		-3.5
+engine_push_point	 dummy	-0.7		-5.25
+
+engine_health		150
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				medium_ladder
+culture				all
+class				ladder
+variant				medium
+pathfinding_data	siege_engines/siege_ladder_medium.modelTraversableNetwork
+
+engine_model_group	normal, dying
+engine_skeleton		town_ladder
+engine_bone_map     siege_engines/BoneMaps/ladders.xml
+engine_collision	siege_engines/collision_models/town_ladder_model.CAS
+engine_mesh         siege_engines/siege_ladder_medium.mesh, max
+
+engine_model_group	dead
+engine_collision	siege_engines/collision_models/town_ladder_model.CAS
+engine_mesh         siege_engines/destroyed/siege_ladder_medium_dead.mesh, max
+
+engine_shadow		none
+
+engine_radius		5
+engine_visual_radius 24
+engine_length		17
+engine_width		2
+engine_height		20.0
+engine_mass			10
+engine_dock_dist	13.12 ; MILESTONE 4 HACK , down from 12.85
+engine_mob_dist		10.5
+engine_flammable    false
+engine_ignition		1.0
+fire_effect		    engine_fire_medium_set
+
+obstacle_shape		rectangle
+obstacle_x_radius	0.5
+obstacle_y_radius	10.0
+
+engine_formation    3.9, 20
+
+engine_spo physical_obstacle
+
+engine_push_point	 dummy	-0.7		 7.0
+engine_push_point	 dummy	-0.7		 5.25
+engine_push_point	 dummy	-0.7		 3.5
+engine_push_point	 dummy	-0.7		 1.75
+engine_push_point	 dummy	-0.7		 0.0
+engine_push_point	 dummy	-0.7		-1.75
+engine_push_point	 dummy	-0.7		-3.5
+engine_push_point	 dummy	-0.7		-5.25
+engine_push_point	 dummy	-0.7		-7.0
+
+engine_health		150
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;type				sap_point
+;culture				all
+;class				sap_point
+;pathfinding_data		none
+;
+;engine_model_group	normal, dying
+;engine_skeleton		sap_point
+;engine_collision	siege_engines/collision_models/mining_tunnel_lowest.CAS
+;
+;engine_model_group	dead
+;engine_collision	siege_engines/collision_models/mining_tunnel_dead_lowest.CAS, max
+;
+;engine_shadow		none
+;
+;engine_radius		5
+;engine_visual_radius 5
+;engine_length		10
+;engine_width		6
+;engine_height		3.0
+;engine_mass			25
+;engine_dock_dist	80
+;engine_mob_dist		15
+;engine_flammable    true
+;engine_ignition		1.0
+;fire_effect		    engine_fire_medium_set
+;
+;engine_spo physical_obstacle			physical_obstacle
+;
+;engine_push_point	dummy	-1		-9
+;engine_push_point	dummy	-1		-4
+;engine_push_point	dummy	1		-9
+;engine_push_point	dummy	1		-4
+;engine_push_point	dummy	0		-2
+;
+;engine_health		20
+;
+;attack_stat         10, 4, no, 0, 0, melee, melee_simple, blunt
+;attack_stat_attr    no
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+

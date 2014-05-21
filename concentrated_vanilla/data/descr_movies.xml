@@ -1,0 +1,997 @@
+<?xml version="1.0"?>
+<root>
+    <missions>
+        <mission name=../../mymod/data/fmv"assassinate">
+            <movie name=../../mymod/data/fmv"ASP EUR" target_type="male" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/ASP EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP EUR S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/ASP EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP EUR E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/ASP EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP EUR D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"ASP MDE" target_type="male" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/ASP MDE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP MDE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/ASP MDE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP MDE E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/ASP MDE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP MDE D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"ASP PRC" target_type="princess" climate="arid:temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/ASP PRC M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP PRC S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/ASP PRC M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP PRC E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/ASP PRC M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/ASP PRC D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BLW OAE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BLW OAM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BLW OLE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BLW OLM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW OLM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BLW TEE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BLW TEM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BLW TME" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TME M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TME S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TME M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TME F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TME M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TME F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BLW TMM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TMM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BLW TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BLW TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BON OAM" target_type="male" location="army" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BON OAW" target_type="witch" location="army" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON OAW S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BON TEM" target_type="male" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BON TEW" target_type="witch" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TEW S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BON TMM" target_type="male" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BON TMW" target_type="witch" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TMW S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BON TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BSB OAM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BSB OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB OAM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BSB OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BSB OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BSB OLE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BSB OLE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB OLE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BSB OLE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB OLE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BSB OLE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB OLE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BSB TEE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BSB TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB TEE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BSB TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB TEE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BSB TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB TEE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BSB TMM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BSB TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB TMM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BSB TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BSB TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BSB TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BTD EUR" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" climate="arid:temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BTD EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BTD EUR S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BTD EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BTD EUR E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BTD EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BTD EUR D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BTD MID" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" climate="arid:temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/BTD MID M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BTD MID S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/BTD MID M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BTD MID E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/BTD MID M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/BTD MID D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"CON EUR" target_type="priest" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"event/church_built.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/CON EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/CON EUR S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"event/church_built.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/CON EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/CON EUR F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"event/church_built.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/CON EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/CON EUR F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KEY EUR" target_type="priest" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KEY EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KEY EUR S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KEY EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KEY EUR F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KEY EUR M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KEY EUR F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI OAI" target_type="priest" location="army" climate="arid" religion ="islam">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAI S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI OAM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI OAN" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAN S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAN F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAN F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI OAP" target_type="priest" location="army" climate="arid" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OAP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OAS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI OLI" target_type="priest" location="army" climate="temperate" religion ="islam">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLI S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI OLM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI OLN" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLN S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLN F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLN F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI OLP" target_type="priest" location="army" climate="temperate" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI OLP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END OLS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI TEI" target_type="priest" location="castle:city" climate="temperate" religion ="islam">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEI S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI TEM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI TEN" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEN S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEN F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEN F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI TEP" target_type="priest" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TEP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI TMI" target_type="priest" location="castle:city" climate="arid" religion ="islam">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMI S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI TMM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI TMN" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMN S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMN F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMN M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMN F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KNI TMP" target_type="priest" location="castle:city" climate="arid" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KNI TMP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KPR TEP" target_type="princess" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"generic/EST EUR X.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KPR TEP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"generic/EST EUR X.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KPR TEP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"generic/EST EUR X.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KPR TEP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"KPR TMP" target_type="princess" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"generic/EST MDE X.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KPR TMP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"generic/EST MDE X.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KPR TMP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"generic/EST MDE X.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/KPR TMP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"MRK TEE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEE S.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEE M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEE F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"MRK TEI" target_type="priest" location="castle:city" climate="temperate" religion ="islam">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEI S.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"MRK TEM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEM S.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TEM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"MRK TME" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TME M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TME S.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TME M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TME F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TME M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TME F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"MRK TMI" target_type="priest" location="castle:city" climate="arid" religion ="islam">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMI S.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMI M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMI F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"MRK TMM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMM S.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMM M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMM F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"MRK TMP" target_type="priest" location="castle:city" climate="arid" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMP S.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/MRK TMP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"SNP TEP" target_type="pope" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/SNP TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/SNP TEP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/SNP TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/SNP TEP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TED E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/SNP TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/SNP TEP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TED D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"STC TEP" target_type="priest" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name=../../mymod/data/fmv"assassinate/STC TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/STC TEP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"assassinate/STC TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/STC TEP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"assassinate/STC TEP M.bik" />
+                    <file name=../../mymod/data/fmv"assassinate/STC TEP F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+        </mission>
+        <mission name=../../mymod/data/fmv"infiltrate">
+            <movie name=../../mymod/data/fmv"BSH TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/BSH TEX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/BSH TEX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/BSH TEX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/BSH TEX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BSH TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/BSH TMX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/BSH TMX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/BSH TMX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/BSH TMX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"CNV OAX" target_culture="middle_eastern" location="army" climate="arid">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/CNV OAX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/CNV OAX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/CNV OAX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/CNV OAX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"CNV OLX" target_culture="southern_european:northern_european:greek:eastern_european" location="army" climate="temperate">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/CNV OLX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/CNV OLX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/CNV OLX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/CNV OLX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"CNV TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/CNV TEX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/CNV TEX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/CNV TEX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/CNV TEX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"CNV TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/CNV TMX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/CNV TMX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/CNV TMX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/CNV TMX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"DED TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/DED TEX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/DED TEX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/DED TEX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/DED TEX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"DED TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/DED TMX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/DED TMX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/DED TMX M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/DED TMX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"TNT OXE" target_culture="southern_european:northern_european:greek:eastern_european" location="army">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/TNT OXE M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/TNT OXE S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/TNT OXE M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/TNT OXE D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"TNT OXM" target_culture="middle_eastern" location="army">
+                <success>
+                    <file name=../../mymod/data/fmv"infiltrate/TNT OXM M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/TNT OXM S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"infiltrate/TNT OXM M.bik" />
+                    <file name=../../mymod/data/fmv"infiltrate/TNT OXM D.bik" />
+                </fail_die>
+            </movie>
+        </mission>
+        <mission name=../../mymod/data/fmv"sabotage">
+            <movie name=../../mymod/data/fmv"BOM TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"sabotage/BOM TEX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BOM TEX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"sabotage/BOM TEX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BOM TEX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BOM TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"sabotage/BOM TMX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BOM TMX S.bik" />
+                </success>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"sabotage/BOM TMX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BOM TMX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BUR TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"sabotage/BUR TEX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BUR TEX S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"sabotage/BUR TEX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BUR TEX F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"sabotage/BUR TEX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BUR TEX F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name=../../mymod/data/fmv"BUR TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name=../../mymod/data/fmv"sabotage/BUR TMX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BUR TMX S.bik" />
+                </success>
+                <fail_escape>
+                    <file name=../../mymod/data/fmv"sabotage/BUR TMX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BUR TMX F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name=../../mymod/data/fmv"sabotage/BUR TMX M.bik" />
+                    <file name=../../mymod/data/fmv"sabotage/BUR TMX F.bik" />
+                    <file name=../../mymod/data/fmv"generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+        </mission>
+    </missions>
+    <events>
+    </events>
+</root>
