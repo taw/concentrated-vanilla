@@ -40,8 +40,8 @@ marian_reforms_disabled
 rebelling_characters_active
 gladiator_uprising_disabled
 night_battles_enabled
-brigand_spawn_value 20
-pirate_spawn_value 28
+brigand_spawn_value 100
+pirate_spawn_value 140
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; >>>> start of resources section <<<<
@@ -2983,17 +2983,13 @@ settlement
 
 settlement
 {
-	level town
+	level village
 	region Belgrade_Province
 
 	year_founded 0
-	population 1250
+	population 800
 	plan_set default_set
 	faction_creator russia
-	building
-	{
-		type core_building wooden_pallisade
-	}
 }
 
 settlement
@@ -3013,17 +3009,13 @@ settlement
 
 settlement
 {
-	level town
+	level village
 	region Sijilmasa_Province
 
 	year_founded 0
-	population 1000
+	population 400
 	plan_set default_set
 	faction_creator moors
-	building
-	{
-		type core_building wooden_pallisade
-	}
 }
 
 settlement
@@ -3812,7 +3804,7 @@ settlement castle
 	}
         building
         {
-                type hinterland_roads roads
+                type hinterland_castle_roads c_roads
         }
 }
 
@@ -3942,23 +3934,17 @@ unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Aleksei Kuritsev Chieftain, general, male, age 30, x 177, y 103
 army
 unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
-unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
 unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction moors, Khaled Jalaf Chieftain, general, male, age 30, x 181, y 35
 army
@@ -3966,8 +3952,6 @@ unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
@@ -3980,10 +3964,8 @@ unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
@@ -3995,10 +3977,8 @@ unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
@@ -4010,10 +3990,8 @@ unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
@@ -4021,16 +3999,10 @@ unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 character	sub_faction moors, Yusuf Hissou Chieftain, general, male, age 30, x 65, y 62
 army
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
-unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction aztecs, Coanacoch, general, male, age 22, x 7, y 75 
@@ -4048,8 +4020,6 @@ unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
-unit		Native Archers				exp 0 armour 0 weapon_lvl 0
-unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
@@ -4068,8 +4038,6 @@ unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
-unit		Native Archers				exp 0 armour 0 weapon_lvl 0
-unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
@@ -4084,8 +4052,6 @@ unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
-unit		Native Archers				exp 0 armour 0 weapon_lvl 0
-unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
@@ -4102,10 +4068,8 @@ unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
@@ -4115,8 +4079,6 @@ unit		Nubian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 1 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
@@ -4143,8 +4105,6 @@ unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
-unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
-unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
@@ -4160,8 +4120,6 @@ unit		Sudanese Tribesmen				exp 1 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
@@ -4178,8 +4136,6 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
 unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
 unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
@@ -4191,8 +4147,6 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
 unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
 unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
@@ -4229,8 +4183,6 @@ unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction sicily, Ottobono, general, male, age 40, x 132, y 76 
 army
@@ -4239,8 +4191,6 @@ unit		S Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Southern Peasants				exp 0 armour 0 weapon_lvl 0
 unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Sicilian Muslim Archers				exp 0 armour 0 weapon_lvl 0
 unit		Sicilian Muslim Archers				exp 0 armour 0 weapon_lvl 0
 unit		Sicilian Muslim Archers				exp 0 armour 0 weapon_lvl 0
 unit		Sicilian Muslim Archers				exp 0 armour 0 weapon_lvl 0
@@ -4254,8 +4204,6 @@ unit		S Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		S Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
-unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
-unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
@@ -4272,8 +4220,6 @@ unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction byzantium, Romanus Angelus, general, male, age 28, x 214, y 65 
 army
@@ -4283,8 +4229,6 @@ unit		SE Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
@@ -4300,8 +4244,6 @@ unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
@@ -4317,10 +4259,8 @@ unit		SE Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Magyar Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
-unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
@@ -4338,8 +4278,6 @@ unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
 unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
 unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
-unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
-unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
@@ -4355,8 +4293,6 @@ unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
 unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
-unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
-unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
 unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
@@ -4369,10 +4305,8 @@ unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
@@ -4389,8 +4323,6 @@ unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
@@ -4406,14 +4338,12 @@ unit		ME Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		ME Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
-unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction poland, Wartislaw, general, male, age 28, x 163, y 143 
 army
@@ -4421,8 +4351,6 @@ unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
-unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
-unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
@@ -4446,12 +4374,10 @@ unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hre, Wilhelm von Bohmen, general, male, age 23, x 157, y 136 
 army
@@ -4463,8 +4389,6 @@ unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
 unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
-unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
@@ -4481,8 +4405,6 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
@@ -4496,8 +4418,6 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
@@ -4511,8 +4431,6 @@ unit		SE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
@@ -4528,8 +4446,6 @@ unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
-unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
-unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction egypt, Mahfouz Labib, general, male, age 24, x 150, y 40 
@@ -4542,8 +4458,6 @@ unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
@@ -4553,8 +4467,6 @@ unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
 unit		Slav Mercenaries				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasants				exp 0 armour 0 weapon_lvl 0
 unit		EE Peasant Archers				exp 0 armour 0 weapon_lvl 0
-unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
-unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
@@ -4570,10 +4482,8 @@ unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Grigorii Sidorov, general, male, age 31, x 235, y 169 
 army
@@ -4585,10 +4495,8 @@ unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Yuri Nezhkov, general, male, age 33, x 244, y 158 
 army
@@ -4600,14 +4508,12 @@ unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
-unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Drozd Buiakov, general, male, age 29, x 281, y 163 
 army
@@ -4618,13 +4524,11 @@ unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
-unit		Boyar Sons				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
-unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
+unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Kuchuk Ilker, general, male, age 23, x 278, y 109 
 army
@@ -4635,8 +4539,6 @@ unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
@@ -4653,8 +4555,6 @@ unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
@@ -4673,8 +4573,6 @@ unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
-unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
@@ -4711,8 +4609,6 @@ unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
-unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
@@ -4753,8 +4649,6 @@ unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
-unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
-unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 0 armour 0 weapon_lvl 0
@@ -4792,10 +4686,8 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
 unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
-unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen				exp 0 armour 0 weapon_lvl 0
 
@@ -4817,8 +4709,6 @@ unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
-unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
-unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
@@ -4836,8 +4726,6 @@ unit		Huscarls				exp 0 armour 0 weapon_lvl 0
 unit		Huscarls				exp 0 armour 0 weapon_lvl 0
 unit		Norse Swordsmen				exp 0 armour 0 weapon_lvl 0
 unit		Norse Swordsmen				exp 0 armour 0 weapon_lvl 0
-unit		Norse Swordsmen				exp 0 armour 0 weapon_lvl 0
-unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
@@ -4855,8 +4743,6 @@ unit		Norse Swordsmen				exp 0 armour 0 weapon_lvl 0
 unit		Norse Swordsmen				exp 0 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
-unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
-unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction denmark, Inge Skovgaard, general, male, age 29, x 188, y 186 
 army
@@ -4870,8 +4756,6 @@ unit		Norse Swordsmen				exp 0 armour 0 weapon_lvl 0
 unit		Norse Swordsmen				exp 0 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
-unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
-unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction poland, Leszek Herman, general, male, age 27, x 181, y 174 
 army
@@ -4879,8 +4763,6 @@ unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasants				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
-unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
@@ -4894,8 +4776,6 @@ unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasants				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
-unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
-unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
@@ -4924,8 +4804,6 @@ unit		Javelinmen				exp 1 armour 0 weapon_lvl 0
 unit		Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Javelinmen				exp 0 armour 0 weapon_lvl 0
 unit		Javelinmen				exp 0 armour 0 weapon_lvl 0
-unit		Javelinmen				exp 0 armour 0 weapon_lvl 0
-unit		Jinetes				exp 0 armour 0 weapon_lvl 0
 unit		Jinetes				exp 0 armour 0 weapon_lvl 0
 unit		Jinetes				exp 0 armour 0 weapon_lvl 0
 unit		Jinetes				exp 0 armour 0 weapon_lvl 0
@@ -4940,8 +4818,6 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
@@ -4962,8 +4838,6 @@ unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
@@ -4983,8 +4857,6 @@ unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
@@ -5003,8 +4875,6 @@ unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
 unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
 unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
 unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
-unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
-unit		Highlanders				exp 0 armour 0 weapon_lvl 0
 unit		Highlanders				exp 0 armour 0 weapon_lvl 0
 unit		Highlanders				exp 0 armour 0 weapon_lvl 0
 unit		Highlanders				exp 0 armour 0 weapon_lvl 0
@@ -5024,8 +4894,6 @@ unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
-unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
-unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 
@@ -5041,8 +4909,6 @@ unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
-unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
-unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 
@@ -5054,8 +4920,6 @@ unit		Italian Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
 unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
-unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
-unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
@@ -5072,8 +4936,6 @@ unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
-unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
-unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction france, Perrin Tanlay, general, male, age 26, x 97, y 114 
@@ -5085,8 +4947,6 @@ unit		Crossbowmen				exp 1 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
 unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0

@@ -835,7 +835,7 @@ module CampaignMapModding
       :y => 62,
       :commander_name => "Yusuf Hissou",
       :units => [
-        "Sudanese Tribesmen", "ME Town Militia", "ME Town Militia", "Desert Archers",
+        "Sudanese Tribesmen", "Desert Archers",
       ]
     })
     add_region!({
@@ -882,9 +882,9 @@ module CampaignMapModding
       :religion => [0, 0, 28, 70, 2],
       :resources => "none",
       :farming => 2,
-      :level => "town",
-      :buildings => ["core_building wooden_pallisade"],
-      :population => 1000,
+      :level => "village",
+      :buildings => [],
+      :population => 400,
       :x => 65  + 6, 
       :y => 62 - 13,
       :commander_name => "Tashfin Mammeri",
@@ -918,14 +918,14 @@ module CampaignMapModding
       :religion => [8, 65, 0, 25, 2],
       :resources => "gold wood",
       :farming => 4,
-      :level => "town",
-      :buildings => ["core_building wooden_pallisade"],
-      :population => 1250,
+      :level => "village",
+      :buildings => [],
+      :population => 800,
       :x => 177,
       :y => 103,
       :commander_name => "Aleksei Kuritsev",
       :units => [
-        "Magyar Cavalry", "Bulgarian Brigands", "Bulgarian Brigands", "Croat Axemen",
+        "Magyar Cavalry", "Bulgarian Brigands", "Croat Axemen",
       ],
     })
     add_region!({
@@ -956,7 +956,7 @@ module CampaignMapModding
 
     # Since Libya didn't have enough settlements, at least let's build roads there
     add_buildings!({
-      "Tripoli"    => {"hinterland_roads" => 1},
+      "Tripoli"    => {"hinterland_castle_roads" => 1},
       "Alexandria" => {"hinterland_roads" => 1},
     })
 
@@ -1424,15 +1424,47 @@ class M2TW_Mod < Mod
     }
   end
   
-  def more_mercenaries!
+  def more_mercenaries!(speed_mod, max_mod, init_to_max_ratio)
     modify('mercenaries'){|file|
       file.gsub(/(replenish\s+)([0-9.]+)(\s*-\s*)([0-9.]+)(\s+max\s+)(\d+)(\s+initial\s+)(\d+)/){
         a0, b0, mx, ini = $2.to_f, $4.to_f, $6.to_i, $8.to_i
-        a = (a0*8).round2
-        b = (b0*8).round2
-        ini += mx * 2
-        mx *= 4
+        a = (a0*speed_mod).round2
+        b = (b0*speed_mod).round2
+        mx = (mx * max_mod).round.to_i
+        ini = [ini, (mx * init_to_max_ratio).round.to_i].max
         "#{$1}#{a}#{$3}#{b}#{$5}#{mx}#{$7}#{ini}"
+      }
+    }
+  end
+  
+  def mod_mercenary_cost!(recruitment_mod, upkeep_mod)
+    modify('units'){|file|
+      file.gsub(/(.*\S.*\n)+/) {|para|
+        if para =~ /^attributes.*\bmercenary_unit\b/
+          para = para.sub(/(stat_cost\s*)([0-9, ]*)/) {
+            pre, data = $1, $2.split(/,\s*/).map(&:to_i)
+            data[1] = (data[1] * recruitment_mod).round.to_i
+            data[2] = (data[2] * upkeep_mod).round.to_i
+            "#{pre}#{data.join(', ')}"
+          }
+        end
+        para
+      }
+    }
+    modify('mercenaries'){|file|
+      file.gsub(/(\bcost\b\s+)(\d+)/){
+        "#{$1}#{($2.to_i * recruitment_mod).round.to_i}"
+      }
+    }
+  end
+  
+  def mod_unit_upgrade_cost!(upgrade_mod)
+    modify('units'){|file|
+      file.gsub(/(^stat_cost\s*)([0-9, ]*)/) {
+        pre, data = $1, $2.split(/,\s*/).map(&:to_i)
+        data[3] = (data[3] * upgrade_mod).round.to_i
+        data[4] = (data[4] * upgrade_mod).round.to_i
+        "#{pre}#{data.join(', ')}"
       }
     }
   end
@@ -2051,16 +2083,18 @@ Trigger fertility_women
   def select_more_units(sub_faction, unit_types)
     # 3..10 (where the fuck is there 10 ???)
     old_count = unit_types.size
-    new_extra = [20, old_count*2 + 4].min - old_count
+    #new_extra= [20, old_count*2 + 4].min - old_count
+    new_extra = [20, old_count*2 + 2].min - old_count
 
-    # Old: 0  1  2  3  4  5  6  7  8  9 10
-    # New: 4  6  8 10 12 14 16 18 20 20 20
-
+    # Old:  0  1  2  3  4  5  6  7  8  9 10
+    # New1: 4  6  8 10 12 14 16 18 20 20 20
+    # New2: 2  4  6  8 10 12 14 16 18 20 20
+ 
     avail = case sub_faction
     when 'poland'
       ["Polish Nobles", "Lithuanian Cavalry", "Lithuanian Archers", "Lithuanian Archers"]
     when 'russia'
-      ["Boyar Sons", "EE Spearmen", "EE Spearmen", "EE Crossbow Militia"]
+      ["Boyar Sons", "Kazaks", "EE Crossbow Militia", "EE Crossbow Militia"]
     when 'byzantium'
       ["Byzantine Cavalry", "Trebizond Archers", "Trebizond Archers", "Byzantine Spearmen"]
     when 'denmark'
@@ -2532,11 +2566,11 @@ M2TW_Mod.new do
   ### Basic settings
   # taxes_influence_on_growth!(0.0) # stop tax shenanigans
   # king_purse!(1.5)
-  # rebel_spawn_rates!(1000)
+  rebel_spawn_rates!(5)
   plaza_capture!(1.0, 0.95)
   fix_standing!
   # all_mercenaries_available!
-  more_mercenaries!
+  more_mercenaries!(2.0, 4.0, 0.25)
   # no_rebels!
   show_date_as_year!
   # more_rebels!
@@ -2608,7 +2642,9 @@ M2TW_Mod.new do
   mod_unit_attack!(0.6)
   # mod_unit_charge!(1.5)
   nerf_rams!
-  increase_artillery_accuracy!(2.5)
+  increase_artillery_accuracy!(2.25)
+  mod_mercenary_cost!(1.25, 1.25)
+  mod_unit_upgrade_cost!(0.0)
 
   ### Units - bug workarounds (with pretty massive balance implications)
   ### (pikes are extremely powerful with this as long as they stay in formation)

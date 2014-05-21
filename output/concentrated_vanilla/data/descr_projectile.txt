@@ -301,7 +301,7 @@ damage_to_troops 30
 radius			0.3
 mass			2.4
 area			2.0
-accuracy_vs_units		0.025
+accuracy_vs_units		0.027777777777777776
 accuracy_vs_buildings	0.0500
 accuracy_vs_towers      0.0325 
 min_angle		-15
@@ -336,7 +336,7 @@ damage_to_troops 30
 radius			0.3
 mass			0.8
 area			2.5
-accuracy_vs_units		0.025
+accuracy_vs_units		0.027777777777777776
 accuracy_vs_buildings	0.05
 accuracy_vs_towers      0.035 
 fiery					; uncomment this to make all boulders fiery
@@ -371,7 +371,7 @@ damage_to_troops 10
 radius			0.3
 mass			2.4		;appears to be units of 100kg (given a man is 0.8)
 area			2.0
-accuracy_vs_units		0.03
+accuracy_vs_units		0.03333333333333333
 accuracy_vs_buildings	0.05
 accuracy_vs_towers      0.0305 
 min_angle		-15
@@ -405,7 +405,7 @@ damage_to_troops 40
 radius			0.30
 mass			0.8
 area			3.0
-accuracy_vs_units		0.05
+accuracy_vs_units		0.05555555555555555
 accuracy_vs_buildings	0.075
 accuracy_vs_towers      0.055 
 fiery					; uncomment this to make all boulders fiery
@@ -489,7 +489,7 @@ damage		10
 damage_to_troops 5
 radius		0
 mass		0.8
-accuracy_vs_units		0.002
+accuracy_vs_units		0.0022222222222222222
 accuracy_vs_buildings	0.05
 accuracy_vs_towers      0.025 
 min_angle	-30
@@ -519,7 +519,7 @@ damage		10
 damage_to_troops 5
 radius		0
 mass		0.8
-accuracy_vs_units		0.004
+accuracy_vs_units		0.0044444444444444444
 accuracy_vs_buildings	0.05
 accuracy_vs_towers      0.025 
 fiery
@@ -659,7 +659,7 @@ damage_to_troops 10
 radius			0.3
 mass			6.0
 area			2.0
-accuracy_vs_units		0.028999999999999998
+accuracy_vs_units		0.03222222222222222
 accuracy_vs_buildings	0.0455
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -689,7 +689,7 @@ damage_to_troops 30
 radius			0.3
 mass			0.8
 area			1.5
-accuracy_vs_units	0.033
+accuracy_vs_units	0.03666666666666667
 accuracy_vs_buildings	0.0455
 accuracy_vs_towers      0.025 
 fiery					
@@ -718,7 +718,7 @@ damage_to_troops 10
 radius			0.3
 mass			0.1
 area			1.0
-accuracy_vs_units		0.016
+accuracy_vs_units		0.017777777777777778
 accuracy_vs_buildings	0.0625
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -752,7 +752,7 @@ damage_to_troops 5
 radius			0.3
 mass			0.1
 area			1.0
-accuracy_vs_units		0.016
+accuracy_vs_units		0.017777777777777778
 accuracy_vs_buildings	0.0625
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -784,7 +784,7 @@ damage_to_troops 10
 radius			0.5
 mass			3.5
 area			2.0
-accuracy_vs_units		0.022
+accuracy_vs_units		0.024444444444444446
 accuracy_vs_buildings	0.040
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -816,7 +816,7 @@ damage_to_troops 10
 radius			0.3
 mass			0.8
 area			1.5
-accuracy_vs_units	0.03
+accuracy_vs_units	0.03333333333333333
 accuracy_vs_buildings	0.0425
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -848,7 +848,7 @@ damage_to_troops 50
 radius			1.0
 mass			6.0
 area			2.0
-accuracy_vs_units		0.036
+accuracy_vs_units		0.04
 accuracy_vs_buildings	0.04
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -879,7 +879,7 @@ damage_to_troops 30
 radius			0.3
 mass			3.5
 area			12.0
-accuracy_vs_units		0.02
+accuracy_vs_units		0.022222222222222223
 accuracy_vs_buildings	0.035
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -911,7 +911,7 @@ damage_to_troops 30
 radius			0.3
 mass			4.5
 area			15.0
-accuracy_vs_units		0.026000000000000002
+accuracy_vs_units		0.02888888888888889
 accuracy_vs_buildings	0.0375
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -942,7 +942,7 @@ damage_to_troops 30
 radius			0.3
 mass			3.5
 area			2.0
-accuracy_vs_units		0.018
+accuracy_vs_units		0.02
 accuracy_vs_buildings	0.035
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -974,7 +974,7 @@ damage_to_troops 30
 radius			0.3
 mass			4.5
 area			15.0
-accuracy_vs_units		0.026000000000000002
+accuracy_vs_units		0.02888888888888889
 accuracy_vs_buildings	0.0475
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -1004,7 +1004,7 @@ damage_to_troops 15
 radius			0.3
 mass			0.4
 area			2.0
-accuracy_vs_units	0.02
+accuracy_vs_units	0.022222222222222223
 accuracy_vs_buildings	0.0355
 accuracy_vs_towers      0.0355 
 min_angle		40
@@ -1036,7 +1036,7 @@ damage_to_troops 30
 radius			0.3
 mass			6.0
 area			8.0
-accuracy_vs_units	0.017
+accuracy_vs_units	0.01888888888888889
 accuracy_vs_buildings	0.035
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -1068,7 +1068,7 @@ damage_to_troops 30
 radius			0.3
 mass			4.5
 area			18.0
-accuracy_vs_units	0.017
+accuracy_vs_units	0.01888888888888889
 accuracy_vs_buildings	0.0375
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -1100,7 +1100,7 @@ damage_to_troops 10
 radius			0.3
 mass			4.0
 area			2.0
-accuracy_vs_units		0.012
+accuracy_vs_units		0.013333333333333332
 accuracy_vs_buildings	0.04
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -1131,7 +1131,7 @@ damage_to_troops 10
 radius			0.3
 mass			4.5
 area			2.0
-accuracy_vs_units		0.022
+accuracy_vs_units		0.024444444444444446
 accuracy_vs_buildings	0.055
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -1165,7 +1165,7 @@ damage_to_troops 	5
 radius			0.30
 mass			0.1
 area			3.0
-accuracy_vs_units	0.06
+accuracy_vs_units	0.06666666666666667
 accuracy_vs_buildings	0.15
 accuracy_vs_towers      0.525 
 min_angle		-15
@@ -1194,7 +1194,7 @@ area_effect		ae_rocket_shot
 damage			10
 radius			0.3
 mass			0.05
-accuracy_vs_units		0.024
+accuracy_vs_units		0.026666666666666665
 accuracy_vs_buildings	0.09
 accuracy_vs_towers      0.05 
 affected_by_rain
@@ -1233,7 +1233,7 @@ effect_offset	-0.85
 damage			10
 radius			0.2
 mass			0.05
-accuracy_vs_units		0.024
+accuracy_vs_units		0.026666666666666665
 accuracy_vs_buildings	0.09
 accuracy_vs_towers      0.05 
 affected_by_rain
@@ -1275,7 +1275,7 @@ damage_to_troops 10
 radius			0.3
 mass			0.8
 area			2.0
-accuracy_vs_units		0.008
+accuracy_vs_units		0.008888888888888889
 accuracy_vs_buildings	0.01
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -1482,7 +1482,7 @@ damage_to_troops 30
 radius			0.3
 mass			0.8
 area			2.0
-accuracy_vs_units		0.025
+accuracy_vs_units		0.027777777777777776
 accuracy_vs_buildings	0.0300
 accuracy_vs_towers      0.025 
 min_angle		-15
@@ -1517,7 +1517,7 @@ damage_to_troops 30
 radius			0.3
 mass			0.8
 area			2.5
-accuracy_vs_units		0.025
+accuracy_vs_units		0.027777777777777776
 accuracy_vs_buildings	0.065
 accuracy_vs_towers      0.025 
 fiery					; uncomment this to make all boulders fiery
