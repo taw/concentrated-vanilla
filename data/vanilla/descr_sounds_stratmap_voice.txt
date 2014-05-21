@@ -1,0 +1,18 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BANK: character_vocal         - Voices for characters on stratmap
+;;
+;; Keywords: type, accent, vocal
+;; Allowed types:    general, admiral, assassin, spy, diplomat
+;; Allowed vocals:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 1D streamed volume -25 probability 1 fadein 0 fadeout 0.5 minPitch .9 maxPitch 1 delay .2 priority 500 ;effect_level .5
+DEFAULT: pref SPEECH
+
+
+chivalry_level 4    ;if character's chivalry level greater or equal - play _Chivalry version
+dread_level -4    ;if character's chivalry level less or equal - play _Dread version
+
+
+source export_descr_sounds_stratmap_voice.txt

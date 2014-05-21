@@ -1,0 +1,5300 @@
+version_info
+{
+	91
+}
+
+; Define the vegetation parameters
+vegetation_settings
+{
+	; Define the different rendering settings
+	rendering_settings
+	{
+	;	vegetation type		display shadows (yes/no)
+		FOREST				NO
+		MANGROVES			NO
+		CACTII				NO
+		SHRUBS				NO
+		LONG_GRASS			NO
+		REEDS				NO
+		GRASS				NO
+		WATER_COVER			NO
+		SMALL_ROCKS			NO
+		LARGE_ROCKS			NO
+		SMALL_SHRUBS		NO
+	}
+
+	; Define the vegetation properties
+	vegetation_properties
+	{
+	; vegetation type		alignment	size		render?		max				min			exists in		type in
+	;														water depth		water depth		physical grid	phys grid
+		FOREST				GROUND		TALL		YES			0.0				0.0				YES			tall_vegetation
+		MANGROVES			GROUND		TALL		YES			2.0				0.0				YES			tall_vegetation
+		CACTII				GROUND		AVERAGE		YES			0.0				0.0				YES			average_vegetation
+		SHRUBS				GROUND		AVERAGE		YES			0.0				0.0				YES			average_vegetation
+		LONG_GRASS			GROUND		AVERAGE		NO			0.0				0.0				YES			average_vegetation
+		REEDS				GROUND		SHORT		YES			1.0				-0.5			NO			short_vegetation
+		GRASS				GROUND		SHORT		NO			0.0				0.0				YES			free
+		WATER_COVER			WATER		SHORT		YES			5.0				0.0				NO			free
+		SMALL_ROCKS			GROUND		SHORT		YES			0.0				0.0				YES			small_rocks
+		LARGE_ROCKS			GROUND		AVERAGE		YES			0.0				0.0				YES			large_rocks
+		SMALL_SHRUBS		GROUND		SHORT		NO			0.0				0.0				YES			short_vegetation
+	}
+
+	; Define the placement settings
+	placement_settings
+	{
+		order				FOREST MANGROVES CACTII SHRUBS LONG_GRASS LARGE_ROCKS REEDS GRASS WATER_COVER SMALL_SHRUBS SMALL_ROCKS
+
+		min_probability		0.1		; minimum probability required for vegetation to be placed
+
+		mean				0.9		; mean for placement rand
+		std_dev				0.40	; standard deviation for placement
+	}
+
+	placement_bands
+	{
+		band area_a
+		{
+			permitted_vegetation	all
+			write_entries_to_grid	YES
+			begin_distance			0
+			end_distance			1200
+			subdivision				11
+			cell_size				2
+			distribution_maps		new_vegetation/raw_distribution_maps/area_a		; distribution maps must be 8x8 pixel TGA images
+
+			vegetation_limits
+			{
+				FOREST			15000
+				MANGROVES		15000
+				CACTII			10000
+				SHRUBS			7000
+				LONG_GRASS		10000
+				REEDS			30000
+				GRASS			30000
+				WATER_COVER		30000
+				SMALL_ROCKS		7000
+				LARGE_ROCKS		5000
+				SMALL_SHRUBS	7000
+			}
+		}
+
+		band area_b
+		{
+			permitted_vegetation	FOREST	MANGROVES	CACTII	SHRUBS	LARGE_ROCKS
+			write_entries_to_grid	NO
+			begin_distance			1200
+			end_distance			2000
+			subdivision				11
+			cell_size				2
+			distribution_maps		new_vegetation/raw_distribution_maps/area_b		; distribution maps must be 8x8 pixel TGA images
+
+			vegetation_limits
+			{
+				FOREST			20000
+				MANGROVES		20000
+				CACTII			30000
+				SHRUBS			30000
+				LARGE_ROCKS		30000
+			}
+		}
+
+;		band area_cde
+;		{
+;			permitted_vegetation	FOREST	MANGROVES
+;			write_entries_to_grid	NO
+;			begin_distance			2000
+;			end_distance			inf
+;			subdivision				9
+;			cell_size				4
+;			distribution_maps		new_vegetation/raw_distribution_maps/area_cde		; distribution maps must be 16x16 pixel TGA images
+;
+;			vegetation_limits
+;			{
+;				FOREST			100000
+;				MANGROVES		100000
+;			}
+;		}
+	}
+}
+
+; define the ground cover settings
+ground_cover
+{
+	; rendering settings
+	;
+	; fade_out
+	; {
+	;	[low, medium or high]
+	;	{
+	;		lowres_begin	[low res begin distance - fades off after this]
+	;		lowres_end		[low res end distance - not rendered after this]
+	;		highres_begin	[high res begin distance - fades off after this]
+	;		highres_end		[high res end distance - not rendered after this]
+	;	}
+	; }
+	;
+	; texel_resolution	[base size of 1 texel in metres]
+	; highres_density	[density scale factor for high res ground cover]
+	; highres_height_scale	[scale applied to highres vege height]
+	;
+	rendering
+	{
+		fade_out
+		{
+			low
+			{
+				lowres_begin	50	
+				lowres_end		110
+				highres_begin	-1	
+				highres_end		-1
+				height_scale	9
+			}
+			
+			medium
+			{
+				lowres_begin	30	
+				lowres_end		150
+				highres_begin	30	
+				highres_end		50
+				height_scale	6
+			}
+			
+			high
+			{
+				lowres_begin	30	
+				lowres_end		220
+				highres_begin	30	
+				highres_end		70
+				height_scale	4
+			}
+		}
+		
+		texel_resolution	0.005
+		highres_density		7		; maximum is 7, minimum is 1
+		highres_height_scale	0.65
+	}
+	
+	; wind settings
+	;
+	; peak_sway		[extent of movement in degrees]
+	;
+	wind
+	{
+		peak_sway	10
+	}
+	
+	; per climate settings
+	;
+	; climate [climate name - see descr_climates.txt]
+	; {
+	;	texture_page	[texture page to use in this climate. actual file names are this path with _summer.texture and _winter.texture]
+	;
+	;	[ground cover type - grass]
+	;	{
+	;
+	;		atlas
+	;		{
+	;			[texture type - rock, gravel, sand_caked, sand, sand_blown, dirt, mud, swamp, grass_dry, grass_short, grass_long, shrub_sparse, shrub_dense, forest_sparse or forest_dense]
+	;			{
+	;				variant	[start_x] [start_y] [width] [height] [width_scale] [height_scale] [occurrence_rate] [repeat]
+	;				...
+	;			}
+	;		}
+	;	}
+	; }
+	;
+	; Note: * Coordinates (start_x, start_y, width and height) are in pixels
+	;       * An occurrence rate of 0 nwill mean that the vegetation will never be placed by the autogen
+	;
+	climates
+	{
+		climate mediterranean
+		{
+			texture_page	new_vegetation/grass/mediterranean/ground_cover
+			
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{					
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{	
+					}
+					grass_short
+					{	
+						variant	0	256	512	256	1.3 1.2 35
+						variant	512	256	512	256	1.1 1.3 15
+						variant	0	512	512	256	1.3 1.2 30
+						variant	0	768	128	256	0.9 0.9 10
+						variant	0	768	512	256	0.9 0.9 10						
+					}
+					grass_long
+					{	
+						variant	0	256	512	256	1.3 1.2 40
+						variant	512	256	512	256	1.3 1.2 20
+						variant	0	512	512	256	1.1 1.3 25
+						variant	384	768	128	256	0.9 0.9 3
+						variant	0	768	128	256	0.9 0.9 10
+						variant	256	768	128	256	0.9 0.9 2						
+					}
+					shrub_sparse
+					{	
+						variant	0	0	512	256	1.1 1.3 20
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.3 1.2 40
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2					
+					}
+					shrub_dense
+					{		
+						variant	0	0	512	256	1.3 1.2 20
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.3 1.2 40
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2	
+					}
+					forest_sparse
+					{		
+						variant	512	512	512	256	1.1 1.3 5
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.3 1.2 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+					forest_dense
+					{	
+						variant	512	512	512	256	1.1 1.3 5
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.3 1.2 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate sandy_desert
+		{
+			texture_page	new_vegetation/grass/sandy_desert/ground_cover
+				
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{												
+					}
+					sand
+					{											
+					}
+					sand_blown
+					{						
+					}
+					dirt
+					{						
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate rocky_desert
+		{
+			texture_page	new_vegetation/grass/rocky_desert/ground_cover
+				
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{												
+					}
+					sand
+					{											
+					}
+					sand_blown
+					{						
+					}
+					dirt
+					{
+						
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{						
+					}
+					grass_short
+					{						
+					}
+					grass_long
+					{						
+					}
+					shrub_sparse
+					{						
+					}
+					shrub_dense
+					{						
+					}
+					forest_sparse
+					{						
+					}
+					forest_dense
+					{						
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate unused1
+		{
+			texture_page	new_vegetation/grass/mediterranean/ground_cover
+			
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{					
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{	
+					}
+					grass_short
+					{	
+					summer_only					
+						variant	0	256	512	256	1.3 1.2 35
+						variant	512	256	512	256	1.1 1.3 15
+						variant	0	512	512	256	1.3 1.2 30
+						variant	0	768	128	256	0.9 0.9 10
+						variant	0	768	512	256	0.9 0.9 10						
+					}
+					grass_long
+					{	
+					summer_only					
+						variant	0	256	512	256	1.3 1.2 40
+						variant	512	256	512	256	1.3 1.2 20
+						variant	0	512	512	256	1.1 1.3 25
+						variant	384	768	128	256	0.9 0.9 3
+						variant	0	768	128	256	0.9 0.9 10
+						variant	256	768	128	256	0.9 0.9 2						
+					}
+					shrub_sparse
+					{	
+					summer_only					
+						variant	0	0	512	256	1.1 1.3 20
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.3 1.2 40
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2					
+					}
+					shrub_dense
+					{		
+					summer_only				
+						variant	0	0	512	256	1.3 1.2 20
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.3 1.2 40
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2	
+					}
+					forest_sparse
+					{		
+					summer_only				
+						variant	512	512	512	256	1.1 1.3 5
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.3 1.2 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+					forest_dense
+					{	
+					summer_only					
+						variant	512	512	512	256	1.1 1.3 5
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.3 1.2 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+
+		climate steppe
+		{
+			texture_page	new_vegetation/grass/steppe/ground_cover
+				
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{		
+					}
+					grass_short
+					{	
+					}
+					grass_long
+					{		
+					summer_only			
+						variant	0	256	512	256	1.3 1.2 30
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.1 1.3 10
+						variant	512	256	512	256	1.3 1.2 20
+						variant	0	512	512	256	1.1 1.3 10
+						variant	256	768	256	256	0.8 0.8 6
+						variant	0	768	256	256	0.7 0.7 9												
+					}
+					shrub_sparse
+					{		
+					summer_only			
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.1 1.2 20
+					    variant	512	256	512	256	1.1 1.3 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2
+					}
+					shrub_dense
+					{		
+					summer_only			
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.3 1.2 20
+					    variant	512	256	512	256	1.1 1.3 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2
+					}
+					forest_sparse
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.3 1.2 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+						
+					}
+					forest_dense
+					{		
+					summer_only			
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate temperate_deciduous_forest
+		{
+			texture_page	new_vegetation/grass/temperate_deciduous_forest/ground_cover
+				
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{											
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{		
+					summer_only			
+					}
+					grass_short
+					{		
+					summer_only			
+						variant	0	256	512	256	1.1 1.3 25
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	0	512	256	1.1 1.3 5
+						variant	512	256	512	256	1.1 1.3 5
+						variant	0	512	512	256	1.3 1.2 35
+						variant	128	768	128	256	0.9 0.9 15
+					}
+					grass_long
+					{		
+					summer_only			
+						variant	0	256	512	256	1.3 1.2 35
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.3 1.2 10
+						variant	512	256	512	256	1.1 1.3 10
+						variant	0	512	512	256	1.1 1.3 15
+						variant	0	768	128	256	0.7 0.7 5
+						variant	256	768	256	256	0.9 0.9 10
+					}
+					shrub_sparse
+					{		
+					summer_only							
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.1 1.2 20
+					    variant	512	256	512	256	1.1 1.3 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2											
+					}
+					shrub_dense
+					{		
+					summer_only				
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.3 1.2 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2							
+					}
+					forest_sparse
+					{	
+					summer_only				
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.3 1.2 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+					forest_dense
+					{		
+					summer_only						
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.3 1.2 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2							
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate temperate_coniferous_forest
+		{
+			texture_page	new_vegetation/grass/temperate_coniferous_forest/ground_cover
+				
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					summer_only
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					summer_only
+					}
+					grass_short
+					{
+					summer_only
+						variant	0	256	512	256	1.3 1.2 30
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	0	512	256	1.3 1.2 5
+						variant	512	256	512	256	1.3 1.2 5
+						variant	0	512	512	256	1.3 1.2 30
+						variant	128	768	128	256	0.9 0.9 6
+						variant	0	768	128	256	0.8 0.8 9						
+					}
+					grass_long
+					{
+					summer_only
+						variant	0	256	512	256	1.3 1.2 40
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	0	512	256	1.3 1.2 10
+						variant	512	256	512	256	1.3 1.2 10
+						variant	0	512	512	256	1.3 1.2 10
+						variant	384	768	128	256	0.9 0.9 3
+						variant	0	768	128	256	0.7 0.7 10
+						variant	256	768	128	256	0.9 0.9 2					
+					}
+					shrub_sparse
+					{
+					summer_only
+						variant	0	256	512	256	1.3 1.2 15
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	512	512	256	1.3 1.2 20
+						variant	512	0	512	256	1.3 1.2 30
+						variant	512	256	512	256	1.3 1.2 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2			
+					}
+					shrub_dense
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.1 1.3 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2	
+					}
+					forest_sparse
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+					forest_dense
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate unused2
+		{
+			texture_page	new_vegetation/grass/temperate_deciduous_forest/ground_cover
+				
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{											
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{		
+					summer_only			
+					}
+					grass_short
+					{		
+					summer_only			
+						variant	0	256	512	256	1.1 1.3 25
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	0	512	256	1.1 1.3 5
+						variant	512	256	512	256	1.1 1.3 5
+						variant	0	512	512	256	1.3 1.2 35
+						variant	128	768	128	256	0.9 0.9 15
+					}
+					grass_long
+					{		
+					summer_only			
+						variant	0	256	512	256	1.3 1.2 35
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.3 1.2 10
+						variant	512	256	512	256	1.1 1.3 10
+						variant	0	512	512	256	1.1 1.3 15
+						variant	0	768	128	256	0.7 0.7 5
+						variant	256	768	256	256	0.9 0.9 10
+					}
+					shrub_sparse
+					{		
+					summer_only							
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.1 1.2 20
+					    variant	512	256	512	256	1.1 1.3 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2											
+					}
+					shrub_dense
+					{		
+					summer_only				
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.3 1.2 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2							
+					}
+					forest_sparse
+					{	
+					summer_only				
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.3 1.2 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+					forest_dense
+					{		
+					summer_only						
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.3 1.2 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2							
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate highland
+		{
+			texture_page	new_vegetation/grass/highland/ground_cover
+				
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					summer_only
+						variant	0	256	512	256	1.3	1.2	30
+					    variant	0	512	512	256	1.3	1.2	20
+					    variant	0	0	512	256	1.3	1.2	20
+					    variant	512	512	512	256	1.3	1.2	15
+					    variant	0	768	256	256	0.8	0.8	15						
+					}
+					grass_long
+					{
+					summer_only
+						variant	0	256	512	256	1.3	1.2	30
+					    variant	0	512	512	256	1.3	1.2	20
+					    variant	0	0	512	256	1.3	1.2	20
+					    variant	512	512	512	256	1.3	1.2	15
+					    variant	256	768	256	256	0.8	0.8	15	
+					}
+					shrub_sparse
+					{
+					summer_only
+						variant	512	0	512	256	1.3	1.2	35
+					    variant	0	512	512	256	1.3	1.2	15
+					    variant	0	0	512	256	1.3	1.2	10
+					    variant	512	256	512	256	1.3	1.2	20
+					    variant	512	512	512	256	1.3	1.2	15
+					    variant	0	768	128	256	0.6	0.6	5		
+					}
+					shrub_dense
+					{
+					summer_only
+						variant	512	0	512	256	1.3	1.2	35
+					    variant	0	512	512	256	1.3	1.2	15
+					    variant	0	0	512	256	1.3	1.2	10
+					    variant	512	256	512	256	1.3	1.2	20
+					    variant	512	512	512	256	1.3	1.2	15
+					    variant	0	768	128	256	0.6	0.6	5	
+					}
+					forest_sparse
+					{
+					summer_only
+						variant	512	0	512	256	1.3	1.2	30
+					    variant	0	512	512	256	1.3	1.2	15
+					    variant	0	0	512	256	1.3	1.2	15
+					    variant	512	256	512	256	1.3	1.2	5
+					    variant	512	512	512	256	1.3	1.2	25
+					    variant	0	768	256	256	0.8	0.8	10
+					}
+					forest_dense
+					{
+					summer_only
+						variant	512	0	512	256	1.3	1.2	30
+					    variant	0	512	512	256	1.3	1.2	15
+					    variant	0	0	512	256	1.3	1.2	15
+					    variant	512	256	512	256	1.3	1.2	5
+					    variant	512	512	512	256	1.3	1.2	25
+					    variant	0	768	256	256	0.8	0.8	10
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate alpine
+		{
+			texture_page	new_vegetation/grass/alpine/ground_cover
+				
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{											
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					summer_only
+						variant	0	256	512	256	1.3 1.2 30
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.1 1.3 5
+						variant	512	256	512	256	1.1 1.3 5
+						variant	0	512	512	256	1.3 1.2 30
+						variant	128	768	128	256	0.9 0.9 6
+						variant	0	768	128	256	0.8 0.8 9						
+					}
+					grass_long
+					{
+					summer_only
+						variant	0	256	512	256	1.3 1.2 30
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.3 1.2 10
+						variant	512	256	512	256	1.1 1.3 20
+						variant	0	512	512	256	1.1 1.3 10
+						variant	384	768	128	256	0.9 0.9 3
+						variant	0	768	128	256	0.7 0.7 10
+						variant	256	768	128	256	0.9 0.9 2						
+					}
+					shrub_sparse
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.3 1.2 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2					
+					}
+					shrub_dense
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.1 1.2 20
+						variant	512	0	512	256	1.3 1.2 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2	
+					}
+					forest_sparse
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+					forest_dense
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate tropical
+		{
+			texture_page	new_vegetation/grass/tropical/ground_cover
+			
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{										
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					summer_only
+						variant	0	256	512	256	1.3 1.2 25
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.1 1.3 20
+						variant	512	256	512	256	1.3 1.2 20
+						variant	0	512	512	256	1.1 1.3 10
+						variant	256	768	256	256	1.1 1.1 10												
+					}
+					grass_long
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 25
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	0	512	256	1.1 1.3 20
+						variant	512	256	512	256	1.1 1.3 20
+						variant	0	512	512	256	1.1 1.3 10
+						variant	256	768	256	256	1.1 1.1 10												
+					}
+					shrub_sparse
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.1 1.2 20
+					    variant	512	256	512	256	1.1 1.3 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2
+					}
+					shrub_dense
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 15
+						variant	0	0	512	256	1.1 1.3 15
+						variant	512	512	512	256	1.1 1.2 20
+					    variant	512	256	512	256	1.1 1.3 30
+						variant	512	256	512	256	1.1 1.3 5
+						variant	384	768	128	256	0.8 0.8 5
+						variant	0	768	128	256	0.8 0.8 8
+						variant	256	768	128	256	0.8 0.8 2
+					}
+					forest_sparse
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+						
+					}
+					forest_dense
+					{
+					summer_only
+						variant	0	256	512	256	1.1 1.3 10
+						variant	0	0	512	256	1.1 1.3 10
+						variant	512	0	512	256	1.1 1.3 65
+						variant	128	768	128	256	0.9 0.9 8
+						variant	0	768	128	256	0.9 0.9 5
+						variant	256	768	128	256	0.9 0.9 2
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+		
+		climate semi_arid
+		{
+			texture_page	new_vegetation/grass/semi_arid/ground_cover
+			
+			grass
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					summer_only
+						variant	0	256	512	256	1.3 1.2 30
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	256	512	256	1.3 1.2 25
+						variant	0	512	512	256	1.3 1.2 15
+						variant	512	512 512	256	0.9 0.9 5
+						variant	0	768	256	256	0.7 0.7 10							
+					}
+					grass_long
+					{
+					summer_only
+						variant	0	256	512	256	1.3 1.2 30
+						variant	0	0	512	256	1.3 1.2 15
+						variant	512	256	512	256	1.3 1.2 25
+						variant	0	512	512	256	1.3 1.2 15
+						variant	512	512 512	256	0.9 0.9 5
+						variant	0	768	256	256	0.7 0.7 10																
+					}
+					shrub_sparse
+					{
+					summer_only
+						variant	512	0	512	256	1.3 1.2 60
+						variant	512	512	512 256	1.3 1.2 20
+						variant	512	256	512 256	1.3 1.2 10
+						variant	0	768	512	256	0.7 0.7 10
+					}
+					shrub_dense
+					{
+					summer_only
+						variant	512	0	512	256	1.3 1.2 60
+						variant	512	512	512 256	1.3 1.2 20
+						variant	512	256	512 256	1.3 1.2 10
+						variant	0	768	512	256	0.7 0.7 10
+					}
+					forest_sparse
+					{
+					summer_only
+						variant	512	0	512	256	1.3 1.2 60
+						variant	512	512	512 256	1.3 1.2 20
+						variant	512	256	512 256	1.3 1.2 10
+						variant	0	768	512	256	0.7 0.7 10
+					}
+					forest_dense
+					{
+					summer_only
+						variant	512	0	512	256	1.3 1.2 60
+						variant	512	512	512 256	1.3 1.2 20
+						variant	512	256	512 256	1.3 1.2 10
+						variant	0	768	512	256	0.7 0.7 10
+					}
+				}
+			}
+			
+			reeds
+			{
+				atlas
+				{
+					rock
+					{
+					}
+					gravel
+					{
+					}
+					sand_caked
+					{
+					}
+					sand
+					{
+					}
+					sand_blown
+					{
+					}
+					dirt
+					{
+					}
+					mud
+					{
+					}
+					swamp
+					{
+					}
+					grass_dry
+					{
+					}
+					grass_short
+					{
+					}
+					grass_long
+					{
+					}
+					shrub_sparse
+					{
+					}
+					shrub_dense
+					{
+					}
+					forest_sparse
+					{
+					}
+					forest_dense
+					{
+					}
+				}
+			}
+		}
+	}	
+}
+
+; Define the different levels of detail (lods) available for vegetation
+;
+; LOD Records
+; ===========
+;
+; LOD records have the following structure:
+;
+; lod <record name>
+; {
+;    LOD_SPEC
+; }
+;
+; where LOD_SPEC is one of the following:
+; model <animate stop> <stop> <model level #>          ; A 3D model
+; billboard <stop> <update tolerance>   ; A camera following quad
+; none <stop>                           ; Render nothing
+;
+; prepend animated and append <deflection %> <frame rate> for animated versions
+
+	lod tall_vegetation
+	{
+		low
+		{
+			billboard    inf
+		}
+
+		medium
+		{
+			model        100
+			billboard    inf
+		}
+
+		high
+		{
+			model        150
+			billboard    inf
+		}
+	}
+
+	lod average_vegetation
+	{
+		low
+		{
+			billboard	500
+			none		inf
+		}
+
+		medium
+		{
+			billboard	500
+			none		inf
+		}
+
+		high
+		{
+			model		150
+			billboard	500
+			none		inf
+		}
+	}
+
+	lod small_vegetation
+	{
+		low
+		{
+			billboard	500
+			none		inf
+		}
+
+		medium
+		{
+			billboard	500
+			none		inf
+		}
+
+		high
+		{
+			model		100
+			billboard	500
+			none		inf
+		}
+	}
+
+	lod water_cover
+	{
+		low
+		{
+			billboard   500
+			model		inf
+		}
+
+		medium
+		{
+			billboard	500
+			none		inf	
+		}
+
+		high
+		{
+			model       100
+			billboard   500
+			none		inf
+		}
+	}
+
+;							-----------------------------------------------------
+;							-----------------------------------------------------
+;							-----------------------------------------------------
+
+; Define the different model types (which the climates refer to)
+;
+; Model Records
+; =============
+;
+; Model records have the following structure:
+;
+; model <record name>
+; {
+;    level <model name>
+;    [
+;    level <model name>
+;    ...
+;    ]
+; }
+
+	vege alder				new_vegetation/raw_models/alder.CAS
+    vege alder_sm			new_vegetation/raw_models/alder_sm.CAS
+	vege alder_shrub		new_vegetation/raw_models/alder.CAS
+	vege bracken_large		new_vegetation/raw_models/bracken_large.CAS
+	vege bracken_small		new_vegetation/raw_models/bracken_small.CAS
+	vege bushy_shrub		new_vegetation/raw_models/bushy_shrub.CAS
+	vege bushy_pine			new_vegetation/raw_models/bushy_pine.CAS
+	vege bushypine_winter	new_vegetation/raw_models/bushy_pine_winter.CAS
+	vege bushy_pine_alpine	new_vegetation/raw_models/bushy_pine_alpine.CAS
+	vege bushypine2_alpine	new_vegetation/raw_models/bushypine_small_alpine.CAS
+	vege bushy2_alp_winter	new_vegetation/raw_models/bushysm_alpine_winter.CAS
+	vege Coconut_palm		new_vegetation/raw_models/Coconut_palm.CAS
+;	vege cabbage			new_vegetation/raw_models/cabbage.CAS
+	vege cactus_big			new_vegetation/raw_models/cactus_big.CAS
+	vege cactus_med			new_vegetation/raw_models/cactus_med.CAS
+	vege cactus_small		new_vegetation/raw_models/cactus_small.CAS
+	vege cedar				new_vegetation/raw_models/cedar.CAS
+	vege cedar_winter		new_vegetation/raw_models/cedar_winter.CAS
+	vege conical_pine		new_vegetation/raw_models/conical_pine.CAS
+	vege conicalpine_winter new_vegetation/raw_models/conical_pine_winter.CAS
+	vege date_palm			new_vegetation/raw_models/date_palm.CAS
+	vege date_palm_sml		new_vegetation/raw_models/date_palm_sml.CAS
+	vege drygrasslong		new_vegetation/raw_models/dry_grasslong.CAS
+	vege drygrassbig		new_vegetation/raw_models/dry_grassbig.CAS
+	vege drygrassmed		new_vegetation/raw_models/dry_grassmed.CAS
+	vege drysmallgrass		new_vegetation/raw_models/dry_grasssmall.CAS
+	vege drygrassbig_winter new_vegetation/raw_models/dry_grassbig_winter.CAS
+	vege drygrass3_winter	new_vegetation/raw_models/dry_grasslong_winter.CAS
+	vege drygrass2_winter	new_vegetation/raw_models/dry_grassmed_winter.CAS
+	vege drygrass1_winter	new_vegetation/raw_models/dry_grasssmall_winter.CAS
+	vege dry_plant			new_vegetation/raw_models/dry_plant.CAS
+	vege evergreen			new_vegetation/raw_models/evergreen.CAS
+	vege evergreen_winter	new_vegetation/raw_models/evergreen_winter.CAS
+	vege fir02				new_vegetation/raw_models/fir02.CAS
+	vege fir02_winter		new_vegetation/raw_models/fir2_winter.CAS
+	vege fir03_winter		new_vegetation/raw_models/fir3_winter.CAS
+	vege fir01_winter		new_vegetation/raw_models/fir1_winter.CAS
+	vege fir03				new_vegetation/raw_models/fir03.CAS
+	vege fir01				new_vegetation/raw_models/fir01.CAS
+	vege jungle_tree		new_vegetation/raw_models/jungle_tree.CAS
+	vege jungle_tree2		new_vegetation/raw_models/jungle_tree2.CAS
+	vege lombardy			new_vegetation/raw_models/lombardy.CAS
+	vege lodgepole			new_vegetation/raw_models/lodgepole.CAS
+	vege lodgepole_winter	new_vegetation/raw_models/lodgepole_winter.CAS
+    vege oak_bushy_a		new_vegetation/raw_models/oak_bushy_a.CAS
+    vege oak_bushy_b		new_vegetation/raw_models/oak_bushy_b.CAS
+	vege oak_bushy_c		new_vegetation/raw_models/oak_bushy_c.CAS
+    vege oak_bushy_d		new_vegetation/raw_models/oak_bushy_d.CAS
+	vege palmetto			new_vegetation/raw_models/palmetto.CAS
+	vege palmetto_big		new_vegetation/raw_models/palmetto_big.CAS
+	vege ponderosa_pine		new_vegetation/raw_models/ponderosa_pine.CAS
+	vege pondo_pine_winter	new_vegetation/raw_models/ponderosa_pine_winter.CAS
+    vege cypress			new_vegetation/raw_models/cypress.CAS
+    vege olive				new_vegetation/raw_models/olive.CAS
+	vege poplar				new_vegetation/raw_models/poplar.CAS
+    vege poplar_a			new_vegetation/raw_models/poplar_a.CAS
+    vege poplar_b			new_vegetation/raw_models/poplar_b.CAS
+	vege poplar_small		new_vegetation/raw_models/poplar_small.CAS
+	vege poplar_sml_winter	new_vegetation/raw_models/poplar_small_winter.CAS
+	vege poplar_winter		new_vegetation/raw_models/poplar_winter.CAS
+	vege pumpkin			new_vegetation/raw_models/pumpkin.CAS
+	vege rock_pile			new_vegetation/raw_models/rock_pile.CAS
+	vege reeds				new_vegetation/raw_models/reeds.CAS
+	vege small_rockpile		new_vegetation/raw_models/small_rockpile.CAS
+	vege stickshrub_fat		new_vegetation/raw_models/stickshrub_fat.CAS
+	vege stckshrb_fat_winter new_vegetation/raw_models/stickshrub_fat_winter.CAS
+	vege stickshrub_skinny	new_vegetation/raw_models/stickshrub_skinny.CAS
+	vege stckshrb_sml_winter new_vegetation/raw_models/stickshrub_skinny_winter.CAS
+	vege tropical_plant		new_vegetation/raw_models/tropical_plant.CAS
+	vege tallgrass			new_vegetation/raw_models/tallgrass.CAS
+	vege tallgrass_winter	new_vegetation/raw_models/tallgrass_winter.CAS
+	vege Tallpine			new_vegetation/raw_models/Tallpine.CAS
+	vege Tallpine_alpine	new_vegetation/raw_models/Tallpine_alpine.CAS
+	vege tpinealpine_winter new_vegetation/raw_models/tallpine_alpine_winter.CAS
+	vege turnip				new_vegetation/raw_models/turnip.CAS
+	vege willow				new_vegetation/raw_models/willow.CAS
+	vege willow_winter		new_vegetation/raw_models/willow_winter.CAS
+	vege spikey_shrub01		new_vegetation/raw_models/spikey_shrub01.CAS
+	vege spikey_shrubs		new_vegetation/raw_models/spikey_shrubs.CAS
+	vege spkyshrb_winter	new_vegetation/raw_models/spikey_shrubs_winter.CAS
+	vege spruce				new_vegetation/raw_models/spruce.CAS
+	vege spruce_winter		new_vegetation/raw_models/spruce_winter.CAS
+	vege vines				new_vegetation/raw_models/vines.CAS
+	vege NE_large_rock_01   new_vegetation/raw_models/NE_large_rock_01.CAS
+	vege NE_large_rock_02   new_vegetation/raw_models/NE_large_rock_02.CAS
+	vege NE_large_rock_03   new_vegetation/raw_models/NE_large_rock_03.CAS
+	vege NE_large_rock_04   new_vegetation/raw_models/NE_large_rock_04.CAS
+	vege NE_large_rock_05   new_vegetation/raw_models/NE_large_rock_05.CAS
+	vege NE_large_rock_06   new_vegetation/raw_models/NE_large_rock_06.CAS
+	vege NE_large_rock_07   new_vegetation/raw_models/NE_large_rock_07.CAS
+	vege NE_large_rock_08   new_vegetation/raw_models/NE_large_rock_08.CAS
+	vege NE_small_rock_01   new_vegetation/raw_models/NE_small_rock_01.CAS
+	vege NE_small_rock_02   new_vegetation/raw_models/NE_small_rock_02.CAS
+	vege NE_small_rock_03   new_vegetation/raw_models/NE_small_rock_03.CAS
+	vege NE_small_rock_04   new_vegetation/raw_models/NE_small_rock_04.CAS
+	vege NE_small_rock_05   new_vegetation/raw_models/NE_small_rock_05.CAS
+	vege NE_small_rock_06   new_vegetation/raw_models/NE_small_rock_06.CAS
+	vege NE_small_rock_07   new_vegetation/raw_models/NE_small_rock_07.CAS
+	vege NE_small_rock_08   new_vegetation/raw_models/NE_small_rock_08.CAS
+	vege ME_large_rock_02   new_vegetation/raw_models/ME_large_rock_02.CAS
+	vege ME_large_rock_03   new_vegetation/raw_models/ME_large_rock_03.CAS
+	vege ME_large_rock_04   new_vegetation/raw_models/ME_large_rock_04.CAS
+	vege ME_large_rock_05   new_vegetation/raw_models/ME_large_rock_05.CAS
+	vege ME_small_rock_01   new_vegetation/raw_models/ME_small_rock_01.CAS
+	vege ME_small_rock_02   new_vegetation/raw_models/ME_small_rock_02.CAS
+	vege ME_small_rock_03   new_vegetation/raw_models/ME_small_rock_03.CAS
+	vege ME_small_rock_04   new_vegetation/raw_models/ME_small_rock_04.CAS
+	vege SE_large_rock_02   new_vegetation/raw_models/SE_large_rock_02.CAS
+	vege SE_large_rock_03   new_vegetation/raw_models/SE_large_rock_03.CAS
+	vege SE_large_rock_04   new_vegetation/raw_models/SE_large_rock_04.CAS
+	vege SE_large_rock_05   new_vegetation/raw_models/SE_large_rock_05.CAS
+	vege SE_small_rock_01   new_vegetation/raw_models/SE_small_rock_01.CAS
+	vege SE_small_rock_02   new_vegetation/raw_models/SE_small_rock_02.CAS
+	vege SE_small_rock_03   new_vegetation/raw_models/SE_small_rock_03.CAS
+	vege SE_small_rock_04   new_vegetation/raw_models/SE_small_rock_04.CAS
+	vege NE_winter_large_rock_01   new_vegetation/raw_models/NE_winter_large_rock_01.CAS
+	vege NE_winter_large_rock_02   new_vegetation/raw_models/NE_winter_large_rock_02.CAS
+	vege NE_winter_large_rock_03   new_vegetation/raw_models/NE_winter_large_rock_03.CAS
+	vege NE_winter_large_rock_04   new_vegetation/raw_models/NE_winter_large_rock_04.CAS
+	vege NE_winter_small_rock_01   new_vegetation/raw_models/NE_winter_small_rock_01.CAS
+	vege NE_winter_small_rock_02   new_vegetation/raw_models/NE_winter_small_rock_02.CAS
+	vege NE_winter_small_rock_03   new_vegetation/raw_models/NE_winter_small_rock_03.CAS
+	vege NE_winter_small_rock_04   new_vegetation/raw_models/NE_winter_small_rock_04.CAS
+
+;							-----------------------------------------------------
+;							-----------------------------------------------------
+;							-----------------------------------------------------
+
+; Define the different vegetation groups
+;
+; Vegetation Records
+; ==================
+;
+; Vegetation records have the following structure:
+;
+; vegetation <record name> [ modifies <record name> ]
+; {
+;    VEGE_SPEC
+; }
+;
+; where VEGE_SPEC consists of the following:
+; radius <N>
+; height_range <min> <max>
+; aspect_range <min> <max>
+; lod <lod>
+; model <model>
+; <optionally more models>...
+;
+; Height and aspect range are applied as SCALING factors and so depend on original model.
+; NOTE that a radius of zero means items are not added to the physical grid
+
+vegetation_groups
+{
+	; ------------------------------------------test_climate_summer---------------------------
+
+	vegetation test_climate_summer_forest
+	{
+		radius 0.5
+		height_range 0.9 1.2
+		aspect_range 1.0 1.5
+		lod tall_vegetation
+		
+		model cypress
+		model poplar_a		
+		model poplar_b
+		model alder_sm
+	}
+
+	vegetation test_climate_summer_mangroves
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow
+		model bracken_large
+		model bracken_small
+		model tallgrass
+	}
+
+	vegetation test_climate_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation test_climate_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model stickshrub_skinny
+		model bushy_shrub	
+		model stickshrub_fat
+	}
+
+	vegetation test_climate_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+	}
+
+	vegetation test_climate_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.7 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model SE_large_rock_02
+		model SE_large_rock_03
+		model SE_large_rock_04
+		model SE_large_rock_05
+	}
+
+	vegetation test_climate_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model reeds
+	}
+
+	vegetation test_climate_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model bracken_small
+	}
+
+	vegetation test_climate_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation test_climate_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.7 1.2
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model SE_small_rock_01
+		model SE_small_rock_02
+		model SE_small_rock_03
+		model SE_small_rock_04
+		
+	}
+
+	vegetation test_climate_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model bracken_small
+	}
+
+	
+	; ---------------------------------------sandy_desert--------------------------------------------
+
+
+	vegetation sandy_desert_summer_forest
+	{
+		radius 0.5
+		height_range 0.4 0.9
+		aspect_range 0.8 1.1
+		lod tall_vegetation
+
+		model date_palm		
+	}
+
+	vegetation sandy_desert_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model date_palm_sml
+	}
+
+	vegetation sandy_desert_summer_cactii
+	{
+		radius 0.5
+		height_range 0.4 0.9
+		aspect_range 0.8 1.1
+		lod tall_vegetation
+		
+		model date_palm_sml
+	}
+
+	vegetation sandy_desert_summer_shrubs
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 0.8 1.2
+		lod average_vegetation
+
+		model date_palm_sml		
+
+	}
+
+	vegetation sandy_desert_summer_long_grass
+	{
+		radius 0.5
+		height_range 0.8 1.1
+		aspect_range 0.8 1.1
+		lod average_vegetation
+
+		model date_palm_sml
+
+	}
+
+	vegetation sandy_desert_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model ME_large_rock_02
+		model ME_large_rock_03
+		model ME_large_rock_04
+		model ME_large_rock_05
+		
+	}
+
+	vegetation sandy_desert_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 1.3
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model date_palm_sml	
+	}
+
+	vegetation sandy_desert_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model date_palm_sml	
+	}
+
+	vegetation sandy_desert_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model date_palm_sml
+	}
+
+	vegetation sandy_desert_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model ME_small_rock_01
+		model ME_small_rock_02
+		model ME_small_rock_03
+		model ME_small_rock_04
+	}
+
+	vegetation sandy_desert_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.4
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model date_palm_sml
+	}
+
+
+
+	; -----------------------------steppe summer----------------------------------
+
+
+	vegetation temperate_grassland_infertile_summer_forest
+	{
+		radius 0.5
+		height_range 0.5 1.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model poplar
+		model olive
+		model stickshrub_fat
+	}
+
+	vegetation temperate_grassland_infertile_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+		
+		model drygrasslong
+	}
+
+	vegetation temperate_grassland_infertile_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation temperate_grassland_infertile_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model spikey_shrubs		
+		model stickshrub_fat
+		model stickshrub_skinny
+
+	}
+
+	vegetation temperate_grassland_infertile_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig
+		model drygrassmed
+		model drygrasslong
+
+	}
+
+	vegetation temperate_grassland_infertile_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model NE_large_rock_02
+		model NE_large_rock_03
+		model NE_large_rock_05
+		model NE_large_rock_07
+	}
+
+	vegetation temperate_grassland_infertile_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model reeds
+	}
+
+	vegetation temperate_grassland_infertile_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrassmed
+		model drysmallgrass
+		model drygrasslong
+	}
+
+	vegetation temperate_grassland_infertile_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation temperate_grassland_infertile_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_small_rock_02
+		model NE_small_rock_05
+		model NE_small_rock_06
+		model NE_small_rock_08
+	}
+
+	vegetation temperate_grassland_infertile_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drysmallgrass
+
+	}
+
+
+
+	; ------------------------------temperate_grassland_infertile_winter----------------------------------
+
+
+	vegetation temperate_grassland_infertile_winter_forest
+	{
+		radius 0.5
+		height_range 0.5 1.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+		
+		model drygrassbig_winter		
+		model drygrass3_winter
+	}
+
+	vegetation temperate_grassland_infertile_winter_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model drygrassbig_winter
+	}
+
+	vegetation temperate_grassland_infertile_winter_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation temperate_grassland_infertile_winter_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model drygrassbig_winter
+		model drygrass3_winter
+	}
+
+	vegetation temperate_grassland_infertile_winter_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrass3_winter
+		model drygrass2_winter
+		model drygrass1_winter
+	}
+
+	vegetation temperate_grassland_infertile_winter_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model NE_winter_large_rock_02
+		model NE_winter_large_rock_03
+;		model NE_winter_large_rock_05
+;		model NE_winter_large_rock_07
+	}
+
+	vegetation temperate_grassland_infertile_winter_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass_winter
+		model stckshrb_sml_winter
+	}
+
+	vegetation temperate_grassland_infertile_winter_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrass3_winter
+		model drygrass2_winter
+		model drygrass1_winter
+	}
+
+	vegetation temperate_grassland_infertile_winter_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation temperate_grassland_infertile_winter_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_winter_small_rock_02
+;		model NE_winter_small_rock_05
+;		model NE_winter_small_rock_06
+;		model NE_winter_small_rock_08
+	}
+
+	vegetation temperate_grassland_infertile_winter_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model drygrass1_winter		
+	}
+
+
+	; --------------------------------temperate_grassland_fertile_summer------------------------------
+
+
+	vegetation temperate_grassland_fertile_summer_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model cedar
+		model conical_pine
+		model poplar_small
+	}
+
+	vegetation temperate_grassland_fertile_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow
+		model bracken_small
+		model tallgrass
+		model bracken_large
+
+	}
+
+	vegetation temperate_grassland_fertile_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation temperate_grassland_fertile_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model bracken_large
+		model stickshrub_skinny
+
+	}
+
+	vegetation temperate_grassland_fertile_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig
+		model tallgrass
+		model drygrasslong
+
+	}
+
+	vegetation temperate_grassland_fertile_summer_large_rocks
+	{
+		radius 2.2
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model NE_large_rock_01
+		model NE_large_rock_02
+		model NE_large_rock_03
+		model NE_large_rock_04
+	}
+
+	vegetation temperate_grassland_fertile_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model reeds
+	}
+
+	vegetation temperate_grassland_fertile_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrassmed
+		model drysmallgrass
+		model drygrasslong
+		model tallgrass
+	}
+
+	vegetation temperate_grassland_fertile_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation temperate_grassland_fertile_summer_small_rocks
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model NE_small_rock_01
+		model NE_small_rock_02
+		model NE_small_rock_03
+		model NE_small_rock_04
+	}
+
+	vegetation temperate_grassland_fertile_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model drysmallgrass
+
+	}
+
+	; -------------------------------------Temperate_grassland_fertile_Winter---------------------------
+
+	vegetation temperate_grassland_fertile_winter_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model cedar_winter
+		model conicalpine_winter
+		model poplar_winter
+	}
+
+	vegetation temperate_grassland_fertile_winter_mangroves
+	{
+		radius 0.5
+		height_range 0.9 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow_winter
+		model drygrassbig_winter
+		model drygrass3_winter
+		model drygrass2_winter
+	}
+
+	vegetation temperate_grassland_fertile_winter_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation temperate_grassland_fertile_winter_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model drygrass3_winter
+		model drygrass2_winter
+		model drygrassbig_winter
+		model stckshrb_fat_winter
+	}
+
+	vegetation temperate_grassland_fertile_winter_long_grass
+	{
+		radius 0.5
+		height_range 1.0 1.3
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig
+		model tallgrass
+		model drygrasslong
+	}
+
+	vegetation temperate_grassland_fertile_winter_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model NE_winter_large_rock_02
+		model NE_winter_large_rock_03
+;		model NE_winter_large_rock_05
+;		model NE_winter_large_rock_07
+	}
+
+	vegetation temperate_grassland_fertile_winter_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model reeds
+	}
+
+	vegetation temperate_grassland_fertile_winter_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrassmed
+		model drysmallgrass
+		model drygrasslong
+		model tallgrass
+	}
+
+	vegetation temperate_grassland_fertile_winter_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation temperate_grassland_fertile_winter_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_winter_small_rock_02
+;		model NE_winter_small_rock_05
+;		model NE_winter_small_rock_06
+;		model NE_winter_small_rock_08
+	}
+
+	vegetation temperate_grassland_fertile_winter_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model drygrass3_winter
+		model drygrass2_winter
+		model drygrass2_winter
+		model drygrassbig_winter
+
+	}
+
+
+
+
+	;  -----------------------------   temperate_forest_open_summer    -------------------------
+
+	vegetation temperate_forest_open_summer_forest
+	{
+		radius 0.75
+		height_range 0.9 1.6
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model oak_bushy_a
+		model oak_bushy_b
+        model oak_bushy_c
+        model oak_bushy_d
+	}
+
+	vegetation temperate_forest_open_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow
+		model bracken_small
+		model tallgrass
+		model bracken_large
+	}
+
+	vegetation temperate_forest_open_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drysmallgrass
+		
+	}
+
+	vegetation temperate_forest_open_summer_shrubs
+	{
+		radius 0.1
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model stickshrub_fat
+		model tallgrass
+		model bracken_large
+		model stickshrub_skinny
+	}
+
+	vegetation temperate_forest_open_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig
+		model tallgrass
+		model drygrasslong
+
+	}
+
+	vegetation temperate_forest_open_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.5 1.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model NE_large_rock_01
+		model NE_large_rock_02
+		model NE_large_rock_03
+		model NE_large_rock_04
+	}
+
+	vegetation temperate_forest_open_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model reeds
+	}
+
+	vegetation temperate_forest_open_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drysmallgrass
+		model drygrasslong
+		model tallgrass
+	}
+
+	vegetation temperate_forest_open_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation temperate_forest_open_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.5 1.4
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model NE_small_rock_01
+		model NE_small_rock_02
+		model NE_small_rock_03
+		model NE_small_rock_04
+	}
+
+	vegetation temperate_forest_open_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model drysmallgrass
+	}
+
+
+	; ---------------------------------   Temperate_forest_open_Winter   --------------------------------
+
+	vegetation temperate_forest_open_winter_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model poplar_winter
+		model tpinealpine_winter
+		model conicalpine_winter
+	}
+
+	vegetation temperate_forest_open_winter_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow_winter
+		model tallgrass_winter
+		model stckshrb_fat_winter
+	}
+
+	vegetation temperate_forest_open_winter_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation temperate_forest_open_winter_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model stckshrb_fat_winter
+		model tallgrass_winter
+		model drygrassbig_winter
+		model stckshrb_sml_winter
+	}
+
+	vegetation temperate_forest_open_winter_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass_winter
+		model drygrassbig_winter
+		model drygrass2_winter
+	}
+
+	vegetation temperate_forest_open_winter_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model NE_winter_large_rock_02
+		model NE_winter_large_rock_03
+;		model NE_winter_large_rock_05
+;		model NE_winter_large_rock_07
+	}
+
+	vegetation temperate_forest_open_winter_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass_winter
+		model drygrass2_winter
+	}
+
+	vegetation temperate_forest_open_winter_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrass2_winter
+		model drygrassbig_winter
+		model tallgrass_winter
+	}
+
+	vegetation temperate_forest_open_winter_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation temperate_forest_open_winter_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_winter_small_rock_02
+;		model NE_winter_small_rock_05
+;		model NE_winter_small_rock_06
+;		model NE_winter_small_rock_08
+	}
+
+	vegetation temperate_forest_open_winter_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model drygrass1_winter
+		model drygrass2_winter		
+	}
+
+
+
+	;  --------------------------------  temperate_forest_coniferous_summer  ---------------------------
+
+	vegetation temperate_forest_deep_summer_forest
+	{
+		radius 0.5
+		height_range 0.9 1.2
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model cedar
+		model Tallpine			
+		model lodgepole
+		model spruce
+	}
+
+	vegetation temperate_forest_deep_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow
+		model bracken_small
+		model tallgrass
+		model bracken_large
+	}
+
+	vegetation temperate_forest_deep_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation temperate_forest_deep_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model stickshrub_fat
+		model bracken_small
+		model bracken_large
+		model stickshrub_skinny
+	}
+
+	vegetation temperate_forest_deep_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig
+		model tallgrass
+		model drygrasslong
+		model drygrassmed
+	}
+
+	vegetation temperate_forest_deep_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.7 1.2
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model NE_large_rock_01
+		model NE_large_rock_02
+		model NE_large_rock_03
+		model NE_large_rock_04
+	}
+
+	vegetation temperate_forest_deep_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model reeds
+	}
+
+	vegetation temperate_forest_deep_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrassmed
+		model drygrasslong
+		model tallgrass
+	}
+
+	vegetation temperate_forest_deep_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation temperate_forest_deep_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.7 1.2
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model NE_small_rock_01
+		model NE_small_rock_02
+		model NE_small_rock_03
+		model NE_small_rock_04
+	}
+
+	vegetation temperate_forest_deep_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model bracken_small
+		model bracken_large
+	}
+
+
+	; ------------------------------  temperate_forest_coniferious_winter_forest  ------------------------------
+
+
+	vegetation temperate_forest_deep_winter_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model cedar_winter
+		model tpinealpine_winter
+		model spruce_winter
+		model lodgepole_winter
+	}
+
+	vegetation temperate_forest_deep_winter_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow_winter
+		model tallgrass_winter
+		model stckshrb_sml_winter
+		model stckshrb_fat_winter
+
+	}
+
+	vegetation temperate_forest_deep_winter_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation temperate_forest_deep_winter_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model stckshrb_fat_winter
+		model tallgrass_winter
+		model drygrassbig_winter
+		model stckshrb_sml_winter
+
+	}
+
+	vegetation temperate_forest_deep_winter_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig_winter
+		model tallgrass_winter
+		model drygrass2_winter
+		model drygrass3_winter
+
+	}
+
+	vegetation temperate_forest_deep_winter_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model NE_winter_large_rock_02
+		model NE_winter_large_rock_03
+;		model NE_winter_large_rock_05
+;		model NE_winter_large_rock_07
+	}
+
+	vegetation temperate_forest_deep_winter_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrassbig_winter
+		model stckshrb_sml_winter
+		model tallgrass_winter
+	}
+
+	vegetation temperate_forest_deep_winter_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrassbig_winter
+		model drygrass2_winter
+		model drygrass3_winter
+		model stckshrb_sml_winter
+
+	}
+
+	vegetation temperate_forest_deep_winter_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation temperate_forest_deep_winter_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_winter_small_rock_02
+;		model NE_winter_small_rock_05
+;		model NE_winter_small_rock_06
+;		model NE_winter_small_rock_08
+	}
+
+	vegetation temperate_forest_deep_winter_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model drygrass1_winter
+		model drygrass1_winter
+		model stckshrb_sml_winter
+
+	}
+
+
+
+
+		;  -------------------------------highland Vegetation Summer------------------------------------
+
+	vegetation highland_summer_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model ponderosa_pine
+		model Tallpine
+		model fir02
+		model alder
+	}
+
+	vegetation highland_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow		
+		model tallgrass
+		model bracken_large
+
+	}
+
+	vegetation highland_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation highland_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+		model bracken_large	
+
+	}
+
+	vegetation highland_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig
+		model tallgrass
+		model drygrasslong
+		model drygrassmed
+
+	}
+
+	vegetation highland_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model NE_large_rock_02
+		model NE_large_rock_03
+		model NE_large_rock_04
+		model NE_large_rock_05
+	}
+
+	vegetation highland_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model reeds
+	}
+
+	vegetation highland_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrassmed
+		model drygrasslong
+		model tallgrass		
+	}
+
+	vegetation highland_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation highland_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_small_rock_01
+		model NE_small_rock_02
+		model NE_small_rock_03
+		model NE_small_rock_04
+	}
+
+	vegetation highland_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model bracken_small		
+		model bracken_large
+	}
+
+
+	;  ------------------------------- highland Vegetation winter ------------------------------------
+
+
+	vegetation highland_winter_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model tpinealpine_winter
+		model conicalpine_winter
+	}
+
+	vegetation highland_winter_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow_winter		
+		model tallgrass_winter
+
+	}
+
+	vegetation highland_winter_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation highland_winter_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass_winter
+		model bracken_large
+	}
+
+	vegetation highland_winter_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig_winter
+		model tallgrass_winter
+		model drygrass3_winter
+		model drygrass2_winter
+
+	}
+
+	vegetation highland_winter_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model NE_winter_large_rock_02
+		model NE_winter_large_rock_03
+;		model NE_winter_large_rock_05
+;		model NE_winter_large_rock_07
+	}
+
+	vegetation highland_winter_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass_winter
+		model stckshrb_sml_winter
+	}
+
+	vegetation highland_winter_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model drygrass2_winter
+		model drygrass3_winter
+		model tallgrass_winter		
+	}
+
+	vegetation highland_winter_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation highland_winter_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_winter_small_rock_02
+;		model NE_winter_small_rock_05
+;		model NE_winter_small_rock_06
+;		model NE_winter_small_rock_08
+	}
+
+	vegetation highland_winter_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model bracken_small		
+		model stckshrb_fat_winter
+	}
+
+
+
+	;  --------------------------------alpine Vegetation Summer---------------------------------------
+
+	vegetation alpine_summer_forest
+	{
+		radius 0.5
+		height_range 0.3 1.6
+		aspect_range 0.8 1.3
+		lod tall_vegetation
+
+		model fir01
+		model spruce
+		model fir02		
+		model fir03
+	}
+
+	vegetation alpine_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow
+		model bracken_large		
+		
+	}
+
+	vegetation alpine_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation alpine_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+		
+		model bracken_large					
+
+	}
+
+	vegetation alpine_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+		model bracken_small
+		model bracken_large
+		model drygrasslong
+	}
+
+	vegetation alpine_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model NE_large_rock_02
+		model NE_large_rock_03
+		model NE_large_rock_04
+		model NE_large_rock_05
+	}
+
+	vegetation alpine_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model reeds
+	}
+
+	vegetation alpine_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+	}
+
+	vegetation alpine_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation alpine_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_small_rock_01
+		model NE_small_rock_02
+		model NE_small_rock_03
+		model NE_small_rock_04
+	}
+
+	vegetation alpine_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model bracken_small	
+
+	}
+
+
+
+		;  ------------------------------- alpine Vegetation Winter ---------------------------------------
+
+	vegetation alpine_winter_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model fir01_winter
+		model fir02_winter
+		model fir03_winter
+		model spruce_winter
+
+	}
+
+	vegetation alpine_winter_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow_winter
+		model tallgrass_winter
+		model stckshrb_sml_winter
+
+	}
+
+	vegetation alpine_winter_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation alpine_winter_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod average_vegetation
+
+		model stckshrb_sml_winter		
+
+	}
+
+	vegetation alpine_winter_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass_winter
+		model drygrassbig_winter
+		model drygrass3_winter
+	}
+
+	vegetation alpine_winter_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model NE_winter_large_rock_02
+		model NE_winter_large_rock_03
+;		model NE_winter_large_rock_05
+;		model NE_winter_large_rock_07
+	}
+
+	vegetation alpine_winter_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass_winter
+		model stckshrb_sml_winter
+	}
+
+	vegetation alpine_winter_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass_winter
+	}
+
+	vegetation alpine_winter_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation alpine_winter_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_winter_small_rock_02
+;		model NE_winter_small_rock_05
+;		model NE_winter_small_rock_06
+;		model NE_winter_small_rock_08
+	}
+
+	vegetation alpine_winter_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model stckshrb_sml_winter
+
+	}
+
+
+
+
+	;  ----------------------------tropical Vegetation Summer------------------------------------
+
+
+
+	vegetation sub_arctic_summer_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+		
+		model jungle_tree2
+		model lombardy
+		model jungle_tree
+		model Coconut_palm
+	
+	}
+
+	vegetation sub_arctic_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model Coconut_palm
+		model date_palm
+
+	}
+
+	vegetation sub_arctic_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model palmetto
+		model bracken_large
+	}
+
+	vegetation sub_arctic_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model palmetto		
+		model tropical_plant
+		model palmetto_big
+		model vines
+	}
+
+	vegetation sub_arctic_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+		model bracken_large
+		model bracken_small
+		model drygrassbig
+		
+
+	}
+
+	vegetation sub_arctic_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model NE_large_rock_02
+		model NE_large_rock_03
+		model NE_large_rock_04
+		model NE_large_rock_05
+	}
+
+	vegetation sub_arctic_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model reeds
+	}
+
+	vegetation sub_arctic_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model bracken_large
+		model bracken_small
+	}
+
+	vegetation sub_arctic_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation sub_arctic_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_small_rock_01
+		model NE_small_rock_02
+		model NE_small_rock_03
+		model NE_small_rock_04
+	}
+
+	vegetation sub_arctic_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model bracken_small
+		model bracken_large
+		model tropical_plant
+		model spikey_shrubs
+
+	}
+
+
+	;  ---------------------------- tropical Winter ---------------------------------------
+
+
+
+	vegetation sub_arctic_winter_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model palmetto
+		model palmetto_big
+		model bushy_pine_alpine
+		model poplar
+	}
+
+	vegetation sub_arctic_winter_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow
+		model tallgrass		
+	
+
+	}
+
+	vegetation sub_arctic_winter_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation sub_arctic_winter_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bracken_small
+		model bracken_large			
+
+	}
+
+	vegetation sub_arctic_winter_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model drygrassmed
+
+	}
+
+	vegetation sub_arctic_winter_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod tall_vegetation
+
+		model NE_winter_large_rock_02
+		model NE_winter_large_rock_03
+;		model NE_winter_large_rock_05
+;		model NE_winter_large_rock_07
+	}
+
+	vegetation sub_arctic_winter_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model reeds
+	}
+
+	vegetation sub_arctic_winter_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model drygrassmed
+	}
+
+	vegetation sub_arctic_winter_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation sub_arctic_winter_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model NE_winter_small_rock_02
+;		model NE_winter_small_rock_05
+;		model NE_winter_small_rock_06
+;		model NE_winter_small_rock_08
+	}
+
+	vegetation sub_arctic_winter_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model bracken_small
+		model bracken_large
+		model spikey_shrub01
+		model spikey_shrubs
+
+	}
+
+
+
+	;  ---------------------------semi_arid Vegetation summer---------------------------------
+
+
+	vegetation semi_arid_summer_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model dry_plant
+		model date_palm	
+		
+	}
+
+	vegetation semi_arid_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model spikey_shrubs
+
+	}
+
+	vegetation semi_arid_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+		
+		model dry_plant		
+	}
+
+	vegetation semi_arid_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model drygrassbig
+		model stickshrub_fat
+		model spikey_shrubs
+
+	}
+
+	vegetation semi_arid_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model drygrassmed
+
+	}
+
+	vegetation semi_arid_summer_large_rocks
+	{
+		radius 2.2
+		height_range 0.8 1.2
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model ME_large_rock_02
+		model ME_large_rock_03
+		model ME_large_rock_04
+		model ME_large_rock_05
+	}
+
+	vegetation semi_arid_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model drygrasslong
+		model reeds
+	}
+
+	vegetation semi_arid_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model drygrassmed
+	}
+
+	vegetation semi_arid_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation semi_arid_summer_small_rocks
+	{
+		radius 0.5
+		height_range 0.8 1.2
+		aspect_range 1.0 1.2
+		lod small_vegetation
+
+		model ME_small_rock_01
+		model ME_small_rock_02
+		model ME_small_rock_03
+		model ME_small_rock_04
+	}
+
+	vegetation semi_arid_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model stickshrub_skinny
+		model stickshrub_fat
+		model spikey_shrub01
+		model spikey_shrubs
+
+	}
+
+
+	;  -----------------------------------unused2 Vegetation summer--------------------------
+
+
+	vegetation swamp_summer_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow
+		model poplar
+		model drygrassbig
+		model drygrasslong
+	}
+
+	vegetation swamp_summer_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model tallgrass
+		model reeds
+		model bracken_large
+		model bracken_small
+
+	}
+
+	vegetation swamp_summer_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation swamp_summer_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+		model spikey_shrubs
+		model reeds
+		model bracken_large
+
+	}
+
+	vegetation swamp_summer_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model drygrassmed
+
+	}
+
+	vegetation swamp_summer_large_rocks
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model rock_pile
+		model small_rockpile
+	}
+
+	vegetation swamp_summer_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model drygrasslong
+		model reeds
+	}
+
+	vegetation swamp_summer_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model drygrassbig
+		model drygrassmed
+		model reeds
+	}
+
+	vegetation swamp_summer_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation swamp_summer_small_rocks
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model small_rockpile
+	}
+
+	vegetation swamp_summer_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model stickshrub_skinny
+		model stickshrub_fat
+		model spikey_shrub01
+		model spikey_shrubs
+
+	}
+
+
+	;  ----------------------------------- unused2 Vegetation winter --------------------------
+
+
+	vegetation swamp_winter_forest
+	{
+		radius 0.5
+		height_range 0.5 1.3
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model willow_winter
+		model poplar_winter
+		model drygrassbig_winter
+		model drygrass3_winter
+	}
+
+	vegetation swamp_winter_mangroves
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model tallgrass_winter
+		model stckshrb_sml_winter
+
+	}
+
+	vegetation swamp_winter_cactii
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model bushy_shrub
+	}
+
+	vegetation swamp_winter_shrubs
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass_winter		
+		model tallgrass_winter
+
+	}
+
+	vegetation swamp_winter_long_grass
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod average_vegetation
+
+		model tallgrass_winter
+		model drygrassbig_winter
+		model drygrass3_winter
+
+	}
+
+	vegetation swamp_winter_large_rocks
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod tall_vegetation
+
+		model rock_pile
+		model small_rockpile
+	}
+
+	vegetation swamp_winter_reeds
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass_winter
+		model drygrassbig_winter
+		model stckshrb_sml_winter
+	}
+
+	vegetation swamp_winter_grass
+	{
+		radius 0.5
+		height_range 1.0 1.5
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model tallgrass
+		model drygrassbig_winter
+		model drygrass3_winter
+		model stckshrb_fat_winter
+	}
+
+	vegetation swamp_winter_water_cover
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod water_cover
+
+		model bracken_small
+	}
+
+	vegetation swamp_winter_small_rocks
+	{
+		radius 0.5
+		height_range 1.0 2.0
+		aspect_range 1.0 1.3
+		lod small_vegetation
+
+		model small_rockpile
+	}
+
+	vegetation swamp_winter_small_shrubs
+	{
+		radius 0.5
+		height_range 1.0 1.0
+		aspect_range 1.0 1.0
+		lod small_vegetation
+
+		model stckshrb_sml_winter
+		model stckshrb_fat_winter		
+
+	}
+
+
+
+
+
+	; sandy_desert vegetation
+
+	vegetation sandy_desert_winter_forest modifies sandy_desert_summer_forest
+	vegetation sandy_desert_winter_mangroves modifies sandy_desert_summer_mangroves
+	vegetation sandy_desert_winter_cactii modifies sandy_desert_summer_cactii
+	vegetation sandy_desert_winter_shrubs modifies sandy_desert_summer_shrubs
+	vegetation sandy_desert_winter_long_grass modifies sandy_desert_summer_long_grass
+	vegetation sandy_desert_winter_reeds modifies sandy_desert_summer_reeds
+	vegetation sandy_desert_winter_grass modifies sandy_desert_summer_grass
+	vegetation sandy_desert_winter_water_cover modifies sandy_desert_summer_water_cover
+	vegetation sandy_desert_winter_large_rocks modifies sandy_desert_summer_large_rocks
+	vegetation sandy_desert_winter_small_rocks modifies sandy_desert_summer_small_rocks
+	vegetation sandy_desert_winter_small_shrubs modifies sandy_desert_summer_small_shrubs
+
+	; rocky_desert vegetation
+
+	vegetation rocky_desert_summer_forest modifies sandy_desert_summer_forest
+	vegetation rocky_desert_summer_mangroves modifies sandy_desert_summer_mangroves
+	vegetation rocky_desert_summer_cactii modifies sandy_desert_summer_cactii
+	vegetation rocky_desert_summer_shrubs modifies sandy_desert_summer_shrubs
+	vegetation rocky_desert_summer_long_grass modifies sandy_desert_summer_long_grass
+	vegetation rocky_desert_summer_reeds modifies sandy_desert_summer_reeds
+	vegetation rocky_desert_summer_grass modifies sandy_desert_summer_grass
+	vegetation rocky_desert_summer_water_cover modifies sandy_desert_summer_water_cover
+	vegetation rocky_desert_summer_large_rocks modifies sandy_desert_summer_large_rocks
+	vegetation rocky_desert_summer_small_rocks modifies sandy_desert_summer_small_rocks
+	vegetation rocky_desert_summer_small_shrubs modifies sandy_desert_summer_small_shrubs
+
+	vegetation rocky_desert_winter_forest modifies sandy_desert_summer_forest
+	vegetation rocky_desert_winter_mangroves modifies sandy_desert_summer_mangroves
+	vegetation rocky_desert_winter_cactii modifies sandy_desert_summer_cactii
+	vegetation rocky_desert_winter_shrubs modifies sandy_desert_summer_shrubs
+	vegetation rocky_desert_winter_long_grass modifies sandy_desert_summer_long_grass
+	vegetation rocky_desert_winter_reeds modifies sandy_desert_summer_reeds
+	vegetation rocky_desert_winter_grass modifies sandy_desert_summer_grass
+	vegetation rocky_desert_winter_water_cover modifies sandy_desert_summer_water_cover
+	vegetation rocky_desert_winter_large_rocks modifies sandy_desert_summer_large_rocks
+	vegetation rocky_desert_winter_small_rocks modifies sandy_desert_summer_small_rocks
+	vegetation rocky_desert_winter_small_shrubs modifies sandy_desert_summer_small_shrubs
+
+
+	; semi_arid
+
+
+	vegetation semi_arid_winter_forest modifies semi_arid_summer_forest
+	vegetation semi_arid_winter_mangroves modifies semi_arid_summer_mangroves
+	vegetation semi_arid_winter_cactii modifies semi_arid_summer_cactii
+	vegetation semi_arid_winter_shrubs modifies semi_arid_summer_shrubs
+	vegetation semi_arid_winter_long_grass modifies semi_arid_summer_long_grass
+	vegetation semi_arid_winter_reeds modifies semi_arid_summer_reeds
+	vegetation semi_arid_winter_grass modifies semi_arid_summer_grass
+	vegetation semi_arid_winter_water_cover modifies semi_arid_summer_water_cover
+	vegetation semi_arid_winter_large_rocks modifies semi_arid_summer_large_rocks
+	vegetation semi_arid_winter_small_rocks modifies semi_arid_summer_small_rocks
+	vegetation semi_arid_winter_small_shrubs modifies semi_arid_summer_small_shrubs
+}
+
+;							-----------------------------------------------------
+;							-----------------------------------------------------
+;							-----------------------------------------------------
+
+; Define the vegetation groups used per climate
+;
+; Climate records
+; ===========
+;
+; Climate records have the following structure:
+;
+; climate <climate name>
+; {
+;	season <season name>
+;	{
+;		<classification>	<vegetation group>
+;	}
+;
+; }
+
+	climate mediterranean
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				test_climate_summer_forest
+			MANGROVES			test_climate_summer_mangroves
+			CACTII				test_climate_summer_cactii
+			SHRUBS				test_climate_summer_shrubs
+			LONG_GRASS			test_climate_summer_long_grass
+			LARGE_ROCKS			test_climate_summer_large_rocks
+			REEDS				test_climate_summer_reeds
+			GRASS				test_climate_summer_grass
+			WATER_COVER			test_climate_summer_water_cover
+			SMALL_ROCKS			test_climate_summer_small_rocks
+			SMALL_SHRUBS		test_climate_summer_small_shrubs
+		}
+
+		season winter 
+		{
+		;	classification		vegetation group
+			FOREST				test_climate_summer_forest
+			MANGROVES			test_climate_summer_mangroves
+			CACTII				test_climate_summer_cactii
+			SHRUBS				test_climate_summer_shrubs
+			LONG_GRASS			test_climate_summer_long_grass
+			LARGE_ROCKS			test_climate_summer_large_rocks
+			REEDS				test_climate_summer_reeds
+			GRASS				test_climate_summer_grass
+			WATER_COVER			test_climate_summer_water_cover
+			SMALL_ROCKS			test_climate_summer_small_rocks
+			SMALL_SHRUBS		test_climate_summer_small_shrubs
+		}
+	}
+
+	climate sandy_desert
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				sandy_desert_summer_forest
+			MANGROVES			sandy_desert_summer_mangroves
+			CACTII				sandy_desert_summer_cactii
+			SHRUBS				sandy_desert_summer_shrubs
+			LONG_GRASS			sandy_desert_summer_long_grass
+			LARGE_ROCKS			sandy_desert_summer_large_rocks
+			REEDS				sandy_desert_summer_reeds
+			GRASS				sandy_desert_summer_grass
+			WATER_COVER			sandy_desert_summer_water_cover
+			SMALL_ROCKS			sandy_desert_summer_small_rocks
+			SMALL_SHRUBS		sandy_desert_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				sandy_desert_winter_forest
+			MANGROVES			sandy_desert_winter_mangroves
+			CACTII				sandy_desert_winter_cactii
+			SHRUBS				sandy_desert_winter_shrubs
+			LONG_GRASS			sandy_desert_winter_long_grass
+			LARGE_ROCKS			sandy_desert_winter_large_rocks
+			REEDS				sandy_desert_winter_reeds
+			GRASS				sandy_desert_winter_grass
+			WATER_COVER			sandy_desert_winter_water_cover
+			SMALL_ROCKS			sandy_desert_winter_small_rocks
+			SMALL_SHRUBS		sandy_desert_winter_small_shrubs
+		}
+	}
+
+	climate rocky_desert
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				rocky_desert_summer_forest
+			MANGROVES			rocky_desert_summer_mangroves
+			CACTII				rocky_desert_summer_cactii
+			SHRUBS				rocky_desert_summer_shrubs
+			LONG_GRASS			rocky_desert_summer_long_grass
+			LARGE_ROCKS			rocky_desert_summer_large_rocks
+			REEDS				rocky_desert_summer_reeds
+			GRASS				rocky_desert_summer_grass
+			WATER_COVER			rocky_desert_summer_water_cover
+			SMALL_ROCKS			rocky_desert_summer_small_rocks
+			SMALL_SHRUBS		rocky_desert_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				rocky_desert_winter_forest
+			MANGROVES			rocky_desert_winter_mangroves
+			CACTII				rocky_desert_winter_cactii
+			SHRUBS				rocky_desert_winter_shrubs
+			LONG_GRASS			rocky_desert_winter_long_grass
+			LARGE_ROCKS			rocky_desert_winter_large_rocks
+			REEDS				rocky_desert_winter_reeds
+			GRASS				rocky_desert_winter_grass
+			WATER_COVER			rocky_desert_winter_water_cover
+			SMALL_ROCKS			rocky_desert_winter_small_rocks
+			SMALL_SHRUBS		rocky_desert_winter_small_shrubs
+		}
+	}
+
+	climate unused1
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				temperate_grassland_fertile_summer_forest
+			MANGROVES			temperate_grassland_fertile_summer_mangroves
+			CACTII				temperate_grassland_fertile_summer_cactii
+			SHRUBS				temperate_grassland_fertile_summer_shrubs
+			LONG_GRASS			temperate_grassland_fertile_summer_long_grass
+			LARGE_ROCKS			temperate_grassland_fertile_summer_large_rocks
+			REEDS				temperate_grassland_fertile_summer_reeds
+			GRASS				temperate_grassland_fertile_summer_grass
+			WATER_COVER			temperate_grassland_fertile_summer_water_cover
+			SMALL_ROCKS			temperate_grassland_fertile_summer_small_rocks
+			SMALL_SHRUBS		temperate_grassland_fertile_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				temperate_grassland_fertile_winter_forest
+			MANGROVES			temperate_grassland_fertile_winter_mangroves
+			CACTII				temperate_grassland_fertile_winter_cactii
+			SHRUBS				temperate_grassland_fertile_winter_shrubs
+			LONG_GRASS			temperate_grassland_fertile_winter_long_grass
+			LARGE_ROCKS			temperate_grassland_fertile_winter_large_rocks
+			REEDS				temperate_grassland_fertile_winter_reeds
+			GRASS				temperate_grassland_fertile_winter_grass
+			WATER_COVER			temperate_grassland_fertile_winter_water_cover
+			SMALL_ROCKS			temperate_grassland_fertile_winter_small_rocks
+			SMALL_SHRUBS		temperate_grassland_fertile_winter_small_shrubs
+		}
+	}
+
+	climate steppe
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				temperate_grassland_infertile_summer_forest
+			MANGROVES			temperate_grassland_infertile_summer_mangroves
+			CACTII				temperate_grassland_infertile_summer_cactii
+			SHRUBS				temperate_grassland_infertile_summer_shrubs
+			LONG_GRASS			temperate_grassland_infertile_summer_long_grass
+			LARGE_ROCKS			temperate_grassland_infertile_summer_large_rocks
+			REEDS				temperate_grassland_infertile_summer_reeds
+			GRASS				temperate_grassland_infertile_summer_grass
+			WATER_COVER			temperate_grassland_infertile_summer_water_cover
+			SMALL_ROCKS			temperate_grassland_infertile_summer_small_rocks
+			SMALL_SHRUBS		temperate_grassland_infertile_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				temperate_grassland_infertile_winter_forest
+			MANGROVES			temperate_grassland_infertile_winter_mangroves
+			CACTII				temperate_grassland_infertile_winter_cactii
+			SHRUBS				temperate_grassland_infertile_winter_shrubs
+			LONG_GRASS			temperate_grassland_infertile_winter_long_grass
+			LARGE_ROCKS			temperate_grassland_infertile_winter_large_rocks
+			REEDS				temperate_grassland_infertile_winter_reeds
+			GRASS				temperate_grassland_infertile_winter_grass
+			WATER_COVER			temperate_grassland_infertile_winter_water_cover
+			SMALL_ROCKS			temperate_grassland_infertile_winter_small_rocks
+			SMALL_SHRUBS		temperate_grassland_infertile_winter_small_shrubs
+		}
+	}
+
+	climate temperate_deciduous_forest
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				temperate_forest_open_summer_forest
+			MANGROVES			temperate_forest_open_summer_mangroves
+			CACTII				temperate_forest_open_summer_cactii
+			SHRUBS				temperate_forest_open_summer_shrubs
+			LONG_GRASS			temperate_forest_open_summer_long_grass
+			LARGE_ROCKS			temperate_forest_open_summer_large_rocks
+			REEDS				temperate_forest_open_summer_reeds
+			GRASS				temperate_forest_open_summer_grass
+			WATER_COVER			temperate_forest_open_summer_water_cover
+			SMALL_ROCKS			temperate_forest_open_summer_small_rocks
+			SMALL_SHRUBS		temperate_forest_open_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				temperate_forest_open_winter_forest
+			MANGROVES			temperate_forest_open_winter_mangroves
+			CACTII				temperate_forest_open_winter_cactii
+			SHRUBS				temperate_forest_open_winter_shrubs
+			LONG_GRASS			temperate_forest_open_winter_long_grass
+			LARGE_ROCKS			temperate_forest_open_winter_large_rocks
+			REEDS				temperate_forest_open_winter_reeds
+			GRASS				temperate_forest_open_winter_grass
+			WATER_COVER			temperate_forest_open_winter_water_cover
+			SMALL_ROCKS			temperate_forest_open_winter_small_rocks
+			SMALL_SHRUBS		temperate_forest_open_winter_small_shrubs
+		}
+	}
+
+	climate temperate_coniferous_forest
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				temperate_forest_deep_summer_forest
+			MANGROVES			temperate_forest_deep_summer_mangroves
+			CACTII				temperate_forest_deep_summer_cactii
+			SHRUBS				temperate_forest_deep_summer_shrubs
+			LONG_GRASS			temperate_forest_deep_summer_long_grass
+			LARGE_ROCKS			temperate_forest_deep_summer_large_rocks
+			REEDS				temperate_forest_deep_summer_reeds
+			GRASS				temperate_forest_deep_summer_grass
+			WATER_COVER			temperate_forest_deep_summer_water_cover
+			SMALL_ROCKS			temperate_forest_deep_summer_small_rocks
+			SMALL_SHRUBS		temperate_forest_deep_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				temperate_forest_deep_winter_forest
+			MANGROVES			temperate_forest_deep_winter_mangroves
+			CACTII				temperate_forest_deep_winter_cactii
+			SHRUBS				temperate_forest_deep_winter_shrubs
+			LONG_GRASS			temperate_forest_deep_winter_long_grass
+			LARGE_ROCKS			temperate_forest_deep_winter_large_rocks
+			REEDS				temperate_forest_deep_winter_reeds
+			GRASS				temperate_forest_deep_winter_grass
+			WATER_COVER			temperate_forest_deep_winter_water_cover
+			SMALL_ROCKS			temperate_forest_deep_winter_small_rocks
+			SMALL_SHRUBS		temperate_forest_deep_winter_small_shrubs
+		}
+	}
+
+	climate unused2
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				swamp_summer_forest
+			MANGROVES			swamp_summer_mangroves
+			CACTII				swamp_summer_cactii
+			SHRUBS				swamp_summer_shrubs
+			LONG_GRASS			swamp_summer_long_grass
+			LARGE_ROCKS			swamp_summer_large_rocks
+			REEDS				swamp_summer_reeds
+			GRASS				swamp_summer_grass
+			WATER_COVER			swamp_summer_water_cover
+			SMALL_ROCKS			swamp_summer_small_rocks
+			SMALL_SHRUBS		swamp_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				swamp_winter_forest
+			MANGROVES			swamp_winter_mangroves
+			CACTII				swamp_winter_cactii
+			SHRUBS				swamp_winter_shrubs
+			LONG_GRASS			swamp_winter_long_grass
+			LARGE_ROCKS			swamp_winter_large_rocks
+			REEDS				swamp_winter_reeds
+			GRASS				swamp_winter_grass
+			WATER_COVER			swamp_winter_water_cover
+			SMALL_ROCKS			swamp_winter_small_rocks
+			SMALL_SHRUBS		swamp_winter_small_shrubs
+		}
+	}
+
+	climate highland
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				highland_summer_forest
+			MANGROVES			highland_summer_mangroves
+			CACTII				highland_summer_cactii
+			SHRUBS				highland_summer_shrubs
+			LONG_GRASS			highland_summer_long_grass
+			LARGE_ROCKS			highland_summer_large_rocks
+			REEDS				highland_summer_reeds
+			GRASS				highland_summer_grass
+			WATER_COVER			highland_summer_water_cover
+			SMALL_ROCKS			highland_summer_small_rocks
+			SMALL_SHRUBS		highland_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				highland_winter_forest
+			MANGROVES			highland_winter_mangroves
+			CACTII				highland_winter_cactii
+			SHRUBS				highland_winter_shrubs
+			LONG_GRASS			highland_winter_long_grass
+			LARGE_ROCKS			highland_winter_large_rocks
+			REEDS				highland_winter_reeds
+			GRASS				highland_winter_grass
+			WATER_COVER			highland_winter_water_cover
+			SMALL_ROCKS			highland_winter_small_rocks
+			SMALL_SHRUBS		highland_winter_small_shrubs
+		}
+	}
+
+	climate alpine
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				alpine_summer_forest
+			MANGROVES			alpine_summer_mangroves
+			CACTII				alpine_summer_cactii
+			SHRUBS				alpine_summer_shrubs
+			LONG_GRASS			alpine_summer_long_grass
+			LARGE_ROCKS			alpine_summer_large_rocks
+			REEDS				alpine_summer_reeds
+			GRASS				alpine_summer_grass
+			WATER_COVER			alpine_summer_water_cover
+			SMALL_ROCKS			alpine_summer_small_rocks
+			SMALL_SHRUBS		alpine_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				alpine_winter_forest
+			MANGROVES			alpine_winter_mangroves
+			CACTII				alpine_winter_cactii
+			SHRUBS				alpine_winter_shrubs
+			LONG_GRASS			alpine_winter_long_grass
+			LARGE_ROCKS			alpine_winter_large_rocks
+			REEDS				alpine_winter_reeds
+			GRASS				alpine_winter_grass
+			WATER_COVER			alpine_winter_water_cover
+			SMALL_ROCKS			alpine_winter_small_rocks
+			SMALL_SHRUBS		alpine_winter_small_shrubs
+		}
+	}
+
+	climate tropical
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				sub_arctic_summer_forest
+			MANGROVES			sub_arctic_summer_mangroves
+			CACTII				sub_arctic_summer_cactii
+			SHRUBS				sub_arctic_summer_shrubs
+			LONG_GRASS			sub_arctic_summer_long_grass
+			LARGE_ROCKS			sub_arctic_summer_large_rocks
+			REEDS				sub_arctic_summer_reeds
+			GRASS				sub_arctic_summer_grass
+			WATER_COVER			sub_arctic_summer_water_cover
+			SMALL_ROCKS			sub_arctic_summer_small_rocks
+			SMALL_SHRUBS		sub_arctic_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				sub_arctic_winter_forest
+			MANGROVES			sub_arctic_winter_mangroves
+			CACTII				sub_arctic_winter_cactii
+			SHRUBS				sub_arctic_winter_shrubs
+			LONG_GRASS			sub_arctic_winter_long_grass
+			LARGE_ROCKS			sub_arctic_winter_large_rocks
+			REEDS				sub_arctic_winter_reeds
+			GRASS				sub_arctic_winter_grass
+			WATER_COVER			sub_arctic_winter_water_cover
+			SMALL_ROCKS			sub_arctic_winter_small_rocks
+			SMALL_SHRUBS		sub_arctic_winter_small_shrubs
+		}
+	}
+
+	climate semi_arid
+	{
+		season summer
+		{
+		;	classification		vegetation group
+			FOREST				semi_arid_summer_forest
+			MANGROVES			semi_arid_summer_mangroves
+			CACTII				semi_arid_summer_cactii
+			SHRUBS				semi_arid_summer_shrubs
+			LONG_GRASS			semi_arid_summer_long_grass
+			LARGE_ROCKS			semi_arid_summer_large_rocks
+			REEDS				semi_arid_summer_reeds
+			GRASS				semi_arid_summer_grass
+			WATER_COVER			semi_arid_summer_water_cover
+			SMALL_ROCKS			semi_arid_summer_small_rocks
+			SMALL_SHRUBS		semi_arid_summer_small_shrubs
+		}
+
+		season winter
+		{
+		;	classification		vegetation group
+			FOREST				semi_arid_winter_forest
+			MANGROVES			semi_arid_winter_mangroves
+			CACTII				semi_arid_winter_cactii
+			SHRUBS				semi_arid_winter_shrubs
+			LONG_GRASS			semi_arid_winter_long_grass
+			LARGE_ROCKS			semi_arid_winter_large_rocks
+			REEDS				semi_arid_winter_reeds
+			GRASS				semi_arid_winter_grass
+			WATER_COVER			semi_arid_winter_water_cover
+			SMALL_ROCKS			semi_arid_winter_small_rocks
+			SMALL_SHRUBS		semi_arid_winter_small_shrubs
+		}
+	}

@@ -1,0 +1,3962 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		    TINY BURNING BUILDING EFFECT				  ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_smoke_tiny_1
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		3, 5
+		age_range       		0.01, 0.05
+        grow_range	 			1, 1 
+        vel_range				1,1.8
+        fade_time				1
+        die_size				0.1, 0.4
+		colour     				255, 235, 215
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate			    -0.14, 0.14
+		acceleration			0,10,0
+		system_radius			30
+		sort_bias				1
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					50	     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	250		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+effect burning_building_smoke_tiny_2
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke2.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		8, 12
+		age_range       		0.3, 0.6
+        grow_range	 			1,1 
+        vel_range				2,6
+        fade_time				2
+        die_size				0.1,0.5
+		colour     				250, 210, 210
+		alpha_max	   			80			 ; maximum alpha value
+		spin_rate				-0.24, 0.24
+		acceleration			0,2,0
+		system_radius			30
+		sort_bias				2
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,-5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_smoke_tiny_3
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		7, 16
+		age_range       		0.5,1
+        grow_range	 			0.5, 1.4 
+        vel_range				4.5, 11
+        fade_time				4
+        die_size				20, 40
+		colour     				220,210,210
+		alpha_max	   			80			 ; maximum alpha value
+		spin_rate				-0.18, 0.18
+		acceleration			0,1.8,0
+		system_radius			30
+		sort_bias				3
+		sort 					instance
+		fade_in_time			20.0f;
+
+		emitter tri_surface
+		{
+			density					2     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	650		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect burning_building_smoke_tiny_4
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		30,50
+		age_range       		0.7,1
+        grow_range	 			1,1 
+        vel_range				20, 25
+        fade_time				10
+        die_size				5,5
+		colour     				255,135,0
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,1,0
+		system_radius			30
+		sort_bias				4
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					1	     	; how many particles per second
+			offset_from_surface		0,-60,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_light_tiny
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	40
+				0.1, 	38
+				0.15, 	42
+		}
+		
+		offset	0,	15,	0
+	}
+}
+
+effect_set burning_tiny_building_set
+{
+	lod 1000
+	{
+		burning_building_smoke_tiny_1
+		burning_building_smoke_tiny_2
+		burning_building_smoke_tiny_3
+		burning_building_smoke_tiny_4
+		burning_building_light_tiny
+		burning_building_sound_small
+		fire_flare_sound
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		    SMALL BURNING BUILDING EFFECT				  ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_smoke1
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		7, 18.4
+		age_range       		0.01, 0.15
+        grow_range	 			1, 1 
+        vel_range				1.1, 2.5
+        fade_time				1
+        die_size				0.1, 0.4
+		colour     				255, 235, 215
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate			    -0.14, 0.14
+		acceleration			0,30,0
+		system_radius			50
+		sort_bias				1
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					50	     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	250		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+effect burning_building_smoke2
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke2.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		10, 20
+		age_range       		0.1, 0.3
+        grow_range	 			1,1 
+        vel_range				10, 35
+        fade_time				1
+        die_size				0.1,0.5
+		colour     				250, 210, 210
+		alpha_max	   			140			 ; maximum alpha value
+		spin_rate				-0.24, 0.24
+		acceleration			0,6,0
+		system_radius			50
+		sort_bias				2
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					50	     	; how many particles per second
+			offset_from_surface		0,-20,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_smoke3
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		20, 40
+		age_range       		0.5,1.4
+        grow_range	 			0.5, 1.4 
+        vel_range				12.5, 26
+        fade_time				4
+        die_size				20, 40
+		colour     				220,210,210
+		alpha_max	   			100			 ; maximum alpha value
+		spin_rate				-0.18, 0.18
+		acceleration			0,1.8,0
+		system_radius			50
+		sort_bias				3
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					5     	; how many particles per second
+			offset_from_surface		0,-1,0		; offset from surface to emit from
+
+			emitter_falloff_dist	650		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect burning_building_smoke4
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		90,110
+		age_range       		0.7,1
+        grow_range	 			1,1 
+        vel_range				20, 25
+        fade_time				10
+        die_size				5,5
+		colour     				255,135,0
+		alpha_max	   			40			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,1,0
+		system_radius			50
+		sort_bias				4
+		sort 					instance
+		fade_in_time			20.0f;
+
+		emitter tri_surface
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,-60,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_light_small
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	60
+				0.1, 	58
+				0.15, 	62
+		}
+		offset	0,	15,	0
+	}
+}
+
+effect_set burning_small_building_set
+{
+	lod 1000
+	{
+		burning_building_smoke1
+		burning_building_smoke2
+		burning_building_smoke3
+		burning_building_smoke4
+		burning_building_light_small
+		burning_building_sound_small
+		fire_flare_sound
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		    MEDIUM BURNING BUILDING EFFECT				  ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_smoke5
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		10.8, 18.4
+		age_range       		0.05, 0.25
+        grow_range	 			1, 1 
+        vel_range				1.1, 2.5
+        fade_time				1.5
+        die_size				0.1, 0.4
+		colour     				255, 235, 215
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate			    -0.14, 0.14
+		acceleration			0,25,0
+		system_radius			80
+		sort_bias				1
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					200	     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	250		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+effect burning_building_smoke6
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke2.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		15, 25
+		age_range       		0.2, 0.4
+        grow_range	 			1,1 
+        vel_range				10, 35
+        fade_time				1
+        die_size				0.1,0.5
+		colour     				250, 210, 210
+		alpha_max	   			140			 ; maximum alpha value
+		spin_rate				-0.24, 0.24
+		acceleration			0,6,0
+		system_radius			80
+		sort_bias				2
+		sort 					instance
+		fade_in_time			20.0f;
+
+		emitter tri_surface
+		{
+			density					120	     	; how many particles per second
+			offset_from_surface		0,-20,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_smoke7
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		30.8, 60
+		age_range       		0.8,2.4
+        grow_range	 			0.5, 1.4 
+        vel_range				12.5, 26
+        fade_time				4
+        die_size				20, 40
+		colour     				220,210,210
+		alpha_max	   			100			 ; maximum alpha value
+		spin_rate				-0.18, 0.18
+		acceleration			0,1.8,0
+		system_radius			80
+		sort_bias				3
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					15     	; how many particles per second
+			offset_from_surface		0,-0.5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	650		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect burning_building_smoke8
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		120,140
+		age_range       		0.7,1
+        grow_range	 			1,1 
+        vel_range				20, 25
+        fade_time				10
+        die_size				5,5
+		colour     				255,135,0
+		alpha_max	   			40			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,1,0
+		system_radius			80
+		sort_bias				4
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					6	     	; how many particles per second
+			offset_from_surface		0,-60,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_light_medium
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	80
+				0.1, 	78
+				0.15, 	82
+		}
+		offset	0,	8,	0
+	}
+}
+
+
+effect_set burning_medium_building_set
+{
+	lod 1000
+	{
+		burning_building_smoke5
+		burning_building_smoke6
+		burning_building_smoke7
+		burning_building_smoke8
+		burning_building_light_medium
+		burning_building_sound_medium
+		fire_flare_sound
+	}
+}
+
+effect building_light_unique
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	80
+				0.1, 	78
+				0.15, 	82
+		}
+		unique_id
+		offset	0, 4, 0
+	}
+}
+
+effect_set building_light_unique_set
+{
+	lod 1000
+	{
+		building_light_unique
+		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		    LARGE BURNING BUILDING EFFECT				  ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_smoke9
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		14.8, 24.4
+		age_range       		0.05, 0.25
+        grow_range	 			1, 1 
+        vel_range				1.1, 2.5
+        fade_time				1
+        die_size				0.1, 0.4
+		colour     				255, 235, 215
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate			    -0.14, 0.14
+		acceleration			0,30,0
+		system_radius			120
+		sort_bias				1
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					250	     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	250		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+effect burning_building_smoke10
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke2.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		25, 35
+		age_range       		0.2, 0.4
+        grow_range	 			1,1 
+        vel_range				10, 35
+        fade_time				1
+        die_size				0.1,0.5
+		colour     				250, 210, 210
+		alpha_max	   			140			 ; maximum alpha value
+		spin_rate				-0.24, 0.24
+		acceleration			0,7,0
+		system_radius			120
+		sort_bias				2
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					200	     	; how many particles per second
+			offset_from_surface		0,-20,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_smoke11
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		40, 100
+		age_range       		0.8,2.4
+        grow_range	 			0.5, 1.4 
+        vel_range				12.5, 26
+        fade_time				4
+        die_size				20, 40
+		colour     				220,210,210
+		alpha_max	   			100			 ; maximum alpha value
+		spin_rate				-0.18, 0.18
+		acceleration			0,1.8,0
+		system_radius			120
+		sort_bias				3
+		sort 					instance
+		fade_in_time			20.0f;
+
+		emitter tri_surface
+		{
+			density					15     	; how many particles per second
+			offset_from_surface		0,-0.5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	650		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect burning_building_smoke12
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		160,180
+		age_range       		0.7,1
+        grow_range	 			1,1 
+        vel_range				20, 25
+        fade_time				10
+        die_size				5,5
+		colour     				255,135,0
+		alpha_max	   			40			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,1,0
+		system_radius			120
+		sort_bias				4
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					5	     	; how many particles per second
+			offset_from_surface		0,-60,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_light_large
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	100
+				0.1, 	98
+				0.15, 	102
+		}
+		offset	0,	15,	0
+	}
+}
+
+effect_set burning_large_building_set
+{
+	lod 1000
+	{
+		burning_building_smoke9
+		burning_building_smoke10
+		burning_building_smoke11
+		burning_building_smoke12 
+		burning_building_light_large
+		burning_building_sound_large
+		fire_flare_sound
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 					NIGHT BURNING BUILDING EFFECTS						;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		  NIGHT TINY BURNING BUILDING EFFECT			  ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_smoke_tiny_1_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke1_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		3, 5
+		age_range       		0.01, 0.05
+        grow_range	 			1, 1 
+        vel_range				1,1.8
+        fade_time				1
+        die_size				0.1, 0.4
+		colour     				255, 235, 215
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate			    -0.14, 0.14
+		acceleration			0,10,0
+		system_radius			30
+		sort_bias				1
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					30	     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	250		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+effect burning_building_smoke_tiny_2_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke2_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		8, 12
+		age_range       		0.3, 0.6
+        grow_range	 			1,1 
+        vel_range				2,6
+        fade_time				2
+        die_size				0.1,0.5
+		colour     				250, 210, 210
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.24, 0.24
+		acceleration			0,2,0
+		system_radius			30
+		sort_bias				2
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					20	     	; how many particles per second
+			offset_from_surface		0,-5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_smoke_tiny_3_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		7, 16
+		age_range       		0.5,1
+        grow_range	 			0.5, 1.4 
+        vel_range				4.5, 11
+        fade_time				4
+        die_size				20, 40
+		colour     				220,210,210
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.18, 0.18
+		acceleration			0,1.8,0
+		system_radius			30
+		sort_bias				3
+		sort 					instance
+		fade_in_time			20.0f;
+
+		emitter tri_surface
+		{
+			density					5     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	650		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect burning_building_smoke_tiny_4_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		30,50
+		age_range       		0.7,1
+        grow_range	 			1,1 
+        vel_range				20, 25
+        fade_time				10
+        die_size				5,5
+		colour     				255,135,0
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,1,0
+		system_radius			30
+		sort_bias				4
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					1	     	; how many particles per second
+			offset_from_surface		0,-60,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_light_tiny_night
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	40
+				0.1, 	38
+				0.15, 	42
+		}
+		
+		offset	0,	15,	0
+	}
+}
+
+effect_set burning_tiny_building_night_set
+{
+	lod 1000
+	{
+		burning_building_smoke_tiny_1_night
+		burning_building_smoke_tiny_2_night
+		burning_building_smoke_tiny_3_night
+		burning_building_smoke_tiny_4_night
+		burning_building_light_tiny_night
+		burning_building_sound_small
+		fire_flare_sound
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		    NIGHT SMALL BURNING BUILDING EFFECT			  ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_smoke1_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke1_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		3, 5
+		age_range       		0.01, 0.05
+        grow_range	 			1, 1 
+        vel_range				1,1.8
+        fade_time				1
+        die_size				0.1, 0.4
+		colour     				255, 235, 215
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate			    -0.14, 0.14
+		acceleration			0,10,0
+		system_radius			30
+		sort_bias				1
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					30	     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	250		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+effect burning_building_smoke2_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke2_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		8, 12
+		age_range       		0.3, 0.6
+        grow_range	 			1,1 
+        vel_range				2,6
+        fade_time				2
+        die_size				0.1,0.5
+		colour     				250, 210, 210
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.24, 0.24
+		acceleration			0,2,0
+		system_radius			30
+		sort_bias				2
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					20	     	; how many particles per second
+			offset_from_surface		0,-5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_smoke3_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		20, 40
+		age_range       		0.5,1.4
+        grow_range	 			0.5, 1.4 
+        vel_range				12.5, 26
+        fade_time				4
+        die_size				10, 30
+		colour     				190,180,180
+		alpha_max	   			30			 ; maximum alpha value
+		spin_rate				-0.18, 0.18
+		acceleration			0,1.8,0
+		system_radius			50
+		sort_bias				3
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					5     	; how many particles per second
+			offset_from_surface		0,-1,0		; offset from surface to emit from
+
+			emitter_falloff_dist	650		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect burning_building_smoke4_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		90,110
+		age_range       		0.7,1
+        grow_range	 			1,1 
+        vel_range				20, 25
+        fade_time				10
+        die_size				5,5
+		colour     				155,35,0
+		alpha_max	   			40			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,1,0
+		system_radius			50
+		sort_bias				4
+		sort 					instance
+		fade_in_time			20.0f;
+
+		emitter tri_surface
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,-60,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_light_small_night
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	60
+				0.1, 	58
+				0.15, 	62
+		}
+		offset	0,	15,	0
+	}
+}
+
+effect_set burning_small_building_night_set
+{
+	lod 1000
+	{
+		burning_building_smoke1_night
+		burning_building_smoke2_night
+		burning_building_smoke3_night
+		burning_building_smoke4_night
+		burning_building_light_small_night
+		burning_building_sound_small
+		fire_flare_sound
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		    NIGHT MEDIUM BURNING BUILDING EFFECT		  ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_smoke5_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke1_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		10.8, 18.4
+		age_range       		0.05, 0.25
+        grow_range	 			1, 1 
+        vel_range				1.1, 2.5
+        fade_time				1.5
+        die_size				0.1, 0.4
+		colour     				255, 235, 215
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate			    -0.14, 0.14
+		acceleration			0,25,0
+		system_radius			80
+		sort_bias				1
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					200	     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	250		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+effect burning_building_smoke6_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke2_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		10, 50
+		age_range       		0.1, 0.3
+        grow_range	 			1,1 
+        vel_range				10, 35
+        fade_time				1
+        die_size				0.1,0.5
+		colour     				250, 210, 210
+		alpha_max	   			80			 ; maximum alpha value
+		spin_rate				-0.24, 0.24
+		acceleration			0,6,0
+		system_radius			80
+		sort_bias				2
+		sort 					instance
+		fade_in_time			20.0f;
+
+		emitter tri_surface
+		{
+			density					180	     	; how many particles per second
+			offset_from_surface		0,-20,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_smoke7_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		30.8, 60
+		age_range       		0.8,2.4
+        grow_range	 			0.5, 1.4 
+        vel_range				12.5, 26
+        fade_time				4
+        die_size				20, 40
+		colour     				220,210,210
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.18, 0.18
+		acceleration			0,1.8,0
+		system_radius			80
+		sort_bias				3
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					7     	; how many particles per second
+			offset_from_surface		0,-0.5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	650		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect burning_building_smoke8_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		120,140
+		age_range       		0.7,1
+        grow_range	 			1,1 
+        vel_range				20, 25
+        fade_time				10
+        die_size				5,5
+		colour     				255,135,0
+		alpha_max	   			40			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,1,0
+		system_radius			80
+		sort_bias				4
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					6	     	; how many particles per second
+			offset_from_surface		0,-60,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_light_medium_night
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	80
+				0.1, 	78
+				0.15, 	82
+		}
+		offset	0,	8,	0
+	}
+}
+
+
+effect_set burning_medium_building_night_set
+{
+	lod 1000
+	{
+		burning_building_smoke5_night
+		burning_building_smoke6_night
+		burning_building_smoke7_night
+		burning_building_smoke8_night
+		burning_building_light_medium_night
+		burning_building_sound_medium
+		fire_flare_sound
+	}
+}
+
+effect building_light_unique_night
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	80
+				0.1, 	78
+				0.15, 	82
+		}
+		unique_id
+		offset	0, 4, 0
+	}
+}
+
+effect_set building_light_unique_night_set
+{
+	lod 1000
+	{
+		building_light_unique_night
+		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		    NIGHT LARGE BURNING BUILDING EFFECT			  ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_smoke9_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke1_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		14.8, 24.4
+		age_range       		0.05, 0.25
+        grow_range	 			1, 1 
+        vel_range				1.1, 2.5
+        fade_time				1
+        die_size				0.1, 0.4
+		colour     				255, 235, 215
+		alpha_max	   			30			 ; maximum alpha value
+		spin_rate			    -0.14, 0.14
+		acceleration			0,30,0
+		system_radius			120
+		sort_bias				1
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					100	     	; how many particles per second
+			offset_from_surface		0,-3,0		; offset from surface to emit from
+
+			emitter_falloff_dist	250		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+effect burning_building_smoke10_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke2_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		25, 35
+		age_range       		0.2, 0.4
+        grow_range	 			1,1 
+        vel_range				10, 35
+        fade_time				1
+        die_size				0.1,0.5
+		colour     				210, 170, 170
+		alpha_max	   			70			 ; maximum alpha value
+		spin_rate				-0.24, 0.24
+		acceleration			0,7,0
+		system_radius			120
+		sort_bias				2
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					200	     	; how many particles per second
+			offset_from_surface		0,-20,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_smoke11_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3_dark.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		40, 100
+		age_range       		0.8,2.4
+        grow_range	 			0.5, 1.4 
+        vel_range				12.5, 26
+        fade_time				4
+        die_size				20, 40
+		colour     				220,210,210
+		alpha_max	   			20			 ; maximum alpha value
+		spin_rate				-0.18, 0.18
+		acceleration			0,1.8,0
+		system_radius			120
+		sort_bias				3
+		sort 					instance
+		fade_in_time			20.0f;
+
+		emitter tri_surface
+		{
+			density					10     	; how many particles per second
+			offset_from_surface		0,-0.5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	650		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect burning_building_smoke12_night
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		160,180
+		age_range       		0.7,1
+        grow_range	 			1,1 
+        vel_range				20, 25
+        fade_time				10
+        die_size				5,5
+		colour     				255,135,0
+		alpha_max	   			40			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,1,0
+		system_radius			120
+		sort_bias				4
+		sort 					instance
+		fade_in_time			20.0f;
+		
+		emitter tri_surface
+		{
+			density					5	     	; how many particles per second
+			offset_from_surface		0,-60,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect burning_building_light_large_night
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	100
+				0.1, 	98
+				0.15, 	102
+		}
+		offset	0,	15,	0
+	}
+}
+
+effect burning_building_light_large_night_test
+{
+	type light
+	{
+		fade_in_time	20.0
+		fade_out_time	2.0
+			
+		keyframe_colour
+		{
+				0.0, 	255, 255, 255, 255
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	100
+				0.1, 	98
+				0.15, 	102
+		}
+		offset	0,	15,	0
+	}
+}
+
+
+effect_set burning_large_building_night_set
+{
+	lod 1000
+	{
+		burning_building_smoke9_night
+		burning_building_smoke10_night
+		burning_building_smoke11_night
+		burning_building_smoke12_night 
+		burning_building_light_large_night
+		burning_building_sound_large
+		fire_flare_sound
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;	SMOKE EFFECTS
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SMALL ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect burning_building_light
+{
+	type light
+	{
+			
+		keyframe_colour
+		{
+				0.00, 	238, 173,  140
+				0.05, 	238, 148, 108
+				0.15	236, 158,152
+				0.18, 	220, 151,  119
+				0.21, 	230, 165,  108
+				0.26, 	238, 177, 137
+				0.31, 	236, 158,152
+		}
+			
+		keyframe_radius
+		{
+				0.0, 	3		
+		}
+		
+		light_map_scale 0.05
+	}
+}
+
+
+effect flaming_particles_small
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.5, 5
+		age_range        	1, 2
+		die_size			0, 1
+	    grow_range		 	1,1
+		vel_range  			0.5, 1
+		wind_modifier 		4.0
+		fade_time			0
+		sort_bias				-1
+		sort 					instance
+
+		
+		keyframe_colour
+		{
+				0.0, 	0,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	0,   255,   255,   255
+		}
+		
+		alpha_max	   		90			 ; maximum alpha value
+		initial_size		1, 2
+		blend_type			additive
+		offset				0.0, 0.0, 0.0
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        5	     	; how many particels per second
+			emitter_falloff_dist	1000			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		500
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0.0, 0.2
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+
+
+
+effect dense_smoke_small
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke6.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.35, 0.65
+		size_range      		1, 4
+		age_range       		1, 3
+        grow_range	 			1.9,1.5 
+        vel_range				0.01, 0.3
+        fade_time				10
+        die_size				5, 20  
+		colour     				255,255,255
+		alpha_max	   			100			 ; maximum alpha value
+		spin_rate				-0.04, 0.04
+		acceleration			0,0.15,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				0.5, 1.5
+        offset				0.0, 2, 0.0
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					2	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect dense_smoke_short
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		1, 2.4
+		age_range       		2.4, 3.5
+        grow_range	 			1.9,1.5 
+        vel_range				0.01, 0.014
+        fade_time				1.5
+        die_size				14, 16
+		colour     				255,255,255
+		alpha_max	   			90			 ; maximum alpha value
+		spin_rate				-0.09, 0.09
+		acceleration			0,0.3,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				1, 1.5
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					5	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+
+
+effect fiery_smoke_small
+{
+	type particle
+ 	{
+		texture			battlefield/fire/firey_smoke.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		0.5, 1
+		age_range       		0.5, 1.2
+        grow_range	 			2,3 
+        vel_range				0.5, 0.9
+        fade_time				1
+        die_size				2, 6
+		colour     				255,255,255
+		alpha_max	   			100			 ; maximum alpha value
+		spin_rate				-0.05, 0.05
+		acceleration			0,0.2,0
+		system_radius			10
+		sort_bias				2
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				2, 3
+		wind_modifier			9
+		offset                  0,0.5,0
+		
+
+		
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+effect nahptha_fiery_smoke_small
+{
+	type particle
+ 	{
+		texture			battlefield/fire/firey_smoke.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		1.5, 2.4 
+		age_range       		1.5, 1.7
+        grow_range	 			1.9,1.5 
+        vel_range				0.5, 0.9
+        fade_time				0.4
+        die_size				5, 6
+		colour     				255,255,255
+		alpha_max	   			50			 ; maximum alpha value
+		spin_rate				-0.09, 0.09
+		acceleration			0,0.6,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				1, 1.5
+		wind_modifier			7
+		
+
+		
+		
+		emitter 				time
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,-1.0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+
+;	MEDIUM FLAME
+
+effect small_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.1, 0.1
+		age_range       		0.7, 0.9
+        grow_range	 			30, 40
+        vel_range				1.5, 3.3
+        fade_time				0.17, 0.35
+        die_size				0.01, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		intial_size				3.0, 4.0
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				2.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+effect nahptha_small_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.1, 0.1
+		age_range       		0.4, 0.7
+        grow_range	 			30, 40
+        vel_range				1.5, 1.3
+        fade_time				0.17, 0.35
+        die_size				0.01, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		intial_size				3.0, 4.0
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				2.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					5	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+
+effect small_flame_window
+{
+	type particle
+	{
+		texture			battlefield/fire/flame.tga
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.05, 0.02
+		age_range        	2.6, 1.7
+	    grow_range		 	1.0, 1.0
+		vel_range  			0.5, 0.7
+		wind_modifier 		4.0
+
+		
+		keyframe_colour
+		{
+;				0.0		255, 255, 255, 255
+				0.0, 	255,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	50,   255,   255,   255
+		}
+		
+		alpha_max	   		60			 ; maximum alpha value
+		initial_size		0.9, 1.7
+		blend_type			additive
+		offset				0.0, 0.0, 0.0
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        7 	     	; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		5
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0, 0.1
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+effect embers_small
+{
+	type particle
+ 	{
+		texture			battlefield/fire/embers_1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.1, 0.2
+		size_range      		1, 2
+		age_range       		0.5, 3
+        grow_range	 			0.5,1 
+        vel_range				.5, 1
+        fade_time				3
+        die_size				2, 4
+		colour     				255,255,255
+		alpha_max	   			200		 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,0.15,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			10;
+		intial_size				1, 2
+		wind_modifier			11
+		random_emit_radius		0.5, 0.5
+
+		
+		
+		emitter 				time
+		{
+			density					1	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 
+			random_emit_radius		3, 3			
+		}
+	}
+}
+
+
+effect small_flame_particle
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.01, 0.01
+		age_range       		1.1, 1.04
+        grow_range	 			70, 30
+        vel_range				7.5, 8.3
+        fade_time				0.17, 0.35
+        die_size				0.0, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				1.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;	MEDIUM	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect flaming_particles_medium
+
+
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.5, 5
+		age_range        	1, 2
+		die_size			0, 1
+	    grow_range		 	1,1
+		vel_range  			1, 2
+		wind_modifier 		4.0
+		fade_time			0
+		sort_bias				-1.5
+		sort 					instance
+		
+
+		
+		keyframe_colour
+		{
+;				0.0		255, 255, 255, 255
+				0.0, 	0,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	50,   255,   255,   255
+		}
+		
+		alpha_max	   		90			 ; maximum alpha value
+		initial_size		3, 4
+		blend_type			additive
+		offset				0.0, 0.0, 0.0
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        5	     	; how many particels per second
+			emitter_falloff_dist	1000			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		500
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0.0, 0.2
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+effect embers_medium
+{
+	type particle
+ 	{
+		texture			battlefield/fire/embers_1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.1, 0.2
+		size_range      		0.2, 2
+		age_range       		0.5, 3
+        grow_range	 			0.5,2 
+        vel_range				.5, 2
+        fade_time				4
+        die_size				2, 5
+		colour     				255,255,255
+		alpha_max	   			200		 ; maximum alpha value
+		spin_rate				-0.05, 0.05
+		acceleration			0,0.15,0
+		system_radius			10
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			10;
+		intial_size				1, 1.5
+		wind_modifier			11
+		random_emit_radius		1, 1
+
+		
+		
+		emitter 				time
+		{
+			density					1	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 
+			random_emit_radius		3, 3			
+		}
+	}
+}
+
+
+
+effect dense_smoke_medium
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke6.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.35, 0.65
+		size_range      		1, 4
+		age_range       		2, 4
+        grow_range	 			1.9,1.5 
+        vel_range				0.01, 0.3
+        fade_time				15
+        die_size				5, 35  
+		colour     				255,255,255
+		alpha_max	   			100			 ; maximum alpha value
+		spin_rate				-0.04, 0.04
+		acceleration			0,0.15,0
+		system_radius			10
+		sort_bias				0
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				0.5, 1.5
+        offset				0, 1.5, 0.0
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+;	MEDIUM FIERY SMOKE
+
+effect fiery_smoke_medium
+{
+	type particle
+ 	{
+		texture			battlefield/fire/firey_smoke.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		2.5, 3
+		age_range       		0.5, 1.2
+        grow_range	 			1,2 
+        vel_range				0.5, 0.9
+        fade_time				2
+        die_size				3, 12
+		colour     				255,255,255
+		alpha_max	   			100			 ; maximum alpha value
+		spin_rate				-0.05, 0.05
+		acceleration			0,0.3,0
+		system_radius			10
+		sort_bias				-0.5
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				1, 2
+		wind_modifier			9
+		offset                  0,0.5,0
+		
+
+		
+		
+		emitter 				time
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+;	MEDIUM FLAME
+
+effect medium_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.1, 0.1
+		age_range       		0.7, 0.9
+        grow_range	 			60, 80
+        vel_range				3.5, 5.3
+        fade_time				0.17, 0.35
+        die_size				0.01, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				2.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+effect medium_building_fire
+{
+	type particle
+ 	{
+		texture			battlefield/fire/firey_smoke.tga
+
+			sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		1.0, 3.0
+		age_range       		0.5, 0.7
+        grow_range	 			1, 1 
+        vel_range				1.0, 1.0
+        fade_time				2.5
+        die_size				3, 4
+        colour					255,255,255
+		alpha_max	   			200		 ; maximum alpha value
+		spin_rate				-0.5,0.5
+		acceleration			0,1,0
+		wind_modifier			1.0
+		initial_size			1.0, 3.0
+		fade_in_time			0.3
+		blend_type				additive
+		emitter 				time
+		{
+			density					15	     	; how many particles per second
+			offset_from_surface		0,-1,0		; offset from surface to emit from
+
+			emitter_falloff_dist	400			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			; 			
+		}
+	}
+}
+
+effect medium_flame_window
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.1, 0.1
+		age_range       		0.0, 0.0
+        grow_range	 			60, 80
+        vel_range				3.5, 5.3
+        fade_time				0.17, 0.35
+        die_size				0.01, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				2.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+
+effect medium_flame_particle
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.01, 0.01
+		age_range       		1.1, 1.04
+        grow_range	 			190, 160
+        vel_range				7.5, 8.3
+        fade_time				0.17, 0.35
+        die_size				0.0, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				1.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; LARGE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+effect flaming_particles_large
+
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.5, 5
+		age_range        	1, 2
+		die_size			0, 3
+	    grow_range		 	1,1
+		vel_range  			1, 2
+		wind_modifier 		4.0
+		fade_time			0
+		sort_bias				-1.5
+		sort 					instance
+
+		
+		keyframe_colour
+		{
+				0.0, 	0,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	50,   255,   255,   255
+		}
+		
+		alpha_max	   		90			 ; maximum alpha value
+		initial_size		3, 5
+		blend_type			additive
+		offset				0.0, 0.0, 0.0
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        5	     	; how many particels per second
+			emitter_falloff_dist	1000			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		500
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0.0, 0.2
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+effect embers_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/embers_1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.1, 0.2
+		size_range      		0.2, 2
+		age_range       		1, 3.5
+        grow_range	 			0.5,2 
+        vel_range				.5, 2
+        fade_time				4
+        die_size				6, 10
+		colour     				255,255,255
+		alpha_max	   			200		 ; maximum alpha value
+		spin_rate				-0.05, 0.05
+		acceleration			0,0.15,0
+		system_radius			10
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			10;
+		intial_size				1, 1.5
+		wind_modifier			11
+		
+
+		
+		
+		emitter 				time
+		{
+			density					1	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 
+			random_emit_radius		3, 3			
+		}
+	}
+}
+
+
+effect dense_smoke_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke6.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.35, 0.65
+		size_range      		2, 6
+		age_range       		3.4, 6.5
+        grow_range	 			1.9,1.5 
+        vel_range				0.01, 0.3
+        fade_time				15
+        die_size				5, 45
+		colour     				255,255,255
+		alpha_max	   			100			 ; maximum alpha value
+		spin_rate				-0.04, 0.04
+		acceleration			0,0.2,0
+		system_radius			10
+		sort_bias				0
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				0.5, 1.5
+        offset				0.0, 0.5, 0.0
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+;	MEDIUM FIERY SMOKE
+
+effect fiery_smoke_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/firey_smoke.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		3, 3
+		age_range       		0.5, 1.5
+        grow_range	 			2,3 
+        vel_range				0.5, 0.9
+        fade_time				4
+        die_size				3, 12
+		colour     				255,255,255
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.15, 0.15
+		acceleration			0,0.3,0
+		system_radius			10
+		sort_bias				-0.5
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				2, 3
+		wind_modifier			9
+		
+
+		
+		
+		emitter 				time
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,0.5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+;	MEDIUM FLAME
+
+effect large_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.1, 0.1
+		age_range       		0.7, 0.9
+        grow_range	 			90, 110
+        vel_range				3.5, 5.3
+        fade_time				0.17, 0.35
+        die_size				0.01, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				2.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+
+effect large_flame_particle
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.2, 0.3
+		age_range       		1.1, 1.04
+        grow_range	 			1, 2
+        vel_range				7.5, 8.3
+        fade_time				0.17, 0.35
+        die_size				0.0, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,2,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			2
+		wind_modifier			7
+		blend_type				additive
+		
+		keyframe_colour
+		{
+		        0.0, 	0, 255, 255, 255
+				0.8, 	200, 255, 255, 255
+				1.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; EXTRA LARGE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+effect flaming_particles_extra_large
+
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1, 5
+
+		size_range       	2, 5
+		age_range        	2.0, 4.0
+	    grow_range		 	1.0, 1
+		vel_range  			0.5, 1.3
+		wind_modifier 		4.0
+		sort_bias           -1
+		sort                instance
+
+		
+		keyframe_colour
+		{
+;				0.0		255, 255, 255, 255
+				0.0, 	255,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	50,   255,   255,   255
+		}
+		
+		alpha_max	   		150			 ; maximum alpha value
+		initial_size		3.1, 4.3
+		blend_type			additive
+		offset				0.0, 0.0, 0.0
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        4 	     	; how many particels per second
+			emitter_falloff_dist	1000			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		500
+			max_distance			2			
+		}
+
+		random_emit_radius		0.1, 0.5
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+
+
+effect dense_smoke_extra_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke6.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		2, 8
+		age_range       		2, 4
+        grow_range	 			1.2,1.8 
+        vel_range				0.01, 0.8
+        fade_time				20
+        die_size				10, 70
+		colour     				255,255,255
+		alpha_max	   			114			 ; maximum alpha value
+		spin_rate				-0.05, 0.05
+		acceleration			0,0.25,0
+		system_radius			10
+		sort_bias				0
+		sort 					instance
+		fade_in_time			0.5;
+		intial_size				1, 1.5
+        offset				0.0, 3, 0.0
+		wind_modifier			11
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+effect fiery_smoke_extra_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/firey_smoke.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		5, 7
+		age_range       		1, 2
+        grow_range	 			1,1.9 
+        vel_range				0.5, 0.9
+        fade_time				2.4
+        die_size				8, 20
+		colour     				255,255,255
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,1,0
+		system_radius			10
+		sort_bias				-0.5
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				1, 1.5
+		offset                  0,0.3,0
+		wind_modifier			11
+		
+
+		
+		
+		emitter 				time
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+effect embers_extra_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/embers_1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.1, 0.2
+		size_range      		0.2, 3
+		age_range       		1.5, 3
+        grow_range	 			2,2.5 
+        vel_range				1.0, 2
+        fade_time				6
+        die_size				8, 10
+		colour     				255,255,255
+		alpha_max	   			100		 ; maximum alpha value
+		spin_rate				-0.12, 0.12
+		acceleration			0,0.4,0
+		system_radius			10
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			10;
+		intial_size				1, 1.5
+		wind_modifier			11
+		random_emit_radius		2,2 	
+
+		
+		
+		emitter 				time
+		{
+			density					2	     	; how many particles per second
+			offset_from_surface		5,5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 
+			random_emit_radius		3,3			
+		}
+	}
+}
+
+effect ash_extra_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/embers_1.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.1, 0.2
+		size_range      		3, 5
+		age_range       		15, 20
+        grow_range	 			2,2.5 
+        vel_range				1.5, 3
+        fade_time				8
+        die_size				5, 10
+		colour     				255,255,255
+		alpha_max	   			150		 ; maximum alpha value
+		spin_rate				-0.12, 0.12
+		acceleration			0,-0.2,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			30;
+		intial_size				1, 2
+		wind_modifier			15
+		random_emit_radius		1,1 	
+        offset                  0,3,0
+		
+		keyframe_colour
+		{
+				0, 	0, 255, 210,47
+				5,  0,0,0,0
+				6.0, 	120, 0, 0, 0
+				14,      120,0,0,0
+				15, 	0, 0, 0, 0
+		}
+		
+		
+		emitter 				time
+		{
+			density					2	     	; how many particles per second
+			offset_from_surface		5,5,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 
+			random_emit_radius		3,3			
+		}
+	}
+}
+
+
+effect extra_large_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.2, 0.65
+		size_range      		3,4
+		age_range       		0.7, 0.9
+        grow_range	 			2, 3
+        vel_range				0.5, 2.3
+        fade_time				0.17, 0.35
+        die_size				2, 3
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.2, 0.2
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			6
+		blend_type				additive
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				2.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					10	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+
+effect extra_large_flame_particle
+{
+	type particle
+ 	{
+		texture			battlefield/fire/flame.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 1
+		size_range      		8, 10
+		age_range       		8, 10
+        grow_range	 			50, 60
+        vel_range				5, 8.3
+        fade_time				1, 2
+        die_size				8, 10
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.4, 0.4
+		acceleration			0,5,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				1.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					10	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;CRUMBLE DUST 
+
+effect crumble_dust_small
+{
+	type particle
+ 	{
+		texture			battlefield/fire/building_dust.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				1, 1 
+		size_range      		1, 2
+		age_range       		1,1.5
+        grow_range	 			2,5
+        vel_range				0
+        fade_time				0
+        die_size				10
+		colour     				255,255,255
+		alpha_max	   			200 			 ; maximum alpha value
+		spin_rate				-0.10, 0.10
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.2;
+		wind_modifier	 		7
+		
+				clr_adjust_by_ambient_intensity
+				
+	    keyframe_colour
+		{
+				0.0, 	150, 255, 255, 255
+				0.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+effect crumble_dust_medium
+{
+	type particle
+ 	{
+		texture			battlefield/fire/building_dust.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				1, 1 
+		size_range      		1, 2
+		age_range       		1,1.5
+        grow_range	 			5,8
+        vel_range				0
+        fade_time				0
+        die_size				10
+		colour     				255,255,255
+		alpha_max	   			200 			 ; maximum alpha value
+		spin_rate				-0.10, 0.10
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.2;
+		wind_modifier	 		7
+		
+				clr_adjust_by_ambient_intensity
+				
+	    keyframe_colour
+		{
+				0.0, 	150, 255, 255, 255
+				0.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+effect crumble_dust_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/building_dust.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				1, 1 
+		size_range      		2, 4
+		age_range       		2,5
+        grow_range	 			8,5
+        vel_range				0
+        fade_time				0
+        die_size				20
+		colour     				255,255,255
+		alpha_max	   			200 			 ; maximum alpha value
+		spin_rate				-0.07, 0.07
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.2;
+		wind_modifier	 		7
+		
+				clr_adjust_by_ambient_intensity
+				
+	    keyframe_colour
+		{
+				0.0, 	150, 255, 255, 255
+				5.0, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+effect crumble_dust_extra_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/building_dust.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.35, 0 .54
+		age_range       		3.7, 3.9
+        grow_range	 			70, 90
+        vel_range				1.5, 1.3
+        fade_time				0.05, 0.03
+        die_size				0.01, 0.01
+		colour     				255,255,255
+		alpha_max	   			200 			 ; maximum alpha value
+		spin_rate				-0.10, 0.10
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier	 		7
+		
+				clr_adjust_by_ambient_intensity
+
+		keyframe_colour
+		{
+				0.0, 	255, 255, 255, 255
+				3.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	} 
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect medium_building_fire
+{
+	type particle
+ 	{
+		texture			battlefield/fire/firey_smoke.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		0.1, 0.1
+		age_range       		0.7, 0.9
+        grow_range	 			60, 80
+        vel_range				3.5, 5.3
+        fade_time				0.17, 0.35
+        die_size				0.01, 0.01
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.25, 0.25
+		acceleration			0,0.01,0
+		system_radius			30
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0;
+		wind_modifier			7
+		blend_type				additive
+		
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				2.5, 	0, 255, 255, 255
+		}
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		0, 0.1
+		
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Hemisphere dust effects
+
+effect building_collapse_dust_fade_small
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                2, 2
+        size_range              5, 5
+        age_range               7, 7
+        grow_range              1 ,1
+        vel_range                0.5, 1.5 
+        fade_time                9
+        die_size                10
+        colour                     255, 255, 255
+        alpha_max                   120     ; maximum alpha value
+        spin_rate                0.1, -0.1
+        acceleration            0,0.0,0
+        max_particles            400
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.15;
+		wind_modifier	 		3
+		
+				clr_adjust_by_ambient_intensity
+
+		keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				7, 	0, 255, 255, 255
+		}
+
+        
+        emitter hemisphere
+        {
+            density                    200            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle               25        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.5
+        }
+    }
+}
+
+effect building_collapse_dust_fade_medium
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                0.8, 0.8
+        size_range              10, 15
+        age_range               15, 15
+        grow_range                 1 ,1
+        vel_range                0.5, 1.5
+        fade_time                15
+        die_size                20,0
+        colour                     255, 255, 255
+        alpha_max                   150     ; maximum alpha value
+        spin_rate                0.1, -0.1
+        acceleration            0,0.0,0
+        max_particles            400
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.2;
+		wind_modifier	 		2
+		
+				clr_adjust_by_ambient_intensity
+				
+		keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				10, 	0, 255, 255, 255
+		}
+
+        
+        emitter hemisphere
+        {
+            density                    80            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle               15        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.1
+        }
+    }
+}
+
+effect building_collapse_dust_fade_large
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                0.8, 0.8
+        size_range              15, 20
+        age_range               15, 15
+        grow_range                 1 ,1
+        vel_range                1, 2
+        die_size                20,0
+        colour                     255, 255, 255
+        alpha_max                   150     ; maximum alpha value
+        spin_rate                0.1, -0.1
+        acceleration            0,0.0,0
+        max_particles            400
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.2;
+		wind_modifier	 		4
+		
+				clr_adjust_by_ambient_intensity
+				
+		keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				10, 	0, 255, 255, 255
+		}
+
+        
+        emitter hemisphere
+        {
+            density                    50            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle               15        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.1
+        }
+    }
+}
+
+effect building_collapse_dust_fade_extra_large
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                0.8, 0.8
+        size_range              10, 20
+        age_range               15, 15
+        grow_range                 1 ,1
+        vel_range                1, 2
+        die_size                15
+        colour                     255, 255, 255
+        alpha_max                   150     ; maximum alpha value
+        spin_rate                0.1, -0.1
+        acceleration            0,0.0,0
+        max_particles            1000
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.5;
+		wind_modifier	 		4
+		
+				clr_adjust_by_ambient_intensity
+
+		keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				15, 	0, 255, 255, 255
+		}
+
+        
+        emitter hemisphere
+        {
+            density                    50            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle               20        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.1
+        }
+    }
+}
+ 
+effect building_collapse_dust_fast_burst_very_small
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                2, 2
+        size_range              6,6  
+        age_range               1.5, 1.5 
+        grow_range                1, 1
+        vel_range                2.1, 2.3 
+        fade_time                2.5 
+        die_size                5,0
+        colour                     255, 255, 255
+        alpha_max                   120       ; maximum alpha value
+        spin_rate                0.07, -0.07
+        acceleration            0 ,0.0,0
+        max_particles            400
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.05;
+		wind_modifier	 		7 
+		
+				clr_adjust_by_ambient_intensity
+				
+                		keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				2.0, 	  0, 255, 255, 255
+		}
+
+        emitter hemisphere
+        {
+            density                    60            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle                10        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.1
+        }
+    }
+}
+
+effect building_collapse_dust_fast_burst_small
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                2, 2
+        size_range              7, 10 
+        age_range               4, 4 
+        grow_range                 2  ,3
+        vel_range                2.1, 2.2 
+        die_size                20
+        colour                     255, 255, 255
+        alpha_max                   130       ; maximum alpha value
+        spin_rate                0.07, -0.07
+        acceleration            0 ,0.0,0
+        max_particles            400
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.1;
+		wind_modifier	 		3
+		
+				clr_adjust_by_ambient_intensity
+				
+        		keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				6.0, 	  0, 255, 255, 255
+		}
+
+        emitter hemisphere
+        {
+            density                    100            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle                10        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.1
+        }
+    }
+}
+
+effect building_collapse_dust_fast_burst_medium
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                0.8, 0.8
+        size_range              15, 15
+        age_range               5, 5  
+        grow_range                 0.1  ,0.2
+        vel_range                2.1, 2.2
+        fade_time                6 
+        die_size                15,0
+        colour                     255, 255, 255
+        alpha_max                   150     ; maximum alpha value
+        spin_rate                0.07, -0.07
+        acceleration            0 ,0.0,0
+        max_particles            400
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.1;
+		wind_modifier	 		3
+		
+				clr_adjust_by_ambient_intensity
+        
+						keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				8, 	0, 255, 255, 255
+		}
+
+        emitter hemisphere
+        {
+            density                    100            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle                10        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.1
+        }
+    }
+}
+
+effect building_collapse_dust_fast_burst_large
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                0.8, 0.8
+        size_range              15, 20
+        age_range               10, 10
+        grow_range                 1 ,3 
+        vel_range                1, 1.8
+        colour                     255, 255, 255
+        alpha_max                   150     ; maximum alpha value
+        spin_rate                0.1, -0.1
+        acceleration            0,0.0,0
+        max_particles            400
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.2;
+		wind_modifier	 		4
+		
+				clr_adjust_by_ambient_intensity
+				
+		keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				10, 	0, 255, 255, 255
+		}
+
+        
+        emitter hemisphere
+        {
+            density                    100            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle               15        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.1
+        }
+    }
+}
+
+effect building_collapse_dust_fast_burst_extra_large
+{
+    type particle
+     {
+        texture                    battlefield/fire/building_dust.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                0.8, 0.8
+        size_range              10, 20
+        age_range               15, 15
+        grow_range                 1 ,1
+        vel_range                2, 2
+        die_size                15
+        colour                     255, 255, 255
+        alpha_max                   150     ; maximum alpha value
+        spin_rate                0.1, -0.1
+        acceleration            0,0.0,0
+        max_particles            1000
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.5;
+		wind_modifier	 		4
+		
+				clr_adjust_by_ambient_intensity
+
+		keyframe_colour
+		{
+				0.0, 	90, 255, 255, 255
+				15, 	0, 255, 255, 255
+		}
+
+        
+        emitter hemisphere
+        {
+            density                    50            ; how many particles per second
+            min_angle                0            ; minimum angle up from horizontal to emit in
+            max_angle               20        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.1
+        }
+    }
+}
+ 
+effect dust_linger_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/building_dust.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		10, 13
+		age_range       		8, 10
+        grow_range	 			1, 2
+        vel_range				0.2, 0.2 
+		colour     				255,255,255
+		alpha_max	   			60 			 ; maximum alpha value
+		spin_rate				-0.01, 0.01
+		acceleration			0,0.00,0
+		system_radius			30
+		sort_bias				0
+		sort 					instance
+		wind_modifier	 		2
+		
+        keyframe_colour
+		{
+				0.0, 	0, 255, 255, 255
+				2.5, 	150, 255, 255, 255
+				5.0, 	0, 255, 255, 255
+		}
+
+		
+		
+				clr_adjust_by_ambient_intensity
+
+
+		
+		emitter 				time
+		{
+			density					7	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		10, 10
+		
+		}
+	} 
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+effect building_fire_glow_model
+{
+	type projectile
+	{
+		model models_effects/building_fire_glow.cas
+		view_dist 7000
+	}
+}
+
+effect_set burning_building_new_small_set
+
+
+{
+	lod 10000
+	{
+		flaming_particles_small
+		fiery_smoke_small
+		dense_smoke_small
+		embers_small
+		burning_building_light
+		burning_building_sound_small
+	}
+}
+
+effect_set nahptha_fire_set
+
+
+{
+	play_time 2.5
+	lod 10000
+	{
+		nahptha_small_flame
+		nahptha_fiery_smoke_small
+		shockwave
+		naptha_loop
+		;naptha_impact
+	}
+}
+
+
+effect_set burning_building_new_medium_set
+
+
+{
+	lod 10000
+	{
+		flaming_particles_medium
+		fiery_smoke_medium
+		dense_smoke_medium
+		embers_medium
+		burning_building_light
+		burning_building_sound_medium
+		fire_flare_sound
+	}
+}
+
+effect_set burning_building_new_large_set
+
+
+{
+	lod 10000
+	{
+		flaming_particles_large
+		fiery_smoke_large
+		dense_smoke_large
+		embers_large
+		burning_building_light
+		building_fire_glow_model
+		burning_building_sound_large
+		fire_flare_sound
+	}
+}
+
+effect_set burning_building_new_extra_large_set
+
+
+{
+	lod 10000
+	{
+		flaming_particles_extra_large
+		fiery_smoke_extra_large
+		dense_smoke_extra_large
+		embers_extra_large
+		burning_building_light
+		building_fire_glow_model
+		burning_building_sound_large
+		fire_flare_sound
+	}
+}
+
+
+effect_set dust_crumble_small_set
+
+{
+	play_time 4.7
+	lod 10000
+	{
+		crumble_dust_small
+	}
+}
+
+effect_set dust_crumble_medium_set
+
+{
+	play_time 6.5
+	lod 1000
+	{
+		crumble_dust_medium
+	}
+}
+
+effect_set dust_crumble_large_set
+
+{
+	play_time 6.2
+	lod 10000
+	{
+		crumble_dust_large
+	}
+}
+
+effect_set dust_crumble_extra_large_set
+
+{
+	play_time 6.5
+	lod 10000
+	{
+		crumble_dust_extra_large
+	}
+}
+
+;;;;;;;effect_set random_dust_puff_small_set
+
+
+{
+	play_time 0.3
+	lod 10000
+	{
+		crumble_dust_small
+	}
+}
+
+;;;;;;;;;effect_set random_dust_puff_medium_set
+
+
+{
+	play_time 0.34
+	lod 10000
+	{
+		crumble_dust_medium
+	}
+}
+
+;;;;;;;;;;effect_set random_dust_puff_large_set
+
+
+{
+	play_time 0.4
+	lod 10000
+	{
+		crumble_dust_large
+	}
+}
+
+effect_set window_fire_small
+
+
+{
+	lod 10000
+	{
+		;small_flame
+		flaming_particles_small
+		fiery_smoke_small
+		burning_building_sound_small
+	}
+}
+
+effect_set window_fire_medium
+
+
+{
+	lod 10000
+	{
+		;small_flame
+		flaming_particles_medium
+		fiery_smoke_medium
+		burning_building_sound_medium
+	}
+}
+
+
+
+effect_set light
+
+{
+	time_of_day night
+	
+	lod 10000
+	{
+		burning_building_light
+	}
+}
+
+effect_set hemisphere_dust_small_set
+
+{
+	play_time 0.7
+	lod 10000
+	{		
+		building_collapse_dust_fade_small
+	}
+}
+
+effect_set hemisphere_dust_medium_set
+
+{
+	play_time 3.50
+	lod 10000
+	{		
+		building_collapse_dust_fade_medium
+	}
+}
+
+effect_set hemisphere_dust_large_set
+
+{
+	play_time 6.50
+	lod 10000
+	{		
+		building_collapse_dust_fade_large
+	}
+}
+
+effect_set hemisphere_dust_extra_large_set
+
+{
+	play_time 7.00
+	lod 10000
+	{		
+		building_collapse_dust_fade_extra_large
+	}
+}
+effect_set hemisphere_dust_burst_very_small_set
+
+{
+	play_time 0.2
+	lod 10000
+	{		
+		building_collapse_dust_fast_burst_very_small
+	}
+}
+effect_set hemisphere_dust_burst_small_set
+
+{
+	play_time 0.5
+	lod 10000
+	{		
+		building_collapse_dust_fast_burst_small
+	}
+}
+effect_set hemisphere_dust_burst_medium_set
+
+{
+	play_time 1
+	lod 10000
+	{		
+		building_collapse_dust_fast_burst_medium
+	}
+}
+effect_set hemisphere_dust_burst_large_set
+
+{
+	play_time 1
+	lod 10000
+	{		
+		building_collapse_dust_fast_burst_large
+	}
+}
+effect_set hemisphere_dust_burst_extra_large_set
+
+{
+	play_time 1
+	lod 10000
+	{		
+		building_collapse_dust_fast_burst_extra_large
+	}
+}
+
+effect_set dust_linger_large_set
+
+{
+	play_time 10
+	lod 10000
+	{		
+		dust_linger_large
+	}
+}

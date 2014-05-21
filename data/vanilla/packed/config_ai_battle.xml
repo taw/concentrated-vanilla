@@ -1,0 +1,852 @@
+<config>
+    <deployment>
+        <!-- <placement-offset>60</placement-offset> -->
+        <settlements>
+            <inside-gate-dist>5</inside-gate-dist>
+            
+            <units-per-wall>2</units-per-wall>
+            
+            <surprise-attack>
+            	<!-- percentage of units to try and place on the walls of the settlement -->
+            	<percent-on-walls>0.4</percent-on-walls>	
+            	
+            	<!-- percentage of units that are randomly scattered -->
+            	<percent-scattered>0.8</percent-scattered>
+            	
+            	<!-- bias towards defenders -->
+            	<defender-bias>0.2</defender-bias>
+            	
+            	<!-- controls the spread of the units along the wall as a percentage of unit width -->
+            	<unit-spread>1.0</unit-spread>
+            </surprise-attack>
+            
+            <expected-attack>
+            	<!-- percentage of units to try and place on the walls of the settlement -->
+            	<percent-on-walls>0.5</percent-on-walls>	
+            	
+            	<!-- percentage of units that are randomly scattered -->
+            	<percent-scattered>0.0</percent-scattered>
+            	
+            	<!-- bias towards defenders -->
+            	<defender-bias>1.0</defender-bias>
+            	
+            	<!-- controls the spread of the units along the wall as a percentage of unit width -->
+            	<unit-spread>1.0</unit-spread>
+            </expected-attack>
+        </settlements>
+    </deployment>
+
+    <melee-manager>
+        <attack-dist-multiplier>3.0</attack-dist-multiplier>
+        
+        <open>
+            <infantry>
+                <max-engage-dist>
+                    <easy>40</easy>
+                    <medium>40</medium>
+                    <hard>40</hard>
+                    <very_hard>40</very_hard>
+                </max-engage-dist>
+            </infantry>
+            <missile>
+                <max-engage-dist>
+                    <easy>40</easy>
+                    <medium>40</medium>
+                    <hard>40</hard>
+                    <very_hard>40</very_hard>
+                </max-engage-dist>
+            </missile>
+            <cavalry>
+                <max-engage-dist>
+                    <easy>120</easy>
+                    <medium>120</medium>
+                    <hard>120</hard>
+                    <very_hard>120</very_hard>
+                </max-engage-dist>
+            </cavalry>
+        </open>
+        
+        <settlement>
+            <infantry>
+                <max-engage-dist>
+                    <easy>100</easy>
+                    <medium>100</medium>
+                    <hard>100</hard>
+                    <very_hard>100</very_hard>
+                </max-engage-dist>
+            </infantry>
+            <missile>
+                <max-engage-dist>
+                    <easy>100</easy>
+                    <medium>100</medium>
+                    <hard>100</hard>
+                    <very_hard>100</very_hard>
+                </max-engage-dist>
+            </missile>
+            <cavalry>
+                <max-engage-dist>
+                    <easy>200</easy>
+                    <medium>200</medium>
+                    <hard>200</hard>
+                    <very_hard>200</very_hard>
+                </max-engage-dist>
+            </cavalry>
+        </settlement>
+        
+        <attack-brace>
+            <distance>150</distance>
+            <time-to-change-formation>3.0</time-to-change-formation>
+            <time-to-phalanx>3</time-to-phalanx>
+            <time-to-schiltrom>12</time-to-schiltrom>
+        </attack-brace>
+        
+        <retreat-analyser>
+            <retreat-counter>
+                <easy>200</easy>
+                <medium>150</medium>
+                <hard>100</hard>
+                <very_hard>100</very_hard>
+            </retreat-counter>
+        	<retreat-point>
+        		<default>
+        			<distance>40</distance>
+        		</default>
+        		<cavalry>
+        			<multiplier>1.5</multiplier>
+        		</cavalry>
+        	</retreat-point>
+        </retreat-analyser>
+        
+        <outflank-analyser>
+        	<unit-priority>
+        		<cavalry-vs-phalanx>16</cavalry-vs-phalanx>
+        		<vs-routers>0.25</vs-routers>
+        		<behind-stakes>20.0</behind-stakes>
+        	</unit-priority>
+        </outflank-analyser>
+    </melee-manager>
+    
+    <missile-analyser>
+		<!-- Adjusts how much importance is placed on the enemy unit's missile strength when deciding to shoot at them -->
+		<missile-strength-base-priority-modifier>0.003</missile-strength-base-priority-modifier>
+    </missile-analyser>
+
+    <gta>
+        <assault-dist>20.0</assault-dist>
+        <contact-dist>120.0</contact-dist>
+        <close-approach-dist>230.0</close-approach-dist>
+        <distant-approach-dist>500.0</distant-approach-dist>
+        <enemy-far-dist>200.0</enemy-far-dist>
+        <enemy-near-dist>100.0</enemy-near-dist>
+
+        <unit-group-merge-dist>40.0</unit-group-merge-dist>
+        <unit-group-speed-tolerance>0.5</unit-group-speed-tolerance>
+        <unit-group-strength-tolerance>200</unit-group-strength-tolerance>
+
+        <!-- merge own units with a greater tolerance -->
+        <local-group-merge-dist>180.0</local-group-merge-dist>
+        
+        <common-tactics>
+        	<move-to-point>
+        		<!-- switch to idle hint if within this distance of the target -->
+        		<proximity>900.0</proximity>
+        	</move-to-point>
+        </common-tactics>
+        
+        <outflanking>
+            <strength-ratio>0.66</strength-ratio>
+            <double-envelopment>
+            	<!-- minimum number of cavalry units required for double envelopment -->
+                <min-units>4</min-units>
+            </double-envelopment>
+        </outflanking>
+
+        <ambush>
+            <plan>
+                <!-- consider or not missile units for hiding (1/0) -->
+                <consider-missile>0</consider-missile>
+                <!-- consider up to the specified percentage of the force for hiding -->
+                <consider-max-force>50</consider-max-force>
+                <!-- time it should take hidden units to approach the fight (seconds) -->
+                <approach-time>60</approach-time>
+                <!-- deployment search increment (metres) -->
+                <deployment-search-inc>6</deployment-search-inc>
+            </plan>
+        </ambush>
+
+        <attack-settlement>
+            <detachment>
+            	<engine-collection>
+            		<!-- when stealing an engine, prioritise being out of combat over distance -->
+            		<prioritise-out-of-combat>1</prioritise-out-of-combat>
+            	</engine-collection>
+            	<commit>
+            		<!-- commit sufficient forces to outnumber the enemy by this ratio -->
+            		<strength-ratio>1.6</strength-ratio>
+            	</commit>
+            	<perimeter-attack>
+            		<termination-criteria>
+            			<enemy-in-perimeter>0.25</enemy-in-perimeter>
+            		</termination-criteria>
+            	</perimeter-attack>
+                <max-plaza-assault-groups>5</max-plaza-assault-groups>
+                <units-per-plaza-assault-group>4</units-per-plaza-assault-group>
+                <artillery-times>
+                	<!-- successful assaults performed for at least 1 minute -->
+                	<minimum>1.0</minimum>
+                	
+                	<!-- don't prolong the bombardment longer than 6 minutes if we have no targets left -->
+                	<maximum>6.0</maximum>
+                	
+                	<!-- stall test is a moving average that checks if any artillery is active (moving/firing/reloading) each tick -->
+                	<stall-test>
+                		<!-- minimum number of ticks to collect before detecting a stall -->
+                		<minimum-samples>900</minimum-samples>
+                		
+                		<!-- track at most this number of samples -->
+                		<maximum-samples>1200</maximum-samples>
+                		
+	                	<!-- if the artillery has be inactive for at least 75% of its time -->
+                		<limit>0.5</limit>
+                	</stall-test>
+                </artillery-times>
+            </detachment>
+            <tactics>
+                <assault-gate>
+                    <inside-position-dist>25</inside-position-dist>
+                    <formation>ai_settlement_assault_gate</formation>
+                </assault-gate>
+                <reform>
+                    <offset>30</offset>
+                    <formation>ai_settlement_attack_reform</formation>
+                    <percentage-formed>10</percentage-formed>
+                    <advance-timer>1.0</advance-timer>
+                    <siege-equipment-advance-timer>6.0</siege-equipment-advance-timer>
+                </reform>
+                <capture-plaza>
+                    <reform-dist>120</reform-dist>
+                </capture-plaza>
+            </tactics>
+        </attack-settlement>
+
+        <attack-battlegroup>
+            <tracking-tolerance>50.0</tracking-tolerance>
+            <formed-percentage>20</formed-percentage>
+            <formed-percentage-finished>90</formed-percentage-finished>
+            <shootout-distance-tolerance>10</shootout-distance-tolerance>
+            <fight>
+            	<!-- do not enter fight if the enemy missile strength is greater than this ratio times our missile strength -->
+            	<missile-ratio>2.0</missile-ratio>
+            </fight>
+            <formation>
+                <easy>ai_triple_missiles_in_front_easy</easy>
+                <medium>ai_triple_missiles_in_front</medium>
+                <hard>ai_triple_missiles_in_front</hard>
+                <very_hard>ai_triple_missiles_in_front</very_hard>
+            </formation>
+        </attack-battlegroup>
+
+        <defend-line>
+            <formed-percentage>80</formed-percentage>
+        </defend-line>
+        
+        <!-- defending against a sally out -->
+        <defend-sally-out>
+        	<!-- reform to this amount times the tower range -->
+        	<tower-range-scale>1.5</tower-range-scale>
+        	<!-- plus this set value -->
+        	<tower-range-buffer>100.0</tower-range-buffer>
+        </defend-sally-out>
+        
+        <sally-out>
+        	<!-- distance from the settlement to rally before initial attack -->
+        	<rally-distance>100.0</rally-distance>
+        	
+        	<!-- interval to repeat the sally out order at (in 1/10ths of a second) -->
+        	<order-repeat-rate>300</order-repeat-rate>
+        </sally-out>
+        
+        <!-- defend settlement objective -->
+        <defend-settlement>
+        	<threat-assessment>
+        		<!-- how far behind the siege equipment does the threat extend -->
+        		<lag-distance>-200.0</lag-distance>
+        		
+        		<!-- how far in front of the siege equipment does the threat extend -->
+        		<lead-distance>200.0</lead-distance>
+        		
+        		<!-- what angle (either side of target vector) is considered at risk -->
+        		<risk-angle>0.95</risk-angle>
+        		
+        		<!-- what distance away (normal distance) is considered irrelevant -->
+        		<approach-threshold>300</approach-threshold>
+        		
+        		<breach>
+        			<!-- threat contribution when the breachable area is damaged -->
+        			<contribution-damaged>20</contribution-damaged>
+        			
+        			<!-- amount of breach threat that gets applied as an assault threat -->
+        			<bleed-over>0.1</bleed-over>
+        		</breach>
+        		
+        		<gate>
+        			<!-- base threat level possessed by breaches - enforces an initial unit spread -->
+        			<base-threat>0.0</base-threat>
+        		</gate>
+        		
+        		<street-position>
+        			<!-- base threat level possessed by street positions - used to enforce an initial spread of units -->
+        			<base-threat>6.0</base-threat>
+        		</street-position>
+        		
+        		<weak-point>
+        			<!-- threat contribution from unit proximity -->
+        			<contribution-units>10</contribution-units>
+        			
+        			<!-- distance (in metres squared) above which a unit does not contribute -->
+        			<unit-threshold>10000</unit-threshold>
+        		</weak-point>
+        		
+        		<tower>
+    				<!-- default threat contribution -->
+    				<contribution-general>40</contribution-general>
+    				
+    				<!-- threat contribution when siege equipment is moving this way -->
+    				<contribution-targetted>50</contribution-targetted>
+    				
+    				<!-- threat contribution when the siege equipment is docked -->
+    				<contribution-docked>95</contribution-docked>
+    				
+    				<!-- rate at which the threat fades per metre (for weakpoints and breaches) -->
+    				<horizontal-fade>0.25</horizontal-fade>
+    				
+    				<!-- rate at which the threat fades per metre (for weakpoints and breaches) -->
+    				<vertical-fade>0.075</vertical-fade>
+        		</tower>
+        		
+        		<ladder>
+    				<!-- default threat contribution -->
+    				<contribution-general>30</contribution-general>
+    				
+    				<!-- threat contribution when siege equipment is moving this way -->
+    				<contribution-targetted>40</contribution-targetted>
+    				
+    				<!-- threat contribution when the siege equipment is docked -->
+    				<contribution-docked>85</contribution-docked>
+    				
+    				<!-- rate at which the threat fades per metre (for weakpoints and breaches) -->
+    				<horizontal-fade>0.25</horizontal-fade>
+    				
+    				<!-- rate at which the threat fades per metre (for weakpoints and breaches) -->
+    				<vertical-fade>0.075</vertical-fade>
+        		</ladder>
+        		
+        		<ram>
+    				<!-- default threat contribution -->
+    				<contribution-general>20</contribution-general>
+    				
+    				<!-- threat contribution when siege equipment is moving this way -->
+    				<contribution-targetted>20</contribution-targetted>
+    				
+    				<!-- threat contribution when the siege equipment is docked -->
+    				<contribution-docked>40</contribution-docked>
+    				
+    				<!-- rate at which the threat fades per metre (for weakpoints and breaches) -->
+    				<horizontal-fade>0.25</horizontal-fade>
+    				
+    				<!-- rate at which the threat fades per metre (for weakpoints and breaches) -->
+    				<vertical-fade>0.075</vertical-fade>
+        		</ram>
+        		
+        		<unit>
+    				<!-- default threat contribution -->
+    				<contribution-general>20</contribution-general>
+    				
+    				<!-- threat contribution when siege equipment is moving this way -->
+    				<contribution-targetted>20</contribution-targetted>
+    				
+    				<!-- rate at which the threat fades per metre (for weakpoints and breaches) -->
+    				<horizontal-fade>0.2</horizontal-fade>
+    				
+    				<!-- rate at which the threat fades per metre (for weakpoints and breaches) -->
+    				<vertical-fade>0.10</vertical-fade>
+    				
+    				<!-- rate at which threat fades per metre (for street defenses) -->
+    				<general-fade>0.2</general-fade>
+    				
+    				<!-- scale factor applied to the plaza threat -->
+    				<plaza-scale>1.5</plaza-scale>
+        		</unit>
+        		
+        		<!-- if our force strength is this value times the attacker's strength then sally out -->
+        		<sally-out-ratio>2.0</sally-out-ratio>
+        	</threat-assessment>
+        	
+        	<!-- settlement defense stage control -->
+        	<stage-configuration>
+        		<!-- in this stage the walls are defended and towers are manned. the objective is to repel the attackers as strongly as possible -->
+        		<repel-attackers>
+        			<!-- criteria for moving to the next stage -->
+        			<progression-criteria>
+        				<!-- percentage of the enemy force that has made it inside (on ground or walls) -->
+        				<enemy-penetration>0.0</enemy-penetration>
+        				
+        				<!-- percentage of breaches we can tolerate - set to 0 to tolerate no breaches -->
+        				<breach-threshold>0.0</breach-threshold>
+	        			
+	        			<!-- is the plaza threat over this level -->
+	        			<plaza-threat>10.0</plaza-threat>
+        			</progression-criteria>
+        			
+        			<!-- configuration for how units are assigned in this stage -->
+        			<assignment>
+        				<!-- defend the top x surfaces. sorted by descending assault threat -->
+        				<surfaces>4</surfaces>
+        				
+        				<!-- defend the top x breach points. sorted by descending breach threat -->
+        				<breaches>4</breaches>
+        				
+        				<!-- don't assign units to a surface if its health is below this limit -->
+        				<surface-health>0.70</surface-health>
+        				
+        				<!-- threat values below this limit will be ignored -->
+        				<minimum-threat>5</minimum-threat>
+        				
+        				<!-- if the assault threat goes over this threshold then melee units will be assigned -->
+        				<melee-threshold>70</melee-threshold>
+        				
+        				<!-- allow stealing if (new tactic threat / old tactic threat) is this greater than this ratio -->
+        				<tactic-switch-limit>1.3</tactic-switch-limit>
+        				
+        				<!-- if a unit is assigned to a defend a breach within this distance (in metres squared) then don't assign a unit -->
+        				<breach-lockout-distance>6400</breach-lockout-distance>
+        			</assignment>
+        		</repel-attackers>
+        		
+        		<!-- in this stage we are still manning walls and towers but we now also defend breaches -->
+        		<defend-perimeter>
+        			<!-- criteria for moving to the next stage -->
+        			<progression-criteria>
+        				<!-- defines how many troops are required to defend against different incursion types -->
+        				<manning-requirements>
+        					<!-- destroyed wall, gate or spy unlocked gate -->
+        					<ground-incursion>
+        						<siege-engine>0</siege-engine>
+        						<cavalry>3</cavalry>
+        						<melee-infantry>2</melee-infantry>
+        						<missile-infantry>0</missile-infantry>
+        					</ground-incursion>
+        					
+        					<!-- docked ladder/tower -->
+        					<wall-incursion>
+        						<siege-engine>0</siege-engine>
+        						<cavalry>0</cavalry>
+        						<melee-infantry>1</melee-infantry>
+        						<missile-infantry>1</missile-infantry>
+        					</wall-incursion>
+        				</manning-requirements>
+        				
+        				<!-- enemy got 25% of their force into the settlement -->
+        				<enemy-penetration>0.25</enemy-penetration>
+	        			
+	        			<!-- is the plaza threat over this level -->
+	        			<plaza-threat>10.0</plaza-threat>
+        			</progression-criteria>
+        			
+        			<!-- configuration for how units are assigned in this stage -->
+        			<assignment>
+        				<!-- defend the top x surfaces. sorted by descending assault threat -->
+        				<surfaces>4</surfaces>
+        				
+        				<!-- defend the top x breach points. sorted by descending breach threat -->
+        				<breaches>4</breaches>
+        				
+        				<!-- don't assign units to a surface if its health is below this limit -->
+        				<surface-health>0.70</surface-health>
+        				
+        				<!-- threat values below this limit will be ignored -->
+        				<minimum-threat>5</minimum-threat>
+        				
+        				<!-- if the assault threat goes over this threshold then melee units will be assigned -->
+        				<melee-threshold>70</melee-threshold>
+        				
+        				<!-- allow stealing if (new tactic threat / old tactic threat) is this greater than this ratio -->
+        				<tactic-switch-limit>1.3</tactic-switch-limit>
+        				
+        				<!-- if a unit is assigned to a defend a breach within this distance (in metres squared) then don't assign a unit -->
+        				<breach-lockout-distance>6400</breach-lockout-distance>
+        			</assignment>
+        		</defend-perimeter>
+        		
+        		<!-- in this stage we are fighting on the ground and trying to hold the enemy back -->
+        		<defend-streets>
+        			<!-- criteria for moving to the next stage -->
+        			<progression-criteria>
+	        			<!-- if the enemy outnumbers us by this proportion (in the perimeter) then fall back -->
+	        			<force-ratio>1.6</force-ratio>
+	        			
+	        			<!-- have our forces depleted too much in this stage? -->
+	        			<loss-ratio>0.7</loss-ratio>
+	        			
+	        			<!-- is the plaza threat over this level -->
+	        			<plaza-threat>10.0</plaza-threat>
+        			</progression-criteria>
+        			
+        			<!-- which settlements is this state permitted for -->
+        			<permitted-settlements>
+        				<!-- forts -->
+        				<fort>1</fort>
+        				
+        				<!-- castles -->
+        				<motte_and_bailey>1</motte_and_bailey>
+        				<wooden_castle>1</wooden_castle>
+        				<castle>0</castle>
+        				<fortress>0</fortress>
+        				<citadel>0</citadel>
+        				
+        				<!-- cities -->
+        				<village>1</village>
+        				<town>1</town>
+        				<large_town>1</large_town>
+        				<city>1</city>
+        				<large_city>1</large_city>
+        				<huge_city>1</huge_city>
+        			</permitted-settlements>
+        			
+        			<!-- configuration for how units are assigned in this stage -->
+        			<assignment>
+        				<!-- defend the top x defense points. sorted by descending threat -->
+        				<maximum-points>8</maximum-points>
+        				
+        				<!-- threat values below this limit will be ignored -->
+        				<minimum-threat>5</minimum-threat>
+        				
+        				<!-- allow stealing if (new tactic threat / old tactic threat) is this greater than this ratio -->
+        				<tactic-switch-limit>1.3</tactic-switch-limit>
+        			</assignment>
+        		</defend-streets>
+        		
+        		<pull-back>
+        			<!-- criteria for moving to the next stage -->
+        			<progression-criteria>
+	        			<!-- if the enemy outnumbers us by this proportion (in the perimeter) then fall back -->
+	        			<maximum-proportion>0.25</maximum-proportion>
+	        			
+	        			<!-- is the plaza threat over this level -->
+	        			<plaza-threat>10.0</plaza-threat>
+	        			
+	        			<!-- are all units pulling back within this distance of their destination? (in metres squared) -->
+	        			<destination-proximity>900.0</destination-proximity>
+        			</progression-criteria>
+        		</pull-back>
+        	</stage-configuration>
+        
+        	<!-- per tactic configuration -->
+        	<tactics>
+        		<!-- surplus tactic -->
+        		<surplus>
+        			<gate-offset>100.0</gate-offset>
+        		</surplus>
+        		
+        		<!-- wall defense tactic -->
+        		<defend-walls>
+        			<!-- configure resourcing strategy for this tactic -->
+        			<resourcing>
+        				<!-- maximum number of units that can be assigned -->
+        				<max-units>2</max-units>
+        				
+        				<!-- amount of threat a single unit can counter (controls how many units will get assigned) -->
+        				<threat-per-unit>35</threat-per-unit>
+        			</resourcing>
+        		</defend-walls>
+        		
+        		<!-- defense manning tactic -->
+        		<man-defense>
+        		</man-defense>
+        		
+        		<!-- plaza defense -->
+        		<defend-plaza>
+        			<!-- only issue move orders if we are more than this distance away from the destination -->
+        			<destination-proximity>900.0</destination-proximity>
+        		</defend-plaza>
+        		
+        		<!-- street defense -->
+        		<defend-street>
+        			<!-- configure resourcing strategy for this tactic -->
+        			<resourcing>
+        				<!-- maximum number of units that can be assigned -->
+        				<max-units>4</max-units>
+        				
+        				<!-- amount of threat a single unit can counter (controls how many units will get assigned) -->
+        				<threat-per-unit>20</threat-per-unit>
+        			</resourcing>
+        			
+        			<!-- only issue move orders if we are more than this distance away from the destination -->
+        			<destination-proximity>900.0</destination-proximity>
+        		</defend-street>
+        		
+        		<!-- breach defense -->
+                <defend-breaches>
+                	<!-- if the wall health drops below this percentage then the breach should be defended -->
+                    <wall-health-perc>0.75</wall-health-perc>
+                    
+                    <!-- unit offset in metres from the breach -->
+                    <breach-offset-pos>15</breach-offset-pos>
+                    
+                    <!-- lateral offset -->
+                    <lateral-offset>15.0</lateral-offset>
+                    
+        			<!-- configure resourcing strategy for this tactic -->
+        			<resourcing>
+        				<!-- maximum number of units that can be assigned -->
+        				<max-units>4</max-units>
+        				
+        				<!-- amount of threat a single unit can counter (controls how many units will get assigned) -->
+        				<threat-per-unit>30</threat-per-unit>
+        			</resourcing>
+         			
+        			<!-- only issue move orders if we are more than this distance away from the destination -->
+        			<destination-proximity>900.0</destination-proximity>
+               </defend-breaches>
+                
+                <!-- pull back -->
+                <pull-back>
+                	<!-- offset from the gate in metres -->
+                	<gate-offset>40.0</gate-offset>
+                	
+                	<!-- per state configuration -->
+                	<state-criteria>
+                		<!-- stand ground state - will hold position and fight the enemy -->
+                		<stand-ground>
+                			<!-- stand ground if the percentage of soldiers in the unit in combat is above this -->
+                			<combat-percentage>0.1</combat-percentage>
+                			
+                			<!-- stand ground if the enemy is within this distance - in metres squared -->
+                			<nearest-enemy>400.0</nearest-enemy>
+                		</stand-ground>
+                	</state-criteria>
+                </pull-back>
+                
+                <!-- defense of settlement by artillery -->
+                <artillery>
+					<!-- minimum offset in metres squared -->
+					<minimum-offset>10000.0</minimum-offset>
+					
+					<!-- maximum offset in metres squared -->
+					<maximum-offset>40000.0</maximum-offset>
+					
+					<!-- placement band begin range -->
+					<minimum-range-scale>0.45</minimum-range-scale>
+					
+					<!-- placement band end range -->
+					<maximum-range-scale>0.75</maximum-range-scale>
+        			
+        			<!-- only issue move orders if we are more than this distance away from the destination -->
+        			<destination-proximity>900.0</destination-proximity>
+					
+					<!-- flag which artillery units are viable for defending a breach -->
+					<defend-breaches>
+						<catapult>0</catapult>
+						<trebuchet>0</trebuchet>
+						<ballista>1</ballista>
+						<bombard>1</bombard>
+						<grand_bombard>1</grand_bombard>
+						<huge_bombard>1</huge_bombard>
+						<culverin>1</culverin>
+						<basilisk>1</basilisk>
+						<cannon>1</cannon>
+						<mortar>1</mortar>
+						<scorpion>1</scorpion>
+						<serpentine>1</serpentine>
+						<rocket_launcher>1</rocket_launcher>
+						<ribault>1</ribault>
+						<monster_ribault>1</monster_ribault>
+					</defend-breaches>
+                </artillery>
+        	</tactics>
+        </defend-settlement>
+        
+        <!-- attack crossing objective is used when the river must be crossed at any cost -->
+        <attack-crossing>
+        	<!-- base priority for this objective -->
+        	<priority>100000</priority>
+        	
+    		<!-- per tactic configuration -->
+    		<tactics>
+    			<!-- assault group tactic -->
+    			<assault>
+    				<!-- minimum number of missile units for this task -->
+    				<missile-ratio>1.2</missile-ratio>
+    				
+    				<!-- minimum number of melee units for this task -->
+    				<melee-ratio>1.2</melee-ratio>
+    				
+    				<!-- tick limit on being stalled -->
+    				<stall-limit>100</stall-limit>
+    				
+    				<!-- per phase configuration -->
+    				<phases>
+    					<!-- phase 1 - moving into formation on near side of crossing -->
+    					<phase1>
+    						<!-- run if closer than this distance (in metres squared) -->
+    						<run-threshold>400000</run-threshold>
+    						
+    						<!-- melee offset from crossing for the final location -->
+    						<melee-offset>-20.0</melee-offset>
+    						
+    						<!-- missile offset from crossing for the final location -->
+    						<missile-offset>0.0</missile-offset>
+    						
+    						<!-- artillery offset from crossing for the final location -->
+    						<artillery-offset>15.0</artillery-offset>
+    						
+    						<!-- melee group formation template -->
+    						<melee-formation>crossing_assault_force</melee-formation>
+    						
+    						<!-- missile group formation template -->
+    						<missile-formation>crossing_assault_cover</missile-formation>
+    					</phase1>
+    					
+    					<!-- phase 2 - setting up in formation on far side of crossing -->
+    					<phase2>
+    						<!-- run if closer than this distance (in metres squared) -->
+    						<run-threshold>400000</run-threshold>
+    						
+    						<!-- melee offset from crossing for the final location -->
+    						<melee>70.0</melee>
+    						
+    						<!-- missile offset from crossing for the final location -->
+    						<missile>40.0</missile>
+
+    						<!-- configure the conditions for entering this phase -->    						
+    						<entry-conditions>
+    							<!-- ratio of current to initial melee strength -->
+    							<melee-remaining>0.7</melee-remaining>
+
+    							<!-- outshoot ratio between enemy and us. Test: [enemy strength] > [ally strength] * [ratio] -->
+    							<outshoot-ratio>1.4</outshoot-ratio>
+    						</entry-conditions>
+    						
+    						<!-- melee group formation template -->
+    						<melee-formation>crossing_assault_buffer</melee-formation>
+    						
+    						<!-- missile group formation template -->
+    						<missile-formation>crossing_assault_buffer</missile-formation>
+    					</phase2>
+    				</phases>
+    				
+    				<!-- unit suitability values (priorities made higher than sneak tactic so we get the units first) -->
+    				<unit-suitability>
+    					<!-- all missile units -->
+    					<missile>10</missile>
+    					
+    					<!-- all artillery units -->
+    					<artillery>10</artillery>
+    					
+    					<!-- all melee units -->
+    					<melee>8</melee>
+    					
+    					<!-- all cavalry units (elephants, horses etc) -->
+    					<cavalry>0</cavalry>
+    				</unit-suitability>
+    			</assault>
+    			
+    			<!-- assault support tactic -->
+    			<assault-support>
+    				<!-- minimum number of units for this task -->
+    				<minimum-units>1</minimum-units>
+    				
+    				<!-- target ratio of our forces to enemy forces. > 1 means outnumber the enemy, < 1 means enemy outnumbers us -->
+    				<strength-ratio>1.2</strength-ratio>
+    				
+    				<!-- how much do enemy forces in the neighbouring zone contribute -->
+    				<neighbour-contribution>0.0</neighbour-contribution>
+    				
+    				<!-- stand off distance when not needing to engage enemy -->
+    				<standoff-distance>100.0</standoff-distance>
+    			</assault-support>
+    			
+    			<!-- sneak attack tactic -->
+    			<sneak-attack>
+    				<!-- minimum number of units for this task -->
+    				<minimum-units>1</minimum-units>
+    				
+    				<!-- unit suitability values -->
+    				<unit-suitability>
+    					<!-- all cavalry units (elephants, horses etc) -->
+    					<cavalry>3</cavalry>
+    				</unit-suitability>
+
+    				<!-- if less than this distance to objective then run (distance in metres^2) -->
+    				<run-threshold>40000</run-threshold>
+    				
+    				<!-- if the crossing is the same as the one being assaulted, halt at this distance from the crossing -->
+    				<standoff-offset>150.0</standoff-offset>
+    				
+    				<!-- when crossing the river head to a location this distance beyond the end point -->
+    				<crossing-offset>50.0</crossing-offset>    	
+    				
+    				<!-- head for this offset from the enemy -->
+    				<enemy-offset>100.0</enemy-offset>			
+    				
+    				<!-- parameters for determining the suitability of a crossing for use in a sneak attack -->
+    				<crossing-suitability>
+    					<!-- enemy force strength / sneak force strength must be below this value to be suitable -->
+    					<strength-ratio>0.25</strength-ratio>
+    					
+    					<!-- amount of benefit the strength ratio yields -->
+    					<strength-contribution>10.0</strength-contribution>
+    					
+    					<!-- amount of benefit the distance ratio (tested vs ideal) yiels -->
+    					<distance-contribution>5.0</distance-contribution>
+    				</crossing-suitability>
+    			</sneak-attack>
+    		</tactics>
+        </attack-crossing>
+        
+        <!-- objective for defending the crossing at all costs. does not attempt to cross -->
+        <defend-crossing>
+			<detachment>
+			<!-- how weak the enemy must be before the Ai returns to blocking the crossing -->
+			<enemy-missile-to-friendly-strength-ratio>0.2</enemy-missile-to-friendly-strength-ratio>
+			<!-- percentage of troops killed in 4 seconds by missile units to cause Ai to pull back -->
+			<missile-death-threshold>0.02</missile-death-threshold>
+			<!-- minimum 10ths of seconds between changing tactics -->
+			<min-time-between-tactic-change>200</min-time-between-tactic-change>
+			<!-- ratio of enemy melee strength crossing the river to friendly melee strength to be considered a threat -->
+			<melee-threat-threshold>0.2</melee-threat-threshold>
+			<!-- percentage of starting missile strength the enemy must be at to return to blocking the crossing from holding back -->
+			<enemy-missile-strength-percent>0.6</enemy-missile-strength-percent>
+			</detachment>
+         	<tactics>
+         	    <!-- if we are closer than this distance (in metres squared) then run -->
+         		<run-threshold>40000.0</run-threshold>
+         		<block>
+         		</block>
+         		<defend-distance>
+         		    <!-- bias between max range and average range -->
+         			<range-bias>0.5</range-bias>         			
+         			<!-- offset from the crossing for the formation -->
+         			<standoff-distance>30.0</standoff-distance>
+         			<!-- max distance units will move away from the crossing -->
+         			<max-retreat-distance>190.0</max-retreat-distance>
+         		</defend-distance>
+        	</tactics>
+        </defend-crossing>
+        <battle-analyser>
+			<!-- ratio of friendly to enemy strength to be considered more powerful -->
+			<friendly-to-enemy-strength-ratio>0.8</friendly-to-enemy-strength-ratio>
+			<!-- ratio of friendly to enemy melee strength to be considered overwhelmingly powerful -->
+			<enemy-melee-strength-multiplier>3.0</enemy-melee-strength-multiplier>
+			<!-- ratio of enemy to friendly ranged strength to be considered overwhelmingly powerful -->
+			<friendly-ranged-strength-multiplier>3.0</friendly-ranged-strength-multiplier>
+			<!-- ratio of friendly strength to enemy ranged strength to force attack -->
+			<friendly-ranged-strength-divisor>5.0</friendly-ranged-strength-divisor>
+			<!-- distance behind the defensive line the enemy must reach to be considered to have broken through -->
+			<enemy-position-buffer-distance>25</enemy-position-buffer-distance>
+        </battle-analyser>
+    </gta>
+</config>
+
+<variations>
+</variations>

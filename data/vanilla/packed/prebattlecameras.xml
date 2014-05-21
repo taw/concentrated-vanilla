@@ -1,0 +1,107 @@
+<PreBattleCameras>
+	<Path>cameras</Path>
+	<PosOffset>3</PosOffset>
+	<Cameras>
+
+	<!-- Start -->
+		<Cam Speech=START Context=CENTER>Battlefield_Pan_Right.cam</Cam>
+		<Cam Speech=START Context=CENTER>Battlefield_Pan_Left.cam</Cam>
+
+	<!-- One Liner -->
+		<Cam Speech=ONE_LINER Context=GENERAL>General_Right_Zoom.cam</Cam>
+		<Cam Speech=ONE_LINER Context=MOUNTEDGENERAL>Mounted_General_Right_Zoom.cam</Cam>
+
+
+	<!-- VnV Opening -->
+		<Cam Speech=VNV_OPENING Context=GENERAL>General_Right_Zoom.cam</Cam>
+		<Cam Speech=VNV_OPENING Context=MOUNTEDGENERAL>Mounted_General_Right_Zoom.cam</Cam>
+
+	<!-- Enemy ID -->
+		<Cam Speech=ENEMY_ID Context=UNIT>Unit_Pan.cam</Cam>
+<!--		
+		<Cam Speech=ENEMY_ID Context=UNIT>Unit_Side.cam</Cam>
+		<Cam Speech=ENEMY_ID Context=UNIT>Unit_Side_still.cam</Cam>
+-->
+
+	<!-- Strategic Situation -->
+		<Cam Speech=STRATEGIC_SITUATION Context=UNIT>Unit_Pan.cam</Cam>
+
+	<!-- Battle Terrain -->
+		<Cam Speech=BATTLE_TERRAIN Context=CENTER>Battlefield_Pan_Right_Close.cam</Cam>
+
+	<!-- Troop Compare -->
+
+		<Cam Speech=TROOP_COMPARISON Context=UNIT>Unit_Side_still.cam</Cam>
+		
+<!--
+		<Cam Speech=TROOP_COMPARISON Context=UNITCENTER>Unit_Front.cam</Cam>
+		<Cam Speech=TROOP_COMPARISON Context=UNITCENTER>Unit_Front_still.cam</Cam>
+-->
+
+
+		<Cam Speech=TROOP_COMPARISON Context=MISSILES>Unit_Side_still.cam</Cam>
+
+		<Cam Speech=TROOP_COMPARISON Context=ELEPHANTS>Cavalry_Pan.cam</Cam>
+		<Cam Speech=TROOP_COMPARISON Context=ELEPHANTS>Cavalry_Front.cam</Cam>
+
+
+		<Cam Speech=TROOP_COMPARISON Context=GUNPOWDER>Unit_Side_still.cam</Cam>
+
+		<Cam Speech=TROOP_COMPARISON Context=SPEARMEN>Unit_Side_still.cam</Cam>
+
+<!--		
+		<Cam Speech=TROOP_COMPARISON Context=CANNONS>Unit_Pan.cam</Cam>
+		<Cam Speech=TROOP_COMPARISON Context=CANNONS>Unit_Side.cam</Cam>	
+-->
+		<Cam Speech=TROOP_COMPARISON Context=CANNONS>Unit_Side_still.cam</Cam>
+<!--
+		<Cam Speech=TROOP_COMPARISON Context=CANNONS>trebuchet_pan.cam</Cam>
+-->
+		<Cam Speech=TROOP_COMPARISON Context=CAVALRY>Cavalry_Front.cam</Cam>
+
+	<!-- VnV End -->
+		<Cam Speech=VNV_END Context=GENERAL>General_Left_Zoom.cam</Cam>
+		<Cam Speech=VNV_END Context=MOUNTEDGENERAL>Mounted_General_Left_Zoom.cam</Cam>
+
+	<!-- Cheering -->
+	
+<!--	
+		<Cam Speech=CHEERING_1 Context=UNITCENTER>Unit_Front.cam</Cam>
+		<Cam Speech=CHEERING_1 Context=UNITCENTER>Unit_Front_still.cam</Cam>
+-->		
+		
+		<Cam Speech=CHEERING_1 Context=UNIT>Unit_Pan.cam</Cam>
+		<Cam Speech=CHEERING_1 Context=UNIT>Unit_Side.cam</Cam>
+		<Cam Speech=CHEERING_1 Context=UNIT>Unit_Side_still.cam</Cam>
+		<Cam Speech=CHEERING_1 Context=CAVALRY>Cavalry_Pan.cam</Cam>
+		<Cam Speech=CHEERING_1 Context=CAVALRY>Cavalry_Front.cam</Cam>
+		<Cam Speech=CHEERING_1 Context=CANNONS>trebuchet_pan.cam</Cam>
+
+		<Cam Speech=CHEERING_3 Context=UNITCENTER>Unit_Front.cam</Cam>
+		<Cam Speech=CHEERING_3 Context=UNITCENTER>Unit_Front_still.cam</Cam>
+		<Cam Speech=CHEERING_3 Context=UNIT>Unit_Pan.cam</Cam>
+		<Cam Speech=CHEERING_3 Context=UNIT>Unit_Side.cam</Cam>
+		<Cam Speech=CHEERING_3 Context=UNIT>Unit_Side_still.cam</Cam>
+		<Cam Speech=CHEERING_3 Context=CAVALRY>Cavalry_Pan.cam</Cam>
+		<Cam Speech=CHEERING_3 Context=CAVALRY>Cavalry_Front.cam</Cam>
+		<Cam Speech=CHEERING_3 Context=CANNONS>trebuchet_pan.cam</Cam>
+
+	<!-- End -->
+	
+<!--	
+		<Cam Speech=END Context=UNITCENTER>Unit_Front.cam</Cam>
+		<Cam Speech=END Context=UNITCENTER>Unit_Front_still.cam</Cam>
+-->			
+		<Cam Speech=END Context=UNIT>Unit_Pan.cam</Cam>
+		<Cam Speech=END Context=UNIT>Unit_Side.cam</Cam>
+		<Cam Speech=END Context=UNIT>Unit_Side_still.cam</Cam>
+		<Cam Speech=END Context=CAVALRY>Cavalry_Pan.cam</Cam>
+		<Cam Speech=END Context=CAVALRY>Cavalry_Front.cam</Cam>
+		<Cam Speech=END Context=ELEPHANTS>Cavalry_Pan.cam</Cam>
+		<Cam Speech=END Context=ELEPHANTS>Cavalry_Front.cam</Cam>
+		<Cam Speech=END Context=CANNONS>trebuchet_pan.cam</Cam>
+
+
+
+	</Cameras>
+</PreBattleCameras>

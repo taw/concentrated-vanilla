@@ -1,0 +1,110 @@
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ DEFAULT: 3d mindist 10 minPitch .8 maxPitch 1.1 fadein 0 fadeout 1 volume -25 priority 170 probability 1 
+ DEFAULT: distancepriority -1 effect_level .25 delay 2.0 randomdelay .5 pref SFX
+ BANK: unit_charge
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;	ALL UNITS ;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	unit infantry light, heavy, spearmen, skirmish, missile
+	
+		event lod 5
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_small_01
+		end
+
+		event lod 10
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_medium_01
+
+			end
+
+		event lod 30
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_large_01
+			infantry_group_charge_large_02
+			end
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;
+
+
+			
+	unit cavalry light, heavy, spearmen, skirmish, missile
+	
+		event lod 5
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_small_01
+		end
+
+		event lod 10
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_medium_01
+
+			end
+
+		event lod 30
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_large_01
+			infantry_group_charge_large_02
+			end
+
+			
+	
+;;;;;;;;;;;;;;;;;;;;;		
+			
+			
+	unit handler light, heavy, spearmen, skirmish, missile	
+			
+		event lod 5
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_small_01
+		end
+
+		event lod 10
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_medium_01
+
+			end
+
+		event lod 30
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_large_01
+			infantry_group_charge_large_02
+			end
+
+			
+;;;;;;;;;;;;;;;;;;;	
+			
+	unit siege light, heavy, spearmen, skirmish, missile
+			
+			event lod 5
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_small_01
+		end
+
+		event lod 10
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_medium_01
+
+			end
+
+		event lod 30
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_charge_large_01
+			infantry_group_charge_large_02
+			end
+
+			
+
+
+
+
+
+

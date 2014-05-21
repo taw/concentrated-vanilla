@@ -1,0 +1,12 @@
+;; This file contains descriptions used for the fonts in the game.
+;; The fonts currently recognised by the game are: tnr, tnr_med, tnr_sml, verdana, verdana_med, verdana_sml, kpl_60	
+
+font	tnr			font_18.cuf		18
+font	tnr_med			font_14.cuf		14
+font	tnr_sml			font_10.cuf		10
+font	verdana_sml		sml_font_10.cuf		10
+
+font	verdana			KP_18.CUF
+font	verdana_med		KP_14.CUF
+font	kpl_60			KPL_60.cuf
+

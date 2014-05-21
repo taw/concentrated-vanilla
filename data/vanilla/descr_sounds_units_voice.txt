@@ -1,0 +1,27 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Unit voice over bank
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;
+;; confirm sounds can't have stiching inside!
+;;
+;;  ORDERS
+DEFAULT: 3D mindist 17 minpitch .9 maxpitch 1.0 priority 200 volume 0
+DEFAULT: probability 1 distancepriority 0 fadein 0 fadeout 0
+DEFAULT: delay .25 randomdelay 0  effect_level .5 rndvolume 0
+DEFAULT: pref SFX
+
+source export_descr_sounds_units_voice.txt
+
+;;  ANIMS  DEATHS GRUNTS
+DEFAULT: 3D mindist 1 minpitch .9 maxpitch 1.0 priority 100 volume 0
+DEFAULT: probability 1 distancepriority -2 fadein 0 fadeout 0 probradius 2
+DEFAULT: delay 0 randomdelay 0  effect_level .5 rndvolume -20
+DEFAULT: pref SFX
+
+required_samples_cutoff 10
+
+source export_descr_sounds_soldier_voice.txt
+

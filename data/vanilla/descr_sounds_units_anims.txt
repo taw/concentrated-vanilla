@@ -1,0 +1,221 @@
+DEFAULT: 3D mindist 2 minPitch .9 maxPitch 1.1 volume 0  fadein 0 fadeout 0
+DEFAULT: priority 0 distancepriority -2 randomdelay 0  effect_level .25
+DEFAULT: probability 1 probradius 7
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   FALLS  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+DEFAULT: 3D mindist 1 minPitch .9 maxPitch 1.1 volume 0 probability 1 fadein 0 fadeout 0 priority 0 distancepriority -2
+DEFAULT: probradius 7
+
+
+
+BANK: fall
+	season winter
+	terrain grass_short,grass_long,sand,rock,forest_dense,scrub_dense,stone_road,ice,wood,dirt, swamp,mud,mud_road, dirt
+		event priority 140 volume -30 mindist 1
+			folder data/sounds/SFX/Individual/Falls/Infantry
+			Fall_Infantry_Grass_03
+			Fall_Infantry_Grass_04
+			Fall_Infantry_Grass_05
+			Fall_Infantry_Grass_06
+			Fall_Infantry_Grass_07
+
+			end
+
+	season summer
+	terrain grass_short,grass_long,sand,rock,forest_dense,scrub_dense,stone_road,ice,wood,dirt, swamp,mud,mud_road, dirt
+		event priority 140 volume -30 mindist 1
+			folder data/sounds/SFX/Individual/Falls/Infantry
+			Fall_Infantry_Grass_03
+			Fall_Infantry_Grass_04
+			Fall_Infantry_Grass_05
+			Fall_Infantry_Grass_06
+			Fall_Infantry_Grass_07
+
+			end	
+	
+			
+					
+			
+;;;;; water  ;;;;;;;;;;;;;;			
+			
+	season summer
+	terrain water
+		event priority 140 volume -15 mindist 1
+			folder data/sounds/SFX/Individual/Falls/Infantry
+			Fall_Infantry_Water_02
+			Fall_Infantry_Water_03
+			Fall_Infantry_Water_10
+			end
+
+
+	season winter
+	terrain water
+		event priority 140 volume -15 mindist 1
+			folder data/sounds/SFX/Individual/Falls/Infantry
+			Fall_Infantry_Water_02
+			Fall_Infantry_Water_03
+			Fall_Infantry_Water_10
+			end	
+			
+			
+;;;;;;;;;; snow  ;;;;			
+			
+
+season winter
+	climates unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical
+	terrain snow, grass_short,grass_long,sand,rock,forest_dense,scrub_dense,stone_road,ice,wood,dirt
+		event priority 140 volume -45 mindist 1
+			folder data/sounds/SFX/Individual/Falls/Infantry
+			Fall_Infantry_Snow_01
+			Fall_Infantry_Snow_02
+			Fall_Infantry_Snow_03
+
+		end
+
+
+		
+		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+BANK: animal_fall
+
+
+
+;;;;;;;;;;;;
+
+
+	mount camel
+	terrain grass_short,grass_long,sand,rock,forest_dense,scrub_dense,swamp,mud,mud_road,stone_road,ice,snow,wood,dirt
+		event mindist 4 priority 200 distancepriority 0 volume -15
+			folder data/sounds/SFX/Individual/Falls/Camel
+			Fall_camel_grass_01
+			Fall_camel_grass_02
+			Fall_camel_grass_03
+			folder data/sounds/SFX/Individual/Falls/Horse
+			Fall_horse_grass_01
+			Fall_horse_grass_02
+			Fall_horse_grass_05
+			end
+
+
+	mount camel
+	terrain water
+		event mindist 4 priority 200 distancepriority 0 volume -10
+			folder data/sounds/SFX/Individual/Falls/Camel
+			Fall_camel_water_01
+			Fall_camel_water_02
+			Fall_camel_water_03
+			end
+
+
+
+;;;;;;;;;;;;
+
+
+	mount pony, fast pony, heavy horse, barded horse, armoured horse, eastern armoured horse, mailed horse
+	terrain grass_short,grass_long,sand,rock,forest_dense,scrub_dense,swamp,mud,mud_road,stone_road,ice,snow,wood,dirt
+		event mindist 4 priority 200 distancepriority 0 volume -15
+			folder data/sounds/SFX/Individual/Falls/Horse
+			Fall_horse_grass_01
+			Fall_horse_grass_02
+			Fall_horse_grass_05
+			folder data/sounds/SFX/Individual/Falls/Camel
+			Fall_camel_grass_01
+			Fall_camel_grass_02
+			Fall_camel_grass_03
+
+
+		end
+
+	mount pony, fast pony, heavy horse, barded horse, armoured horse, eastern armoured horse, mailed horse
+	terrain water
+		event mindist 4 priority 200 distancepriority 0 volume -10
+		folder data/sounds/SFX/Individual/Falls/Camel
+			Fall_camel_water_01
+			Fall_camel_water_02
+			Fall_camel_water_03
+		end
+
+
+;;;;;;;;;;;;;;
+
+	mount elephant_cannon, elephant_rocket, elephant
+	terrain grass_short,grass_long,sand,rock,forest_dense,scrub_dense,swamp,mud,mud_road,stone_road,ice,snow,wood,dirt
+		event mindist 12 priority 200 distancepriority 0 volume 0
+		folder data/sounds/SFX/Individual/Falls/Elephant
+			Fall_elephant_grass_01a
+			Fall_elephant_grass_02a
+			Fall_elephant_grass_03a
+			Fall_elephant_grass_04a
+			end
+
+	mount elephant_cannon, elephant_rocket, elephant
+	terrain water
+		event mindist 12 priority 200 distancepriority 0 volume 0
+			folder data/sounds/SFX/Individual/Falls/Elephant
+			Fall_elephant_water_01
+			Fall_elephant_water_02
+			Fall_elephant_water_03
+			Fall_elephant_water_04
+			end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+DEFAULT: mindist 25 priority 200 volume 0 probability 1  minPitch .95 maxPitch 1.05 probability 1 distancepriority 0
+
+BANK: war_horn
+	culture southern_european
+		event
+			folder data/sounds/SFX/Individual/War_Horns
+			SE_warhorn_charge
+		end
+	
+	
+	culture northern_european
+		event
+			folder data/sounds/SFX/Individual/War_Horns
+			NE_warhorn_charge
+		end
+	
+	culture mesoamerican
+		event
+			folder data/sounds/SFX/Individual/War_Horns
+			ME_warhorn_charge_01
+			ME_warhorn_charge_02
+		end
+	
+		
+	culture greek
+		event
+			folder data/sounds/SFX/Individual/War_Horns
+			SE_warhorn_charge
+		end
+	
+	culture eastern_european
+		event
+			folder data/sounds/SFX/Individual/War_Horns
+			NE_warhorn_charge
+		end
+	
+	culture middle_eastern
+		event
+			folder data/sounds/SFX/Individual/War_Horns
+			ME_warhorn_charge_01
+			ME_warhorn_charge_02
+		end

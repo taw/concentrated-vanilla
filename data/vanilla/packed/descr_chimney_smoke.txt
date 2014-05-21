@@ -1,0 +1,309 @@
+;;;;;;;;;;;Chimney smoke effects
+
+;	SMALL CHIMNEY SMOKE
+
+effect chimney_smoke_small
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4_chimney.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		3.4, 2.4
+		age_range       		2.4, 4.5
+        grow_range	 			0.5,1.2 
+        vel_range				0.01, 0.014
+        fade_time				10
+        die_size				2, 15
+		colour     				255,255,255
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,0.15,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				1, 1.5
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					3	     	; how many particles per second
+			offset_from_surface		0,-2,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+;	MEDIUM CHIMNEY SMOKE
+
+effect chimney_smoke_medium
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4_chimney.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		1.4, 5.5
+		age_range       		3.4, 5.5
+        grow_range	 			0.9,1.0 
+        vel_range				0.01, 0.014
+        fade_time				10
+        die_size				3, 18
+		colour     				255,255,255
+		alpha_max	   			90			 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,0.15,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				0.3, 0.5
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,-2,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+;	LARGE CHIMNEY SMOKE
+
+effect chimney_smoke_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4_chimney.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.15, 5.65
+		size_range      		3, 10
+		age_range       		3.5, 5.5
+        grow_range	 			1, 0.8 
+        vel_range				0.01, 0.014
+        fade_time				10
+        die_size				3, 20
+		colour     				255,255,255
+		alpha_max	   			150			 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,0.22,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				.5, 1
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+;	EXTRA LARGE CHIMNEY SMOKE
+
+effect chimney_smoke_extra_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4_chimney.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.65, 0.65
+		size_range      		2, 4
+		age_range       		5.4, 9.5
+        grow_range	 			1.9,1.5 
+        vel_range				0.01, 0.014
+        fade_time				11
+        die_size				7, 14
+		colour     				255,255,255
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.09, 0.09
+		acceleration			0,0.3,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				1, 1.5
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					2	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+;;;;; BLACKSMITH CHIMNEY SMOKE
+
+effect blacksmith_chimney_smoke_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke6.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.15, 1.65
+		size_range      		4, 6.4
+		age_range       		1.8, 5.5
+        grow_range	 			1.1, 0.8 
+        vel_range				0.01, 0.014
+        fade_time				15
+        die_size				2, 25
+		colour     				190,190,190
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,0.15,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				1.5, 3
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+effect blacksmith_chimney_smoke_extra_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke6.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.15, 1.65
+		size_range      		4, 10.4
+		age_range       		1.5, 5.0
+        grow_range	 			1.5, 1.0 
+        vel_range				0.01, 0.014
+        fade_time				15
+        die_size				6, 60
+		colour     				190,190,190
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,0.3,0
+		system_radius			10
+		sort_bias				4
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				2, 5
+		wind_modifier			7
+				clr_adjust_by_ambient_intensity
+
+
+		
+		
+		emitter 				time
+		{
+			density					4	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 			
+		}
+	}
+}
+
+
+;;;;;;;;;;;
+
+effect_set blacksmith_chimney_smoke_large_set
+
+{
+	lod 10000
+	{
+		blacksmith_chimney_smoke_large
+	}
+}
+
+effect_set blacksmith_chimney_smoke_extra_large_set
+
+{
+	lod 10000
+	{
+		blacksmith_chimney_smoke_extra_large
+	}
+}
+
+effect_set chimney_smoke_small_set
+
+{
+	lod 10000
+	{
+		chimney_smoke_small
+	}
+}
+
+effect_set chimney_smoke_medium_set
+
+{
+	lod 10000
+	{
+		chimney_smoke_medium
+	}
+}
+
+effect_set chimney_smoke_large_set
+
+{
+	lod 10000
+	{
+		chimney_smoke_large
+	}
+}
+
+effect_set chimney_smoke_extra_large_set
+
+{
+	lod 10000
+	{
+		chimney_smoke_extra_large
+	}
+}

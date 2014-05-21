@@ -1,0 +1,30 @@
+--- a/vanilla-dynamic/export_descr_character_traits.txt	2009-04-03 21:27:05.000000000 +0100
++++ b/vanilla-dynamic/export_descr_character_traits.txt	2009-04-03 21:25:38.000000000 +0100
+@@ -10266,7 +10266,14 @@
+         Effect Sabotage -2 
+ 
+ 
+-
++;------------------------------------------
++Trait SeaBonus
++    Characters admiral
++    Hidden
++    
++    Level SeaBonusOne
++        Threshold 1
++        Effect MovementPoints  50
+ 
+ 
+ ;===============================================================
+@@ -17765,3 +17772,11 @@
+     Affects JihadHistory -2  Chance  100 
+ 
+ 
++
++;------------------------------------------
++Trigger sea_bonus_1
++    WhenToTest AgentCreated
++
++    Condition AgentType = admiral
++
++    Affects SeaBonus 1 Chance 100

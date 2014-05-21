@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+	<root>
+	<tooltip offsx="30" offsy="30"/>
+	    <!-- format for cursor definition
+	    <cursor name="" resource="" file="" offsx="" offsy=""/>
+	    -- or --
+	    <cursor name="" resource="" file="" offsx="" offsy="">
+	        <modifier name="" resource="" file=""/>
+	        ...
+	    </cursor>
+	    -->
+
+	<cursor name="DEFAULT"					file="cursors\arrow.cur"/>
+    <cursor name="NOMOVE"                        resource="" file="cursors\nomove.cur"/>
+    <cursor name="COHORT_INFO"                   resource="" file="cursors\enabled.ani">
+		<modifier name="MODIFIER_EMBARK"               resource="" file="cursors\embark.ani"/>
+      	<modifier name="MODIFIER_EXCHANGE"             resource="" file="cursors\exchange.ani"/>
+       	<modifier name="ENTER_SETTLEMENT"              resource="" file="cursors\enter.ani"/>
+       	<modifier name="MODIFIER_WAYPOINT_MODE"        resource="" file="cursors\waypoint.ani"/>
+	</cursor>
+    <cursor name="MOVE"                          resource="" file="cursors\move.ani">
+    	<modifier name="MODIFIER_DRAG_FORMATION"       resource="" file="cursors\lineup.ani"/>
+        	<modifier name="MODIFIER_IN_RANGE"             resource="" file="cursors\move_in_range.ani"/>
+	    	<modifier name="MODIFIER_OUT_OF_RANGE"         resource="" file="cursors\move_out_of_range.ani"/>
+    </cursor>
+    <cursor name="ANISELECT"                     resource="" file=""/>
+    <cursor name="SELECT"                        resource="" file="cursors\arrow.cur">
+		<modifier name="MODIFIER_DISEMBARK"               resource="" file="cursors\disembark.ani"/>
+		<modifier name="MODIFIER_DIPLOMACY"               resource="" file="cursors\diplomacy.ani"/>
+       	<modifier name="MODIFIER_SPY"                  resource="" file="cursors\spy.ani"/>
+       	<modifier name="MODIFIER_SABOTAGE"             resource="" file=""/>
+       	<modifier name="MODIFIER_ASSASSINATE"          resource="" file="cursors\assassinate.ani"/>
+		<modifier name="MODIFIER_SABOTAGE_AND_ASSASSINATE"  resource="" file="cursors\assassinate.ani"/>
+       	<modifier name="MODIFIER_ACQUIRE"                resource="" file="cursors\merchant.ani"/>
+       	<modifier name="MODIFIER_DENOUNCE"             resource="" file="cursors\heretic.ani"/>
+       	<modifier name="MODIFIER_MARRIAGE"             resource="" file="cursors\marriage.ani"/>
+       	<modifier name="MODIFIER_TRADE"              resource="" file=""/>
+       	<modifier name="MODIFIER_WAYPOINT_MODE"        resource="" file="cursors\waypoint.ani"/>
+       	<modifier name="MODIFIER_DRAG_FORMATION"       resource="" file="cursors\lineup.ani"/>
+	</cursor>
+    <cursor name="ATTACK"                        resource="" file="cursors\attack.ani"/>
+    <cursor name="RANGE"                         resource="" file="cursors\fire.cur">
+        	<modifier name="MODIFIER_IN_RANGE"             resource="" file="cursors\fire.cur"/>
+	    	<modifier name="MODIFIER_OUT_OF_RANGE"         resource="" file="cursors\fire_out_of_range.cur"/>
+	</cursor>
+	<cursor name="THROWN_ATTACK"                 resource="" file="cursors\thrown.cur">
+        	<modifier name="MODIFIER_IN_RANGE"             resource="" file="cursors\thrown.cur"/>
+	        <modifier name="MODIFIER_OUT_OF_RANGE"         resource="" file="cursors\thrown_out_of_range.cur"/>
+	</cursor>
+    <cursor name="ARROW"                         resource="" file="cursors\arrow.cur"/>
+        <cursor name="SIEGE_ATTACK"                  resource="" file="cursors\siege.ani"/>
+        <cursor name="ENTER_SETTLEMENT"              resource="" file="cursors\enter.ani"/>
+        <cursor name="STEP_LEFT"                     resource="" file="cursors\step_left.cur"/>
+        <cursor name="STEP_RIGHT"                    resource="" file="cursors\step_right.cur"/>
+        <cursor name="STEP_FWD"                      resource="" file="cursors\step_fwd.cur"/>
+        <cursor name="STEP_BKWD"                     resource="" file="cursors\step_bkwd.cur"/>
+        <cursor name="ROTATE_LEFT"                   resource="" file="cursors\rotate_left.cur"/>
+        <cursor name="ROTATE_RIGHT"                  resource="" file="cursors\rotate_right.cur"/>
+        <cursor name="MOUSE_LOOK"                    resource="" file="cursors\mouse_look.cur"/>
+        
+	<cursor name="PRESSED"                       resource="" file="cursors\pressed.cur"/>
+        <cursor name="SANDWATCH"                     resource="" file="cursors\sandwatch.ani"/>
+        <cursor name="ENABLED"                       resource="" file="cursors\enabled.ani"/>
+        <cursor name="DRAGGABLE"                     resource="" file=""/>
+        <cursor name="DRAGGING"                      resource="" file=""/>
+        <cursor name="INVALID"                       resource="" file="cursors\invalid.cur"/>
+        <cursor name="CLICK"                         resource="" file="cursors\pressed.cur"/>
+        <cursor name="PICKUP"                        resource="" file="cursors\pickup.cur"/>
+        <cursor name="WALK"                          resource="" file="cursors\walk.ani"/>
+
+        <cursor name="MODIFIER_MULTIPLE_SELECT"      resource="" file=""/>
+        <cursor name="MODIFIER_ATTACK"               resource="" file=""/>
+        <cursor name="MODIFIER_PLACE_CHARACTER"      resource="" file=""/>
+        <cursor name="MODIFIER_PLACE_RESOURCE"       resource="" file=""/>
+        <cursor name="MODIFIER_PLACE_FORT"           resource="" file=""/>
+        <cursor name="MODIFIER_MOVE_OBJECT"          resource="" file=""/>
+        <cursor name="MODIFIER_PLACE_WATCHTOWER"     resource="" file=""/>
+        <cursor name="MODIFIER_DEPLOYMENT_AREA"      resource="" file=""/>
+        <cursor name="MODIFIER_PLACE_TILE"           resource="" file=""/>
+        <cursor name="MODIFIER_PLACE_SPECIAL_PIECE"  resource="" file=""/>
+        <cursor name="MODIFIER_PAINT"                resource="" file=""/>
+        <cursor name="MODIFIER_ADJUST_HEIGHTS"       resource="" file=""/>
+        <cursor name="MODIFIER_ADD_UNIT"             resource="" file=""/>
+        <cursor name="MODIFIER_PLACE_SETTLEMENT"     resource="" file=""/>
+
+	</root>

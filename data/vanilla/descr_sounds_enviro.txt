@@ -1,0 +1,1109 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ENVIRONMENTAL SFX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BANK: water
+;;
+;;	Sounds for water sources
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DEFAULT: 3d mindist 8 priority 9999 volume 0 probability 1 randomdelay 0  effect_level .5
+DEFAULT: fadein 0 fadeout 0 minpitch .8 maxpitch 1.2 distancepriority 0
+
+BANK: water
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;  RIVER ;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+	river_max_dist_apart 250	; maximum distance between the sound sources (metres)
+	river_min_dist_apart 15.0	; minimum distance between the sound sources
+	river_move_smoothing 8.0    ; sound movement smoothing factor
+
+
+	type river
+		event volume -35 fadein 1 fadeout 1 mindist 9 minpitch 1 maxpitch 1
+			folder data/sounds/SFX/Environment/water
+					
+ 			water_sound_01
+ 			water_sound_02
+			water_sound_03
+			water_sound_04
+			water_sound_05
+			water_sound_06
+		end
+
+
+
+		
+		
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;  BRIDGES   ;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	bridge A
+		event
+			folder data/sounds/SFX
+			; silent
+		end
+	bridge B
+		event
+			folder data/sounds/SFX
+			; silent
+		end
+
+
+		
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;; LAKE  ;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	lake_max_dist_apart       250		; maximum distance between the sound sources (metres)
+	lake_min_dist_apart       15.0		; minimum distance between the sound sources
+	lake_move_smoothing       8.0		; sound movement smoothing factor
+	lake_min_outline_length   500       ; minimum length of lake outline in metres
+
+	type lake
+		event mindist 10 volume -40 fadein 1 fadeout 1
+			folder data/sounds/SFX/environment/structures
+			lake
+		end
+
+
+
+
+		
+		
+		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;  OCEAN   ;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+		ocean_max_dist_apart 550	; maximum distance between the sound sources (metres)
+		ocean_min_dist_apart 77.0	; minimum distance between the sound sources
+		ocean_move_smoothing 8.0    ; sound movement smoothing factor
+		ocean_wave_channels  10
+
+
+	type ocean
+		event mindist 60 fadein 1 fadeout 1
+			folder data/sounds/SFX/Environment/water
+			Ocean_Distant
+		end
+
+		
+	;;;;;;;;;;;;;;; From descr_water_types.txt
+	;;;;;;;;;;;;;;;											BREADTH
+	;;;;;;;;;;;;;;;											=======
+	;;;;;;;;;;;;;;;
+	;;;;;;;;;;;;;;;							wide		medium		narrow		verry_narrow
+	;;;;;;;;;;;;;;;						+---------------------------------------------------+
+	;;;;;;;;;;;;;;;			long		|	X			X			.			.			|
+	;;;;;;;;;;;;;;;	LENGTH	medium		|	X			X			X			.			|
+	;;;;;;;;;;;;;;;	======	short		|	.			X			X			X			|
+	;;;;;;;;;;;;;;;			very_short	|	.			.			X			X			|
+	;;;;;;;;;;;;;;;						+----------------------------------------------------
+	;;;;;;;;;;;;;;;
+	;;;;;;;;;;;;;;;	NOTE: options marked with 'X' are present and valid.
+
+	
+	
+	
+	
+	waves
+		breadth wide, medium ; narrow ; very_narrow
+			length long, medium ; short ; very_short
+				event mindist 5 minpitch .7 maxpitch 1.3 priority 9999 fadeout 1 distancepriority 0
+					folder data/sounds/SFX/Environment/water
+					ocean_wave_01
+					ocean_wave_02
+					
+				end
+
+	
+		
+						
+				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;		NOT IN MTW2	   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;				
+					
+			
+		
+;;;;;;;;;;;; FOREST  ;;;;;;;;;;;;;;;;
+
+; 	forest_max_dist_apart       250		; maximum distance between the sound sources (metres)
+; 	forest_min_dist_apart       15.0		; minimum distance between the sound sources
+; 	forest_move_smoothing       8.0		; sound movement smoothing factor
+; 	forest_min_outline_length   500       ; minimum length of forest outline in metres
+
+; 	type forest
+;  season winter
+; 		event mindist 5 rndvolume 0 volume -80 fadein .25 fadeout .5
+; 			folder data/sounds/SFX/Environment/Ambience
+; 			Wind_Trees_Gusts
+; 		end
+
+
+;  season summer
+; 		event mindist 6 rndvolume -5 volume -30 fadein .25 fadeout .5
+; 			folder data/sounds/SFX/Environment/Ambience
+
+; 			Forest_01 
+; 			Forest_02 
+; 			Forest_03 
+; 			Forest_04 
+; 			Forest_05 
+; 			
+; 			
+; 			end
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; BANK: weather
+;;
+;; Precipitate types: rain, snow, hail
+;; Wind levels:	      calm, breezes, wind, gusts, gales
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 10 priority 9999 volume 0 probability 1 randomdelay 0
+DEFAULT: fadein 2 fadeout 3 minpitch 1.0 maxpitch 1.0 distancepriority 0
+
+
+BANK: weather
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;    RAIN    ;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	rain_sounds_distance  10         ; metres
+
+	precipitate rain
+		season summer, winter
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical, semi_arid
+
+		event lod 0
+				folder	data/sounds/SFX/Environment/weather
+				rain_light_01L volume -15
+ 				rain_light_01R volume -15
+				end
+
+
+		event lod 60
+				folder	data/sounds/SFX/Environment/weather
+				rain_medium_01L	 volume -35
+				rain_medium_01R  volume -35
+			
+			    end
+
+
+		event lod 100
+				folder	data/sounds/SFX/Environment/weather
+				rain_heavy_01L volume -40
+				rain_heavy_01R volume -40
+				
+ 				end
+
+	precipitate hail
+		season summer, winter
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical, semi_arid
+			event volume -20
+				folder data/sounds/SFX/Environment/weather
+				rain_hail_01L
+				rain_hail_01R
+				rain_hail_02L
+				rain_hail_02R
+				
+			end
+
+	;;-----------------------------------------------------------------------
+	;; wind_speed_to_pitch <a> <b>          - pitch = a * speed + b
+	;; wind_speed_to_volume <a> <b>         - volume = a * speed + b
+	;; wind_height_to_speed  <k>            - speed = speed + height * k
+	;; wind <type> <min speed> <max speed>
+
+	wind_sounds_distance  15.0         ; metres
+	wind_max_delay        5          ; in seconds
+	wind_speed_to_pitch   0.009   0.6
+	wind_speed_to_volume  1   -50
+	wind_height_to_speed  .06
+	wind_dir_range        20  ; degrees, the range of randomisation
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;  SUMMER  WIND DAY ;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	wind calm		15, 30
+		season summer
+			
+				climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+			
+				event volume 0
+					folder data/sounds/SFX/Environment/weather
+				Wind_Calm_01
+				Wind_Calm_02
+				end
+	wind breezes	20, 40
+		season summer
+		
+			climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event
+					folder data/sounds/SFX/Environment/weather
+				Wind_Breezes_02 volume -15
+				Wind_Calm_01
+				end
+	wind wind		25, 50
+		season summer
+		
+			climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event
+					folder data/sounds/SFX/Environment/weather
+				Wind_Lush
+				Wind_Whistling
+				end
+	wind gusts		30, 70
+		season summer
+		
+			climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event
+					folder data/sounds/SFX/Environment/weather
+				Wind_Gusts_01 volume 0
+				Wind_Gusts_02 volume 0
+				end
+	wind gales		40, 100
+		season summer
+		
+			climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event
+					folder data/sounds/SFX/Environment/weather
+				Wind_Gales_03 volume -20
+				Wind_Gusts_02 volume -20
+				end
+
+
+				
+				
+				
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;   WINTER WIND  ;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	wind calm		10, 30
+		season winter
+			climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event
+					folder data/sounds/SFX/Environment/weather
+
+ 				Wind_Winter_Light_01
+ 				Wind_Winter_Light_02
+				end
+	wind breezes	20, 40
+		season winter
+			climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event
+					folder data/sounds/SFX/Environment/weather
+				Wind_Winter_Icy	volume -10
+ 				Wind_Winter_Medium
+				end
+	wind wind		20, 60
+		season winter
+			climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event
+					folder data/sounds/SFX/Environment/weather
+				Wind_WinterHills
+ 				Wind_Winter
+
+				end
+	wind gusts		30, 70
+		season winter
+			climates mediterranean, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event volume -25
+					folder data/sounds/SFX/Environment/weather
+				Wind_WinterStorm1 volume -20
+ 				Wind_Winter_Howl volume -30
+
+				end
+	wind gales		30, 90
+		season winter
+			climates mediterranean,  unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, unused2, highland, alpine, tropical
+				event volume -15
+					folder data/sounds/SFX/Environment/weather
+				Wind_HowlGusty_02
+ 				Wind_Winter_Gales_01
+				end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;	WIND - SANDY DESERT, ROCKY DESERT  ;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	wind calm		10, 30
+		season summer, winter
+			climates sandy_desert, rocky_desert, semi_arid
+				event
+					folder data/sounds/SFX/Environment/weather
+				Wind_Mountain
+				Wind_Sand_02 volume -10
+				end
+	wind breezes	20, 40
+		season summer
+			climates sandy_desert, rocky_desert, semi_arid
+				event volume -10
+					folder data/sounds/SFX/Environment/weather
+				Wind_Sand_02
+				end
+	wind wind		20, 50
+		season summer
+			climates sandy_desert, rocky_desert, semi_arid
+				event volume -10
+					folder data/sounds/SFX/Environment/weather
+				Wind_Sand_02
+				end
+	wind gusts		20, 70
+		season summer
+			climates sandy_desert, rocky_desert, semi_arid
+				event volume -35
+					folder data/sounds/SFX/Environment/weather
+				Wind_Sand_03
+				end
+	wind gales		30, 90
+		season summer
+			climates sandy_desert, rocky_desert, semi_arid
+				event volume -30
+					folder data/sounds/SFX/Environment/weather
+				Wind_Sand_03
+				end
+
+
+
+				
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;   THUNDER  ;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;	thunder_delay_min  12.0  ; in seconds
+;	thunder_delay_max  32.0
+
+	thunder
+		season summer
+		event lod 100 mindist 10000 fadein 0 fadeout 0 volume 0 minpitch 1 maxpitch 1 
+			folder data/sounds/SFX/Environment/weather
+			thunder_close_01  
+		 	thunder_close_02
+			thunder_close_03 
+			thunder_close_04 
+			thunder_close_05 
+			thunder_close_06
+			
+			end
+		event lod 500 mindist 10000 fadein 0 fadeout 0 volume 0 minpitch 1 maxpitch 1
+			folder data/sounds/SFX/Environment/weather
+			thunder_medium_01 
+			thunder_medium_02 
+			thunder_medium_03 
+			
+			
+		end
+		event lod 1000 mindist 10000 fadein 0 fadeout 0 volume 0 minpitch 1 maxpitch 1 
+			folder data/sounds/SFX/Environment/weather
+			thunder_far_01 
+			thunder_far_02 
+			thunder_far_03 
+			thunder_far_04 
+			thunder_far_05 
+			
+			end
+
+		
+			
+				
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; BANK: terrain
+;;
+;;	Ambient terrain sounds
+;;
+;;  weatherevent <list of id's>
+;;    rain_storm
+;;    rain_summer_shower
+;;    rain_drizzle
+;;    hail_shower
+;;    snow_falling
+;;    calm
+;;    hazy
+;;    light_fog
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DEFAULT: 3d mindist 5 volume -20 probability 1 priority 50 rndvolume -20
+DEFAULT: minpitch .8 maxpitch 1.2 distancepriority -2
+DEFAULT: fadein 0 fadeout 0
+
+
+BANK: terrain_ambient
+
+
+
+	channels	10		; number of sounds to be played simultaneously
+	delay		15		; delay between updates (in seconds)
+	radius		100  	; radius around the camera where the sounds are played (in metres)
+	radius_min  40
+
+
+; <pattern id="clear"	 		audio_type="calm">
+; <pattern id="clear arid" 		audio_type="calm">
+; <pattern id="clear winter" 	audio_type="calm">
+; <pattern id="storm" 			audio_type="storm">
+; <pattern id="blizzard" 		audio_type="calm">
+; <pattern id="cloudy" 			audio_type="calm">
+; <pattern id="cloudy arid" 	audio_type="calm">
+; <pattern id="cloudy winter" 	audio_type="calm">
+; <pattern id="light fog" 		audio_type="calm">
+; <pattern id="heavy fog" 		audio_type="calm">
+; <pattern id="france custom" 	audio_type="calm">
+
+
+;;; MTW2 DAYTIME is :
+
+; sunrise
+; morning 
+; midday
+; afternoon
+; sunset
+; night 
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;; SUMMER CALM NIGHT ;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+season summer
+		daytime night
+		weatherevent calm
+		terrain  grass_short, grass_long, scrub_dense, rock, sand, water, swamp, mud, forest_dense, dirt
+			event probability 1
+				folder data/sounds/SFX/Environment/Ambience
+				Night_ambience_01 looped minpitch 1 maxpitch 1 
+				Night_ambience_02 looped minpitch 1 maxpitch 1 
+				Night_ambience_03 looped minpitch 1 maxpitch 1 
+				Night_ambience_04 looped minpitch 1 maxpitch 1 
+								
+				folder data/sounds/SFX/Environment/Animals
+				
+				owl_01 probability .5 
+				owl_02 probability .5 
+				owl_04 probability .5 
+				owl_05 probability .5 
+				
+			 wolf_01 probability .1 
+			 wolf_02 probability .1
+			 wolf_03 probability .1
+			 wolf_04 probability .1
+			 wolf_05 probability .1
+			 wolf_06 probability .1
+			 wolf_07 probability .1
+			 wolf_08 probability .1
+			 wolf_09 probability .1
+			 wolf_10 probability .1
+			 wolf_11 probability .1
+				
+				
+			end		
+			
+			
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;; SUMMER STORM NIGHT ;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season summer
+		daytime night
+		weatherevent storm
+		terrain  grass_short, grass_long, scrub_dense, rock, sand, water, swamp, mud, forest_dense, dirt
+			event probability 1
+				folder data/sounds/SFX/Environment/Ambience
+				Night_ambience_01 looped minpitch 1 maxpitch 1
+				Night_ambience_02 looped minpitch 1 maxpitch 1
+				Night_ambience_03 looped minpitch 1 maxpitch 1
+				Night_ambience_04 looped minpitch 1 maxpitch 1
+
+				folder data/sounds/SFX/Environment/Animals
+				 wolf_01 probability .5 
+				 wolf_02 probability .5
+				 wolf_03 probability .5
+				 wolf_04 probability .5
+				 wolf_05 probability .5
+				 wolf_06 probability .5
+				 wolf_07 probability .5
+				 wolf_08 probability .5
+				 wolf_09 probability .5
+				 wolf_10 probability .5
+				 wolf_11 probability .5
+				
+				
+							
+				
+				
+			end
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;  SUMMER CALM  - ALL TIMES - FOREST DENSE ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season summer
+		daytime sunrise, morning, midday, afternoon, sunset
+		weatherevent calm
+		terrain  forest_dense
+			event probability 1
+
+ 				folder data/sounds/SFX/Environment/Ambience
+ 				forest_ambience_01 looped
+				forest_ambience_02 looped
+				forest_ambience_03 looped
+				forest_ambience_04 looped
+				forest_ambience_05 looped
+				forest_ambience_06 looped
+				forest_ambience_07 looped
+				forest_ambience_08 looped
+				forest_ambience_09 looped
+				forest_ambience_10 looped
+				forest_ambience_11 looped
+				forest_ambience_12 looped
+				forest_ambience_13 looped
+				forest_ambience_14 looped
+				forest_ambience_15 looped
+				
+				
+				
+				
+				
+				
+				
+				
+; 				folder data/sounds/SFX/Environment/Animals
+; 				 bluebird_01
+; 				 canary_01
+; 				 canary_02
+; 				 canary_03
+; 				 catbird_01
+; 				 chickadee_01
+; 				 chickadee_02
+; 				 chickadee_03
+; 				 chickadee_04
+; 				 flaycatcher_01
+; 				 flicker_01
+; 				 gnatcatcher_01
+; 				 grosbeak_01
+; 				 grosbeak_02
+; 				 grosbeak_03
+; 				 jay_01
+; 				 kinglet_01
+; 				 kinglet_02
+; 				 kinglet_03
+; 				 mockingbird_01
+; 				 mockingbird_02
+; 				 mockingbird_03
+; 				 mockingbird_04
+; 				 mockingbird_05
+; 				 sapsucker_01
+; 				 skylark_01
+; 				 sparrow_01
+; 				 sparrow_02
+; 				 sparrow_03
+; 				 sparrow_04
+; 				 tern_01
+; 				 tern_02
+; 				 thrush_01
+; 				 towhee_01
+; 				 towhee_02
+; 				 vireo_01
+; 				 vireo_02
+; 				 warbler_01
+; 				 willet_01
+; 				 woodlark_01
+; 				 woodpecker_01
+; 				 wren_01
+; 				 wren_02
+; 				 wren_03
+				end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SUMMER CALM - ALL TIMES - GRASS ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season summer
+		daytime sunrise, morning, midday, afternoon, sunset
+		weatherevent calm
+		terrain  grass_short, grass_long, scrub_dense
+			event probability .3
+				folder data/sounds/SFX/Environment/Animals
+				
+				 bluebird_01
+				 canary_01
+				 canary_02
+				 canary_03
+				 catbird_01
+				 chickadee_01
+				 chickadee_02
+				 chickadee_03
+				 chickadee_04
+				 flaycatcher_01
+				 flicker_01
+				 gnatcatcher_01
+				 grosbeak_01
+				 grosbeak_02
+				 grosbeak_03
+				 jay_01
+				 kinglet_01
+				 kinglet_02
+				 kinglet_03
+				 mockingbird_01
+				 mockingbird_02
+				 mockingbird_03
+				 mockingbird_04
+				 mockingbird_05
+				 sapsucker_01
+				 skylark_01
+				 sparrow_01
+				 sparrow_02
+				 sparrow_03
+				 sparrow_04
+				 tern_01
+				 tern_02
+				 thrush_01
+				 towhee_01
+				 towhee_02
+				 vireo_01
+				 vireo_02
+				 warbler_01
+				 willet_01
+				 woodlark_01
+				 woodpecker_01
+				 wren_01
+				 wren_02
+				 wren_03
+							
+				
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;   SUMMER CALM - ALL TIMES - SAND, ROCK ;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season summer
+		daytime sunrise, morning, midday, afternoon, sunset
+		weatherevent calm
+		terrain  sand, rock
+			event probability .5
+				folder data/sounds/SFX/Environment/Animals
+				 eagle_01
+				 falcon_01
+				 hawk_01
+				 hawk_02
+				 hawk_03
+				 raven_01
+				 raven_02
+				 raven_03
+				 vulture_01
+				 vulture_02
+				 vulture_03
+				 vulture_04
+				 vulture_05
+				 crow_01
+				 crow_02
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;   SUMMER CALM - ALL TIMES -  WATER - CALM 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season summer
+		daytime sunrise, morning, midday, afternoon, sunset
+		weatherevent calm
+		terrain  water
+			event probability .7
+				folder data/sounds/SFX/Environment/Animals
+				
+				frog_01
+				frog_02
+				frog_03
+				frog_04
+				frog_05
+				duck_01
+				duck_02
+				duck_03
+				seagull_01
+				seagull_02
+				seagull_03
+				seagull_04
+				seagull_05
+				seagull_06
+				seagull_07
+				seagull_08
+				
+							
+			
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   SUMMER CALM - ALL TIMES - SWAMP, MUD 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season summer
+		daytime sunrise, morning, midday, afternoon, sunset
+		weatherevent calm
+		terrain  swamp, mud
+			event probability .5
+				folder data/sounds/SFX/Environment/Animals
+				
+				frog_01
+				frog_02
+				frog_03
+				frog_04
+				frog_05
+				crow_01
+				crow_02
+							
+
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  SUMMER STORM - ALL TERRAINS 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season summer
+		daytime sunrise, morning, midday, afternoon, sunset
+		weatherevent storm
+		terrain  grass_short, grass_long, scrub_dense, rock, sand, water, swamp, mud, forest_dense, dirt
+			event
+		; no animals in the rain
+			end
+
+
+
+
+
+			
+			
+			
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;    WINTER   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;   WINTER CALM NIGHT - ALL TERRAINS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; no water surface at night is set....
+
+	season winter
+		daytime night
+		weatherevent calm
+		terrain  grass_short, grass_long, forest_dense, scrub_dense, ice, snow, rock, sand, swamp, mud, dirt
+			event probability .5
+				folder data/sounds/SFX/Environment/Animals
+				 wolf_01 
+				 wolf_02 
+				 wolf_03
+				 wolf_04 
+				 wolf_05 
+				 wolf_06 
+				 wolf_07 
+				 wolf_08 
+				 wolf_09 
+				 wolf_10 
+				 wolf_11 
+				 owl_01
+				 owl_02
+				 owl_03
+				 owl_04
+				 owl_05
+				end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;; WINTER STORM NIGHT - ALL TERRAINS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season winter
+		daytime night
+		weatherevent storm
+		terrain  grass_short, grass_long, forest_dense, scrub_dense, ice, snow, rock, sand, swamp, mud
+			event probability .5
+				folder data/sounds/SFX/Environment/Animals
+ 				 wolf_01 
+				 wolf_02 
+				 wolf_03
+				 wolf_04 
+				 wolf_05 
+				 wolf_06 
+				 wolf_07 
+				 wolf_08 
+				 wolf_09 
+				 wolf_10 
+				 wolf_11 
+
+				end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;   WINTER CALM - ALL TIMES - SOME TERRAINS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season winter
+		daytime sunrise, morning, midday, afternoon, sunset, night
+		weatherevent calm
+		terrain  grass_short, grass_long, scrub_dense, ice, snow, rock, dirt
+			event probability .3
+				folder data/sounds/SFX/Environment/Animals
+				 eagle_01
+				 falcon_01
+				 hawk_01
+				 hawk_02
+				 hawk_03
+				 raven_01
+				 raven_02
+				 raven_03
+				 wolf_01 
+				 wolf_02 
+				 wolf_03
+				 wolf_04 
+				 wolf_05 
+				 wolf_06 
+				 wolf_07 
+				 wolf_08 
+				 wolf_09 
+				 wolf_10 
+				 wolf_11 
+				 owl_01
+				 owl_02
+				 owl_03
+				 owl_04
+				 owl_05
+				end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;   WINTER CALM - ALL TIMES - FOREST DENSE 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	season winter
+		daytime sunrise, morning, midday, afternoon, sunset, night
+		weatherevent calm
+		terrain  forest_dense
+			event probability .5 effect_level .5
+				folder data/sounds/SFX/Environment/Animals
+				 eagle_01
+				 falcon_01
+				 hawk_01
+				 hawk_02
+				 hawk_03
+				 raven_01
+				 raven_02
+				 raven_03
+				 wolf_01 
+				 wolf_02 
+				 wolf_03
+				 wolf_04 
+				 wolf_05 
+				 wolf_06 
+				 wolf_07 
+				 wolf_08 
+				 wolf_09 
+				 wolf_10 
+				 wolf_11 
+				 owl_01
+				 owl_02
+				 owl_03
+				 owl_04
+				 owl_05
+				end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;   WINTER CALM  - ALL TIMES - SAND  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	season winter
+		daytime sunrise, morning, midday, afternoon, sunset, night
+		weatherevent calm
+		terrain   sand
+			event probability .2
+				folder data/sounds/SFX/Environment/Animals
+				 eagle_01
+				 falcon_01
+				 hawk_01
+				 hawk_02
+				 hawk_03
+				 raven_01
+				 raven_02
+				 raven_03
+				 wolf_01 
+				 wolf_02 
+				 wolf_03
+				 wolf_04 
+				 wolf_05 
+				 wolf_06 
+				 wolf_07 
+				 wolf_08 
+				 wolf_09 
+				 wolf_10 
+				 wolf_11 
+				 owl_01
+				 owl_02
+				 owl_03
+				 owl_04
+				 owl_05
+				end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;  WINTER CALM - ALL TIMES - SWAMP,WATER
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	season winter
+		daytime sunrise, morning, midday, afternoon, sunset, night
+		weatherevent calm
+		terrain  swamp, mud, water
+			event probability .2
+				folder data/sounds/SFX/Environment/Animals
+
+				 eagle_01
+				 falcon_01
+				 hawk_01
+				 hawk_02
+				 hawk_03
+				 raven_01
+				 raven_02
+				 raven_03
+				 wolf_01 
+				 wolf_02 
+				 wolf_03
+				 wolf_04 
+				 wolf_05 
+				 wolf_06 
+				 wolf_07 
+				 wolf_08 
+				 wolf_09 
+				 wolf_10 
+				 wolf_11 
+				 owl_01
+				 owl_02
+				 owl_03
+				 owl_04
+				 owl_05
+				frog_01
+				frog_02
+				frog_03
+				frog_04
+				frog_05
+				
+				 
+				end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;   WINTER STORM - ALL TIMES - ALL TERRAINS    
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+season winter
+		daytime sunrise, morning, midday, afternoon, sunset, night
+		weatherevent storm
+		terrain grass_short, grass_long, forest_dense, scrub_dense, ice, snow, rock, sand, swamp, mud, water, dirt
+			event probability .05
+				folder data/sounds/SFX/Environment/Animals
+
+				
+				 wolf_01 
+				 wolf_02 
+				 wolf_03
+				 wolf_04 
+				 wolf_05 
+				 wolf_06 
+				 wolf_07 
+				 wolf_08 
+				 wolf_09 
+				 wolf_10 
+				 wolf_11 
+				
+
+				end

@@ -1,0 +1,2698 @@
+
+;;;; For the ambient sounds on structures, buildings, etc  ;;;;;
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; SE_audio_door_B
+; SE_audio_door_C
+; SE_audio_door_D
+; SE_audio_window_A
+; SE_audio_window_B
+; SE_audio_window_C
+; SE_audio_window_D
+; SE_audio_wall_A
+; SE_audio_wall_B
+; SE_audio_wall_C
+; SE_audio_wall_D
+
+
+
+; AZ_audio_door_A
+; AZ_audio_door_B
+; AZ_audio_window_A
+; AZ_audio_window_B
+; AZ_audio_wall_A
+
+
+; ME_audio_door_A
+; ME_audio_door_B
+; ME_audio_door_C
+; ME_audio_door_D
+; ME_audio_window_A
+; ME_audio_window_B
+; ME_audio_window_C
+; ME_audio_window_D
+; ME_audio_wall_A
+; ME_audio_wall_B
+; ME_audio_wall_C
+; ME_audio_wall_D
+
+
+; effect_set brazier_large_set
+; {
+;     time_of_day night
+
+;     lod 10000
+;     {
+;         brazier_large_flame
+;         brazier_torch_glow_model_medium
+;         torch_sound
+;     }
+; }
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect well
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/well.evt
+	}
+}
+
+
+effect_set well
+{
+	lod 100000
+	{
+		well
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_euro_bell
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_euro_bell.evt
+		random_one_shot 0.4
+		shockwave_mass 40
+		time_between_shots 15.0 25.0
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_dog
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_dog.evt
+		random_one_shot 0.4
+		shockwave_mass 40
+		time_between_shots 5.0 13.0
+	}
+}
+
+
+
+
+
+effect ambient_dog_night
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_dog_night.evt
+		random_one_shot 0.5
+		shockwave_mass 40
+		time_between_shots 5.0 13.0
+	}
+}
+
+
+
+effect ambient_settlement_night
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_settlement_night.evt
+		
+	}
+}
+
+
+
+
+effect ambient_settlement
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_settlement.evt
+		
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect_set NE_audio_wall_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell		
+	}
+}
+
+effect_set NE_audio_wall_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell		
+	}
+}
+
+
+
+effect_set NE_audio_wall_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell
+	}
+}
+
+
+
+
+effect_set NE_audio_wall_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;
+
+
+
+effect_set NE_audio_window_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_euro_bell
+		ambient_dog
+	}
+}
+
+effect_set NE_audio_window_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell
+	}
+}
+
+
+effect_set NE_audio_window_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell
+	}
+}
+
+effect_set NE_audio_window_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;
+
+effect_set NE_audio_door_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_euro_bell
+		ambient_dog
+	}
+}
+
+
+effect_set NE_audio_door_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell
+	}
+}
+
+
+effect_set NE_audio_door_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell
+	}
+}
+
+
+effect_set NE_audio_door_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+		ambient_euro_bell
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; SE_audio_door_A
+; SE_audio_door_B
+; SE_audio_door_C
+; SE_audio_door_D
+; SE_audio_window_A
+; SE_audio_window_B
+; SE_audio_window_C
+; SE_audio_window_D
+; SE_audio_wall_A
+; SE_audio_wall_B
+; SE_audio_wall_C
+; SE_audio_wall_D
+
+
+
+effect_set SE_audio_wall_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+effect_set SE_audio_wall_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+
+effect_set SE_audio_wall_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+
+
+effect_set SE_audio_wall_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;
+
+
+
+effect_set SE_audio_window_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+effect_set SE_audio_window_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+effect_set SE_audio_window_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+effect_set SE_audio_window_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;
+
+effect_set SE_audio_door_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+effect_set SE_audio_door_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+effect_set SE_audio_door_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+effect_set SE_audio_door_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+
+
+
+
+
+; AZ_audio_door_A
+; AZ_audio_door_B
+; AZ_audio_window_A
+; AZ_audio_window_B
+; AZ_audio_wall_A
+
+
+effect_set AZ_audio_door_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+effect_set AZ_audio_door_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+effect_set AZ_audio_window_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+effect_set AZ_audio_window_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+effect_set AZ_audio_wall_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement
+		ambient_dog
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_settlement_arabic
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_settlement_arabic.evt
+	}
+}
+
+
+
+effect_set ME_audio_wall_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+effect_set ME_audio_wall_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+
+effect_set ME_audio_wall_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+
+
+effect_set ME_audio_wall_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;
+
+
+
+effect_set ME_audio_window_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+effect_set ME_audio_window_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+effect_set ME_audio_window_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+effect_set ME_audio_window_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;
+
+effect_set ME_audio_door_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+effect_set ME_audio_door_B
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+effect_set ME_audio_door_C
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+effect_set ME_audio_door_D
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_settlement_arabic
+		ambient_dog
+	}
+}
+
+
+; ME_audio_door_A
+; ME_audio_door_B
+; ME_audio_door_C
+; ME_audio_door_D
+; ME_audio_window_A
+; ME_audio_window_B
+; ME_audio_window_C
+; ME_audio_window_D
+; ME_audio_wall_A
+; ME_audio_wall_B
+; ME_audio_wall_C
+; ME_audio_wall_D
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+effect ambient_alchemy
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_alchemy.evt
+	}
+}
+
+
+
+
+effect_set alchemists_lab
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_alchemy
+	}
+}
+
+
+
+effect_set NE_alchemists_lab
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_alchemy
+	}
+}
+
+
+effect_set SE_alchemists_lab
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_alchemy
+	}
+}
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_archery
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_archery.evt
+	}
+}
+
+
+effect_set archery_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_archery
+	}
+}
+
+
+effect_set NE_archery_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_archery
+	}
+}
+
+
+effect_set SE_archery_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_archery
+	}
+}
+
+
+
+
+
+
+
+effect_set marksman_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_archery
+	}
+}
+
+
+effect_set NE_marksman_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_archery
+	}
+}
+
+
+effect_set SE_marksman_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_archery
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_ballista
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_ballista.evt
+	}
+}
+
+
+effect_set balista_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_ballista
+	}
+}
+
+effect_set NE_ballista_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_ballista
+	}
+}
+
+effect_set NE_balista_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_ballista
+	}
+}
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_barracks
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_barracks.evt
+	}
+}
+
+
+effect_set NE_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+effect_set SE_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+effect_set militia_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+
+effect_set NE_militia_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+effect_set SE_militia_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+
+
+effect_set army_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+
+effect_set NE_army_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+effect_set SE_army_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+
+effect_set royal_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+
+effect_set SE_royal_barracks
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+
+effect_set armoury
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+effect_set NE_armoury
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+effect_set SE_armoury
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+
+
+effect_set NE_royal_armoury
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+effect_set NE_armoury
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_barracks
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_blacksmith
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_blacksmith.evt
+	}
+}
+
+effect_set blacksmith
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+effect_set NE_blacksmith
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+effect_set SE_blacksmith
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+effect_set armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+effect_set NE_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+effect_set SE_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+effect_set heavy_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+effect_set NE_heavy_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+effect_set SE_heavy_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+
+
+
+
+effect_set master_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+effect_set NE_plate_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+effect_set SE_plate_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+
+
+effect_set NE_gothic_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+effect_set SE_gothic_armourer
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+effect_set armour_factory
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_blacksmith
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_brothel
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_brothel.evt
+	}
+}
+
+
+
+effect_set pleasure_palace
+{
+
+	lod 100000
+	{
+		ambient_brothel
+	}
+}
+
+
+effect_set NE_pleasure_palace
+{
+
+	lod 100000
+	{
+		ambient_brothel
+	}
+}
+
+
+
+effect_set SE_pleasure_palace
+{
+
+	lod 100000
+	{
+		ambient_brothel
+	}
+}
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect ambient_gunsmith
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_gunsmith.evt
+	}
+}
+
+
+effect_set gunsmith
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_gunsmith
+	}
+}
+
+effect_set NE_gunsmith
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_gunsmith
+	}
+}
+
+effect_set SE_gunsmith
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_gunsmith
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect ambient_cannon
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_cannon.evt
+	}
+}
+
+
+
+effect_set cannon_maker
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+
+effect_set NE_cannon_maker
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+effect_set SE_cannon_maker
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+
+
+
+
+
+
+effect_set cannon_foundry
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+
+effect_set NE_cannon_foundry
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+effect_set SE_cannon_foundry
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+
+
+
+
+effect_set royal_arsenal
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+
+effect_set NE_royal_arsenal
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+
+effect_set NE_royal_arsenal
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cannon
+	}
+}
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_catapult
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_catapult.evt
+	}
+}
+
+
+effect_set catapult_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_catapult
+	}
+}
+
+
+effect_set NE_catapult_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_catapult
+	}
+}
+
+effect_set SE_catapult_range
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_catapult
+	}
+}
+
+
+
+effect_set siege_works
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_catapult
+	}
+}
+
+effect_set NE_siege_works
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_catapult
+	}
+}
+
+
+effect_set SE_siege_works
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_catapult
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_cathedral
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_cathedral.evt
+	}
+}
+
+
+effect_set NE_cathedral
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cathedral
+	}
+}
+
+
+effect_set SE_cathedral
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cathedral
+	}
+}
+
+
+
+
+
+effect_set NE_huge_cathedral
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cathedral
+	}
+}
+
+
+effect_set SE_huge_cathedral
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_cathedral
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_church
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_church.evt
+	}
+}
+
+
+effect_set NE_church
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_church
+	}
+}
+
+
+effect_set SE_church
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_church
+	}
+}
+
+
+
+
+
+effect_set NE_abbey
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_church
+	}
+}
+
+
+effect_set SE_abbey
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_church
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_arabic_market
+{
+
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_arabic_market.evt
+	}
+}
+
+
+effect_set market
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_arabic_market
+	}
+}
+
+effect_set great_market
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_arabic_market
+	}
+}
+
+effect_set fairground
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_arabic_market
+	}
+}
+
+effect_set Merchant's_Quarter
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_arabic_market
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_market
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_market.evt
+	}
+}
+
+
+
+
+effect_set NE_market
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_market
+	}
+}
+
+effect_set SE_market
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_market
+	}
+}
+
+
+
+
+effect_set NE_great_market
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_market
+	}
+}
+
+effect_set SE_great_market
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_market
+	}
+}
+
+
+
+effect_set NE_fairground
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_market
+	}
+}
+
+effect_set SE_fairground
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_market
+	}
+}
+
+
+effect_set NE_merchants_quater
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_market
+	}
+}
+
+effect_set SE_merchants_quarter
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_market
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_tavern
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_tavern.evt
+	}
+}
+
+
+
+effect_set Shisha_bar
+{
+
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+effect_set NE_brothel
+{
+
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+effect_set SE_brothel
+{
+
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+
+
+
+
+effect_set Shisha_cafe
+{
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+effect_set NE_tavern
+{
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+effect_set SE_tavern
+{
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+
+
+
+
+
+effect_set Shisha_house
+{
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+effect_set NE_coaching_house
+{
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+effect_set SE_coaching_house
+{
+	lod 100000
+	{
+		ambient_tavern
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_small_church
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_small_church.evt
+	}
+}
+
+
+effect_set NE_small_church
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_small_church
+	}
+}
+
+
+effect_set SE_small_church
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_small_church
+	}
+}
+
+
+effect_set NE_chapel
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_small_church
+	}
+}
+
+
+effect_set SE_chapel
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_small_church
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_horse_stables
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_horse_stables.evt
+	}
+}
+
+
+effect_set stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+effect_set NE_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+effect_set SE_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+
+
+
+
+effect_set knights_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+effect_set NE_knights_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+effect_set SE_knights_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+
+
+
+effect_set barons_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+effect_set NE_barons_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+effect_set SE_barons_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+
+
+
+
+effect_set earls_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+effect_set NE_earls_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+effect_set SE_earls_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+
+
+
+
+
+effect_set kings_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+effect_set NE_kings_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+effect_set SE_kings_stables
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_horse_stables
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; FARMYARD  ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_farm
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_farm.evt
+	}
+}
+
+
+effect_set ME_small_farm_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_farm
+	}
+}
+
+effect_set ME_large_farm_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_farm
+	}
+}
+
+
+
+;;;;;;;;;;;;;
+
+
+effect_set small_farm_A
+{
+	lod 100000
+	{
+		ambient_farm
+	}
+}
+
+effect_set large_farm_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_farm
+	}
+}
+
+effect_set medium_farm_A
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_farm
+	}
+}
+
+;;;;;;;;;;;;
+
+effect_set south_european_large_farm
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_farm
+	}
+}
+
+
+effect_set south_european_medium_farm
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_farm
+	}
+}
+
+
+effect_set south_european_small_farm
+{
+time_of_day day
+	lod 100000
+	{
+		ambient_farm
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;    SWAMP  ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ambient_swamp
+{
+	type sound
+	{
+		evt_file sounds/effect_evt/ambient_swamp.evt
+	}
+}
+
+
+effect_set swamp_A
+{
+	lod 100000
+	{
+		ambient_swamp
+	}
+}
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;; NIGHT SETTLEMENT AMBIENCE
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+effect_set NE_audio_wall_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+				
+	}
+}
+
+effect_set NE_audio_wall_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+				
+	}
+}
+
+
+
+effect_set NE_audio_wall_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+effect_set NE_audio_wall_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;
+
+
+
+effect_set NE_audio_window_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set NE_audio_window_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+		
+	}
+}
+
+
+effect_set NE_audio_window_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set NE_audio_window_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;
+
+effect_set NE_audio_door_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set NE_audio_door_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+		
+	}
+}
+
+
+effect_set NE_audio_door_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set NE_audio_door_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; SE_audio_door_A
+; SE_audio_door_B
+; SE_audio_door_C
+; SE_audio_door_D
+; SE_audio_window_A
+; SE_audio_window_B
+; SE_audio_window_C
+; SE_audio_window_D
+; SE_audio_wall_A
+; SE_audio_wall_B
+; SE_audio_wall_C
+; SE_audio_wall_D
+
+
+
+effect_set SE_audio_wall_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set SE_audio_wall_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+effect_set SE_audio_wall_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+effect_set SE_audio_wall_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;
+
+
+
+effect_set SE_audio_window_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set SE_audio_window_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set SE_audio_window_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set SE_audio_window_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;
+
+effect_set SE_audio_door_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set SE_audio_door_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set SE_audio_door_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set SE_audio_door_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+
+
+
+; AZ_audio_door_A
+; AZ_audio_door_B
+; AZ_audio_window_A
+; AZ_audio_window_B
+; AZ_audio_wall_A
+
+
+effect_set AZ_audio_door_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set AZ_audio_door_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set AZ_audio_window_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set AZ_audio_window_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set AZ_audio_wall_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+;;; ARABIC NIGHT
+
+
+effect_set ME_audio_wall_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set ME_audio_wall_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+effect_set ME_audio_wall_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+effect_set ME_audio_wall_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;
+
+
+
+effect_set ME_audio_window_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set ME_audio_window_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set ME_audio_window_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+effect_set ME_audio_window_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+
+
+;;;;;;;;;;;;;;;;;;
+
+effect_set ME_audio_door_A_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set ME_audio_door_B_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set ME_audio_door_C_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+effect_set ME_audio_door_D_night
+{
+time_of_day night
+	lod 100000
+	{
+		ambient_settlement_night
+		ambient_dog_night
+	}
+}
+
+
+; ME_audio_door_A
+; ME_audio_door_B
+; ME_audio_door_C
+; ME_audio_door_D
+; ME_audio_window_A
+; ME_audio_window_B
+; ME_audio_window_C
+; ME_audio_window_D
+; ME_audio_wall_A
+; ME_audio_wall_B
+; ME_audio_wall_C
+; ME_audio_wall_D

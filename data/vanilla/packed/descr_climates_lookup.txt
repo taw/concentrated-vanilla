@@ -1,0 +1,13 @@
+mediterranean
+sandy_desert
+rocky_desert
+unused1
+steppe
+temperate_deciduous_forest
+temperate_coniferous_forest
+unused2
+highland
+alpine
+tropical
+volcanic
+semi_arid

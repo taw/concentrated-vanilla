@@ -1,0 +1,41 @@
+
+disaster Etna
+{
+	type volcano
+	year 10
+	position 272 227
+	size 15
+}
+
+disaster Gaul
+{
+	type earthquake
+	year 11
+	position 272 227
+	size 20
+	winter
+}
+
+disaster Southwater
+{
+	type fire
+	year 0
+	position 272 227
+	size 30
+}
+
+disaster Brighton
+{
+	type storm
+	year 0
+	position 272 227
+	size 10
+}
+
+disaster Amsterdam
+{
+	type flood
+	year 0
+	position 272 227
+	size 15
+}

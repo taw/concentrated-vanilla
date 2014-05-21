@@ -1,0 +1,82 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;BATTLE MAP UNIT SFX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 8 minPitch .7 maxPitch 1.2 fadein 2.5 fadeout 2.5 volume 0 probability 1 randomdelay 0  effect_level .25
+
+grid_cell_size 40  ;; (metres) should be divisible by PHYSICAL_GRID::GRID_CELL_SIZE
+
+do_unit_anim_switch 0 ;; 0 - off, 1 - on
+
+;;
+;; unit_anim_switch (metres) - distance from the camera
+;;                             at which animation sounds
+;;                             are replaced with unit sounds
+;;
+unit_anim_switch 2
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; OLD - grid based system overrides
+;;
+;; unit_proximity_distance (metres) - distance between the units
+;;                                    when only the largest lod
+;;                                    is getting played and
+;;                                    the other sound is ignored
+;;
+;unit_proximity_distance 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; delay before starting looping sounds of units
+unit_start_delay    0
+
+;; delay before changing looping sounds of units from one status to another
+unit_change_delay   0
+
+;; the percentage of soldier in a unit to trigger collision sound
+unit_collide_threshold 10
+
+;; delay before re-triggering "under attack" speech
+unit_under_attack_delay 120
+
+;; delay between war horn sounds for each faction (seconds)
+unit_warhorns_delay 15
+
+;;
+;; probability scales are applied as <scale>/<unit size>
+;; more soldiers there are in a unit the lower is the probability
+;;
+do_unit_idle_probability            1
+unit_idle_probability_scale         3.5
+
+do_unit_ambient_probability         1
+unit_ambient_probability_scale      3.5
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DATABASE DEFINITIONS
+;; DEF: unit_idle, unit_march, unit_run, unit_charge
+;;      unit_fighting, unit_missiles_firing, unit_ambient
+;;
+;; Keywords: unit, terrain
+;;
+;; Format:
+;;
+;; unit {unit category} {unit class}
+;; type {type id as in descr_unit.txt}
+;;    terrain {terrain types list}
+;; Terrain types are optional, if terrain keyword is omitted then all terrain types are applicable
+;;          event ...
+;;    terrain
+;;          event ... etc
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+

@@ -1,0 +1,3814 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Description file for the event image paths
+;;
+;;  Syntax was simple:  choose an event from the following list and follow it with:
+;;		icon  {icon type}
+;;		heading_items	{no of items}		(optional)
+;;		footer_items	{no of items}		(optional)
+;;		importance		{high/normal}		(optional)
+;;              width           {internal message scroll width | 0 - use default width} {true/false - use full scroll width (optional, deafault==false)}
+;;              height          {internal message scroll height | 0 - use default height | -1 - use table height} {true/false - use full scroll height (optional, deafault==true)}
+;;              framed_body     - put frame around body
+;;              body_margin     {margin_width} - horizontal body margin (body_width = width - 2*body_margin).
+;;		format <see below>
+;;
+;;
+;; Where {icon type} is one of: agent, military, diplomacy, battle, historic, settlement, faction or disaster
+;;
+;; Heading items is the number of items that constitute the non scrolling heading part of the message.  If this isn't specified, it will default
+;; to 2.  Heading items, must be single items on thier own row, otherwise the effects are undefined
+;;
+;; Footer items works as per heading_items, but specifies the number of non-scrolling items at the bottom of the message
+;; The default is 0
+;;
+;; importance - messages marked as high importance will open immeadieately they appear on screen, unless more messages
+;; of high importance are displayed, in which case they will open as soon as the others are closed down
+
+;; Message formating: (not so simple)
+;;
+;; format <table padding>
+;; {
+;;	 <object type> <object_parameters>
+;; }
+;;
+;; where <table padding> is: center, left, right, ends, all.  This affects what happens to the extra pixels on each row of the table:
+;; center adds extra space to middle cell, left and right add extra to first and last cell respectively, ends adds to first and last, and all
+;; divides space equally between all cells in that row.  If no table padding is specified 'all' is used by default
+;; <object type> is : title, string, image, title_image, multistring (multiline_string), ui_element, group, condition, switch, columns, accept/decline, spacer
+;; and <object_paramters> (per_object) are:
+;;
+;;		title		: row justification, font size, colour
+;;		string		: row justification, font size, colour, <lookup table identifier (optional)>
+;;		image		: row justification, <image name (optional)>
+;;		title_image : row justification
+;;		multistring : row justification, font size, colour, justification, <lookup table identifier (optional)>
+;;              bodystring  : row justification, font size, colour, justification    ;; Inserts the culturally specific text retrieved from event_strings.txt
+;;		ui_element  : row justification
+;;		group		: spacing (distance between items in group)
+;;                    {
+;;						<object type> <object parameters>
+;;						...
+;;					  }
+;;		condition   : {
+;;					  true (optional)
+;;					  {
+;;						<object_type> <object parameters>
+;;						...
+;;					  }
+;;					  false (optional)
+;;					  {
+;;						<object_type> <object parameters>
+;;						...
+;;					  }
+;;		switch		: {
+;;							case
+;;							{
+;;								<object_type> <object_parameters>
+;;								...
+;;							}
+;;							case ...
+;;					  }
+;;		columns		: <number of columns>	font size, colour
+;;		spacer		: <height>							;; insert an empty row of height <height> into the table
+;;		accept		: row justification <"text">					;; Creates an "accept" button - if "text" is specified, then the button will be a text button
+;;	    decline		: row justification <"text">					;; Creates an "decline" button - if "text" is specified, then the button will be a text button
+;;
+;;  row justification (and justification) is : center, left, right
+;;	colour            : black, khaki, or rgb values
+;;	font              : tnr, tnr_med, tnr_sml, verdana, verdana_med, verdana_sml (or se descr_font_db.txt) incase any new ones have been added
+;;	image name        : filename of image (not in ""s, and excluding .tga extenstion)
+;;	lookup identifier : id tag from message_text_lookup.txt
+;;
+;;
+;;
+;;	Specifying an optional parameter (excepting true/false in the condition object) will create a static instance of the object, i.e. it will
+;;  need no further initialisation
+;;
+;;	The filenames will be prefixed with the path "data/ui/<culture>/eventpics", and postfixed with ".tga" so no need to worry about that.
+;;	Icon type is one of: agent, military, diplomacy, battle, historic, settlement, faction or disaster.  If no icon type is specified then 'faction' is used
+;;
+;;  If both image and icon are specified then they should be specified in order image, icon, not icon, image.
+;;
+;;
+;;  Message formats can be cloned by using the 'use' keyword after the format i.e.
+;;
+;;  settlement_taken_copy
+;;		icon	settlement
+;;		format  use settlement_taken
+;;
+;;  Unfortunately, cloned specifications will share the same title and image if the 'title', and 'title_image' message objects is used.  As 'bodystring' obejcts are reset
+;;  before each use, they will be different to the version cloned
+;;
+
+settlement_taken
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	settlement_occupied
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+settlement_besieged
+	icon	settlement
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	settlement_besieged
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+settlement_destroyed
+	icon	settlement
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	settlement_exterminated
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+
+naval_blockade
+	icon	settlement
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+faction_leader_dies
+	icon	faction
+	importance high
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center familyevent_deathimportant
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+faction_leader_killed
+	icon	faction
+	importance high
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center familyevent_deathimportant
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+faction_richest
+	icon	diplomacy
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	year_end_report
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+faction_largest
+	icon	diplomacy
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	faction_prosperous_other
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+faction_strongest
+	icon	diplomacy
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	foreign_strongest
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+faction_advanced
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	faction_most_advanced_other
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+army_revolt
+	icon	military
+	importance high
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	military_revolt
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+		multistring	 center   verdana_sml khaki center
+	}
+
+settlement_unrest
+	icon	settlement
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	settlement_unrest
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+settlement_revolts
+	icon			disaster
+	heading_items	3
+	importance high
+	format
+	{
+		title        center verdana		black
+		string       center verdana_sml khaki
+		image	 center	settlement_unrest
+		spacer		 8
+		bodystring	 left   verdana_sml khaki left
+		spacer		 8
+		condition    ;; was anyone hurt
+		{
+			true
+			{
+				condition  ;; If any settlements are affected
+				{
+					true
+					{
+						string left	verdana_sml black   characters_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any characters are affected
+				{
+					true
+					{
+						string left	verdana_sml black   buildings_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				spacer		 8
+				group left 4
+				{
+					string left verdana_sml khaki your_citizens_killed
+					integer		 left verdana_sml khaki
+				}
+				group left 4
+				{
+					string left verdana_sml khaki your_soldiers_killed
+					integer		 left verdana_sml khaki
+				}
+			}
+			false
+			{
+				multistring	 left   verdana_sml khaki left	nobody_harmed
+			}
+		}
+	}
+
+building_completed
+	icon	settlement
+	heading_items	6
+	format
+	{
+		title		center verdana		black
+		string		center verdana_med	khaki
+		bodystring	left   verdana_sml  khaki	left
+		image		center
+		spacer		 8
+		string		center verdana_med	black
+		multistring left verdana_sml  khaki	left
+	}
+
+unit_completed
+	icon	military
+	heading_items	5
+	format
+	{
+		title		center verdana		black
+		string		center verdana_med	khaki
+		image		center
+		spacer		8
+		string		center verdana_med	black
+		bodystring	left   verdana_sml  khaki	left
+		spacer		8
+		multistring left   verdana_sml  khaki	left
+	}
+
+retraining_complete
+	icon	military
+	heading_items 3
+	format
+	{
+		title		center verdana		black
+		string		center verdana_med	khaki
+		image		center
+		spacer		8
+		string		center verdana_med	black
+		bodystring	left   verdana_sml  khaki	left
+		spacer		8
+		multistring left verdana_sml  khaki	left
+	}
+
+agent_recruited
+	icon	military
+	heading_items 3
+	format
+	{
+		title		center verdana		black
+		string		center verdana_med	khaki
+		image		center
+		string		center verdana_med	black
+		bodystring	left   verdana_sml  khaki	left
+	}
+
+character_dies_natural
+	icon	faction
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_sml	khaki
+		image	 center	familyevent_death
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+character_dies_heroic
+	icon	battle
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center battle_generaldeathfriendly
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+
+settlement_surrender
+	icon	settlement
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+general_appointed
+	icon	military
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	militarypromotion
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+general_promoted
+	icon	military
+        heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	militarypromotion
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+general_dies
+	icon	military
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+new_faction_leader
+	icon	faction
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	familyevent_newleader
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+new_faction_heir
+	icon	faction
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	familyevent_newleader
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+new_bouncing_baby
+	icon	faction
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	familyevent_birth
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+coming_of_age
+	icon	faction
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	militarypromotion
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+marriage
+	icon	faction
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	marriage_celebrations
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+princess_marriage
+	icon	princess
+	width 536 false
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		movie		 center 536 304	event/princess_marriage.bik
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+adoption
+	icon	faction
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+faction_defeated
+	icon	diplomacy
+	heading_items	3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	faction_destroyed
+;		movie		 center 320 240
+
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+faction_defeated_by_player
+	icon	diplomacy
+	format use faction_defeated
+
+
+mission_spy_character
+	icon	agent
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+mission_spy_settlement
+	icon	agent
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+		ui_element	 center ;; movie option
+	}
+
+
+mission_assassinate
+	icon	agent
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+		ui_element	 center ;; movie option
+	}
+
+
+mission_sabotage
+	icon	agent
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer	8
+		string		 center verdana_sml	black
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+		ui_element	 center ;; movie option
+	}
+
+
+hidden_agent_detected_in_settlement
+	icon agent
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		condition
+		{
+			true
+			{
+				string		 center verdana_med	black
+			}
+		}
+		string		 center verdana_med	black
+		image	 center	agent_detected
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+agent_movie
+	icon	agent
+	importance high
+	width 536 false
+	format
+	{
+		string		 center verdana_med	black
+		movie		 center 536 304
+		ui_element	 center ;; movie option
+	}
+
+event_movie
+	icon	historic
+	importance high
+	width 536 false
+	format
+	{
+		string		 center verdana_med	black
+		movie		 center 536 304
+	}
+
+reinforcements_arrived
+	icon	military
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	battle_reinforcement
+		spacer		16
+		bodystring  left verdana_sml khaki left
+	}
+
+year_end_report
+	icon	faction
+	width 0 true
+	framed_body
+	format
+	{
+		title        center verdana		black
+		image 		 center end_of_turn
+		ui_element center
+		spacer     5
+		ui_element center
+		spacer     5
+		ui_element center
+	}
+
+chat_message
+	icon	diplomacy
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		title_image	 center
+		spacer		 8
+		multistring  left verdana_sml khaki left
+	}
+
+disaster_earthquake
+	icon			disaster
+	heading_items	3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		title_image	 center
+		spacer		 8
+		bodystring	 left   verdana_sml khaki left
+		condition    ;; If anyone was hurt
+		{
+			true
+			{
+				spacer		 8
+				condition  ;; If any settlements are affected
+				{
+					true
+					{
+						string left	verdana_sml black   settlements_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any characters are affected
+				{
+					true
+					{
+						string left	verdana_sml black   characters_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any buildings are affected
+				{
+					true
+					{
+						string left	verdana_sml black   buildings_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				spacer		 8
+				group  left  4
+				{
+					string left verdana_sml khaki your_citizens_killed
+					integer		 left verdana_sml khaki
+				}
+				group left  4
+				{
+					string left verdana_sml khaki your_soldiers_killed
+					integer		 left verdana_sml khaki
+				}
+			}
+			false
+			{
+				multistring	 left   verdana_sml khaki left	nobody_harmed
+			}
+		}
+	}
+
+disaster_volcano
+	icon			disaster
+	heading_items	3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		title_image	 center
+		spacer		 8
+		bodystring	 left   verdana_sml khaki left
+		condition    ;; If anyone was hurt
+		{
+			true
+			{
+				spacer		 8
+				condition  ;; If any settlements are affected
+				{
+					true
+					{
+						string left	verdana_sml black   settlements_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any characters are affected
+				{
+					true
+					{
+						string left	verdana_sml black   characters_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any buildings are affected
+				{
+					true
+					{
+						string left	verdana_sml black   buildings_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				spacer		 8
+				group left  4
+				{
+					string left verdana_sml khaki your_citizens_killed
+					integer		 left verdana_sml khaki
+				}
+				group left  4
+				{
+					string left verdana_sml khaki your_soldiers_killed
+					integer		 left verdana_sml khaki
+				}
+			}
+			false
+			{
+				multistring	 left   verdana_sml khaki left	nobody_harmed
+			}
+		}
+	}
+
+disaster_flood
+	icon			disaster
+	heading_items	3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		title_image	 center
+		spacer		 8
+		bodystring	 left   verdana_sml khaki left
+		condition    ;; If anyone was hurt
+		{
+			true
+			{
+				spacer		 8
+				condition  ;; If any settlements are affected
+				{
+					true
+					{
+						string left	verdana_sml black   settlements_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any characters are affected
+				{
+					true
+					{
+						string left	verdana_sml black   characters_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any buildings are affected
+				{
+					true
+					{
+						string left	verdana_sml black   buildings_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				spacer		 8
+				group left  4
+				{
+					string left verdana_sml khaki your_citizens_killed
+					integer		 left verdana_sml khaki
+				}
+				group left  4
+				{
+					string left verdana_sml khaki your_soldiers_killed
+					integer		 left verdana_sml khaki
+				}
+			}
+			false
+			{
+				multistring	 left   verdana_sml khaki left	nobody_harmed
+			}
+		}
+	}
+
+disaster_storm
+	icon			disaster
+	heading_items	3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		title_image	 center
+		spacer		 8
+		bodystring	 left   verdana_sml khaki left
+		condition    ;; If anyone was hurt
+		{
+			true
+			{
+				spacer		 8
+				condition  ;; If any settlements are affected
+				{
+					true
+					{
+						string left	verdana_sml black   settlements_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any characters are affected
+				{
+					true
+					{
+						string left	verdana_sml black   characters_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any buildings are affected
+				{
+					true
+					{
+						string left	verdana_sml black   buildings_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				spacer		 8
+				group left  4
+				{
+					string left verdana_sml khaki your_citizens_killed
+					integer		 left verdana_sml khaki
+				}
+				group left  4
+				{
+					string left verdana_sml khaki your_soldiers_killed
+					integer		 left verdana_sml khaki
+				}
+			}
+			false
+			{
+				multistring	 left   verdana_sml khaki left	nobody_harmed
+			}
+		}
+	}
+
+disaster_riot
+	icon			settlement
+	heading_items	3
+	importance high
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		image	 center	settlement_unrest
+		spacer		 8
+		bodystring	 left   verdana_sml khaki left
+		spacer		 8
+		condition    ;; was anyone hurt
+		{
+			true
+			{
+				condition  ;; If any settlements are affected
+				{
+					true
+					{
+						string left	verdana_sml black   characters_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any characters are affected
+				{
+					true
+					{
+						string left	verdana_sml black   buildings_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				spacer		 8
+				group left  4
+				{
+					string left verdana_sml khaki your_citizens_killed
+					integer		 left verdana_sml khaki
+				}
+				group left  4
+				{
+					string left verdana_sml khaki your_soldiers_killed
+					integer		 left verdana_sml khaki
+				}
+			}
+			false
+			{
+				multistring	 left   verdana_sml khaki left	nobody_harmed
+			}
+		}
+	}
+
+disaster_plague
+	icon			disaster
+	heading_items	3
+	format
+	{
+		title        center verdana		black
+		title_image	 center
+		spacer		 8
+		bodystring	 left   verdana_sml khaki left
+		condition    ;; If anyone was hurt
+		{
+			true
+			{
+				spacer		 8
+				condition  ;; If any settlements are affected
+				{
+					true
+					{
+						string left	verdana_sml black   settlements_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any characters are affected
+				{
+					true
+					{
+						string left	verdana_sml black   characters_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				spacer		 8
+				group left  4
+				{
+					string left verdana_sml khaki your_citizens_killed
+					integer		 left verdana_sml khaki
+				}
+				group left  4
+				{
+					string left verdana_sml khaki your_soldiers_killed
+					integer		 left verdana_sml khaki
+				}
+			}
+			false
+			{
+				multistring	 left   verdana_sml khaki left	nobody_harmed
+			}
+		}
+	}
+
+disaster_barbarian_horde
+	icon	disaster
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		image	 center	horde_nearby
+		spacer		 8
+		bodystring	 left   verdana_sml khaki left
+	}
+
+building_repair_complete
+	icon	settlement
+	format
+	{
+		title		center verdana		black
+		string		center verdana_med	khaki
+		bodystring	left   verdana_sml  khaki	left
+		image		center
+		spacer		8
+		string		center verdana_med	black
+		multistring left verdana_sml  khaki	left
+	}
+
+construction_complete_many
+	icon			settlement
+	heading_items	1
+	format right
+	{
+		title		center verdana black
+		bodystring  left verdana_sml khaki left
+		spacer		8
+		collated_queue_display verdana_sml 4
+	}
+
+recruitment_complete_many
+	icon			military
+	heading_items	1
+	format right
+	{
+		title		center verdana black
+		bodystring  left verdana_sml khaki left
+		spacer		8
+		collated_queue_display verdana_sml 4
+	}
+
+character_trait_gained
+	icon faction
+	heading_items	4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		string		 center verdana_med khaki
+		image	 center	vnv_traitchange
+		spacer		 8
+		multistring  left verdana_sml khaki left
+		spacer		 4
+		multistring  left verdana_sml khaki left
+	}
+
+character_trait_lost
+	icon faction
+	heading_items	4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		string		 center verdana_med khaki
+		image	 center	vnv_traitchange
+		spacer		 8
+		multistring  left verdana_sml khaki left
+	}
+
+mission_gift
+	icon mission
+	importance high
+	heading_items 4
+	footer_items 1
+	framed_body
+	body_margin 5
+	width 0 true
+	format
+	{
+		title		center verdana black
+		spacer		8
+		image		center
+		spacer		8
+		ui_element	center
+		spacer	 30
+	}
+
+
+mission_expired
+	icon mission
+	importance high
+	heading_items 4
+	footer_items 1
+	framed_body
+	body_margin 5
+	width 0 true
+	format
+	{
+		title		center verdana black
+		spacer		8
+		image		center
+		spacer		8
+		ui_element	center
+		spacer	 30
+	}
+
+mission_issued
+	icon	mission
+	heading_items 4
+	footer_items 1
+	importance high
+	framed_body
+	width 0 true
+	format
+	{
+		title		 center verdana black
+		spacer		 8
+		image	 	 center
+		spacer		 8
+		ui_element	 center
+		condition								;; Do we want accept/decline buttons
+		{
+			true
+			{
+				group center 8
+				{
+					accept	right
+					decline	left
+				}
+			}
+			false
+			{
+                               spacer	 30
+			}
+		}
+	}
+
+mission_failed
+	icon	mission
+	heading_items 4
+	footer_items 1
+	framed_body
+	body_margin 5
+	width 0 true
+	format
+	{
+		title		center verdana black
+		spacer		8
+		image		center
+		spacer		8
+		ui_element	center
+		spacer	 30
+	}
+
+mission_success
+	icon	mission
+	heading_items 4
+	footer_items 1
+	framed_body
+	body_margin 5
+	width 0 true
+	format
+	{
+		title		center verdana black
+		spacer		8
+		image		center
+		spacer		8
+		ui_element	center
+		spacer	 30
+	}
+
+unit_routs_in_battle
+	icon military
+	heading_items 3
+	format
+	{
+		title		center verdana black
+		string		center verdana_med black
+		image center	battle_unitrouts
+		spacer		16
+		bodystring	left verdana_sml khaki left
+	}
+
+building_captured_battle
+	icon settlement
+	heading_items 3
+	format
+	{
+		title		center verdana black
+		string		center verdana_med black
+		image center	battle_capturebuilding
+		spacer		16
+		bodystring	left verdana_sml khaki left
+	}
+
+building_lost_battle
+	icon settlement
+	heading_items 3
+	format
+	{
+		title		center verdana black
+		string		center verdana_med black
+		image center	battle_lostbuilding
+		spacer		16
+		bodystring	left verdana_sml khaki left
+	}
+
+general_killed_ally
+	icon	battle
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med khaki
+		image		 center	battle_generaldeathfriendly
+		spacer		16
+		bodystring  left verdana_sml khaki left
+	}
+
+general_killed_enemy
+	icon	battle
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med khaki
+		image		 center	battle_generaldeathenemy
+		spacer		16
+		bodystring  left verdana_sml khaki left
+	}
+
+settlement_surrenders_own
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer		 8
+		bodystring	left verdana_sml khaki left
+	}
+
+settlement_surrenders_enemy
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer		 8
+		bodystring	left verdana_sml khaki left
+	}
+
+advisor_dummy_msg
+	icon	faction
+	format
+	{
+		multistring	left verdana_sml black left
+		multistring	left verdana_sml khaki left
+;		condition								;; Do we want accept/decline buttons
+;		{
+;			true
+;			{
+;				group center	8	;; spacing for the text buttons
+;				{
+;					accept	right white
+;					decline	left  white
+;				}
+;			}
+;		}
+	}
+
+new_ancillary_character
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	vnv_new_ancillaries
+		spacer	8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		string		center verdana_sml black
+		multistring	left verdana_sml khaki left
+	}
+
+female_dies
+	icon	faction
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center familyevent_death
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+games_held
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+races_held
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+character_dies_suspicious
+	icon	faction
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string	center verdana_sml	khaki
+		image	center familyevent_death_sus
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+character_dies_disaster
+	icon	faction
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string		 center verdana_sml	khaki
+		image	center familyevent_death
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+
+family_report
+	icon			faction
+	heading_items	4
+	format right
+	{
+		title	center verdana black
+		spacer	4
+		bodystring	 left verdana_sml khaki left
+		condition ;; any character deaths
+		{
+			true
+			{
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: familyevent_death	title: character_dies_natural	subtitle: death_by_natural_causes
+					}
+				}
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: familyevent_death	title: character_dies_natural	subtitle: death_by_natural_disaster
+					}
+				}
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: familyevent_deathimportant	title: character_dies_heroic	subtitle: death_in_battle
+					}
+				}
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: familyevent_death_sus	title: character_dies_suspicious	subtitle: death_by_assassination
+					}
+				}
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: character_dies_suspicious	title: character_dies_suspicious	subtitle: death_by_execution
+					}
+				}
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: character_dies_executed_prisoner	title: character_dies_executed_prisoner	subtitle: death_by_prisoner_execution
+					}
+				}
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: familyevent_death_sus	title: character_dies_natural	subtitle: death_by_poisoning
+					}
+				}
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: disaster_plague	title: character_dies_natural	subtitle: death_by_plague
+					}
+				}
+				condition
+				{
+					true
+					{
+						spacer	4
+						collated_msg_display	verdana_sml	4	event	image: character_dies_natural	title: character_dies_natural	subtitle: death_by_starvation
+					}
+				}
+			}
+		}
+		condition ;; new faction leader
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: familyevent_newleader	title: new_faction_leader
+			}
+		}
+		condition ;; new faction heir
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: familyevent_newleader	title: new_faction_heir
+			}
+		}
+		condition ;; any births
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: familyevent_birth	title: new_bouncing_baby
+			}
+		}
+		condition ;; any character coming of age
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: militarypromotion		title: coming_of_age
+			}
+		}
+		condition ;; any women die
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: familyevent_death	title: female_dies
+			}
+		}
+		condition ;; any marriages
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: marriage_celebrations  title: marriage
+			}
+		}
+		condition ;; any traits gained
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: vnv_traitchange	title: character_trait_gained
+			}
+		}
+		condition ;; any traits lost
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: vnv_traitchange	title: character_trait_lost
+			}
+		}
+		condition ;; any retainers gained
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: vnv_new_ancillaries	title: new_ancillary_character
+			}
+		}
+		condition ;; any games held
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: games_held	title: games_held
+			}
+		}
+		condition ;; any races_held
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	event	image: races_held	title: races_held
+			}
+		}
+	}
+
+diplomacy_report
+	icon	diplomacy
+	format
+	{
+		title	center verdana black
+		image	center	diplomacy_war_declared
+		spacer	8
+		condition  ;; anyone declaring war
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  war_declared_multi
+				faction_pair_list verdana_sml khaki
+			}
+		}
+		condition ;; anyone betraying an alliance
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  betrayal_multi
+				faction_pair_list verdana_sml khaki
+			}
+		}
+		condition ;; any alliances broken
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  alliance_broken_multi
+				faction_pair_list verdana_sml khaki
+			}
+		}
+		condition ;; anyone declaring an alliance
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  alliance_declared_multi
+				faction_pair_list verdana_sml khaki
+			}
+		}
+		condition ;; anyone signing peace treaty
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  treaty_declared_multi
+				faction_pair_list verdana_sml khaki
+			}
+		}
+		condition ;; anyone declaring a ceasefire
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  ceasefire_declared_multi
+				faction_pair_list verdana_sml khaki
+			}
+		}
+		condition ;; any protectorates established
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  protectorates_established_multi
+				faction_pair_list verdana_sml khaki
+			}
+		}
+		condition ;; any excommunications
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  excommunicated_multi
+				faction_second_list verdana_sml khaki
+			}
+		}
+		condition ;; any recommunications
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left  recommunicated_multi
+				faction_second_list verdana_sml khaki
+			}
+		}
+	}
+
+war_declared
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center diplomacy_war_declared
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+alliance_declared
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	center	diplomacy_alliance
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+ceasefire_declared
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string	center verdana_med black
+		image	center	diplomacy_alliance
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+peacy_treaty_signed
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string	center verdana_med black
+		image	center	diplomacy_alliance
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+alliance_broken
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string	center verdana_med black
+		image	center	diplomacy_worsenedrelations
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+protectorate_established
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string	center verdana_med black
+		image	center	diplomacy_alliance
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+ally_declared_alliance_with_enemy
+	icon	diplomacy
+	heading_items 4
+	footer_items	2
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string	center verdana_med black
+		image	center	diplomacy_worsenedrelations
+		spacer	8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		group center 8
+		{
+			accept   right
+			decline  left
+		}
+	}
+
+war_declared_on_ally
+	icon			diplomacy
+	heading_items 4
+	footer_items	2
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string	center verdana_med black
+		image	center	diplomacy_war_declared
+		spacer	8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		group center 8
+		{
+			accept    right
+			decline   left
+		}
+	}
+
+suitor_available_for_daughter
+	icon	faction
+	heading_items	4
+	footer_items	5
+	format
+	{
+		title	center verdana black
+		group  center 8
+		{
+			string  left  verdana_med black betrothed
+			string  left  verdana_med black
+		}
+		spacer	8
+		ui_element	center						;; Character info panel
+		spacer	8
+		character_trait_list					;; List of traits
+		partition
+		spacer 8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		group center 8
+		{
+			accept    right
+			decline   left
+		}
+	}
+
+suitor_available_for_princess
+	icon	faction
+	heading_items	4
+	footer_items	5
+	format
+	{
+		title	center verdana black
+		group  center 8
+		{
+			string  left  verdana_med black betrothed
+			string  left  verdana_med black
+		}
+		spacer	8
+		ui_element	center						;; Character info panel
+		spacer	8
+		character_trait_list					;; List of traits
+		partition
+		spacer 8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		group center 8
+		{
+			accept    right
+			decline   left
+		}
+	}
+
+daughter_retired
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	familyevent_woman_retires
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+adopta_general_offer
+	icon			faction
+	heading_items	3
+	footer_items	5
+	format
+	{
+		title	center verdana black
+		ui_element	center						;; Character info panel
+		spacer	8
+		character_trait_list					;; List of traits
+		partition
+		spacer 8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		group center 8
+		{
+			accept    right
+			decline   left
+		}
+	}
+
+
+character_available_for_adoption
+	icon			faction
+	heading_items   4
+	footer_items	5
+	format
+	{
+		title	center verdana black
+		group center 8
+		{
+			string  left  verdana_med black  benefactor
+			string  left  verdana_med black
+		}
+		spacer	8
+		ui_element	center						;; Character info panel
+		spacer	8
+		character_trait_list					;; List of traits
+		partition
+		spacer 8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		group center 8
+		{
+			accept    right
+			decline   left
+		}
+	}
+
+
+adoption_failed
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	familyevent_death
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+mission_spy_fail_and_killed
+	icon	agent
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center spy_killed
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+mission_spy_fail
+	icon	agent
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center agent_expelled
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+mission_assassinate_fail_and_killed
+	icon	agent
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center assassin_slain
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+mission_assassinate_fail
+	icon	agent
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center  assassin_failed
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+mission_sabotage_fail_and_killed
+	icon	agent
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center  assassin_slain
+		spacer	8
+		string	center verdana_sml black
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+mission_sabotage_fail
+	icon	agent
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center  assassin_failed
+		spacer	8
+		string	center verdana_sml black
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+settlement_occupied
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		condition
+		{
+			true
+			{
+				spacer 8
+				multistring left verdana_sml khaki left siege_ended
+			}
+		}
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+settlement_sacked
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center settlement_exterminated
+		condition
+		{
+			true
+			{
+				spacer 8
+				multistring left verdana_sml khaki left siege_ended
+			}
+		}
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+settlement_exterminated
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center settlement_exterminated
+		condition
+		{
+			true
+			{
+				spacer 8
+				multistring left verdana_sml khaki left siege_ended
+			}
+		}
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+historic_event
+	icon	historic
+	importance high
+	format
+	{
+		string	center verdana black
+		image	center
+		spacer	8
+		multistring	left verdana_sml khaki left
+	}
+
+historic_event_movie
+	icon	historic
+	importance high
+	width 536 false
+	format
+	{
+		string	center verdana black
+		movie		 center 536 304
+		spacer	8
+		multistring	left verdana_sml khaki left
+	}
+
+player_faction_richest
+	icon	diplomacy
+	format
+	{
+		title	center verdana black
+		image	center	year_end_report
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+player_faction_strongest
+	icon	diplomacy
+	format
+	{
+		title	center verdana black
+		image	center militaryunithired
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+player_faction_advanced
+	icon	diplomacy
+	format
+	{
+		title	center verdana black
+		image	center	faction_most_advanced
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+player_faction_largest
+	icon	diplomacy
+	format
+	{
+		title	center verdana black
+		image	center	faction_prosperous
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+building_sabotaged
+	icon	settlement
+	format
+	{
+		title	center verdana black
+		title_image	center
+		spacer	8
+		string	center verdana_med black
+		string	center verdana_sml khaki
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+players_army_destroyed
+	icon	military
+	format
+	{
+		title	center verdana black
+		image	center militaryarmydestroyed
+		spacer		16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+
+exterminate_populace
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	settlement_exterminated
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+upgrade_settlement_to_town
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+upgrade_settlement_to_large_town
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+upgrade_settlement_to_city
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+upgrade_settlement_to_large_city
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+upgrade_settlement_to_huge_city
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+upgrade_settlement_to_wooden_castle
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+upgrade_settlement_to_castle
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+upgrade_settlement_to_fortress
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+upgrade_settlement_to_citadel
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+multiturn_path_blocked
+	icon	military
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	militarypathblocked
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+
+war_declared_non_player
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center	diplomacy_war_declared
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+
+agent_detected_and_expelled
+	icon	agent
+	heading_items 4
+	format
+	{
+		title        center verdana		black
+		condition
+		{
+			true
+			{
+				string		 center verdana_med	black
+			}
+		}
+		string		 center verdana_med	black
+		image		 center	agent_enemy_detected
+		spacer		 8
+		bodystring   left verdana_sml khaki left
+	}
+
+
+building_captured_by_allies
+	icon	settlement
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image center	battle_capturebuilding
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+marian_reform
+	icon	historic
+	importance high
+	format
+	{
+		string	center verdana black
+		image	center
+		spacer	8
+		multistring	left verdana_sml khaki left
+	}
+
+
+settlement_bribed
+	icon	settlement
+	importance high
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	bribery
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+army_bribed
+	icon	military
+	importance high
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	bribery
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+character_bribed
+	icon	agent
+	importance high
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	bribery
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+betrayed
+	icon	diplomacy
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	diplomacy_worsenedrelations
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+fort_bribed
+	icon	military
+	importance high
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	bribery
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+player_lose_warning
+	icon	faction
+	importance high
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	faction_troubled
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+transgression
+	icon	diplomacy
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	diplomacy_worsenedrelations
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+your_machine_needs_upgrading
+	icon	military
+	format
+	{
+		title	center verdana black
+		image	center	battle_deployment
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+your_machine_needs_upgrading_ai_to_reinforce
+	icon	military
+	format
+	{
+		title	center verdana black
+		image	center	battle_deployment
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+small_army_disbands
+	icon	military
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		condition		;; Can we find a general for this army
+		{
+			true
+			{
+				multistring	left verdana_med black center
+			}
+		}
+		image	center	militaryenemydisband
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+small_army_disbands_loser
+	icon	military
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		condition		;; Can we find a general for this army
+		{
+			true
+			{
+				multistring	left verdana_med black center
+			}
+		}
+		image	center	militarydisband
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+new_eastern_emperor
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+new_western_emperor
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+new_eastern_ceasar
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+new_western_ceasar
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+shadow_faction_appears
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+eastern_shadow_faction
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+western_shadow_faction
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+shadow_faction_destroyed
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+emergent_faction_appears
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+new_barbarian_horde
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	horde_rehorde
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+horde_settles
+	icon	faction
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		string	center verdana_sml khaki
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+horde_in_your_region
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	horde_nearby
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+city_sacked
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+dominant_religion
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+roman_empire_reunited
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+settlement_razed
+	icon			disaster
+	heading_items	3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med khaki
+		title_image	 center
+		spacer		 8
+		bodystring	 left    verdana_sml khaki left
+		spacer		 8
+		condition    ;; was anyone hurt
+		{
+			true
+			{
+				condition  ;; If any settlements are affected
+				{
+					true
+					{
+						string left	verdana_sml black   characters_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				condition ;; If any characters are affected
+				{
+					true
+					{
+						string left	verdana_sml black   buildings_affected
+						list   1		verdana_sml khaki
+					}
+				}
+				spacer		 8
+				group left 4
+				{
+					string left verdana_sml khaki your_citizens_killed
+					integer		 left verdana_sml khaki
+				}
+				group left 4
+				{
+					string left verdana_sml khaki your_soldiers_killed
+					integer		 left verdana_sml khaki
+				}
+			}
+		}
+	}
+
+rebels_victorious
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+huns_hording
+	icon	faction
+	importance high
+	format
+	{
+		title	center verdana black
+		image	center new_barbarian_horde
+		spacer	16
+		multistring	left verdana_sml khaki left hun_hording
+	}
+
+
+disaster_report
+	icon	disaster
+	width 0 true
+	heading_items 4
+	importance high
+	format
+	{
+		title	center verdana black
+		image	center	disaster_plague
+		spacer	16
+		bodystring	left verdana_sml khaki left
+		damage_report
+	}
+
+city_gained_through_revolt
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	settlement_occupied
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+
+rebel_revolt_surpressed
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		title_image	center
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+
+queues_stalled
+	icon	settlement
+	format
+	{
+		title	center verdana black
+		image	center queues_stalled
+		spacer		16
+		bodystring	left verdana_sml khaki left
+	}
+
+mission_acquire
+	icon	merchant
+	heading_items 3
+	format
+	{
+		title        	center verdana		black
+		string		center verdana_med	black
+		title_image	center
+		spacer		8
+		bodystring  left verdana_sml khaki left
+	}
+
+mission_acquire_fail
+	icon	merchant
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center acquisition_failed
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+mission_acquire_fail_and_removed
+	icon	merchant
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center acquisition_failed
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+acquisition_attempt
+	icon	merchant
+	heading_items 3
+	format
+	{
+		title        	center verdana		black
+		string		center verdana_med	black
+		image	center	acquisition_success
+		spacer		8
+		bodystring  left verdana_sml khaki left
+	}
+
+acquisition_attempt_fail
+	icon	merchant
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center acquisition_failed
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+acquisition_attempt_fail_and_removed
+	icon	merchant
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center acquisition_failed
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+mission_marriage
+	icon	princess
+	heading_items 3
+	format
+	{
+		title        	center verdana		black
+		string		center verdana_med	black
+		image	center	marriage_accepted
+		spacer		8
+		bodystring  left verdana_sml khaki left
+	}
+
+mission_marriage_fail
+	icon	princess
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	marriage_rejected
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+mission_marriage_fail_and_removed
+	icon	princess
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	marriage_reversed
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+marriage_attempt
+	icon	princess
+	heading_items 3
+	format
+	{
+		title        	center verdana		black
+		string		center verdana_med	black
+		image	center	marriage_accepted
+		spacer		8
+		bodystring  left verdana_sml khaki left
+	}
+
+marriage_attempt_fail
+	icon	princess
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	marriage_rejected
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+marriage_attempt_fail_and_removed
+	icon	princess
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	marriage_reversed
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+mission_denounce
+	icon	priest
+	heading_items 3
+	format
+	{
+		title        	center verdana		black
+		string		center verdana_med	black
+		title_image	center
+		spacer		8
+		bodystring  left verdana_sml khaki left
+	}
+
+mission_denounce_fail
+	icon	priest
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center denouncement_hereticescapes
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+denouncement_attempt
+	icon	priest
+	width 536 false
+	heading_items 3
+	format
+	{
+		title        	center verdana		black
+		string		center verdana_med	black
+		movie	center 536 304	event/inquisition.bik
+		spacer		8
+		bodystring  left verdana_sml khaki left
+	}
+
+denouncement_attempt_fail
+	icon	priest
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center denouncement_playerescapesinquisior
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+priest_mission_denounce
+	icon	priest
+	heading_items 3
+	format
+	{
+		title        	center verdana		black
+		string		center verdana_med	black
+		image	center	denouncement_priestkillsheretic
+		spacer		8
+		bodystring  left verdana_sml khaki left
+	}
+
+priest_mission_denounce_fail
+	icon	priest
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	denouncement_hereticescapes
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+priest_mission_denounce_fail_and_removed
+	icon	priest
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	denouncement_priestkilled
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+priest_mission_denounce_fail_and_converted
+	icon	priest
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	denouncement_priestconverted
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+priest_denouncement_attempt
+	icon	priest
+	heading_items 3
+	format
+	{
+		title        	center verdana		black
+		string		center verdana_med	black
+		image	center	denouncement_priestkillsheretic
+		spacer		8
+		bodystring  left verdana_sml khaki left
+	}
+
+priest_denouncement_attempt_fail
+	icon	priest
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	denouncement_hereticescapes
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+priest_denouncement_attempt_fail_and_removed
+	icon	priest
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	denouncement_priestkilled
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+priest_denouncement_attempt_fail_and_converted
+	icon	priest
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	denouncement_priestconverted
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+bride_available_for_family_member
+	icon	faction
+	heading_items	4
+	footer_items	5
+	format
+	{
+		title	center verdana black
+		group  center 8
+		{
+			string  left  verdana_med black betrothed
+			string	center verdana_med	black
+		}
+		string	center verdana_med	black
+		image	center marriage_bride_available
+		divider		khaki
+		spacer 8
+		bodystring	center verdana_sml khaki center
+		spacer	8
+		group center 8
+		{
+			accept    right
+			decline   left
+		}
+	}
+
+create_guild
+	icon	guild
+	heading_items	5
+	footer_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		spacer	8
+		ui_element	center						;; Guild info panel
+		spacer	8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		group center 8
+		{
+			accept    right
+			decline   left
+		}
+	}
+
+upgrade_guild
+	icon	guild
+	heading_items	5
+	footer_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		spacer	8
+		ui_element	center						;; Guild info panel
+		spacer	8
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		group center 8
+		{
+			accept    right
+			decline   left
+		}
+	}
+
+crusade_called
+	icon	crusade
+	width 536 false
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		movie	center 536 304	event/first_crusade.bik
+		spacer	16
+		condition    ;; if catholic
+		{
+			true
+			{
+                 	    multistring  left verdana_sml khaki left crusade_called_catholic
+			}
+			false
+			{
+			    multistring  left verdana_sml khaki left crusade_called_non_catholic
+			}
+		}
+	}
+
+jihad_called
+	icon	jihad
+	heading_items	5
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center jihad_called
+		spacer	16
+                string  left verdana_sml black
+                spacer	16
+		condition    ;; if islam
+		{
+			true
+			{
+                 	    multistring  left verdana_sml khaki left jihad_called_islam
+			}
+			false
+			{
+			    multistring  left verdana_sml khaki left jihad_called_non_islam
+			}
+		}
+	}
+
+crusade_succeed
+	icon	crusade
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center crusade_succeeded
+		spacer	16
+		bodystring left verdana_sml khaki left
+		spacer	8
+		multistring left verdana_sml khaki left
+	}
+
+jihad_succeed
+	icon	jihad
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center jihad_succeeded
+		spacer	16
+		bodystring left verdana_sml khaki left
+		spacer	8
+		multistring left verdana_sml khaki left
+	}
+
+crusade_failed
+	icon	crusade
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center crusade_failed
+		spacer	16
+		bodystring left verdana_sml khaki left
+	}
+
+jihad_failed
+	icon	jihad
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center jihad_failed
+		spacer	16
+		bodystring left verdana_sml khaki left
+	}
+
+crusade_canceled
+	icon	crusade
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center crusade_cancelled
+		spacer	16
+		bodystring left verdana_sml khaki left
+	}
+
+jihad_canceled
+	icon	jihad
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center jihad_cancelled
+		spacer	16
+		bodystring left verdana_sml khaki left
+	}
+
+crusade_factions_joined
+	icon	crusade
+	heading_items	5
+	footer_items	1
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center crusade_called
+		spacer	16
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		multistring left verdana_sml khaki left
+		spacer	35
+	}
+
+jihad_factions_joined
+	icon	jihad
+	heading_items	5
+	footer_items	1
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center jihad_called
+		spacer	16
+		bodystring	left verdana_sml khaki left
+		spacer	8
+		multistring left verdana_sml khaki left
+		spacer	35
+	}
+
+pope_accepts_crusade
+	icon	crusade
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center pope_mission
+		spacer	16
+		bodystring left verdana_sml khaki left
+	}
+
+pope_rejects_crusade
+	icon	crusade
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center pope_disapproval
+		spacer	16
+		bodystring left verdana_sml khaki left
+	}
+
+crusade_units_desert_warning
+	icon	crusade
+	heading_items	2
+	footer_items	1
+	format
+	{
+		title	center verdana black
+                image center crusade_desertion
+		spacer 16
+		bodystring left verdana_sml khaki left
+		spacer	35
+	}
+
+jihad_units_desert_warning
+	icon	jihad
+	heading_items	2
+	footer_items	1
+	format
+	{
+		title	center verdana black
+                image center jihad_desertion
+		spacer 16
+		bodystring left verdana_sml khaki left
+		spacer	35
+	}
+
+crusade_units_deserted_removed
+	icon	crusade
+	heading_items	4
+	footer_items	1
+	format
+	{
+		title	center verdana black
+  		image center crusade_desertion
+  		spacer 16
+  		bodystring left verdana_sml khaki left
+		spacer 8
+       	        multistring left verdana_sml khaki left
+		spacer	35
+	}
+
+jihad_units_deserted_removed
+	icon	jihad
+	heading_items	4
+	footer_items	1
+	format
+	{
+		title	center verdana black
+		image center jihad_desertion
+		spacer 16
+		bodystring left verdana_sml khaki left
+		spacer 8
+       	        multistring left verdana_sml khaki left
+		spacer	35
+	}
+
+
+crusade_units_deserted_no_progress
+	icon	crusade
+	heading_items	4
+	footer_items	1
+	format
+	{
+		title	center verdana black
+  		image center crusade_desertion
+  		spacer 16
+  		bodystring left verdana_sml khaki left
+		spacer 8
+       	        multistring left verdana_sml khaki left
+		spacer	35
+	}
+
+jihad_units_deserted_no_progress
+	icon	jihad
+	heading_items	4
+	footer_items	1
+	format
+	{
+		title	center verdana black
+		image center jihad_desertion
+		spacer 16
+		bodystring left verdana_sml khaki left
+		spacer 8
+       	        multistring left verdana_sml khaki left
+		spacer	35
+	}
+
+crusade_will_end
+	icon	crusade
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center crusade_nearsend
+		spacer	16
+		bodystring left verdana_sml khaki left
+	}
+
+jihad_will_end
+	icon	jihad
+	heading_items	3
+	format
+	{
+		title	center verdana black
+		string  center verdana_med black
+		image center jihad_nearsend
+		spacer	16
+		bodystring left verdana_sml khaki left
+	}
+
+pope_dies
+	icon	pope
+	importance high
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center pope_dead
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+        }
+
+papal_election
+	icon	pope
+	importance high
+	format
+	{
+		title        center verdana		black
+		image	 center pope_approval
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+		spacer		2
+		accept	center
+	}
+
+pope_elected
+	icon	pope
+	width 536 false
+	importance high
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		movie	center 536 304	event/papal_coronation.bik
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+                spacer	2
+       	        multistring left verdana_sml khaki left
+	}
+
+excommunicate
+	icon	pope
+	heading_items	4
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	pope_disapproval
+		spacer		 8
+		condition
+		{
+			true
+			{
+				spacer		 8
+				string		left	verdana_med	black
+				spacer		 8
+				multistring 	left	verdana_sml	black	left	leader_excommunicate
+			}
+			false
+			{
+				spacer		 8
+				multistring 	left	verdana_sml	black	left	faction_excommunicate
+			}
+		}
+	}
+
+recommunicate
+	icon	pope
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	pope_approval
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+player_excommunicate
+	icon	pope
+	importance high
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	pope_disapproval
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+player_recommunicate
+	icon	pope
+	importance high
+	heading_items 3
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		image	 center	pope_approval
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+pope_assassin_caught
+	icon	pope
+	format
+	{
+		title        center verdana		black
+		image	 center	pope_disapproval
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+cardinal_promoted
+	icon	pope
+	heading_items	5
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	 center pope_cardinal_promotion
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+cardinal_dies
+	icon	pope
+        heading_items	5
+	format
+	{
+		title        center verdana		black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	center	 familyevent_deathimportant
+		spacer		 8
+		bodystring  left verdana_sml khaki left
+	}
+
+cardinal_report
+	icon			pope
+	heading_items	4
+	format right
+	{
+		title	center verdana black
+		spacer	4
+		bodystring	 left verdana_sml khaki left
+		condition ; any cardinal deaths
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	image: cardinal_promoted	title: cardinal_promoted
+			}
+		}
+		condition ; any cardinal promotions
+		{
+			true
+			{
+				spacer	4
+				collated_msg_display	verdana_sml	4	image: cardinal_dies	title: cardinal_dies
+			}
+		}
+	}
+
+wonder_approval
+	icon	pope
+	heading_items	6
+	format
+	{
+		title		center verdana		black
+		string		center verdana_med	khaki
+		bodystring	left   verdana_sml  khaki	left
+		image		center
+		spacer		 8
+		string		center verdana_med	black
+	}
+
+construction_approval
+	icon	pope
+	heading_items	6
+	format
+	{
+		title		center verdana		black
+		string		center verdana_med	khaki
+		bodystring	left   verdana_sml  khaki	left
+		image		center
+		spacer		 8
+		string		center verdana_med	black
+	}
+
+construction_disapproval
+	icon	pope
+	heading_items	6
+	format
+	{
+		title		center verdana		black
+		string		center verdana_med	khaki
+		bodystring	left   verdana_sml  khaki	left
+		image		center
+		spacer		 8
+		string		center verdana_med	black
+	}
+
+approval_report
+	icon			pope
+	heading_items	1
+	format right
+	{
+		title	center verdana black
+		spacer	4
+		bodystring	 left verdana_sml khaki left
+		condition ; any approvals
+		{
+			true
+			{
+				spacer	4
+				multistring 	left	verdana_sml	black	left	construction_approvals
+				spacer	4
+				collated_approval_display	verdana_sml	4
+			}
+		}
+		condition ; any disapprovals
+		{
+			true
+			{
+				spacer	4
+				multistring 	left	verdana_sml	black	left	construction_disapprovals
+				spacer	4
+				collated_approval_display	verdana_sml	4
+			}
+		}
+	}
+
+relations_improved
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	center	diplomacy_improvedrelations
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+relations_worsened
+	icon	diplomacy
+	heading_items 4
+	format
+	{
+		title	center verdana black
+		string		 center verdana_med	black
+		string		 center verdana_med	black
+		image	center	diplomacy_worsenedrelations
+		spacer	8
+		bodystring	left verdana_sml khaki left
+	}
+
+relations_report
+	icon			diplomacy
+	heading_items	1
+	format right
+	{
+		title	center verdana black
+		spacer	4
+		bodystring	 left verdana_sml khaki left
+		condition ; any improvements
+		{
+			true
+			{
+				spacer	4
+				multistring	left verdana_sml khaki left  relations_improved_multi
+				faction_standing_list verdana_sml khaki
+				spacer	4
+			}
+		}
+		condition ; any worsenings
+		{
+			true
+			{
+				spacer	4
+				multistring	left verdana_sml khaki left  relations_worsened_multi
+				faction_standing_list verdana_sml khaki
+				spacer	4
+			}
+		}
+	}
+
+prisoners_released
+	icon			faction
+	heading_items	3
+	format right
+	{
+		title	center verdana black
+		string	left verdana_med khaki
+		image	center	militaryunithired
+		spacer	4
+       	        multistring left verdana_sml khaki left
+		condition ;; any characters released
+		{
+			true
+			{
+				spacer	16
+				string	left verdana_med black	characters_released
+				spacer	4
+				list   1		verdana_sml khaki
+			}
+		}
+	}
+
+prisoners_executed
+	icon			faction
+	heading_items	3
+	format right
+	{
+		title	center verdana black
+		string	left verdana_med khaki
+		image	center	militaryarmydestroyed
+		spacer	4
+       	        multistring left verdana_sml khaki left
+		condition ;; any characters executed
+		{
+			true
+			{
+				spacer	16
+				string	left verdana_med black	characters_executed
+				spacer	4
+				list   1		verdana_sml khaki
+			}
+		}
+	}
+
+character_rebels
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center	militarypromotion
+		spacer	16
+		condition
+		{
+			true
+			{
+				multistring	left verdana_sml khaki left	character_rebels_excommunication
+			}
+			false
+			{
+				condition
+				{
+					true
+					{
+						multistring	left verdana_sml khaki left	character_rebels_newleader
+					}
+					false
+					{
+						bodystring	left verdana_sml khaki left
+					}
+				}
+			}
+		}
+	}
+
+
+character_joins_through_rebellion
+	icon	faction
+	heading_items 3
+	format
+	{
+		title	center verdana black
+		string	center verdana_med black
+		image	center militarypromotion
+		spacer	16
+		bodystring	left verdana_sml khaki left
+	}
+

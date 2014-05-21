@@ -1,0 +1,514 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; faction description
+;;  logo_index          gets resolved from STRATEGY_SPRITE_PAGE
+;;  small_logo_index    gets resolved from SHARED_SPRITE_PAGE
+;;  -- names in indeces do not match due to ... (put your own)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						england
+culture						northern_european
+religion					catholic
+symbol						models_strat/symbol_england.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 215, green 0, blue 0
+secondary_colour			red 255, green 210, blue 0
+loading_logo				loading_screen/symbols/symbol128_england.tga
+standard_index				12
+logo_index					FACTION_LOGO_ENGLAND
+small_logo_index			SMALL_FACTION_LOGO_ENGLAND
+triumph_value				5
+custom_battle_availability	yes
+can_sap						no
+prefers_naval_invasions		yes
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						france
+culture						northern_european
+religion					catholic
+symbol						models_strat/symbol_france.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 0, green 87, blue 177
+secondary_colour			red 239, green 239, blue 239
+loading_logo				loading_screen/symbols/symbol128_france.tga
+standard_index				10
+logo_index					FACTION_LOGO_FRANCE
+small_logo_index			SMALL_FACTION_LOGO_FRANCE
+triumph_value				5
+custom_battle_availability	yes
+can_sap						no
+prefers_naval_invasions		no
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						hre
+culture						northern_european
+religion					catholic
+symbol						models_strat/symbol_holy_roman_empire.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 0, green 0, blue 0
+secondary_colour			red 255, green 210, blue 0
+loading_logo				loading_screen/symbols/symbol128_hre.tga
+standard_index				11
+logo_index					FACTION_LOGO_HOLY_ROMAN_EMPIRE
+small_logo_index			SMALL_FACTION_LOGO_HRE
+triumph_value				5
+custom_battle_availability	yes
+can_sap						no
+prefers_naval_invasions		no
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						spain
+culture						southern_european
+religion					catholic
+symbol						models_strat/symbol_spain.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 255, green 210, blue 0
+secondary_colour			red 215, green 0, blue 0
+loading_logo				loading_screen/symbols/symbol128_spain.tga
+standard_index				18
+logo_index					FACTION_LOGO_SPAIN
+small_logo_index			SMALL_FACTION_LOGO_SPAIN
+triumph_value				5
+custom_battle_availability	yes
+can_sap						no
+prefers_naval_invasions		yes
+can_have_princess				yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						venice
+culture						southern_european
+religion					catholic
+symbol						models_strat/symbol_venice.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 121, green 3, blue 3
+secondary_colour			red 221, green 176, blue 69
+loading_logo				loading_screen/symbols/symbol128_venice.tga
+standard_index				0
+logo_index					FACTION_LOGO_VENICE
+small_logo_index			SMALL_FACTION_LOGO_VENICE
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		yes
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						sicily
+culture						southern_european
+religion					catholic
+symbol						models_strat/symbol_sicily.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 70, green 70, blue 70
+secondary_colour			red 250, green 250, blue 255
+loading_logo				loading_screen/symbols/symbol128_sicily.tga
+standard_index				1
+logo_index					FACTION_LOGO_SICILY
+small_logo_index			SMALL_FACTION_LOGO_SICILY
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		yes
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						milan
+culture						southern_european
+religion					catholic
+symbol						models_strat/symbol_milan.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 1, green 82, blue 9
+secondary_colour			red 239, green 239, blue 239
+loading_logo				loading_screen/symbols/symbol128_milan.tga
+standard_index				2
+logo_index					FACTION_LOGO_MILAN
+small_logo_index			SMALL_FACTION_LOGO_MILAN
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		yes
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						scotland
+culture						northern_european
+religion					catholic
+symbol						models_strat/symbol_scotland.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 0, green 16, blue 94
+secondary_colour			red 239, green 239, blue 239
+loading_logo				loading_screen/symbols/symbol128_scotland.tga
+standard_index				6
+logo_index					FACTION_LOGO_SCOTLAND
+small_logo_index			SMALL_FACTION_LOGO_SCOTLAND
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		yes
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						byzantium
+culture						greek
+religion					orthodox
+symbol						models_strat/symbol_byzantium.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+;artificially made darker to show up on sm banner
+;actual colour is:
+;primary_colour		red 237, green 234, blue 179
+primary_colour				red 133, green 18, blue 137
+secondary_colour			red 239, green 239, blue 239
+loading_logo				loading_screen/symbols/symbol128_byzantium.tga
+standard_index				15
+logo_index					FACTION_LOGO_BYZANTIUM
+small_logo_index			SMALL_FACTION_LOGO_BYZANTIUM
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		yes
+can_have_princess				yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						russia
+culture						eastern_european
+religion					orthodox
+symbol						models_strat/symbol_russia.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 12, green 30, blue 119
+secondary_colour			red 215, green 0, blue 0
+loading_logo				loading_screen/symbols/symbol128_russia.tga
+standard_index				17
+logo_index					FACTION_LOGO_RUSSIA
+small_logo_index			SMALL_FACTION_LOGO_RUSSIA
+triumph_value				5
+custom_battle_availability	yes
+can_sap						no
+prefers_naval_invasions		no
+can_have_princess				yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						moors
+culture						middle_eastern
+religion					islam
+symbol						models_strat/symbol_moors.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 254, green 120, blue 0
+secondary_colour			red 239, green 239, blue 239
+loading_logo				loading_screen/symbols/symbol128_moors.tga
+standard_index				16
+logo_index					FACTION_LOGO_MOORS
+small_logo_index			SMALL_FACTION_LOGO_MOORS
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		yes
+can_have_princess				no
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						turks
+culture						middle_eastern
+religion					islam
+symbol						models_strat/symbol_turks.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 35, green 120, blue 6
+secondary_colour			red 255, green 210, blue 0
+loading_logo				loading_screen/symbols/symbol128_turks.tga
+standard_index				9
+logo_index					FACTION_LOGO_TURKS
+small_logo_index			SMALL_FACTION_LOGO_TURKS
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		no
+can_have_princess			no
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						egypt
+culture						middle_eastern
+religion					islam
+symbol						models_strat/symbol_egypt.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 221, green 176, blue 69
+secondary_colour			red 0, green 0, blue 0
+loading_logo				loading_screen/symbols/symbol128_egypt.tga
+standard_index				5
+logo_index					FACTION_LOGO_EGYPT
+small_logo_index			SMALL_FACTION_LOGO_EGYPT
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		no
+can_have_princess			no
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						denmark
+culture						northern_european
+religion					catholic
+symbol						models_strat/symbol_denmark.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 166, green 2, blue 2
+secondary_colour			red 239, green 239, blue 239
+loading_logo				loading_screen/symbols/symbol128_denmark.tga
+standard_index				4
+logo_index					FACTION_LOGO_DENMARK
+small_logo_index			SMALL_FACTION_LOGO_DENMARK
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		yes
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						portugal
+culture						southern_european
+religion					catholic
+symbol						models_strat/symbol_portugal.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 255, green 255, blue 255
+secondary_colour			red 0, green 69, blue 185
+loading_logo				loading_screen/symbols/symbol128_portugal.tga
+standard_index				13
+logo_index					FACTION_LOGO_PORTUGAL
+small_logo_index			SMALL_FACTION_LOGO_PORTUGAL
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		yes
+can_have_princess			yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						poland
+culture						eastern_european
+religion					catholic
+symbol						models_strat/symbol_poland.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 239, green 239, blue 239
+secondary_colour			red 215, green 0, blue 0
+loading_logo				loading_screen/symbols/symbol128_poland.tga
+standard_index				14
+logo_index					FACTION_LOGO_POLAND
+small_logo_index			SMALL_FACTION_LOGO_POLAND
+triumph_value				5
+custom_battle_availability	yes
+can_sap						no
+prefers_naval_invasions		no
+can_have_princess				yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						hungary
+culture						eastern_european
+religion					catholic
+symbol						models_strat/symbol_hungary.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 234, green 89, blue 70
+secondary_colour			red 0, green 128, blue 3
+loading_logo				loading_screen/symbols/symbol128_hungary.tga
+standard_index				19
+logo_index					FACTION_LOGO_HUNGARY
+small_logo_index			SMALL_FACTION_LOGO_HUNGARY
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		no
+can_have_princess				yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						papal_states
+culture						southern_european
+religion					catholic
+special_faction_type				papal_faction
+symbol						models_strat/symbol_papacy.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 239, green 239, blue 239
+secondary_colour			red 221, green 176, blue 69
+loading_logo				loading_screen/symbols/symbol128_papal_states.tga
+standard_index				3
+logo_index					FACTION_LOGO_PAPAL_STATES
+small_logo_index			SMALL_FACTION_LOGO_PAPAL_STATES
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		no
+can_have_princess			no
+has_family_tree					no
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						aztecs
+culture						mesoamerican
+religion					pagan
+symbol						models_strat/symbol_aztecs.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 65, green 159, blue 255
+secondary_colour			red 255, green 210, blue 0
+loading_logo				loading_screen/symbols/symbol128_aztecs.tga
+standard_index				7
+logo_index					FACTION_LOGO_AZTEC
+small_logo_index            SMALL_FACTION_LOGO_AZTEC
+triumph_value				5
+custom_battle_availability	yes
+can_sap						yes
+prefers_naval_invasions		no
+can_have_princess			no
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						mongols, spawned_on_event
+culture						middle_eastern
+religion					islam
+symbol						models_strat/symbol_mongols.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 244, green 231, blue 170
+secondary_colour			red 0, green 0, blue 0
+loading_logo				loading_screen/symbols/symbol128_mongols.tga
+standard_index				8
+logo_index					FACTION_LOGO_MONGOLS
+small_logo_index			SMALL_FACTION_LOGO_MONGOLS
+triumph_value				5
+custom_battle_availability	yes
+horde_min_units				10
+horde_max_units				20
+horde_max_units_reduction_every_horde 10
+horde_unit_per_settlement_population	250
+horde_min_named_characters	2
+horde_max_percent_army_stack 80
+horde_disband_percent_on_settlement_capture	0
+horde_unit					Mongol Infantry
+horde_unit					Mongol Foot Archers
+horde_unit					Mongol Heavy Archers
+horde_unit					Mongol Heavy Lancers
+horde_unit					Mongol Light Lancers
+horde_unit					Mongol Horse Archers
+can_sap						yes
+prefers_naval_invasions		no
+can_have_princess			no
+has_family_tree				yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						timurids, spawned_on_event
+culture						middle_eastern
+religion					islam
+symbol						models_strat/symbol_timurids.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 0, green 0, blue 0
+secondary_colour			red 215, green 0, blue 0
+loading_logo				loading_screen/symbols/symbol128_timurids.tga
+standard_index				22
+logo_index					FACTION_LOGO_TIMURID
+small_logo_index			SMALL_FACTION_LOGO_TIMURID
+triumph_value				5
+custom_battle_availability	yes
+horde_min_units				10
+horde_max_units				20
+horde_max_units_reduction_every_horde 10
+horde_unit_per_settlement_population	250
+horde_min_named_characters	2
+horde_max_percent_army_stack 80
+horde_disband_percent_on_settlement_capture	0
+horde_unit					Mongol Heavy Lancers
+horde_unit					Mongol Heavy Archers
+horde_unit					Sabadar Militia
+horde_unit					ME Halberd Militia
+horde_unit					Turkomans
+can_sap						yes
+prefers_naval_invasions		no
+can_have_princess			no
+has_family_tree				yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						normans
+culture						northern_european
+religion					catholic
+symbol						models_strat/symbol_england.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 215, green 0, blue 0
+secondary_colour			red 255, green 210, blue 0
+loading_logo				loading_screen/symbols/symbol128_england.tga
+standard_index				12
+logo_index					FACTION_LOGO_ENGLAND
+small_logo_index			SMALL_FACTION_LOGO_ENGLAND
+triumph_value				5
+custom_battle_availability	no
+can_sap						no
+prefers_naval_invasions		yes
+can_have_princess			yes
+has_family_tree				yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						saxons
+culture						northern_european
+religion					catholic
+symbol						models_strat/symbol_saxons.cas
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 0, green 0, blue 0
+secondary_colour			red 255, green 210, blue 0
+loading_logo				loading_screen/symbols/symbol128_hre.tga
+standard_index				21
+logo_index					FACTION_LOGO_SAXONS
+small_logo_index			SMALL_FACTION_LOGO_SAXONS
+triumph_value				5
+custom_battle_availability	no
+can_sap						no
+prefers_naval_invasions		no
+can_have_princess			yes
+has_family_tree				yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						slave
+culture						southern_european
+religion					heretic
+special_faction_type				slave_faction
+symbol						models_strat/symbol_rebels.CAS
+rebel_symbol				models_strat/symbol_rebels.CAS
+primary_colour				red 110, green 110, blue 110
+secondary_colour			red 239, green 239, blue 239
+loading_logo				loading_screen/symbols/symbol128_slaves.tga
+standard_index				20
+logo_index					FACTION_LOGO_REBELS
+small_logo_index			SMALL_FACTION_LOGO_REBELS
+triumph_value				5
+custom_battle_availability	no
+can_sap						yes
+prefers_naval_invasions		no
+can_have_princess				no
+has_family_tree					no

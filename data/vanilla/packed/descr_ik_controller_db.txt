@@ -1,0 +1,125 @@
+;   ik controller db data file
+;   ==========================
+;
+;   use '-auto_reload' command option to automatically reload changes while in battle
+;
+;   ik data for each skeleton type is defined as follows:
+;       - skeleton_type name (e.g. fs_swordsman)
+;       - opening brace
+;       - a set of the following bone ik data
+;           - bone_type name (currently supported bones are: bone_head, bone_torso, bone_abs)
+;           - opening brace
+;           - a set of optional data parameters
+;               - 'damping'         <float>     the ik speed damping factor, higher damping lowers ik speed
+;               - 'damping_ref_time <float>     the frame reference time used for scaling damping based on frame rate, must be non-zero
+;               - 'falloff_dist'    <float>     distance to which ik is blended to none
+;               - 'falloff_bias'    <float>     bias to how fast the falloff blend is reached
+;               - 'yaw_min'         <float>     the minimum allowed yaw angle for bone
+;               - 'yaw_min_ref'     <float>     the target angle for which yaw_min is reached, must be non-zero
+;               - 'yaw_max'         <float>     the maximum allowed yaw angle for bone
+;               - 'yaw_max_ref'     <float>     the target angle for which yaw_max is reached, must be non-zero
+;               - 'yaw_bias'        <float>     bias to how fast the bone moves to target yaw angle w.r.t yaw reference angle
+;               - 'pitch_min'       <float>     the minimum allowed pitch angle for bone
+;               - 'pitch_min_ref'   <float>     the target angle for which pitch_min is reached, must be non-zero
+;               - 'pitch_max'       <float>     the maximum allowed pitch angle for bone
+;               - 'pitch_max_ref'   <float>     the target angle for which pitch_max is reached, must be non-zero
+;               - 'pitch_bias'      <float>     bias to how fast the bone moves to target pitch angle w.r.t pitch reference angle
+;               - 'roll_min'        <float>     the minimum allowed roll angle for bone
+;               - 'roll_min_ref'    <float>     the target angle for which roll_min is reached, must be non-zero
+;               - 'roll_max'        <float>     the maximum allowed roll angle for bone
+;               - 'roll_max_ref'    <float>     the target angle for which roll_max is reached, must be non-zero
+;               - 'roll_bias'       <float>     bias to how fast the bone moves to target roll angle w.r.t roll reference angle
+;           - closing brace
+;       - closing brace
+;
+;   the first skeleton defined MUST be 'default_skeleton' which specifies default values for all skeletons
+;   following skeleton definitions can just override specific data relevant for the skeleton
+
+
+default_skeleton                    ; default skeleton data required as all skeletons will use this as default
+{
+    bone_head 
+    {
+        damping             0.85
+        damping_ref_time    0.04
+	    falloff_dist        10
+	    falloff_bias        0.2
+        yaw_min             -60
+        yaw_min_ref         -60
+        yaw_max             60
+        yaw_max_ref         60
+        yaw_bias            0.5
+        pitch_min           -50
+        pitch_min_ref       -50
+        pitch_max           25
+        pitch_max_ref       25
+        pitch_bias          0.5
+        roll_min            -30
+        roll_min_ref        -30
+        roll_max            30
+        roll_max_ref        30
+        roll_bias           0.5
+    }
+    bone_torso 
+    {
+        damping             0.85
+        damping_ref_time    0.04
+	    falloff_dist        -1
+	    falloff_bias        0.2
+        yaw_min             -30
+        yaw_min_ref         -90
+        yaw_max             30
+        yaw_max_ref         90
+        yaw_bias            0.2
+        pitch_min           -10
+        pitch_min_ref       -60
+        pitch_max           25
+        pitch_max_ref       50
+        pitch_bias          0.2
+        roll_min            -20
+        roll_min_ref        -50
+        roll_max            20
+        roll_max_ref        50
+        roll_bias           0.2
+    }
+    bone_abs
+    {
+        damping             0.85
+        damping_ref_time    0.04
+	    falloff_dist        -1
+	    falloff_bias        0.2
+        yaw_min             -15
+        yaw_min_ref         -105
+        yaw_max             15
+        yaw_max_ref         105
+        yaw_bias            0.2
+        pitch_min           -10
+        pitch_min_ref       -70
+        pitch_max           25
+        pitch_max_ref       75
+        pitch_bias          0.25
+        roll_min            -20
+        roll_min_ref        -70
+        roll_max            20
+        roll_max_ref        70
+        roll_bias           0.2
+    }
+}
+    
+MTW2_Swordsman                        ; example of a specific skeleton override.  this one puts smaller yaw constraints on the skeletons head and torso
+{
+    bone_head 
+    {
+        yaw_min             -45
+        yaw_min_ref         -45
+        yaw_max             45
+        yaw_max_ref         45
+    }
+    bone_torso 
+    {
+        yaw_min             -10
+        yaw_min_ref         -20
+        yaw_max             10
+        yaw_max_ref         20
+    }
+}

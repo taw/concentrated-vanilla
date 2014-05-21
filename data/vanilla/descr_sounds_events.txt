@@ -1,0 +1,2803 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BANK: event_sounds
+;;
+;; Keywords: type, param
+;; see data\descr_event_enums.txt for the list of events
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 1d fadein 0 fadeout .5 volume -35 randomdelay 0
+DEFAULT: probability 1 priority 999
+DEFAULT: streamed
+DEFAULT: pref INTERFACE
+
+BANK: event_sounds
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;     STRAT MAP PRISONER EVENTS - MTW2    ;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type prisoners_released
+	event 
+			folder data/sounds/SFX/Campaign_Map
+			event_prisoner_release.mp3
+			
+			
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+type prisoners_executed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+			event_prisoner_execution.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+				
+				
+			end
+
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;     STRAT MAP EVENTS - MTW2;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+type small_army_disbands
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				small_army_disbands.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+		
+	type faction_defeated_by_player
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_defeated_by_player.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+	
+		
+	type small_army_disbands_loser
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				small_army_disbands.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+	
+			
+			
+	type your_machine_needs_upgrading_ai_to_reinforce
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				your_machine_needs_upgrading.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+			
+			
+			
+	
+			
+	type emergent_faction_appears
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				emergent_faction_appears.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end					
+			
+			
+	
+			
+;;;;;;;;;;;;;;;								
+
+
+
+
+		type settlement_razed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				settlement_razed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+
+
+	type rebels_victorious
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				rebels_victorious.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+
+
+	type city_gained_through_revolt
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				city_gained_through_revolt.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+		type rebel_revolt_surpressed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				rebel_revolt_suppressed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+
+
+		type queues_stalled
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				queues_stalled.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+			
+			
+			
+		type bride_available_for_family_member
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				bride_available_for_family_member.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+			
+		type create_guild
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				create_guild.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+		type upgrade_guild
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				upgrade_guild.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+	
+;;;;;;;;;;;;;;;;;;;			
+	
+
+	type jihad_called
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				jihad_called.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				jihad_called_arrived.mp3
+			end	
+
+	type jihad_succeed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				jihad_succeed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				jihad_succeed_arrived.mp3
+			end	
+
+
+
+	type jihad_failed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				jihad_failed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				jihad_failed_arrived.mp3
+			end	
+
+	type jihad_canceled
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				jihad_cancelled.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				jihad_cancelled_arrived.mp3
+			end	
+
+	type jihad_factions_joined
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				jihad_factions_joined.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+				
+	type jihad_units_desert_warning
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				jihad_units_desert_warning.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+
+	type jihad_units_deserted_removed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				jihad_units_desert_warning.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+	type jihad_units_deserted_no_progress
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				jihad_units_desert_warning.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+
+	type jihad_will_end
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_will_end.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				crusade_will_end.mp3
+			end	
+			
+
+			
+																			
+;;;;;;;;;;;;;;;;;
+type excommunicate
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				excommunicate.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				excommunicate_arrived.mp3
+			end
+
+
+type recommunicate
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				recommunicate.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				recommunicate_arrived.mp3
+			end		
+			
+;;;;;;
+	type player_excommunicate
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				excommunicate.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				excommunicate_arrived.mp3
+			end
+
+
+type player_recommunicate
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				recommunicate.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				recommunicate_arrived.mp3
+			end			
+			
+
+			
+			
+type pope_assassin_caught
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				mission_assassinate_fail.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_assassinate_fail_and_killed_arrived.mp3
+			end					
+			
+						
+;;;;;;			
+
+type cardinal_promoted
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				cardinal_promoted.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+type cardinal_dies
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				cardinal_dies.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+			
+
+type pope_dies
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				pope_dies.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+
+
+type papal_election
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				papal_election.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+
+
+type pope_elected
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				pope_elected.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+type pope_accepts_crusade
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				pope_accepts_crusade.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				pope_accepts_crusade_arrived.mp3
+			end			
+			
+			
+			
+type pope_rejects_crusade
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				pope_rejects_crusade.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				pope_rejects_crusade_arrived.mp3
+			end			
+			
+			
+ ;;;;;
+ 
+ type crusade_called
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_called.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				crusade_called_arrived.mp3
+			end
+ 
+			
+ 
+ 
+  type crusade_succeed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_succeed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				crusade_succeed_arrived.mp3
+			end
+ 
+ 
+	type crusade_failed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_failed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				crusade_failed_arrived.mp3
+			end		
+			
+	
+			
+	type crusade_canceled
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_cancelled.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				crusade_cancelled_arrived.mp3
+			end			
+			
+					
+			
+ 
+   type crusade_factions_joined
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_factions_joined.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+ 
+  
+ 
+ 
+ type crusade_units_desert_warning
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_units_desert_warning.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+ 
+ 
+ 
+ 
+  type crusade_units_deserted_removed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_units_deserted_removed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+ 
+			
+ 
+
+  type crusade_units_deserted_no_progress
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_units_deserted_no_progress.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+ type crusade_will_end
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				crusade_will_end.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				crusade_will_end.mp3
+			end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;     STRAT MAP EVENTS      ;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+	type year_end_report
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			report.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+	
+			
+	type family_report
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			diplomacy_report.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+	
+	type diplomacy_report
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			diplomacy_report.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+	type disaster_report
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			diplomacy_report.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+	type cardinal_report
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			diplomacy_report.mp3
+		end
+		arrived
+			event 
+			folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+	type approval_report
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			diplomacy_report.mp3
+		end
+		arrived
+			event 
+			folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+	type relations_report
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			diplomacy_report.mp3
+		end
+		arrived
+			event 
+			folder data/sounds/SFX/Campaign_Map
+				
+			end		
+								
+;;;;;;;;;;;;;;;;;;;;;;				
+					
+	type new_bouncing_baby
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			new_bouncing_baby.mp3
+					
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+	type marriage
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			marriage.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			
+			end
+
+		
+	type princess_marriage
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			marriage.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			
+			end	
+				
+;;;;;;;;;;;;;;;;;;;;			
+	type mission_acquire
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_acquire.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_acquire_arrived.mp3
+			end	
+
+			
+			
+	type mission_acquire_fail
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_acquire_fail.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_acquire_fail_arrived.mp3
+			end		
+		
+			
+	type mission_acquire_fail_and_removed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_acquire_fail.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_acquire_fail_arrived.mp3
+			end
+			
+;;;;;;;;;;			
+	type acquisition_attempt
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_acquire.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_acquire_arrived.mp3
+			end	
+
+			
+			
+	type acquisition_attempt_fail
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_acquire_fail.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_acquire_fail_arrived.mp3
+			end		
+		
+			
+	type acquisition_attempt_fail_and_removed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_acquire_fail.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_acquire_fail_arrived.mp3
+			end
+			
+			
+			
+					
+						
+			
+;;;;;;;;;;;;;;;;;;;;;;;			
+	
+			
+			
+			
+	type mission_marriage
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_marriage.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_marriage_arrived.mp3
+	
+			end	
+
+	type marriage_attempt
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_marriage.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_marriage_arrived.mp3
+	
+			end	
+;;;;;;;;	;;;
+			
+	
+				
+		;marriage rejected	
+	type mission_marriage_fail
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_marriage_fail.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_marriage_fail_arrived.mp3
+			end		
+
+			
+	type marriage_attempt_fail
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_marriage_fail.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_marriage_fail_arrived.mp3
+			end	
+			
+						
+								
+;;;;;;;;;;  princess disgraced ;;;;;;;;;	
+	type mission_marriage_fail_and_removed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_marriage_fail_and_removed.mp3
+		end
+		arrived
+			event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_marriage_fail_and_removed_arrived.mp3
+			end		
+	
+	type marriage_attempt_fail_and_removed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_marriage_fail_and_removed.mp3
+		end
+		arrived
+			event 
+			folder data/sounds/SFX/Campaign_Map
+			mission_marriage_fail_and_removed_arrived.mp3
+			end			
+					
+;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+					
+	type coming_of_age
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			coming_of_age.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+			
+	type adoption
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			adoption.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+	type adopta_general_offer
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			adopta_general_offer.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+			
+	type adoption_failed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			adoption_failed.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+	
+			
+	type character_available_for_adoption
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			character_available_for_adoption.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+	
+
+	type character_rebels
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			character_rebels.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+		type character_joins_through_rebellion
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			character_joins_through_rebellion.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+			
+			
+							
+	type suitor_available_for_daughter
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			suitor_available_for_daughter.mp3 volume -70
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+	
+	type suitor_available_for_princess
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			suitor_available_for_daughter.mp3 volume -70
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+					
+			
+	type daughter_retired
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			daughter_retired.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+						
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	
+					
+	type settlement_taken
+		
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_taken.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+	type settlement_surrenders_own
+		
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_surrenders.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+	type settlement_destroyed
+		
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_destroyed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+	type settlement_occupied
+				event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_occupied.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+	type settlement_sacked
+				event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_sacked.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+		
+	type settlement_exterminated, exterminate_populace
+				event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_exterminated.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+				
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+			
+			
+
+	type settlement_surrender
+		
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_surrenders.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+			
+	type settlement_surrenders_enemy
+		
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_surrenders.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	type settlement_besieged
+		
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_besieged.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				settlement_besieged_arrived.mp3
+			end
+
+
+	type settlement_unrest
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_unrest.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+	type settlement_revolts
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_revolts.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				settlement_revolts_arrived.mp3
+			end
+			
+			
+	type army_revolt
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_revolts.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+
+
+
+type naval_blockade
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				naval_blockade.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+
+
+type faction_richest
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_richest.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+type faction_largest
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_largest.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+
+			end
+
+
+type faction_strongest
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_strongest.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+type faction_advanced
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_advanced.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+type faction_defeated
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_defeated.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+	
+type player_faction_richest
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_richest.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+type player_faction_largest
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_largest.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+type player_faction_strongest
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_strongest.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+type player_faction_advanced
+		event 
+			folder data/sounds/SFX/Campaign_Map
+				faction_advanced.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+
+
+			
+type building_completed
+ 		event 
+ 			folder data/sounds/SFX/Campaign_Map
+			
+			building_completed.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end							
+
+type construction_complete_many 			
+		event 
+ 			folder data/sounds/SFX/Campaign_Map
+			
+			construction_complete_many.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+	
+			
+			
+type building_repair_complete
+ 		event 
+ 			folder data/sounds/SFX/Campaign_Map
+			building_repair_complete.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end							
+		
+			
+type building_captured_battle
+ 		event 
+ 			folder data/sounds/SFX/Campaign_Map
+			building_captured_battle.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end							
+
+			
+type building_lost_battle
+ 		event 
+ 			folder data/sounds/SFX/Campaign_Map
+		building_lost_battle.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end							
+			
+type building_captured_by_allies
+ 		event 
+ 			folder data/sounds/SFX/Campaign_Map
+		building_captured_by_allies.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end							
+					
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+		
+ 	type agent_recruited
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			agent_recruited.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+	type unit_completed, retraining_complete
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			unit_completed.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+			
+	type recruitment_complete_many	
+		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			recruitment_complete_01.mp3
+ 			recruitment_complete_02.mp3
+ 			recruitment_complete_03.mp3
+ 			
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+			
+	type agent_detected_and_expelled
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			 agent_detected_and_expelled.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+		
+	type general_appointed
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				general_appointed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+		
+	type general_promoted
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				general_promoted.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+			
+type new_faction_leader
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				new_faction_leader.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+type new_faction_heir
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				new_faction_heir.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+	
+type races_held
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			races_held.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+
+		
+	type mission_assassinate
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_assassinate.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_assassinate_arrived.mp3
+			end				
+	
+				
+			
+	type mission_assassinate_fail_and_killed
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_assassinate_fail_and_killed.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_assassinate_fail_and_killed_arrived.mp3
+			end	
+			
+			
+	type mission_assassinate_fail
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_assassinate_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_assassinate_fail_arrived.mp3
+			end	
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+	type mission_denounce
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_denounce.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_denounce_arrived.mp3
+			end	
+
+		type denouncement_attempt
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_denounce.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_denounce_arrived.mp3
+			end		
+;;;			
+			
+			
+			
+						
+	type mission_denounce_fail
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_denounce_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_denounce_fail_arrived.mp3
+			end		
+			
+			
+		type denouncement_attempt_fail
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_denounce_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_denounce_fail_arrived.mp3
+			end		
+				
+;;;;;;;;;;
+			
+	type priest_mission_denounce
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				priest_denouncement_attempt.mp3
+			end			
+
+			
+	type priest_denouncement_attempt
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				priest_denouncement_attempt.mp3
+			end	
+			
+			
+			
+			
+;;;;;;;;			
+	type priest_mission_denounce_fail
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			priest_denouncement_attempt_fail_arrived.mp3
+			end					
+
+	type priest_denouncement_attempt_fail
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			priest_denouncement_attempt_fail_arrived.mp3
+			end					
+	
+			
+			
+			
+						
+;;;;;;;;;;;;;;;;;;;	
+	type priest_mission_denounce_fail_and_removed
+ 			event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			priest_denouncement_attempt_fail_arrived.mp3
+			end					
+
+	
+		type priest_denouncement_attempt_fail_and_removed
+ 			event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			priest_denouncement_attempt_fail_arrived.mp3
+			end		
+			
+			
+			
+			
+		type priest_denouncement_attempt_fail
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			priest_denouncement_attempt_fail_arrived.mp3
+			end					
+			
+			
+;;;;;;;;;;;;			
+				
+	type priest_mission_denounce_fail_and_converted
+ 			event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt_fail_and_converted.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			priest_denouncement_attempt_fail_and_converted_arrived.mp3
+			end			
+			
+	type priest_denouncement_attempt_fail_and_converted
+ 			event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			priest_denouncement_attempt_fail_and_converted.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			priest_denouncement_attempt_fail_and_converted_arrived.mp3
+			end			
+					
+											
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type mission_sabotage
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_sabotage.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_sabotage_arrived.mp3
+			end	
+
+			
+type building_sabotaged
+		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			building_sabotaged.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+			
+type mission_sabotage_fail
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_sabotage_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_sabotage_fail_arrived.mp3
+			end	
+
+			
+type mission_sabotage_fail_and_killed
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_sabotage_fail_and_killed.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+			mission_sabotage_fail_and_killed_arrived.mp3
+			end				
+			
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	
+type mission_spy_character
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_spy_character.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+
+type mission_spy_settlement
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			 mission_spy_settlement.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+
+type mission_spy_fail_and_killed
+ 		event  volume -10
+ 			folder data/sounds/SFX/Campaign_Map
+ 			
+ 			 	mission_spy_fail_and_killed_01.mp3
+				mission_spy_fail_and_killed_02.mp3
+				mission_spy_fail_and_killed_03.mp3
+				mission_spy_fail_and_killed_04.mp3
+				mission_spy_fail_and_killed_05.mp3
+				mission_spy_fail_and_killed_07.mp3
+ 			 
+ 			 
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_spy_fail_and_killed_01.mp3
+				mission_spy_fail_and_killed_02.mp3
+				mission_spy_fail_and_killed_03.mp3
+				mission_spy_fail_and_killed_04.mp3
+				mission_spy_fail_and_killed_05.mp3
+				mission_spy_fail_and_killed_07.mp3
+			end
+
+type mission_spy_fail
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_spy_character_fail.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	type mission_issued
+ 		event   
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_issued.mp3 
+ 		end
+		arrived
+			event volume -10
+				folder data/sounds/SFX/Campaign_Map
+				mission_issued_arrived.mp3 
+			end				
+		
+	type mission_success
+ 		event   
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_success.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_success_arrived.mp3
+			end		
+			
+			
+	type mission_failed
+ 		event   
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_failed.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				mission_failed_arrived.mp3
+			end		
+			
+				
+	type mission_expired
+ 		event   
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_expired.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+	
+
+		type mission_gift
+ 		event   
+ 			folder data/sounds/SFX/Campaign_Map
+ 			mission_gift.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+			
+			
+			
+			
+						
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type female_dies
+ 		event  
+ 			folder data/sounds/SFX/Campaign_Map
+ 			female_dies.mp3
+ 		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type war_declared
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				war_declared.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				war_declared_arrived.mp3
+			end
+	
+type war_declared_non_player
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				war_declared.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+type war_declared_on_ally
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				war_declared.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				end						
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+			
+type alliance_declared
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				alliance_declared.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+type alliance_broken
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				alliance_broken.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+
+			
+type ceasefire_declared
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				ceasefire_declared.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+		
+type peacy_treaty_signed
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				peace_treaty_signed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+type protectorate_established
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				protectorate_established.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+				
+			
+type hidden_agent_detected_in_settlement
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				agent_detected.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				end				
+
+	
+
+type ally_declared_alliance_with_enemy
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				ally_declared_alliance_with_enemy.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+							
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+				
+type new_ancillary_character
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				new_ancillary_character.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end					
+			
+		
+	
+type general_dies
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			general_dies.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+
+type character_dies_heroic
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			character_dies_heroic.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+		
+		
+		
+type character_dies_disaster
+	event 
+			folder data/sounds/SFX/Campaign_Map
+			character_dies_disaster.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+		
+			
+			
+type faction_leader_dies
+	event 
+			folder data/sounds/SFX/Campaign_Map
+			faction_leader_dies.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+
+
+type character_dies_natural
+	event 
+			folder data/sounds/SFX/Campaign_Map
+			character_dies_natural.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+type character_dies_suspicious			
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			character_dies_suspicious.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+
+type general_killed_ally
+	event 
+			folder data/sounds/SFX/Campaign_Map
+			general_killed_ally.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+
+type general_killed_enemy
+	event 
+			folder data/sounds/SFX/Campaign_Map
+			general_killed_enemy.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+			
+type faction_leader_killed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+			faction_leader_killed.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+
+
+
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+	type unit_routs_in_battle 
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			unit_routs_in_battle_01.mp3
+			unit_routs_in_battle_02.mp3
+			unit_routs_in_battle_03.mp3
+			
+		end	
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+		
+		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+		
+	type reinforcements_arrived
+		event  
+			folder data/sounds/SFX/Campaign_Map
+				reinforcements_arrived.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+
+
+		
+			
+		
+	
+			
+		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;   DISASTER events    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	type disaster_volcano
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			disaster_volcano.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				disaster_arrived.mp3
+			end
+
+	type disaster_flood
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			disaster_flood.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				disaster_arrived.mp3
+			end
+
+	type disaster_earthquake
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			disaster_earthquake.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				disaster_arrived.mp3
+			end
+			
+	type disaster_storm
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			disaster_storm.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				disaster_arrived.mp3
+			end
+
+	type disaster_riot 
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			disaster_riot.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+						
+	type disaster_plague
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			disaster_plague.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				disaster_arrived.mp3
+			end
+
+	type disaster_barbarian_horde
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			barbarian_horde.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+	
+					
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+type chat_message
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			chat_message.mp3 volume -20 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+						
+type multiturn_path_blocked
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			multiturn_path_blocked.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	
+type players_army_destroyed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			players_army_destroyed.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+
+
+
+type upgrade_settlement_to_town
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			upgrade_settlement_01.mp3
+			upgrade_settlement_02.mp3
+			upgrade_settlement_03.mp3
+			upgrade_settlement_04.mp3
+			 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+type upgrade_settlement_to_large_town
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			upgrade_settlement_01.mp3
+			upgrade_settlement_02.mp3
+			upgrade_settlement_03.mp3
+			upgrade_settlement_04.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+			
+type upgrade_settlement_to_city
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			upgrade_settlement_01.mp3
+			upgrade_settlement_02.mp3
+			upgrade_settlement_03.mp3
+			upgrade_settlement_04.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+type upgrade_settlement_to_large_city
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			upgrade_settlement_01.mp3
+			upgrade_settlement_02.mp3
+			upgrade_settlement_03.mp3
+			upgrade_settlement_04.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+type upgrade_settlement_to_huge_city, upgrade_settlement_to_wooden_castle, upgrade_settlement_to_castle, upgrade_settlement_to_fortress,  upgrade_settlement_to_citadel	
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			upgrade_settlement_01.mp3
+			upgrade_settlement_02.mp3
+			upgrade_settlement_03.mp3
+			upgrade_settlement_04.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+		
+			
+					
+;;;;;;;;;;;;;;;;;;;;;;			
+
+				
+			
+	type settlement_bribed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			settlement_bribed.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+		end
+			
+	type army_bribed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			army_bribed.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+			
+	type character_bribed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			character_bribed.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+	type betrayed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			betrayed.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+	type fort_bribed
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			fort_bribed.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+			
+	type player_lose_warning
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			player_lose_warning.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+										
+	type transgression
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			transgression.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+
+	;;;;;;;;;;;;		
+			
+	type your_machine_needs_upgrading
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			your_machine_needs_upgrading.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+;;;;;;;;;;;;;;;;;				
+type wonder_approval
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			wonder_approval.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+type construction_approval
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			construction_approval.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+
+type construction_disapproval
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			construction_disapproval.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+			
+;;;;;;;;;;;;;;;;;	
+			
+						
+type relations_improved
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			relations_improved.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+			
+type relations_worsened
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			relations_worsened.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+
+	
+			
+			
+					
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+;;  SHOULD BE CUT FOR M2			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	
+type games_held
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;games_held.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end
+			
+type marian_reform	
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			;marian_reform.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+		end				
+			
+
+		
+	type new_western_emperor
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;coming_of_age.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+		
+			
+			
+	type new_eastern_ceasar
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;coming_of_age.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+			
+			
+		
+	type new_western_ceasar
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;coming_of_age.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+					
+	
+		
+	type new_eastern_emperor
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;coming_of_age.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end					
+		
+
+		type shadow_faction_appears
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;emergent_faction_appears.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+			
+
+			
+		type eastern_shadow_faction
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;emergent_faction_appears.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+					
+	
+		type western_shadow_faction
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;emergent_faction_appears.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+			
+
+		type shadow_faction_destroyed
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;faction_defeated.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+			
+		type new_barbarian_horde
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;building_lost_battle.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+			
+			
+		type horde_settles
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;betrayed.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+		
+				
+			
+			type horde_in_your_region
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;alliance_broken.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+			
+				
+			type city_sacked
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;barbarian_horde.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+			
+	
+			type dominant_religion
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;historic_event.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+			type roman_empire_reunited
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				;historic_event.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+			
+	
+			type huns_hording
+	event 
+			folder data/sounds/SFX/Campaign_Map
+				barbarian_horde.mp3
+			end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end		
+
+						
+;;;; M2 PLACEHOLDER
+			
+		type character_trait_gained
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			;character_trait_gained.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end				
+			
+	type character_trait_lost
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			;character_trait_lost.mp3
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end			
+
+			
+;;;;;;;;;;;;;;;		 still used							
+	type historic_event
+		event 
+			folder data/sounds/SFX/Campaign_Map
+			historic_event.mp3 
+		end
+		arrived
+			event 
+				folder data/sounds/SFX/Campaign_Map
+				
+			end	
+			
+																						

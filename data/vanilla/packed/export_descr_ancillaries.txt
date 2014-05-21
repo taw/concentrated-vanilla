@@ -1,0 +1,5260 @@
+;This file is generated from the Spreadsheet VnV,txt
+;Please modify the spreadsheet and re-export the data, rather than editing this file directly
+
+;===============================================================
+;== ANCILLARY DATA STARTS HERE ==
+;===============================================================
+
+;------------------------------------------
+Ancillary accomplice
+    Type Security
+    Transferable  0 
+    Image sex_yangman.tga
+    ExcludeCultures mesoamerican
+    Description accomplice_desc
+    EffectsDescription accomplice_effects_desc
+    Effect Subterfuge  1 
+
+;------------------------------------------
+Ancillary academic_advisor
+    Type Academic
+    Transferable  1 
+    Image academic_scholar.tga
+    ExcludeCultures mesoamerican
+    Description academic_advisor_desc
+    EffectsDescription academic_advisor_effects_desc
+    Effect Trading  5 
+    Effect TaxCollection  5 
+
+;------------------------------------------
+Ancillary actor
+    Type Entertain
+    Transferable  0 
+    Image entertainment_actor.tga
+    ExcludeCultures mesoamerican
+    Description actor_desc
+    EffectsDescription actor_effects_desc
+    Effect LocalPopularity  1 
+
+;------------------------------------------
+Ancillary adultress
+    Type Sex
+    Transferable  0 
+    Image sex_expensivewoman.tga
+    ExcludeCultures middle_eastern
+    Description adultress_desc
+    EffectsDescription adultress_effects_desc
+    Effect Chivalry -1 
+    Effect Piety -1 
+    Effect TroopMorale -1 
+    Effect Fertility -2 
+
+;------------------------------------------
+Ancillary adultress_foreign
+    Type Sex
+    Transferable  0 
+    Image sex_cheapwoman.tga
+    ExcludeCultures middle_eastern
+    Description adultress_foreign_desc
+    EffectsDescription adultress_foreign_effects_desc
+    Effect Chivalry -1 
+    Effect Piety -1 
+    Effect TroopMorale -2 
+    Effect LocalPopularity -1 
+    Effect Fertility -2 
+
+;------------------------------------------
+Ancillary adultress_she_man
+    Type Sex
+    Transferable  0 
+    Image sex_expensivewoman.tga
+    ExcludeCultures middle_eastern
+    Description adultress_she_man_desc
+    EffectsDescription adultress_she_man_effects_desc
+    Effect Chivalry -1 
+    Effect Piety -1 
+    Effect TroopMorale -3 
+    Effect LocalPopularity -1 
+    Effect Fertility -1 
+
+;------------------------------------------
+Ancillary alchemist
+    Type Academic
+    Transferable  1 
+    Image academic_alchemist.tga
+    ExcludedAncillaries apothecary, astrologer
+    ExcludeCultures mesoamerican
+    Description alchemist_desc
+    EffectsDescription alchemist_effects_desc
+    Effect HitPoints  2 
+    Effect GunpowderCommand  1 
+
+;------------------------------------------
+Ancillary apothecary
+    Type Health
+    Transferable  1 
+    Image academic_alchemist.tga
+    ExcludedAncillaries alchemist, astrologer
+    ExcludeCultures mesoamerican
+    Description apothecary_desc
+    EffectsDescription apothecary_effects_desc
+    Effect Fertility  1 
+    Effect HitPoints  4 
+
+;------------------------------------------
+Ancillary architect
+    Type Academic
+    Transferable  0 
+    Image civil_master.tga
+    ExcludeCultures northern_european, mesoamerican
+    Description architect_desc
+    EffectsDescription architect_effects_desc
+    Effect Construction  10 
+    Effect Squalor -2 
+
+;------------------------------------------
+Ancillary armour_custom
+    Type Item
+    Transferable  0 
+    Image item_armour.tga
+    ExcludedAncillaries armour_ornate
+    Description armour_custom_desc
+    EffectsDescription armour_custom_effects_desc
+    Effect HitPoints  4 
+
+;------------------------------------------
+Ancillary armour_ornate
+    Type Item
+    Transferable  0 
+    Image item_armour.tga
+    ExcludedAncillaries armour_custom
+    Description armour_ornate_desc
+    EffectsDescription armour_ornate_effects_desc
+    Effect Authority  1 
+    Effect HitPoints -2 
+
+;------------------------------------------
+Ancillary artist
+    Type Entertain
+    Transferable  0 
+    Image entertainment_artist.tga
+    ExcludeCultures northern_european, mesoamerican
+    Description artist_desc
+    EffectsDescription artist_effects_desc
+    Effect LocalPopularity  1 
+    Effect BribeResistance -1 
+    Effect Squalor -1 
+
+;------------------------------------------
+Ancillary assassins_apprentice
+    Type Security
+    Transferable  1 
+    Image espionage.tga
+    ExcludedAncillaries catamite
+    Description assassins_apprentice_desc
+    EffectsDescription assassins_apprentice_effects_desc
+    Effect Assassination  1 
+
+;------------------------------------------
+Ancillary assassins_blade
+    Type Item
+    Transferable  0 
+    Image item_knife.tga
+    Description assassins_blade_desc
+    EffectsDescription assassins_blade_effects_desc
+    Effect Assassination  1 
+
+;------------------------------------------
+Ancillary astrologer
+    Type Academic
+    Transferable  0 
+    Image academic_scholar.tga
+    ExcludedAncillaries apothecary, alchemist
+    ExcludeCultures northern_european
+    Description astrologer_desc
+    EffectsDescription astrologer_effects_desc
+    Effect Piety -1 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary bard
+    Type Entertain
+    Transferable  1 
+    Image entertainment_bard.tga
+    ExcludeCultures mesoamerican, middle_eastern
+    Description bard_desc
+    EffectsDescription bard_effects_desc
+    Effect TroopMorale  1 
+    Effect LocalPopularity  1 
+
+;------------------------------------------
+Ancillary beguiling_bard
+    Type Entertain
+    Transferable  0 
+    Image entertainment_bard.tga
+    ExcludeCultures mesoamerican, middle_eastern
+    Description beguiling_bard_desc
+    EffectsDescription beguiling_bard_effects_desc
+    Effect Subterfuge  1 
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary biographer
+    Type Court
+    Transferable  0 
+    Image civil_admin.tga
+    ExcludeCultures mesoamerican
+    Description biographer_desc
+    EffectsDescription biographer_effects_desc
+    Effect Authority  1 
+
+;------------------------------------------
+Ancillary black_stallion
+    Type Pet
+    Transferable  1 
+    Image animals_horse.tga
+    Description black_stallion_desc
+    EffectsDescription black_stallion_effects_desc
+    Effect MovementPoints  5 
+
+;------------------------------------------
+Ancillary bodyguard
+    Type Security
+    Transferable  1 
+    Image security_eliteguard.tga
+    Description bodyguard_desc
+    EffectsDescription bodyguard_effects_desc
+    Effect PersonalSecurity  2 
+    Effect LocalPopularity -1 
+
+;------------------------------------------
+Ancillary brilliant_inventor
+    Type Academic
+    Transferable  0 
+    Image academic_student.tga
+    ExcludeCultures mesoamerican
+    Description brilliant_inventor_desc
+    EffectsDescription brilliant_inventor_effects_desc
+    Effect SiegeEngineering  30 
+    Effect Farming  1 
+    Effect Mining  20 
+
+;------------------------------------------
+Ancillary caravan_driver
+    Type Money
+    Transferable  1 
+    Image civil_merchant.tga
+    Description caravan_driver_desc
+    EffectsDescription caravan_driver_effects_desc
+    Effect MovementPoints  5 
+    Effect LineOfSight  1 
+
+;------------------------------------------
+Ancillary catamite
+    Type Sex
+    Transferable  0 
+    Image sex_yangman.tga
+    ExcludedAncillaries assassins_apprentice
+    ExcludeCultures mesoamerican
+    Description catamite_desc
+    EffectsDescription catamite_effects_desc
+    Effect Subterfuge  1 
+
+;------------------------------------------
+Ancillary chastity_belt
+    Type Sex
+    Transferable  0 
+    Image item_chastitybelt.tga
+    ExcludeCultures mesoamerican
+    Description chastity_belt_desc
+    EffectsDescription chastity_belt_effects_desc
+    Effect Charm -1 
+    Effect MovementPoints -2 
+
+;------------------------------------------
+Ancillary choir_boy
+    Type Sex
+    Transferable  0 
+    Image religious_youngboy.tga
+    ExcludedAncillaries royal_seminarian
+    ExcludeCultures mesoamerican, middle_eastern
+    Description choir_boy_desc
+    EffectsDescription choir_boy_effects_desc
+    Effect Piety  1 
+    Effect Unorthodoxy  1 
+    Effect Purity -1 
+
+;------------------------------------------
+Ancillary counterfeiter
+    Type Money
+    Transferable  0 
+    Image academic_alchemist.tga
+    ExcludeCultures mesoamerican
+    Description counterfeiter_desc
+    EffectsDescription counterfeiter_effects_desc
+    Effect Finance  1 
+
+;------------------------------------------
+Ancillary courtesan
+    Type Sex
+    Transferable  0 
+    Image sex_cheapwoman.tga
+    ExcludedAncillaries catamite
+    ExcludeCultures mesoamerican
+    Description courtesan_desc
+    EffectsDescription courtesan_effects_desc
+    Effect Subterfuge  1 
+
+;------------------------------------------
+Ancillary crooked_judge
+    Type Court
+    Transferable  0 
+    Image civil_master.tga
+    ExcludeCultures mesoamerican
+    Description crooked_judge_desc
+    EffectsDescription crooked_judge_effects_desc
+    Effect Unrest  1 
+    Effect Law  2 
+
+;------------------------------------------
+Ancillary dancer
+    Type Entertain
+    Transferable  0 
+    Image sex_cheapwoman.tga
+    Description dancer_desc
+    EffectsDescription dancer_effects_desc
+    Effect Subterfuge  2 
+
+;------------------------------------------
+Ancillary dark_apprentice
+    Type Magic
+    Transferable  0 
+    Image item_disguise.tga
+    ExcludeCultures mesoamerican
+    Description dark_apprentice_desc
+    EffectsDescription dark_apprentice_effects_desc
+    Effect Magic  1 
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary deacon
+    Type Religion
+    Transferable  0 
+    Image religious_priest.tga
+    ExcludeCultures middle_eastern
+    Description deacon_desc
+    EffectsDescription deacon_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary delicate_blade
+    Type Item
+    Transferable  0 
+    Image item_knife.tga
+    ExcludeCultures mesoamerican
+    Description delicate_blade_desc
+    EffectsDescription delicate_blade_effects_desc
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary diplomatic_escort
+    Type Military
+    Transferable  0 
+    Image security_eliteguard.tga
+    ExcludeCultures mesoamerican
+    Description diplomatic_escort_desc
+    EffectsDescription diplomatic_escort_effects_desc
+    Effect LineOfSight  1 
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary doctor
+    Type Health
+    Transferable  0 
+    Image civil_master.tga
+    ExcludeCultures mesoamerican
+    Description doctor_desc
+    EffectsDescription doctor_effects_desc
+    Effect Fertility  1 
+    Effect BattleSurgery  10 
+
+;------------------------------------------
+Ancillary drillmaster
+    Type Military
+    Transferable  0 
+    Image warrior_captain.tga
+    ExcludeCultures mesoamerican
+    Description drillmaster_desc
+    EffectsDescription drillmaster_effects_desc
+    Effect MovementPoints  5 
+    Effect TrainingUnits  2 
+
+;------------------------------------------
+Ancillary enchanted_broom
+    Type Magic
+    Transferable  0 
+    Image item_broom.tga
+    Description enchanted_broom_desc
+    EffectsDescription enchanted_broom_effects_desc
+    Effect Magic  1 
+    Effect MovementPoints  3 
+
+;------------------------------------------
+Ancillary eunuch
+    Type Court
+    Transferable  0 
+    Image court_eunuch.tga
+    ExcludeCultures northern_european, eastern_european, greek, mesoamerican, southern_european
+    Description eunuch_desc
+    EffectsDescription eunuch_effects_desc
+    Effect Authority  1 
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary evil_mother-in-law
+    Type Family
+    Transferable  0 
+    Image court_elderlylady.tga
+    Description evil_mother-in-law_desc
+    EffectsDescription evil_mother-in-law_effects_desc
+    Effect Authority -1 
+    Effect TroopMorale -1 
+
+;------------------------------------------
+Ancillary executioner
+    Type Religion
+    Transferable  0 
+    Image court_executioner.tga
+    ExcludeCultures mesoamerican, middle_eastern
+    Description executioner_desc
+    EffectsDescription executioner_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary explosives
+    Type Item
+    Transferable  0 
+    Image item_explosive.tga
+    Description explosives_desc
+    EffectsDescription explosives_effects_desc
+    Effect Sabotage  1 
+
+;------------------------------------------
+Ancillary exotic_gifts
+    Type Item
+    Transferable  0 
+    Image item_exoticgifts.tga
+    Description exotic_gifts_desc
+    EffectsDescription exotic_gifts_effects_desc
+    Effect Influence  1 
+
+;------------------------------------------
+Ancillary faithful_servant
+    Type Security
+    Transferable  0 
+    Image court_servant.tga
+    ExcludeCultures mesoamerican
+    Description faithful_servant_desc
+    EffectsDescription faithful_servant_effects_desc
+    Effect Charm  1 
+
+;------------------------------------------
+Ancillary false_documents
+    Type Item
+    Transferable  0 
+    Image item_documents.tga
+    ExcludeCultures mesoamerican
+    Description false_documents_desc
+    EffectsDescription false_documents_effects_desc
+    Effect Subterfuge  1 
+
+;------------------------------------------
+Ancillary false_relic
+    Type Item
+    Transferable  0 
+    Image relic_christianreliquary.tga
+    ExcludeCultures mesoamerican
+    Description false_relic_desc
+    EffectsDescription false_relic_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary femme_fatale
+    Type Sex
+    Transferable  0 
+    Image sex_expensivewoman.tga
+    ExcludeCultures mesoamerican
+    Description femme_fatale_desc
+    EffectsDescription femme_fatale_effects_desc
+    Effect Subterfuge  2 
+
+;------------------------------------------
+Ancillary fine_cosmetics
+    Type Item
+    Transferable  0 
+    Image item_exoticgifts.tga
+    ExcludeCultures mesoamerican
+    Description fine_cosmetics_desc
+    EffectsDescription fine_cosmetics_effects_desc
+    Effect Charm  1 
+
+;------------------------------------------
+Ancillary foodtaster
+    Type Security
+    Transferable  0 
+    Image court_servant.tga
+    ExcludedAncillaries master_of_assassins, fool_brilliant
+    Description foodtaster_desc
+    EffectsDescription foodtaster_effects_desc
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary fool_brilliant
+    Type Court
+    Transferable  0 
+    Image entertainment_jester.tga
+    ExcludedAncillaries master_of_assassins, foodtaster
+    ExcludeCultures middle_eastern, greek, mesoamerican, southern_european
+    Description fool_brilliant_desc
+    EffectsDescription fool_brilliant_effects_desc
+    Effect PersonalSecurity  1 
+    Effect Trading  5 
+
+;------------------------------------------
+Ancillary fool_usual
+    Type Court
+    Transferable  0 
+    Image entertainment_jester.tga
+    ExcludeCultures middle_eastern, greek
+    Description fool_usual_desc
+    EffectsDescription fool_usual_effects_desc
+    Effect TroopMorale  1 
+
+;------------------------------------------
+Ancillary foreign_dignitary
+    Type Diplomacy
+    Transferable  0 
+    Image court_noble.tga
+    Description foreign_dignitary_desc
+    EffectsDescription foreign_dignitary_effects_desc
+    Effect Influence  1 
+
+;------------------------------------------
+Ancillary handgun
+    Type Item
+    Transferable  0 
+    Image item_pistol.tga
+    Description handgun_desc
+    EffectsDescription handgun_effects_desc
+    Effect Assassination  1 
+    Effect Law  2 
+
+;------------------------------------------
+Ancillary harsh_judge
+    Type Court
+    Transferable  0 
+    Image academic_scholar.tga
+    Description harsh_judge_desc
+    EffectsDescription harsh_judge_effects_desc
+    Effect LocalPopularity -1 
+
+;------------------------------------------
+Ancillary herald
+    Type Court
+    Transferable  0 
+    Image court_noble.tga
+    ExcludeCultures mesoamerican
+    Description herald_desc
+    EffectsDescription herald_effects_desc
+    Effect Authority  1 
+
+;------------------------------------------
+Ancillary intrepid_explorer
+    Type Court
+    Transferable  0 
+    Image civil_master.tga
+    ExcludeCultures mesoamerican
+    Description intrepid_explorer_desc
+    EffectsDescription intrepid_explorer_effects_desc
+    Effect MovementPoints  3 
+    Effect LineOfSight  1 
+
+;------------------------------------------
+Ancillary knight_beserker
+    Type Security
+    Transferable  0 
+    Image warrior_berserker.tga
+    ExcludeCultures mesoamerican
+    Description knight_beserker_desc
+    EffectsDescription knight_beserker_effects_desc
+    Effect Command  1 
+    Effect TroopMorale  1 
+
+;------------------------------------------
+Ancillary knight_chivalrous
+    Type Security
+    Transferable  0 
+    Image knight_chivalrous.tga
+    ExcludeCultures mesoamerican
+    Description knight_chivalrous_desc
+    EffectsDescription knight_chivalrous_effects_desc
+    Effect Chivalry  2 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary knight_crusader
+    Type Security
+    Transferable  0 
+    Image knight_older.tga
+    ExcludeCultures mesoamerican
+    Description knight_crusader_desc
+    EffectsDescription knight_crusader_effects_desc
+    Effect PersonalSecurity  2 
+    Effect Violence  1 
+
+;------------------------------------------
+Ancillary knight_dread
+    Type Security
+    Transferable  0 
+    Image knight_dread.tga
+    ExcludeCultures mesoamerican
+    Description knight_dread_desc
+    EffectsDescription knight_dread_effects_desc
+    Effect Chivalry -2 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary knight_santiago
+    Type Security
+    Transferable  0 
+    Image knight_chivalrous.tga
+    ExcludeCultures mesoamerican
+    Description knight_santiago_desc
+    EffectsDescription knight_santiago_effects_desc
+    Effect Chivalry  1 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary knight_stjohn
+    Type Security
+    Transferable  0 
+    Image knight_chivalrous.tga
+    ExcludedAncillaries knight_stjohn
+    ExcludeCultures mesoamerican
+    Description knight_stjohn_desc
+    EffectsDescription knight_stjohn_effects_desc
+    Effect Chivalry  1 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary knight_templar
+    Type Security
+    Transferable  0 
+    Image knight_chivalrous.tga
+    ExcludedAncillaries knight_templar
+    ExcludeCultures mesoamerican
+    Description knight_templar_desc
+    EffectsDescription knight_templar_effects_desc
+    Effect Chivalry  1 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary knight_teutonic
+    Type Security
+    Transferable  0 
+    Image knight_chivalrous.tga
+    ExcludeCultures mesoamerican
+    Description knight_teutonic_desc
+    EffectsDescription knight_teutonic_effects_desc
+    Effect Chivalry  1 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary lancebearer
+    Type Security
+    Transferable  0 
+    Image warrior_squire.tga
+    ExcludeCultures mesoamerican
+    Description lancebearer_desc
+    EffectsDescription lancebearer_effects_desc
+    Effect CavalryCommand  1 
+
+;------------------------------------------
+Ancillary librarian
+    Type Academic
+    Transferable  0 
+    Image academic_student.tga
+    ExcludeCultures mesoamerican
+    Description librarian_desc
+    EffectsDescription librarian_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary magician
+    Type Magic
+    Transferable  0 
+    Image religious_mysticfigure.tga
+    ExcludedAncillaries magician_pagan
+    ExcludeCultures middle_eastern
+    Description magician_desc
+    EffectsDescription magician_effects_desc
+    Effect TroopMorale  1 
+    Effect LocalPopularity  1 
+
+;------------------------------------------
+Ancillary magician_pagan
+    Type Magic
+    Transferable  0 
+    Image religious_mysticfigure.tga
+    ExcludedAncillaries magician
+    ExcludeCultures mesoamerican
+    Description magician_pagan_desc
+    EffectsDescription magician_pagan_effects_desc
+    Effect Piety -2 
+
+;------------------------------------------
+Ancillary master_mason
+    Type Money
+    Transferable  0 
+    Image civil_master.tga
+    ExcludedAncillaries master_of_horse, master_smith
+    ExcludeCultures mesoamerican
+    Description master_mason_desc
+    EffectsDescription master_mason_effects_desc
+    Effect Construction  10 
+
+;------------------------------------------
+Ancillary master_of_archers
+    Type Military
+    Transferable  0 
+    Image warrior_naval.tga
+    ExcludedAncillaries master_of_assassins
+    ExcludeCultures mesoamerican
+    Description master_of_archers_desc
+    EffectsDescription master_of_archers_effects_desc
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary master_of_assassins
+    Type Security
+    Transferable  0 
+    Image warrior_naval.tga
+    ExcludedAncillaries master_of_archers, foodtaster, fool_brilliant
+    ExcludeCultures mesoamerican
+    Description master_of_assassins_desc
+    EffectsDescription master_of_assassins_effects_desc
+    Effect PersonalSecurity  1 
+    Effect TrainingAgents  4 
+
+;------------------------------------------
+Ancillary master_of_horse
+    Type Military
+    Transferable  0 
+    Image warrior_captain.tga
+    ExcludedAncillaries master_smith, master_mason
+    ExcludeCultures mesoamerican
+    Description master_of_horse_desc
+    EffectsDescription master_of_horse_effects_desc
+    Effect CavalryCommand  1 
+
+;------------------------------------------
+Ancillary master_smith
+    Type Military
+    Transferable  0 
+    Image warrior_militariengineer.tga
+    ExcludedAncillaries master_of_horse, master_mason
+    Description master_smith_desc
+    EffectsDescription master_smith_effects_desc
+    Effect TrainingUnits  2 
+
+;------------------------------------------
+Ancillary mathematician
+    Type Money
+    Transferable  0 
+    Image academic_scholar.tga
+    ExcludedAncillaries tutor
+    ExcludeCultures northern_european, mesoamerican
+    Description mathematician_desc
+    EffectsDescription mathematician_effects_desc
+    Effect Trading  5 
+    Effect TaxCollection  5 
+    Effect ArtilleryCommand  1 
+
+;------------------------------------------
+Ancillary mentor
+    Type Court
+    Transferable  0 
+    Image knight_older.tga
+    ExcludeCultures mesoamerican
+    Description mentor_desc
+    EffectsDescription mentor_effects_desc
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary mercenary_captain
+    Type Military
+    Transferable  0 
+    Image warrior_captain.tga
+    Description mercenary_captain_desc
+    EffectsDescription mercenary_captain_effects_desc
+    Effect TrainingUnits  2 
+    Effect Looting   10 
+
+;------------------------------------------
+Ancillary merchant_clerk
+    Type Money
+    Transferable  0 
+    Image scribe_ancillary.tga
+    ExcludeCultures mesoamerican
+    Description merchant_clerk_desc
+    EffectsDescription merchant_clerk_effects_desc
+    Effect Finance  1 
+
+;------------------------------------------
+Ancillary military_engineer
+    Type Military
+    Transferable  0 
+    Image warrior_militariengineer.tga
+    ExcludedAncillaries siege_engineer
+    Description military_engineer_desc
+    EffectsDescription military_engineer_effects_desc
+    Effect SiegeAttack  2 
+    Effect SiegeEngineering  50 
+
+;------------------------------------------
+Ancillary money_counter
+    Type Money
+    Transferable  0 
+    Image court_servant.tga
+    ExcludeCultures mesoamerican, middle_eastern
+    Description money_counter_desc
+    EffectsDescription money_counter_effects_desc
+    Effect Trading  5 
+    Effect TaxCollection  10 
+
+;------------------------------------------
+Ancillary monk
+    Type Religion
+    Transferable  0 
+    Image religious_monk.tga
+    ExcludedAncillaries royal_seminarian, choir_boy
+    ExcludeCultures mesoamerican
+    Description monk_desc
+    EffectsDescription monk_effects_desc
+    Effect Piety  1 
+    Effect Purity -1 
+
+;------------------------------------------
+Ancillary musician
+    Type Entertain
+    Transferable  0 
+    Image entertainment_bard.tga
+    Description musician_desc
+    EffectsDescription musician_effects_desc
+    Effect TroopMorale  1 
+    Effect LocalPopularity  2 
+
+;------------------------------------------
+Ancillary naval_gunner
+    Type Naval
+    Transferable  0 
+    Image warrior_naval.tga
+    ExcludeCultures mesoamerican
+    Description naval_gunner_desc
+    EffectsDescription naval_gunner_effects_desc
+    Effect NavalCommand  2 
+
+;------------------------------------------
+Ancillary naval_navigator
+    Type Naval
+    Transferable  0 
+    Image warrior_naval.tga
+    ExcludeCultures mesoamerican
+    Description naval_navigator_desc
+    EffectsDescription naval_navigator_effects_desc
+    Effect NavalCommand  1 
+    Effect MovementPoints  2 
+    Effect LineOfSight  1 
+
+;------------------------------------------
+Ancillary naive_knight
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    ExcludedAncillaries zealous_disciple
+    ExcludeCultures mesoamerican, middle_eastern
+    Description naive_knight_desc
+    EffectsDescription naive_knight_effects_desc
+    Effect PersonalSecurity  2 
+
+;------------------------------------------
+Ancillary nosy_mother
+    Type Family
+    Transferable  0 
+    Image court_elderlylady.tga
+    Description nosy_mother_desc
+    EffectsDescription nosy_mother_effects_desc
+    Effect Authority -1 
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary nun
+    Type Religion
+    Transferable  0 
+    Image religious_nun.tga
+    ExcludeCultures greek, mesoamerican, eastern_european, middle_eastern
+    Description nun_desc
+    EffectsDescription nun_effects_desc
+    Effect Piety  1 
+    Effect Violence -1 
+
+;------------------------------------------
+Ancillary obsessed_suitor
+    Type Sex
+    Transferable  0 
+    Image sex_yangman.tga
+    Description obsessed_suitor_desc
+    EffectsDescription obsessed_suitor_effects_desc
+    Effect Charm -1 
+    Effect PersonalSecurity -2 
+
+;------------------------------------------
+Ancillary ordinance_master
+    Type Military
+    Transferable  0 
+    Image warrior_militariengineer.tga
+    ExcludeCultures mesoamerican
+    Description ordinance_master_desc
+    EffectsDescription ordinance_master_effects_desc
+    Effect GunpowderCommand  1 
+    Effect ArtilleryCommand  1 
+
+;------------------------------------------
+Ancillary overseer
+    Type Money
+    Transferable  0 
+    Image court_noble.tga
+    Description overseer_desc
+    EffectsDescription overseer_effects_desc
+    Effect Construction  1 
+    Effect Farming  1 
+    Effect Mining  1 
+
+;------------------------------------------
+Ancillary paladin
+    Type Military
+    Transferable  0 
+    Image security_religious.tga
+    ExcludeCultures mesoamerican, middle_eastern
+    Description paladin_desc
+    EffectsDescription paladin_effects_desc
+    Effect PersonalSecurity  1 
+    Effect Purity  1 
+    Effect Violence  1 
+
+;------------------------------------------
+Ancillary pet_bloodhound
+    Type Pet
+    Transferable  0 
+    Image animals_ward.tga
+    ExcludeCultures mesoamerican
+    Description pet_bloodhound_desc
+    EffectsDescription pet_bloodhound_effects_desc
+    Effect Subterfuge  2 
+    Effect LineOfSight  1 
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary pet_guarddog
+    Type Pet
+    Transferable  0 
+    Image animals_ward.tga
+    Description pet_guarddog_desc
+    EffectsDescription pet_guarddog_effects_desc
+    Effect PersonalSecurity  2 
+
+;------------------------------------------
+Ancillary pet_monkey
+    Type Pet
+    Transferable  0 
+    Image animals_monkey.tga
+    Description pet_monkey_desc
+    EffectsDescription pet_monkey_effects_desc
+    Effect Subterfuge  1 
+
+;------------------------------------------
+Ancillary physician
+    Type Health
+    Transferable  0 
+    Image court_noble.tga
+    Description physician_desc
+    EffectsDescription physician_effects_desc
+    Effect Fertility  1 
+    Effect BattleSurgery  10 
+
+;------------------------------------------
+Ancillary pickpocket
+    Type Security
+    Transferable  0 
+    Image espionage.tga
+    Description pickpocket_desc
+    EffectsDescription pickpocket_effects_desc
+    Effect Subterfuge  1 
+    Effect LineOfSight  1 
+
+;------------------------------------------
+Ancillary poisoner
+    Type Politics
+    Transferable  0 
+    Image academic_alchemist.tga
+    ExcludeCultures northern_european, mesoamerican
+    Description poisoner_desc
+    EffectsDescription poisoner_effects_desc
+    Effect Subterfuge  2 
+
+;------------------------------------------
+Ancillary priest
+    Type Religion
+    Transferable  0 
+    Image religious_priest.tga
+    Description priest_desc
+    EffectsDescription priest_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary quartermaster
+    Type Military
+    Transferable  0 
+    Image warrior_captain.tga
+    ExcludeCultures northern_european, mesoamerican
+    Description quartermaster_desc
+    EffectsDescription quartermaster_effects_desc
+    Effect MovementPoints  3 
+    Effect Looting   5 
+
+;------------------------------------------
+Ancillary royal_escort
+    Type Security
+    Transferable  0 
+    Image security_eliteguard.tga
+    ExcludeCultures mesoamerican
+    Description royal_escort_desc
+    EffectsDescription royal_escort_effects_desc
+    Effect PersonalSecurity  2 
+
+;------------------------------------------
+Ancillary royal_seminarian
+    Type Religion
+    Transferable  0 
+    Image religious_youngboy.tga
+    ExcludedAncillaries monk, choir_boy
+    ExcludeCultures mesoamerican
+    Description royal_seminarian_desc
+    EffectsDescription royal_seminarian_effects_desc
+    Effect Piety  1 
+    Effect Unorthodoxy  1 
+
+;------------------------------------------
+Ancillary runner
+    Type Military
+    Transferable  0 
+    Image warrior_woodsman.tga
+    ExcludeCultures northern_european, middle_eastern, mesoamerican
+    Description runner_desc
+    EffectsDescription runner_effects_desc
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary scout
+    Type Military
+    Transferable  0 
+    Image warrior_woodsman.tga
+    ExcludeCultures mesoamerican
+    Description scout_desc
+    EffectsDescription scout_effects_desc
+    Effect Ambush  1 
+    Effect LineOfSight  2 
+
+;------------------------------------------
+Ancillary scribe_ancillary
+    Type Academic
+    Transferable  0 
+    Image civil_admin.tga
+    ExcludeCultures mesoamerican
+    Description scribe_ancillary_desc
+    EffectsDescription scribe_ancillary_effects_desc
+    Effect Authority  1 
+    Effect Trading  10 
+
+;------------------------------------------
+Ancillary secret_love
+    Type Sex
+    Transferable  0 
+    Image sex_yangman.tga
+    ExcludedAncillaries smothering_bodyguard
+    ExcludeCultures mesoamerican, middle_eastern
+    Description secret_love_desc
+    EffectsDescription secret_love_effects_desc
+    Effect Charm -1 
+
+;------------------------------------------
+Ancillary shieldbearer
+    Type Military
+    Transferable  0 
+    Image warrior_squire.tga
+    ExcludedAncillaries swordbearer
+    ExcludeCultures southern_european, mesoamerican
+    Description shieldbearer_desc
+    EffectsDescription shieldbearer_effects_desc
+    Effect TroopMorale -1 
+    Effect HitPoints  2 
+
+;------------------------------------------
+Ancillary shipwright
+    Type Naval
+    Transferable  0 
+    Image civil_master.tga
+    ExcludeCultures mesoamerican
+    Description shipwright_desc
+    EffectsDescription shipwright_effects_desc
+    Effect NavalCommand  1 
+
+;------------------------------------------
+Ancillary siege_engineer
+    Type Military
+    Transferable  0 
+    Image warrior_militariengineer.tga
+    ExcludedAncillaries military_engineer
+    ExcludeCultures mesoamerican
+    Description siege_engineer_desc
+    EffectsDescription siege_engineer_effects_desc
+    Effect SiegeAttack  1 
+    Effect SiegeEngineering  60 
+
+;------------------------------------------
+Ancillary slaver
+    Type Money
+    Transferable  0 
+    Image court_eunuch.tga
+    ExcludeCultures mesoamerican
+    Description slaver_desc
+    EffectsDescription slaver_effects_desc
+    Effect Trading  15 
+
+;------------------------------------------
+Ancillary smothering_bodyguard
+    Type Security
+    Transferable  0 
+    Image security_eliteguard.tga
+    ExcludedAncillaries secret_love
+    ExcludeCultures mesoamerican
+    Description smothering_bodyguard_desc
+    EffectsDescription smothering_bodyguard_effects_desc
+    Effect Charm -1 
+    Effect PersonalSecurity  3 
+
+;------------------------------------------
+Ancillary soothsayer
+    Type Magic
+    Transferable  0 
+    Image religious_mysticfigure.tga
+    ExcludeCultures mesoamerican
+    Description soothsayer_desc
+    EffectsDescription soothsayer_effects_desc
+    Effect TroopMorale  2 
+
+;------------------------------------------
+Ancillary spyglass
+    Type Item
+    Transferable  0 
+    Image item_spyglass.tga
+    ExcludeCultures mesoamerican
+    Description spyglass_desc
+    EffectsDescription spyglass_effects_desc
+    Effect LineOfSight  2 
+
+;------------------------------------------
+Ancillary spymaster
+    Type Security
+    Transferable  0 
+    Image warrior_naval.tga
+    ExcludeCultures northern_european, mesoamerican
+    Description spymaster_desc
+    EffectsDescription spymaster_effects_desc
+    Effect Command  1 
+    Effect PublicSecurity  1 
+    Effect TrainingAgents  4 
+
+;------------------------------------------
+Ancillary strapping_stallion
+    Type Pet
+    Transferable  0 
+    Image animals_horse.tga
+    ExcludeCultures mesoamerican
+    Description strapping_stallion_desc
+    EffectsDescription strapping_stallion_effects_desc
+    Effect MovementPoints  2 
+
+;------------------------------------------
+Ancillary stunning_handmaiden
+    Type Sex
+    Transferable  0 
+    Image sex_expensivewoman.tga
+    ExcludeCultures mesoamerican, middle_eastern
+    Description stunning_handmaiden_desc
+    EffectsDescription stunning_handmaiden_effects_desc
+    Effect Charm -1 
+
+;------------------------------------------
+Ancillary swift_steed
+    Type Pet
+    Transferable  0 
+    Image animals_horse.tga
+    ExcludeCultures mesoamerican
+    Description swift_steed_desc
+    EffectsDescription swift_steed_effects_desc
+    Effect MovementPoints  3 
+    Effect Health  1 
+
+;------------------------------------------
+Ancillary swiss_guard
+    Type Military
+    Transferable  0 
+    Image security_religious.tga
+    ExcludeCultures mesoamerican, middle_eastern
+    Description swiss_guard_desc
+    EffectsDescription swiss_guard_effects_desc
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary swordbearer
+    Type Military
+    Transferable  0 
+    Image warrior_squire.tga
+    ExcludedAncillaries shieldbearer, veteran_warrior
+    ExcludeCultures mesoamerican
+    Description swordbearer_desc
+    EffectsDescription swordbearer_effects_desc
+    Effect PersonalSecurity  1 
+    Effect HitPoints  1 
+
+;------------------------------------------
+Ancillary tax_farmer
+    Type Money
+    Transferable  0 
+    Image civil_admin.tga
+    ExcludedAncillaries treasurer
+    ExcludeCultures mesoamerican
+    Description tax_farmer_desc
+    EffectsDescription tax_farmer_effects_desc
+    Effect LocalPopularity -1 
+    Effect TaxCollection  10 
+
+;------------------------------------------
+Ancillary the_lemegeton
+    Type Magic
+    Transferable  0 
+    Image item_book.tga
+    ExcludeCultures mesoamerican
+    Description the_lemegeton_desc
+    EffectsDescription the_lemegeton_effects_desc
+    Effect Magic  2 
+
+;------------------------------------------
+Ancillary torturer
+    Type Court
+    Transferable  0 
+    Image court_executioner.tga
+    ExcludeCultures mesoamerican
+    Description torturer_desc
+    EffectsDescription torturer_effects_desc
+    Effect Chivalry -3 
+    Effect Authority  1 
+    Effect PublicSecurity  2 
+    Effect Unrest  1 
+    Effect Law  3 
+
+;------------------------------------------
+Ancillary translator
+    Type Diplomacy
+    Transferable  1 
+    Image civil_admin.tga
+    ExcludeCultures mesoamerican
+    Description translator_desc
+    EffectsDescription translator_effects_desc
+    Effect Influence  2 
+
+;------------------------------------------
+Ancillary treasurer
+    Type Money
+    Transferable  1 
+    Image civil_admin.tga
+    ExcludedAncillaries tax_farmer
+    ExcludeCultures northern_european, mesoamerican
+    Description treasurer_desc
+    EffectsDescription treasurer_effects_desc
+    Effect Trading  5 
+    Effect TaxCollection  5 
+
+;------------------------------------------
+Ancillary trick_abacus
+    Type Item
+    Transferable  0 
+    Image item_abacus.tga
+    ExcludeCultures mesoamerican
+    Description trick_abacus_desc
+    EffectsDescription trick_abacus_effects_desc
+    Effect Finance  1 
+
+;------------------------------------------
+Ancillary trusty_steed
+    Type Pet
+    Transferable  1 
+    Image animals_horse.tga
+    ExcludeCultures mesoamerican
+    Description trusty_steed_desc
+    EffectsDescription trusty_steed_effects_desc
+    Effect MovementPoints  1 
+    Effect CavalryCommand  1 
+
+;------------------------------------------
+Ancillary tutor
+    Type Academic
+    Transferable  1 
+    Image academic_scholar.tga
+    ExcludedAncillaries mathematician
+    ExcludeCultures mesoamerican
+    Description tutor_desc
+    EffectsDescription tutor_effects_desc
+    Effect Piety  1 
+    Effect Trading  5 
+
+;------------------------------------------
+Ancillary veteran_warrior
+    Type Military
+    Transferable  0 
+    Image knight_older.tga
+    ExcludedAncillaries swordbearer
+    ExcludeCultures mesoamerican
+    Description veteran_warrior_desc
+    EffectsDescription veteran_warrior_effects_desc
+    Effect PersonalSecurity  1 
+    Effect InfantryCommand  1 
+
+;------------------------------------------
+Ancillary witch_hunter
+    Type Security
+    Transferable  0 
+    Image religious_inquisitor.tga
+    ExcludeCultures mesoamerican, middle_eastern
+    Description witch_hunter_desc
+    EffectsDescription witch_hunter_effects_desc
+    Effect Piety  1 
+    Effect Unorthodoxy -1 
+
+;------------------------------------------
+Ancillary yappy_little_dog
+    Type Pet
+    Transferable  0 
+    Image animals_yappylittledog.tga
+    ExcludeCultures mesoamerican
+    Description yappy_little_dog_desc
+    EffectsDescription yappy_little_dog_effects_desc
+    Effect Charm -1 
+
+;------------------------------------------
+Ancillary zealous_disciple
+    Type Security
+    Transferable  0 
+    Image item_disguise.tga
+    ExcludedAncillaries naive_knight
+    ExcludeCultures mesoamerican
+    Description zealous_disciple_desc
+    EffectsDescription zealous_disciple_effects_desc
+    Effect Piety  1 
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary shard_of_the_true_cross
+    Type Relic
+    Transferable  1 
+    Image relic_christianreliquary.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description shard_of_the_true_cross_desc
+    EffectsDescription shard_of_the_true_cross_effects_desc
+    Effect Piety  2 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary holy_lance
+    Type Relic
+    Transferable  1 
+    Image relic_theholylance.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description holy_lance_desc
+    EffectsDescription holy_lance_effects_desc
+    Effect Piety  1 
+    Effect Command  2 
+
+;------------------------------------------
+Ancillary holy_grail
+    Type Relic
+    Transferable  1 
+    Image relic_theholygrail.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description holy_grail_desc
+    EffectsDescription holy_grail_effects_desc
+    Effect Piety  2 
+    Effect HitPoints  5 
+    Effect BattleSurgery  10 
+
+;------------------------------------------
+Ancillary iron_crown_of_lombardy
+    Type Relic
+    Transferable  1 
+    Image relic_christianreliquary.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description iron_crown_of_lombardy_desc
+    EffectsDescription iron_crown_of_lombardy_effects_desc
+    Effect Piety  1 
+    Effect PersonalSecurity  1 
+    Effect HitPoints  1 
+
+;------------------------------------------
+Ancillary bridle_of_constantine
+    Type Relic
+    Transferable  1 
+    Image relic_christianreliquary.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description bridle_of_constantine_desc
+    EffectsDescription bridle_of_constantine_effects_desc
+    Effect Piety  1 
+    Effect PersonalSecurity  1 
+    Effect HitPoints  1 
+
+;------------------------------------------
+Ancillary holy_chalice
+    Type Relic
+    Transferable  1 
+    Image relic_theholygrail.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description holy_chalice_desc
+    EffectsDescription holy_chalice_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary veil_of_veronica
+    Type Relic
+    Transferable  1 
+    Image relic_shroud.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description veil_of_veronica_desc
+    EffectsDescription veil_of_veronica_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary icon_not_made_by_hands
+    Type Relic
+    Transferable  1 
+    Image relic_christianreliquary.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description icon_not_made_by_hands_desc
+    EffectsDescription icon_not_made_by_hands_effects_desc
+    Effect Piety  1 
+    Effect Health  1 
+
+;------------------------------------------
+Ancillary holy_prepuce
+    Type Relic
+    Transferable  1 
+    Image relic_christianreliquary.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description holy_prepuce_desc
+    EffectsDescription holy_prepuce_effects_desc
+    Effect Piety  1 
+    Effect Fertility  1 
+
+;------------------------------------------
+Ancillary crown_of_thorns
+    Type Relic
+    Transferable  1 
+    Image relic_christianreliquary.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description crown_of_thorns_desc
+    EffectsDescription crown_of_thorns_effects_desc
+    Effect Piety  2 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary holy_shroud
+    Type Relic
+    Transferable  1 
+    Image relic_shroud.tga
+    ExcludeCultures middle_eastern, mesoamerican
+    Description holy_shroud_desc
+    EffectsDescription holy_shroud_effects_desc
+    Effect Piety  1 
+    Effect SiegeDefence  1 
+    Effect PersonalSecurity  1 
+
+;------------------------------------------
+Ancillary ark_of_the_covenant
+    Type Relic
+    Transferable  1 
+    Image relic_arcofthecovenant.tga
+    ExcludeCultures mesoamerican
+    Description ark_of_the_covenant_desc
+    EffectsDescription ark_of_the_covenant_effects_desc
+    Effect Chivalry -2 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary seal_of_solomon
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures mesoamerican
+    Description seal_of_solomon_desc
+    EffectsDescription seal_of_solomon_effects_desc
+    Effect Chivalry -1 
+    Effect Piety -1 
+    Effect CavalryCommand  2 
+
+;------------------------------------------
+Ancillary hair_from_mohammeds_beard
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description hair_from_mohammeds_beard_desc
+    EffectsDescription hair_from_mohammeds_beard_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary mohammeds_footprint
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description mohammeds_footprint_desc
+    EffectsDescription mohammeds_footprint_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary holy_mantle
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description holy_mantle_desc
+    EffectsDescription holy_mantle_effects_desc
+    Effect Piety  2 
+
+;------------------------------------------
+Ancillary tooth_of_mohammed
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description tooth_of_mohammed_desc
+    EffectsDescription tooth_of_mohammed_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary key_to_holy_kaaba
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description key_to_holy_kaaba_desc
+    EffectsDescription key_to_holy_kaaba_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary lock_of_kaaba
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description lock_of_kaaba_desc
+    EffectsDescription lock_of_kaaba_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary sword_of_mohammed
+    Type Relic
+    Transferable  1 
+    Image item_sword.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description sword_of_mohammed_desc
+    EffectsDescription sword_of_mohammed_effects_desc
+    Effect Piety  1 
+    Effect Command  2 
+
+;------------------------------------------
+Ancillary fragment_of_the_black_stone
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description fragment_of_the_black_stone_desc
+    EffectsDescription fragment_of_the_black_stone_effects_desc
+    Effect Piety  3 
+
+;------------------------------------------
+Ancillary holy_quran
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description holy_quran_desc
+    EffectsDescription holy_quran_effects_desc
+    Effect Piety  2 
+
+;------------------------------------------
+Ancillary soil_from_mohammeds_grave
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description soil_from_mohammeds_grave_desc
+    EffectsDescription soil_from_mohammeds_grave_effects_desc
+    Effect Piety  1 
+
+;------------------------------------------
+Ancillary standard_of_mohammed
+    Type Relic
+    Transferable  1 
+    Image relic_islamic.tga
+    ExcludeCultures northern_european, eastern_european, southern_european, greek, mesoamerican
+    Description standard_of_mohammed_desc
+    EffectsDescription standard_of_mohammed_effects_desc
+    Effect Piety  1 
+    Effect Command  1 
+
+;------------------------------------------
+Ancillary sir_william_wallace
+    Type Military
+    Transferable  0 
+    Image warrior_berserker.tga
+    Unique
+    ExcludeCultures eastern_european, southern_european, greek, mesoamerican
+    Description sir_william_wallace_desc
+    EffectsDescription sir_william_wallace_effects_desc
+    Effect Chivalry  1 
+    Effect Command  1 
+    Effect Authority  1 
+    Effect TroopMorale  2 
+    Effect Combat_V_Faction_England  3 
+
+;------------------------------------------
+Ancillary joan_of_arc
+    Type Military
+    Transferable  0 
+    Image sex_cheapwoman.tga
+    Unique
+    Description joan_of_arc_desc
+    EffectsDescription joan_of_arc_effects_desc
+    Effect Piety  2 
+    Effect Command  1 
+    Effect TroopMorale  2 
+    Effect Combat_V_Faction_England  2 
+
+;------------------------------------------
+Ancillary peter_the_hermit
+    Type Religion
+    Transferable  0 
+    Image religious_monk.tga
+    Unique
+    ExcludeCultures middle_eastern, greek
+    Description peter_the_hermit_desc
+    EffectsDescription peter_the_hermit_effects_desc
+    Effect LocalPopularity  2 
+    Effect Squalor -2 
+
+;------------------------------------------
+Ancillary bertrand_du_guesclin
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    ExcludeCultures middle_eastern, greek
+    Description bertrand_du_guesclin_desc
+    EffectsDescription bertrand_du_guesclin_effects_desc
+    Effect Command  2 
+    Effect TroopMorale  2 
+    Effect Combat_V_Faction_England  2 
+    Effect Combat_V_Faction_Portugal  1 
+    Effect Combat_V_Faction_Spain  1 
+
+;------------------------------------------
+Ancillary chevalier_de_bayard
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    ExcludeCultures middle_eastern, greek
+    Description chevalier_de_bayard_desc
+    EffectsDescription chevalier_de_bayard_effects_desc
+    Effect Chivalry  2 
+    Effect Piety  2 
+    Effect Command  2 
+    Effect LineOfSight  2 
+
+;------------------------------------------
+Ancillary pierre_abelard
+    Type Academic
+    Transferable  0 
+    Image academic_scholar.tga
+    Unique
+    Description pierre_abelard_desc
+    EffectsDescription pierre_abelard_effects_desc
+    Effect Piety  1 
+    Effect LocalPopularity  1 
+    Effect Squalor -1 
+
+;------------------------------------------
+Ancillary francesco_petrarca
+    Type Academic
+    Transferable  0 
+    Image academic_scholar.tga
+    Unique
+    Description francesco_petrarca_desc
+    EffectsDescription francesco_petrarca_effects_desc
+    Effect Piety  2 
+    Effect LocalPopularity  2 
+    Effect Squalor -1 
+
+;------------------------------------------
+Ancillary roger_bacon
+    Type Academic
+    Transferable  0 
+    Image academic_alchemist.tga
+    Unique
+    Description roger_bacon_desc
+    EffectsDescription roger_bacon_effects_desc
+    Effect SiegeAttack  1 
+    Effect GunpowderCommand  2 
+
+;------------------------------------------
+Ancillary geoffrey_chaucer
+    Type Academic
+    Transferable  0 
+    Image civil_admin.tga
+    Unique
+    Description geoffrey_chaucer_desc
+    EffectsDescription geoffrey_chaucer_effects_desc
+    Effect Construction  10 
+    Effect LocalPopularity  1 
+
+;------------------------------------------
+Ancillary john_wycliffe
+    Type Academic
+    Transferable  0 
+    Image religious_monk.tga
+    Unique
+    Description john_wycliffe_desc
+    EffectsDescription john_wycliffe_effects_desc
+    Effect Piety  2 
+
+;------------------------------------------
+Ancillary simon_de_montfort
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    Description simon_de_montfort_desc
+    EffectsDescription simon_de_montfort_effects_desc
+    Effect Chivalry  2 
+    Effect Command  2 
+    Effect Loyalty -1 
+    Effect LocalPopularity  1 
+
+;------------------------------------------
+Ancillary amerigo_vespucci
+    Type Academic
+    Transferable  0 
+    Image court_noble.tga
+    Unique
+    Description amerigo_vespucci_desc
+    EffectsDescription amerigo_vespucci_effects_desc
+    Effect MovementPoints  3 
+    Effect LineOfSight  3 
+    Effect Trading  10 
+
+;------------------------------------------
+Ancillary niels_ebbesen
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    Description niels_ebbesen_desc
+    EffectsDescription niels_ebbesen_effects_desc
+    Effect Chivalry  2 
+    Effect Command  2 
+    Effect TroopMorale  2 
+
+;------------------------------------------
+Ancillary vlad_tepes
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    Description vlad_tepes_desc
+    EffectsDescription vlad_tepes_effects_desc
+    Effect Chivalry -3 
+    Effect Combat_V_Religion_islam  3 
+
+;------------------------------------------
+Ancillary meister_eckhart
+    Type Religion
+    Transferable  0 
+    Image religious_mysticfigure.tga
+    Unique
+    Description meister_eckhart_desc
+    EffectsDescription meister_eckhart_effects_desc
+    Effect Piety  2 
+    Effect Authority  1 
+
+;------------------------------------------
+Ancillary arnold_von_winkelried
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    Description arnold_von_winkelried_desc
+    EffectsDescription arnold_von_winkelried_effects_desc
+    Effect TroopMorale  2 
+    Effect Attack  2 
+    Effect HitPoints  4 
+
+;------------------------------------------
+Ancillary john_gutenberg
+    Type Money
+    Transferable  0 
+    Image civil_master.tga
+    Unique
+    ExcludedAncillaries aldus_manutius
+    Description john_gutenberg_desc
+    EffectsDescription john_gutenberg_effects_desc
+    Effect Trading  20 
+    Effect Squalor -2 
+
+;------------------------------------------
+Ancillary hildegard_von_bingen
+    Type Religion
+    Transferable  0 
+    Image court_elderlylady.tga
+    Unique
+    Description hildegard_von_bingen_desc
+    EffectsDescription hildegard_von_bingen_effects_desc
+    Effect Piety  2 
+    Effect Authority  1 
+    Effect LocalPopularity  3 
+
+;------------------------------------------
+Ancillary martin_luther
+    Type Religion
+    Transferable  0 
+    Image religious_inquisitor.tga
+    Unique
+    Description martin_luther_desc
+    EffectsDescription martin_luther_effects_desc
+    Effect Piety  2 
+    Effect Unrest -2 
+
+;------------------------------------------
+Ancillary paracelsus
+    Type Magic
+    Transferable  0 
+    Image academic_alchemist.tga
+    Unique
+    Description paracelsus_desc
+    EffectsDescription paracelsus_effects_desc
+    Effect HitPoints  4 
+    Effect BattleSurgery  10 
+
+;------------------------------------------
+Ancillary johannes_faustes
+    Type Magic
+    Transferable  0 
+    Image espionage_agent.tga
+    Unique
+    Description johannes_faustes_desc
+    EffectsDescription johannes_faustes_effects_desc
+    Effect Chivalry -2 
+    Effect Piety -2 
+    Effect Fertility  2 
+    Effect HitPoints  4 
+
+;------------------------------------------
+Ancillary aldus_manutius
+    Type Academic
+    Transferable  0 
+    Image civil_master.tga
+    Unique
+    ExcludedAncillaries john_gutenberg
+    Description aldus_manutius_desc
+    EffectsDescription aldus_manutius_effects_desc
+    Effect Trading  20 
+    Effect Squalor -2 
+
+;------------------------------------------
+Ancillary marco_polo
+    Type Money
+    Transferable  0 
+    Image warrior_naval.tga
+    Unique
+    Description marco_polo_desc
+    EffectsDescription marco_polo_effects_desc
+    Effect MovementPoints  3 
+    Effect Trading  10 
+
+;------------------------------------------
+Ancillary donatello
+    Type Entertain
+    Transferable  0 
+    Image entertainment_artist.tga
+    Unique
+    ExcludedAncillaries michaelangelo, raphael
+    Description donatello_desc
+    EffectsDescription donatello_effects_desc
+    Effect LocalPopularity  2 
+    Effect Squalor -3 
+
+;------------------------------------------
+Ancillary raphael
+    Type Entertain
+    Transferable  0 
+    Image entertainment_artist.tga
+    Unique
+    ExcludedAncillaries michaelangelo, donatello
+    Description raphael_desc
+    EffectsDescription raphael_effects_desc
+    Effect LocalPopularity  2 
+    Effect Squalor -3 
+
+;------------------------------------------
+Ancillary michaelangelo
+    Type Entertain
+    Transferable  0 
+    Image entertainment_artist.tga
+    Unique
+    ExcludedAncillaries donatello, raphael
+    Description michaelangelo_desc
+    EffectsDescription michaelangelo_effects_desc
+    Effect LocalPopularity  2 
+    Effect Squalor -3 
+
+;------------------------------------------
+Ancillary machiavelli
+    Type Academic
+    Transferable  0 
+    Image religious_mysticfigure.tga
+    Unique
+    Description machiavelli_desc
+    EffectsDescription machiavelli_effects_desc
+    Effect Command  1 
+    Effect Authority  1 
+    Effect Squalor -1 
+    Effect Unrest -1 
+
+;------------------------------------------
+Ancillary george_of_antioch
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    Description george_of_antioch_desc
+    EffectsDescription george_of_antioch_effects_desc
+    Effect Piety  1 
+    Effect Command  2 
+    Effect LocalPopularity  2 
+
+;------------------------------------------
+Ancillary francis_of_assisi
+    Type Religion
+    Transferable  0 
+    Image religious_monk.tga
+    Unique
+    Description francis_of_assisi_desc
+    EffectsDescription francis_of_assisi_effects_desc
+    Effect Piety  2 
+    Effect Squalor -2 
+    Effect Unrest  2 
+
+;------------------------------------------
+Ancillary vasco_de_gama
+    Type Money
+    Transferable  0 
+    Image civil_master.tga
+    Unique
+    Description vasco_de_gama_desc
+    EffectsDescription vasco_de_gama_effects_desc
+    Effect MovementPoints  3 
+    Effect Trading  10 
+
+;------------------------------------------
+Ancillary anthony_of_padua
+    Type Religion
+    Transferable  0 
+    Image religious_monk.tga
+    Unique
+    Description anthony_of_padua_desc
+    EffectsDescription anthony_of_padua_effects_desc
+    Effect Piety  2 
+    Effect Squalor -2 
+    Effect Unrest  2 
+
+;------------------------------------------
+Ancillary taticius
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    Description taticius_desc
+    EffectsDescription taticius_effects_desc
+    Effect Command  2 
+
+;------------------------------------------
+Ancillary nicolau_copernicus
+    Type Academic
+    Transferable  0 
+    Image academic_scholar.tga
+    Unique
+    Description nicolau_copernicus_desc
+    EffectsDescription nicolau_copernicus_effects_desc
+    Effect Subterfuge  1 
+    Effect LineOfSight  2 
+
+;------------------------------------------
+Ancillary ibn_khaldun
+    Type Academic
+    Transferable  0 
+    Image muslim_man_standard.tga
+    Unique
+    Description ibn_khaldun_desc
+    EffectsDescription ibn_khaldun_effects_desc
+    Effect Piety  2 
+    Effect Authority  2 
+    Effect Trading  15 
+
+;------------------------------------------
+Ancillary albertus_magnus
+    Type Religion
+    Transferable  0 
+    Image academic_scholar.tga
+    Unique
+    Description albertus_magnus_desc
+    EffectsDescription albertus_magnus_effects_desc
+    Effect Law  2 
+
+;------------------------------------------
+Ancillary jan_zizka
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    Description jan_zizka_desc
+    EffectsDescription jan_zizka_effects_desc
+    Effect Command  2 
+    Effect Authority  1 
+    Effect Defence  2 
+    Effect SiegeEngineering  50 
+
+;------------------------------------------
+Ancillary roger_de_moulins
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    ExcludedAncillaries gerard_de_ridefort
+    Description roger_de_moulins_desc
+    EffectsDescription roger_de_moulins_effects_desc
+    Effect Command  2 
+    Effect Authority  1 
+
+;------------------------------------------
+Ancillary gerard_de_ridefort
+    Type Military
+    Transferable  0 
+    Image knight_chivalrous.tga
+    Unique
+    ExcludedAncillaries roger_de_moulins
+    Description gerard_de_ridefort_desc
+    EffectsDescription gerard_de_ridefort_effects_desc
+    Effect Command  1 
+    Effect Authority  1 
+    Effect TroopMorale  1 
+    Effect Attack  2 
+
+;===============================================================
+;== ANCILLARY TRIGGERS START HERE ==============================
+;===============================================================
+
+;------------------------------------------
+Trigger sitting_around_town_with_city_armourer
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists = armourer
+          and Attribute Command > 4
+
+    AcquireAncillary armour_custom chance  15 
+
+;------------------------------------------
+Trigger sitting_around_town_with_castle_armourer
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists = c_armourer
+          and Attribute Command > 4
+
+    AcquireAncillary armour_custom chance  30 
+
+;------------------------------------------
+Trigger sitting_around_castle_with_stables_dread
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= knights_stables
+          and Attribute Chivalry < -4
+
+    AcquireAncillary black_stallion chance  4 
+
+;------------------------------------------
+Trigger agents12
+    WhenToTest SufferAssassinationAttempt
+    Condition IsGeneral
+          and Trait HighPersonalSecurity < 1
+
+    AcquireAncillary bodyguard chance  50 
+
+;------------------------------------------
+Trigger agents16
+    WhenToTest SabotageMission
+    Condition MissionSucceeded
+          and I_TurnNumber > 85
+
+    AcquireAncillary explosives chance  50 
+
+;------------------------------------------
+Trigger agents42a
+    WhenToTest DenouncementMission
+    Condition MissionSucceeded
+          and AgentType = inquisitor
+
+    AcquireAncillary executioner chance  33 
+
+;------------------------------------------
+Trigger agents48a
+    WhenToTest SufferAssassinationAttempt
+    Condition AgentType = inquisitor
+
+    AcquireAncillary swiss_guard chance  25 
+
+;------------------------------------------
+Trigger agents51
+    WhenToTest ExecutesAnAssassinOnAMission
+    Condition AgentType = inquisitor
+
+    AcquireAncillary swiss_guard chance  25 
+
+;------------------------------------------
+Trigger agents52
+    WhenToTest CharacterTurnEnd
+    Condition not AtSea
+          and AgentType = priest
+          and CharacterNumTurnsIdle >= 4
+          and PopulationOwnReligion >= 80
+          and ReligionShift <= 10
+
+    AcquireAncillary monk chance  100 
+
+;------------------------------------------
+Trigger agents53
+    WhenToTest CharacterTurnEnd
+    Condition AgentType = princess
+
+    AcquireAncillary secret_love chance  5 
+
+;------------------------------------------
+Trigger agent59
+    WhenToTest SufferAssassinationAttempt
+    Condition AgentType = princess
+
+    AcquireAncillary royal_escort chance  100 
+
+;------------------------------------------
+Trigger princess_dad_was_prim2
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait Prim >= 1
+          and AgentType = princess
+
+    AcquireAncillary chastity_belt chance  20 
+
+;------------------------------------------
+Trigger princess_dad_was_prim3
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait Prim >= 1
+          and AgentType = princess
+
+    AcquireAncillary smothering_bodyguard chance  20 
+
+;------------------------------------------
+Trigger princess_dad_was_disciplinarian
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait Disciplinarian >= 1
+          and AgentType = princess
+
+    AcquireAncillary chastity_belt chance  20 
+
+;------------------------------------------
+Trigger princess_dad_was_womaniser2
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait Girls >= 1
+          and AgentType = princess
+
+    AcquireAncillary stunning_handmaiden chance  50 
+
+;------------------------------------------
+Trigger princess_dad_was_perverted2
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait Perverted >= 1
+          and AgentType = princess
+
+    AcquireAncillary stunning_handmaiden chance  50 
+
+;------------------------------------------
+Trigger princess_dad_was_paranoid
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait Paranoia >= 1
+          and AgentType = princess
+
+    AcquireAncillary delicate_blade chance  100 
+
+;------------------------------------------
+Trigger princess_dad_was_paranoid2
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait Paranoia >= 1
+          and AgentType = princess
+
+    AcquireAncillary smothering_bodyguard chance  75 
+
+;------------------------------------------
+Trigger princess_dad_was_spymaster
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait SpyMaster >= 1
+          and AgentType = princess
+
+    AcquireAncillary delicate_blade chance  100 
+
+;------------------------------------------
+Trigger princess_dad_was_assassinmaster
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait AssassinMaster >= 1
+          and AgentType = princess
+
+    AcquireAncillary delicate_blade chance  100 
+
+;------------------------------------------
+Trigger princess_dad_has_authority
+    WhenToTest CharacterComesOfAge
+    Condition FatherAttribute Authority > 4
+          and AgentType = princess
+
+    AcquireAncillary faithful_servant chance  100 
+
+;------------------------------------------
+Trigger princess_dad_was_aesthetic
+    WhenToTest CharacterComesOfAge
+    Condition FatherTrait Aesthetic >= 1
+          and AgentType = princess
+
+    AcquireAncillary fine_cosmetics chance  100 
+
+;------------------------------------------
+Trigger building_townhall_high_islam
+    WhenToTest GovernorBuildingCompleted
+    Condition CharacterReligion islam
+          and SettlementBuildingFinished >= mayors_palace
+
+    AcquireAncillary eunuch chance  100 
+
+;------------------------------------------
+Trigger building_castles_islam
+    WhenToTest GovernorBuildingCompleted
+    Condition CharacterReligion islam
+          and SettlementBuildingFinished >= fortress
+
+    AcquireAncillary eunuch chance  75 
+
+;------------------------------------------
+Trigger building_smithy_city
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= armourer
+
+    AcquireAncillary armour_custom chance  75 
+
+;------------------------------------------
+Trigger building_smithy_castle
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= c_armourer
+
+    AcquireAncillary armour_custom chance  75 
+
+;------------------------------------------
+Trigger spyinit8
+    WhenToTest AgentCreated
+    Condition AgentType = spy
+          and SettlementBuildingExists >= stables
+
+    AcquireAncillary black_stallion chance  100 
+
+;------------------------------------------
+Trigger spyinit9
+    WhenToTest AgentCreated
+    Condition AgentType = spy
+          and SettlementBuildingExists >= racing_track
+
+    AcquireAncillary black_stallion chance  100 
+
+;------------------------------------------
+Trigger princessinit1
+    WhenToTest CharacterComesOfAge
+    Condition AgentType = princess
+
+    AcquireAncillary yappy_little_dog chance  5 
+
+;------------------------------------------
+Trigger assassininit11
+    WhenToTest AgentCreated
+    Condition AgentType = assassin
+          and SettlementBuildingExists >= gunsmith
+
+    AcquireAncillary handgun chance  33 
+
+;------------------------------------------
+Trigger assassininit12
+    WhenToTest AgentCreated
+    Condition AgentType = assassin
+          and SettlementBuildingExists >= stables
+
+    AcquireAncillary black_stallion chance  100 
+
+;------------------------------------------
+Trigger assassininit13
+    WhenToTest AgentCreated
+    Condition AgentType = assassin
+          and SettlementBuildingExists >= racing_track
+
+    AcquireAncillary black_stallion chance  100 
+
+;------------------------------------------
+Trigger hereticinit4
+    WhenToTest PriestBecomesHeretic
+
+    AcquireAncillary zealous_disciple chance  10 
+
+;------------------------------------------
+Trigger hereticinit5
+    WhenToTest PriestBecomesHeretic
+
+    AcquireAncillary naive_knight chance  10 
+
+;------------------------------------------
+Trigger hereticinit6
+    WhenToTest PriestBecomesHeretic
+
+    AcquireAncillary false_relic chance  10 
+
+;------------------------------------------
+Trigger witchinit1
+    WhenToTest AgentCreated
+    Condition AgentType = witch
+
+    AcquireAncillary enchanted_broom chance  10 
+
+;------------------------------------------
+Trigger witchinit6
+    WhenToTest AgentCreated
+    Condition AgentType = witch
+
+    AcquireAncillary the_lemegeton chance  25 
+
+;------------------------------------------
+Trigger priestinit6
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and SettlementBuildingExists >= militia_drill_square
+
+    AcquireAncillary paladin chance  20 
+
+;------------------------------------------
+Trigger priestinit7
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and SettlementBuildingExists >= abbey
+          and CharacterReligion catholic
+
+    AcquireAncillary choir_boy chance  20 
+
+;------------------------------------------
+Trigger priestinit8
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and SettlementBuildingExists >= mayors_palace
+
+    AcquireAncillary royal_seminarian chance  20 
+
+;------------------------------------------
+Trigger priestinit9
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and SettlementBuildingExists >= castle
+
+    AcquireAncillary royal_seminarian chance  20 
+
+;------------------------------------------
+Trigger merchantinit4
+    WhenToTest AgentCreated
+    Condition AgentType = merchant
+          and SettlementBuildingExists >= alchemists_lab
+
+    AcquireAncillary counterfeiter chance  15 
+
+;------------------------------------------
+Trigger merchantinit12
+    WhenToTest AgentCreated
+    Condition AgentType = merchant
+          and SettlementBuildingExists >= alchemy_school
+
+    AcquireAncillary merchant_clerk chance  50 
+
+;------------------------------------------
+Trigger factionleader_poor_fighter
+    WhenToTest BecomesFactionLeader
+    Condition Attribute Command < 4
+          and I_TurnNumber > 2
+
+    AcquireAncillary armour_ornate chance  75 
+
+;------------------------------------------
+Trigger crusader_5a
+    WhenToTest GeneralTakesCrusadeTarget
+    Condition IsCrusade
+          and CharFactionType hre
+
+    AcquireAncillary knight_teutonic chance  100 
+
+;------------------------------------------
+Trigger crusader_5b
+    WhenToTest GeneralTakesCrusadeTarget
+    Condition IsCrusade
+          and CharFactionType spain
+
+    AcquireAncillary knight_santiago chance  100 
+
+;------------------------------------------
+Trigger crusader_5c
+    WhenToTest GeneralTakesCrusadeTarget
+    Condition IsCrusade
+          and CharFactionType portugal
+
+    AcquireAncillary knight_santiago chance  100 
+
+;------------------------------------------
+Trigger crusader_5d
+    WhenToTest GeneralTakesCrusadeTarget
+    Condition IsCrusade
+          and not CharFactionType portugal
+          and not CharFactionType spain
+          and not CharFactionType hre
+
+    AcquireAncillary knight_stjohn chance  100 
+
+;------------------------------------------
+Trigger crusader_5e
+    WhenToTest GeneralTakesCrusadeTarget
+    Condition IsCrusade
+          and not CharFactionType portugal
+          and not CharFactionType spain
+          and not CharFactionType hre
+
+    AcquireAncillary knight_templar chance  100 
+
+;------------------------------------------
+Trigger jihads_6
+    WhenToTest GeneralTakesCrusadeTarget
+    Condition IsJihad
+
+    AcquireAncillary knight_chivalrous chance  100 
+
+;------------------------------------------
+Trigger accomplice_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = assassin
+          and SettlementBuildingExists >= assassins_guild
+
+    AcquireAncillary accomplice chance  20 
+
+;------------------------------------------
+Trigger academic_advisor_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= library
+
+    AcquireAncillary academic_advisor chance  33 
+
+;------------------------------------------
+Trigger academic_advisor_vnv_trigger2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished = university
+
+    AcquireAncillary academic_advisor chance  33 
+
+;------------------------------------------
+Trigger actor_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= theatre
+          and IsGeneral
+
+    AcquireAncillary actor chance  5 
+
+;------------------------------------------
+Trigger adultress_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= coaching_house
+          and IsGeneral
+          and IsMarried
+          and SpouseAttribute Charm < 6
+          and Attribute Chivalry < 3
+
+    AcquireAncillary adultress chance  5 
+
+;------------------------------------------
+Trigger adultress_foreign_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition InEnemyLands
+          and IsMarried
+          and TimeInRegion > 3
+          and Trait Loyal < 0
+          and Attribute Chivalry < 3
+
+    AcquireAncillary adultress_foreign chance  5 
+
+;------------------------------------------
+Trigger adultress_she_man_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition Trait Arse >= 2
+          and IsMarried
+
+    AcquireAncillary adultress_she_man chance  5 
+
+;------------------------------------------
+Trigger alchemist_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= alchemists_lab
+          and IsGeneral
+
+    AcquireAncillary alchemist chance  5 
+
+;------------------------------------------
+Trigger apocethary_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished = alchemists_lab
+
+    AcquireAncillary alchemist chance  33 
+
+;------------------------------------------
+Trigger architect_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+
+    AcquireAncillary architect chance  3 
+
+;------------------------------------------
+Trigger artist_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= artist_studio
+          and IsGeneral
+
+    AcquireAncillary artist chance  5 
+
+;------------------------------------------
+Trigger artist_vnv_trigger2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished = artist_studio
+
+    AcquireAncillary artist chance  33 
+
+;------------------------------------------
+Trigger assassins_apprentice
+    WhenToTest AssassinationMission
+    Condition MissionSucceeded
+          and AgentType = assassin
+          and DistanceCapital < 20
+
+    AcquireAncillary assassins_apprentice chance  10 
+
+;------------------------------------------
+Trigger assassins_blade
+    WhenToTest AssassinationMission
+    Condition MissionSucceeded
+          and AgentType = assassin
+          and DistanceCapital > 55
+
+    AcquireAncillary assassins_blade chance  5 
+
+;------------------------------------------
+Trigger astrologer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and not SettlementBuildingExists >= small_church
+          and not SettlementBuildingExists >= small_chapel
+          and not SettlementBuildingExists >= small_church_o
+          and not SettlementBuildingExists >= small_chapel_o
+          and not SettlementBuildingExists >= small_masjid
+          and not SettlementBuildingExists >= c_small_masjid
+          and IsGeneral
+
+    AcquireAncillary astrologer chance  5 
+
+;------------------------------------------
+Trigger bard_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= tavern
+          and IsGeneral
+
+    AcquireAncillary bard chance  5 
+
+;------------------------------------------
+Trigger beguiling_bard_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= brothel
+          and AgentType = spy
+
+    AcquireAncillary beguiling_bard chance  5 
+
+;------------------------------------------
+Trigger biographer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and TimeInRegion > 3
+          and Attribute Command >= 5
+          and IsGeneral
+
+    AcquireAncillary biographer chance  5 
+
+;------------------------------------------
+Trigger brilliant_inventor_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= alchemists_lab
+          and IsGeneral
+          and not Trait Ignorance > 0
+
+    AcquireAncillary brilliant_inventor chance  3 
+
+;------------------------------------------
+Trigger caravan_driver_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = merchant
+          and SettlementBuildingExists >= caravan_stop
+
+    AcquireAncillary caravan_driver chance  50 
+
+;------------------------------------------
+Trigger caravan_driver_vnv_trigger2
+    WhenToTest CharacterTurnEnd
+    Condition AgentType = merchant
+          and EndedInSettlement
+          and SettlementBuildingExists >= caravan_stop
+
+    AcquireAncillary caravan_driver chance  50 
+
+;------------------------------------------
+Trigger catamite_vnv_trigger
+    WhenToTest AssassinationMission
+    Condition MissionSucceeded
+          and AgentType = assassin
+
+    AcquireAncillary catamite chance  3 
+
+;------------------------------------------
+Trigger courtesan_vnv_trigger
+    WhenToTest AgentCreated
+    Condition SettlementBuildingExists >= coaching_house
+          and AgentType = assassin
+
+    AcquireAncillary courtesan chance  20 
+
+;------------------------------------------
+Trigger crooked_judge_vnv_trigger
+    WhenToTest GovernorCityRiots
+    Condition SettlementBuildingExists >= town_hall
+          and IsGeneral
+          and not Trait StrategyChivalry > 0
+          and not Trait Just > 0
+
+    AcquireAncillary crooked_judge chance  20 
+
+;------------------------------------------
+Trigger dancer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= brothel
+          and AgentType = spy
+
+    AcquireAncillary dancer chance  5 
+
+;------------------------------------------
+Trigger dark_apprentice_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = witch
+
+    AcquireAncillary dark_apprentice chance  25 
+
+;------------------------------------------
+Trigger deacon_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and CharacterReligion catholic
+          and SettlementBuildingExists >= cathedral
+
+    AcquireAncillary deacon chance  50 
+
+;------------------------------------------
+Trigger deacon_vnv_trigger_2
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and CharacterReligion orthodox
+          and SettlementBuildingExists >= cathedral_o
+
+    AcquireAncillary deacon chance  25 
+
+;------------------------------------------
+Trigger diplomatic_escort_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = diplomat
+          and SettlementBuildingExists >= castle
+
+    AcquireAncillary diplomatic_escort chance  66 
+
+;------------------------------------------
+Trigger doctor_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= bimaristan
+          and IsGeneral
+          and Attribute Command > 3
+
+    AcquireAncillary doctor chance  15 
+
+;------------------------------------------
+Trigger doctor_vnv_trigger2
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= alchemy_school
+          and IsGeneral
+          and Attribute Command > 3
+
+    AcquireAncillary doctor chance  3 
+
+;------------------------------------------
+Trigger drillmaster_vnv_trigger
+    WhenToTest GovernorUnitTrained
+    Condition TrainedUnitCategory infantry
+          and Attribute Command >= 4
+          and IsGeneral
+
+    AcquireAncillary drillmaster chance  3 
+
+;------------------------------------------
+Trigger evil_mother-in-law_vnv_trigger
+    WhenToTest CharacterMarries
+    Condition Trait Gambling >= 1
+          and Trait Drink >= 1
+          and IsGeneral
+
+    AcquireAncillary evil_mother-in-law chance  50 
+
+;------------------------------------------
+Trigger exotic_gifts_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = diplomat
+          and SettlementBuildingExists >= great_market
+
+    AcquireAncillary exotic_gifts chance  33 
+
+;------------------------------------------
+Trigger false_documents_vnv_trigger
+    WhenToTest Insurrection
+
+    AcquireAncillary false_documents chance  15 
+
+;------------------------------------------
+Trigger false_documents_vnv_trigger2
+    WhenToTest AgentCreated
+    Condition AgentType = spy
+          and SettlementBuildingExists >= printing_press
+
+    AcquireAncillary false_documents chance  33 
+
+;------------------------------------------
+Trigger femme_fatale_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = assassin
+          and SettlementBuildingExists >= coaching_house
+
+    AcquireAncillary femme_fatale chance  10 
+
+;------------------------------------------
+Trigger foodtaster_vnv_trigger
+    WhenToTest SufferAssassinationAttempt
+    Condition Trait Paranoia >= 1
+          and IsGeneral
+
+    AcquireAncillary foodtaster chance  20 
+
+;------------------------------------------
+Trigger fool_brilliant_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= castle
+          and Attribute Command > 4
+
+    AcquireAncillary fool_brilliant chance  33 
+
+;------------------------------------------
+Trigger fool_usual_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= castle
+          and Attribute Command < 5
+
+    AcquireAncillary fool_usual chance  15 
+
+;------------------------------------------
+Trigger foreign_dignitary_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition InEnemyLands
+          and AgentType = diplomat
+          and DistanceCapital > 30
+
+    AcquireAncillary foreign_dignitary chance  3 
+
+;------------------------------------------
+Trigger harsh_judge_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and SettlementBuildingExists >= city_hall
+          and IsGeneral
+          and Trait StrategyDread > 0
+
+    AcquireAncillary harsh_judge chance  10 
+
+;------------------------------------------
+Trigger herald_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished = citadel
+          and Attribute Command > 3
+
+    AcquireAncillary herald chance  33 
+
+;------------------------------------------
+Trigger intrepid_explorer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and SettlementBuildingExists >= explorers_guild
+          and IsGeneral
+
+    AcquireAncillary intrepid_explorer chance  5 
+
+;------------------------------------------
+Trigger knight_beserker_vnv_trigger
+    WhenToTest PostBattle
+    Condition WasAttacker
+          and IsGeneral
+          and WonBattle
+          and GeneralFoughtInCombat
+          and BattleOdds >= 0.5
+          and BattleOdds < 1.5
+          and Trait BattleDread > 0
+
+    AcquireAncillary knight_beserker chance  15 
+
+;------------------------------------------
+Trigger knight_chivalrous_vnv_trigger
+    WhenToTest PostBattle
+    Condition not WasAttacker
+          and IsGeneral
+          and WonBattle
+          and GeneralFoughtInCombat
+          and BattleOdds < 1.2
+          and not Trait BattleDread > 0
+          and not Trait StrategyDread > 0
+
+    AcquireAncillary knight_chivalrous chance  25 
+
+;------------------------------------------
+Trigger knight_crusader_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition AgentType = priest
+          and I_CrusadeInProgress
+          and IsRegionCrusadeTarget
+          and CharacterReligion catholic
+          and TimeInRegion > 1
+
+    AcquireAncillary knight_crusader chance  33 
+
+;------------------------------------------
+Trigger knight_dread_vnv_trigger
+    WhenToTest PostBattle
+    Condition WasAttacker
+          and IsGeneral
+          and WonBattle
+          and GeneralFoughtInCombat
+          and BattleOdds < 1.2
+          and PercentageEnemyKilled > 66
+          and not Trait BattleChivalry > 0
+          and not Trait StrategyChivalry > 0
+
+    AcquireAncillary knight_dread chance  25 
+
+;------------------------------------------
+Trigger knight_santiago_vnv_trigger
+    WhenToTest PostBattle
+    Condition WasAttacker
+          and IsGeneral
+          and IsOnCrusade
+          and WonBattle
+          and GeneralFoughtInCombat
+          and BattleOdds >= 0.5
+          and BattleOdds < 1.5
+          and FactionType spain
+
+    AcquireAncillary knight_santiago chance  50 
+
+;------------------------------------------
+Trigger knight_santiago_vnv_trigger2
+    WhenToTest PostBattle
+    Condition WasAttacker
+          and IsGeneral
+          and IsOnCrusade
+          and WonBattle
+          and GeneralFoughtInCombat
+          and BattleOdds >= 0.5
+          and BattleOdds < 1.5
+          and FactionType portugal
+
+    AcquireAncillary knight_santiago chance  50 
+
+;------------------------------------------
+Trigger knight_stjohn_vnv_trigger
+    WhenToTest PostBattle
+    Condition WasAttacker
+          and IsGeneral
+          and IsOnCrusade
+          and WonBattle
+          and GeneralFoughtInCombat
+          and BattleOdds >= 0.5
+          and BattleOdds < 1.5
+          and not FactionType portugal
+          and not FactionType spain
+          and not FactionType hre
+
+    AcquireAncillary knight_stjohn chance  50 
+
+;------------------------------------------
+Trigger knight_templar_vnv_trigger
+    WhenToTest PostBattle
+    Condition WasAttacker
+          and IsGeneral
+          and IsOnCrusade
+          and WonBattle
+          and GeneralFoughtInCombat
+          and BattleOdds >= 0.5
+          and BattleOdds < 1.5
+          and not FactionType portugal
+          and not FactionType spain
+          and not FactionType hre
+
+    AcquireAncillary knight_templar chance  50 
+
+;------------------------------------------
+Trigger knight_teutonic_vnv_trigger
+    WhenToTest PostBattle
+    Condition WasAttacker
+          and IsGeneral
+          and IsOnCrusade
+          and WonBattle
+          and GeneralFoughtInCombat
+          and BattleOdds >= 0.5
+          and BattleOdds < 1.5
+          and FactionType hre
+
+    AcquireAncillary knight_teutonic chance  50 
+
+;------------------------------------------
+Trigger lancebearer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= jousting_lists
+          and IsGeneral
+          and Attribute Command > 3
+
+    AcquireAncillary lancebearer chance  10 
+
+;------------------------------------------
+Trigger librarian_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= library
+          and IsGeneral
+
+    AcquireAncillary librarian chance  5 
+
+;------------------------------------------
+Trigger magician_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and Trait Superstitious >= 1
+          and SettlementBuildingExists >= alchemists_lab
+          and SettlementBuildingExists >= fairground
+
+    AcquireAncillary magician chance  15 
+
+;------------------------------------------
+Trigger magician_pagan_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition not AtSea
+          and IsGeneral
+          and PopulationOwnReligion < 90
+          and PopulationHeretic >= 10
+          and not Trait Superstitious > 0
+
+    AcquireAncillary magician_pagan chance  5 
+
+;------------------------------------------
+Trigger master_mason_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= m_masons_guild
+
+    AcquireAncillary master_mason chance  33 
+
+;------------------------------------------
+Trigger master_of_archers_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= archery_range
+          and IsGeneral
+
+    AcquireAncillary master_of_archers chance  5 
+
+;------------------------------------------
+Trigger master_of_archers_vnv_trigger2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished = marksmans_range
+
+    AcquireAncillary master_of_archers chance  33 
+
+;------------------------------------------
+Trigger master_of_assassins_vnv_trigger
+    WhenToTest LeaderOrderedAssassination
+
+    AcquireAncillary master_of_assassins chance  5 
+
+;------------------------------------------
+Trigger master_of_assassins_vnv_trigger2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= m_assassins_guild
+
+    AcquireAncillary master_of_assassins chance  33 
+
+;------------------------------------------
+Trigger master_of_horse_vnv_trigger
+    WhenToTest GovernorUnitTrained
+    Condition TrainedUnitCategory cavalry
+          and SettlementBuildingExists > knights_stables
+          and IsGeneral
+
+    AcquireAncillary master_of_horse chance  20 
+
+;------------------------------------------
+Trigger master_smith_vnv_trigger2
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= armourer
+          and IsGeneral
+
+    AcquireAncillary master_smith chance  2 
+
+;------------------------------------------
+Trigger master_smith_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= swordsmiths_guild
+
+    AcquireAncillary master_smith chance  20 
+
+;------------------------------------------
+Trigger master_smith_vnv_trigger2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= armourer
+
+    AcquireAncillary master_smith chance  20 
+
+;------------------------------------------
+Trigger master_smith_vnv_trigger3
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= c_armourer
+
+    AcquireAncillary master_smith chance  20 
+
+;------------------------------------------
+Trigger mathematician_vnv_trigger2
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists = academy
+          and IsGeneral
+
+    AcquireAncillary mathematician chance  5 
+
+;------------------------------------------
+Trigger mathematician_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists = university
+          and IsGeneral
+
+    AcquireAncillary mathematician chance  5 
+
+;------------------------------------------
+Trigger mentor_vnv_trigger
+    WhenToTest CharacterComesOfAge
+    Condition IsGeneral
+          and FatherAttribute Authority >= 2
+
+    AcquireAncillary mentor chance  15 
+
+;------------------------------------------
+Trigger mercenary_captain_vnv_trigger
+    WhenToTest HireMercenaries
+
+    AcquireAncillary mercenary_captain chance  10 
+
+;------------------------------------------
+Trigger military_engineer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= city_watch
+          and SettlementBuildingExists >= catapult_range
+          and IsGeneral
+
+    AcquireAncillary military_engineer chance  5 
+
+;------------------------------------------
+Trigger military_engineer_vnv_trigger2
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= drill_square
+          and SettlementBuildingExists >= c_catapult_range
+          and IsGeneral
+
+    AcquireAncillary military_engineer chance  8 
+
+;------------------------------------------
+Trigger money_counter_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= fairground
+          and Treasury > 50000
+          and IsGeneral
+
+    AcquireAncillary money_counter chance  8 
+
+;------------------------------------------
+Trigger musician_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= theatre
+          and IsGeneral
+
+    AcquireAncillary musician chance  10 
+
+;------------------------------------------
+Trigger naval_gunner_vnv_trigger
+    WhenToTest AgentCreated
+    Condition IsAdmiral
+          and SettlementBuildingExists >= naval_academy
+
+    AcquireAncillary naval_gunner chance  33 
+
+;------------------------------------------
+Trigger naval_navigator_vnv_trigger
+    WhenToTest AgentCreated
+    Condition IsAdmiral
+          and SettlementBuildingExists >= explorers_guild
+
+    AcquireAncillary naval_navigator chance  33 
+
+;------------------------------------------
+Trigger nosy_mother_vnv_trigger
+    WhenToTest CharacterMarries
+    Condition Trait Girls >= 1
+
+    AcquireAncillary nosy_mother chance  50 
+
+;------------------------------------------
+Trigger nun_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and CharacterReligion catholic
+          and SettlementBuildingExists >= abbey
+
+    AcquireAncillary nun chance  75 
+
+;------------------------------------------
+Trigger nun_orthodox_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and CharacterReligion orthodox
+          and SettlementBuildingExists >= abbey_o
+
+    AcquireAncillary nun chance  75 
+
+;------------------------------------------
+Trigger obsessed_suitor_vnv_trigger
+    WhenToTest DiplomacyMission
+    Condition AgentType = princess
+          and Attribute Charm > 4
+
+    AcquireAncillary obsessed_suitor chance  4 
+
+;------------------------------------------
+Trigger ordinance_master_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= military_academy
+          and IsGeneral
+
+    AcquireAncillary ordinance_master chance  10 
+
+;------------------------------------------
+Trigger overseer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= farms+2
+          and IsGeneral
+
+    AcquireAncillary overseer chance  10 
+
+;------------------------------------------
+Trigger pet_bloodhound_vnv_trigger
+    WhenToTest AssassinationMission
+    Condition AgentType = assassin
+          and MissionSucceeded
+          and not InEnemyLands
+
+    AcquireAncillary pet_bloodhound chance  4 
+
+;------------------------------------------
+Trigger pet_guard_dog_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= castle
+          and IsGeneral
+          and TimeInRegion > 4
+
+    AcquireAncillary pet_guarddog chance  8 
+
+;------------------------------------------
+Trigger pet_monkey_vnv_trigger
+    WhenToTest AgentCreated
+    Condition SettlementBuildingExists >= market
+          and AgentType = spy
+          and not CultureType northern_european
+          and not CultureType southern_european
+
+    AcquireAncillary pet_monkey chance  5 
+
+;------------------------------------------
+Trigger physician_vnv_trigger
+    WhenToTest PostBattle
+    Condition WonBattle
+          and PercentageOfArmyKilled > 50
+          and FactionBuildingExists = university
+          and IsGeneral
+          and not CharacterReligion islam
+
+    AcquireAncillary physician chance  10 
+
+;------------------------------------------
+Trigger physician_vnv_trigger_islam
+    WhenToTest PostBattle
+    Condition WonBattle
+          and PercentageOfArmyKilled > 50
+          and FactionBuildingExists >= bimaristan
+          and IsGeneral
+
+    AcquireAncillary physician chance  30 
+
+;------------------------------------------
+Trigger pickpocket_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = spy
+          and SettlementBuildingExists >= market
+
+    AcquireAncillary pickpocket chance  12 
+
+;------------------------------------------
+Trigger poisoner_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = assassin
+          and FactionBuildingExists >= m_alchemists_guild
+
+    AcquireAncillary poisoner chance  20 
+
+;------------------------------------------
+Trigger priest_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and SettlementBuildingExists >= theologians_guild
+          and IsGeneral
+          and not CharacterReligion islam
+
+    AcquireAncillary priest chance  3 
+
+;------------------------------------------
+Trigger quartermaster_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= army_barracks
+          and IsGeneral
+          and Attribute Command > 3
+
+    AcquireAncillary quartermaster chance  20 
+
+;------------------------------------------
+Trigger runner_vnv_trigger
+    WhenToTest PostBattle
+    Condition not Routs
+          and WonBattle
+          and BattleSuccess = crushing
+          and not GeneralFoughtInCombat
+          and IsGeneral
+
+    AcquireAncillary runner chance  10 
+
+;------------------------------------------
+Trigger scout_vnv_trigger
+    WhenToTest PostBattle
+    Condition WonBattle
+          and I_ConflictType SuccessfulAmbush
+          and not WasAttacker
+          and InEnemyLands
+          and IsGeneral
+
+    AcquireAncillary scout chance  8 
+
+;------------------------------------------
+Trigger scribe_ancillary_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= town_hall
+          and SettlementBuildingExists >= alchemists_lab
+          and IsGeneral
+
+    AcquireAncillary scribe_ancillary chance  10 
+
+;------------------------------------------
+Trigger shieldbearer_vnv_trigger
+    WhenToTest PostBattle
+    Condition GeneralHPLostRatioinBattle <= 80
+          and GeneralNumKillsInBattle > 5
+          and WonBattle
+          and not Routs
+          and IsGeneral
+
+    AcquireAncillary shieldbearer chance  15 
+
+;------------------------------------------
+Trigger shipwright_vnv_trigger
+    WhenToTest NewAdmiralCreated
+    Condition SettlementBuildingExists >= merchants_wharf
+
+    AcquireAncillary shipwright chance  8 
+
+;------------------------------------------
+Trigger siege_engineer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= catapult_range
+          and IsGeneral
+
+    AcquireAncillary siege_engineer chance  3 
+
+;------------------------------------------
+Trigger siege_engineer_vnv_trigger2
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= c_catapult_range
+          and IsGeneral
+
+    AcquireAncillary siege_engineer chance  3 
+
+;------------------------------------------
+Trigger siege_engineer_vnv_trigger3
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= siege_works
+
+    AcquireAncillary siege_engineer chance  33 
+
+;------------------------------------------
+Trigger siege_engineer_vnv_trigger4
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= c_siege_works
+
+    AcquireAncillary siege_engineer chance  33 
+
+;------------------------------------------
+Trigger slaver_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition CharacterReligion islam
+          and Attribute Chivalry < -3
+
+    AcquireAncillary slaver chance  20 
+
+;------------------------------------------
+Trigger slaver_byzantine_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition CharFactionType byzantium
+          and Attribute Chivalry < -3
+
+    AcquireAncillary slaver chance  20 
+
+;------------------------------------------
+Trigger soothsayer_vnv_trigger
+    WhenToTest PostBattle
+    Condition not WonBattle
+
+    AcquireAncillary soothsayer chance  3 
+
+;------------------------------------------
+Trigger spymaster_vnv_trigger
+    WhenToTest LeaderOrderedSpyingMission
+    Condition IsFactionLeader
+          and IsGeneral
+
+    AcquireAncillary spymaster chance  3 
+
+;------------------------------------------
+Trigger spymaster_vnv_trigger2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= thieves_guild
+
+    AcquireAncillary spymaster chance  20 
+
+;------------------------------------------
+Trigger spyglass_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = spy
+          and SettlementBuildingExists >= dockyard
+
+    AcquireAncillary spyglass chance  20 
+
+;------------------------------------------
+Trigger strapping_stallion_vnv_trigger
+    WhenToTest CharacterComesOfAge
+    Condition AgentType = princess
+          and FactionBuildingExists = kings_stables
+
+    AcquireAncillary strapping_stallion chance  25 
+
+;------------------------------------------
+Trigger swift_steed_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = diplomat
+          and FactionBuildingExists >= horse_breeders_guild
+
+    AcquireAncillary swift_steed chance  33 
+
+;------------------------------------------
+Trigger swordbearer_vnv_trigger
+    WhenToTest PostBattle
+    Condition GeneralNumKillsInBattle > 5
+          and WonBattle
+          and not Routs
+          and IsGeneral
+
+    AcquireAncillary swordbearer chance  10 
+
+;------------------------------------------
+Trigger tax_farmer_vnv_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition Trait BadTaxman >= 1
+          and IsGeneral
+
+    AcquireAncillary tax_farmer chance  8 
+
+;------------------------------------------
+Trigger torturer_vnv_trigger
+    WhenToTest ExterminatePopulation
+    Condition IsGeneral
+          and Trait StrategyDread > 1
+
+    AcquireAncillary torturer chance  8 
+
+;------------------------------------------
+Trigger translator_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and SettlementBuildingExists >= market
+          and AgentType = diplomat
+
+    AcquireAncillary translator chance  15 
+
+;------------------------------------------
+Trigger treasurer_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists = great_market
+          and IsGeneral
+
+    AcquireAncillary treasurer chance  10 
+
+;------------------------------------------
+Trigger trick_abacus_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = merchant
+          and not SettlementBuildingExists >= town_hall
+
+    AcquireAncillary trick_abacus chance  5 
+
+;------------------------------------------
+Trigger trusty_steed_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and SettlementBuildingExists >= earls_stables
+          and Trait GoodCavalryGeneral >= 1
+          and IsGeneral
+
+    AcquireAncillary trusty_steed chance  15 
+
+;------------------------------------------
+Trigger tutor_vnv_trigger
+    WhenToTest CharacterComesOfAge
+    Condition IsGeneral
+          and Trait Ignorance <= 1
+
+    AcquireAncillary tutor chance  33 
+
+;------------------------------------------
+Trigger veteran_warrior_vnv_trigger
+    WhenToTest PostBattle
+    Condition GeneralNumKillsInBattle > 5
+          and WonBattle
+          and not Routs
+          and IsGeneral
+          and GeneralHPLostRatioinBattle <= 50
+
+    AcquireAncillary veteran_warrior chance  50 
+
+;------------------------------------------
+Trigger witch_hunter_vnv_trigger
+    WhenToTest CharacterTurnEnd
+    Condition not AtSea
+          and AgentType = priest
+          and PopulationHeretic > 15
+          and TimeInRegion > 3
+
+    AcquireAncillary witch_hunter chance  20 
+
+;------------------------------------------
+Trigger witch_hunter_vnv_trigger
+    WhenToTest AgentCreated
+    Condition AgentType = priest
+          and FactionLeaderTrait ReligiousActivity > 1
+
+    AcquireAncillary witch_hunter chance  10 
+
+;------------------------------------------
+Trigger shard_of_the_true_cross_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Tripoli
+          and not I_WorldwideAncillaryExists shard_of_the_true_cross
+          and not HasAncType Relic
+
+    AcquireAncillary shard_of_the_true_cross chance  10 
+
+;------------------------------------------
+Trigger holy_lance_antioch_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Antioch
+          and not I_WorldwideAncillaryExists holy_lance
+          and not HasAncType Relic
+
+    AcquireAncillary holy_lance chance  10 
+
+;------------------------------------------
+Trigger holy_lance_constantinople_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Constantinople
+          and not I_WorldwideAncillaryExists holy_lance
+          and not HasAncType Relic
+
+    AcquireAncillary holy_lance chance  10 
+
+;------------------------------------------
+Trigger holy_grail_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 5
+          and SettlementName Aleppo
+          and not I_WorldwideAncillaryExists holy_grail
+          and not HasAncType Relic
+
+    AcquireAncillary holy_grail chance  10 
+
+;------------------------------------------
+Trigger iron_crown_of_lombardy_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Milan
+          and not I_WorldwideAncillaryExists iron_crown_of_lombardy
+          and not HasAncType Relic
+
+    AcquireAncillary iron_crown_of_lombardy chance  10 
+
+;------------------------------------------
+Trigger bridle_of_constantine_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Constantinople
+          and not I_WorldwideAncillaryExists bridle_of_constantine
+          and not HasAncType Relic
+
+    AcquireAncillary bridle_of_constantine chance  10 
+
+;------------------------------------------
+Trigger holy_chalice_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Jerusalem
+          and not I_WorldwideAncillaryExists holy_chalice
+          and not HasAncType Relic
+
+    AcquireAncillary holy_chalice chance  10 
+
+;------------------------------------------
+Trigger veil_of_veronica_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Jerusalem
+          and not I_WorldwideAncillaryExists veil_of_veronica
+          and not HasAncType Relic
+
+    AcquireAncillary veil_of_veronica chance  10 
+
+;------------------------------------------
+Trigger icon_not_made_by_hands_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Edessa
+          and not I_WorldwideAncillaryExists icon_not_made_by_hands
+          and not HasAncType Relic
+
+    AcquireAncillary icon_not_made_by_hands chance  10 
+
+;------------------------------------------
+Trigger holy_prepuce_bordeaux_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Bordeaux
+          and not I_WorldwideAncillaryExists holy_prepuce
+          and not HasAncType Relic
+
+    AcquireAncillary holy_prepuce chance  10 
+
+;------------------------------------------
+Trigger holy_prepuce_hamburg_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Hamburg
+          and not I_WorldwideAncillaryExists holy_prepuce
+          and not HasAncType Relic
+
+    AcquireAncillary holy_prepuce chance  10 
+
+;------------------------------------------
+Trigger crown_of_thorns_jerusalem_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Jerusalem
+          and not I_WorldwideAncillaryExists crown_of_thorns
+          and not HasAncType Relic
+
+    AcquireAncillary crown_of_thorns chance  10 
+
+;------------------------------------------
+Trigger crown_of_thorns_paris_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Paris
+          and not I_WorldwideAncillaryExists crown_of_thorns
+          and not HasAncType Relic
+
+    AcquireAncillary crown_of_thorns chance  10 
+
+;------------------------------------------
+Trigger holy_shroud_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Constantinople
+          and not I_WorldwideAncillaryExists holy_shroud
+          and not HasAncType Relic
+
+    AcquireAncillary holy_shroud chance  10 
+
+;------------------------------------------
+Trigger ark_of_the_covenant_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Cairo
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists ark_of_the_covenant
+          and not HasAncType Relic
+
+    AcquireAncillary ark_of_the_covenant chance  10 
+
+;------------------------------------------
+Trigger seal_of_solomon_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Jerusalem
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists seal_of_solomon
+          and not HasAncType Relic
+
+    AcquireAncillary seal_of_solomon chance  10 
+
+;------------------------------------------
+Trigger hair_from_mohammeds_beard_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Acre
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists hair_from_mohammeds_beard
+          and not HasAncType Relic
+
+    AcquireAncillary hair_from_mohammeds_beard chance  10 
+
+;------------------------------------------
+Trigger mohammeds_footprint_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Damascus
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists mohammeds_footprint
+          and not HasAncType Relic
+
+    AcquireAncillary mohammeds_footprint chance  10 
+
+;------------------------------------------
+Trigger holy_mantle_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Antioch
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists holy_mantle
+          and not HasAncType Relic
+
+    AcquireAncillary holy_mantle chance  10 
+
+;------------------------------------------
+Trigger tooth_of_mohammed_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Aleppo
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists tooth_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary tooth_of_mohammed chance  10 
+
+;------------------------------------------
+Trigger key_to_holy_kaaba_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Edessa
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists key_to_holy_kaaba
+          and not HasAncType Relic
+
+    AcquireAncillary key_to_holy_kaaba chance  10 
+
+;------------------------------------------
+Trigger lock_of_kaaba_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Adana
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists lock_of_kaaba
+          and not HasAncType Relic
+
+    AcquireAncillary lock_of_kaaba chance  10 
+
+;------------------------------------------
+Trigger sword_of_mohammed_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Baghdad
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists sword_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary sword_of_mohammed chance  10 
+
+;------------------------------------------
+Trigger fragment_of_the_black_stone_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Iconium
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists fragment_of_the_black_stone
+          and not HasAncType Relic
+
+    AcquireAncillary fragment_of_the_black_stone chance  10 
+
+;------------------------------------------
+Trigger holy_quran_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Mosul
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists holy_quran
+          and not HasAncType Relic
+
+    AcquireAncillary holy_quran chance  10 
+
+;------------------------------------------
+Trigger soil_from_mohammeds_grave_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Gaza
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists soil_from_mohammeds_grave
+          and not HasAncType Relic
+
+    AcquireAncillary soil_from_mohammeds_grave chance  10 
+
+;------------------------------------------
+Trigger standard_of_mohammed_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Nicaea
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists standard_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary standard_of_mohammed chance  10 
+
+;------------------------------------------
+Trigger shard_of_the_true_cross_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Tripoli
+          and not I_WorldwideAncillaryExists shard_of_the_true_cross
+          and not HasAncType Relic
+
+    AcquireAncillary shard_of_the_true_cross chance  30 
+
+;------------------------------------------
+Trigger holy_lance_crusading_antioch_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Antioch
+          and not I_WorldwideAncillaryExists holy_lance
+          and not HasAncType Relic
+
+    AcquireAncillary holy_lance chance  30 
+
+;------------------------------------------
+Trigger holy_lance_crusading_constantinople_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Constantinople
+          and not I_WorldwideAncillaryExists holy_lance
+          and not HasAncType Relic
+
+    AcquireAncillary holy_lance chance  30 
+
+;------------------------------------------
+Trigger holy_grail_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 5
+          and IsOnCrusade
+          and SettlementName Aleppo
+          and not I_WorldwideAncillaryExists holy_grail
+          and not HasAncType Relic
+
+    AcquireAncillary holy_grail chance  30 
+
+;------------------------------------------
+Trigger iron_crown_of_lombardy_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Milan
+          and not I_WorldwideAncillaryExists iron_crown_of_lombardy
+          and not HasAncType Relic
+
+    AcquireAncillary iron_crown_of_lombardy chance  30 
+
+;------------------------------------------
+Trigger bridle_of_constantine_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Constantinople
+          and not I_WorldwideAncillaryExists bridle_of_constantine
+          and not HasAncType Relic
+
+    AcquireAncillary bridle_of_constantine chance  30 
+
+;------------------------------------------
+Trigger holy_chalice_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Jerusalem
+          and not I_WorldwideAncillaryExists holy_chalice
+          and not HasAncType Relic
+
+    AcquireAncillary holy_chalice chance  30 
+
+;------------------------------------------
+Trigger veil_of_veronica_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Jerusalem
+          and not I_WorldwideAncillaryExists veil_of_veronica
+          and not HasAncType Relic
+
+    AcquireAncillary veil_of_veronica chance  30 
+
+;------------------------------------------
+Trigger icon_not_made_by_hands_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Edessa
+          and not I_WorldwideAncillaryExists icon_not_made_by_hands
+          and not HasAncType Relic
+
+    AcquireAncillary icon_not_made_by_hands chance  30 
+
+;------------------------------------------
+Trigger holy_prepuce_crusading_bordeaux_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Bordeaux
+          and not I_WorldwideAncillaryExists holy_prepuce
+          and not HasAncType Relic
+
+    AcquireAncillary holy_prepuce chance  30 
+
+;------------------------------------------
+Trigger holy_prepuce_crusading_anc_hamburg_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Hamburg
+          and not I_WorldwideAncillaryExists holy_prepuce
+          and not HasAncType Relic
+
+    AcquireAncillary holy_prepuce chance  30 
+
+;------------------------------------------
+Trigger crown_of_thorns_crusading_jerusalem_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Jerusalem
+          and not I_WorldwideAncillaryExists crown_of_thorns
+          and not HasAncType Relic
+
+    AcquireAncillary crown_of_thorns chance  30 
+
+;------------------------------------------
+Trigger crown_of_thorns_crusading_paris_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Paris
+          and not I_WorldwideAncillaryExists crown_of_thorns
+          and not HasAncType Relic
+
+    AcquireAncillary crown_of_thorns chance  30 
+
+;------------------------------------------
+Trigger holy_shroud_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Constantinople
+          and not I_WorldwideAncillaryExists holy_shroud
+          and not HasAncType Relic
+
+    AcquireAncillary holy_shroud chance  30 
+
+;------------------------------------------
+Trigger ark_of_the_covenant_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Cairo
+          and not I_WorldwideAncillaryExists ark_of_the_covenant
+          and not HasAncType Relic
+
+    AcquireAncillary ark_of_the_covenant chance  30 
+
+;------------------------------------------
+Trigger seal_of_solomon_crusading_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and IsOnCrusade
+          and SettlementName Jerusalem
+          and not I_WorldwideAncillaryExists seal_of_solomon
+          and not HasAncType Relic
+
+    AcquireAncillary seal_of_solomon chance  30 
+
+;------------------------------------------
+Trigger ark_of_the_covenant_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Cairo
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists ark_of_the_covenant
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary ark_of_the_covenant chance  30 
+
+;------------------------------------------
+Trigger seal_of_solomon_anc_jihad_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Jerusalem
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists seal_of_solomon
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary seal_of_solomon chance  30 
+
+;------------------------------------------
+Trigger hair_from_mohammeds_beard_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Acre
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists hair_from_mohammeds_beard
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary hair_from_mohammeds_beard chance  30 
+
+;------------------------------------------
+Trigger mohammeds_footprint_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Damascus
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists mohammeds_footprint
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary mohammeds_footprint chance  30 
+
+;------------------------------------------
+Trigger holy_mantle_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Antioch
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists holy_mantle
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary holy_mantle chance  30 
+
+;------------------------------------------
+Trigger tooth_of_mohammed_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Aleppo
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists tooth_of_mohammed
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary tooth_of_mohammed chance  30 
+
+;------------------------------------------
+Trigger key_to_holy_kaaba_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Edessa
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists key_to_holy_kaaba
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary key_to_holy_kaaba chance  30 
+
+;------------------------------------------
+Trigger lock_of_kaaba_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Adana
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists lock_of_kaaba
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary lock_of_kaaba chance  30 
+
+;------------------------------------------
+Trigger sword_of_mohammed_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Baghdad
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists sword_of_mohammed
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary sword_of_mohammed chance  30 
+
+;------------------------------------------
+Trigger fragment_of_the_black_stone_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Iconium
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists fragment_of_the_black_stone
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary fragment_of_the_black_stone chance  30 
+
+;------------------------------------------
+Trigger holy_quran_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Mosul
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists holy_quran
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary holy_quran chance  30 
+
+;------------------------------------------
+Trigger soil_from_mohammeds_grave_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Gaza
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists soil_from_mohammeds_grave
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary soil_from_mohammeds_grave chance  30 
+
+;------------------------------------------
+Trigger standard_of_mohammed_jihad_anc_trigger
+    WhenToTest GeneralCaptureSettlement
+    Condition Attribute Piety > 3
+          and SettlementName Nicaea
+          and not FactionReligion pagan
+          and not I_WorldwideAncillaryExists standard_of_mohammed
+          and not HasAncType Relic
+          and IsOnJihad
+
+    AcquireAncillary standard_of_mohammed chance  30 
+
+;------------------------------------------
+Trigger shard_of_the_true_cross_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_rome_min_penalty_major_reward
+          and not I_WorldwideAncillaryExists shard_of_the_true_cross
+          and not HasAncType Relic
+
+    AcquireAncillary shard_of_the_true_cross chance  5 
+
+;------------------------------------------
+Trigger holy_lance_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_rome_min_penalty_major_reward
+          and not I_WorldwideAncillaryExists holy_lance
+          and not HasAncType Relic
+
+    AcquireAncillary holy_lance chance  5 
+
+;------------------------------------------
+Trigger holy_grail_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 5
+          and PaybackID pope_rome_min_penalty_major_reward
+          and not I_WorldwideAncillaryExists holy_grail
+          and not HasAncType Relic
+
+    AcquireAncillary holy_grail chance  5 
+
+;------------------------------------------
+Trigger iron_crown_of_lombardy_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_cardinal_major_reward_only
+          and not I_WorldwideAncillaryExists iron_crown_of_lombardy
+          and not HasAncType Relic
+
+    AcquireAncillary iron_crown_of_lombardy chance  5 
+
+;------------------------------------------
+Trigger bridle_of_constantine_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_cardinal_major_reward_only
+          and not I_WorldwideAncillaryExists bridle_of_constantine
+          and not HasAncType Relic
+
+    AcquireAncillary bridle_of_constantine chance  5 
+
+;------------------------------------------
+Trigger holy_chalice_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_cardinal_major_reward_only
+          and not I_WorldwideAncillaryExists holy_chalice
+          and not HasAncType Relic
+
+    AcquireAncillary holy_chalice chance  5 
+
+;------------------------------------------
+Trigger veil_of_veronica_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_cardinal_min_penalty_major_reward
+          and not I_WorldwideAncillaryExists veil_of_veronica
+          and not HasAncType Relic
+
+    AcquireAncillary veil_of_veronica chance  5 
+
+;------------------------------------------
+Trigger icon_not_made_by_hands_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_cardinal_min_penalty_major_reward
+          and not I_WorldwideAncillaryExists icon_not_made_by_hands
+          and not HasAncType Relic
+
+    AcquireAncillary icon_not_made_by_hands chance  5 
+
+;------------------------------------------
+Trigger holy_prepuce_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_cardinal_min_penalty_major_reward
+          and not I_WorldwideAncillaryExists holy_prepuce
+          and not HasAncType Relic
+
+    AcquireAncillary holy_prepuce chance  5 
+
+;------------------------------------------
+Trigger crown_of_thorns_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_rome_min_penalty_major_reward
+          and not I_WorldwideAncillaryExists crown_of_thorns
+          and not HasAncType Relic
+
+    AcquireAncillary crown_of_thorns chance  5 
+
+;------------------------------------------
+Trigger holy_shroud_mission_anc_trigger
+    WhenToTest LeaderMissionSuccess
+    Condition Attribute Piety > 3
+          and PaybackID pope_cardinal_major_reward_only
+          and not I_WorldwideAncillaryExists holy_shroud
+          and not HasAncType Relic
+
+    AcquireAncillary holy_shroud chance  5 
+
+;------------------------------------------
+Trigger shard_of_the_true_cross_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc shard_of_the_true_cross
+          and not HasAncType Relic
+
+    AcquireAncillary shard_of_the_true_cross chance  60 
+
+;------------------------------------------
+Trigger holy_lance_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc holy_lance
+          and not HasAncType Relic
+
+    AcquireAncillary holy_lance chance  60 
+
+;------------------------------------------
+Trigger holy_grail_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc holy_grail
+          and not HasAncType Relic
+
+    AcquireAncillary holy_grail chance  60 
+
+;------------------------------------------
+Trigger iron_crown_of_lombardy_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc iron_crown_of_lombardy
+          and not HasAncType Relic
+
+    AcquireAncillary iron_crown_of_lombardy chance  60 
+
+;------------------------------------------
+Trigger bridle_of_constantine_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc bridle_of_constantine
+          and not HasAncType Relic
+
+    AcquireAncillary bridle_of_constantine chance  60 
+
+;------------------------------------------
+Trigger holy_chalice_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc holy_chalice
+          and not HasAncType Relic
+
+    AcquireAncillary holy_chalice chance  60 
+
+;------------------------------------------
+Trigger veil_of_veronica_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc veil_of_veronica
+          and not HasAncType Relic
+
+    AcquireAncillary veil_of_veronica chance  60 
+
+;------------------------------------------
+Trigger icon_not_made_by_hands_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc icon_not_made_by_hands
+          and not HasAncType Relic
+
+    AcquireAncillary icon_not_made_by_hands chance  60 
+
+;------------------------------------------
+Trigger holy_prepuce_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc holy_prepuce
+          and not HasAncType Relic
+
+    AcquireAncillary holy_prepuce chance  60 
+
+;------------------------------------------
+Trigger crown_of_thorns_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc crown_of_thorns
+          and not HasAncType Relic
+
+    AcquireAncillary crown_of_thorns chance  60 
+
+;------------------------------------------
+Trigger holy_shroud_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc holy_shroud
+          and not HasAncType Relic
+
+    AcquireAncillary holy_shroud chance  60 
+
+;------------------------------------------
+Trigger ark_of_the_covenant_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc ark_of_the_covenant
+          and not HasAncType Relic
+
+    AcquireAncillary ark_of_the_covenant chance  60 
+
+;------------------------------------------
+Trigger seal_of_solomon_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc seal_of_solomon
+          and not HasAncType Relic
+
+    AcquireAncillary seal_of_solomon chance  60 
+
+;------------------------------------------
+Trigger hair_from_mohammeds_beard_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc hair_from_mohammeds_beard
+          and not HasAncType Relic
+
+    AcquireAncillary hair_from_mohammeds_beard chance  60 
+
+;------------------------------------------
+Trigger mohammeds_footprint_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc mohammeds_footprint
+          and not HasAncType Relic
+
+    AcquireAncillary mohammeds_footprint chance  60 
+
+;------------------------------------------
+Trigger holy_mantle_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc holy_mantle
+          and not HasAncType Relic
+
+    AcquireAncillary holy_mantle chance  60 
+
+;------------------------------------------
+Trigger tooth_of_mohammed_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc tooth_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary tooth_of_mohammed chance  60 
+
+;------------------------------------------
+Trigger key_to_holy_kaaba_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc key_to_holy_kaaba
+          and not HasAncType Relic
+
+    AcquireAncillary key_to_holy_kaaba chance  60 
+
+;------------------------------------------
+Trigger lock_of_kaaba_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc lock_of_kaaba
+          and not HasAncType Relic
+
+    AcquireAncillary lock_of_kaaba chance  60 
+
+;------------------------------------------
+Trigger sword_of_mohammed_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc sword_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary sword_of_mohammed chance  60 
+
+;------------------------------------------
+Trigger fragment_of_the_black_stone_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc fragment_of_the_black_stone
+          and not HasAncType Relic
+
+    AcquireAncillary fragment_of_the_black_stone chance  60 
+
+;------------------------------------------
+Trigger holy_quran_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc holy_quran
+          and not HasAncType Relic
+
+    AcquireAncillary holy_quran chance  60 
+
+;------------------------------------------
+Trigger soil_from_mohammeds_grave_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc soil_from_mohammeds_grave
+          and not HasAncType Relic
+
+    AcquireAncillary soil_from_mohammeds_grave chance  60 
+
+;------------------------------------------
+Trigger standard_of_mohammed_father_anc_trigger
+    WhenToTest FatherDiesNatural
+    Condition Attribute Piety > 2
+          and FatherAnc standard_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary standard_of_mohammed chance  60 
+
+;------------------------------------------
+Trigger shard_of_the_true_cross_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled shard_of_the_true_cross
+          and not HasAncType Relic
+
+    AcquireAncillary shard_of_the_true_cross chance  10 
+
+;------------------------------------------
+Trigger holy_lance_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled holy_lance
+          and not HasAncType Relic
+
+    AcquireAncillary holy_lance chance  10 
+
+;------------------------------------------
+Trigger holy_grail_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled holy_grail
+          and not HasAncType Relic
+
+    AcquireAncillary holy_grail chance  10 
+
+;------------------------------------------
+Trigger iron_crown_of_lombardy_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled iron_crown_of_lombardy
+          and not HasAncType Relic
+
+    AcquireAncillary iron_crown_of_lombardy chance  10 
+
+;------------------------------------------
+Trigger bridle_of_constantine_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled bridle_of_constantine
+          and not HasAncType Relic
+
+    AcquireAncillary bridle_of_constantine chance  10 
+
+;------------------------------------------
+Trigger holy_chalice_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled holy_chalice
+          and not HasAncType Relic
+
+    AcquireAncillary holy_chalice chance  10 
+
+;------------------------------------------
+Trigger veil_of_veronica_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled veil_of_veronica
+          and not HasAncType Relic
+
+    AcquireAncillary veil_of_veronica chance  10 
+
+;------------------------------------------
+Trigger icon_not_made_by_hands_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled icon_not_made_by_hands
+          and not HasAncType Relic
+
+    AcquireAncillary icon_not_made_by_hands chance  10 
+
+;------------------------------------------
+Trigger holy_prepuce_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled holy_prepuce
+          and not HasAncType Relic
+
+    AcquireAncillary holy_prepuce chance  10 
+
+;------------------------------------------
+Trigger crown_of_thorns_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled crown_of_thorns
+          and not HasAncType Relic
+
+    AcquireAncillary crown_of_thorns chance  10 
+
+;------------------------------------------
+Trigger holy_shroud_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and GeneralWithAncKilled holy_shroud
+          and not HasAncType Relic
+
+    AcquireAncillary holy_shroud chance  10 
+
+;------------------------------------------
+Trigger ark_of_the_covenant_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled ark_of_the_covenant
+          and not HasAncType Relic
+
+    AcquireAncillary ark_of_the_covenant chance  10 
+
+;------------------------------------------
+Trigger seal_of_solomon_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled seal_of_solomon
+          and not HasAncType Relic
+
+    AcquireAncillary seal_of_solomon chance  10 
+
+;------------------------------------------
+Trigger hair_from_mohammeds_beard_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled hair_from_mohammeds_beard
+          and not HasAncType Relic
+
+    AcquireAncillary hair_from_mohammeds_beard chance  10 
+
+;------------------------------------------
+Trigger mohammeds_footprint_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled mohammeds_footprint
+          and not HasAncType Relic
+
+    AcquireAncillary mohammeds_footprint chance  10 
+
+;------------------------------------------
+Trigger holy_mantle_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled holy_mantle
+          and not HasAncType Relic
+
+    AcquireAncillary holy_mantle chance  10 
+
+;------------------------------------------
+Trigger tooth_of_mohammed_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled tooth_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary tooth_of_mohammed chance  10 
+
+;------------------------------------------
+Trigger key_to_holy_kaaba_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled key_to_holy_kaaba
+          and not HasAncType Relic
+
+    AcquireAncillary key_to_holy_kaaba chance  10 
+
+;------------------------------------------
+Trigger lock_of_kaaba_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled lock_of_kaaba
+          and not HasAncType Relic
+
+    AcquireAncillary lock_of_kaaba chance  10 
+
+;------------------------------------------
+Trigger sword_of_mohammed_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled sword_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary sword_of_mohammed chance  10 
+
+;------------------------------------------
+Trigger fragment_of_the_black_stone_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled fragment_of_the_black_stone
+          and not HasAncType Relic
+
+    AcquireAncillary fragment_of_the_black_stone chance  10 
+
+;------------------------------------------
+Trigger holy_quran_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled holy_quran
+          and not HasAncType Relic
+
+    AcquireAncillary holy_quran chance  10 
+
+;------------------------------------------
+Trigger soil_from_mohammeds_grave_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled soil_from_mohammeds_grave
+          and not HasAncType Relic
+
+    AcquireAncillary soil_from_mohammeds_grave chance  10 
+
+;------------------------------------------
+Trigger standard_of_mohammed_killed_anc_trigger
+    WhenToTest PostBattle
+    Condition Attribute Piety > 3
+          and WonBattle
+          and not FactionReligion pagan
+          and GeneralWithAncKilled standard_of_mohammed
+          and not HasAncType Relic
+
+    AcquireAncillary standard_of_mohammed chance  10 
+
+;------------------------------------------
+Trigger sir_william_wallace_anc_trigger
+    WhenToTest PostBattle
+    Condition IsGeneral
+          and WonBattle
+          and BattleOdds < 1
+          and FactionType scotland
+          and GeneralFoughtFaction england
+          and I_TurnNumber >= 106
+          and I_TurnNumber <= 118
+
+    AcquireAncillary sir_william_wallace chance  100 
+
+;------------------------------------------
+Trigger joan_of_arc_anc_trigger
+    WhenToTest PostBattle
+    Condition IsGeneral
+          and WonBattle
+          and BattleOdds < 1
+          and FactionType france
+          and GeneralFoughtFaction england
+          and Attribute Command > 3
+          and I_TurnNumber >= 170
+          and I_TurnNumber <= 180
+
+    AcquireAncillary joan_of_arc chance  100 
+
+;------------------------------------------
+Trigger peter_the_hermit_anc_trigger
+    WhenToTest GeneralJoinCrusade
+    Condition IsCrusade
+          and Attribute Chivalry > 0
+          and I_TurnNumber >= 5
+          and I_TurnNumber <= 50
+
+    AcquireAncillary peter_the_hermit chance  25 
+
+;------------------------------------------
+Trigger bertrand_du_guesclin_anc_trigger
+    WhenToTest PostBattle
+    Condition FactionType france
+          and GeneralFoughtInCombat
+          and WonBattle
+          and BattleOdds < 0.7
+          and I_TurnNumber >= 130
+          and I_TurnNumber <= 150
+
+    AcquireAncillary bertrand_du_guesclin chance  100 
+
+;------------------------------------------
+Trigger chevalier_de_bayard_anc_trigger
+    WhenToTest PostBattle
+    Condition FactionType france
+          and WonBattle
+          and BattleOdds < 1
+          and GeneralFoughtInCombat
+          and I_TurnNumber >= 205
+          and I_TurnNumber <= 225
+
+    AcquireAncillary chevalier_de_bayard chance  100 
+
+;------------------------------------------
+Trigger pierre_abelard_anc_trigger
+    WhenToTest CharacterTurnEnd
+    Condition FactionType france
+          and IsGeneral
+          and EndedInSettlement
+          and I_TurnNumber >= 14
+          and I_TurnNumber <= 31
+
+    AcquireAncillary pierre_abelard chance  5 
+
+;------------------------------------------
+Trigger francesco_petrarca_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= alchemy_school
+          and I_TurnNumber >= 130
+          and I_TurnNumber <= 150
+          and CultureType southern_european
+          and not FactionType spain
+          and not FactionType portugal
+          and not FactionType papal_states
+
+    AcquireAncillary francesco_petrarca chance  100 
+
+;------------------------------------------
+Trigger roger_bacon_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= gunsmith
+          and I_TurnNumber >= 77
+          and I_TurnNumber <= 107
+
+    AcquireAncillary roger_bacon chance  66 
+
+;------------------------------------------
+Trigger roger_bacon_anc_trigger2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= c_gunsmith
+          and I_TurnNumber >= 77
+          and I_TurnNumber <= 107
+
+    AcquireAncillary roger_bacon chance  66 
+
+;------------------------------------------
+Trigger geoffrey_chaucer_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition FactionType england
+          and SettlementBuildingFinished = university
+          and I_TurnNumber >= 143
+          and I_TurnNumber <= 160
+
+    AcquireAncillary geoffrey_chaucer chance  100 
+
+;------------------------------------------
+Trigger john_wycliffe_anc_trigger
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and FactionType england
+          and Trait Cultured > 0
+          and I_TurnNumber >= 132
+          and I_TurnNumber <= 152
+
+    AcquireAncillary john_wycliffe chance  10 
+
+;------------------------------------------
+Trigger simon_de_montfort_anc_trigger
+    WhenToTest PostBattle
+    Condition IsGeneral
+          and WonBattle
+          and BattleOdds < 1
+          and FactionType england
+          and FactionLeaderAttribute Authority < 5
+          and I_TurnNumber >= 60
+          and I_TurnNumber <= 100
+
+    AcquireAncillary simon_de_montfort chance  50 
+
+;------------------------------------------
+Trigger amerigo_vespucci_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= explorers_guild
+          and I_TurnNumber >= 208
+          and I_TurnNumber <= 225
+
+    AcquireAncillary amerigo_vespucci chance  100 
+
+;------------------------------------------
+Trigger niels_ebbesen_anc_trigger
+    WhenToTest PostBattle
+    Condition IsGeneral
+          and WonBattle
+          and BattleOdds < 1
+          and FactionType denmark
+          and I_TurnNumber >= 100
+          and I_TurnNumber <= 130
+
+    AcquireAncillary niels_ebbesen chance  100 
+
+;------------------------------------------
+Trigger vlad_tepes_anc_trigger
+    WhenToTest ExterminatePopulation
+    Condition IsGeneral
+          and FactionType hungary
+          and I_TurnNumber >= 160
+          and I_TurnNumber <= 205
+
+    AcquireAncillary vlad_tepes chance  100 
+
+;------------------------------------------
+Trigger meister_eckhart_anc_trigger
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and FactionType hre
+          and EndedInSettlement
+          and SettlementBuildingExists = university
+          and I_TurnNumber >= 100
+          and I_TurnNumber <= 124
+
+    AcquireAncillary meister_eckhart chance  20 
+
+;------------------------------------------
+Trigger arnold_von_winkelried_anc_trigger
+    WhenToTest PostBattle
+    Condition WonBattle
+          and BattleOdds < 1
+          and CultureType northern_european
+          and not FactionType hre
+          and GeneralNumKillsInBattle > 3
+          and I_TurnNumber >= 148
+          and I_TurnNumber <= 165
+
+    AcquireAncillary arnold_von_winkelried chance  100 
+
+;------------------------------------------
+Trigger john_gutenberg_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= printing_press
+          and I_TurnNumber >= 187
+          and I_TurnNumber <= 210
+
+    AcquireAncillary john_gutenberg chance  100 
+
+;------------------------------------------
+Trigger hildegard_von_bingen_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition FactionType hre
+          and SettlementBuildingFinished >= church
+          and I_TurnNumber >= 20
+          and I_TurnNumber <= 50
+
+    AcquireAncillary hildegard_von_bingen chance  33 
+
+;------------------------------------------
+Trigger martin_luther_anc_trigger
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and RemainingMPPercentage = 100
+          and SettlementBuildingExists >= abbey
+          and IsGeneral
+          and Attribute Piety < 5
+          and I_TurnNumber >= 210
+          and I_TurnNumber <= 233
+
+    AcquireAncillary martin_luther chance  15 
+
+;------------------------------------------
+Trigger paracelsus_anc_trigger
+    WhenToTest PostBattle
+    Condition WonBattle
+          and GeneralNumKillsInBattle > 5
+          and GeneralHPLostRatioinBattle > 50
+          and Attribute Piety < 5
+          and I_TurnNumber >= 210
+          and I_TurnNumber <= 225
+
+    AcquireAncillary paracelsus chance  25 
+
+;------------------------------------------
+Trigger johannes_faustes_anc_trigger
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and EndedInSettlement
+          and not SettlementBuildingExists = huge_cathedral
+          and SettlementBuildingExists >= alchemists_lab
+          and CultureType northern_european
+          and I_TurnNumber >= 210
+          and I_TurnNumber <= 230
+
+    AcquireAncillary johannes_faustes chance  100 
+
+;------------------------------------------
+Trigger aldus_manutius_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= printing_press
+          and I_TurnNumber >= 201
+          and I_TurnNumber <= 218
+
+    AcquireAncillary aldus_manutius chance  100 
+
+;------------------------------------------
+Trigger marco_polo_anc_trigger
+    WhenToTest CharacterTurnEnd
+    Condition FactionBuildingExists >= explorers_guild
+          and DistanceCapital > 60
+          and not CultureType middle_eastern
+          and I_TurnNumber >= 102
+          and I_TurnNumber <= 122
+
+    AcquireAncillary marco_polo chance  5 
+
+;------------------------------------------
+Trigger donatello_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= artist_studio
+          and I_TurnNumber >= 162
+          and I_TurnNumber <= 193
+          and IsGeneral
+
+    AcquireAncillary donatello chance  100 
+
+;------------------------------------------
+Trigger raphael_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= artist_studio
+          and I_TurnNumber >= 210
+          and I_TurnNumber <= 220
+          and IsGeneral
+
+    AcquireAncillary raphael chance  100 
+
+;------------------------------------------
+Trigger michaelangelo_anc_trigger
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= artist_studio
+          and I_TurnNumber >= 209
+          and I_TurnNumber <= 242
+
+    AcquireAncillary michaelangelo chance  100 
+
+;------------------------------------------
+Trigger machiavelli_anc_trigger
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and EndedInSettlement
+          and SettlementBuildingExists = university
+          and I_TurnNumber >= 204
+          and I_TurnNumber <= 224
+          and Trait StrategyDread > 0
+          and not CultureType eastern_european
+          and not CultureType middle_eastern
+          and not FactionType byzantium
+
+    AcquireAncillary machiavelli chance  25 
+
+;------------------------------------------
+Trigger george_of_antioch
+    WhenToTest PostBattle
+    Condition IsGeneral
+          and WonBattle
+          and BattleOdds < 1
+          and FactionType sicily
+          and I_TurnNumber >= 21
+          and I_TurnNumber <= 36
+
+    AcquireAncillary george_of_antioch chance  100 
+
+;------------------------------------------
+Trigger francis_of_assisi
+    WhenToTest GeneralJoinCrusade
+    Condition CultureType southern_european
+          and not FactionType byzantium
+          and I_TurnNumber >= 60
+          and I_TurnNumber <= 73
+
+    AcquireAncillary francis_of_assisi chance  100 
+
+;------------------------------------------
+Trigger francis_of_assisi2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= church
+          and I_TurnNumber >= 60
+          and I_TurnNumber <= 73
+          and CultureType southern_european
+          and not FactionType byzantium
+
+    AcquireAncillary francis_of_assisi chance  100 
+
+;------------------------------------------
+Trigger vasco_de_gama
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and DistanceCapital > 40
+          and FactionBuildingExists >= explorers_guild
+          and I_TurnNumber >= 205
+          and I_TurnNumber <= 225
+
+    AcquireAncillary vasco_de_gama chance  33 
+
+;------------------------------------------
+Trigger anthony_of_padua
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= abbey
+          and CultureType southern_european
+          and I_TurnNumber >= 69
+          and I_TurnNumber <= 76
+
+    AcquireAncillary anthony_of_padua chance  75 
+
+;------------------------------------------
+Trigger nicolau_copernicus
+    WhenToTest GovernorBuildingCompleted
+    Condition FactionType poland
+          and SettlementBuildingFinished >= library
+          and I_TurnNumber >= 200
+          and I_TurnNumber <= 232
+
+    AcquireAncillary nicolau_copernicus chance  100 
+
+;------------------------------------------
+Trigger ibn_khaldun
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= alchemists_lab
+          and CultureType middle_eastern
+          and I_TurnNumber >= 135
+          and I_TurnNumber <= 160
+
+    AcquireAncillary ibn_khaldun chance  100 
+
+;------------------------------------------
+Trigger ibn_khaldun2
+    WhenToTest GovernorBuildingCompleted
+    Condition SettlementBuildingFinished >= bimaristan
+          and CultureType middle_eastern
+          and I_TurnNumber >= 135
+          and I_TurnNumber <= 160
+
+    AcquireAncillary ibn_khaldun chance  100 
+
+;------------------------------------------
+Trigger albertus_magnus
+    WhenToTest CharacterTurnEnd
+    Condition IsGeneral
+          and FactionType hre
+          and EndedInSettlement
+          and SettlementBuildingExists >= church
+          and SettlementBuildingExists >= alchemists_lab
+          and I_TurnNumber >= 70
+          and I_TurnNumber <= 100
+
+    AcquireAncillary albertus_magnus chance  10 
+
+;------------------------------------------
+Trigger jan_zizka
+    WhenToTest PostBattle
+    Condition IsGeneral
+          and WonBattle
+          and BattleOdds < 1
+          and FactionType poland
+          and I_TurnNumber >= 150
+          and I_TurnNumber <= 172
+
+    AcquireAncillary jan_zizka chance  100 
+
+;------------------------------------------
+Trigger roger_de_moulins
+    WhenToTest GeneralJoinCrusade
+    Condition IsCrusade
+          and CharacterReligion catholic
+          and not FactionType hre
+          and not FactionType spain
+          and not FactionType portugal
+          and I_TurnNumber >= 45
+          and I_TurnNumber <= 60
+
+    AcquireAncillary roger_de_moulins chance  100 
+
+;------------------------------------------
+Trigger gerard_de_ridefort
+    WhenToTest GeneralJoinCrusade
+    Condition IsCrusade
+          and CharacterReligion catholic
+          and not FactionType hre
+          and not FactionType spain
+          and not FactionType portugal
+          and I_TurnNumber >= 30
+          and I_TurnNumber <= 52
+
+    AcquireAncillary gerard_de_ridefort chance  100 
+
+

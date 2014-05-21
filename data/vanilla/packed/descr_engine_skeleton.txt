@@ -1,0 +1,470 @@
+;
+;	This file contains the model linkages; it gets parsed on application 
+;	startup but is not otherwise referred to. The data format is thus:
+;
+;	;						indicates a comment ;-)
+;							
+;	type					indicates a new skeleton type, must be followed by id name string
+;	anim					indicates a new anim for this skeleton, must be followed by anim type
+;								and filename
+;
+;
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;; M2:TW siege engines ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type		huge_bombard																										
+						
+anim		default											data/animations/engine/siege_huge_bombard_idle.CAS																										
+anim		idle											data/animations/engine/siege_huge_bombard_idle.CAS					
+anim		idle_to_moving								   	data/animations/engine/siege_huge_bombard_idle.CAS			 	
+anim		moving										   	data/animations/engine/siege_huge_bombard_idle.CAS		
+anim		moving_to_idle								   	data/animations/engine/siege_huge_bombard_idle.CAS	   		
+anim		idle_to_crank									data/animations/engine/siege_huge_bombard_idle.CAS		  		
+anim		crank											data/animations/engine/siege_huge_bombard_idle.CAS				   		
+anim		crank_to_attack_idle						 	data/animations/engine/siege_huge_bombard_idle.CAS				   		
+anim		attack_prepare								   	data/animations/engine/siege_huge_bombard_idle.CAS				
+anim		attack_idle									  	data/animations/engine/siege_huge_bombard_idle.CAS				
+anim		attack_commence								  	data/animations/engine/siege_huge_bombard_commence.CAS		-if:26, 	-evt:data/animations/engine/siege_huge_bombard_commence.evt
+anim		attack_recover								   	data/animations/engine/siege_huge_bombard_recover.CAS				-evt:data/animations/engine/siege_huge_bombard_recover.evt
+
+type 		huge_bombard_dying
+
+anim		default											data/animations/engine/siege_huge_bombard_destruction_def.CAS
+anim		dying											data/animations/engine/siege_huge_bombard_destruction.CAS	-evt:data/animations/engine/siege_huge_bombard_destruction.evt
+
+
+type		rocket_launcher																								
+						
+anim		default											data/animations/engine/siege_rocket_launcher_idle.CAS																									
+anim		idle											data/animations/engine/siege_rocket_launcher_idle.CAS					
+anim		idle_to_moving								   	data/animations/engine/siege_rocket_launcher_idle.CAS		 	
+anim		moving										   	data/animations/engine/siege_rocket_launcher_idle.CAS	  			-evt:data/animations/engine/siege_rocket_launcher_idle.evt
+anim		moving_to_idle								   	data/animations/engine/siege_rocket_launcher_idle.CAS		   		
+anim		idle_to_crank									data/animations/engine/siege_rocket_launcher_idle.CAS			  		
+anim		crank											data/animations/engine/siege_rocket_launcher_idle.CAS						   		
+anim		crank_to_attack_idle						 	data/animations/engine/siege_rocket_launcher_idle.CAS				   		
+anim		attack_prepare								   	data/animations/engine/siege_rocket_launcher_idle.CAS					
+anim		attack_idle									  	data/animations/engine/siege_rocket_launcher_idle.CAS				
+anim		attack_commence								  	data/animations/engine/siege_rocket_launcher_attack.CAS		-if:82 , 	-evt:data/animations/engine/siege_rocket_launcher_attack.evt
+anim		attack_recover									data/animations/engine/siege_rocket_launcher_idle.CAS
+
+type		rocket_launcher_dying	
+										
+anim		default											data/animations/engine/siege_rocket_launcher_destruct_def.CAS
+anim		dying											data/animations/engine/siege_rocket_launcher_destruction.CAS	-evt:data/animations/engine/siege_rocket_launcher_destruction.evt
+
+type		monster_ribault																									
+						
+anim		default											data/animations/engine/siege_monster_ribault_idle.CAS																									
+anim		idle											data/animations/engine/siege_monster_ribault_idle.CAS					
+anim		idle_to_moving								   	data/animations/engine/siege_monster_ribault_idle2moving.CAS		 	
+anim		moving										   	data/animations/engine/siege_monster_ribault_moving.CAS		  			-evt:data/animations/engine/siege_monster_ribault_moving.evt
+anim		moving_to_idle								   	data/animations/engine/siege_monster_ribault_moving2idle.CAS		   		
+anim		idle_to_crank									data/animations/engine/siege_monster_ribault_idle.CAS			  		
+anim		crank											data/animations/engine/siege_monster_ribault_idle.CAS						   		
+anim		crank_to_attack_idle						 	data/animations/engine/siege_monster_ribault_idle.CAS				   		
+anim		attack_prepare								   	data/animations/engine/siege_monster_ribault_idle.CAS					
+anim		attack_idle									  	data/animations/engine/siege_monster_ribault_idle.CAS				
+anim		attack_commence								  	data/animations/engine/siege_monster_ribault_commence.CAS		  	-evt:data/animations/engine/siege_monster_ribault_commence.evt
+anim		attack_recover									data/animations/engine/siege_monster_ribault_recover.CAS
+
+type		monster_ribault_dying
+
+anim		default											data/animations/engine/siege_monster_ribault_destruct_def.CAS
+anim		dying											data/animations/engine/siege_monster_ribault_destruction.CAS	-evt:data/animations/engine/siege_monster_ribault_destruction.evt
+
+
+type		culverin																									
+						
+anim		default											data/animations/engine/siege_culverin_default.CAS																									
+anim		idle											data/animations/engine/siege_culverin_idle_attack.CAS					
+anim		idle_to_moving								   	data/animations/engine/siege_culverin_idle2moving.CAS			 		-evt:data/animations/engine/siege_culverin_idle2moving.evt
+anim		moving										   	data/animations/engine/siege_culverin_moving.CAS			  			-evt:data/animations/engine/siege_culverin_moving.evt
+anim		moving_to_idle								   	data/animations/engine/siege_culverin_moving2idle.CAS		   			-evt:data/animations/engine/siege_culverin_moving2idle.evt
+anim		idle_to_crank									data/animations/engine/culverin_idle_to_crank.CAS			  			-evt:data/animations/engine/culverin_idle_to_crank.evt
+anim		crank											data/animations/engine/culverin_crank.CAS						   		
+anim		crank_to_attack_idle						 	data/animations/engine/culverin_crank_to_idle.CAS				   			-evt:data/animations/engine/culverin_crank_to_idle.evt
+anim		attack_prepare								   	data/animations/engine/siege_culverin_idle_attack.CAS					
+anim		attack_idle									  	data/animations/engine/siege_culverin_idle_attack.CAS				
+anim		attack_commence								  	data/animations/engine/siege_culverin_attack_commence.CAS			-if:42, -evt:data/animations/engine/siege_culverin_attack_commence.evt
+anim		attack_recover								   	data/animations/engine/siege_culverin_attack_recover.CAS	-evt:data/animations/engine/siege_culverin_attack_recover.evt
+
+type		culverin_dying
+anim		default											data/animations/engine/culverin_destruct_ref.CAS
+anim 		dying											data/animations/engine/culverin_destruction.CAS	-evt:data/animations/engine/culverin_destruction.evt
+
+type		serpentine																									
+						
+anim		default											data/animations/engine/siege_serpentine_default.CAS																									
+anim		idle											data/animations/engine/siege_serpentine_attack_idle.CAS						
+anim		idle_to_moving								   	data/animations/engine/siege_serpentine_idle2moving.CAS				 		-evt:data/animations/engine/siege_serpentine_idle2moving.evt
+anim		moving										   	data/animations/engine/siege_serpentine_idle.CAS			  			-evt:data/animations/engine/siege_serpentine_idle.evt
+anim		moving_to_idle								   	data/animations/engine/siege_serpentine_moving2idle.CAS			   			-evt:data/animations/engine/siege_serpentine_moving2idle.evt
+anim		idle_to_crank									data/animations/engine/siege_serpentine_crank1.CAS				  			-evt:data/animations/engine/siege_serpentine_crank1.evt
+anim		crank											data/animations/engine/siege_serpentine_crank2.CAS					   		
+anim		crank_to_attack_idle						 	data/animations/engine/siege_serpentine_crank3.CAS				   			-evt:data/animations/engine/siege_serpentine_crank3.evt
+anim		attack_prepare								   	data/animations/engine/siege_serpentine_attack_idle.CAS						
+anim		attack_idle									  	data/animations/engine/siege_serpentine_attack_idle.CAS					
+anim		attack_commence								  	data/animations/engine/siege_serpentine_attack_commence.CAS		 -if:42, 	-evt:data/animations/engine/siege_serpentine_attack_commence.evt
+anim		attack_recover								   	data/animations/engine/siege_serpentine_attack_recover.CAS				-evt:data/animations/engine/siege_serpentine_attack_recover.evt
+
+type 		serpentine_dying
+anim		default											data/animations/engine/siege_serpentine_destruct_def.CAS									
+anim		dying											data/animations/engine/siege_serpentine_destruction.CAS	-evt:data/animations/engine/siege_serpentine_destruction.evt
+
+
+type		catapult																									
+						
+anim		default											data/animations/engine/catapult_default.CAS																									
+anim		idle											data/animations/engine/catapult_idle.CAS						
+anim		idle_to_moving								   	data/animations/engine/catapult_idle.CAS			 	
+anim		moving										   	data/animations/engine/catapult_idle.CAS			  			-evt:data/animations/engine/catapult_idle.evt
+anim		moving_to_idle								   	data/animations/engine/catapult_idle.CAS			   		
+anim		idle_to_crank									data/animations/engine/catapult_idle.CAS				  		
+anim		crank											data/animations/engine/catapult_fire_recover.CAS					   			-evt:data/animations/engine/catapult_fire_recover.evt
+anim		crank_to_attack_idle						 	data/animations/engine/catapult_attack_idle.CAS					   		
+anim		attack_prepare								   	data/animations/engine/catapult_attack_idle.CAS									
+anim		attack_idle									  	data/animations/engine/catapult_attack_idle.CAS			
+anim		attack_commence								  	data/animations/engine/catapult_fire.CAS			-if:45,	-evt:data/animations/engine/catapult_fire.evt
+anim		attack_recover								   	data/animations/engine/catapult_idle.CAS			
+
+type		catapult_dying																	
+anim		default											data/animations/engine/catapult_destruct_ref.CAS
+anim		dying											data/animations/engine/catapult_destruction.CAS	-evt:data/animations/engine/catapult_destruction.evt
+
+type		bombard																										
+						
+anim		default											data/animations/engine/Bombard_idle.CAS																										
+anim		idle											data/animations/engine/Bombard_idle.CAS					
+anim		idle_to_moving								   	data/animations/engine/Bombard_moving.CAS			 	
+anim		moving										   	data/animations/engine/Bombard_moving.CAS	  			-evt:data/animations/engine/Bombard_moving.evt
+anim		moving_to_idle								   	data/animations/engine/Bombard_idle.CAS		   		
+anim		idle_to_crank									data/animations/engine/Bombard_idle.CAS			  		
+anim		crank											data/animations/engine/Bombard_idle.CAS					   		
+anim		crank_to_attack_idle						 	data/animations/engine/Bombard_idle.CAS				   		
+anim		attack_prepare								   	data/animations/engine/Bombard_idle.CAS					
+anim		attack_idle									  	data/animations/engine/Bombard_idle.CAS				
+anim		attack_commence								  	data/animations/engine/Bombard_fire_commence.CAS				-if:42, 	-evt:data/animations/engine/Bombard_fire_commence.evt
+anim		attack_recover								   	data/animations/engine/Bombard_fire_recover.CAS				-evt:data/animations/engine/Bombard_fire_recover.evt
+
+type		bombard_dying
+
+anim		default											data/animations/engine/Bombard_destruction_def.CAS
+anim		dying											data/animations/engine/Bombard_destruction.CAS	-evt:data/animations/engine/Bombard_destruction.evt
+
+type		ballista																										
+						
+anim		default											data/animations/engine/siege_ballista_default.CAS																										
+anim		idle											data/animations/engine/siege_ballista_idle.CAS					
+anim		idle_to_moving								   	data/animations/engine/siege_ballista_idle2move.CAS			 		-evt:data/animations/engine/siege_ballista_idle2move.evt
+anim		moving										   	data/animations/engine/siege_ballista_moving.CAS		  			;-evt:data/animations/engine/siege_ballista_idle.evt
+anim		moving_to_idle								   	data/animations/engine/siege_ballista_move2idle.CAS		   			-evt:data/animations/engine/siege_ballista_move2idle.evt
+anim		idle_to_crank									data/animations/engine/siege_ballista_idle2move.CAS				  				-evt:data/animations/engine/siege_ballista_idle2move.evt	;-evt:data/animations/engine/siege_ballista_crank1.evt
+anim		crank											data/animations/engine/siege_ballista_crank.CAS					   				-evt:data/animations/engine/siege_ballista_crank.evt	;-evt:data/animations/engine/siege_ballista_crank2.evt
+anim		crank_to_attack_idle						 	data/animations/engine/siege_ballista_crank2attackidle.CAS				   				-evt:data/animations/engine/siege_ballista_crank2attackidle.evt	;-evt:data/animations/engine/siege_ballista_crank3.evt
+anim		attack_prepare								   	data/animations/engine/siege_ballista_attackidle.CAS						;-evt:data/animations/engine/siege_ballista_attack_idle.evt
+anim		attack_idle									  	data/animations/engine/siege_ballista_attackidle.CAS			
+anim		attack_commence								  	data/animations/engine/siege_ballista_commence.CAS						-if:36,		-evt:data/animations/engine/siege_ballista_commence.evt	;	-if:3		-evt:data/animations/engine/siege_ballista_commence.evt
+anim		attack_recover								   	data/animations/engine/siege_ballista_idle.CAS		
+
+type 		ballista_dying
+anim 		default											data/animations/engine/siege_ballista_destruct_def.CAS
+anim 		dying											data/animations/engine/siege_ballista_destruct.CAS							-evt:data/animations/engine/siege_ballista_destruct.evt	
+
+
+type		mortar
+
+anim		default											data/animations/engine/siege_mortar_default.CAS
+anim		idle											data/animations/engine/siege_mortar_idle.CAS
+anim		idle_to_moving								   	data/animations/engine/siege_mortar_idle.CAS
+anim		moving										   	data/animations/engine/siege_mortar_moving.CAS	-evt:data/animations/engine/siege_mortar_moving.evt
+anim		moving_to_idle								   	data/animations/engine/siege_mortar_idle.CAS
+anim		idle_to_crank									data/animations/engine/siege_mortar_idle.CAS
+anim		crank											data/animations/engine/siege_mortar_idle.CAS
+anim		crank_to_attack_idle						 	data/animations/engine/siege_mortar_idle.CAS
+anim		attack_prepare								   	data/animations/engine/siege_mortar_idle.CAS
+anim		attack_idle								 	 	data/animations/engine/siege_mortar_idle.CAS
+anim		attack_commence							 	 	data/animations/engine/siege_mortar_commence.CAS				-if:43 , 	-evt:data/animations/engine/siege_mortar_commence.evt
+anim		attack_recover									data/animations/engine/siege_mortar_recover.CAS
+
+type		mortar_dying
+
+anim		default											data/animations/engine/siege_mortar_destruct_def.CAS
+anim 		dying											data/animations/engine/siege_mortar_destruction.CAS	-evt:data/animations/engine/siege_mortar_destruction.evt
+	
+type		ribault
+
+anim		default											data/animations/engine/sml_ribault_idle.CAS
+anim		idle											data/animations/engine/sml_ribault_idle.CAS
+anim		idle_to_moving								   	data/animations/engine/sml_ribault_idle_to_moving.CAS
+anim		moving										   	data/animations/engine/sml_ribault_idle.CAS	-evt:data/animations/engine/sml_ribault_idle.evt
+anim		moving_to_idle								   	data/animations/engine/sml_ribault_moving_to_idle.CAS
+anim		idle_to_crank									data/animations/engine/sml_ribault_idle.CAS
+anim		crank											data/animations/engine/sml_ribault_idle.CAS
+anim		crank_to_attack_idle						 	data/animations/engine/sml_ribault_idle.CAS
+anim		attack_prepare								   	data/animations/engine/sml_ribault_idle.CAS
+anim		attack_idle								 	 	data/animations/engine/sml_ribault_idle.CAS
+anim		attack_commence							 	 	data/animations/engine/sml_ribault_commence.CAS			-if:20, 		-evt:data/animations/engine/sml_ribault_commence.evt
+anim		attack_recover									data/animations/engine/sml_ribault_recover.CAS					-evt:data/animations/engine/sml_ribault_recover.evt
+
+type		ribault_dying
+anim		default											data/animations/engine/sml_ribault_destruct_def.CAS								
+anim		dying											data/animations/engine/sml_ribault_destruction.CAS	-evt:data/animations/engine/sml_ribault_destruction.evt
+
+										
+type		cannon
+
+anim		default											data/animations/engine/siege_cannon_default.CAS
+anim		idle											data/animations/engine/siege_cannon_fire_idle.CAS
+anim		idle_to_moving								   	data/animations/engine/siege_cannon_idletomoving.CAS	-evt:data/animations/engine/siege_cannon_idletomoving.evt
+anim		moving										   	data/animations/engine/siege_cannon_idle.CAS	-evt:data/animations/engine/siege_cannon_idle.evt
+anim		moving_to_idle								   	data/animations/engine/siege_cannon_movingyoidle.CAS	-evt:data/animations/engine/siege_cannon_movingyoidle.evt
+anim		idle_to_crank									data/animations/engine/siege_cannon_crank1.CAS	-evt:data/animations/engine/siege_cannon_crank1.evt
+anim		crank											data/animations/engine/siege_cannon_crank2.CAS
+anim		crank_to_attack_idle						 	data/animations/engine/siege_cannon_crank3.CAS	-evt:data/animations/engine/siege_cannon_crank3.evt
+anim		attack_prepare								   	data/animations/engine/siege_cannon_fire_idle.CAS
+anim		attack_idle								 	 	data/animations/engine/siege_cannon_fire_idle.CAS
+anim		attack_commence							 	 	data/animations/engine/siege_cannon_commence.CAS		-if:42,			-evt:data/animations/engine/siege_cannon_commence.evt
+anim		attack_recover									data/animations/engine/siege_cannon_recover.CAS					-evt:data/animations/engine/siege_cannon_recover.evt
+
+type 		cannon_dying
+anim		default											data/animations/engine/siege_cannon_destruct_def.CAS
+anim 		dying											data/animations/engine/siege_cannon_destruct.CAS	-evt:data/animations/engine/siege_cannon_destruct.evt
+
+type		basilisk
+
+anim		default											data/animations/engine/basilisk_default.CAS
+anim		idle											data/animations/engine/basilisk_attack_idle.CAS
+anim		idle_to_moving								   	data/animations/engine/basilisk_attack_idle2moving.CAS	-evt:data/animations/engine/basilisk_attack_idle2moving.evt
+anim		moving										   	data/animations/engine/basilisk_idle.CAS	-evt:data/animations/engine/basilisk_idle.evt
+anim		moving_to_idle								   	data/animations/engine/basilisk_moving2attackidle.CAS	-evt:data/animations/engine/basilisk_moving2attackidle.evt
+anim		idle_to_crank									data/animations/engine/basilisk_crank1.CAS	-evt:data/animations/engine/basilisk_crank1.evt
+anim		crank											data/animations/engine/basilisk_crank2.CAS
+anim		crank_to_attack_idle						 	data/animations/engine/basilisk_crank3.CAS	-evt:data/animations/engine/basilisk_crank3.evt
+anim		attack_prepare								   	data/animations/engine/basilisk_attack_idle.CAS
+anim		attack_idle								 	 	data/animations/engine/basilisk_attack_idle.CAS
+anim		attack_commence							 	 	data/animations/engine/basilisk_fire_commence.CAS			-if:42,		-evt:data/animations/engine/basilisk_fire_commence.evt
+anim		attack_recover								   	data/animations/engine/basilisk_fire_recover.CAS						-evt:data/animations/engine/basilisk_fire_recover.evt
+
+type		basilisk_dying									
+anim		default											data/animations/engine/basilisk_destruct_def.CAS
+anim		dying											data/animations/engine/basilisk_destruction.CAS	-evt:data/animations/engine/basilisk_destruction.evt
+
+type		trebuchet
+
+anim		default											data/animations/engine/trebuchet_idle.CAS
+anim		idle											data/animations/engine/trebuchet_idle.CAS
+anim		idle_to_moving								   	data/animations/engine/trebuchet_idle.CAS
+anim		moving										   	data/animations/engine/trebuchet_idle.CAS						-evt:data/animations/engine/trebuchet_idle.evt
+anim		moving_to_idle								   	data/animations/engine/trebuchet_idle.CAS
+anim		idle_to_crank									data/animations/engine/trebuchet_idle.CAS
+anim		crank											data/animations/engine/trebuchet_idle.CAS
+anim		crank_to_attack_idle						 	data/animations/engine/trebuchet_idle.CAS
+anim		attack_prepare								   	data/animations/engine/trebuchet_idle.CAS
+anim		attack_idle								 	 	data/animations/engine/trebuchet_idle.CAS
+anim		attack_commence							 	 	data/animations/engine/trebuchet_fire_anim.CAS		-if:27,		-evt:data/animations/engine/trebuchet_fire_anim.evt
+anim		attack_recover								   	data/animations/engine/trebuchet_idle.CAS							-evt:data/animations/engine/trebuchet_idle.evt
+
+type		trebuchet_dying
+
+anim		default											data/animations/engine/trebuchet_destruct_def.CAS
+anim		dying											data/animations/engine/trebuchet_destruction.CAS	-evt:data/animations/engine/trebuchet_destruction.evt
+
+type		Great_Bombard																										
+					
+anim		default											data/animations/engine/great_bombard_idle.CAS																										
+anim		idle											data/animations/engine/great_bombard_idle.CAS						
+anim		idle_to_moving									data/animations/engine/great_bombard_moving.CAS						
+anim		moving									   		data/animations/engine/great_bombard_moving.CAS						-evt:data/animations/engine/great_bombard_moving.evt
+anim		moving_to_idle									data/animations/engine/great_bombard_idle.CAS						
+anim		idle_to_crank									data/animations/engine/great_bombard_idle.CAS				   	
+anim		crank											data/animations/engine/great_bombard_idle.CAS						 	
+anim		crank_to_attack_idle						 	data/animations/engine/great_bombard_idle.CAS						 		
+anim		attack_prepare								   	data/animations/engine/great_bombard_idle.CAS				  		
+anim		attack_idle								  		data/animations/engine/great_bombard_idle.CAS					 		
+anim		attack_commence								  	data/animations/engine/great_bombard_fire.CAS		  	-evt:data/animations/engine/great_bombard_fire.evt
+anim		attack_recover									data/animations/engine/great_bombard_fire_recover.CAS						-evt:data/animations/engine/great_bombard_fire_recover.evt
+
+type 		Great_Bombard_dying
+
+anim 		default											data/animations/engine/great_bombard_destruct_def.CAS
+anim		dying											data/animations/engine/great_bombard_destruction.CAS	-evt:data/animations/engine/great_bombard_destruction.evt
+
+
+type		onager_dying
+
+anim		default											data/animations/engine/basilisk_idle.CAS	
+anim		dying											data/animations/engine/basilisk_idle.CAS					
+
+type		Great_bell_tower_standard																										
+					
+anim		default											data/animations/engine/great_bell_tower_standard_Default.CAS
+anim		idle											data/animations/engine/great_bell_tower_standard_Idle.CAS
+anim		idle_to_moving									data/animations/engine/great_bell_tower_standard_Idle_to_Moving.CAS
+anim		moving									   		data/animations/engine/great_bell_tower_standard_Moving_Idle.CAS	-evt:data/animations/engine/great_bell_tower_standard_Moving_Idle.evt
+anim		moving_to_idle									data/animations/engine/great_bell_tower_standard_Moving_to_Idle.CAS
+anim		idle_to_crank									data/animations/engine/great_bell_tower_standard_Idle.CAS
+anim		crank											data/animations/engine/great_bell_tower_standard_Idle.CAS
+anim		crank_to_attack_idle						 	data/animations/engine/great_bell_tower_standard_Idle.CAS
+anim		attack_prepare								   	data/animations/engine/great_bell_tower_standard_Idle.CAS				  		
+anim		attack_idle								  		data/animations/engine/great_bell_tower_standard_Idle.CAS
+anim		attack_commence								  	data/animations/engine/great_bell_tower_standard_Idle.CAS
+anim		attack_recover									data/animations/engine/great_bell_tower_standard_Idle.CAS
+
+type		Great_bell_dying
+
+anim		default											data/animations/engine/great_bell_tower_destruct_def.CAS
+anim		dying											data/animations/engine/great_bell_tower_destruction.CAS	-evt:data/animations/engine/great_bell_tower_destruction.evt
+
+
+type		Great_Cross_standard																										
+					
+anim		default											data/animations/engine/Great_Cross_Standard_Default.CAS
+anim		idle											data/animations/engine/Great_Cross_Standard_Idle.CAS	-evt:data/animations/engine/Great_Cross_Standard_Idle.evt
+anim		idle_to_moving									data/animations/engine/Great_Cross_Standard_Idle_to_Moving.CAS
+anim		moving									   		data/animations/engine/Great_Cross_Standard_Move_Idle.CAS
+anim		moving_to_idle									data/animations/engine/Great_Cross_Standard_Moving_to_Idle.CAS
+anim		idle_to_crank									data/animations/engine/Great_Cross_Standard_Idle.CAS
+anim		crank											data/animations/engine/Great_Cross_Standard_Idle.CAS
+anim		crank_to_attack_idle						 	data/animations/engine/Great_Cross_Standard_Idle.CAS
+anim		attack_prepare								   	data/animations/engine/Great_Cross_Standard_Idle.CAS		  		
+anim		attack_idle								  		data/animations/engine/Great_Cross_Standard_Idle.CAS
+anim		attack_commence								  	data/animations/engine/Great_Cross_Standard_Idle.CAS
+anim		attack_recover									data/animations/engine/Great_Cross_Standard_Idle.CAS
+
+type 		Great_Cross_standard_dying						
+
+anim		default											data/animations/engine/Great_Cross_Standard_Destruct_Def.CAS
+anim		dying											data/animations/engine/Great_Cross_Standard_Destruction.CAS	-evt:data/animations/engine/Great_Cross_Standard_Destruction.evt
+
+type		eastern_ram																										
+																															
+anim		idle											data/animations/engine/ram/Eastram_idle.CAS					  	-evt:data/animations/engine/ram/Eastram_idle.evt
+anim		idle_to_moving								   	data/animations/engine/ram/Eastram_idle.CAS					  	-evt:data/animations/engine/ram/Eastram_idle.evt
+anim		moving									   		data/animations/engine/ram/Eastram_moving.CAS								-evt:data/animations/engine/ram/Eastram_moving.evt	
+anim		moving_to_idle								   	data/animations/engine/ram/Eastram_idle.CAS					  	-evt:data/animations/engine/ram/Eastram_idle.evt
+anim		attack_prepare								   	data/animations/engine/ram/Eastram_idle2ram.CAS				  	-fr, -evt:data/animations/engine/ram/Eastram_idle2ram.evt
+anim		attack_idle									  	data/animations/engine/ram/Eastram_idle.CAS					  	-fr, -evt:data/animations/engine/ram/Eastram_idle.evt
+anim		attack_commence								  	data/animations/engine/ram/Eastram_ram.CAS					   	-fr, -evt:data/animations/engine/ram/Eastram_ram.evt
+anim		attack_recover								   	data/animations/engine/ram/Eastram_recovery.CAS				  	-fr, -evt:data/animations/engine/ram/Eastram_recovery.evt
+anim		attack_complete								  	data/animations/engine/ram/Eastram_ram2idle.CAS				  	-evt:data/animations/engine/ram/Eastram_ram2idle.evt
+
+type		eastern_ram_dying
+
+anim		dying											data/animations/engine/ram/Eastram_idle.CAS								-evt:data/animations/engine/ram/east_ram_dying.evt	
+
+type		open_frame_ram																										
+																															
+anim		idle											data/animations/engine/ram/OFRam_idle.CAS							
+anim		idle_to_moving									data/animations/engine/ram/OFRam_idle.CAS						
+anim		moving									   	data/animations/engine/ram/OFRam_moving.CAS							  	-evt:data/animations/engine/ram/OFRam_moving.evt	
+anim		moving_to_idle									data/animations/engine/ram/OFRam_idle.CAS						
+anim		attack_prepare								   	data/animations/engine/ram/OFRam_idle2ram.CAS						-fr, -evt:data/animations/engine/ram/OFRam_idle2ram.evt
+anim		attack_idle										data/animations/engine/ram/OFRam_idle.CAS,					-fr
+anim		attack_commence								  	data/animations/engine/ram/OFRam_ram.CAS						 	-fr, -evt:data/animations/engine/ram/OFRam_ram.evt
+anim		attack_recover							   	data/animations/engine/ram/OFRam_recovery.CAS								-fr, -evt:data/animations/engine/ram/OFRam_recovery.evt	
+anim		attack_complete							  	data/animations/engine/ram/OFRam_ram2idle.CAS								-evt:data/animations/engine/ram/OFRam_ram2idle.evt	
+
+type		open_frame_ram_dying
+
+anim		dying											data/animations/engine/ram/OFRam_idle.CAS					  	-evt:data/animations/engine/ram/openframe_dying_anim.evt	
+
+type		tortoise_ram
+
+anim		default											data/animations/engine/siege_ram_idle.CAS																															
+anim		idle											data/animations/engine/siege_ram_idle.CAS						
+anim		idle_to_moving									data/animations/engine/siege_ram_idle.CAS						
+anim		moving									   		data/animations/engine/siege_ram_idle.CAS								-evt:data/animations/engine/siege_ram_idle.evt	
+anim		moving_to_idle									data/animations/engine/siege_ram_idle.CAS						
+anim		attack_prepare								   	data/animations/engine/siege_ram_idle.CAS				  	-fr, -evt:data/animations/engine/siege_ram_idle.evt
+anim		attack_idle										data/animations/engine/siege_ram_idle.CAS,				-fr
+anim		attack_commence								    data/animations/engine/siege_ram_ramming.CAS					   	-fr, -evt:data/animations/engine/siege_ram_ramming.evt
+anim		attack_recover							  	 	data/animations/engine/siege_ram_recover.CAS						  	-fr, -evt:data/animations/engine/siege_ram_recover.evt	
+anim		attack_complete								  	data/animations/engine/siege_ram_idle.CAS						  	-evt:data/animations/engine/siege_ram_idle.evt	
+
+type		tortoise_ram_dying
+
+anim		default											data/animations/engine/ram_destruct_ref.CAS				   	
+anim		dying											data/animations/engine/ram_destruction.CAS			-evt:data/animations/engine/ram_destruction.evt	
+
+type		siege_tower																										
+
+anim		default										data/animations/engine/siege_tower_small_idle.CAS																					
+anim		idle										data/animations/engine/siege_tower_small_idle.CAS							
+anim		idle_to_moving							   	data/animations/engine/siege_tower_small_idle.CAS							
+anim		moving									   	data/animations/engine/siege_tower_small_idle.CAS				  		
+anim		moving_to_idle							   	data/animations/engine/siege_tower_small_idle.CAS								
+anim		attack_prepare							   	data/animations/engine/siege_tower_small_attack_prepare.CAS			  			-evt:data/animations/engine/siege_tower_small_attack_prepare.evt
+anim		attack_idle									data/animations/engine/siege_tower_small_attack_idle.CAS		
+anim		attack_complete							  	data/animations/engine/siege_tower_small_attack_complete.CAS					 			-evt:data/animations/engine/siege_tower_small_attack_complete.evt
+
+type		siege_tower_dying
+
+anim		default										data/animations/engine/siege_tower_small_destruct_def.CAS					  			
+anim 		dying 										data/animations/engine/siege_tower_small_attack_destruct.CAS			-evt:data/animations/engine/siege_tower_small_attack_destruct.evt
+
+type		city_tower																										
+																															
+anim		default										data/animations/engine/siege_tower_small_idle.CAS																					
+anim		idle										data/animations/engine/siege_tower_small_idle.CAS							
+anim		idle_to_moving							   	data/animations/engine/siege_tower_small_idle.CAS							
+anim		moving									   	data/animations/engine/siege_tower_small_idle.CAS				  		
+anim		moving_to_idle							   	data/animations/engine/siege_tower_small_idle.CAS								
+anim		attack_prepare							   	data/animations/engine/siege_tower_small_attack_prepare.CAS			  		
+anim		attack_idle									data/animations/engine/siege_tower_small_attack_idle.CAS		
+anim		attack_complete							  	data/animations/engine/siege_tower_small_attack_complete.CAS
+anim		dying										data/animations/engine/siege_tower_small_idle.CAS			
+
+type		middle_tower																										
+																															
+anim		default										data/animations/engine/siege_tower_town_idle.CAS																					
+anim		idle										data/animations/engine/siege_tower_town_idle.CAS							
+anim		idle_to_moving							   	data/animations/engine/siege_tower_town_idle.CAS							
+anim		moving									   	data/animations/engine/siege_tower_town_idle.CAS				  		
+anim		moving_to_idle							   	data/animations/engine/siege_tower_town_idle.CAS								
+anim		attack_prepare							   	data/animations/engine/siege_tower_town_prepare.CAS		  			-evt:data/animations/engine/siege_tower_town_prepare.evt
+anim		attack_idle									data/animations/engine/siege_tower_town_attack_idle.CAS		
+anim		attack_complete							  	data/animations/engine/siege_tower_town_recover.CAS		-evt:data/animations/engine/siege_tower_town_recover.evt
+
+type		middle_tower_dying
+
+anim		default										data/animations/engine/siege_tower_town_destruct_def.CAS								
+anim		dying										data/animations/engine/siege_tower_town_destruction.CAS					  	-evt:data/animations/engine/siege_tower_town_destruction.evt	
+
+type		heliopolis																										
+																															
+anim		default										data/animations/engine/siege_tower_big_idle.CAS																													
+anim		idle										data/animations/engine/siege_tower_big_idle.CAS							
+anim		idle_to_moving								data/animations/engine/siege_tower_big_idle.CAS						
+anim		moving									   	data/animations/engine/siege_tower_big_idle.CAS				   
+anim		moving_to_idle								data/animations/engine/siege_tower_big_idle.CAS					
+anim		attack_prepare							   	data/animations/engine/siege_tower_big_prepare.CAS	  			-evt:data/animations/engine/siege_tower_big_prepare.evt
+anim		attack_idle									data/animations/engine/siege_tower_big_attack_idle.CAS
+anim		attack_complete							  	data/animations/engine/siege_tower_big_complete.CAS			 			-evt:data/animations/engine/siege_tower_big_complete.evt
+
+
+type		heliopolis_dying
+
+anim		default											data/animations/engine/siege_tower_big_destruction_def.CAS																									
+anim		dying											data/animations/engine/siege_tower_big_destruction.CAS				   	-evt:data/animations/engine/siege_tower_big_destruction.evt	
+
+type		town_ladder																										
+																															
+anim        default                                         data/animations/engine/ladder/town_ladder_idle.CAS												
+anim		idle											data/animations/engine/ladder/town_ladder_idle.CAS							
+anim		idle_to_moving									data/animations/engine/ladder/town_ladder_idle.CAS						
+anim		moving											data/animations/engine/ladder/town_ladder_moving.CAS								
+anim		moving_to_idle									data/animations/engine/ladder/town_ladder_idle.CAS						
+anim		attack_prepare							   	data/animations/engine/ladder/town_ladder_up.CAS						 	-fr, -evt:data/animations/engine/ladder/town_ladder_up.evt	
+anim		attack_idle								  	data/animations/engine/ladder/town_ladder_up&idle.CAS						-fr, -evt:data/animations/engine/ladder/town_ladder_up&idle.evt	
+anim		attack_complete							  	data/animations/engine/ladder/town_ladder_up&idle.CAS						-fr, -evt:data/animations/engine/ladder/town_ladder_up&idle.evt	
+anim		dying											data/animations/engine/ladder/town_ladder_dying.CAS					  	-evt:data/animations/engine/ladder/town_ladder_dying.evt	
+
+
+type		sap_point																										
+																															
+anim		idle											data/animations/engine/sap/mining_tunnel_idle.CAS						
+anim		dying											data/animations/engine/sap/mining_tunnel_dying.CAS					   	-evt:data/animations/engine/sap/mining_tunnel_dying.evt	

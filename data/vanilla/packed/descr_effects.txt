@@ -1,0 +1,17 @@
+descr_event_effects.txt
+descr_arrow_trail_effects.txt
+descr_burning_men_effect.txt
+descr_surface_fire.txt
+descr_burning_oil_effect.txt
+descr_burning_building.txt
+descr_torch_fire.txt
+descr_engine_torch_effects.txt
+descr_artillery_effects.txt
+descr_effect_impacts.txt
+descr_muzzle_flash.txt
+descr_flaming_projectiles.txt
+descr_structure_effects.txt
+descr_tower_crumble_effects.txt
+descr_chimney_smoke.txt
+descr_campfires_brasiers.txt
+descr_water_effects.txt

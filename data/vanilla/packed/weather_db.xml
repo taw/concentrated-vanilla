@@ -1,0 +1,2330 @@
+<!-- Weather Database
+     Specification of weather patterns and mapping to valid seasons
+     and climates -->
+<weather version="1">
+   <!-- Weather patterns -->
+   <patterns>
+      <!-- Clear pattern  -->
+      <pattern id="clear" audio_type="calm">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_clear_no_bloom.texture" texture_bloom="globallighting/Sunrise/textures/sunrise_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunrise_clear.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_clear_no_bloom.texture" texture_bloom="globallighting/Morning/textures/morning_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/morning_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_clear_no_bloom.texture" texture_bloom="globallighting/Midday/textures/midday_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/daytime_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="124"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_clear_no_bloom.texture" texture_bloom="globallighting/Afternoon/textures/afternoon_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/afternoon_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_clear_no_bloom.texture" texture_bloom="globallighting/Sunset/textures/sunset_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunset_clear.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_clear_no_bloom.texture" texture_bloom="globallighting/Night/textures/night_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/night_clear_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="250"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Clear Arid pattern  -->
+      <pattern id="clear arid" audio_type="calm">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_clear_no_bloom.texture" texture_bloom="globallighting/Sunrise/textures/sunrise_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunrise_arid_clear.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_clear_no_bloom.texture" texture_bloom="globallighting/Morning/textures/morning_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/morning_arid_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_clear_no_bloom.texture" texture_bloom="globallighting/Midday/textures/midday_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/daytime_arid_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_clear_no_bloom.texture" texture_bloom="globallighting/Afternoon/textures/afternoon_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/afternoon_arid_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_clear_no_bloom.texture" texture_bloom="globallighting/Sunset/textures/sunset_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunset_arid_clear.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_clear_no_bloom.texture" texture_bloom="globallighting/Night/textures/night_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/night_clear_arid_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="250"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Clear Winter pattern  -->
+      <pattern id="clear winter" audio_type="calm">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_clear_no_bloom.texture" texture_bloom="globallighting/Sunrise/textures/sunrise_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunrise_winter_clear.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_clear_no_bloom.texture" texture_bloom="globallighting/Morning/textures/morning_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/morning_winter_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="90"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_clear_no_bloom.texture" texture_bloom="globallighting/Midday/textures/midday_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/daytime_winter_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="70"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_clear_no_bloom.texture" texture_bloom="globallighting/Afternoon/textures/afternoon_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/afternoon_winter_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="90"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_clear_no_bloom.texture" texture_bloom="globallighting/Sunset/textures/sunset_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunset_winter_clear.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_clear_no_bloom.texture" texture_bloom="globallighting/Night/textures/night_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/night_clear_winter_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="250"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Rain pattern -->
+      <pattern id="rain" audio_type="rain">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_storm.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset/textures/sunset_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunset/textures/sunset_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <!-- <event id="phase 1 - overcast" duration="30" transition="10">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunrise_storm.lighting"/>
+                     <wind type="breezes"/>
+                     </event> -->
+                  <event id="phase 1 - build up" duration="30" transition="10">
+                     <precipitation type="rain" level="drizzle"/>
+                     <lighting data="globallighting/sunrise_storm.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="170"/>
+                  </event>
+                  <event id="phase 2 - rain" duration="30" transition="30">
+                     <precipitation type="rain" level="heavy"/>
+                     <lighting data="globallighting/sunrise_storm.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="170"/>
+                  </event>
+                  <event id="phase 3 - breaking" duration="60" transition="30">
+                     <precipitation type="rain" level="light"/>
+                     <lighting data="globallighting/sunrise_storm.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="170"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_storm.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning/textures/morning_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning/textures/morning_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <!-- <event id="phase 1 - overcast" duration="30" transition="10">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/morning_light.lighting"/>
+                     <wind type="breezes"/>
+                     </event> -->
+                  <event id="phase 1 - build up" duration="30" transition="10">
+                     <precipitation type="rain" level="drizzle"/>
+                     <lighting data="globallighting/morning_storm.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+                  <event id="phase 2 - storm" duration="30" transition="30">
+                     <precipitation type="rain" level="light"/>
+                     <lighting data="globallighting/morning_storm.lighting"/>
+                     <wind type="gusts"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+                  <event id="phase 3 - rain" duration="30" transition="30">
+                     <precipitation type="rain" level="heavy"/>
+                     <lighting data="globallighting/morning_storm.lighting"/>
+                     <wind type="gales"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+                  <event id="phase 4 - storm" duration="60" transition="30">
+                     <precipitation type="rain" level="light"/>
+                     <lighting data="globallighting/morning_storm.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/midday/textures/midday_storm.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/midday_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/midday_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <!-- <event id="phase 1 - overcast" duration="30" transition="10">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/daytime_light.lighting"/>
+                     <wind type="breezes"/>
+                     </event> -->
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="rain" level="drizzle"/>
+                     <lighting data="globallighting/midday_storm.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+                  <event id="phase 2 - rain" duration="30" transition="10">
+                     <precipitation type="rain" level="heavy"/>
+                     <lighting data="globallighting/midday_storm.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+                  <event id="phase 3 - storm" duration="60" transition="10">
+                     <precipitation type="rain" level="light"/>
+                     <lighting data="globallighting/midday_storm.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/sunset/textures/sunset_storm.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset/textures/sunset_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunset/textures/sunset_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <!-- <event id="phase 1 - overcast" duration="30" transition="10">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/afternoon/stormy_light1.lighting"/>
+                     <wind type="breezes"/>
+                     </event> -->
+                  <event id="phase 1 - build up" duration="60" transition="30">
+                     <precipitation type="rain" level="drizzle"/>
+                     <lighting data="globallighting/afternoon_storm.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>                   
+                  </event>    
+                  <event id="phase 2 - build up" duration="30" transition="30">
+                     <precipitation type="rain" level="heavy"/>
+                     <lighting data="globallighting/afternoon_storm.lighting"/>
+                     <wind type="gales"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>       
+                  <event id="phase 3 - build up" duration="30" transition="30">
+                     <precipitation type="rain" level="light"/>
+                     <lighting data="globallighting/afternoon_storm.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>                   
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_storm_bloom.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset/textures/sunset_storm_bloom_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunset/textures/sunset_storm_bloom_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <!-- <event id="phase 1 - overcast" duration="30" transition="10">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunset/sunset_storm.lighting"/>
+                     <wind type="breezes"/>
+                     </event> -->
+                  <event id="phase 1 - build up" duration="30" transition="10">
+                     <precipitation type="rain" level="drizzle"/>
+                     <lighting data="globallighting/sunset_storm_bloom.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="4" intensity="210"/>
+                  </event>
+                  <event id="phase 2 - rain" duration="90" transition="30">
+                     <precipitation type="rain" level="heavy"/>
+                     <lighting data="globallighting/sunset_storm_bloom.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1400"/>
+                     <bloom red="255" green="255" blue="255" select="4" intensity="210"/>
+                  </event>
+                  <event id="phase 3 - storm" duration="30" transition="30">
+                     <precipitation type="rain" level="light"/>
+                     <lighting data="globallighting/sunset_storm_bloom.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="2000"/>
+                     <bloom red="255" green="255" blue="255" select="4" intensity="210"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_storm.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/night/textures/night_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/night/textures/night_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <!-- <event id="phase 1 - overcast" duration="30" transition="10">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/night_time_light.lighting"/>
+                     <wind type="breezes"/>
+                     </event> -->
+                  <event id="phase 1 - build up" duration="30" transition="10">
+                     <precipitation type="rain" level="drizzle"/>
+                     <lighting data="globallighting/night_storm.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="700"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="250"/>
+                  </event>
+                   <event id="phase 2 - build up" duration="30" transition="10">
+                     <precipitation type="rain" level="heavy"/>
+                     <lighting data="globallighting/night_storm.lighting"/>
+                     <wind type="gales"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="700"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="250"/>
+                  </event>
+                   <event id="phase 3 - build up" duration="30" transition="10">
+                     <precipitation type="rain" level="light"/>
+                     <lighting data="globallighting/night_storm.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="700"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="250"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Storm pattern -->
+      <pattern id="storm" audio_type="storm">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.016" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.018" speed_y="0.014"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="rain" level="torrential"/>
+                     <lighting data="globallighting/sunrise_fog.lighting"/>
+                     <wind type="gales"/>
+                      <fog min="-60" max="230"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                     <lightning>
+                        <frequency min="10" max="20"/>
+                        <distribution x="2048" y="0" radius="1024"/>
+                     </lightning>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="rain" level="torrential"/>
+                     <lighting data="globallighting/morning_fog.lighting"/>
+                     <wind type="gales"/>
+                      <fog min="-60" max="230"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                     <lightning>
+                        <frequency min="10" max="20"/>
+                        <distribution x="2048" y="0" radius="1024"/>
+                     </lightning>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="rain" level="torrential"/>
+                     <lighting data="globallighting/midday_fog.lighting"/>
+                     <wind type="gales"/>
+                      <fog min="-60" max="230"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                     <lightning>
+                        <frequency min="10" max="20"/>
+                        <distribution x="2048" y="0" radius="1024"/>
+                     </lightning>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="rain" level="torrential"/>
+                     <lighting data="globallighting/afternoon_fog.lighting"/>
+                     <wind type="gales"/>
+                      <fog min="-60" max="230"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="170"/>
+                     <lightning>
+                        <frequency min="10" max="20"/>
+                        <distribution x="2048" y="0" radius="1024"/>
+                     </lightning>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="rain" level="torrential"/>
+                     <lighting data="globallighting/sunset_fog.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="-60" max="230"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                     <lightning>
+                        <frequency min="10" max="20"/>
+                        <distribution x="2048" y="0" radius="1024"/>
+                     </lightning>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="rain" level="torrential"/>
+                     <lighting data="globallighting/night_fog.lighting"/>
+                     <wind type="gales"/>
+                      <fog min="-60" max="230"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                     <lightning>
+                        <frequency min="10" max="20"/>
+                        <distribution x="2048" y="0" radius="1024"/>
+                     </lightning>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Snow pattern -->
+      <pattern id="snow" audio_type="snow">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunrise_blizzard_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunrise_blizzard_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/sunrise_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 2 - snow" duration="180" transition="20">
+                     <precipitation type="snow" level="heavy"/>
+                     <lighting data="globallighting/sunrise_blizzard.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 3 - blizzard" duration="600" transition="30">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/sunrise_blizzard.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 4 - breaking" duration="60" transition="30">
+                     <precipitation type="snow" level="light"/>
+                     <lighting data="globallighting/sunrise_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning/textures/morning_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning/textures/morning_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/morning_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 2 - snow" duration="180" transition="20">
+                     <precipitation type="snow" level="heavy"/>
+                     <lighting data="globallighting/morning_blizzard.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 3 - blizzard" duration="600" transition="30">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/morning_blizzard.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 4 - breaking" duration="60" transition="30">
+                     <precipitation type="snow" level="light"/>
+                     <lighting data="globallighting/morning_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/midday_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/midday_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/midday_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="120"/>
+                  </event>
+                  <event id="phase 2 - snow" duration="180" transition="20">
+                     <precipitation type="snow" level="heavy"/>
+                     <lighting data="globallighting/midday_blizzard.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="120"/>
+                  </event>
+                  <event id="phase 3 - blizzard" duration="600" transition="30">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/midday_blizzard.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="120"/>
+                  </event>
+                  <event id="phase 4 - breaking" duration="60" transition="30">
+                     <precipitation type="snow" level="light"/>
+                     <lighting data="globallighting/midday_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/afternoon/textures/afternoon_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning/textures/morning_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning/textures/morning_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/afternoon_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 2 - snow" duration="180" transition="20">
+                     <precipitation type="snow" level="heavy"/>
+                     <lighting data="globallighting/afternoon_blizzard.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 3 - blizzard" duration="600" transition="30">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/afternoon_blizzard.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+                  <event id="phase 4 - breaking" duration="60" transition="30">
+                     <precipitation type="snow" level="light"/>
+                     <lighting data="globallighting/afternoon_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset/textures/sunset_blizzard_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/Sunset/textures/sunset_blizzard_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/sunset_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+                  <event id="phase 2 - snow" duration="180" transition="20">
+                     <precipitation type="snow" level="heavy"/>
+                     <lighting data="globallighting/sunset_blizzard.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+                  <event id="phase 3 - blizzard" duration="600" transition="30">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/sunset_blizzard.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+                  <event id="phase 4 - breaking" duration="60" transition="30">
+                     <precipitation type="snow" level="light"/>
+                     <lighting data="globallighting/sunset_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/night/textures/night_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/night/textures/night_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/night_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+                  <event id="phase 2 - snow" duration="180" transition="20">
+                     <precipitation type="snow" level="heavy"/>
+                     <lighting data="globallighting/night_blizzard.lighting"/>
+                     <wind type="gusts"/>
+                     <cloud_fade min="0.0" max="0.25"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+                  <event id="phase 3 - blizzard" duration="600" transition="30">
+                     <precipitation type="snow" level="drizzle"/>
+                     <lighting data="globallighting/night_blizzard.lighting"/>
+                     <wind type="gales"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+                  <event id="phase 4 - breaking" duration="60" transition="30">
+                     <precipitation type="snow" level="light"/>
+                     <lighting data="globallighting/night_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="0" max="1000"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Blizzard pattern -->
+      <pattern id="blizzard" audio_type="blizzard">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunrise_blizzard_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunrise_blizzard_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="torrential"/>
+                     <lighting data="globallighting/sunrise_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="-10" max="160"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning/textures/morning_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning/textures/morning_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="torrential"/>
+                     <lighting data="globallighting/morning_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="-10" max="160"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/midday_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/midday_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="torrential"/>
+                     <lighting data="globallighting/midday_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="-10" max="160"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/afternoon/textures/afternoon_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning/textures/morning_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning/textures/morning_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="torrential"/>
+                     <lighting data="globallighting/afternoon_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="-10" max="160"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset/textures/sunset_blizzard_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/Sunset/textures/sunset_blizzard_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="torrential"/>
+                     <lighting data="globallighting/sunset_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="-10" max="160"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_blizzard.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/night/textures/night_storm_tile.texture" speed_x="0.01" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/night/textures/night_storm_low_tile.texture" speed_x="0.012" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - build up" duration="60" transition="10">
+                     <precipitation type="snow" level="torrential"/>
+                     <lighting data="globallighting/night_blizzard.lighting"/>
+                     <wind type="wind"/>
+                     <cloud_fade min="0.0" max="0.5"/>
+                     <fog min="-10" max="160"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Custom LF pattern -->
+      <pattern id="Custom LF" audio_type="calm">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/sunrise/textures/sunrise_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_stormy.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_stormy.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunrise_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/sunrise/textures/sunrise_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_stormy.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_stormy.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunrise_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_stormy.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_stormy.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/daytime_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/afternoon/textures/afternoon_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_stormy.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_stormy.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/afternoon_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_rain_old.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_stormy.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_stormy.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunset_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_night.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_night.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/night_time_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Cloudy pattern -->
+      <pattern id="cloudy" audio_type="breezes">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/sunrise/textures/sunrise_cloudy_no_bloom.texture" texture_bloom="globallighting/sunrise/textures/sunrise_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunrise_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunrise_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="light"/>
+                     <lighting data="globallighting/sunrise_cloudy.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/morning/textures/morning_cloudy_no_bloom.texture" texture_bloom="globallighting/morning/textures/morning_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="light"/>
+                     <lighting data="globallighting/morning_cloudy.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_cloudy_no_bloom.texture" texture_bloom="globallighting/Midday/textures/midday_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/midday_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/midday_cloudy_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/daytime_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/afternoon/textures/afternoon_cloudy_no_bloom.texture" texture_bloom="globallighting/afternoon/textures/afternoon_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/afternoon_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/afternoon_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/afternoon_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_glow_no_bloom.texture" texture_bloom="globallighting/Sunset/textures/sunset_glow.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunset_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunset_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_cloudy_no_bloom.texture" texture_bloom="globallighting/Night/textures/night_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/night_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/night_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/night_time_cloudy.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="255"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Cloudy Arid pattern -->
+      <pattern id="cloudy arid" audio_type="breezes">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/sunrise/textures/sunrise_cloudy_no_bloom.texture" texture_bloom="globallighting/sunrise/textures/sunrise_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunrise_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunrise_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunrise_cloudy_arid.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/morning/textures/morning_cloudy_no_bloom.texture" texture_bloom="globallighting/morning/textures/morning_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/morning_cloudy_arid.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_cloudy_no_bloom.texture" texture_bloom="globallighting/Midday/textures/midday_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/midday_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/midday_cloudy_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/daytime_cloudy_arid.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/afternoon/textures/afternoon_cloudy_no_bloom.texture" texture_bloom="globallighting/afternoon/textures/afternoon_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/afternoon_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/afternoon_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/afternoon_cloudy_arid.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_glow2_no_bloom.texture" texture_bloom="globallighting/Sunset/textures/sunset_glow2.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunset_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunset_cloudy_glow.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_cloudy_no_bloom.texture" texture_bloom="globallighting/Night/textures/night_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/night_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/night_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/night_time_cloudy_arid.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="255"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Dusty Arid pattern -->
+      <pattern id="dusty" audio_type="gales">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/sunrise/textures/sunrise_cloudy_no_bloom.texture" texture_bloom="globallighting/sunrise/textures/sunrise_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunrise_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunrise_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunrise_cloudy_arid.lighting"/>
+                     <wind type="gusts"/>
+                     <fog min="-50" max="300"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/morning/textures/morning_cloudy_no_bloom.texture" texture_bloom="globallighting/morning/textures/morning_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/morning_cloudy_arid.lighting"/>
+                     <wind type="gusts"/>
+                     <fog min="-50" max="400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_dust.texture" texture_bloom="globallighting/Midday/textures/midday_dust.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/midday_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/midday_cloudy_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                   <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/daytime_dusty_arid.lighting"/>
+                     <wind type="gusts"/>
+                     <fog min="-50" max="450"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/midday/textures/midday_dust.texture" texture_bloom="globallighting/midday/textures/midday_dust.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/afternoon_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/afternoon_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                   <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/afternoon_dusty_arid.lighting"/>
+                     <wind type="gusts"/>
+                     <fog min="-50" max="400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_glow2_no_bloom.texture" texture_bloom="globallighting/Sunset/textures/sunset_glow2.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunset_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                   <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunset_cloudy_arid.lighting"/>
+                     <wind type="gusts"/>
+                     <fog min="-50" max="400"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_cloudy_no_bloom.texture" texture_bloom="globallighting/Night/textures/night_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/night_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/night_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/night_time_cloudy_arid.lighting"/>
+                     <wind type="gusts"/>
+                     <fog min="-50" max="250"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="255"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Cloudy Winter pattern -->
+      <pattern id="cloudy winter" audio_type="breezes">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/sunrise/textures/sunrise_cloudy_no_bloom.texture" texture_bloom="globallighting/sunrise/textures/sunrise_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunrise_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunrise_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="light"/>
+                     <lighting data="globallighting/sunrise_cloudy_winter.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/morning/textures/morning_cloudy_no_bloom.texture" texture_bloom="globallighting/morning/textures/morning_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/morning_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/morning_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="light"/>
+                     <lighting data="globallighting/morning_cloudy_winter.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_cloudy_no_bloom.texture" texture_bloom="globallighting/Midday/textures/midday_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/midday_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/midday_cloudy_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="light"/>
+                     <lighting data="globallighting/daytime_cloudy_winter.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="90"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/afternoon/textures/afternoon_cloudy_no_bloom.texture" texture_bloom="globallighting/afternoon/textures/afternoon_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/afternoon_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/afternoon_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="light"/>
+                     <lighting data="globallighting/afternoon_cloudy_winter.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="120"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_glow_no_bloom.texture" texture_bloom="globallighting/Sunset/textures/sunset_glow.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/sunset_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/sunset_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="light"/>
+                     <lighting data="globallighting/sunset_cloudy_winter.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_cloudy_no_bloom.texture" texture_bloom="globallighting/Night/textures/night_cloudy.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/night_cloudy_tile.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/night_cloudy_low_tile.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="none" level="light"/>
+                     <lighting data="globallighting/night_time_cloudy_arid.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="-50" max="1800"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Light Fog pattern -->
+      <pattern id="light fog" audio_type="breezes">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunrise_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/morning_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/midday_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/afternoon_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="170"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunset_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/night_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Light Winter Fog pattern -->
+      <pattern id="light fog winter" audio_type="breezes">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunrise_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="110"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/morning_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/midday_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/afternoon_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunset_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/night_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="350"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Heavy Fog pattern -->
+      <pattern id="heavy fog" audio_type="wind">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunrise_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/morning_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/midday_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/afternoon_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="170"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunset_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/night_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="210"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- Heavy Winter Fog pattern -->
+      <pattern id="heavy fog winter" audio_type="wind">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunrise_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="110"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/morning_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/midday_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/midday_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - light fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/afternoon_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/sunset_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="160"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_light_fog.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_none.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_none.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 - heavy fog" duration="600" transition="30">
+                     <precipitation type="dust" level="heavy"/>
+                     <lighting data="globallighting/night_fog.lighting"/>
+                     <wind type="breezes"/>
+                     <fog min="0" max="150"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="190"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+      <!-- France Custom pattern : DO NOT REMOVE.  Used by France historical battle! -->
+      <pattern id="france custom" audio_type="calm">
+         <periods>
+            <!-- Sunrise -->
+            <period id="sunrise">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunrise/textures/sunrise_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunrise_clear.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2500"/>
+                     <bloom red="255" green="230" blue="130" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Morning -->
+            <period id="morning">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Morning/textures/morning_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/morning_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2500"/>
+                     <bloom red="255" green="230" blue="150" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Midday -->
+            <period id="midday">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Midday/textures/custom_rain.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_stormy.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_stormy.texture" speed_x="0.009" speed_y="0.005"/>
+               </clouds>
+               <events>
+                  <event id="phase 1 clear" duration="150" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/custom_france.lighting"/>
+                     <wind type="wind"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+                  <event id="phase 2 rainy" duration="120" transition="30">
+                     <precipitation type="rain" level="heavy"/>
+                     <lighting data="globallighting/custom_france2.lighting"/>
+                     <wind type="gusts"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+                  <event id="phase 3 clear" duration="600" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/custom_france.lighting"/>
+                     <wind type="wind"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="130"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Afternoon -->
+            <period id="afternoon">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Afternoon/textures/afternoon_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/afternoon_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2500"/>
+                     <bloom red="255" green="255" blue="245" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Sunset -->
+            <period id="sunset">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Sunset/textures/sunset_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/sunset_clear.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2500"/>
+                     <bloom red="255" green="255" blue="255" select="15" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+            <!-- Night -->
+            <period id="night">
+               <skydome mesh="globallighting/Meshes/skydome.mesh" texture="globallighting/Night/textures/night_clear.texture"/>
+               <clouds>
+                  <cloud id="high" texture="globallighting/cloudtile_clear.texture" speed_x="0.006" speed_y="0.0"/>
+                  <cloud id="low" texture="globallighting/cloudtile_clear.texture" speed_x="0.008" speed_y="0.004"/>
+               </clouds>
+               <events>
+                  <event id="phase 1" duration="60" transition="30">
+                     <precipitation type="none" level="dry"/>
+                     <lighting data="globallighting/night_clear_light.lighting"/>
+                     <wind type="wind"/>
+                     <fog min="-50" max="2500"/>
+                     <bloom red="255" green="255" blue="255" select="0" intensity="150"/>
+                  </event>
+               </events>
+            </period>
+         </periods>
+      </pattern>
+   </patterns>
+   <!-- Season can be one of summer, or winter -->
+   <seasons>
+      <!-- Summer -->
+      <season id="summer">
+         <!-- Climate id's must match the climates specified in descr_climates.txt -->
+         <climates>
+            <climate id="mediterranean">
+               <patterns>
+                  <pattern id="clear" chance="0.375"/>
+                  <pattern id="cloudy" chance="0.275"/>
+                  <pattern id="rain" chance="0.15"/>
+                  <pattern id="storm" chance="0.05"/>
+                  <pattern id="light fog" chance="0.05"/>
+                  <pattern id="heavy fog" chance="0.05"/>
+               </patterns>
+            </climate>
+            <climate id="sandy_desert">
+               <patterns>
+                  <pattern id="clear arid" chance="0.3"/>
+                  <pattern id="cloudy arid" chance="0.3"/>
+                  <pattern id="dusty" chance="0.15"/>
+                  <pattern id="rain" chance="0.05"/>
+               </patterns>
+            </climate>
+            <climate id="rocky_desert">
+               <patterns>
+                  <pattern id="clear arid" chance="0.3"/>
+                  <pattern id="cloudy arid" chance="0.3"/>
+                  <pattern id="dusty" chance="0.15"/>
+                 <pattern id="rain" chance="0.05"/>
+               </patterns>
+            </climate>
+            <climate id="unused1">
+               <patterns>
+                  <pattern id="clear" chance="0.55"/>
+                  <pattern id="cloudy" chance="0.3"/>
+                  <pattern id="rain" chance="0.15"/>
+                  <pattern id="storm" chance="0.15"/>
+               </patterns>
+            </climate>
+            <climate id="steppe">
+               <patterns>
+                  <pattern id="clear arid" chance="0.3"/>
+                  <pattern id="cloudy arid" chance="0.25"/>
+                  <pattern id="rain" chance="0.2"/>
+                  <pattern id="storm" chance="0.15"/>
+                  <pattern id="light fog" chance="0.05"/>
+                  <pattern id="heavy fog" chance="0.05"/>
+               </patterns>
+            </climate>
+            <climate id="temperate_deciduous_forest">
+               <patterns>
+                  <pattern id="clear" chance="0.3"/>
+                  <pattern id="cloudy" chance="0.3"/>
+                  <pattern id="rain" chance="0.15"/>
+                  <pattern id="storm" chance="0.1"/>
+                  <pattern id="light fog" chance="0.05"/>
+                  <pattern id="heavy fog" chance="0.03"/>
+               </patterns>
+            </climate>
+            <climate id="temperate_coniferous_forest">
+               <patterns>
+                  <pattern id="clear" chance="0.25"/>
+                  <pattern id="cloudy" chance="0.25"/>
+                  <pattern id="rain" chance="0.2"/>
+                  <pattern id="storm" chance="0.2"/>
+                  <pattern id="light fog" chance="0.05"/>
+                  <pattern id="heavy fog" chance="0.05"/>
+               </patterns>
+            </climate>
+            <climate id="unused2" parent="mediterranean"/>
+            <climate id="highland">
+               <patterns>
+                  <pattern id="clear" chance="0.2"/>
+                  <pattern id="cloudy" chance="0.2"/>
+                  <pattern id="rain" chance="0.25"/>
+                  <pattern id="storm" chance="0.25"/>
+                  <pattern id="light fog" chance="0.05"/>
+                  <pattern id="heavy fog" chance="0.05"/>
+               </patterns>
+            </climate>
+            <climate id="alpine">
+            <patterns>
+                  <pattern id="clear" chance="0.35"/>
+                  <pattern id="cloudy" chance="0.25"/>
+                  <pattern id="rain" chance="0.10"/>
+                  <pattern id="storm" chance="0.10"/>
+                  <pattern id="light fog" chance="0.1"/>
+                  <pattern id="heavy fog" chance="0.1"/>
+               </patterns>
+            </climate>
+            <climate id="tropical">
+               <patterns>
+                  <pattern id="clear" chance="0.3"/>
+                  <pattern id="cloudy" chance="0.2"/>
+                  <pattern id="rain" chance="0.2"/>
+                  <pattern id="storm" chance="0.3"/>
+               </patterns>
+            </climate>
+            <climate id="semi_arid" parent="mediterranean"/>
+         </climates>
+      </season>
+      <!-- Winter -->
+      <season id="winter">
+         <climates>
+            <climate id="mediterranean">
+               <patterns>
+                  <pattern id="clear" chance="0.45"/>
+                  <pattern id="cloudy" chance="0.35"/>
+                  <pattern id="rain" chance="0.1"/>
+                  <pattern id="light fog" chance="0.05"/>
+                  <pattern id="heavy fog" chance="0.05"/>
+               </patterns>
+            </climate>
+            <climate id="sandy_desert">
+               <patterns>
+                  <pattern id="clear arid" chance="0.375"/>
+                  <pattern id="cloudy arid" chance="0.375"/>
+                  <pattern id="dusty" chance="0.25"/>
+                  <pattern id="rain" chance="0.10"/>
+               </patterns>
+            </climate>
+            <climate id="rocky_desert">
+               <patterns>
+                  <pattern id="clear arid" chance="0.375"/>
+                  <pattern id="cloudy arid" chance="03275"/>
+                  <pattern id="dusty" chance="0.25"/>
+                  <pattern id="rain" chance="0.10"/>
+               </patterns>
+            </climate>
+            <climate id="unused1" parent="mediterranean"/>
+            <climate id="steppe">
+               <patterns>
+                  <pattern id="clear winter" chance="0.375"/>
+                  <pattern id="cloudy winter" chance="0.375"/>
+                  <pattern id="light fog winter" chance="0.05"/>
+                  <pattern id="heavy fog winter" chance="0.05"/>
+                  <pattern id="snow" chance="0.5"/>
+                  <pattern id="blizzard" chance="0.15"/>
+               </patterns>
+            </climate>
+             <climate id="highland">
+               <patterns>
+                  <pattern id="clear winter" chance="0.375"/>
+                  <pattern id="cloudy winter" chance="0.375"/>
+                  <pattern id="light fog winter" chance="0.05"/>
+                  <pattern id="heavy fog winter" chance="0.05"/>
+                  <pattern id="snow" chance="0.3"/>
+                  <pattern id="blizzard" chance="0.15"/>
+                  <pattern id="rain" chance="0.1"/>
+               </patterns>
+            </climate>
+             <climate id="alpine">
+               <patterns>
+                  <pattern id="clear winter" chance="0.35"/>
+                  <pattern id="cloudy winter" chance="0.35"/>
+                  <pattern id="light fog winter" chance="0.10"/>
+                  <pattern id="heavy fog winter" chance="0.05"/>
+                  <pattern id="snow" chance="0.25"/>
+                  <pattern id="blizzard" chance="0.05"/>
+                  </patterns>
+            </climate>
+            <climate id="temperate_deciduous_forest">
+               <patterns>
+                  <pattern id="clear winter" chance="0.375"/>
+                  <pattern id="cloudy winter" chance="0.375"/>
+                  <pattern id="snow" chance="0.25"/>
+                  <pattern id="blizzard" chance="0.05"/>
+                  <pattern id="light fog winter" chance="0.1"/>
+                  <pattern id="heavy fog winter" chance="0.05"/>
+                  <pattern id="rain" chance="0.2"/>
+               </patterns>
+            </climate>
+            <climate id="temperate_coniferous_forest">
+               <patterns>
+                  <pattern id="clear winter" chance="0.5"/>
+                  <pattern id="cloudy winter" chance="0.5"/>
+                  <pattern id="snow" chance="0.3"/>
+                  <pattern id="blizzard" chance="0.15"/>
+                  <pattern id="light fog winter" chance="0.15"/>
+                  <pattern id="heavy fog winter" chance="0.05"/>
+               </patterns>
+            </climate>
+            <climate id="unused2" parent="mediterranean"/>
+            <climate id="tropical" parent="mediterranean"/>
+            <climate id="semi_arid" parent="mediterranean"/>
+         </climates>
+      </season>
+   </seasons>
+</weather>

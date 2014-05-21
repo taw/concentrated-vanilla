@@ -1,0 +1,62 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 10 minPitch .9 maxPitch 1.1 fadein 2 fadeout 2 volume -40 probability 1 priority 220 distancepriority 0 randomdelay 0  effect_level .25
+
+BANK: unit_fighting
+
+  
+
+
+unit infantry light, heavy, spearmen, skirmish, missile
+			event lod 3 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Small
+				
+			end
+			event lod 40 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Medium
+				
+			end
+			event lod 80 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Large
+				
+			end
+
+unit siege missile, heavy, light		
+			event lod 3 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Small
+				
+			end
+			event lod 40 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Medium
+				
+			end
+			event lod 80 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Large
+				
+			end		
+			
+
+
+unit cavalry light, heavy, spearmen, skirmish, missile
+			event lod 3 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Small
+				
+			end
+			event lod 40 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Medium
+				
+			end
+			event lod 80 
+				folder data/sounds/SFX/Group/Melee
+				Group_Fight_Large
+				
+			end
+

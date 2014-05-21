@@ -1,0 +1,23 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; structure sound bank
+;;
+;; categories:	ambient, major, tower, gate, wall
+;; type:		<building rcid>
+;; what:		transition, fire, ambient
+;;
+;; ambient sound is a looped sound
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+BANK: structure
+
+	fire_proximity 70
+
+
+										
+
+	 		
+

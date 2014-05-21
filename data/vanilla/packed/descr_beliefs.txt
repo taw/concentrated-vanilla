@@ -1,0 +1,34 @@
+;
+; Belief system descriptor
+;
+; This consists largely of UI related information - names, pip graphics &c.
+;
+; Line 1: the tag.  All other databases that need to refer to beliefs will do so with this tag
+; Line 2: path to 'order' pip - shows up on the settlement stats screen
+; Line 3: path to 'unrest' pip - shows up on the settlement stats screen
+; Line 4: order tooltip label - label for tooltip string for order pip found in data/text/expanded_bi.txt
+; Line 5: unrest tooltip label - label for tooltip string for unrest pip found in data/text/expanded_bi.txt
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+christianity
+data/ui/pips/pip_religion_christian_positive.tga
+data/ui/pips/pip_religion_christian_negative.tga
+CHRISTIAN_ORDER
+CHRISTIAN_UNREST
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+zoroastrian
+data/ui/pips/pip_religion_zoroastrian_positive.tga
+data/ui/pips/pip_religion_zoroastrian_negative.tga
+ZOROASTRIAN_ORDER
+ZOROASTRIAN_UNREST
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+paganism
+data/ui/pips/pip_religion_pagan_positive.tga
+data/ui/pips/pip_religion_pagan_negative.tga
+PAGAN_ORDER
+PAGAN_UNREST
+
+

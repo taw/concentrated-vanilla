@@ -1,0 +1,26 @@
+;
+;	this file describes the appearance of the strategy map banners
+;
+
+file_scale			0.185f
+file_army_banner	data/banners/strat_flag.cas				; can't have spaces
+file_scale			1.0f
+file_navy_banner	data/banners/navy_banner.cas
+
+banner_star			0,       0.67969, 0.19141, 0.86719
+banner_button		0.19922, 0.67969, 0.38281, 0.86719
+banner_flag			0.58813, 0.01,    0.99,    0.99
+banner_sail			0.01,    0.01,    0.42,    0.41
+banner_crusade			0.02344, 0.44531, 0.28906, 0.67969,   banners/strat_flag.tga
+banner_jihad			0.29688, 0.44531, 0.5625,  0.67969,   banners/strat_flag.tga
+
+factions
+symbols				banners/symbols1.tga
+symbols				banners/symbols2.tga
+symbols				banners/symbols3.tga
+symbols				banners/symbols4.tga
+symbols				banners/symbols5.tga
+symbols				banners/symbols6.tga
+rebels_factions
+symbols				banners/symbols7.tga
+symbols				banners/symbols8.tga

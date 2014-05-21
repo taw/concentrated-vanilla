@@ -1,0 +1,259 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; The Sounds database - Very much a work in progress
+;
+; The file format is pretty much ripped wholesale from shogun
+;
+; event { name } {3d/1d} {streamed} { probability } { volume }
+;       { minDist } { maxDist } { minPitch } { maxPitch }
+;       { looped } {randomdelay} { probradius } { pan }
+;       { pref sfx|speech|music }
+;     folder { base path }
+;     {sample name}     modifiers (any of probability, volume etc)
+;     {sample name} ...
+; end
+;
+; The streamed keyword means that the sample will be streamed from disk instead of loaded at initialisation time
+; Volume is a modifier to the base volume set in the preferences (between -100db & 0db)
+; Pan is -100.0db to 100.0db        ( N.B. Pan is currently ignored as either a sound is played in 3D or 1D)
+; minDist must be greater than 1.0f
+; retrigger delay in seconds before retriggering the sound (used currently in music code)
+; looped    will overwrite the parameter in play_tracked_sound
+;
+; DEFAULT: sets some default values for all the following sound events
+; parameters are as per the event keyword (i.e. minDist, volume etc)
+;
+; Artem (20/1/03): there is a limitation in the current version of the parser,
+; which does not allow to have an event definition after a bank definition!
+; Individual events must be listed after a DEFAULT clause or at the begining of
+; the file.
+;
+; Artem (30/07/2003):
+; New event parameter 'randomdelay' is the delay in seconds
+; before 3D sounds start playing.
+;
+; Artem (11/11/2003):
+; probradius - distance to camera inside which the probability is set to 1.0
+;
+; pan - 2D events only, from 0 (hard-left) to 1.0 (hard-right) 0.5 - default
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;
+;; will load that many samples per event in Win98 machines
+;;
+required_samples_cutoff 2
+
+;;
+;; rollof_factor by default is 1.0f
+;; see "Minimum and Maximum Distances" page in DirectSound help
+;;
+;rolloff_factor .4
+rolloff_factor 1
+
+doppler_factor 0.5
+
+;;
+;; strat map rollof_factor by default is 1.0f
+;; see "Minimum and Maximum Distances" page in DirectSound help
+;;
+stratmap_rolloff_factor 3
+
+
+;;
+;; default maxdist percentage. This is the percentage of the volume at which the sound is turned off.
+;;
+volume_cutoff .01
+
+;; priority floor (priority units)
+priority_floor -1000.0
+
+;; pitch offset for water, wind and rain sounds
+pitch_offset .2
+
+;;
+;; Audio ducking control
+;;
+ducking_on          1       ; 0- off, 1 - on
+ducking_fade_in     1       ; in seconds
+ducking_fade_out    1       ; in seconds
+ducking_amount      -40     ; in volume units
+
+
+;;
+;; Camera culling sphere radius for event triggering of units, default = 10.0f ;;
+
+cam_cull_radius_unit    100.0f;
+
+;;
+;; Camera culling sphere radius for event triggering of siege engines, default = 10.0f 
+
+cam_cull_radius_engine  2000.0f;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;     ENVIRONMENT_GENERIC,                // factory default
+;     ENVIRONMENT_PADDEDCELL,
+;     ENVIRONMENT_ROOM,                   // standard environments
+;     ENVIRONMENT_BATHROOM,
+;     ENVIRONMENT_LIVINGROOM,
+;     ENVIRONMENT_STONEROOM,
+;     ENVIRONMENT_AUDITORIUM,
+;     ENVIRONMENT_CONCERTHALL,
+;     ENVIRONMENT_CAVE,
+;     ENVIRONMENT_ARENA,
+;     ENVIRONMENT_HANGAR,
+;     ENVIRONMENT_CARPETEDHALLWAY,
+;     ENVIRONMENT_HALLWAY,
+;     ENVIRONMENT_STONECORRIDOR,
+;     ENVIRONMENT_ALLEY,
+;     ENVIRONMENT_FOREST,
+;     ENVIRONMENT_CITY,
+;     ENVIRONMENT_MOUNTAINS,
+;     ENVIRONMENT_QUARRY,
+;     ENVIRONMENT_PLAIN,
+;     ENVIRONMENT_PARKINGLOT,
+;     ENVIRONMENT_SEWERPIPE,
+;     ENVIRONMENT_UNDERWATER,
+;     ENVIRONMENT_DRUGGED,
+;     ENVIRONMENT_DIZZY,
+;     ENVIRONMENT_PSYCHOTIC,
+
+;
+; New event parameter: effect_level
+;
+
+;; MTW2 climates
+; 	mediterranean
+; 	sandy_desert
+; 	rocky_desert
+; 	unused1
+; 	steppe
+; 	temperate_deciduous_forest
+; 	temperate_coniferous_forest
+; 	unused2
+; 	highland
+; 	alpine
+; 	tropical
+; 	semi_arid
+
+
+
+EAX:
+    global
+        parameter   "Mute at maximum"       0
+
+    terrain grass_short, grass_long, scrub_dense
+        room        ENVIRONMENT_GENERIC
+
+    terrain sand, rock
+        room        ENVIRONMENT_GENERIC
+
+    terrain forest_dense
+        room        ENVIRONMENT_GENERIC
+
+    terrain swamp
+        room        ENVIRONMENT_GENERIC
+
+    terrain mud
+        room        ENVIRONMENT_GENERIC
+
+    terrain mud_road
+        room        ENVIRONMENT_GENERIC
+
+    terrain stone_road
+        room        ENVIRONMENT_GENERIC
+
+    terrain water
+        room        ENVIRONMENT_GENERIC
+
+    terrain ice
+        room        ENVIRONMENT_GENERIC
+
+    terrain snow
+        room        ENVIRONMENT_GENERIC
+
+    terrain wood
+        room        ENVIRONMENT_GENERIC
+
+    terrain dirt
+        room        ENVIRONMENT_GENERIC
+
+    city
+    level town, large_town, city, large_city, huge_city              ; village, 
+    provider "Creative Labs EAX 4 (TM)", "Creative Labs EAX 3 (TM)", "Creative Labs EAX 2 (TM)"
+        room        ENVIRONMENT_ALLEY
+        parameter   "EAX effect volume"     .8
+    
+    provider "Miles Fast 2D Positional Audio"
+        room        ENVIRONMENT_ALLEY
+
+        
+ ;;;;;  small forest
+   forest
+    climates tropical, semi_arid, steppe, highland ; sandy_desert, 
+    provider "Miles Fast 2D Positional Audio"
+        room        ENVIRONMENT_FOREST
+        parameter   "EAX effect volume"     .2
+    provider "Creative Labs EAX 4 (TM)", "Creative Labs EAX 3 (TM)", "Creative Labs EAX 2 (TM)"
+        room        ENVIRONMENT_FOREST
+        parameter   "EAX effect volume"     .2
+  
+          
+;;;;  large  forest 
+   forest
+    climates temperate_deciduous_forest, temperate_coniferous_forest, alpine
+    provider "Miles Fast 2D Positional Audio"
+        room        ENVIRONMENT_FOREST
+        parameter   "EAX effect volume"     .6
+    provider "Creative Labs EAX 4 (TM)", "Creative Labs EAX 3 (TM)", "Creative Labs EAX 2 (TM)"
+        room        ENVIRONMENT_FOREST
+        parameter   "EAX effect volume"     .6
+
+    frontend
+        master_room ENVIRONMENT_FOREST
+        parameter   "EAX effect volume"     .6
+    
+    campaign
+        master_room ENVIRONMENT_FOREST
+        parameter   "EAX effect volume"     .6
+        end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; List of used music types
+music_types_enum northern_european eastern_european southern_european middle_eastern mesoamerican
+
+; descr_sounds_music_types.txt is loaded in world_map from world/maps/base/
+
+include descr_sounds_accents.txt
+
+include descr_sounds_music.txt
+include descr_sounds_interface.txt
+include descr_sounds_stratmap.txt
+include descr_sounds_stratmap_voice.txt
+include descr_sounds_units.txt
+include descr_sounds_units_ambient.txt
+include descr_sounds_units_idle.txt
+include descr_sounds_units_march.txt
+include descr_sounds_units_run.txt
+include descr_sounds_units_charge.txt
+include descr_sounds_units_fight.txt
+include descr_sounds_units_fire.txt
+include descr_sounds_units_anims.txt
+include descr_sounds_units_voice.txt
+include descr_sounds_units_reform.txt
+include descr_sounds_units_collide.txt
+include descr_sounds_units_taunt.txt
+include descr_sounds_units_retreat.txt
+include descr_sounds_units_confirm.txt
+include descr_sounds_units_celebrate.txt
+include descr_sounds_weapons.txt
+include descr_sounds_structures.txt
+include descr_sounds_enviro.txt
+include descr_sounds_engine.txt
+include descr_sounds_events.txt
+include descr_sounds_advice.txt
+include descr_sounds_prebattle.txt
+include descr_sounds_battle_events.txt
+include descr_sounds_narration.txt
+include descr_sounds_generic.txt

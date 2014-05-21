@@ -1,0 +1,1025 @@
+;
+;  Building battle data.  Contains model item and info specs for all
+;  battle depictions for buildings and floors.  Each contains normal, damaged and 
+;  destroyed versions.
+;
+;  Conditions apply to the physical info hierarchy.  No outlines in more damaged
+;  versions should lie outside those of less damaged ones;  also, the physical
+;  grid heights can only increase as damage increases.  If the same physical info
+;  file is used for two levels, no changes are made when going between these levels.
+;
+;
+;name
+;{
+;	full_health 10
+;	level ; one or more levels required, up to 4
+;	{
+;		min_health 5 ; must be <= full health, and must decrease with each level, last must be 0
+;		battle_stats ; nothing here yet, just a placeholder
+;		basespec		basespec_temple  ; optional...
+;		item			temple
+;		physical_info	temple_info
+;	}
+;	level 
+;	{
+;		min_health 0
+;		battle_stats
+;		item			temple
+;		basespec		basespec_temple
+;		physical_info	temple_info
+;	}
+;}
+
+
+
+;spot_items
+;{
+;	flag_vertical_small
+;	{
+;		any			flag_vertical_small
+;	}
+;
+;	flag_vertical_large
+;	{
+;		any			flag_vertical_small
+;	}
+;
+;	flag_horizontal_large
+;	{
+;		any			flag_horizontal_large
+;	}
+;}
+
+stat_cats
+{
+	tiny_wooden
+	{
+		full_health 150
+		battle_stats  flammability_high impact_damage_high
+	}
+	small_wooden
+	{
+		full_health 250
+		battle_stats  flammability_high impact_damage_high
+	}
+	medium_wooden
+	{
+		full_health 1000
+		battle_stats  flammability_high impact_damage_high
+	}
+	large_wooden
+	{
+		full_health 2000
+		battle_stats  flammability_high impact_damage_medium
+	}
+	tiny_stone
+	{
+		full_health 150
+		battle_stats  flammability_low impact_damage_high
+	}
+	small_stone
+	{
+		full_health 250
+		battle_stats  flammability_low impact_damage_high
+	}
+	medium_stone
+	{
+		full_health 1000
+		battle_stats  flammability_low impact_damage_medium
+
+	}
+	large_stone
+	{
+		full_health 5000
+		battle_stats  flammability_low impact_damage_medium
+	}
+	medium_stone_nonflammable
+	{
+		full_health 1000
+		battle_stats  flammability_none impact_damage_medium
+
+	}
+	large_stone_nonflammable
+	{
+		full_health 5000
+		battle_stats  flammability_none impact_damage_medium
+	}
+	indestructable
+	{
+		full_health 5000
+		battle_stats  flammability_none impact_damage_none
+	}
+	temp_stone
+	{
+		full_health 5000000
+		battle_stats  flammability_high impact_damage_medium
+		}
+}
+
+default
+{
+	stat_cat		temp_stone	;medium_stone
+	localised_name	ambient
+}
+
+castle_0
+{
+	stat_cat		temp_stone	;medium_wooden
+	localised_name	ambient
+}
+
+castle_1
+{
+	stat_cat		temp_stone	;medium_stone
+	localised_name	ambient
+}
+
+castle_2
+{
+	stat_cat		temp_stone	;large_stone
+	localised_name	ambient
+}
+
+castle_3
+{
+	stat_cat		temp_stone	;large_stone_nonflammable
+	localised_name	ambient
+}
+
+castle_4
+{
+	stat_cat		temp_stone	;large_stone_nonflammable
+	localised_name	ambient
+}
+
+castle_5
+{
+	stat_cat		temp_stone	;large_stone_nonflammable
+	localised_name	ambient
+}
+
+settlement_0
+{
+	stat_cat		temp_stone	;medium_wooden
+	localised_name	ambient
+}
+
+settlement_1
+{
+	stat_cat		temp_stone	;large_wooden
+	localised_name	ambient
+}
+
+settlement_2
+{
+	; old stat_cat temp_stone for testing building destruciton MS3
+	stat_cat		temp_stone	;large_wooden
+	localised_name	ambient
+}
+
+settlement_3
+{
+	stat_cat		temp_stone	;large_wooden
+	localised_name	ambient
+}
+
+settlement_4
+{
+	stat_cat		temp_stone	;large_stone
+	localised_name	ambient
+}
+
+settlement_5
+{
+	stat_cat		temp_stone	;large_stone
+	localised_name	ambient
+}
+
+abbey
+{
+	stat_cat		medium_stone
+	localised_name	abbey
+}
+
+abbey_o
+{
+	stat_cat		medium_stone
+	localised_name	abbey
+}
+
+academy
+{
+	stat_cat		medium_stone
+	localised_name	academy
+}
+
+admiralty
+{
+	stat_cat		medium_stone
+	localised_name	admiralty
+}
+alchemists_guild
+{
+	stat_cat		medium_stone
+	localised_name	alchemists_guild
+}
+alchemists_lab
+{
+	stat_cat		medium_stone
+	localised_name	alchemists_lab
+} 
+alchemy_school 
+{
+	stat_cat		medium_stone
+	localised_name	alchemy_school
+}
+altar_circle 
+{
+	stat_cat		medium_stone
+	localised_name	altar_circle
+}
+aqueduct 
+{
+	stat_cat		medium_stone
+	localised_name	aqueduct
+}
+archery_range 
+{
+	stat_cat		medium_stone
+	localised_name	archery_range
+}
+armourer 
+{
+	stat_cat		medium_stone
+	localised_name	armourer
+}
+armoury 
+{
+	stat_cat		medium_stone
+	localised_name	armoury
+}
+army_barracks 
+{
+	stat_cat		medium_stone
+	localised_name	army_barracks
+}
+artist_gallery 
+{
+	stat_cat		medium_stone
+	localised_name	artist_gallery
+}
+artist_studio 
+{
+	stat_cat		medium_stone
+	localised_name	artist_studio
+}
+assassins_guild 
+{
+	stat_cat		medium_stone
+	localised_name	assassins_guild
+}
+ballista_range 
+{
+	stat_cat		medium_stone
+	localised_name	ballista_range
+}
+barons_stables 
+{
+	stat_cat		medium_stone
+	localised_name	barons_stables
+}
+barracks 
+{
+	stat_cat		medium_stone
+	localised_name	barracks
+}
+bimaristan 
+{
+	stat_cat		medium_stone
+	localised_name	bimaristan
+}
+blacksmith 
+{
+	stat_cat		medium_stone
+	localised_name	blacksmith
+}
+bowyer 
+{
+	stat_cat		medium_stone
+	localised_name	bowyer
+}
+brothel 
+{
+	stat_cat		medium_stone
+	localised_name	brothel
+}
+c_altar 
+{
+	stat_cat		medium_stone
+	localised_name	altar_circle
+}
+c_armourer 
+{
+	stat_cat		medium_stone
+	localised_name	armourer
+}
+c_ballista_range 
+{
+	stat_cat		medium_stone
+	localised_name	ballista_range 
+}
+c_blacksmith 
+{
+	stat_cat		medium_stone
+	localised_name	blacksmith 
+}
+c_cannon_foundry 
+{
+	stat_cat		medium_stone
+	localised_name	cannon_foundry 
+}
+c_cannon_maker 
+{
+	stat_cat		medium_stone
+	localised_name	cannon_maker
+}
+c_catapult_range 
+{
+	stat_cat		medium_stone
+	localised_name	catapult_range 
+}
+c_gothic_armourer 
+{
+	stat_cat		medium_stone
+	localised_name	gothic_armourer
+}
+c_gunsmith 
+{
+	stat_cat		medium_stone
+	localised_name	gunsmith
+}
+c_heavy_armourer 
+{
+	stat_cat		medium_stone
+	localised_name	heavy_armourer 
+}
+c_leather_tanner 
+{
+	stat_cat		medium_stone
+	localised_name	leather_tanner 
+}
+c_masjid 
+{
+	stat_cat		medium_stone
+	localised_name	masjid
+}
+c_plate_armourer 
+{
+	stat_cat		medium_stone
+	localised_name	plate_armourer 
+}
+c_royal_arsenal 
+{
+	stat_cat		medium_stone
+	localised_name	royal_arsenal 
+}
+c_shrine 
+{
+	stat_cat		medium_stone
+	localised_name	shrine 
+}
+c_siege_works 
+{
+	stat_cat		medium_stone
+	localised_name	siege_works 
+}
+c_small_masjid 
+{
+	stat_cat		medium_stone
+	localised_name	small_masjid 
+}
+cannon_foundry 
+{
+	stat_cat		medium_stone
+	localised_name	cannon_foundry
+}
+cannon_maker 
+{
+	stat_cat		medium_stone
+	localised_name	cannon_maker 
+}
+caravan_stop 
+{
+	stat_cat		medium_stone
+	localised_name	caravan_stop 
+}
+caravanersary 
+{
+	stat_cat		medium_stone
+	localised_name	caravanersary 
+}
+catapult_range 
+{
+	stat_cat		medium_stone
+	localised_name	catapult_range 
+}
+cathedral 
+{
+	stat_cat		medium_stone
+	localised_name	cathedral 
+}
+cathedral_o 
+{
+	stat_cat		medium_stone
+	localised_name	cathedral 
+}
+chapel 
+{
+	stat_cat		medium_stone
+	localised_name	chapel 
+}
+chapel_o 
+{
+	stat_cat		medium_stone
+	localised_name	chapel 
+}
+church 
+{
+	stat_cat		medium_stone
+	localised_name	church 
+}
+church_o 
+{
+	stat_cat		medium_stone
+	localised_name	church 
+}
+city_hall 
+{
+	stat_cat		medium_stone
+	localised_name	city_hall 
+}
+city_watch 
+{
+	stat_cat		medium_stone
+	localised_name	city_watch 
+}
+coaching_house 
+{
+	stat_cat		medium_stone
+	localised_name	coaching_house 
+}
+conservatorium 
+{
+	stat_cat		medium_stone
+	localised_name	conservatorium 
+}
+corn_exchange 
+{
+	stat_cat		medium_stone
+	localised_name	corn_exchange 
+}
+council_chambers 
+{
+	stat_cat		medium_stone
+	localised_name	council_chambers 
+}
+drill_square 
+{
+	stat_cat		medium_stone
+	localised_name	drill_square 
+}
+earls_stables 
+{
+	stat_cat		medium_stone
+	localised_name	earls_stables 
+}
+eastern_assassins_guild 
+{
+	stat_cat		medium_stone
+	localised_name	eastern_assassins_guild 
+}
+explorers_guild 
+{
+	stat_cat		medium_stone
+	localised_name	explorers_guild 
+}
+fairground 
+{
+	stat_cat		medium_stone
+	localised_name	fairground 
+}
+garrison_quarters 
+{
+	stat_cat		medium_stone
+	localised_name	garrison_quarters 
+}
+gm_alchemists_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_alchemists_guild 
+}
+gm_assassins_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_assassins_guild 
+}
+gm_eastern_assassins_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_eastern_assassins_guild 
+}
+gm_explorers_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_explorers_guild 
+}
+gm_horse_breeders_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_horse_breeders_guild 
+}
+gm_masons_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_masons_guild 
+}
+gm_merchants_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_merchants_guild 
+}
+gm_swordsmiths_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_swordsmiths_guild 
+}
+gm_theologians_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_theologians_guild 
+}
+gm_thieves_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_thieves_guild 
+}
+gm_woodsmens_guild 
+{
+	stat_cat		medium_stone
+	localised_name	gm_woodsmens_guild 
+}
+gothic_armourer 
+{
+	stat_cat		medium_stone
+	localised_name	gothic_armourer 
+}
+great_bimaristan 
+{
+	stat_cat		medium_stone
+	localised_name	great_bimaristan 
+}
+great_jama 
+{
+	stat_cat		medium_stone
+	localised_name	great_jama 
+}
+great_market 
+{
+	stat_cat		medium_stone
+	localised_name	great_market 
+}
+gunsmith 
+{
+	stat_cat		medium_stone
+	localised_name	gunsmith 
+}
+heavy_armourer 
+{
+	stat_cat		medium_stone
+	localised_name	heavy_armourer 
+}
+high_temple 
+{
+	stat_cat		medium_stone
+	localised_name	high_temple 
+}
+horse_breeders_guild 
+{
+	stat_cat		medium_stone
+	localised_name	horse_breeders_guild 
+}
+huge_cathedral 
+{
+	stat_cat		medium_stone
+	localised_name	huge_cathedral 
+}
+huge_cathedral_o 
+{
+	stat_cat		medium_stone
+	localised_name	huge_cathedral 
+}
+ikoner_studio 
+{
+	stat_cat		medium_stone
+	localised_name	ikoner_studio 
+}
+inn 
+{
+	stat_cat		medium_stone
+	localised_name	inn 
+}
+jama 
+{
+	stat_cat		medium_stone
+	localised_name	jama
+}
+jousting_lists 
+{
+	stat_cat		medium_stone
+	localised_name	jousting_lists 
+}
+kings_stables 
+{
+	stat_cat		medium_stone
+	localised_name	kings_stables 
+}
+knights_of_santiago_hq 
+{
+	stat_cat		medium_stone
+	localised_name	knights_of_santiago_hq 
+}
+knights_of_santiago_major_ch 
+{
+	stat_cat		medium_stone
+	localised_name	knights_of_santiago_major_ch 
+}
+knights_of_santiago_minor_ch 
+{
+	stat_cat		medium_stone
+	localised_name	knights_of_santiago_minor_ch 
+}
+knights_stables 
+{
+	stat_cat		medium_stone
+	localised_name	knights_stables 
+}
+leather_tanner 
+{
+	stat_cat		medium_stone
+	localised_name	leather_tanner 
+}
+library 
+{
+	stat_cat		medium_stone
+	localised_name	library 
+}
+m_alchemists_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_alchemists_guild 
+}
+m_assassins_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_assassins_guild 
+}
+m_eastern_assassins_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_eastern_assassins_guild 
+}
+m_explorers_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_explorers_guild 
+}
+m_horse_breeders_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_horse_breeders_guild 
+}
+m_masons_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_masons_guild 
+}
+m_merchants_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_merchants_guild 
+}
+m_swordsmiths_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_swordsmiths_guild 
+}
+m_theologians_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_theologians_guild 
+}
+m_thieves_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_thieves_guild 
+}
+m_woodsmens_guild 
+{
+	stat_cat		medium_stone
+	localised_name	m_woodsmens_guild 
+}
+market 
+{
+	stat_cat		medium_stone
+	localised_name	market 
+}
+marksmans_range 
+{
+	stat_cat		medium_stone
+	localised_name	marksmans_range 
+}
+masjid 
+{
+	stat_cat		medium_stone
+	localised_name	masjid 
+}
+masons_guild 
+{
+	stat_cat		medium_stone
+	localised_name	masons_guild 
+}
+master_ikoner_studio 
+{
+	stat_cat		medium_stone
+	localised_name	master_ikoner_studio 
+}
+mayors_palace 
+{
+	stat_cat		medium_stone
+	localised_name	mayors_palace 
+}
+merchant_bank 
+{
+	stat_cat		medium_stone
+	localised_name	merchant_bank 
+}
+merchant_vault 
+{
+	stat_cat		medium_stone
+	localised_name	merchant_vault 
+}
+merchants_guild 
+{
+	stat_cat		medium_stone
+	localised_name	merchants_guild 
+}
+merchants_quarter 
+{
+	stat_cat		medium_stone
+	localised_name	merchants_quarter 
+}
+military_academy 
+{
+	stat_cat		medium_stone
+	localised_name	military_academy 
+}
+militia_baracks 
+{
+	stat_cat		medium_stone
+	localised_name	militia_baracks 
+}
+militia_drill_square 
+{
+	stat_cat		medium_stone
+	localised_name	militia_drill_square 
+}
+minareted_masjid 
+{
+	stat_cat		medium_stone
+	localised_name	minareted_masjid 
+}
+mustering_hall 
+{
+	stat_cat		medium_stone
+	localised_name	mustering_hall 
+}
+naval_academy 
+{
+	stat_cat		medium_stone
+	localised_name	naval_academy 
+}
+officers_academy 
+{
+	stat_cat		medium_stone
+	localised_name	officers_academy 
+}
+plate_armourer 
+{
+	stat_cat		medium_stone
+	localised_name	plate_armourer 
+}
+plaza_del_toro 
+{
+	stat_cat		medium_stone
+	localised_name	plaza_del_toro 
+}
+pleasure_palace 
+{
+	stat_cat		medium_stone
+	localised_name	pleasure_palace 
+}
+practice_range 
+{
+	stat_cat		medium_stone
+	localised_name	practice_range 
+}
+printing_house 
+{
+	stat_cat		medium_stone
+	localised_name	printing_house 
+}
+printing_press 
+{
+	stat_cat		medium_stone
+	localised_name	printing_press 
+}
+public_baths 
+{
+	stat_cat		medium_stone
+	localised_name	public_baths 
+}
+racing_track 
+{
+	stat_cat		medium_stone
+	localised_name	racing_track 
+}
+royal_armoury 
+{
+	stat_cat		medium_stone
+	localised_name	royal_armoury 
+}
+royal_arsenal 
+{
+	stat_cat		medium_stone
+	localised_name	royal_arsenal 
+}
+shrine 
+{
+	stat_cat		medium_stone
+	localised_name	shrine 
+}
+siege_works 
+{
+	stat_cat		medium_stone
+	localised_name	siege_works 
+}
+slot_filler 
+{
+	stat_cat		medium_stone
+	localised_name	ambient 
+}
+small_chapel 
+{
+	stat_cat		medium_stone
+	localised_name	small_chapel 
+}
+small_chapel_o 
+{
+	stat_cat		medium_stone
+	localised_name	small_chapel 
+}
+small_church 
+{
+	stat_cat		medium_stone
+	localised_name	small_church 
+}
+small_church_o 
+{
+	stat_cat		medium_stone
+	localised_name	small_church 
+}
+small_masjid 
+{
+	stat_cat		medium_stone
+	localised_name	small_masjid 
+}
+st_johns_hq 
+{
+	stat_cat		medium_stone
+	localised_name	st_johns_hq 
+}
+st_johns_major_ch
+{
+	stat_cat		medium_stone
+	localised_name	st_johns_major_ch
+}
+st_johns_minor_ch 
+{
+	stat_cat		medium_stone
+	localised_name	st_johns_minor_ch 
+}
+stables 
+{
+	stat_cat		medium_stone
+	localised_name	stables 
+}
+sultans_racing_track 
+{
+	stat_cat		medium_stone
+	localised_name	sultans_racing_track 
+}
+swordsmiths_guild 
+{
+	stat_cat		medium_stone
+	localised_name	swordsmiths_guild 
+}
+tavern 
+{
+	stat_cat		medium_stone
+	localised_name	tavern 
+}
+templars_hq 
+{
+	stat_cat		medium_stone
+	localised_name	templars_hq 
+}
+templars_major_ch 
+{
+	stat_cat		medium_stone
+	localised_name	templars_major_ch 
+}
+templars_minor_ch 
+{
+	stat_cat		medium_stone
+	localised_name	templars_minor_ch 
+}
+temple 
+{
+	stat_cat		medium_stone
+	localised_name	temple 
+}
+teutonic_knights_hq 
+{
+	stat_cat		medium_stone
+	localised_name	teutonic_knights_hq 
+}
+teutonic_knights_major_ch 
+{
+	stat_cat		medium_stone
+	localised_name	teutonic_knights_major_ch 
+}
+teutonic_knights_minor_ch 
+{
+	stat_cat		medium_stone
+	localised_name	teutonic_knights_minor_ch 
+}
+theatre 
+{
+	stat_cat		medium_stone
+	localised_name	theatre 
+}
+theologians_guild 
+{
+	stat_cat		medium_stone
+	localised_name	theologians_guild 
+}
+thieves_guild 
+{
+	stat_cat		medium_stone
+	localised_name	thieves_guild 
+}
+tourney_fields 
+{
+	stat_cat		medium_stone
+	localised_name	tourney_fields 
+}
+town_guard 
+{
+	stat_cat		medium_stone
+	localised_name	town_guard 
+}
+town_hall 
+{
+	stat_cat		medium_stone
+	localised_name	town_hall 
+}
+town_watch 
+{
+	stat_cat		medium_stone
+	localised_name	town_watch 
+}
+university 
+{
+	stat_cat		medium_stone
+	localised_name	university 
+}
+woodsmens_guild 
+{
+	stat_cat		medium_stone
+	localised_name	woodsmens_guild 
+}
+ziggurat 
+{
+	stat_cat		medium_stone
+	localised_name	ziggurat 
+}

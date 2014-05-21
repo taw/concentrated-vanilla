@@ -1,0 +1,486 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Narration speech
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 1d streamed priority 500 volume -20 fadein 0 fadeout 2.5
+DEFAULT: randomdelay 0 rndvolume 0 pan .5
+DEFAULT: dry_level 1.0 wet_level 0
+DEFAULT: streamed pref SPEECH
+DEFAULT: probability 1 ducking
+
+                  event Test streamed
+                           
+                                    folder data/sounds/SFX/Interface/Frontend
+                                    tick_on.mp3
+                  end
+
+
+;;;; Historical Intro Battle_Events
+
+;;;; HASTINGS Tutorial Speech
+
+					event Hastings_Tutorial_General_1 volume -40
+					
+					folder data/sounds/Voice/Human/Localized/Battle_Map
+					English_Heavy_Group_Order_Missile_Attack_1.wav
+					
+					end
+
+					event Hastings_Tutorial_General_2 volume -40
+					
+					folder data/sounds/Voice/Human/Localized/Battle_Map
+					English_Heavy_Group_Created_1.wav
+					
+					end
+
+					event Hastings_Tutorial_General_3 volume -40
+					
+					folder data/sounds/Voice/Human/Localized/Battle_Map
+					English_Heavy_Group_Order_Move_2.wav
+					
+					end
+
+
+;;;; HASTINGS
+
+
+
+                  event Hastings_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_1.mp3
+                  end
+                  event Hastings_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_2.mp3
+                  end
+                  event Hastings_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_3.mp3
+                  end
+                  event Hastings_Sergeant_4
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_4.mp3
+                  end
+                  event Hastings_Sergeant_5
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_5.mp3
+                  end
+                  event Hastings_Sergeant_6
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_6.mp3
+                  end
+                  event Hastings_Sergeant_7
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_7.mp3
+                           end
+                  event Hastings_Sergeant_8
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_8.mp3
+                           end
+                  event Hastings_Sergeant_9
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Hastings_9.mp3
+                           end
+
+ 
+                           
+;;;; Agincourt                           
+                           
+     
+                                                
+                  event Agincourt_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_1.mp3
+                           end
+                  event Agincourt_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_2.mp3
+                           end
+                  event Agincourt_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_3.mp3
+                           end
+
+                   event Agincourt_Sergeant_4
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_4.mp3
+                           end                          
+
+                   event Agincourt_Sergeant_5
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_5.mp3
+                           end  
+ 
+                   event Agincourt_Sergeant_6
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_6.mp3
+                           end      
+
+                   event Agincourt_Sergeant_7
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_7.mp3
+                           end                                                                        
+
+                   event Agincourt_Sergeant_8
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_8.mp3
+                           end                                                                        
+                           
+                   event Agincourt_Sergeant_9
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Agincourt_9.mp3
+                           end                            
+
+                   event Agincourt_Win
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Player_Victory_Crushing_2.mp3
+                           end                            
+
+                   event Agincourt_Lose
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Player_Defeat_Crushing_2.mp3
+                           end                            
+                                                      
+;;;; Arsuf                          
+                           
+                           
+      
+                                                
+                  event Arsuf_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Arsuf_1.mp3
+                           end
+                  event Arsuf_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Arsuf_2.mp3
+                           end
+                  event Arsuf_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    English_Arsuf_3.mp3
+                           end
+                           
+                           
+                           
+;;;; Pavia                           
+                           
+                           
+                           
+
+                  event Pavia_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_1.mp3
+                           end
+                  event Pavia_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_2.mp3
+                           end
+                  event Pavia_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_3.mp3
+                           end
+                  event Pavia_Sergeant_4
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_4.mp3
+                           end
+                  event Pavia_Sergeant_5
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_5.mp3
+                           end
+                  event Pavia_Sergeant_6
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_6.mp3
+                           end
+                  event Pavia_Sergeant_7
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_7.mp3
+                           end
+                  event Pavia_Sergeant_8
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_8.mp3
+                           end
+                  event Pavia_Sergeant_9
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_9.mp3
+                           end
+                  event Pavia_Sergeant_10
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Pavia_10.mp3
+                           end
+                           
+                  event Pavia_Sergeant_11
+                           ;this day will go down in the records of the empire as one of its most magnificent victories
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Player_Victory_Crushing_2.mp3
+                           end
+                           
+                  event Pavia_Sergeant_12
+                           ;this defeat leaves a bitter taste in the mouths of all the empires warriors
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    German_Player_Defeat_Clear_1.mp3
+                           end
+
+		 		  event Pavia_Sergeant_13
+			   			;Gott im himmel! Our allied general has been slain!  Avenge him!
+                           	    folder data/sounds/Voice/Human/Localized/Battle_Events
+				    			German_Allied_Army_Leader_Killed_2.mp3
+			  			  end
+                           
+;;;; Otumba                            
+                           
+                           
+                           
+                  event Otumba_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_1.mp3
+                           end
+                  event Otumba_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_2.mp3
+                           end
+                  event Otumba_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_3.mp3
+                           end
+                  event Otumba_Sergeant_4
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_4.mp3
+                           end
+                   event Otumba_Sergeant_5
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_5.mp3
+                           end
+                  event Otumba_Sergeant_6
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_6.mp3
+                           end
+                  event Otumba_Sergeant_7
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_7.mp3
+                           end
+                  event Otumba_Sergeant_8
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_8.mp3
+                           end                                                        
+                  event Otumba_Sergeant_9
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_9.mp3
+                           end
+                  event Otumba_Sergeant_10
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_10.mp3
+                           end
+                  event Otumba_Sergeant_11
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Otumba_11.mp3
+                           end
+					event Otumba_Win
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Player_Victory_Average_2.mp3
+                           end                            
+                	event Otumba_Lose
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Player_Defeat_Crushing_2.mp3
+                           end                            
+                           
+;;;; Tannenberg
+
+
+                           
+                           
+
+                  event Tannenberg_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    East_European_Tannenberg_1.mp3
+                           end
+                  event Tannenberg_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    East_European_Tannenberg_2.mp3
+                           end
+                  event Tannenberg_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    East_European_Tannenberg_3.mp3
+                           end
+                  event Tannenberg_Sergeant_4
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    East_European_Tannenberg_4.mp3
+                           end
+                  event Tannenberg_Sergeant_5
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    East_European_Tannenberg_5.mp3
+                           end
+                  event Tannenberg_Sergeant_6
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    East_European_Tannenberg_6.mp3
+                           end
+                  event Tannenberg_Sergeant_7
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    East_European_Tannenberg_7.mp3
+                           end
+
+                           
+                           
+                           
+;;;; Hattin                           
+                           
+                           
+                           
+                           
+                  event Hattin_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Arabic_Hattin_1.mp3
+                           end
+                  event Hattin_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Arabic_Hattin_2.mp3
+                           end
+                  event Hattin_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Arabic_Hattin_3.mp3
+                           end
+                  event Hattin_Sergeant_4
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Arabic_Hattin_4.mp3
+                           end
+
+                           
+;;;; Setenil                        
+
+
+                  event Setenil_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Setenil_1.mp3
+                           end
+                  event Setenil_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Setenil_2.mp3
+                           end
+                  event Setenil_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Setenil_3.mp3
+                           end
+                  event Setenil_Sergeant_4
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Setenil_4.mp3
+                           end
+                  event Setenil_Sergeant_5
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Setenil_5.mp3
+                           end
+                  event Setenil_Sergeant_6
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Setenil_6.mp3
+                           end
+                  event Setenil_Sergeant_7
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    Mediterranean_Setenil_7.mp3
+                           end
+
+
+;;;; Dorylaeum
+                        
+
+
+                  event Dorylaeum_Sergeant_1
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    French_Dorylaeum_1.mp3
+                           end
+                  event Dorylaeum_Sergeant_2
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    French_Dorylaeum_2.mp3
+                           end
+                  event Dorylaeum_Sergeant_3
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    French_Dorylaeum_3.mp3
+                           end
+                  event Dorylaeum_Sergeant_4
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    French_Dorylaeum_4.mp3
+                           end
+                  event Dorylaeum_Sergeant_5
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    French_Dorylaeum_5.mp3
+                           end
+                  event Dorylaeum_Sergeant_6
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    French_Dorylaeum_6.mp3
+                           end
+                  event Dorylaeum_Sergeant_7
+                           
+                                    folder data/sounds/Voice/Human/Localized/Battle_Events
+                                    French_Dorylaeum_7.mp3
+                           end
+                           
+                           
+source export_descr_sounds_narration.txt

@@ -1,0 +1,721 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Gate lights
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect torch_fire_small
+{
+	type particle
+	{
+		texture             battlefield/fire/#flame_wheel.tga		
+		sprite_origin       0.0, 0.0
+		sprite_size         1.0, 1.0
+
+		size_range          0.4, 0.5
+		age_range           0.8, 1.5
+        grow_range          1.0, 1.5
+		vel_range           0.0, 0.0
+		colour              255, 150, 200
+		alpha_max           230             ; maximum alpha value
+		initial_size        1.0, 1.5
+		blend_type          additive
+
+		emitter time
+		{
+			density                 10      ; how many particels per second
+			emitter_falloff_dist    100     ; distance in meters to reduce emission over
+			emitter_falloff_bias    0.5			
+		}
+
+		random_emit_radius  0, 0.2
+		system_radius       2.0             ; radius used for culling
+	}
+}
+
+effect torch_fire_large
+{
+	type particle
+	{
+		texture             battlefield/fire/#flame_wheel.tga		
+		sprite_origin       0.0, 0.0
+		sprite_size         1.0, 1.0
+
+		size_range          1.4, 1.5
+		age_range           0.8, 1.5
+        grow_range          1.0, 1.5
+		vel_range  			0.0, 0.0
+		colour     			255, 150, 200
+		alpha_max	   		230			    ; maximum alpha value
+		initial_size        2.0, 2.5
+		blend_type			additive
+
+		emitter time
+		{
+			density			        10 	     ; how many particels per second
+			emitter_falloff_dist	100		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+		}
+
+		random_emit_radius		0, 0.2
+		system_radius			2.0			; radius used for culling
+	}
+}
+
+effect torch_light_small
+{
+	type light
+	{
+		fade_out_time	0.2
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 110, 0
+				0.2, 	240, 120, 0
+				0.25, 	240, 100, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	9
+				0.1, 	8.8
+				0.15, 	9.2
+		}
+	}
+}
+
+effect torch_light_large
+{
+	type light
+	{
+		fade_out_time	0.2
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 110, 0
+				0.2, 	240, 120, 0
+				0.25, 	240, 100, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	13
+				0.1, 	12.8
+				0.15, 	12.2
+		}
+	}
+}
+
+effect torch_smoke_small
+{
+	type particle
+	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range       	0.4, 0.9
+		age_range        	0.7, 0.9
+	    grow_range		 	1.0, 1.2
+		vel_range  			1.0, 1.5
+		colour     			55, 50, 47
+		alpha_max	   		150			    ; maximum alpha value
+		random_emit_radius  0.0, 0.4
+		initial_size		1.0, 1.5
+
+		emitter	time
+		{
+			density			5 	     	    ; how many particels per second
+		}
+	}
+}
+
+
+effect torch_smoke_large
+{
+	type particle
+	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range       	0.4, 0.9
+		age_range        	0.7, 0.9
+	    grow_range		 	1.0, 1.2
+		vel_range  			1.5, 2.5
+		colour     			55, 50, 47
+		alpha_max	   		150			    ; maximum alpha value
+		random_emit_radius  0.0, 0.4
+		initial_size		1.5, 2.0
+
+		emitter	time
+		{
+			density			5 	            ; how many particels per second
+		}
+	}
+}
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Soldier torches
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect soldier_torch_smoke
+{
+	type particle
+	{
+		texture				models_effects/textures/cloud_sprite3.tga
+
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+		
+		size_range       	0.7, 1.0
+		age_range        	1.0, 7.0
+	    grow_range		 	1.0, 2.4
+		vel_range  			0.1, .4
+		wind_modifier 		4.0
+
+		colour     			155, 150, 147
+		alpha_max	   		30			 ; maximum alpha value
+		random_emit_radius  0.0, 0.1
+		initial_size		0.1, 0.1
+		system_radius		2.0
+		batched
+		offset				0.0, 0.0, 0.0
+		max_particles       2000
+		emitter	distance_time
+		{
+			density			2	     		 ; how many particels per second
+			distance_scale  3
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			max_distance			0.5			
+		}
+	}
+}
+
+effect soldier_torch_fiery_smoke
+{
+	type particle
+	{
+		texture			models_effects/textures/cloud_sprite5.tga
+
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.5, 0.7
+		age_range        	0.5, 0.6
+	    grow_range		 	0.7, 1.5
+		vel_range  			0.2, 0.3
+		wind_modifier 		4.0
+
+//		colour     			85, 80, 77
+		
+		keyframe_colour
+		{
+			0.0		255, 255, 255, 255
+			1.0		30, 255, 255, 255	
+		}
+		
+		alpha_max	   		255			 ; maximum alpha value
+		random_emit_radius  0.0, 0.1
+		initial_size		0.2, 0.3
+		system_radius		2.0
+		batched
+		fade_time			1.0
+		offset				0.0, 0.0, 0.2
+		max_particles       2000
+		emitter	distance_time
+		{
+			density			10 	     		 ; how many particels per second
+			distance_scale  3
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			max_distance			0.5			
+		}
+	}
+}
+
+
+effect soldier_torch_fire
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			0.01, 0.01
+		
+		initial_size		0.18, 0.18
+		size_range       	0.4, 0.2
+		age_range        	0.55, 0.55
+	    grow_range		 	0.3, 0.1
+		vel_range  			0.36, 0.38
+		wind_modifier 		1.0
+		acceleration		0, 0
+		spin_rate           0.01, -0.01
+
+		max_distance        0.00
+
+		
+		keyframe_colour
+		{
+				0.0, 	60, 255,  255,   255
+				0.15, 	5, 255,  200,   200
+				0.5, 	0,   255,   200,   200
+		}
+		
+		alpha_max	   		255			 ; maximum alpha value
+		blend_type			additive
+		offset				0.01, 0.00, 0.28
+		max_particles       5000
+        
+		emitter distance_time
+		{
+			density			     80    	; how many particels per second
+			emitter_falloff_dist	50			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.1			
+			distance_scale  		0.8
+			age_scale              0.01
+			max_distance			0.2			
+		}
+
+		random_emit_radius		0, 0.00
+		system_radius			1.0			    ; radius used for culling
+		batched
+	}
+}
+
+effect soldier_torch_light
+{
+	type light
+	{
+			
+		keyframe_colour
+		{
+				0.05, 	240, 160,  90
+				0.1, 	234, 170, 90
+				0.15, 	246, 160,  90
+				0.2, 	236, 170, 90
+				0.25, 	244, 160, 90
+				0.3, 	234, 170, 90
+		}
+			
+		keyframe_radius
+		{
+				0.09, 	2.51
+				0.2, 	2.5		
+		}
+		
+		light_map_scale 0.4
+	}
+}
+
+effect soldier_torch_model
+{
+	type projectile
+	{
+		model models_effects/torch.cas
+		sort_for_speed
+		view_dist 70
+	}
+}
+
+effect soldier_torch_glow_model
+{
+	type projectile
+	{
+		model models_effects/torch_glow.cas
+		sort_for_speed
+		view_dist 200
+	}
+}
+
+
+
+effect_set < 0 1 2 3 4 > soldier_torch_set
+{
+	lod 10000
+	{
+		soldier_torch_fire
+		;soldier_torch_fiery_smoke
+		soldier_torch_model
+		soldier_torch_glow_model
+		soldier_torch_light
+		;soldier_torch_smoke
+		torch_sound
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Banner torches
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect banner_torch_smoke
+{
+	type particle
+	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range       	0.4, 0.5
+		age_range        	0.7, 0.9
+	    grow_range		 	0.6, 1.0
+		vel_range  			0.5, 1.0
+		colour     			55, 50, 47
+		alpha_max	   		150			    ; maximum alpha value
+		random_emit_radius  0.0, 0.1
+		initial_size		0.2, 0.5
+		system_radius		2.0
+		offset				0.0, 10.0, 0.0
+		max_particles		2000
+		emitter	time
+		{
+			density			5 	     		; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+		}
+	}
+}
+
+effect banner_torch_fire
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.6, 0.2
+		age_range        	0.4, 0.7
+	    grow_range		 	1.0, 0.1
+		vel_range  			0.5, 1.0
+		colour     			255, 150, 200
+		alpha_max	   		255			    ; maximum alpha value
+		initial_size		0.2, 0.5
+		blend_type			additive
+		offset				0.0, 10.0, 0.0
+		max_particles		2000
+
+		emitter time
+		{
+			density			        40 	    ; how many particels per second
+			emitter_falloff_dist	100		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+		}
+
+		random_emit_radius		0, 0.1
+		system_radius			2.0			; radius used for culling
+	}
+}
+
+effect banner_torch_light
+{
+	type light
+	{
+		offset		0.0, 10.0, 0.0
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 110, 0
+				0.2, 	240, 120, 0
+				0.25, 	240, 100, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	6.0
+				0.1, 	6.1
+				0.15, 	6.05				
+		}
+	}
+}
+
+effect_set < 0 1 2 3 4 > banner_torch_set
+{
+	lod 10000
+	{
+		soldier_torch_fire
+		;soldier_torch_fiery_smoke
+		soldier_torch_model
+		soldier_torch_glow_model
+		;soldier_torch_smoke
+		torch_sound
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Plaza torches
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect plaza_torch_smoke
+{
+	type particle
+	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range       	0.4, 0.5
+		age_range        	0.7, 0.9
+	    grow_range		 	0.6, 1.0
+		vel_range  			0.5, 1.0
+		colour     			55, 50, 47
+		alpha_max	   		150			    ; maximum alpha value
+		random_emit_radius  0.0, 0.1
+		initial_size		0.2, 0.5
+		system_radius		2.0
+		offset				0.0, 3.2, 0.0
+		max_particles		2000
+		emitter	time
+		{
+			density			5 	     		; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+		}
+	}
+}
+
+effect plaza_torch_fire
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.1, 0.2
+		age_range        	0.2, 0.3
+	    grow_range		 	1.0, 1.5
+		vel_range  			0.5, 0.6
+		colour     			255, 150, 200
+		alpha_max	   		255			    ; maximum alpha value
+		initial_size		0.2, 0.5
+		blend_type			additive
+		offset				0.0, 3.2, 0.0
+		max_particles		2000
+
+		emitter time
+		{
+			density			        40 	    ; how many particels per second
+			emitter_falloff_dist	100		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+		}
+
+		random_emit_radius		0, 0.1
+		system_radius			2.0			; radius used for culling
+	}
+}
+
+effect plaza_torch_light
+{
+	type light
+	{
+		offset		0.0, 3.2, 0.0
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 110, 0
+				0.2, 	240, 120, 0
+				0.25, 	240, 100, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.0, 	4.0
+				0.1, 	4.1
+				0.15, 	4.05				
+		}
+	}
+}
+
+effect_set < 0 1 2 3 4 > plaza_torch_set
+{
+	lod 10000
+	{
+		soldier_torch_fire
+		soldier_torch_light
+		;plaza_torch_smoke
+		torch_sound
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Unit Light
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect unit_light
+{
+	type light
+	{
+		offset		0.0, 5.0, 0.0
+		keyframe_colour
+		{
+				0.05, 	60, 30, 5
+				0.1, 	60, 38, 5
+				0.15, 	60, 28, 5
+				0.2, 	60, 36, 5
+				0.25, 	60, 30, 5
+				0.3, 	60, 36, 5
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	15.0
+				0.1, 	15.1
+				0.15, 	15.05				
+		}
+		
+		light_map_scale 1.0
+	}
+}
+
+effect_set < 0 1 2 3 4 > unit_light_set
+{
+	lod 10000
+	{
+		unit_light
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Street Lights
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect bi_street_lamp_smoke
+{
+	type particle
+	{
+		texture			battlefield/fire/smoke1.tga
+
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+			
+		size_range       	0.1, 0.8
+		age_range        	1.5, 2.0
+	    grow_range		 	0.6, 1.0
+		vel_range  			0.3, 0.8
+		die_size			0.1, 0.8
+		colour     			55, 50, 47
+		alpha_max	   		114			    ; maximum alpha value
+		random_emit_radius  0.0, 0.1
+		initial_size		0.2, 0.5
+		system_radius		2.0
+		offset				0.0, 0.0, 0.0
+		max_particles		2000
+		batched
+		
+		emitter	time
+		{
+			density			10 	     		; how many particels per second
+			emitter_falloff_dist	100		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5						
+		}
+	}
+}
+
+
+effect bi_street_lamp_fire
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.1, 0.2
+		age_range        	0.4, 0.6
+	    grow_range		 	2.5, 0.5
+		vel_range  			0.5, 0.6
+		colour     			255, 150, 200
+		alpha_max	   		200			    ; maximum alpha value
+		initial_size		0.2, 0.5
+		blend_type			additive
+		offset				0.0, 0.0, 0.0
+		max_particles		2000
+		batched
+		
+		emitter time
+		{
+			density			        40 	    ; how many particels per second
+			emitter_falloff_dist	100		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+		}
+
+		random_emit_radius		0, 0.1
+		system_radius			2.0			; radius used for culling
+	}
+}
+	
+effect bi_street_lamp_light
+{
+	type light
+	{
+		offset		0.0, 0.0, 0.0
+		keyframe_colour
+		{
+				0.05, 	255, 140, 0
+				0.1, 	255, 130, 0
+				0.15, 	255, 160, 0
+				0.2, 	255, 15020, 0
+				0.25, 	255, 170, 0
+				0.3, 	255, 150, 0
+		}
+			
+		keyframe_radius 
+		{
+				0.0, 	10.0				
+				0.3, 	10.5				
+				0.7, 	11.0				
+				1.0,    10.5				
+		}
+
+		light_map_scale 0.3
+	}
+}
+
+effect_set < 0 1 2 3 4 > night_fx_bi_street_lamp
+{
+	lod 10000
+	{
+		bi_street_lamp_fire
+		bi_street_lamp_light
+		;bi_street_lamp_smoke
+		torch_sound
+	}
+}
+
+effect_set < 0 1 2 3 4 > night_fx_torch_small
+{
+	lod 1000
+	{
+		soldier_torch_fire
+		soldier_torch_light
+		;torch_smoke_small
+		torch_sound
+	}
+}
+
+effect_set < 0 1 2 3 4 > night_fx_torch_large
+{
+	lod 1000
+	{
+		soldier_torch_fire
+		soldier_torch_light
+		;torch_smoke_large
+		torch_sound
+	}
+}

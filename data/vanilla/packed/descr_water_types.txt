@@ -1,0 +1,831 @@
+;
+;	descr_water_types.txt
+;	---------------------
+;
+;	Defines the water surface and depth effects for the sea and rivers. The records are
+;	organised by:
+;
+;		water_type		- <sea, river>
+;		climate_type	- as listed in descr_landscape_ground_types.txt
+;		season_type		- <summer, winter>
+;
+;	The game will request the appropriate record based upon the settings of the current battle.
+;	A fully described record is shown in "sea default", with each of the record entries commented
+;	regarding their use and acceptable input bounds.
+;
+;	The records also support inheritance by defining a "parent" record. This is illustrated in
+;	the "sea mediterranean summer" record, which has "sea default" as a parent. Any entries in the
+;	record not specified in "sea mediterranean summer" will take their values from "sea default".
+;	Subsequently, unnecessary repetition may be avoided by linking to a parent and specifying
+;	only the relevent changes. This is done in "sea mediterranean summer" which substitutes the
+;	textures for surface layers 0 and 1.
+;
+
+;**************************************************************************************************
+;*                                           DEFAULT                                              *
+;**************************************************************************************************
+
+sea default
+{
+	surface
+	{
+		layer 0										; maximum of 4 layers (0 to 3)
+		{
+			type				diffuse				; <diffuse, specular>
+			texture				data/terrain/battlefield/water/diffuse_01_128.tga
+			opacity				0.7					; <0.0 to 1.0>
+			scale				100.0	100.0		; <metres>
+			offset				0.0		0.0			; <metres>
+			rotation			0.0					; <degrees>
+			scroll_speed		1.5					; <metres / second>
+			scroll_direction	0.0					; <degrees>
+
+		}
+
+		layer 1										; maximum of 4 layers (0 to 3)
+		{
+			type				diffuse				; <diffuse, specular>
+			texture				data/terrain/battlefield/water/diffuse_01_128.tga
+			opacity				0.4					; <0.0 to 1.0>
+			scale				25.0	25.0		; <metres>
+			offset				0.0		0.0			; <metres>
+			rotation			-10.0				; <degrees>
+			scroll_speed		0.97				; <metres / second>
+			scroll_direction	-3.0				; <degrees>
+		}
+
+
+		layer 2										; maximum of 4 layers (0 to 3)
+		{
+			type				specular			; <diffuse, specular>
+			texture				data/terrain/battlefield/water/specular_01.tga
+			opacity				1.0					; <0.0 to 1.0>
+			min_sharpness		7.0					; specular sharpness at noon
+			max_sharpness		25.0				; specular sharpness at dawn/dusk
+			scale				25.0	25.0		; <metres>
+			offset				0.0		0.0			; <metres>
+			rotation			0.0					; <degrees>
+			scroll_speed		0.97				; <metres / second>
+			scroll_direction	0.0					; <degrees>
+		}
+
+		layer 3										; maximum of 4 layers (0 to 3)
+		{
+			type				specular			; <diffuse, specular>
+			texture				data/terrain/battlefield/water/specular_02_128.tga
+			opacity				1.0					; <0.0 to 1.0>
+			min_sharpness		7.0					; specular sharpness at noon
+			max_sharpness		17.0				; specular sharpness at dawn/dusk
+			scale				30.0	30.0		; <metres>
+			offset				0.0		0.0			; <metres>
+			rotation			2.0					; <degrees>
+			scroll_speed		1.2					; <metres / second>
+			scroll_direction	-90					; <degrees>
+		}
+
+		colour				160 160 190				; <r g b>
+		colour_factor		2.0						; rate to fade to colour with depth
+		min_alpha			0.0						; alpha at shoreline
+		max_alpha			1.0						; alpha at max water depth
+		max_depth			10.0					; maximum visible water depth
+		max_refraction		0.15					; **** depricated *****
+	}
+
+	shore
+	{
+		min_dist			130.0					; start of shore fade out
+		max_dist			380.0					; end of shore fade out
+		normal_factor		0.04					; refraction power
+
+		;											BREADTH
+		;											=======
+		;
+		;							wide		medium		narrow		verry_narrow
+		;						+---------------------------------------------------+
+		;			long		|	X			X			.			.			|
+		;	LENGTH	medium		|	X			X			X			.			|
+		;	======	short		|	.			X			X			X			|
+		;			very_short	|	.			.			X			X			|
+		;						+----------------------------------------------------
+		;
+		;	NOTE: options marked with 'X' are present and valid.
+
+
+		; ************************************** long length **************************************************
+
+		segment long, wide							; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				80					; <metres>
+			breadth				80					; <metres>
+
+			max_bend			25					; <degrees>
+			max_slope			25					; <degrees>
+
+			shore_ratio			0.20				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_256_128.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		30.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.75,	255			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.3,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment long, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				80					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			25					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_256_128.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************* medium length **************************************************
+
+		segment medium, wide						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				80					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			25					; <degrees>
+
+			shore_ratio			0.20				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_256_128.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		30.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.75,	255			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.3,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment medium, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_256_128.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment medium, narrow						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_128_64.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************** short length **************************************************
+
+		segment short, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_256_128.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment short, narrow						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_128_64.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment short, very_narrow					; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				10					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			40					; <degrees>
+
+			shore_ratio			0.05				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_128_64.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		7.0					; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>>
+				keyframe		0.8,	255			; <progress>, <alpha>
+				keyframe		1.0,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************** very_short length *********************************************
+
+		segment very_short, narrow					; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				10					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			135					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_128_64.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment very_short, very_narrow				; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				10					; <metres>
+			breadth				10					; <metres>
+
+			max_bend			170					; <degrees>
+			max_slope			40					; <degrees>
+
+			shore_ratio			0.05				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				data/terrain/battlefield/water/waves/waves_128_64.tga
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		7.0					; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.8,	255			; <progress>, <alpha>
+				keyframe		1.0,	0			; <progress>, <alpha>
+			}
+		}
+
+	}
+}
+
+;--------------------------------------------------------------------------------------------------
+
+river default
+{
+	surface
+	{
+		layer 0
+		{
+			type				diffuse
+			texture				data/terrain/battlefield/water/river/river02.tga
+			opacity				0.7
+			scale				2.0		2.0
+			offset				0.0		0.0
+			rotation			0.0
+			scroll_speed		0.25
+			scroll_direction	180.0
+
+		}
+
+		layer 1
+		{
+			type				diffuse
+			texture				data/terrain/battlefield/water/river/river02.tga
+			opacity				0.4
+			scale				0.5		0.5
+			offset				0.0		0.0
+			rotation			-10.0
+			scroll_speed		0.194
+			scroll_direction	177.0
+		}
+
+
+		layer 2
+		{
+			type				specular
+			texture				data/terrain/battlefield/water/specular_01.tga
+			opacity				1.0
+			min_sharpness		7.0
+			max_sharpness		25.0
+			scale				0.5		0.5
+			offset				0.0		0.0
+			rotation			0.0
+			scroll_speed		0.194
+			scroll_direction	180.0
+		}
+
+		layer 3
+		{
+			type				specular
+			texture				data/terrain/battlefield/water/specular_02_128.tga
+			opacity				1.0
+			min_sharpness		7.0
+			max_sharpness		17.0
+			scale				0.6		0.6
+			offset				0.0		0.0
+			rotation			2.0
+			scroll_speed		0.21
+			scroll_direction	-174.0
+		}
+
+		colour				64 69 82
+		colour_factor		1.0
+		min_alpha			0.0
+		max_alpha			1.0
+		max_depth			4.0
+		max_refraction		0.15
+	}
+
+	shore
+	{
+		min_dist			50.0
+		max_dist			250.0
+		normal_factor		0.1
+	}
+}
+
+;**************************************************************************************************
+;*                                         mediterranean                                           *
+;**************************************************************************************************
+
+sea mediterranean summer
+{
+	parent	sea default
+
+	surface
+	{
+		layer 0
+		{
+			texture				data/terrain/battlefield/water/river/river02.tga
+		}
+
+		layer 1
+		{
+			texture				data/terrain/battlefield/water/river/river02.tga
+		}
+	}
+}
+
+sea mediterranean winter
+{
+	parent	sea default
+}
+
+river mediterranean summer
+{
+	parent	river default
+}
+
+river mediterranean winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                         SANDY_DESERT                                           *
+;**************************************************************************************************
+
+sea sandy_desert summer
+{
+	parent	sea default
+}
+
+sea sandy_desert winter
+{
+	parent	sea default
+}
+
+river sandy_desert summer
+{
+	parent	river default
+}
+
+river sandy_desert winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                         ROCKY_DESERT                                           *
+;**************************************************************************************************
+
+sea rocky_desert summer
+{
+	parent	sea default
+}
+
+sea rocky_desert winter
+{
+	parent	sea default
+}
+
+river rocky_desert summer
+{
+	parent	river default
+}
+
+river rocky_desert winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                         MEDITERRANEAN                                          *
+;**************************************************************************************************
+
+;sea mediterranean summer
+;{
+;	parent	sea default
+;}
+
+;sea mediterranean winter
+;{
+;	parent	sea default
+;}
+
+;river mediterranean summer
+;{
+;	parent	river default
+;}
+
+;river mediterranean winter
+;{
+;	parent	river default
+;}
+
+;**************************************************************************************************
+;*                                   TEMPERATE_GRASSLAND_FERTILE                                  *
+;**************************************************************************************************
+
+sea unused1 summer
+{
+	parent	sea default
+}
+
+sea unused1 winter
+{
+	parent	sea default
+}
+
+river unused1 summer
+{
+	parent	river default
+}
+
+river unused1 winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                  TEMPERATE_GRASSLAND_INFERTILE                                 *
+;**************************************************************************************************
+
+sea steppe summer
+{
+	parent	sea default
+}
+
+sea steppe winter
+{
+	parent	sea default
+}
+
+river steppe summer
+{
+	parent	river default
+}
+
+river steppe winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                      TEMPERATE_FOREST_OPEN                                     *
+;**************************************************************************************************
+
+sea temperate_deciduous_forest summer
+{
+	parent	sea default
+}
+
+sea temperate_deciduous_forest winter
+{
+	parent	sea default
+}
+
+river temperate_deciduous_forest summer
+{
+	parent	river default
+}
+
+river temperate_deciduous_forest winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                      TEMPERATE_FOREST_DEEP                                     *
+;**************************************************************************************************
+
+sea temperate_coniferous_forest summer
+{
+	parent	sea default
+}
+
+sea temperate_coniferous_forest winter
+{
+	parent	sea default
+}
+
+river temperate_coniferous_forest summer
+{
+	parent	river default
+}
+
+river temperate_coniferous_forest winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                             SWAMP                                              *
+;**************************************************************************************************
+
+sea swamp summer
+{
+	parent	sea default
+}
+
+sea swamp winter
+{
+	parent	sea default
+}
+
+river swamp summer
+{
+	parent	river default
+}
+
+river swamp winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                            HIGHLAND                                            *
+;**************************************************************************************************
+
+sea highland summer
+{
+	parent	sea default
+}
+
+sea highland winter
+{
+	parent	sea default
+}
+
+river highland summer
+{
+	parent	river default
+}
+
+river highland winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                             ALPINE                                             *
+;**************************************************************************************************
+
+sea alpine summer
+{
+	parent	sea default
+}
+
+sea alpine winter
+{
+	parent	sea default
+}
+
+river alpine summer
+{
+	parent	river default
+}
+
+river alpine winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                            SUB_ARTIC                                           *
+;**************************************************************************************************
+
+sea tropical summer
+{
+	parent	sea default
+}
+
+sea tropical winter
+{
+	parent	sea default
+}
+
+river tropical summer
+{
+	parent	river default
+}
+
+river tropical winter
+{
+	parent	river default
+}
+
+;**************************************************************************************************
+;*                                            VOLCANIC                                            *
+;**************************************************************************************************
+
+;sea volcanic summer
+;{
+;	parent	sea default
+;}
+
+;sea volcanic winter
+;{
+;	parent	sea default
+;}
+
+;river volcanic summer
+;{
+;	parent	river default
+;}
+
+;river volcanic winter
+;{
+;	parent	river default
+;}
+
+;**************************************************************************************************
+;*                                            SEMI_ARID                                           *
+;**************************************************************************************************
+
+sea semi_arid summer
+{
+	parent	sea default
+}
+
+sea semi_arid winter
+{
+	parent	sea default
+}
+
+river semi_arid summer
+{
+	parent	river default
+}
+
+river semi_arid winter
+{
+	parent	river default
+}
+

@@ -1,0 +1,111 @@
+;;;;;;;;;;;;;; Water Effects;;;;;;;;;;;;;
+
+effect water_fountain
+{
+    type particle
+     {
+        texture                    battlefield/water/water_particle.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                0.1, 0.1
+        size_range              3, 2.5
+        age_range               2.5, 2.5
+        grow_range                5 ,5
+        vel_range                3, 3
+        initial_size             0.01,0.01
+        die_size                 5,3
+        fade_time                1.5
+        colour                     255, 255, 255
+        alpha_max                   150     ; maximum alpha value
+        spin_rate                0.1, -0.1
+        acceleration            0,-5.0,0
+        max_particles            1000
+        sort_bias				-1
+		sort 					instance
+		fade_in_time			0.2;
+		wind_modifier	 		1
+		offset					0,0.1,0
+		
+				clr_adjust_by_ambient_intensity
+				
+		keyframe_colour
+		{
+				0.0, 	120, 255, 255, 255
+				1.5, 	0, 255, 255, 255
+		}
+
+        
+        emitter hemisphere
+        {
+            density                    200            ; how many particles per second
+            emitter_falloff_dist	150		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+            min_angle                90            ; minimum angle up from horizontal to emit in
+            max_angle               85        ; maximum angle up from horizontal to emit in
+            shrink_factor            0.5
+        }
+    }
+}
+
+effect water_splash
+{
+    type particle
+     {
+        texture                    battlefield/water/water_splash_particle.tga
+
+        sprite_origin            0.1, 0.1
+        sprite_size                0.1, 0.1
+        size_range              1.3, 2.1
+        age_range               1.2, 1.0
+        grow_range                 2 ,1
+        vel_range                0, 0
+        initial_size             0.1,0.5
+        die_size                 0.5,1
+        fade_time                0.1
+        colour                     255, 255, 255
+        alpha_max                   150     ; maximum alpha value
+        spin_rate                0.0, -0.0
+        acceleration            0,0.0,0
+        max_particles            500
+        sort_bias				0
+		sort 					instance
+		fade_in_time			0.2;
+		wind_modifier	 		0
+		random_emit_radius		0, 0
+		offset                  0,-2.3,0
+		
+				clr_adjust_by_ambient_intensity
+				
+		keyframe_colour
+		{
+				0.0, 	200, 255, 255, 255
+				0.3, 	0, 255, 255, 255
+		}
+
+        
+		emitter 				circle
+		{
+			density					60	     	; how many particles per second
+			offset_from_surface		2,0,2		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 	
+			random_emit_radius		2, 2
+			radius                  3.5
+		
+		}
+	} 
+}
+
+
+;;;;;;;;;;;;;;;;;
+
+effect_set water_fountain_set
+
+{
+	lod 10000
+	{	
+		water_splash
+		water_fountain
+	}
+}

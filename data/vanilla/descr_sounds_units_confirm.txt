@@ -1,0 +1,77 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Units group confirm bank
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 16 priority 170 fadein 0 fadeout 0
+DEFAULT: minpitch .8 maxpitch 1.1 volume -15 probability 1
+DEFAULT: distancepriority -1 randomdelay .3  effect_level .6 rndvolume -15 
+
+BANK: unit_confirm
+
+   	
+			
+; Mediterranean, English, Scottish, German, French, East_European, Arabic, Mongolian				
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  ROMAN   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	accent Mediterranean, English, Scottish, German, French, East_European, Arabic, Mongolian
+		class General, Heavy
+ 			event lod 5 minpitch .8 maxpitch 1.0
+ 			  folder data/sounds/voice/human/generic
+ 			  Infantry_Group_Confirm_Small_01
+ 			  Infantry_Group_Confirm_Small_02
+ 			  Infantry_Group_Confirm_Small_03
+ 			end
+ 			
+ 			event lod 10 minpitch .8 maxpitch 1.0
+ 			  folder data/sounds/voice/human/generic
+ 			  Infantry_Group_Confirm_medium_01
+ 			  Infantry_Group_Confirm_medium_02
+ 			  Infantry_Group_Confirm_medium_03
+ 			end
+			
+			event lod 30 minpitch .8 maxpitch 1.0 
+			  folder data/sounds/voice/human/generic
+			  Infantry_Group_Confirm_Large_01
+			  Infantry_Group_Confirm_Large_02
+			  Infantry_Group_Confirm_Large_03
+			  Infantry_Group_Confirm_Large_04
+			  Infantry_Group_Confirm_Large_05
+			  Infantry_Group_Confirm_Large_06
+			  		  
+			  
+			end
+
+
+				
+		class Light
+ 			event lod 5 minpitch .9 maxpitch 1.05
+ 			  folder data/sounds/voice/human/generic
+ 			  Infantry_Group_Confirm_Small_01
+ 			  Infantry_Group_Confirm_Small_02
+ 			  Infantry_Group_Confirm_Small_03
+ 			end
+ 			
+ 			event lod 10 minpitch .9 maxpitch 1.05
+ 			  folder data/sounds/voice/human/generic
+ 			  Infantry_Group_Confirm_medium_01
+ 			  Infantry_Group_Confirm_medium_02
+ 			  Infantry_Group_Confirm_medium_03
+ 			end
+			
+			event lod 30 minpitch .9 maxpitch 1.05
+			  folder data/sounds/voice/human/generic
+			  Infantry_Group_Confirm_Large_01
+			  Infantry_Group_Confirm_Large_02
+			  Infantry_Group_Confirm_Large_03
+			  Infantry_Group_Confirm_Large_04
+			  Infantry_Group_Confirm_Large_05
+			  Infantry_Group_Confirm_Large_06
+			end
+			
+			
+
+		

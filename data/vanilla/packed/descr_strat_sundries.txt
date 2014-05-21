@@ -1,0 +1,45 @@
+;strat map icons
+;model rigid parameters	filename, opacity max value, z_buffered, pulse
+
+
+type				selected_land_unit_card
+model_rigid			data/models_strat/captain_drag_model.cas, opacity 0.4, z_buffered
+
+type				selected_ship_unit_card
+model_rigid			data/models_strat/navy_cursorpiece.CAS, opacity 0.4, z_buffered
+
+type				character_select
+model_rigid			data/models_strat/selection_indicator_01.CAS, opacity 2, pulse, texture_no_resize
+
+type				character_hover
+model_rigid			data/models_strat/selection_indicator_01.CAS, opacity 0.5, pulse, texture_no_resize
+
+type				settlement_select
+model_rigid			data/models_strat/selection_indicator_settlement.CAS, opacity 2, pulse, texture_no_resize
+
+type				settlement_hover
+model_rigid			data/models_strat/selection_indicator_settlement.CAS, opacity 0.5, pulse, texture_no_resize
+
+type				rally_point_selection
+model_rigid			data/models_strat/selection_indicator_01.CAS, opacity 2, pulse, texture_no_resize
+
+type				rally_point_hover
+model_rigid			data/models_strat/selection_indicator_01.CAS, opacity 0.5, pulse, texture_no_resize
+
+type				rally_point
+model_rigid			data/models_strat/vertex_pointer.CAS,
+
+type				circle_highlight
+model_rigid			data/models_strat/selection_indicator_01.CAS, opacity 1, pulse, texture_no_resize
+
+type				square_highlight
+model_rigid			data/models_strat/selection_indicator_settlement.CAS, opacity 1, pulse, texture_no_resize
+
+type				enemy_character_select
+model_rigid			data/models_strat/selection_indicator_01.CAS, opacity 1, texture_no_resize
+
+type				enemy_settlement_select
+model_rigid			data/models_strat/selection_indicator_settlement.CAS, opacity 1, texture_no_resize
+
+type				sea_ford_highlight
+model_rigid			data/models_strat/resource_arrow.CAS, opacity 0.3, texture_no_resize

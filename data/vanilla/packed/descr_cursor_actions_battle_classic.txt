@@ -1,0 +1,330 @@
+;; Mo - Move
+;; S - Select
+;; G - Garrison building
+;; Eq - Pickup equipment
+;; Na - No action
+;; A - Attack
+
+;; Infantry, cavalry, artillery - all normal unit types
+;; equipment equipment, such as rams, ladders, towers - not attached to a unit
+;; equipped_infanty - infantry attached to some equipment equipment
+;; handler - an animal handler unit, such as wardogs and incendiary pigs
+;; coward - a unit that is routing
+;; empty_building - building that can be hidden in
+
+
+;; The order of action definition is <order action> <select action> <use_select>
+;; If <select action> isn't defined then 'select' will be used by default
+;; If <use_select> is defined then the cursor will show the appropriate one for the select action
+
+selected none
+{
+	over own
+	{
+		none				Ig Ig
+		infantry			Na S  use_select
+		equipped_infantry	Na S  use_select
+		cavalry				Na S  use_select
+		artillery			Na S  use_select
+		handler				Na S  use_select
+		sapper				Na S  use_select
+		coward				Na S  use_select			
+		sap_point			Na Na
+		equipment			Na Na
+		land				Ig Ig 
+		water				Ig Ig
+		building			Ig Ig 
+		empty_building		Ig Ig
+		platform			Ig Ig
+	}
+	over enemy
+	{
+		default Na Na
+	}
+	over allied
+	{
+		default Na Na
+	}
+}
+
+selected infantry
+{
+	over own
+	{
+		infantry			Mo S  use_select
+		equipped_infantry	Mo S  use_select
+		handler				Mo S  use_select
+		cavalry				Mo S  use_select
+		artillery			Mo S  use_select
+		sapper				Mo S  use_select
+		coward				Mo S  use_select			
+		sap_point			Na Na		
+		equipment			Eq S
+		land				Mo Ig
+		water				Na Na
+		building			Na Na
+		empty_building		G  Ig
+		platform			Mo Ig
+	}
+	over enemy
+	{
+		handler				A Na
+		infantry			A Na
+		equipped_infantry	A Na
+		cavalry				A Na
+		sapper				A Na
+		coward				A Na			
+		artillery			A Na
+		sap_point			A Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+		building			A Na
+		empty_building		A Ig
+		platform			Mo Na
+	}
+	over allied
+	{
+		default Na Na
+		platform			Mo Na
+		equipment			A Na
+	}
+}
+
+selected handler
+{
+	over own
+	{
+		infantry			Mo S  use_select
+		equipped_infantry	Mo S  use_select
+		handler				Mo S  use_select
+		cavalry				Mo S  use_select
+		artillery			Mo S  use_select
+		coward				Mo S  use_select			
+		sapper				Mo S  use_select
+		sap_point			Na Na		
+		equipment			Eq S
+		land				Mo Na
+		water				Na Na
+		building			Na Na
+		empty_building		Na Na
+		platform			Mo Na
+	}
+	over enemy
+	{
+		default A Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+		building			A Na
+		empty_building		A Na
+		platform			Mo Na
+	}
+	over allied
+	{
+		default Na Na
+		platform			Mo Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+	}
+}
+
+selected sapper
+{
+	over own
+	{
+		infantry			Mo S  use_select
+		equipped_infantry	Mo S  use_select
+		cavalry				Mo S  use_select
+		handler				Mo S  use_select
+		artillery			Mo S  use_select
+		sapper				Mo S  use_select
+		coward				Mo S  use_select			
+		equipment			Eq S
+		sap_point			G  Na
+		land				Mo Na
+		water				Na Na
+		building			Na Na
+		empty_building		Na Na
+		platform			Mo Na
+	}
+	over enemy
+	{
+		default				A  Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+		building			A  Na
+		empty_building		A  Na
+		platform			Mo Na
+	}
+	over allied
+	{
+		default				Na Na
+		platform			Mo Na
+		empty_building		G  Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+	}
+}
+
+selected equipped_infantry
+{
+	over own
+	{
+		infantry			Mo S use_select
+		equipped_infantry		Mo S use_select
+		cavalry				Mo S use_select
+		artillery			Mo S use_select
+		sapper				Mo S use_select
+		handler				Mo S use_select
+		coward				Mo S use_select			
+		equipment			Eq S
+		sap_point			Na Na
+		land				Mo Ig
+		water				Na Na
+		building			A Na		;; We want to be able to use siege equipment against our own buildings now
+		empty_building		Na Na		
+		platform			Mo Na
+	}
+	over enemy
+	{
+		default				A Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+		empty_building		A  Na
+		platform			Mo Na
+	}
+	over allied
+	{
+		default				Na Na
+		platform			Mo Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+	}
+}
+
+selected coward
+{
+	over own
+	{
+		infantry			Na S use_select		tooltip cowards_cannot_action
+		equipped_infantry	Na S use_select		tooltip cowards_cannot_action
+		cavalry				Na S use_select		tooltip cowards_cannot_action
+		artillery			Na S use_select		tooltip cowards_cannot_action
+		sapper				Na S use_select		tooltip cowards_cannot_action
+		handler				Na S use_select		tooltip cowards_cannot_action
+		coward				Na S use_select		tooltip cowards_cannot_action
+		equipment			Na Na				tooltip cowards_cannot_action
+		sap_point			Na Na				tooltip cowards_cannot_action
+		land				Na Na				tooltip cowards_cannot_action
+		water				Na Na				tooltip cowards_cannot_action
+		building			Na Na				tooltip cowards_cannot_action
+		empty_building		Na Na				tooltip cowards_cannot_action
+		platform			Na Na				tooltip cowards_cannot_action
+	}
+	over enemy
+	{
+		default				Na Na				tooltip cowards_cannot_action
+	}
+	over allied
+	{
+		default				Na Na				tooltip cowards_cannot_action
+	}
+}
+
+selected cavalry
+{
+	over own
+	{
+		infantry			Mo S use_select
+		equipped_infantry	Mo S use_select
+		cavalry				Mo S use_select
+		handler				Mo S use_select
+		artillery			Mo S use_select
+		sapper				Mo S use_select
+		coward				Mo S use_select
+		sap_point			Na Na				tooltip cavalry_cannot_sap
+		equipment			Eq S				;; bit of a cheat this, this action is actually disallowed, but will be picked up in code
+		land				Mo Na 
+		water				Na Na
+		building			Na Na
+		empty_building		Na Na
+		platform			Na Na				tooltip no_cavalry_on_platforms
+	}
+	over enemy
+	{
+		default				A  Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+		building			A  Na
+		empty_building		A  Na
+		platform			Na Na				tooltip no_cavalry_on_platforms
+	}
+	over allied
+	{
+		default				Na Na			
+		platform			Na Na				tooltip no_cavalry_on_platforms
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+	}
+}
+
+selected artillery
+{
+	over own
+	{
+		infantry			Mo S use_select
+		equipped_infantry	Mo S use_select
+		cavalry				Mo S use_select
+		artillery			Mo S use_select
+		sapper				Mo S use_select
+		handler				Mo S use_select
+		coward				Mo S use_select
+		sap_point			Na Na			tooltip artillery_cannot_sap
+		equipment			Eq S 
+		land				Mo Na
+		water				Na Na
+		building			A  Na
+		empty_building		A  Na
+		platform			Na Na			tooltip no_artillery_on_platforms
+	}
+	over enemy
+	{
+		default				A  Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+		empty_building		Na Na
+		;platform			Na Na			tooltip no_artillery_on_platforms
+		platform			A Na
+	}
+	over allied
+	{
+		default				Na Na
+		equipment			A Na ;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+		building			A  Na
+		empty_building		A  Na
+		platform			Na Na			tooltip no_artillery_on_platforms
+	}
+}
+
+selected equipment
+{
+	over own
+	{
+		infantry			Mo S use_select
+		equipped_infantry	Mo S use_select
+		cavalry				Mo S use_select
+		artillery			Mo S use_select
+		handler				Mo S use_select
+		coward				Mo S use_select			
+		sap_point			Na Na			tooltip already_equipped
+		equipment			Eq S 
+		land				Mo Na
+		water				Na Na
+		building			A Na		;; We want to be able to use siege equipment against our own buildings now
+		empty_building		Na Na
+		platform			Na Na			tooltip no_equipment_on_platforms
+	}
+	over enemy
+	{
+		default				A  Na
+		sap_point			Na Na			tooltip already_equipped
+		empty_building		Na Na			
+		platform			Na Na			tooltip no_equipment_on_platforms
+	}
+	over allied
+	{
+		default				Na Na
+		equipment			A Na			;; Equip is now hardcoded to on ALT key Maybe have the porsiblilty of picking up others equipment
+		platform			Na Na			tooltip no_equipment_on_platforms
+		sap_point			Na Na			tooltip already_equipped
+	}
+}

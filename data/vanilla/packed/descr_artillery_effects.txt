@@ -1,0 +1,1512 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;																												     ;
+;  											ARTILLERY EFFECTS FOR SIEGE WEAPONS									 	 ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Test Effect for Cannon's
+
+effect cannon_shot_test
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.5
+		max_scale   			9.6
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				.17
+		max_scale   			4
+		max_particle_scale 		24
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_test_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				5
+		max_scale   			25
+		max_particle_scale 		0.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_test_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				3
+		max_scale   			15
+		max_particle_scale 		0.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_test
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_flash
+		cannon_shot_test
+		cannon_shot_test_smoke
+		cannon_shot_test_smoke_trail
+		small_shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for Basilisk
+
+effect cannon_shot_basilisk
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.5
+		max_scale   			14
+		max_particle_scale 		1.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_basilisk_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.17
+		max_scale   			5
+		max_particle_scale 		25
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_basilisk_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				11
+		max_scale   			35
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_basilisk_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				4
+		max_scale   			14
+		max_particle_scale 		7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_basilisk
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_basilisk_smoke
+		cannon_shot_basilisk_smoke_trail
+		cannon_shot_basilisk_flash
+		cannon_shot_basilisk
+		small_shockwave
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for bombard
+
+effect cannon_shot_bombard
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.35
+		max_scale   			7
+		max_particle_scale 		3
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_bombard_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.17
+		max_scale   			3
+		max_particle_scale 		25
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_bombard_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				5
+		max_scale   			20
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_bombard_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				3
+		max_scale   			11
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_bombard
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_bombard_smoke
+		cannon_shot_bombard_smoke_trail
+		cannon_shot_bombard_flash
+		cannon_shot_bombard
+		shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for Balista
+
+effect cannon_shot_Balista
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.5
+		max_scale   			14
+		max_particle_scale 		1.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Balista_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.17
+		max_scale   			5
+		max_particle_scale 		25
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Balista_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				5
+		max_scale   			35
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Balista_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				3
+		max_scale   			20
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_Balista
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Balista_smoke
+		cannon_shot_Balista_smoke_trail
+		cannon_shot_Balista_flash
+		cannon_shot_Balista
+		small_shockwave
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for Mortar
+
+effect cannon_shot_Mortar
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.35
+		max_scale   			5
+		max_particle_scale 		3
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.17
+		max_scale   			3
+		max_particle_scale 		17
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				7
+		max_scale   			15
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				3
+		max_scale   			4
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_Mortar
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Mortar_smoke
+		cannon_shot_Mortar_smoke_trail
+		cannon_shot_Mortar_flash
+		cannon_shot_Mortar
+		small_shockwave
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for Culverin
+
+effect cannon_shot_Culverin
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				.5
+		max_scale   			11
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Culverin_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.17
+		max_scale   			5
+		max_particle_scale 		11
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Culverin_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				50
+		max_scale   			10
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Culverin_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				30
+		max_scale   			7
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_Culverin_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		;cannon_shot_Culverin_smoke
+		;cannon_shot_Culverin_smoke_trail
+		cannon_shot_Culverin_flash
+		cannon_shot_Culverin
+		shockwave
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for elephant_serpentine
+
+effect cannon_shot_elephant_serpentine
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_elephant.CAS
+		anim_time				.3
+		max_scale   			5
+		max_particle_scale 		0.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_elephant_serpentine_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_elephant.CAS
+		anim_time				0.11
+		max_scale   			3
+		max_particle_scale 		6.5
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_elephant_serpentine_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke_elephant.CAS
+		anim_time				3
+		max_scale   			11
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_elephant_serpentine_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke_elephant.CAS
+		anim_time				1.4
+		max_scale   			4
+		max_particle_scale 		7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_elephant_serpentine_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_elephant_serpentine_smoke
+		cannon_shot_elephant_serpentine_smoke_trail
+		cannon_shot_elephant_serpentine_flash
+		cannon_shot_elephant_serpentine
+		shockwave
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for Rocket_launcher
+
+effect cannon_shot_rocket_launcher
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.2
+		max_scale   			.5
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_rocket_launcher_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				.16
+		max_scale   			1
+		max_particle_scale 		9.6
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_rocket_launcher_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				2
+		max_scale   			1.7
+		max_particle_scale 		2.5
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_rocket_launcher_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				3
+		max_scale   			3
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_rocket_launcher_smoke_back
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/rocket_pfx_back_smoke.CAS
+		anim_time				1.5
+		max_scale   			4
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_rocket_launcher_flash_back
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/rocket_pfx_back_flash.CAS
+		anim_time				.17
+		max_scale   			1.4
+		max_particle_scale 		3
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect rocket_launcher_smoke_linger_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust.CAS
+		anim_time				1
+		max_scale   			3
+		max_particle_scale 		1
+		scale_time_bias			0.7
+		alpha_time_bias			0.93
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+
+effect_set cannon_shot_rocket_launcher_front
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_rocket_launcher_smoke
+		cannon_shot_rocket_launcher_smoke_trail
+		cannon_shot_rocket_launcher_flash
+		cannon_shot_rocket_launcher
+		rocket_launcher_smoke_linger_small
+		small_shockwave
+	}
+}
+
+effect_set cannon_shot_rocket_launcher_back
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_rocket_launcher_smoke_back
+		cannon_shot_rocket_launcher_flash_back
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for Huge_Bombard
+
+effect cannon_shot_Huge_Bombard
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.6
+		max_scale   			11
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Huge_Bombard_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.20
+		max_scale   			4
+		max_particle_scale 		30
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Huge_Bombard_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				20
+		max_scale   			25
+		max_particle_scale 		3
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Huge_Bombard_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke_dark.CAS
+		anim_time				5
+		max_scale   			7
+		max_particle_scale 		14
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Huge_Bombard_smoke_fiery
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke_fiery_bits.CAS
+		anim_time				1.4
+		max_scale   			4
+		max_particle_scale 		24
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     1
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_Huge_Bombard
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Huge_Bombard	
+		cannon_shot_Huge_Bombard_flash
+		cannon_shot_Huge_Bombard_smoke_fiery
+		cannon_shot_Huge_Bombard_smoke
+		cannon_shot_Huge_Bombard_smoke_trail
+		shockwave
+	}
+}
+
+;;;;;	ROCKET EXPLODE EFFECT
+
+effect rocket_wall_explode_dirt
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		anim_time				1.4
+		max_scale   			7
+		max_particle_scale 		1.6
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     10
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.05, 0.01
+	}
+}
+
+effect rocket_wall_explode_dirt_cloud
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		anim_time				4
+		max_scale   			11
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect rocket_wall_explode_flash
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_flash.CAS
+		anim_time				0
+		max_scale   			30
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect rocket_wall_explode_blood
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_blood.CAS
+		anim_time				1.4
+		max_scale   			4
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     30
+        debris_lifetime_range    1.4, 0.34
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.14, 0.16
+	}
+}
+
+effect_set rocket_wall_explode_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		rocket_wall_explode_dirt
+		rocket_wall_explode_dirt_cloud
+		rocket_wall_explode_flash
+	}
+}
+
+
+effect_set rocket_unit_explode_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		rocket_wall_explode_blood
+		rocket_wall_explode_dirt_cloud
+		rocket_wall_explode_flash
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for Gunners
+
+effect cannon_shot_gunners
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.2
+		max_scale   			.5
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_gunners_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				.16
+		max_scale   			1
+		max_particle_scale 		9.6
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_gunners_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				2
+		max_scale   			1.7
+		max_particle_scale 		2.5
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_gunners_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				3
+		max_scale   			3
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set cannon_shot_gunners_front
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_gunners_smoke
+		cannon_shot_gunners_smoke_trail
+		cannon_shot_gunners_flash
+		cannon_shot_gunners
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;test explosive cloud
+
+effect explosive_cloud_model
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		anim_time				15
+		max_scale   			11
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set test_explosive_cloud_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		explosive_cloud_model
+		small_shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Effect for Muskets
+
+effect musket_shot_muzzle_flash
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+        anim_time				0.2
+		max_scale   			1.3
+		max_particle_scale 		1.3
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect musket_shot_quick_flash
+
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash.CAS
+		anim_time				0.16
+		max_scale   			1
+		max_particle_scale 		7.3
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect musket_shot_smoke_trail
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				3
+		max_scale   			1.7
+		max_particle_scale 		1.5
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect musket_shot_smoke
+{
+	type shot
+	{
+		; main explosion
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		anim_time				5
+		max_scale   			5
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect musket_shot_smoke_linger_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust.CAS
+		anim_time				25
+		max_scale   			2.4
+		max_particle_scale 		1
+		scale_time_bias			0.7
+		alpha_time_bias			0.93
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+
+effect_set musket_shot_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		musket_shot_muzzle_flash
+		musket_shot_quick_flash
+		musket_shot_smoke_trail
+		musket_shot_smoke
+		musket_shot_smoke_linger_small
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+

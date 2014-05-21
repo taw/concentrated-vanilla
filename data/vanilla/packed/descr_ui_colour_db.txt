@@ -1,0 +1,150 @@
+; specify pairs of colour name and colour values (opacity, red, green, blue)
+
+
+;;;;;;;;;;;;;;;;;;;;;;
+; LOADING COMPONENTS ;
+;;;;;;;;;;;;;;;;;;;;;;
+
+loading_text               255, 188, 188, 188
+loading_text_shadow        255, 0, 0, 0
+
+
+;;;;;;;;;;;;;;;;;;;
+; MENU COMPONENTS ;
+;;;;;;;;;;;;;;;;;;;
+
+menu_general_text_shadow   127, 0, 0, 0              ; used for menu_text and miscellaneous menu text items
+
+menu_text                  255, 195, 197, 235 
+menu_text_highlighted      255, 254, 254, 254        ; the blue component cannot equal 255 or it defaults to menu_text colour
+menu_text_disabled         255, 135, 135, 135        ; the blue component cannot equal 255 or it defaults to menu_text colour
+
+menu_tooltip               255, 188, 188, 188
+menu_tooltip_shadow        255, 0, 0, 0
+
+menu_win_conditions        255, 188, 188, 188
+menu_win_conditions_shadow 255, 0, 0, 0
+
+menu_textlist              255, 188, 188, 188
+menu_textlist_shadow       255, 0, 0, 0
+
+menu_dialog                255, 254, 254, 254
+menu_dialog_shadow         255, 0, 0, 0
+
+menu_string_pair           255, 188, 188, 188
+menu_string_pair_alternate 255, 188, 188, 188
+
+menu_static_text           255, 254, 254, 254
+menu_static_text_shadow    255, 0, 0, 0
+
+menu_version_number        255, 188, 188, 188
+menu_army_faction_name     255, 254, 254, 254
+menu_custom_player_name    255, 188, 188, 188
+menu_world_name            255, 188, 188, 188
+menu_army_player_name      255, 188, 188, 188
+menu_faction_name          255, 254, 254, 254
+menu_leader_name           255, 188, 188, 188
+menu_capital_name          255, 188, 188, 188
+menu_counter               255, 188, 188, 188
+
+menu_lan_list              255, 188, 188, 188
+menu_lan_list_shadow       255, 0, 0, 0
+
+menu_chat_text             255, 188, 188, 188
+menu_category_indicator    255, 188, 188, 188
+menu_keyset_indicator      255, 188, 188, 188
+
+
+;;;;;;;;;;;;;;;;;;;;
+; STRAT COMPONENTS ;
+;;;;;;;;;;;;;;;;;;;;
+
+trade_header_text		255, 0, 0, 0		; text colour for trade details scroll list header
+trade_sett_text			255, 0, 0, 0		; text colour for trade details scroll settlement name
+trade_totals_value		255, 128, 119, 97	; text colour for trade totals values
+
+free_upkeep_card_colour     255, 200, 200, 255		; colour for units in garrison that do not require upkeep costs
+crusade_card_colour         255, 255, 255, 200		; colour for units on crusade/jihad
+crusade_abandon_card_colour 255, 200, 200, 200		; colour for units abandoned crusade/jihad
+
+unpurchased_construction_option  128, 150, 0, 0		; colour for percentage level of unpurchased items in construction options
+unpurchased_construction_level   128, 150, 0, 0		; colour for percentage level of unpurchased items in construction queue
+purchased_construction_level     128, 0, 150, 0		; colour for percentage level of purchased items in construction queue
+unprocessed_construction_level   128, 60, 60, 60	; colour for percentage level of unprocessed items in construction queue
+
+unpurchased_recruitment_level   128, 150, 0, 0		; colour for percentage level of unpurchased items in recruitment queue
+purchased_recruitment_level     128, 0, 150, 0		; colour for percentage level of purchased items in recruitment queue
+unprocessed_recruitment_level   128, 60, 60, 60		; colour for percentage level of unprocessed items in recruitment queue
+recruitment_slot		128, 255, 255, 255	; colour for available recruitment slots in recruitment queue
+
+unpurchased_queue_button  	255, 150, 0, 0		; strat button colour for percentage level of unpurchased items in construction/recruitment queue
+purchased_queue_button    	255, 0, 150, 0		; strat button colour for percentage level of purchased items in construction/recruitment queue
+
+construction_outline		0, 128, 119, 97		; outline for construction queue slots
+construction_slot		128, 255, 255, 255	; construction queue slot
+
+heading_text			255, 0, 0, 0		; scroll heading text
+sub_heading_text		255, 0, 0, 0		; scroll sub heading text
+list_header_text		255, 0, 0, 0		; scroll list header text
+body_text			255, 0, 0, 0		; scroll body text
+tab_text			255, 0, 0, 0		; scroll tab header text
+tab_text_unsel			255, 128, 128, 128	; unselectable scroll tab header text
+list_info_text			255, 0, 0, 0		; character list info text (name)
+
+positive_value_text             255, 0, 128, 0          ; positive value
+negative_value_text             255, 200, 0, 0          ; negative value
+button_text			255, 0, 0, 0		; button text colour
+
+ally_text			255, 0, 128, 0		; ally faction name text colour in diplomacy scroll
+neutral_text			255, 255, 255, 255	; neutral faction name text colour in diplomacy scroll
+enemy_text			255, 200, 0, 0		; enemy faction name text colour in diplomacy scroll
+primary_diplomacy_text		255, 0, 0, 0		; primary text colour of diplomacy scroll
+secondary_diplomacy_text	255, 255, 255, 255	; secondary text colour of diplomacy scroll
+diplomacy_instruct_text		255, 50, 50, 50		; the text colour for the diplomacy instructions
+diplomacy_select_text		255, 0, 0, 200		; the text colour for selectable diplomacy items
+
+sea_route			196, 50, 255, 0		; sea route colour
+sea_route_fogged		196, 200, 200, 200	; sea route colour when under fog of war
+
+riot				255, 200, 0, 0
+disillusioned			255, 200, 150, 0
+content				255, 0, 200, 0
+
+; Hotseat Scroll components
+hs_scroll_title			255, 0, 0, 0
+hs_password_descr		255, 0, 0, 50
+hs_password_string		255, 0, 0, 0
+hs_password_input		255, 0, 0, 50
+hs_start_button			255, 0, 0, 0
+hs_details_title		255, 0, 0, 0
+hs_details_text			255, 50, 50, 50
+hs_details_good			255, 0, 100, 0
+hs_details_bad			255, 200, 0, 0
+hs_error_string			255, 200, 0, 0
+hs_faction_name			255, 10, 10, 10
+
+;;;;;;;;;;;;;;;;;;;;
+; BATTLE COMPONENTS;
+;;;;;;;;;;;;;;;;;;;;
+
+marker_formed                   255, 255, 255, 255
+marker_proxy_summer             255, 255, 255,   0
+marker_proxy_summer_selected    255,   0, 255,   0
+marker_proxy_winter             255, 255,   0, 255
+marker_proxy_winter_selected    255,   0,   0, 255
+marker_select                   255,   0, 255,   0
+support_army_marker_select	    255,   0,   0, 255
+
+marker_prim_us					255,   0,  64,   0
+marker_scnd_us					255,   0, 255,   0
+marker_prim_allied				255,   0,   0,  64
+marker_scnd_allied				255,   0,   0, 255
+marker_prim_enemy				255,  64,   0,   0
+marker_scnd_enemy				255, 255,   0,   0
+marker_prim_non_combatant			255,  64,  64,  64
+marker_scnd_non_combatant			255, 255, 255, 255
+
+own_marker_flash				255,   0, 255,   0
+ally_marker_flash				255,   0,   0, 255
+enemy_marker_flash				255, 255,   0,   0
+

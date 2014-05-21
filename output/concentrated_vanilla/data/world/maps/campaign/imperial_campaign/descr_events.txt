@@ -1,0 +1,299 @@
+
+; historical events and when they occur
+;
+; Events are followed by a category, and a label
+; labels are used as lookups into historic_events.txt for title and body strings,
+; and also as image names for the event picture
+;
+; Currently supported categories are:
+; counter  - just increase a counter
+; historic - Just generates a message and increase a counter
+; volcano  - triggers a volcano if there is one on the map at the position specified
+; plague   - triggers a plague in settlements at the specified positions
+; emergent_faction - triggers the emergence of the given faction.  This faction must be marked
+;	as emergent in descr_strat.txt
+;
+; event descriptions are followed by a date (year as offset from starting date) or a date range
+; and either a list of positions, or list of regions.  Each position/region specification must appear on
+; a seperate line below the date
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;  TEST CASES  ;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; ------------ CORE GAME EVENT --------------
+;event	historic	mongols_invasion_warn
+;date	2
+
+;event	earthquake	earthquake_aleppo
+;date	2
+;position	257, 73
+
+; ------------ CORE GAME EVENT --------------
+;event	historic	gunpowder_discovered
+;date	2 4
+
+;event	historic	earthquake_silicia
+;date	4
+;position	232, 76
+
+; ------------ CORE GAME EVENT --------------
+;event	plague 		black_death_hits
+;date	266
+;position	281, 163
+; NOTE - ALL BLACK PLAGUE EVENTS WORK LIKE THIS ONE.
+
+; ------------ CORE GAME EVENT --------------
+;event	historic	timurids_invasion_warn
+;date	2
+
+;event	historic	earthquake_in_alexandria
+;date	2
+;position	230, 38
+
+;event	historic	earthquake_in_aleppo
+;date	2
+;position	257, 73
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;  EVENT LIST  ;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event	historic 	first_windmill
+date	50
+
+event	historic	earthquake_in_aleppo
+date	58
+position	257, 73
+
+event	historic	science_alchemy_book
+date	64
+
+event	historic	first_european_paper
+date	72
+
+event	historic	first_magnetic_compass
+date	102
+
+event	historic	first_wheelbarrow
+date	120
+
+event	historic	science_maths_zero_europe
+date	122
+
+; ------------ CORE GAME EVENT --------------
+event	historic	mongols_invasion_warn
+date	128 144
+
+
+
+event	earthquake	earthquake_in_silicia
+date	188
+position	232, 76
+
+event	historic 	first_mechanical_clock
+date	200
+
+; ------------ CORE GAME EVENT --------------
+event	historic	gunpowder_discovered
+date	210 220
+movie	event/gunpowder_invented.bik
+
+
+event	historic	first_eyeglasses
+date	206
+
+event	earthquake	earthquake_in_alexandria
+date	222
+position	230, 38
+
+event	earthquake	earthquake_in_alexandria_2
+date	232
+position	230, 38
+
+event	historic	football_banned
+date	234
+
+event	historic	first_sawmill
+date	248
+
+
+event	historic	first_public_clock
+date	254
+
+event	historic	science_weather_forecast
+date	256
+
+; ------------ CORE GAME EVENT --------------
+event	plague 		black_death_hits
+date	266
+position	281, 163
+position	258, 134
+position	233, 117
+position	278, 109
+movie	event/black_death.bik
+
+event	plague		black_death_1
+date 	268
+position	278, 101
+position	258, 104
+position	213, 92
+position	216, 88
+position	209, 73
+position	230, 38
+position	232, 76
+position	150, 70
+position	132, 76
+position	131, 92
+position	120, 99
+position	133, 104
+position	146, 108
+position	136, 111
+position	157, 82
+position	168, 95
+position	190, 85
+position	191, 71
+position	175, 87
+position	194, 99
+position	93, 95
+position	77, 73
+position	92, 83
+position	97, 114
+position	105, 104
+position	121, 122
+position	129, 119
+position	160, 108
+position	249, 44
+position	246, 76
+position	241, 65
+position	232, 76
+position	245, 85
+position	251, 57
+position	254, 51
+position	214, 65
+position	202, 57
+
+event	plague 		black_death_2
+date	270
+position	281, 79
+position	259, 64
+position	257, 73
+position	136, 63
+position	103, 66
+position	71, 80
+position	107, 155
+position	201, 109
+position	74, 104
+position	55, 88
+position	109, 147
+position	78, 90
+position	115, 143
+position	120, 144
+position	113, 131
+position	163, 124
+position	94, 157
+position	132, 126
+position	119, 133
+position	148, 147
+position	143, 120
+position	138, 139
+position	125, 131
+position	104, 134
+position	94, 130
+position	102, 126
+position	235, 32
+position	291, 70
+position	251, 73
+position	265, 80
+position	150, 40
+position	90, 101
+
+event	plague 		black_death_3
+date	272
+position	205, 125
+position	196, 114
+position	99, 181
+position	102, 74
+position	90, 162
+position	142, 187
+position	106, 164
+position	157, 136
+position	172, 122
+position	148, 147
+position	141, 154
+position	141, 166
+position	174, 136
+position	192, 140
+position	163, 143
+position	228, 2
+position	268, 13
+
+event	plague 		black_death_4
+date	274
+position	235, 169
+position	202, 179
+position	181, 174
+position	188, 186
+position	167, 183
+position	169, 151
+position	217, 139
+position	212, 162
+position	189, 158
+position	155, 155
+position	244, 158
+
+event	historic	first_blast_furnace
+date	270
+
+event	historic	grote_mandenke
+date	282
+
+; ------------ CORE GAME EVENT --------------
+event	historic	timurids_invasion_warn
+date	288 304
+
+event	historic	first_piano
+date	320
+
+; ------------ CORE GAME EVENT --------------
+event	historic 	world_is_round
+date	320 328
+
+event	historic	first_oil_painting
+date	340
+
+event	historic	science_de_docta_ignorantia
+date	364
+
+; ------------ CORE GAME EVENT --------------
+;TRUE TIME event	historic 	world_is_round
+;TRUE TIME date	366 374
+
+event	historic	first_printing_press
+date	374
+
+event	earthquake	earthquake_in_naples
+date	376
+position	157, 82
+
+event	historic	malleus_maleficarum
+date	406
+
+event	historic	science_da_vinci_ornithopter
+date	412
+
+event	historic	first_watch
+date	430
+
+
+; ------------ OLD EVENT EXAMPLES --------------
+;event	volcano		eruption_at_vesuvius
+;date	99
+;position	103, 65
+
+;event	plague		plague_in_asia_minor
+;date	173
+;position	192, 68
+;position	200, 55
+;position	190, 80

@@ -1,0 +1,35 @@
+<BattleCameras>
+	<Path>cameras</Path>
+	<Cameras>
+	
+	
+		<General>
+				<Cam>General_Die1.cam</Cam>
+		</General>
+
+		
+		
+		
+		<MountedGeneral>
+				<Cam>General_Die1.cam</Cam>
+		</MountedGeneral>
+			
+		
+		
+		
+		<Gate>
+				<Cam>Gate.cam</Cam>
+		</Gate>
+
+		
+		
+		
+		<Wall>
+				<Cam>Wall1.cam</Cam>
+		</Wall>
+		
+		
+		
+		
+	</Cameras>
+</BattleCameras>

@@ -1,0 +1,258 @@
+;
+; Burning man effects
+;
+
+effect burning_man_halo
+{
+	type halo
+	{
+		inflate_range	0.05, 0.1
+;		texture	 		textures/#fire.tga
+		fade_time		0.3
+	}
+}
+
+
+effect burning_man_smoke
+{
+	type particle
+	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range       	2.0, 2.5
+		age_range        	0.4, 0.9
+	    grow_range		 	1.0, 1.0
+		vel_range  			0.0, 0.2
+		colour     			55, 50, 47
+		alpha_min			50
+		alpha_max	   		100			 ; maximum alpha value
+		random_emit_radius  0, 0.4
+		initial_size		1.0, 1.5
+		batched
+		max_particles       2000
+		
+		emitter distance
+		{
+			density				4 	     	 ; how many particels per meter
+		}
+	}
+}
+
+effect burning_man_flames
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.01, 0.02
+		age_range        	0.6, 0.7
+	    grow_range		 	1.0, 1.0
+		vel_range  			0.3, 0.4
+		wind_modifier 		7.0
+
+		
+		keyframe_colour
+		{
+;				0.0		255, 255, 255, 255
+				0.0, 	255,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	50,   255,   255,   255
+		}
+		
+		alpha_max	   		255			 ; maximum alpha value
+		initial_size		15.1, 10.3
+		blend_type			additive
+		offset				0.0, 0.0, 0.2
+		max_particles       2500
+
+		emitter distance_time
+		{
+			density			        5 	     	; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		5
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0, 0.1
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+effect burning_pig_flames
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.6, 0.3
+		age_range        	0.5, 1.0
+	    grow_range		 	1.0, 1.0
+		vel_range  			0.2, 1.0
+		wind_modifier 		2.0
+		spin_rate           -0.1,0.1
+		sort_bias				-0.5
+		sort 					instance
+
+		
+		keyframe_colour
+		{
+				0.0, 	0,   255, 255,     255
+				0.2, 	70, 255,   255,   255
+				0.4, 	40, 243,   200,   200
+				0.8, 	0,   243,   200,   200
+		}
+		
+		alpha_max	   		255			 ; maximum alpha value
+		initial_size		0.5, 0.5
+		blend_type			additive
+		offset				0.0, 0.0, 0.0
+		batched
+		max_particles			2000
+
+		emitter distance_time
+		{
+			density			        15 	     	; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		2
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0.05, 0.05
+		system_radius			2.0			    ; radius used for culling
+	}
+}
+
+effect burning_pig_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke6.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		0.8, 0.8
+		age_range       		0.5,3.0
+        grow_range	 			1,1 
+        vel_range				0.1, 0.3
+        fade_time				2.4
+		colour     				255,255,255
+		alpha_max	   			60			 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,0.0,0
+		system_radius			10
+		sort_bias				0.0
+		sort 					instance
+		fade_in_time			0.0;
+		intial_size				1.1, 1.1
+		offset                  0,1.0,0
+		wind_modifier			1
+		batched
+		max_particles			2000
+		
+	clr_adjust_by_ambient_intensity
+	
+		keyframe_colour
+		{
+				0.0, 	0,   255, 255,     255
+				0.2, 	70,	 255,   255,   255
+				3.5, 	0,   255,   255,   255
+		}
+				
+		
+		emitter distance_time
+		{
+			density			        15 	     	; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		1
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0.05, 0.05
+		system_radius			2.0			    ; radius used for culling
+	}
+}
+
+effect burning_man_skeleton_fire
+{
+	type flaming_skeleton
+	{
+		max_bone_emitters  15
+		effect			   burning_man_flames_set
+	}
+}
+
+effect burning_pig_skeleton_fire
+{
+	type flaming_skeleton
+	{
+		max_bone_emitters  20
+		effect			   burning_pig_flames_set
+	}
+}
+
+effect_set burning_pig_flames_set
+{
+	lod 10000
+	{
+		burning_pig_smoke
+		burning_pig_flames
+		
+	}
+}
+
+effect_set burning_man_flames_set
+{
+	lod 10000
+	{	
+		burning_man_flames
+		
+	}
+}
+
+effect_set flaming_man_effect
+{
+	play_time 3.5
+
+	lod 10000
+	{
+		burning_man_halo 
+		burning_man_smoke
+		burning_pig_skeleton_fire
+		burning_man_sound
+		fire_flare_sound
+		burning_scream_sound
+	}
+}
+
+effect_set burning_pigs_set
+{
+	lod 10000
+	{
+		burning_man_halo
+		burning_pig_skeleton_fire
+		
+	}
+}
+
+effect_set falling_flaming_man_effect
+{
+	lod 10000
+	{
+		burning_man_halo 
+		burning_man_smoke
+		burning_man_skeleton_fire
+		burning_man_sound
+		fire_flare_sound
+		
+	}
+}

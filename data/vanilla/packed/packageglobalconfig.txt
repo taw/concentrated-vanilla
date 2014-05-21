@@ -1,0 +1,3 @@
+AmbientOcclusionMin = 0.3
+AmbientOcclusionMax = 1.3
+AnimationFadeTime   = 2.0

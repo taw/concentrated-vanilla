@@ -1,0 +1,12 @@
+settings
+{
+	minimum_height	25	; height must be at least 25 metres to be considered a cliff point
+	
+	resolutions		9	; subdivisions to scan at
+}
+
+chain_constraints
+{
+	permitted_angles	0	45	90	135	180	225	270	315
+	max_distortion		23
+}

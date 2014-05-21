@@ -1,0 +1,251 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	This file contains the mount linkages; it gets parsed on application
+;	startup but is not otherwise referred to. The data format is thus:
+;
+;	Fields should be entered in the order shown.
+;
+;	;						indicates a comment ;-)
+;	/ /						indicates a section
+;	[]						indicates optional
+;
+;	/generic/
+;
+;	type					indicates a new mount type, must be followed by id name string
+;	class					mount class (current possibilities - horse, camel, elephant)
+;	model*					model id from descr_model_battle
+;	radius					mount radius
+;	[ x_radius ]			mount x axis radius for elliptical mounts (radius is y radius in this case)
+;   [ y_offset ]			mount y offset for elliptical mounts
+;	height					mount height
+;	mass					mount mass
+;	banner_height			height of banners above mount
+;	bouyancy_offset			bouyancy offset of mount above root node
+;	water_trail_effect		display effect for moving through water
+;
+;	/horse, camel or elephant specific/
+;
+;	root_node_height		height of the horse, camel or elephants root node above the ground
+;
+;	/horse and camel specific/
+;
+;	rider_offset			(x, y, z) for the rider relative to horse or camel root node
+;
+;	/elephant specific/
+;
+;	attack_delay			delay between mount attacks (tusks and scythes) in seconds
+;
+;	/elephant specific/
+;
+;	dead_radius				radius of dead obstacle
+;	tusk_z					distance along the z axis of tusks from centre
+;	tusk_radius				radius of tusk attack
+;	riders					number of riders
+;	rider_offset			(x, y, z) for each rider relative to elephant root node
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; camels
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				camel
+class				camel
+model				Mount_Camel
+radius				1.8
+x_radius			0.8
+y_offset			0.7
+height				2.5
+mass				1
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect  camel_water_trail
+root_node_height	1.52
+;rider_offset		0, 0.43, -0.2
+rider_offset		0.0, 0.60, -0.23
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; horses
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type				eastern armoured horse
+class				horse
+model				Mount_Eastern_Armoured_Horse
+radius				1.8
+x_radius			0.8
+y_offset			0.7
+height				2.5
+mass				2
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				armoured horse
+class				horse
+model				Mount_Armoured_Horse
+radius				1.8
+x_radius			0.8
+y_offset			0.7
+height				2.5
+mass				2
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				barded horse
+class				horse
+model				Mount_Barded_Horse
+radius				1.8
+x_radius			0.8
+y_offset			0.7
+height				2.5
+mass				2
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				mailed horse
+class				horse
+model				Mount_Mailed_Horse
+radius				1.8
+x_radius			0.8
+y_offset			0.7
+height				2.5
+mass				2
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				pony
+class				horse
+model				Mount_Pony
+radius				1.8
+x_radius			0.8
+y_offset			0.7
+height				2.5
+mass				1.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				fast pony
+class				horse
+model				Mount_Fast_Pony
+radius				1.8
+x_radius			0.8
+y_offset			0.7
+height				2.5
+mass				1.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				heavy horse
+class				horse
+model				Mount_Heavy_Horse
+radius				1.8
+x_radius			0.8
+y_offset			0.7
+height				2.5
+mass				1.75	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; elephants
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type				elephant_cannon
+class				elephant
+model				Mount_Elephant_Cannon
+radius				3                    ; was 5.5
+x_radius			1.3
+y_offset			0
+height				3
+mass				40
+banner_height			1
+bouyancy_offset			3
+water_trail_effect		elephant_water_trail
+root_node_height		2.84	;was 2.52
+attack_delay			1
+dead_radius			2.5
+tusk_z				3.0
+tusk_radius			2.0
+riders				2
+rider_offset			0.05, 1.35, 1.37
+rider_offset			0.0, 1.22, 0.4		;y was 1.54
+
+type				elephant_rocket
+class				elephant
+model				Mount_Elephant_Rocket
+radius				3                    ; was 5.5
+x_radius			1.3
+y_offset			0
+height				3
+mass				40
+banner_height			1
+bouyancy_offset			3
+water_trail_effect		elephant_water_trail
+root_node_height		2.84	;was 2.52
+attack_delay			1
+dead_radius			2.5
+tusk_z				3.0
+tusk_radius			2.0
+riders				2
+rider_offset			0.05, 1.35, 1.37
+rider_offset			0.0, 1.22, 0.4		;y was 1.54
+
+type				elephant
+class				elephant
+model				Mount_Elephant
+radius				3                    ; was 5.5
+x_radius			1.3
+y_offset			0
+height				3
+mass				40
+banner_height			1
+bouyancy_offset			3
+water_trail_effect		elephant_water_trail
+root_node_height		2.84	;was 2.52
+attack_delay			1
+dead_radius			2.5
+tusk_z				3.0
+tusk_radius			2.0
+riders				3
+rider_offset			0.05, 1.35, 1.37
+rider_offset			-0.3, 1.22, 0.4		;y was 1.54
+rider_offset			0.3, 1.22, -.35		;y was 1.54
+
+;values on 2nd aug:
+
+;rider_offset			0.05, 1.25, 1.37
+;rider_offset			-0.3, 1.22, 0.4		;y was 1.54
+;rider_offset			0.3, 1.22, -.35		;y was 1.54
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

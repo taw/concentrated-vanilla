@@ -1,0 +1,2232 @@
+;-----------------------------------------------------------------------------
+; Arrow trail effects.
+;-----------------------------------------------------------------------------
+
+effect cannon_ball
+{
+	type projectile
+	{
+		model			models/cannon_ball.cas
+		fade_time	0.01
+	}
+}
+
+effect huge_cannon_ball
+{
+	type projectile
+	{
+		model			models_effects/huge_cannon_ball.CAS
+		fade_time	0.01
+	}
+}
+
+effect default_arrow_trail
+{
+	type ribbon
+	{
+		alpha_max	128	  ; Alpha value at start of trail
+		alpha_min	10	  ; Alpha value at end of trail
+		fade_start	100	  ; Distance to start fading out.
+		fade_end	200	  ; This should be the same as the max lod distance in the effect set.
+		head_width	0.1	  ; Width of the ribbon at arrow end
+		tail_width  0.01    ; Width of the ribbon at the tail end
+
+		texture	    models_effects/textures/arrow_trail.texture
+	}
+}	
+
+effect fiery_ribault_smoke_small
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      0.05, 0.03
+		initial_size	1, 1
+		age_range       0.14, 0.3
+        grow_range	 	1, 1
+		velocity   		0.01, 0.04
+		colour     		55, 50, 47
+		alpha_max	   	30			 ; maximum alpha value
+		batched			
+		sort_bias		15
+		die_size		0, 0.04
+		fade_time		0.1
+		system_radius   20
+		max_particles   1500
+		
+		emitter distance
+		{
+			emitter_falloff_dist	500			; distance in meters to reduce emission over
+			emitter_falloff_bias	0
+			
+			density			2 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+effect fiery_ribault_smoke_large
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      0.05, 0.03
+		initial_size	1, 1
+		age_range       0.14, 0.3
+        grow_range	 	1, 1
+		velocity   		0.01, 0.04
+		colour     		55, 50, 47
+		alpha_max	   	30			 ; maximum alpha value
+		batched			
+		sort_bias		15
+		die_size		0, 0.04
+		fade_time		0.1
+		system_radius   20
+		max_particles   1500
+		
+		emitter distance
+		{
+			emitter_falloff_dist	500			; distance in meters to reduce emission over
+			emitter_falloff_bias	0
+			
+			density			2 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+
+effect ribault_shot
+{
+	type projectile
+	{
+		clr_adjust_by_ambient_intensity 
+		model			models_effects/ribault_shot.CAS
+		fade_time	0.01
+	}
+}
+
+effect monster_ribault_shot
+{
+	type projectile
+	{
+		clr_adjust_by_ambient_intensity 
+		model			models_effects/ribault_shot_monster.CAS
+		fade_time	0.01
+	}
+}
+
+
+
+
+effect_set default_arrow_trail_set
+{
+	lod 1000
+	{
+		default_arrow_trail
+		
+	}
+}
+
+effect small_arrow_trail
+{
+	type ribbon
+	{
+		alpha_max	128	  ; Alpha value at start of trail
+		alpha_min	10	  ; Alpha value at end of trail
+		fade_start	100	  ; Distance to start fading out.
+		fade_end	200	  ; This should be the same as the max lod distance in the effect set.
+		head_width	0.1	  ; Width of the ribbon at arrow end
+		tail_width  0.01    ; Width of the ribbon at the tail end
+
+		texture	    models_effects/textures/slingshot_trail.texture
+	}
+}	
+
+effect_set small_arrow_trail_set
+{
+	lod 1000
+	{
+		small_arrow_trail
+	}
+}
+
+effect large_arrow_trail
+{
+	type ribbon
+	{
+		alpha_max	196	  ; Alpha value at start of trail
+		alpha_min	64	  ; Alpha value at end of trail
+		fade_start	100	  ; Distance to start fading out.
+		fade_end	200	  ; This should be the same as the max lod distance in the effect set.
+		head_width	0.15  ; Width of the ribbon at arrow end
+		tail_width  0.015 ; Width of the ribbon at the tail end
+
+		texture	    models_effects/textures/arrow_trail.texture
+	}
+}	
+
+effect_set large_arrow_trail_set
+{
+	lod 1000
+	{
+		large_arrow_trail
+		;small_shockwave
+	}
+}
+
+effect fiery_arrow_trail
+{
+	type ribbon
+	{
+		alpha_max	255	  ; Alpha value at start of trail
+		alpha_min	128	  ; Alpha value at end of trail
+		fade_start	100	  ; Distance to start fading out.
+		fade_end	200	  ; This should be the same as the max lod distance in the effect set.
+		head_width	0.5	  ; Width of the ribbon at arrow end
+		tail_width  0.1   ; Width of the ribbon at the tail end
+
+		texture	    models_effects/textures/arrow_fire.texture
+	}
+}	
+
+effect_set fiery_arrow_trail_set
+{
+	lod 1000
+	{
+		fiery_arrow_trail
+	}
+}		
+
+
+effect fiery_boulder
+{
+	type projectile
+	{
+		model		models_effects/fireball.cas
+		fade_time	0.01
+	}
+}
+
+effect fiery_boulder_treb
+{
+	type projectile
+	{
+		model		models_effects/boulder_flaming.cas
+		fade_time	0.01
+	}
+}
+
+effect fiery_boulder_light
+{
+	type light
+	{
+		fade_out_time	0.1
+		keyframe_colour
+		{
+				0.05, 	240, 160,  90
+				0.1, 	234, 170, 90
+				0.15, 	246, 160,  90
+				0.2, 	236, 170, 90
+				0.25, 	244, 160, 90
+				0.3, 	234, 170, 90
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	36
+				0.1, 	37
+		}
+	}
+}
+
+effect fiery_boulder_explosion_light
+{
+	type light
+	{
+		offset		0.0, 0.0, 5.0
+		fade_in_time	0.1
+		fade_out_time	0.1
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	50
+				0.1, 	53
+		}
+	}
+}
+
+effect boulder
+{
+	type projectile
+	{
+		model		models_effects/boulder.cas
+		fade_time	0.01
+	}
+}
+
+effect boulder_dust
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      1.0, 1.5
+		age_range       0.1, 0.5
+	    grow_range		1.1, 1.6
+		velocity   		0.0, 0.2
+		colour     		87, 87, 74
+		alpha_max	   	14			 ; maximum alpha value
+		
+		emitter distance
+		{
+			density			2 	     ; how many particels per meter
+		}
+
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+effect_set ribault_shot_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		ribault_shot
+		fiery_ribault_smoke_small
+	}
+}
+
+effect_set monster_ribault_shot_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		monster_ribault_shot
+		fiery_ribault_smoke_large
+	}
+}
+
+
+effect boulder_dust_big
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      2.5, 4
+		age_range       0.1, 0.5
+	    grow_range		1, 0.1
+		velocity   		0.3, 11
+		colour     		160, 160, 160
+		alpha_max	   	14			 ; maximum alpha value
+		
+		emitter distance
+		{
+			density			1 	     ; how many particels per meter
+		}
+
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+effect fiery_boulder_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		size_range      0.8, 0.8
+		age_range       1.6, 0.5
+	    grow_range		10.5, 10.3
+		system_radius   20
+		initial_size	0.6,0.6
+		spin_rate       -0.1,0.1
+		acceleration    0,-1,0
+		max_particles   2000
+		sort_bias				0
+		sort 					instance
+		
+		
+		keyframe_colour
+		{
+				0.0, 	0,   80, 80,     80
+				0.2, 	80,   80, 80,     80
+				1.0, 	0,   90, 90,     90
+
+		}
+
+		
+		alpha_max	   	255			 ; maximum alpha value
+		emitter distance
+		{
+			density			4 	     ; how many particels per meter
+		}
+		
+		random_emit_radius		1.5,1.5
+
+		clr_adjust_by_ambient_intensity		
+	}
+}
+
+;effect fiery_boulder_smoke_flaming
+{
+	type particle
+ 	{
+		texture			battlefield/fire/burning_smoke.tga
+
+		size_range      1, 1
+		age_range       0.11, 0.15
+	    grow_range		1, 1
+		system_radius   20
+		initial_size	5,5
+		keyframe_colour
+		{
+				0.0, 	230,   70, 70,     70
+				0.3, 	0,   170, 170,     170
+
+		}
+
+		
+		alpha_max	   	255			 ; maximum alpha value
+		emitter distance
+		{
+			density			1 	     ; how many particels per meter
+		}
+		
+		random_emit_radius		0, 0.0
+
+		clr_adjust_by_ambient_intensity		
+	}
+}
+
+effect fiery_boulder_smoke_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/burning_smoke.tga
+
+		size_range      1.2, 1.2
+		age_range       0.3, 0.15
+	    grow_range		1,1
+		system_radius   20
+		spin_rate       -0.1,0.1
+		offset          0,0,-1.0
+		initial_size     1.5,2
+		sort_bias       -1
+		keyframe_colour
+		{
+				0.0, 	120,   237, 211,     180
+				0.2, 	80,   232, 103,     17
+				0.30, 	0,   232, 80,     17
+
+		}
+
+		
+		alpha_max	   	10			 ; maximum alpha value
+		blend_type			additive
+		emitter distance
+		{
+			density			6	     ; how many particels per meter
+		}
+		
+		random_emit_radius		0.7, 0.7
+
+	}
+}
+
+
+effect boulder_explosion_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosion_dirt1.cas
+		anim_time			0.4
+		max_scale   			2
+		max_particle_scale 		4
+		scale_time_bias			.9
+		alpha_time_bias			0.6		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect boulder_explosion_02
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosion_dirt2.cas
+		anim_time			0.9
+		max_scale   			5
+		max_particle_scale 		7
+		scale_time_bias			.9
+		alpha_time_bias			0.34		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect fiery_boulder_explosion
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosion.cas
+		anim_time			0.9
+		max_scale   			3
+		max_particle_scale 		5
+		scale_time_bias			.9
+		alpha_time_bias			0.6		
+		
+
+		; debris
+        debris_model                             models_effects/fire_debri_01.CAS
+        debris_num_particles     10
+        debris_lifetime_range    2.2, 15
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    15.5, 20.5
+        debris_scale_range       1.4, 3.6
+	}
+}
+
+effect fiery_boulder_dust_explosion
+{
+	type explosion
+	{
+	; dust explode
+		model 				models_effects/explosion_dust.cas
+		anim_time			1.7
+		max_scale   			3
+		max_particle_scale 		5
+		scale_time_bias			.9
+		alpha_time_bias			0.6
+
+		; debris
+        debris_model                             models_effects/fire_debri_02.CAS
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 15
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    10.5, 15.5
+        debris_scale_range       1.4, 4.6
+	}
+}
+
+effect fiery_boulder_dust_explosion2
+{
+	type explosion
+	{
+	; dust explode
+		model 				models_effects/explosion_dust2.cas
+		anim_time			9
+		max_scale   			6
+		max_particle_scale 		10
+		scale_time_bias			.9
+		alpha_time_bias			0.6
+
+		; debris
+	        debris_model                             models_effects/debri02.cas
+        	debris_num_particles     0
+	        debris_lifetime_range    2.2, 20
+        	debris_emit_angle        70              ; degrees
+	        debris_time_bias         0.9
+        	debris_velocity_range    5.5, 30.5
+	        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect fiery_boulder_dust_explosion3
+{
+	type explosion
+	{
+	; dust explode
+		model 				models_effects/flame_explode.cas
+		anim_time			0.7
+		max_scale   			1.5
+		max_particle_scale 		2.5
+		scale_time_bias			.9
+		alpha_time_bias			0.9
+
+		; debris
+        debris_model                             models_effects/fire_debri_02.CAS
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 15
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    10.5, 15.5
+        debris_scale_range       1.4, 4.6
+	}
+}
+
+effect boulder_dust_explosion
+{
+	type explosion
+	{
+	; dust explode
+		model 				models_effects/explosion_dust.cas
+		anim_time			1.7
+		max_scale   			2
+		max_particle_scale 		4
+		scale_time_bias			.9
+		alpha_time_bias			0.6
+
+		; debris
+	        debris_model                             models_effects/debri02.cas
+        	debris_num_particles     0
+	        debris_lifetime_range    2.2, 20
+        	debris_emit_angle        70              ; degrees
+	        debris_time_bias         0.9
+        	debris_velocity_range    5.5, 30.5
+	        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect boulder_dust_explosion2
+{
+	type explosion
+	{
+	; dust explode
+		model 				models_effects/explosion_dust2.cas
+		anim_time			7
+		max_scale   			5
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.6
+
+		; debris
+        	debris_model                             models_effects/fire_debri_02.CAS
+        	debris_num_particles     20
+        	debris_lifetime_range    2.2, 15
+        	debris_emit_angle        50               ; degrees
+        	debris_time_bias         0.9
+        	debris_velocity_range    3.5, 7.5
+        	debris_scale_range       1.4, 2.6
+	}
+}
+
+effect ballista_arrow_impact
+{
+	type explosion
+	{
+	; dust explode
+		model 				models_effects/explosion_dust.cas
+		anim_time			1.5
+		max_scale   			2.0
+		max_particle_scale 		1
+		scale_time_bias			0.8
+		alpha_time_bias			0.6
+
+		; debris
+	        debris_model                             models_effects/debri02.cas
+        	debris_num_particles     0
+	        debris_lifetime_range    2.2, 20
+        	debris_emit_angle        45              ; degrees
+	        debris_time_bias         0.9
+        	debris_velocity_range    1.5, 2.5
+	        debris_scale_range       0.4, 1.5
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;MORTAR EXPLOSION EFFECTS MEDIUM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+effect mortar_explosion_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		anim_time				0.7
+		max_scale   			14
+		max_particle_scale 		2.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_02
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		anim_time				5
+		max_scale   			7
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_flash
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosive_flash.CAS
+		anim_time				0.24
+		max_scale   			7
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_fire_dust
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_ground.CAS
+		anim_time				1.4
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_dust
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dust_ground.CAS
+		anim_time				5
+		max_scale   			14
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_dust_debris
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_debri.CAS
+		anim_time				1.4
+		max_scale   			2.4
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;MORTAR EXPLOSION EFFECTS SMALL
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+effect mortar_explosion_01_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		anim_time				0.7
+		max_scale   			4
+		max_particle_scale 		0.7
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_02_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		anim_time				5
+		max_scale   			1.7
+		max_particle_scale 		0.8
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_flash_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosive_flash.CAS
+		anim_time				0.24
+		max_scale   			3.4
+		max_particle_scale 		4.2
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_fire_dust_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_ground.CAS
+		anim_time				1.4
+		max_scale   			4.8
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_dust_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dust_ground.CAS
+		anim_time				5
+		max_scale   			7
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect mortar_explosion_dust_debris_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_debri.CAS
+		anim_time				1.4
+		max_scale   			1.2
+		max_particle_scale 		0.5
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+
+effect flaming_boulder_glow_model
+{
+	type projectile
+	{
+		model models_effects/flaming_boulder_glow.CAS
+		view_dist 70
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+effect_set large_arrow_explode_set
+{
+	lod 1000
+	{
+		ballista_arrow_impact
+	}
+}
+
+effect_set fiery_boulder_set
+{
+	lod 10000
+	{
+		fiery_boulder_treb
+		fiery_boulder_smoke
+		fiery_boulder_light
+		fiery_boulder_smoke_flame
+		incoming_sound
+		small_shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fiery_boulder_catapult
+
+effect fiery_boulder_catapult
+{
+	type projectile
+	{
+		model		models_effects/boulder_flaming.cas
+		fade_time	0.01
+	}
+}
+effect fiery_boulder_catapult_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		size_range      0.8, 0.8
+		age_range       0.3, 0.9
+	    grow_range		10.5, 10.3
+		system_radius   20
+		initial_size	0.6,0.6
+		spin_rate       -0.1,0.1
+		acceleration    0,-1,0
+		max_particles   2000
+		sort_bias				0
+		sort 					instance
+		
+		
+		keyframe_colour
+		{
+				0.0, 	0,   80, 80,     80
+				0.2, 	80,   80, 80,     80
+				1.0, 	0,   90, 90,     90
+
+		}
+
+		
+		alpha_max	   	255			 ; maximum alpha value
+		emitter distance
+		{
+			density			4 	     ; how many particels per meter
+		}
+		
+		random_emit_radius		1.0,1,0
+
+		clr_adjust_by_ambient_intensity		
+	}
+}
+effect fiery_boulder_catapult_light
+{
+	type light
+	{
+		fade_out_time	0.1
+		keyframe_colour
+		{
+				0.05, 	240, 160,  90
+				0.1, 	234, 170, 90
+				0.15, 	246, 160,  90
+				0.2, 	236, 170, 90
+				0.25, 	244, 160, 90
+				0.3, 	234, 170, 90
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	28
+				0.1, 	29
+		}
+	}
+}
+effect fiery_boulder_catapult_smoke_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/burning_smoke.tga
+
+		size_range      1.2, 1.2
+		age_range       0.2, 0.10
+	    grow_range		1,1
+		system_radius   20
+		spin_rate       -0.1,0.1
+		offset          0,0,-1.0
+		initial_size     1.5,2
+		sort_bias       -1
+		keyframe_colour
+		{
+				0.0, 	100,   237, 211,     180
+				0.1, 	80,   232, 103,     17
+				0.2, 	0,   232, 80,     17
+
+		}
+
+		
+		alpha_max	   	10			 ; maximum alpha value
+		blend_type			additive
+		emitter distance
+		{
+			density			5	     ; how many particels per meter
+		}
+		
+		random_emit_radius		0.7, 0.7
+
+	}
+}
+
+
+effect_set fiery_boulder_catapult_set
+{
+	lod 10000
+	{
+		fiery_boulder_catapult
+		fiery_boulder_catapult_smoke
+		fiery_boulder_catapult_light
+		fiery_boulder_catapult_smoke_flame
+		incoming_sound
+		small_shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fiery_boulder_bombard
+
+effect fiery_boulder_bombard
+{
+	type projectile
+	{
+		model		models_effects/fireball.cas
+		fade_time	0.01
+	}
+}
+effect fiery_boulder_bombard_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		size_range      2.8, 1.8
+		age_range       0.15, 0.4
+	    grow_range		1.0, 1.0
+		system_radius   20
+		initial_size	1.6,1.6
+		spin_rate       -0.1,0.1
+		acceleration    0,-1,0
+		max_particles   2000
+		sort_bias				0
+		sort 					instance
+		offset          0,0,-1.0
+		
+		
+		keyframe_colour
+		{
+				0.0, 	0,   80, 80,     80
+				0.2, 	80,   80, 80,     80
+				1.0, 	0,   90, 90,     90
+
+		}
+
+		
+		alpha_max	   	255			 ; maximum alpha value
+		emitter distance
+		{
+			density			4 	     ; how many particels per meter
+		}
+		
+		random_emit_radius		0.6,0,6
+
+		clr_adjust_by_ambient_intensity		
+	}
+}
+effect fiery_boulder_bombard_light
+{
+	type light
+	{
+		fade_out_time	0.1
+		keyframe_colour
+		{
+				0.05, 	240, 160,  90
+				0.1, 	234, 170, 90
+				0.15, 	246, 160,  90
+				0.2, 	236, 170, 90
+				0.25, 	244, 160, 90
+				0.3, 	234, 170, 90
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	20
+				0.1, 	22
+		}
+	}
+}
+effect fiery_boulder_bombard_smoke_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/burning_smoke.tga
+
+		size_range      0.5, 1.0
+		age_range       0.1, 0.1
+	    grow_range		1,1
+		system_radius   20
+		spin_rate       -0.1,0.1
+		offset          0,0,-0.5
+		initial_size     1.0,1.1
+		sort_bias       -1
+		keyframe_colour
+		{
+				0.0, 	100,   237, 211,     180
+				0.1, 	0,   232, 80,     17
+
+		}
+
+		
+		alpha_max	   	10			 ; maximum alpha value
+		blend_type			additive
+		emitter distance
+		{
+			density			8	     ; how many particels per meter
+		}
+		
+		random_emit_radius		0.2, 0.2
+
+	}
+}
+
+
+effect_set fiery_boulder_bombard_set
+{
+	lod 10000
+	{
+		fiery_boulder_bombard
+		fiery_boulder_bombard_smoke
+		fiery_boulder_bombard_light
+		fiery_boulder_bombard_smoke_flame
+		incoming_sound
+		small_shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fiery_boulder_grand_bombard
+
+
+effect fiery_boulder_grand_bombard_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke4.tga
+
+		size_range      2.8, 1.8
+		age_range       0.2, 0.8
+	    grow_range		1.0, 1.0
+		system_radius   20
+		initial_size	3.6,3.6
+		spin_rate       -0.1,0.1
+		acceleration    0,-1,0
+		max_particles   2000
+		sort_bias				0
+		sort 					instance
+		offset          0,0,-1.0
+		
+		
+		keyframe_colour
+		{
+				0.0, 	0,   80, 80,     80
+				0.2, 	80,   80, 80,     80
+				1.0, 	0,   90, 90,     90
+
+		}
+
+		
+		alpha_max	   	255			 ; maximum alpha value
+		emitter distance
+		{
+			density			4 	     ; how many particels per meter
+		}
+		
+		random_emit_radius		0.8,0,8
+
+		clr_adjust_by_ambient_intensity		
+	}
+}
+effect fiery_boulder_grand_bombard_light
+{
+	type light
+	{
+		fade_out_time	0.1
+		keyframe_colour
+		{
+				0.05, 	240, 160,  90
+				0.1, 	234, 170, 90
+				0.15, 	246, 160,  90
+				0.2, 	236, 170, 90
+				0.25, 	244, 160, 90
+				0.3, 	234, 170, 90
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	35
+				0.1, 	36
+		}
+	}
+}
+effect fiery_boulder_grand_bombard_smoke_flame
+{
+	type particle
+ 	{
+		texture			battlefield/fire/burning_smoke.tga
+
+		size_range      0.8, 0.8
+		age_range       0.2, 0.10
+	    grow_range		1,1
+		system_radius   20
+		spin_rate       -0.1,0.1
+		offset          0,0,-1.0
+		initial_size     1.6,1.6
+		sort_bias       -1
+		keyframe_colour
+		{
+				0.0, 	100,   237, 211,     180
+				0.1, 	80,   232, 103,     17
+				0.2, 	0,   232, 80,     17
+
+		}
+
+		
+		alpha_max	   	10			 ; maximum alpha value
+		blend_type			additive
+		emitter distance
+		{
+			density			6	     ; how many particels per meter
+		}
+		
+		random_emit_radius		0.6, 0.6
+
+	}
+}
+
+
+effect_set fiery_boulder_grand_bombard_set
+{
+	
+	lod 10000
+	{
+		fiery_boulder_bombard
+		fiery_boulder_grand_bombard_smoke
+		fiery_boulder_grand_bombard_light
+		fiery_boulder_grand_bombard_smoke_flame
+		incoming_sound
+		shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect_set boulder_set
+{
+	lod 1000
+	{
+		boulder
+		boulder_dust
+	}
+}
+
+effect_set fiery_boulder_explosion_set
+{
+	play_time 0.2
+	lod 1000
+	{
+		;fiery_boulder_dust_explosion3
+		;fiery_boulder_explosion		
+		;fiery_boulder_dust_explosion
+		;fiery_boulder_dust_explosion2
+		;fiery_boulder_explosion_light
+		shockwave
+	}
+}
+
+effect_set boulder_explosion_set
+{
+	lod 1000
+	{
+		boulder_explosion_01
+		boulder_explosion_02
+		boulder_dust_explosion
+		boulder_dust_explosion2
+		shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  Mortar Explosion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect_set mortar_explosion_small_set
+{
+	play_time 0.1
+	lod 1000
+	{
+		mortar_explosion_flash_small
+		mortar_explosion_01_small
+		mortar_explosion_02_small
+		mortar_explosion_fire_dust_small
+		mortar_explosion_dust_small
+		mortar_explosion_dust_debris_small
+ 		small_shockwave
+	}
+}
+
+effect_set mortar_explosion_set
+{
+	play_time 0.1
+	lod 1000
+	{
+		mortar_explosion_flash
+		mortar_explosion_01
+		mortar_explosion_02
+		mortar_explosion_fire_dust
+		mortar_explosion_dust
+		mortar_explosion_dust_debris
+ 		small_shockwave
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Fiery arrow
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+effect fiery_arrow
+{
+	type projectile
+	{
+		model		models_effects/rocket_projectile_tail.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+effect fiery_arrow_no_additive
+{
+	type projectile
+	{
+		model		models_effects/rocket_projectile_tail.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+effect fiery_arrow_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      10.3, 0.4
+		initial_size	0.3, 0.4
+		age_range       0.90, 0.6
+        grow_range	 	1, 1
+		velocity   		0.01, 0.9
+		colour     		55, 50, 47
+		alpha_max	   	100			 ; maximum alpha value
+		batched			
+		sort_bias		15
+		die_size		0.3, 0.4
+		fade_time		0.1
+		system_radius   20
+		max_particles   1500
+		
+		emitter distance
+		{
+			emitter_falloff_dist	500			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5
+			
+			density			2 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+effect fiery_arrow_explosion
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/flaming_arrow_impact.cas
+		anim_time			4.17
+		max_scale   			10.5
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.4
+		sort_for_speed
+		
+		; debris
+		debris_model              models_effects/debris_fire.CAS
+        debris_num_particles     15
+        debris_lifetime_range    2.2, 5.8
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    4.5, 6.5
+        debris_scale_range       1.1, 1.3
+	}
+}
+
+effect fiery_arrow_test_cloud
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/disease_cloud.CAS
+		anim_time			14.17
+		max_scale   			0.5
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.4
+		sort_for_speed
+		
+		; debris
+		debris_model              models_effects/debris_fire.CAS
+        debris_num_particles     15
+        debris_lifetime_range    2.2, 5.8
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    4.5, 6.5
+        debris_scale_range       1.1, 1.3
+	}
+}
+
+
+effect fiery_arrow_light
+{
+	type light
+	{
+			
+		keyframe_colour
+		{
+				0.05, 	240, 100, 0
+				0.1, 	240, 130, 0
+				0.15, 	240, 80, 0
+				0.2, 	240, 140, 0
+				0.25, 	240, 70, 0
+				0.3, 	240, 120, 0
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	10
+				0.1, 	12
+		}
+	}
+}
+
+effect flaming_ballista_light
+{
+	type light
+	{
+			
+		keyframe_colour
+		{
+				0.05, 	244, 213, 154
+				0.1, 	236, 196, 119
+				0.15, 	255, 231, 186
+				0.2, 	237, 190, 117
+				0.25, 	244, 200, 150
+				0.3, 	240, 196, 180
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	7
+				0.1, 	9
+		}
+	}
+}
+
+
+effect_set < 3 4 > fiery_arrow_set
+{
+	lod 1000
+	{
+		fiery_arrow
+		fiery_arrow_smoke
+	}
+}
+
+effect_set < 2 > fiery_arrow_set
+{
+	lod 1000
+	{
+		fiery_arrow_no_additive
+		fiery_arrow_smoke
+	}
+}
+
+effect_set < 0 1 > fiery_arrow_set
+{
+	lod 1000
+	{
+		fiery_arrow_no_additive
+	}
+}
+
+effect_set < 3 4 > fiery_arrow_set_light
+{
+	lod 1000
+	{
+		fiery_arrow
+		fiery_arrow_smoke
+		fiery_arrow_light
+	}
+}
+
+effect_set < 2 > fiery_arrow_set_light
+{
+	lod 1000
+	{
+		fiery_arrow_no_additive
+		fiery_arrow_smoke
+		fiery_arrow_light
+	}
+}
+
+effect_set < 0 1 > fiery_arrow_set_light
+{
+	lod 1000
+	{
+		fiery_arrow_no_additive
+		fiery_arrow_light
+	}
+}
+effect_set < 2 3 4 > fiery_arrow_explosion_set
+{
+	lod 1000
+	{
+		fiery_arrow_explosion		
+	}
+}
+
+effect_set flaming_arrow_explosion_set
+{
+	lod 1000
+	{
+		fiery_arrow_explosion
+		fiery_arrow_test_cloud
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Fiery Ballista
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect fiery_ballista
+{
+	type projectile
+	{
+		model		models_effects/flaming_ballista.cas
+		fade_time	0.01
+	}
+}
+effect fiery_ballista_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      1.0, 1.5
+		initial_size    0.6, 0.8
+		age_range       0.1, 0.2
+        grow_range	 	1, 1
+		velocity   		0.0, 0.9
+		colour     		55, 50, 47
+		alpha_max	   	100			 ; maximum alpha value
+		emitter distance
+		{
+			density			2 	     ; how many particles per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+effect fiery_ballista_explosion
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/flaming_arrow_impact.cas
+		anim_time			0.5
+		max_scale   			1.2
+		max_particle_scale 		3.5
+		scale_time_bias			0.9
+		alpha_time_bias			0.4
+
+		; debris
+        debris_model                             models_effects/debris.cas
+        debris_num_particles     7
+        debris_lifetime_range    2.2, 5.8
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect_set fiery_ballista_trail_set
+{
+	lod 1000
+	{
+		fiery_ballista
+		fiery_ballista_smoke
+		fiery_boulder_light
+		;small_shockwave
+	}
+
+}
+
+effect_set fiery_ballista_explosion_set
+{
+	lod 1000
+	{
+		fiery_ballista_explosion	
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;			ROCKET EFFECTS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect rocket_model
+{
+	type projectile
+	{
+		model		models_effects/rocket_projectile.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+effect rocket_tail
+{
+	type projectile
+	{
+		model		models_effects/rocket_projectile_tail.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+effect fiery_rocket_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      0.05, 0.14
+		initial_size	1, 1
+		age_range       0.14, 0.5
+        grow_range	 	1, 1
+		velocity   		0.01, 0.04
+		colour     		55, 50, 47
+		alpha_max	   	100			 ; maximum alpha value
+		batched			
+		sort_bias		15
+		die_size		0, 0.14
+		fade_time		0.1
+		system_radius   20
+		max_particles   1500
+		
+		emitter distance
+		{
+			emitter_falloff_dist	500			; distance in meters to reduce emission over
+			emitter_falloff_bias	0
+			
+			density			2 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+; EFFECT SET FOR ROCKET PROJECTILE EFFECTS
+
+effect_set rocket_projectile_set
+{
+	lod 1000
+	{
+		rocket_model
+		rocket_tail
+		fiery_rocket_smoke		
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;			COW CARCASS EFFECTS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect dead_cow
+{
+	type projectile
+	{
+		model			models_effects/dead_cow.CAS
+		fade_time	0.01
+	}
+}
+
+effect dead_cow_trail
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      0.5, 0.5
+		initial_size	3, 3
+		age_range       0.14, 0.35
+        grow_range	 	1, 1
+		velocity   		0.01, 0.04
+		colour     		180, 0, 0
+		alpha_max	   	30			 ; maximum alpha value
+		batched			
+		sort_bias		15
+		die_size		0.3, 0.14
+		fade_time		0.1
+		system_radius   20
+		max_particles   50
+		
+		emitter distance
+		{
+			emitter_falloff_dist	500			; distance in meters to reduce emission over
+			emitter_falloff_bias	0
+			
+			density			2 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+
+; 	EFFECT SET FOR COW CARCASS PROJECTILE
+
+effect_set cow_carcass_projectile_set
+{
+	lod 1000
+	{
+		dead_cow
+		dead_cow_trail
+		cow_fly_sound
+	}
+}
+
+;EFFECT SET FOR HUGE BOMBARD
+
+effect_set huge_cannon_ball_set
+
+{
+	lod 1000
+	{
+		huge_cannon_ball
+		boulder_dust_big
+		incoming_sound
+ 		shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;CANNON BALL PROJECTILES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect cannon_ball_medium
+{
+	type projectile
+	{
+		model			models_effects/cannon_ball_medium.CAS
+		fade_time	0.01
+	}
+}
+effect bombard_boulder
+{
+	type projectile
+	{
+		model			models_effects/bombard_boulder.CAS
+		fade_time	0.01
+	}
+}
+
+effect cannon_ball_medium_flaming
+{
+	type projectile
+	{
+		model			models_effects/cannon_ball_flaming.CAS
+		fade_time	0.01
+	}
+}
+
+effect boulder_medium
+{
+	type projectile
+	{
+		model			models_effects/boulder_medium.CAS
+		fade_time	0.01
+	}
+}
+
+
+
+effect cannon_ball_medium_trail
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      0.3, 0.14
+		initial_size	1, 1
+		age_range       0.14, 0.15
+        grow_range	 	1, 1
+		velocity   		0.01, 0.04
+		colour     		90, 90, 90
+		alpha_max	   	60			 ; maximum alpha value
+		batched			
+		sort_bias		15
+		die_size		0.3, 0.14
+		fade_time		0.1
+		system_radius   20
+		max_particles   3000
+		
+		emitter distance
+		{
+			emitter_falloff_dist	500			; distance in meters to reduce emission over
+			emitter_falloff_bias	0
+			
+			density			1 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+effect cannon_ball_medium_trail_flaming
+{
+	type particle
+ 	{
+		texture			models_effects/textures/cloud_sprite7.tga
+
+		size_range      1.0, 1.0
+		initial_size	3, 3
+		age_range       0.04, 0.05
+        grow_range	 	1, 4
+		velocity   		0.00, 0.00
+		colour     		255, 255, 255
+		alpha_max	   	255			 ; maximum alpha value
+		batched			
+		sort_bias		15
+		die_size		11.3, 7.14
+		fade_time		0.5
+		system_radius   20
+		max_particles   500
+		
+		emitter distance
+		{
+			emitter_falloff_dist	5000			; distance in meters to reduce emission over
+			emitter_falloff_bias	0
+			
+			density			2 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+effect_set cannon_ball_medium_set
+{
+	lod 1000
+	{
+		cannon_ball_medium
+		cannon_ball_medium_trail
+ 		shockwave
+ 		incoming_sound
+	}
+}
+effect_set bombard_set
+{
+	lod 1000
+	{
+		bombard_boulder
+		cannon_ball_medium_trail
+		incoming_sound
+		shockwave
+	}
+}
+
+effect_set boulder_medium_set
+{
+	lod 1000
+	{
+		boulder_medium
+		cannon_ball_medium_trail
+		incoming_sound
+		shockwave
+	}
+}
+
+
+effect_set cannon_ball_flaming_medium_set
+{
+	lod 1000
+	{
+		cannon_ball_medium_flaming
+		cannon_ball_medium_trail_flaming
+; 		shockwave		
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;EFFECT SET FOR HUGE BOMBARD
+
+effect_set huge_cannon_ball_set
+
+{
+	lod 1000
+	{
+		huge_cannon_ball
+		boulder_dust_big
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;LARGE DIRT EXPLOSION GROUND
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+effect large_dirt_ground_explosion_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		anim_time				0.7
+		max_scale   			20
+		max_particle_scale 		3.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect large_dirt_ground_explosion_02
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		anim_time				5
+		max_scale   			14
+		max_particle_scale 		3.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect large_dirt_ground_explosion_flash
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosive_flash.CAS
+		anim_time				0
+		max_scale   			7
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect large_dirt_ground_explosion_fire_dust
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_ground.CAS
+		anim_time				0
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect large_dirt_ground_explosion_dust
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dust_ground.CAS
+		anim_time				0
+		max_scale   			14
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect large_dirt_ground_explosion_dust_debris
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_debri.CAS
+		anim_time				0
+		max_scale   			2.4
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect large_dirt_ground_explosion_wave
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		anim_time				11
+		max_scale   			30
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect large_dirt_ground_explosion_rising
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		anim_time				6
+		max_scale   			3
+		max_particle_scale 		4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect_set dirt_explosion_ground_large_set
+
+{
+	lod 1000
+	{
+		large_dirt_ground_explosion_01
+		large_dirt_ground_explosion_02
+		large_dirt_ground_explosion_flash
+		large_dirt_ground_explosion_fire_dust
+		large_dirt_ground_explosion_dust
+		large_dirt_ground_explosion_dust_debris
+		large_dirt_ground_explosion_wave
+		large_dirt_ground_explosion_rising
+;		shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

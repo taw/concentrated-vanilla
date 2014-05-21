@@ -1,0 +1,22 @@
+; landscape				red		green	blue
+;ambient_colour				0.3		0.3		0.5
+;diffuse_colour				1.1		1.1		0.85
+
+ambient_colour				0.5	0.5	0.52
+diffuse_colour				0.7 	0.7	0.72
+
+
+;piece specular
+;specular_colour				0.3		0.3		0.3
+specular_colour				0.1		0.1		0.1
+
+;direction			x	y	z
+diffuse_direction		-1.0	-1.0	1.0
+
+specular_sharpness			90.0
+
+;piece_ambient_colour				0.5		0.5		0.8
+;piece_diffuse_colour				0.9		0.9		0.7
+
+piece_ambient_colour				0.8		0.8		0.82
+piece_diffuse_colour				0.95		0.95		0.96

@@ -1,0 +1,1204 @@
+ ;; S = Select
+;; NA = Not Allowed
+;; NM = Move not allowed (may be same as NA)
+;; Mov = Move
+;; Mov+ = Move cursor + number of turns needed to arrive
+;; Ig = Ignore the item and treat as an empty square
+;; Mer = Merge (Will always bring up merge screen)
+;; Mer* = Automerge if allowed, otherwise Merge
+;; Em = Embark (Will always bring up embarkation screen)
+;; Em * = AutoEmbark if allowed, otherwise Embark)
+;; G = Garrison (Will always bring up merge screen)
+;; G* = AutoGerrison if allowed, otherwise Garrison)
+;; A = Attack
+;; Talk = Begin diplomatic negotiation
+;; Talk / Bribe Choice between talk and bribe is bribe is allowed. Otherwise just talk
+;; Spy = Perform a spying mission
+;; Inf = Infiltrate the settlement
+;; Ass = Assassinate one of the characters in the square 
+;; Ass / NA = Assassinate one of the characters in the square. Not allowed if no characters in square
+;; Mission = Perform one of a range of missions that are allowed to either the spy, assassin or diplomat
+;; SetRP = Set rally_point point
+;; SetRP* = Set one or more rally_point points
+;; SetRpSel = Set rally point and select
+;; Disem / NM = If the target square is a costal one, and the admiral can reach an adjacent square, and has something to disembark, then show the disembark cursor, otherwise NM
+
+;; Valid items for 'over' flag and 'selected' flag: 	nothing, army, admiral, diplomat, spy, assassin, family, settlement, fort, rally_point
+;; Valid alignments: own, enemy, neutral
+
+;; The default is nothing selected, in which case when over own pieces, show S, and when over enemy or allied, show Na
+
+;; Order of declarations: <action> <alt action> <drag action> <alt drag action> <tooltip (optional)
+
+;; If the tooltip keyword is specified, then the following word should be an identifier from the lookup file "data/descr_cursor_tooltips_lookup.txt", 
+;; which itself is a lookup table for the strings in 'data/text/cursor_action_tooltips.txt'
+
+selected nothing
+{
+	over own
+	{
+		default S S
+		land	Ig
+		sea		Ig
+	}
+	over enemy
+	{
+		default Na Na		tooltip	cannot_select_enemy_piece
+	}
+	over allied
+	{
+		default Na Na		tooltip cannot_select_enemy_piece
+	}
+}
+
+selected army
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na					tooltip armies_cannot_go_on_sea
+		army						Mer* (Mer) Mer (Mer*)
+		admiral						Em*  (Em) Em  (Em*)		tooltip embark_army
+		diplomat					S S
+		princess					S S
+		merchant					S S
+		priest						S S
+		heretic						S S
+		witch						S S
+		inquisitor					S S
+		spy							S S
+		assassin					S S
+		family						Mer* (Mer) Mer (Mer*)	
+		settlement					G*   (S) G   (S)
+		fort						G*   (S) G   (S)
+		rally_point					Mov
+		naval_rally_point			Na						tooltip armies_cannot_go_on_sea
+		garrisoned_settlement		Mer* (Mer) Mer (Mer*)
+		garrisoned_fort				Mer* (Mer) Mer (Mer*)
+		garrisoned_ship				Em*  (Em) Em  (Em*)
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (Mer) Mer (Mer*)
+		dock						Na
+		port						Mov
+	}
+	over enemy
+	{
+		default						A
+		diplomat					Mov
+		princess					Mov
+		merchant					Mov
+		priest						Mov
+		heretic						Mov
+		witch						Mov
+		inquisitor					Mov
+		spy							Mov
+		assassin					Mov
+
+		land						Mov Mov
+		sea							Na Na					tooltip armies_cannot_go_on_sea
+		admiral						Na						tooltip armies_cannot_attack_navies
+		rally_point					Mov
+		naval_rally_point			Na						tooltip armies_cannot_go_on_sea
+		garrisoned_ship				Na						tooltip armies_cannot_attack_navies
+		garrisoned_dock				Na						tooltip armies_cannot_attack_ports
+		port						Mov
+	}
+	over allied
+	{
+		default						A
+		diplomat					Mov
+		princess					Mov
+		merchant					Mov
+		priest						Mov
+		heretic						Mov
+		witch						Mov
+		inquisitor					Mov
+		spy							Mov
+		assassin					Mov
+
+		land						Mov Mov
+		sea							Na Na					tooltip armies_cannot_go_on_sea
+		admiral						Na						tooltip armies_cannot_attack_navies
+		rally_point					Mov
+		naval_rally_point			Na						tooltip armies_cannot_go_on_sea
+		garrisoned_ship				Na						tooltip armies_cannot_attack_navies
+		garrisoned_dock				Na						tooltip armies_cannot_attack_ports
+		port						Mov
+	}
+}
+
+selected admiral
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Na  Na					tooltip navies_cannot_move_on_land
+		sea							Mov Mov
+		army						S S
+		admiral						Mer* (S) Mer (S)
+		diplomat					S
+		princess					S
+		merchant					S
+		priest						S
+		heretic						S
+		witch						S
+		inquisitor					S
+		spy							S
+		assassin					S
+		family						S
+		settlement					S
+		fort						S
+		rally_point					Na						tooltip navies_cannot_move_on_land
+		naval_rally_point			Mov
+		garrisoned_settlement		S
+		garrisoned_fort				S
+		garrisoned_ship				Mer* (Mer) Mer (Mer*)
+		sieged_settlement			S
+		sieged_fort					S
+		dock						Mov
+		garrisoned_dock				Mer* (Mer) Mer (Mer*)
+		port						Na
+	}
+	over enemy
+	{
+		default						Na						tooltip navies_cannot_attack_land_based
+
+		land						Mov Mov
+		sea							Na Na					tooltip armies_cannot_go_on_sea
+		admiral						A
+		rally_point					Na						tooltip navies_cannot_move_on_land
+		naval_rally_point			Mov
+		garrisoned_ship				A						
+		dock						A						tooltip rclick_to_blockade
+		garrisoned_dock				A						tooltip rclick_to_blockade
+	}
+	over allied
+	{
+		default						Na						tooltip navies_cannot_attack_land_based
+
+		land						Mov Mov
+		sea							Na Na					tooltip armies_cannot_go_on_sea
+		rally_point					Na						tooltip navies_cannot_move_on_land
+		naval_rally_point			Mov
+		admiral						A
+		garrisoned_ship				A
+		dock						A						tooltip rclick_to_blockade
+		garrisoned_dock				A						tooltip rclick_to_blockade
+	}
+}
+
+selected garrisoned_ship
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Disem Disem				tooltip disembark_army
+		sea							Mov Mov
+		army						Mer* (Mer) Mer (Mer*)
+		admiral						Mer* (Mer) Mer (Mer*)
+		diplomat					S
+		princess					S
+		merchant					S
+		priest						S
+		heretic						S
+		witch						S
+		inquisitor					S
+		spy							S
+		assassin					S
+		family						S
+		settlement					Disem Disem
+		fort						Mer* (Mer) Mer  (Mer*)
+		rally_point					Disem
+		naval_rally_point			Mov
+		garrisoned_settlement		Mer* (Mer) Mer (Mer*)
+		garrisoned_fort				Mer* (Mer) Mer (Mer*)
+		garrisoned_ship				Mer* (Mer) Mer (Mer*)
+		sieged_settlement			S
+		sieged_fort					S
+		garrisoned_dock				Mer* (Mer) Mer (Mer*)
+		dock						Mov
+		port						Disem
+	}
+
+	over enemy
+	{
+		default						Na					tooltip navies_cannot_attack_land_based
+
+		land						Disem Disem			tooltip disembark_army
+		sea							Mov Mov
+		admiral						A
+		garrisoned_ship				A
+		dock						A					tooltip rclick_to_blockade
+		garrisoned_dock				A					tooltip rclick_to_blockade
+		rally_point					Disem
+		naval_rally_point			Mov
+		port						Disem
+	}
+	over allied
+	{
+		default						Na					tooltip navies_cannot_attack_land_based
+
+		land						Disem Disem			tooltip disembark_army
+		sea							Mov Mov
+		admiral						A
+		garrisoned_ship				A
+		dock						A					tooltip rclick_to_blockade
+		garrisoned_dock				A					tooltip rclick_to_blockade
+		rally_point					Disem
+		naval_rally_point			Mov
+		port						Disem
+	}
+}
+
+selected diplomat
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Mer* (S) Mer (S)
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					G* (S) G  (S)		tooltip enter_settlement
+		fort						G* (S) G  (S)		tooltip enter_fort
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)		tooltip enter_settlement
+		garrisoned_fort				G*  (S) G  (S)		tooltip enter_fort
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)
+		port						Mov
+		dock						Na	
+	}
+	over enemy
+	{
+		default						Na					tooltip cannot_perform_mission
+
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						TB	Na				tooltip diplomacy_mission
+		diplomat					T	Na				tooltip diplomacy_mission
+		princess					T	Na				tooltip diplomacy_mission
+		family						T	Na				tooltip diplomacy_mission	
+		settlement					T	Na				tooltip diplomacy_mission
+		fort						T	Na				tooltip diplomacy_mission
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		TB	Na				tooltip diplomacy_mission
+		garrisoned_fort				TB	Na				tooltip diplomacy_mission
+		port						Mov
+	}
+	over allied
+	{
+		default						Na					tooltip cannot_perform_mission
+
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						TB	Na				tooltip diplomacy_mission
+		diplomat					T	Na				tooltip diplomacy_mission
+		princess					T	Na				tooltip diplomacy_mission
+		family						T	Na				tooltip diplomacy_mission	
+		settlement					T	Na				tooltip diplomacy_mission
+		fort						T	Na				tooltip diplomacy_mission
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		TB	Na				tooltip diplomacy_mission
+		garrisoned_fort				TB	Na				tooltip diplomacy_mission
+		port						Mov
+	}
+}
+
+selected princess
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Marry  (S) Marry (S)	tooltip marry_merge
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					Marry  (S) Marry (S)	tooltip marry_merge
+		fort						Marry  (S) Marry (S)	tooltip marry_merge
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		Marry  (S) Marry (S)	tooltip marry_merge
+		garrisoned_fort				Marry  (S) Marry (S)	tooltip marry_merge
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)
+		port						Mov
+		dock						Na	
+	}
+	over enemy
+	{
+		default						Na					tooltip cannot_perform_mission
+
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Marry	Na				tooltip marry_diplomacy
+		diplomat					T	Na				tooltip diplomacy_mission
+		princess					T	Na				tooltip diplomacy_mission
+		family						T	Na				tooltip diplomacy_mission
+		settlement					Marry	Na				tooltip marry_diplomacy
+		fort						Marry	Na				tooltip marry_diplomacy
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		Marry	Na				tooltip marry_diplomacy
+		garrisoned_fort				Marry	Na				tooltip marry_diplomacy
+		port						Mov
+	}
+	over allied
+	{
+		default						Na					tooltip cannot_perform_mission
+
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Marry	Na				tooltip marry_diplomacy	
+		diplomat					T	Na				tooltip diplomacy_mission
+		princess					T	Na				tooltip diplomacy_mission
+		family						T	Na				tooltip diplomacy_mission
+		settlement					Marry	Na				tooltip marry_diplomacy	
+		fort						Marry	Na				tooltip marry_diplomacy	
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		Marry	Na				tooltip marry_diplomacy	
+		garrisoned_fort				Marry	Na				tooltip marry_diplomacy	
+		port						Mov
+	}
+}
+
+selected merchant
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Mer* (S) Mer (S)
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					G* (S) G  (S)		tooltip enter_settlement
+		fort						G* (S) G  (S)		tooltip enter_fort
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)		tooltip enter_settlement
+		garrisoned_fort				G*  (S) G  (S)		tooltip enter_fort
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)
+		port						Mov
+		dock						Na	
+	}
+	over enemy
+	{
+		default Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		merchant					Acq	Na		tooltip		acquire
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+	over allied
+	{
+		default Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		merchant					Acq
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+}
+
+selected priest
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Mer* (S) Mer (S)
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					G* (S) G  (S)		tooltip enter_settlement
+		fort						G* (S) G  (S)		tooltip enter_fort
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)		tooltip enter_settlement
+		garrisoned_fort				G*  (S) G  (S)		tooltip enter_fort
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)
+		port						Mov
+		dock						Na	
+	}
+	over enemy
+	{
+		default Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		heretic						Denounce	Na		tooltip		denounce
+		witch						Denounce	Na		tooltip		denounce
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+	over allied
+	{
+		default Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		heretic						Denounce	Na		tooltip		denounce
+		witch						Denounce	Na		tooltip		denounce
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+}
+
+selected heretic
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Mer* (S) Mer (S)
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					G* (S) G  (S)		tooltip enter_settlement
+		fort						G* (S) G  (S)		tooltip enter_fort
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)		tooltip enter_settlement
+		garrisoned_fort				G*  (S) G  (S)		tooltip enter_fort
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)
+		port						Mov
+		dock						Na	
+	}
+	over enemy
+	{
+		default Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+	over allied
+	{
+		default Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+}
+
+selected witch
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Mer* (S) Mer (S)
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					G* (S) G  (S)		tooltip enter_settlement
+		fort						G* (S) G  (S)		tooltip enter_fort
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)		tooltip enter_settlement
+		garrisoned_fort				G*  (S) G  (S)		tooltip enter_fort
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)
+		port						Mov
+		dock						Na	
+	}
+	over enemy
+	{
+		default Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+	over allied
+	{
+		default Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+}
+
+selected inquisitor
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Mer* (S) Mer (S)
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					G* (S) G  (S)		tooltip enter_settlement
+		fort						G* (S) G  (S)		tooltip enter_fort
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)		tooltip enter_settlement
+		garrisoned_fort				G*  (S) G  (S)		tooltip enter_fort
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)
+		port						Mov
+		dock						Na	
+	}
+	over enemy
+	{
+		default Na
+
+		diplomat					Denounce	Na		tooltip		denounce
+		princess					Denounce	Na		tooltip		denounce
+		merchant					Denounce	Na		tooltip		denounce
+		priest						Denounce	Na		tooltip		denounce
+		heretic						Denounce	Na		tooltip		denounce
+		witch						Denounce	Na		tooltip		denounce
+		inquisitor					Denounce	Na		tooltip		denounce
+		spy						Denounce	Na		tooltip		denounce
+		assassin					Denounce	Na		tooltip		denounce
+		family						Denounce	Na		tooltip		denounce
+		army						Denounce	Na		tooltip		denounce
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+	over allied
+	{
+		default Na
+
+		diplomat					Denounce	Na		tooltip		denounce
+		princess					Denounce	Na		tooltip		denounce
+		merchant					Denounce	Na		tooltip		denounce
+		priest						Denounce	Na		tooltip		denounce
+		heretic						Denounce	Na		tooltip		denounce
+		witch						Denounce	Na		tooltip		denounce
+		inquisitor					Denounce	Na		tooltip		denounce
+		spy						Denounce	Na		tooltip		denounce
+		assassin					Denounce	Na		tooltip		denounce
+		family						Denounce	Na		tooltip		denounce
+		army						Denounce	Na		tooltip		denounce
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+}
+
+selected spy
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Mer* (S) Mer (S)	
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					G* (S) G  (S)		tooltip enter_settlement
+		fort						G* (S) G  (S)		tooltip enter_fort
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)		tooltip enter_settlement
+		garrisoned_fort				G*  (S) G  (S)		tooltip enter_fort
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)	tooltip embark_character_in_port
+		port						Mov
+		dock						Na					tooltip characters_cannot_go_on_sea
+	}
+	over enemy
+	{
+		default Spy Na									tooltip spy_mission
+		
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na					tooltip cannot_perform_mission
+		sieged_settlement			Na					tooltip cannot_perform_mission_on_sieged_settlement
+		sieged_fort					Na					tooltip cannot_perform_mission_on_sieged_fort
+		dock						Na					tooltip characters_cannot_go_on_sea
+		garrisoned_dock				Na					tooltip cannot_perform_mission
+		port						Mov					
+	}
+	over allied
+	{
+		default Spy Na									tooltip spy_mission
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na					tooltip cannot_perform_mission
+		sieged_settlement			Na					tooltip cannot_perform_mission_on_sieged_settlement
+		sieged_fort					Na					tooltip cannot_perform_mission_on_sieged_fort
+		dock						Na					tooltip characters_cannot_go_on_sea
+		garrisoned_dock				Na					tooltip cannot_perform_mission
+		port						Mov					
+	}
+}
+
+selected assassin
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		army						Mer* (S) Mer (S)
+		admiral						Em*  (S) Em  (S)	tooltip embark_character
+		diplomat					S  (Ass) S (Ass)
+		princess					S  (Ass) S (Ass)
+		merchant					S  (Ass) S (Ass)
+		priest						S  (Ass) S (Ass)
+		heretic						S  (Ass) S (Ass)
+		witch						S  (Ass) S (Ass)
+		inquisitor					S  (Ass) S (Ass)
+		spy							S  (Ass) S (Ass)
+		assassin					S  (Ass) S (Ass)
+		family						S  (Ass) S (Ass)
+		settlement					G* (S) G  (S)		tooltip enter_settlement
+		fort						G* (S) G  (S)		tooltip enter_fort
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)		tooltip enter_settlement
+		garrisoned_fort				G*  (S) G  (S)		tooltip enter_fort
+		garrisoned_ship				Em* (S) Em (S)		tooltip embark_character
+		sieged_settlement			S					tooltip cannot_enter_sieged_settlement
+		sieged_fort					S					tooltip cannot_enter_sieged_fort
+		garrisoned_dock				Mer* (S) Mer (S)	tooltip embark_character_in_port
+		port						Mov		
+		dock						Na					tooltip characters_cannot_go_on_sea
+	}
+
+	over enemy
+	{
+		default Ass Na									tooltip assassination_mission
+
+		settlement					Mission	Na			tooltip assassination_sabotage_mission
+		garrisoned_settlement		Mission Na			tooltip assassination_sabotage_mission
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		admiral						Na					tooltip cannot_perform_mission
+		garrisoned_ship				Na					tooltip cannot_perform_mission
+		sieged_settlement			Na					tooltip cannot_perform_mission_on_sieged_settlement
+		sieged_fort					Na					tooltip cannot_perform_mission_on_sieged_fort
+		garrisoned_dock				Na					tooltip cannot_perform_mission
+		port						Mov		
+		dock						Na					tooltip characters_cannot_go_on_sea
+	}
+	over allied
+	{
+		default Ass Na									tooltip assassination_mission
+
+		settlement					Mission	Na			tooltip assassination_sabotage_mission
+		garrisoned_settlement		Mission Na			tooltip assassination_sabotage_mission
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		admiral						Na					tooltip cannot_perform_mission
+		garrisoned_ship				Na					tooltip cannot_perform_mission
+		sieged_settlement			Na					tooltip cannot_perform_mission_on_sieged_settlement
+		sieged_fort					Na					tooltip cannot_perform_mission_on_sieged_fort
+		dock						Na					tooltip cannot_perform_mission
+		garrisoned_dock				Na					tooltip cannot_perform_mission
+		port						Mov		
+	}
+}
+
+selected family
+{
+	over own
+	{
+		initial_never_seen				Mov Mov
+		land						Mov Mov
+		sea							Na Na				tooltip characters_cannot_go_on_sea
+		dock						Na					tooltip characters_cannot_go_on_sea
+		army						Mer* (Mer) Mer (Mer*)
+		admiral						Em*  (Em) Em  (Em*)
+		diplomat					S  (S) S (S)
+		princess					S  (S) S (S)
+		merchant					S  (S) S (S)
+		priest						S  (S) S (S)
+		heretic						S  (S) S (S)
+		witch						S  (S) S (S)
+		inquisitor					S  (S) S (S)
+		spy							S  (S) S (S)
+		assassin					S  (S) S (S)
+		family						S  (S) S (S)
+		settlement					G* (S) G  (S)
+		fort						G* (S) G  (S)
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_settlement		G*  (S) G  (S)
+		garrisoned_fort				G*  (S) G  (S)
+		garrisoned_ship				Em* (Em) Em (Em*)
+		sieged_settlement			S
+		sieged_fort					S
+		garrisoned_dock				Mer* (Mer) Mer (Mer*)
+		port						Mov
+	}
+	over enemy
+	{
+		default Mission Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+	over allied
+	{
+		default Mission Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		naval_rally_point			Na Na				tooltip characters_cannot_go_on_sea
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		dock						Na
+		garrisoned_dock				Na
+		port						Mov
+	}
+}
+
+selected settlement
+{
+	over own
+	{
+		default						S  (SetRpSel) S  (SetRpSel)		tooltip alt_to_set_rally_point
+
+		land						Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+		sea							Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+		port						Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+		dock						Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+		garrisoned_dock				Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+	}
+	over enemy
+	{
+		default Na					tooltip cannot_set_rally_point_on_enemy
+
+		rally_point					Ig
+	}
+	over allied
+	{
+		default Na					tooltip cannot_set_rally_point_on_enemy
+
+		rally_point					Ig
+	}
+}
+
+selected garrisoned_settlement
+{
+	over own
+	{
+		default						S (SetRpSel) S  (SetRpSel)		tooltip alt_to_set_rally_point
+
+		land						Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+		sea							Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+		port						Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+		dock						Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+		garrisoned_dock				Ig (SetRp)    Ig (SetRp)		tooltip alt_to_set_rally_point
+	}
+	over enemy
+	{
+		default						Na
+
+		rally_point					Ig
+	}
+	over allied
+	{
+		default						Na
+
+		rally_point					Ig
+	}
+}
+
+selected sieged_settlement
+{
+	over own
+	{
+		default						S (SetRpSel) S  (SetRpSel)	tooltip alt_to_set_rally_point
+
+		land						Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+		sea							Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+		port						Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+		dock						Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+		garrisoned_dock				Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+	}
+	over enemy
+	{
+		default						Na
+
+		land						Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+		sea							Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+		rally_point					Ig
+	}
+	over allied
+	{
+		default						Na
+
+		land						Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+		sea							Ig (SetRp)    Ig (SetRp)	tooltip alt_to_set_rally_point
+		rally_point					Ig
+	}
+}
+
+selected trapped_character	;; In a sieged settlement
+{
+	over own
+	{
+		default	S
+		
+		land	Na			tooltip cannot_leave_settlement
+		sea		Na			tooltip cannot_leave_settlement
+	}
+
+	over enemy
+	{
+		default Na			tooltip cannot_leave_settlement
+	}
+
+	over allied
+	{
+		default Na			tooltip cannot_leave_settlement
+	}
+}
+
+selected trapped_army		;; In a sieged settlement
+{
+	over own
+	{
+		default	S
+		
+		land	Na			tooltip cannot_leave_settlement
+		sea		Na			tooltip cannot_leave_settlement
+	}
+
+	over enemy
+	{
+		default Na			tooltip cannot_leave_settlement
+		army	A		 ;; But we'll need to check that it is the sieging army
+	}
+
+	over allied
+	{
+		default Na			tooltip cannot_leave_settlement
+		army	A		 ;; But we'll need to check that it is the sieging army
+	}
+}
+
+
+selected fort
+{
+	over own
+	{
+		default		S S
+
+		land						Ig Ig
+		sea							Ig Ig
+	}
+	over enemy
+	{
+		default Na
+
+		land						Ig Ig
+		sea							Ig Ig
+	}
+	over allied
+	{
+		default Na
+
+		land						Ig Ig
+		sea							Ig Ig
+	}
+}
+
+selected garrisoned_fort
+{
+	over own
+	{
+		default		S S
+
+		land						Ig Ig
+		sea							Ig Ig
+	}
+	over enemy
+	{
+		default						Na
+
+		rally_point					Ig
+		land						Ig Ig
+		sea							Ig Ig
+	}
+	over allied
+	{
+		default						Na
+
+		rally_point					Ig
+		land						Ig Ig
+		sea							Ig Ig
+	}
+}
+
+selected sieged_fort
+{
+	over own
+	{
+		default		S S
+
+		land						Ig Ig
+		sea							Ig Ig
+	}
+	over enemy
+	{
+		default Na
+
+		rally_point					Ig
+		land						Ig Ig
+		sea							Ig Ig
+	}
+	over allied
+	{
+		default Na
+
+		rally_point					Ig
+		land						Ig Ig
+		sea							Ig Ig
+	}
+}
+
+selected rally_point
+{
+	over own
+	{
+		default		SetRp S
+		land		SetRp
+		sea			SetRp
+	}
+	over enemy
+	{
+		default		Na
+
+		rally_point			SetRp
+		naval_rally_point	SetRp
+		land				SetRp
+		sea					SetRp
+	}
+	over allied
+	{
+		default		Na
+
+		rally_point			SetRp
+		naval_rally_point	SetRp
+		land				SetRp
+		sea					SetRp
+	}
+}
+
+selected naval_rally_point
+{
+	over own
+	{
+		default		SetRp S
+		land		SetRp
+		sea			SetRp
+	}
+	over enemy
+	{
+		default		Na
+
+		rally_point			SetRp
+		naval_rally_point	SetRp
+		land				SetRp
+		sea					SetRp
+	}
+	over allied
+	{
+		default		Na
+
+		rally_point			SetRp
+		naval_rally_point	SetRp
+		land				SetRp
+		sea					SetRp
+	}
+}

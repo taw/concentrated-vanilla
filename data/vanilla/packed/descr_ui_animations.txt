@@ -1,0 +1,73 @@
+;; UI animation database file
+;;
+;; This is used primarily by the cursor to set up animation sets
+;;
+;; Syntax is:
+;;
+;; <anim id>	<campaign> <battle>			- campaign and battle keywords specify if animation should be used in campaign map or battles.  Default (no keyword) is for both
+;;  path		<path to texture>
+;;	frames		<columns> <rows>
+;;	dimensions	<width>	<height>
+;;	hotspot		(optional) - x,y offset 
+;;  frame_rate	(optional) - Time period (milliseconds) between frame updates (default is 125)
+
+attack_animation
+	path		data/ui/cursors/anim_attack.tga
+	frames		5	1
+	dimensions	51	51
+	hotspot		8	8
+	frame_rate	50
+
+range_attack_animation		battle
+	path		data/ui/cursors/anim_fire.tga
+	frames		4	1
+	dimensions  47	47
+	hotspot		3	2
+	frame_rate	50
+
+thrown_attack_animation		battle
+	path		data/ui/cursors/anim_thrown.tga
+	frames		5	1
+	dimensions  62	61
+	hotspot		7	7
+	frame_rate	50
+
+siege_attack_animation		battle
+	path		data/ui/cursors/anim_attack_wall.tga
+	frames		6	1
+	dimensions  51	52
+	hotspot		3	8
+	frame_rate	50
+
+move_animation
+	path		data/ui/cursors/anim_moveto.tga
+	frames		4	1
+	dimensions	40	36
+	hotspot		17	9
+	frame_rate	50
+
+select_animation
+	path		data/ui/cursors/anim_attack.tga
+	frames		5	1
+	dimensions	51	51
+	hotspot		8	8
+	frame_rate	50
+
+rclick_animation
+	path		data/ui/cursors/mouse_rbutton.tga
+	frames		5	1
+	dimensions  34  57
+	frame_rate  75
+
+lclick_animation
+	path		data/ui/cursors/mouse_lbutton.tga
+	frames		5	1
+	dimensions  34  57
+	frame_rate  75
+
+timer			campaign
+	path		data/ui/cursors/anim_timer.tga
+	frames		12	1
+	dimensions	64	64
+	hotspot		32	32
+	frame_rate	50

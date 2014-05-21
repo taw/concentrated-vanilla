@@ -1,0 +1,152 @@
+;trade value of zero indicates it cannot be traded
+
+mine				data/models_strat/resource_mine.CAS
+
+
+type				gold
+trade_value			20
+item				data/models_strat/resource_gold.CAS
+icon				data/ui/resources/resource_gold.tga
+has_mine
+
+type				silver
+trade_value			12
+item				data/models_strat/resource_silver.CAS
+icon				data/ui/resources/resource_silver.tga
+has_mine
+
+type				fish
+trade_value			5
+item				data/models_strat/resource_fish.CAS
+icon				data/ui/resources/resource_fish.tga
+
+type				furs
+trade_value			3
+item				data/models_strat/resource_fur.CAS
+icon				data/ui/resources/resource_fur.tga
+
+type				grain
+trade_value			5
+item				data/models_strat/resource_grain.CAS
+icon				data/ui/resources/resource_grain.tga
+
+type				timber
+trade_value			6
+item				data/models_strat/resource_timber.CAS
+icon				data/ui/resources/resource_timber.tga
+
+type				iron
+trade_value			9
+item				data/models_strat/resource_iron.CAS
+icon				data/ui/resources/resource_iron.tga
+has_mine
+
+type				ivory
+trade_value			12
+item				data/models_strat/resource_ivory.CAS
+icon				data/ui/resources/resource_ivory.tga
+
+type				wine
+trade_value			8
+item				data/models_strat/resource_wine.CAS
+icon				data/ui/resources/resource_wine.tga
+
+type				slaves
+trade_value			8
+item				data/models_strat/resource_slave.CAS
+icon				data/ui/resources/resource_slaves.tga
+
+type				chocolate
+trade_value			15
+item				data/models_strat/resource_chocolate.CAS
+icon				data/ui/resources/resource_chocolate.tga
+
+type				marble
+trade_value			10
+item				data/models_strat/resource_marble.CAS
+icon				data/ui/resources/resource_marble.tga
+has_mine
+
+type				textiles
+trade_value			8
+item				data/models_strat/resource_textile.CAS
+icon				data/ui/resources/resource_textiles.tga
+
+type				dyes
+trade_value			8
+item				data/models_strat/resource_dye.CAS
+icon				data/ui/resources/resource_dyes.tga
+
+type				tobacco
+trade_value			15
+item				data/models_strat/resource_tobacoo.CAS
+icon				data/ui/resources/resource_tobacco.tga
+
+type				silk
+trade_value			12
+item				data/models_strat/resource_silk.CAS
+icon				data/ui/resources/resource_silk.tga
+
+type				sugar
+trade_value			10
+item				data/models_strat/resource_sugar.CAS
+icon				data/ui/resources/resource_sugar.tga
+
+type				sulfur
+trade_value			5
+item				data/models_strat/resource_sulphur.CAS
+icon				data/ui/resources/resource_sulfur.tga
+has_mine
+
+type				tin
+trade_value			6
+item				data/models_strat/resource_tin.CAS
+icon				data/ui/resources/resource_tin.tga
+has_mine
+
+type				spices
+trade_value			12
+item				data/models_strat/resource_spices.CAS
+icon				data/ui/resources/resource_spices.tga
+
+type				cotton
+trade_value			8
+item				data/models_strat/resource_cotton.CAS
+icon				data/ui/resources/resource_cotton.tga
+
+type				amber
+trade_value			12
+item				data/models_strat/resource_amber.CAS
+icon				data/ui/resources/resource_amber.tga
+
+type				coal
+trade_value			4
+item				data/models_strat/resource_coal.CAS
+icon				data/ui/resources/resource_coal.tga
+has_mine
+
+type				wool
+trade_value			6
+item				data/models_strat/resource_wool.CAS
+icon				data/ui/resources/resource_wool.tga
+
+type				elephants
+trade_value			0
+item				data/models_strat/resource_elephants.CAS
+icon				data/ui/resources/resource_elephants.tga
+
+type				camels
+trade_value			0
+item				data/models_strat/resource_camels.CAS
+icon				data/ui/resources/resource_camels.tga
+
+type				dogs
+trade_value			0
+item				data/models_strat/resource_dogs.CAS
+icon				data/ui/resources/resource_dogs.tga
+
+; DO NOT ADD THE FOLLOWING RESOURCE TO THE CAMPAIGN MAP. GENERIC RESOURCE USED TO REPRESENT GENERIC TRADE PIP IN TRADE SCROLL
+type				generic
+trade_value			0
+item				data/models_strat/resource_dogs.CAS	; NOT ACTUALLY USED
+icon				data/ui/resources/resource_trade_goods.tga

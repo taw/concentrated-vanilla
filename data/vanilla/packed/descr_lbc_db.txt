@@ -1,0 +1,97 @@
+faction venice
+model roman_peasant			 40
+model roman_female_peasant   60
+
+faction sicily
+model roman_peasant			 40
+model roman_female_peasant   60
+
+faction milan
+model roman_peasant			 40
+model roman_female_peasant   60
+
+faction papal_states
+model roman_peasant			 40
+model roman_female_peasant   60
+
+faction denmark
+model roman_peasant			 40
+model greek_female_peasant   60
+
+faction egypt
+model egyptian_male_peasant			 40
+model egypt_female_peasant   60
+
+faction scotland
+model roman_peasant			 40
+model greek_female_peasant   60
+
+faction aztecs
+model eastern_male_peasant			 40
+model east_female_peasant   60
+
+faction mongols
+model eastern_male_peasant			 40
+model east_female_peasant   60
+
+faction turks
+model eastern_male_peasant			 40
+model east_female_peasant   60
+
+faction france
+model barb_male_peasant			 40
+model barb_female_peasant   60
+
+faction hre
+model barb_male_peasant			 40
+model barb_female_peasant   60
+
+faction saxons
+model barb_male_peasant			 40
+model barb_female_peasant   60
+
+faction england
+model barb_male_peasant			 40
+model barb_female_peasant   60
+
+faction normans
+model barb_male_peasant			 40
+model barb_female_peasant   60
+
+faction portugal
+model eastern_male_peasant			 40
+model east_female_peasant   60
+
+faction poland
+model barb_male_peasant			 40
+model barb_female_peasant   60
+
+faction byzantium
+model roman_peasant			 40
+model greek_female_peasant   60
+
+faction moors
+model eastern_male_peasant			 40
+model east_female_peasant   60
+
+faction russia
+model barb_male_peasant			 40
+model barb_female_peasant   60
+
+faction spain
+model roman_peasant			 40
+model east_female_peasant   60
+
+faction hungary
+model roman_peasant			 40
+model greek_female_peasant   60
+
+faction slave
+model roman_peasant			 40
+model roman_female_peasant   60
+
+faction timurids
+model eastern_male_peasant			 40
+model east_female_peasant   60
+
+

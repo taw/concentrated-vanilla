@@ -1,0 +1,674 @@
+;;;;;;;;;;;;;;;;
+DEFAULT: 3d mindist 5 minPitch .9 maxPitch 1.1 volume -10 probability 1 priority 190 distancepriority -1 fadein 0 fadeout 2 randomdelay 0  effect_level .25
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+BANK: unit_missile_attack
+
+	unit infantry missile, skirmish
+		stage ready
+			event lod 5
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Fire_Ready_Small_01b
+				Archer_Group_Fire_Ready_Small_02b
+				Archer_Group_Fire_Ready_Small_03b
+				
+				end
+			event lod 20 
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Fire_Ready_Medium_01b
+				Archer_Group_Fire_Ready_Medium_02b
+				Archer_Group_Fire_Ready_Medium_03b
+							
+				end
+			event lod 40 
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Fire_Ready_Large_01b
+				Archer_Group_Fire_Ready_Large_02b
+				Archer_Group_Fire_Ready_Large_03b
+			
+				end
+		
+							
+				
+		stage aim
+				event lod 5
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Aim_Small_01
+				Archer_Group_Aim_Small_02
+				Archer_Group_Aim_Small_03
+				
+				end
+			event lod 20 
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Aim_Medium_01
+				Archer_Group_Aim_Medium_02
+				Archer_Group_Aim_Medium_03
+							
+				end
+			event lod 40 
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Aim_Large_01
+				Archer_Group_Aim_Large_02
+				Archer_Group_Aim_Large_03
+			
+				end
+							
+			
+			
+		stage fire
+			event lod 5 volume -10 delay .5
+				folder data/sounds/SFX/Group/Missile/Archers
+				
+				Archer_group_fire_small_01c
+				Archer_group_fire_small_02c
+				Archer_group_fire_small_03c
+				end
+		
+			event lod 20 volume -10
+			folder data/sounds/SFX/Group/Missile/Archers
+				Archer_group_fire_medium_01c
+				Archer_group_fire_medium_02c
+				Archer_group_fire_medium_03c
+
+				end
+				
+			event lod 40
+			folder data/sounds/SFX/Group/Missile/Archers
+				Archer_group_fire_large_01c
+				Archer_group_fire_large_02c
+				Archer_group_fire_large_03c
+				
+				end
+			
+
+;;;;;;;;;;;;;;   CAVALRY  ARCHERS  ;;;;;;;;;;;;;;;;;;;
+									
+unit cavalry missile, skirmish
+		stage ready
+			event lod 5
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Ready_Small_01
+				Archer_Group_Ready_Small_02
+				Archer_Group_Ready_Small_03
+				
+				end
+			event lod 15 
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Ready_Medium_01
+				Archer_Group_Ready_Medium_02
+				Archer_Group_Ready_Medium_03
+							
+				end
+			event lod 25 
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Ready_Large_01
+				Archer_Group_Ready_Large_02
+				Archer_Group_Ready_Large_03
+			
+				end
+		
+							
+				
+		stage aim
+			event lod 5
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Aim_Small_01
+				Archer_Group_Aim_Small_02
+				Archer_Group_Aim_Small_03
+				
+				end
+			event lod 15 
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Aim_Medium_01
+				Archer_Group_Aim_Medium_02
+				Archer_Group_Aim_Medium_03
+							
+				end
+			event lod 25 
+				folder data/sounds/SFX/Group/Missile/Archers
+				Archer_Group_Aim_Large_01
+				Archer_Group_Aim_Large_02
+				Archer_Group_Aim_Large_03
+			
+				end
+							
+			
+			
+		stage fire
+			event lod 5 volume -10
+				folder data/sounds/SFX/Group/Missile/Archers
+				
+				Archer_group_fire_small_01c
+				Archer_group_fire_small_02c
+				Archer_group_fire_small_03c
+				end
+		
+			event lod 15 volume -10
+			folder data/sounds/SFX/Group/Missile/Archers
+				Archer_group_fire_medium_01c
+				Archer_group_fire_medium_02c
+				Archer_group_fire_medium_03c
+
+				end
+				
+			event lod 25 
+			folder data/sounds/SFX/Group/Missile/Archers
+				Archer_group_fire_large_01c
+				Archer_group_fire_large_02c
+				Archer_group_fire_large_03c
+				
+				end			
+				
+				
+
+		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+;;;;;;;;;;   CROSSBOW INFANTRY    ;;;;;;;;;;;;;;;;;;;;;;;;				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;					
+				
+		type Peasant Crossbowmen, Crossbowmen, Aventurier, Pavise Crossbowmen, Pavise Crossbow Militia, Genoese Crossbowmen, Genoese Crossbow Militia, Crossbow Militia, EE Crossbow Militia, Mercenary Pavise Crossbowmen, Mercenary Crossbowmen, ME Peasant Crossbowmen, ME Crossbow Militia, CE Wagon Fort, Gulay Gorod, Hussites, Hospitaller Crossbowmen, Templar Crossbowmen
+	stage ready
+			event lod 5
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+				
+				end
+			event lod 20 
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+							
+				end
+			event lod 40 
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+			
+				end
+		
+							
+				
+		stage aim
+				event lod 5
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+				
+				end
+			event lod 20 
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+							
+				end
+			event lod 40 
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+			
+				end
+							
+			
+			
+		stage fire
+			event lod 5 volume -30
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				crossbow_group_fire_distant_small_01
+				crossbow_group_fire_distant_small_01
+				crossbow_group_fire_distant_small_01
+				end
+		
+			event lod 20 volume -25
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				crossbow_group_fire_distant_medium_01
+				crossbow_group_fire_distant_medium_02
+				crossbow_group_fire_distant_medium_03
+				
+				end
+				
+			event lod 40 volume -25
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				crossbow_group_fire_distant_large_01
+				crossbow_group_fire_distant_large_02
+				crossbow_group_fire_distant_large_03
+				
+				end
+				
+				
+						
+;;;;;;;;;;   CROSSBOW CAVALRY    ;;;;;;;;;;;;;;;;;;;;;;;;				
+				
+				
+		type Mounted Crossbowmen, Polish Shooters, Granadine CB Cav
+			stage ready
+			event lod 5
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+				
+				end
+			event lod 20 
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+							
+				end
+			event lod 40 
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+			
+				end
+		
+							
+				
+		stage aim
+				event lod 5
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+				
+				end
+			event lod 20 
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+							
+				end
+			event lod 40 
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				
+			
+				end
+							
+			
+			
+		stage fire
+			event lod 5 volume -10
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				crossbow_group_fire_distant_small_01
+				crossbow_group_fire_distant_small_01
+				crossbow_group_fire_distant_small_01
+				end
+		
+			event lod 20 volume -10
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				crossbow_group_fire_distant_medium_01
+				crossbow_group_fire_distant_medium_02
+				crossbow_group_fire_distant_medium_03
+				
+				end
+				
+			event lod 40
+				folder data/sounds/SFX/Group/Missile/Crossbows
+				crossbow_group_fire_distant_large_01
+				crossbow_group_fire_distant_large_02
+				crossbow_group_fire_distant_large_03
+				
+				end	
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;							
+;;;;;;;;;;   INFANTRY JAVELIN     ;;;;;;;;;;;;;;;;;;;;;;;;		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+		
+	weapon spear
+			stage ready
+			event lod 5
+			folder data/sounds/SFX
+				
+			end
+			event lod 20
+				folder data/sounds/SFX
+				
+			end
+			event lod 40
+				folder data/sounds/SFX
+				
+			end
+		
+			
+		stage aim
+			event lod 5
+				folder data/sounds/SFX
+				
+			end
+			event lod 20
+				folder data/sounds/SFX
+				
+			end
+			event lod 40
+				folder data/sounds/SFX
+				
+			end
+		
+			
+		stage fire
+				event lod 5 delay .4
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_Small_01
+				Spear_Group_Small_02
+				Spear_Group_Small_03
+				end
+			
+				event lod 20 delay .4
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_medium_01
+				Spear_Group_medium_02
+				Spear_Group_medium_03
+							
+				end
+			
+				event lod 40 delay .4
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_large_01
+				Spear_Group_large_02
+				Spear_Group_large_03
+						
+				end	
+				
+												
+;;;;;;;;;;   HORSE JAVALINS , NAFFATUN   ;;;;;;;;;;;;;;;;;;;;;;;;		
+			
+	type Polish Nobles, Stradiots, Albanian Cavalry, Jinetes, Boyar Sons, Desert Cavalry, Granadine Jinetes
+			stage ready
+			event lod 5
+			folder data/sounds/SFX
+				
+			end
+			event lod 15
+				folder data/sounds/SFX
+				
+			end
+			event lod 25
+				folder data/sounds/SFX
+				
+			end
+		
+			
+		stage aim
+			event lod 5
+				folder data/sounds/SFX
+				
+			end
+			event lod 15
+				folder data/sounds/SFX
+				
+			end
+			event lod 25
+				folder data/sounds/SFX
+				
+			end
+		
+			
+		stage fire
+				event lod 5 delay 1
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_Small_01
+				Spear_Group_Small_02
+				Spear_Group_Small_03
+				end
+			
+				event lod 20 delay .4
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_medium_01
+				Spear_Group_medium_02
+				Spear_Group_medium_03
+							
+				end
+			
+				event lod 40 delay .4
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_large_01
+				Spear_Group_large_02
+				Spear_Group_large_03
+						
+				end				
+		
+			
+;;;;;;;;;;    NAFFATUN   ;;;;;;;;;;;;;;;;;;;;;;;;		
+			
+	type  Naffatun	
+			stage ready
+			event lod 5 
+			folder data/sounds/SFX
+				
+			end
+			event lod 15
+				folder data/sounds/SFX
+				
+			end
+			event lod 25
+				folder data/sounds/SFX
+				
+			end
+		
+			
+		stage aim
+			event lod 5
+				folder data/sounds/SFX
+				
+			end
+			event lod 15
+				folder data/sounds/SFX
+				
+			end
+			event lod 25
+				folder data/sounds/SFX
+				
+			end
+		
+			
+		stage fire
+				event lod 5 minPitch 1 maxPitch 1 delay 1.2 
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_Small_01
+				Spear_Group_Small_02
+				Spear_Group_Small_03
+				end
+			
+				event lod 20 delay .4
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_medium_01
+				Spear_Group_medium_02
+				Spear_Group_medium_03
+							
+				end
+			
+				event lod 40 delay .4
+				folder data/sounds/SFX/Group/Missile/Spears
+				Spear_Group_large_01
+				Spear_Group_large_02
+				Spear_Group_large_03
+						
+				end	
+				
+				
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;				
+;;;;;;;;;;;;;;   INFANTRY GUNNERS  ;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+				
+		type Cossack Musketeers, Arquebusiers, Musketeers, Hand Gunners, Portuguese Arquebusiers, Mercenary Arquebusiers, Janissary Musketeers, ME Hand Gunners, Sudanese Gunners, Mamluk Handgunners, Hospitaller Gunner, Templar Gunners, Byzantine Gunners
+		
+				
+			stage ready
+			event lod 5
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+				
+				end
+			event lod 15 
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+							
+				end
+			event lod 25 
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+			
+				end
+		
+							
+				
+		stage aim
+			event lod 5
+				folder data/sounds/SFX/Group/Missile/Muskets
+			
+				
+				end
+			event lod 15 
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+				end
+			event lod 25 
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+			
+				end
+							
+			
+			
+		stage fire 
+			event lod 5 volume 0 mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+				musket_group_fire_distant_small_01
+				musket_group_fire_distant_small_02
+				musket_group_fire_distant_small_03
+				end
+		
+			event lod 15 volume 0 mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+				musket_group_fire_distant_medium_01
+				musket_group_fire_distant_medium_02
+				musket_group_fire_distant_medium_03
+				end
+				
+			event lod 25  mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+				musket_group_fire_distant_large_01
+				musket_group_fire_distant_large_02
+				musket_group_fire_distant_large_03
+								
+				end	
+				
+		
+				
+
+				
+;;;;;;;;;;;;;;   CAVALRY GUNNERS  ;;;;;;;;;;;;;;;;;;;;;
+	
+				
+		type Elephants, Elephants Mercs, Reiters, Camel Gunners		
+				
+			stage ready
+			event lod 5 mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+				
+				end
+			event lod 15 mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+							
+				end
+			event lod 25  mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+			
+				end
+		
+							
+				
+		stage aim
+			event lod 5 mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+			
+				
+				end
+			event lod 15  mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+				end
+			event lod 25  mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+			
+				end
+							
+			
+			
+		stage fire
+			event lod 5 volume 0 mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+				musket_group_fire_distant_small_01
+				musket_group_fire_distant_small_02
+				musket_group_fire_distant_small_03
+				end
+		
+			event lod 15 volume 0 mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+				musket_group_fire_distant_medium_01
+				musket_group_fire_distant_medium_02
+				musket_group_fire_distant_medium_03
+				end
+				
+			event lod 25  mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+				musket_group_fire_distant_large_01
+				musket_group_fire_distant_large_02
+				musket_group_fire_distant_large_03
+								
+				end
+			
+;;; GREEK FIRETHROWERS  ;;;;;;;;;;;	
+	
+
+type Greek Firethrower
+				
+			stage ready
+			event lod 5 mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+				
+				end
+			event lod 15 mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+							
+				end
+			event lod 25  mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+			
+				end
+		
+							
+				
+		stage aim
+			event lod 5 mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+			
+				
+				end
+			event lod 15  mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+				end
+			event lod 25  mindist 6
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+			
+				end
+							
+			
+			
+		stage fire
+			event lod 5 volume 0 mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+				end
+		
+			event lod 15 volume 0 mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+				
+				end
+				
+			event lod 25  mindist 20 effect_level 0
+				folder data/sounds/SFX/Group/Missile/Muskets
+												
+				end			
+							

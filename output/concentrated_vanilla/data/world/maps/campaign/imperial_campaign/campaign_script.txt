@@ -1,0 +1,3545 @@
+;
+; Campaign script
+;
+script
+        ; ---------------------
+        ; counters
+		
+        declare_counter Opened_Faction_Overview_Scroll
+		declare_counter Opened_Settlement_Scroll
+		declare_counter mongols_sarkel
+		declare_counter mongols_yerevan
+		declare_counter mongols_baghdad
+		declare_counter timurids_sarkel
+		declare_counter timurids_yerevan
+		declare_counter timurids_baghdad
+		
+        
+        ; ---------------------
+        ; start up
+
+        freeze_faction_ai aztecs
+
+        ;----------------------
+        ; monitors
+
+        ;-- Mongols invasions --
+	monitor_event EventCounter EventCounterType mongols_invasion_warn
+		and EventCounter > 0
+		; ADD SCOUTING INVASION
+		add_events
+			event	counter	mongols_invasion
+        	date	4 8
+       end_add_events
+        if I_EventCounter mongols_invasion_warn == 2
+			terminate_monitor
+		end_if
+	end_monitor
+
+	monitor_event EventCounter EventCounterType mongols_invasion
+		and EventCounter > 0
+		if I_EventCounter mongols_invasion == 1
+			add_events
+		;;; SCOUTING INVASION
+				event	emergent_faction	mongols
+				date	0
+; 				region 	Tbilisi_Province
+				region 	Yerevan_Province
+				region	Bulgar_Province
+				region	Sarkel_Province
+				region 	Baghdad_Province
+				movie	event/mongols_invade.bik
+				;ADD MONGOL INVASION 1
+				event	counter	mongols_invasion
+	        	date	2
+			end_add_events
+		end_if
+        if I_EventCounter mongols_invasion == 2
+ 
+			;Sarkel
+			if I_CharacterTypeNearTile mongols named_character, 30 258, 134
+				set_counter mongols_sarkel 1
+			end_if
+			;Tbilisi / Yerevan
+			if I_CharacterTypeNearTile mongols named_character, 20 278, 101
+				set_counter mongols_yerevan 1
+			end_if
+			;Baghdad
+			if I_CharacterTypeNearTile mongols named_character, 30 291, 70
+				set_counter mongols_baghdad 1
+			end_if
+
+	;;; MONGOL INVASION 1 SCRIPT
+		spawn_army 
+			faction mongols
+			character	Jebe, named character, age 30, x 292, y 166, family	;command 8, dread 9, loyalty 7, piety 1
+			traits EasternWarlord 3 , GoodCommander 2 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3	;command 8, dread 9, loyalty 7, piety 1
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+			faction mongols
+			character	Aradai, named character, age 22, x 290, y 168, family	;command 6, dread 7, loyalty 7, piety 1
+			traits EasternWarlord 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3	;command 6, dread 7, loyalty 7, piety 1
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+			faction mongols
+			character	Bayan, named character, age 21, x 292, y 162, family	;command 6, dread 7, loyalty 7, piety 1
+			traits EasternWarlord 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1, Loyal 2, ContentGeneral 3	;command 6, dread 7, loyalty 7, piety 1
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+		end
+		
+		;;; move them to location of first invasion
+		if I_CompareCounter mongols_sarkel = 1
+			reposition_character Jebe, 280, 136
+			reposition_character Aradai, 277, 133
+			reposition_character Bayan, 278, 131
+		end_if
+		if I_CompareCounter mongols_yerevan = 1
+			reposition_character Jebe, 291, 109
+			reposition_character Aradai, 289, 108
+			reposition_character Bayan, 291, 107
+		end_if
+		if I_CompareCounter mongols_baghdad = 1
+			reposition_character Jebe, 292, 58
+			reposition_character Aradai, 290, 60
+			reposition_character Bayan, 293, 63
+		end_if
+	
+			;ADD MONGOL INVASION 2
+			add_events
+				event	counter	mongols_invasion
+	        	date	20 40
+            end_add_events
+		end_if
+		
+        if I_EventCounter mongols_invasion == 3
+	;;; MONGOL INVASION 2 SCRIPT
+		spawn_army 
+			faction mongols
+			character	Batu, named character, age 26, x 292, y 166, family	;command 8, dread 9, loyalty 7, piety 1
+			traits EasternWarlord 3 , GoodCommander 2 , Genocide 2 , BattleDread 2 , StrategyDread 1 , PublicFaith 1, Loyal 2, ContentGeneral 3	;command 8, dread 9, loyalty 7, piety 1
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+			faction mongols
+			character	Subutai, named character, age 25, x 290, y 168, family	;command 9, dread 9, loyalty 7, piety 1
+			traits EasternWarlord 2 , GoodCommander 3 , Anger 3 , BattleDread 3 , StrategyDread 3 , PublicFaith 1, Loyal 2, ContentGeneral 3	;command 9, dread 9, loyalty 7, piety 1
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+			faction mongols
+			character	Berkei, named character, age 24, x 292, y 162, family	;command 7, dread 7, loyalty 7, piety 6
+			traits EasternWarlord 3 , Anger 2 , BattleDread 2 , StrategyDread 2 , PublicFaith 4, TouchedByTheGods 1 , Loyal 2, ContentGeneral 3	;command 7, dread 7, loyalty 7, piety 6
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		AS Rocket Launcher			exp 6 armour 0 weapon_lvl 0
+			unit		AS Rocket Launcher			exp 6 armour 0 weapon_lvl 0
+			unit		AS Trebuchet				exp 6 armour 0 weapon_lvl 0
+			unit		AS Trebuchet				exp 6 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+			faction mongols
+			character	Orda, named character, age 23, x 288, y 168, family	;command 7, dread 7, loyalty 7, piety 1
+			traits EasternWarlord 3 , StrategicSkill 1 , BattleDread 2 , StrategyDread 3 , PublicFaith 1, Loyal 2, ContentGeneral 3	;command 7, dread 7, loyalty 7, piety 1
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		AS Rocket Launcher			exp 6 armour 0 weapon_lvl 0
+			unit		AS Rocket Launcher			exp 6 armour 0 weapon_lvl 0
+			unit		AS Trebuchet				exp 6 armour 0 weapon_lvl 0
+			unit		AS Trebuchet				exp 6 armour 0 weapon_lvl 0
+		end
+		
+		if I_CompareCounter mongols_sarkel = 1
+			reposition_character Batu, 280, 136
+			reposition_character Subutai, 277, 133
+			reposition_character Berkei, 278, 131
+			reposition_character Orda, 277, 136
+		end_if
+		if I_CompareCounter mongols_yerevan = 1
+			reposition_character Batu, 291, 109
+			reposition_character Subutai, 289, 108
+			reposition_character Berkei, 291, 107
+			reposition_character Orda, 288, 106
+		end_if
+		if I_CompareCounter mongols_baghdad = 1
+			reposition_character Batu, 292, 58
+			reposition_character Subutai, 290, 60
+			reposition_character Berkei, 293, 63
+			reposition_character Orda, 290, 65
+		end_if
+
+			;ADD MONGOL INVASION 3
+			add_events
+				event	counter	mongols_invasion
+	        	date	30 50
+            end_add_events
+		end_if
+
+        if I_EventCounter mongols_invasion == 4
+	;;; MONGOL INVASION 3 SCRIPT
+		spawn_army 
+			faction mongols
+			character	Hulegu, named character, age 25, x 292, y 166, family	;command 8, dread 9, loyalty 7, piety 0
+			traits EasternWarlord 3 , Genocide 2 , NaturalMilitarySkill 2 , BattleDread 3 , StrategyDread 2 , Loyal 2, ContentGeneral 3	;command 8, dread 9, loyalty 7, piety 0
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+			faction mongols
+			character	Kitbuqa, named character, age 24, x 290, y 168, family	;command 8, dread 9, loyalty 7, piety 0
+			traits EasternWarlord 3 , Anger 3 , BattleDread 3 , StrategyDread 2 , Loyal 2, ContentGeneral 3	;command 8, dread 9, loyalty 7, piety 0
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+			faction mongols
+			character	Abaqha, named character, age 23, x 292, y 162, family	;command 7, dread 7, loyalty 7, piety 0
+			traits EasternWarlord 2 , Bloodthirsty 2 , GoodCommander 2 , BattleDread 2 , StrategyDread 2 , PublicFaith 1, Loyal 2, ContentGeneral 3	;command 7, dread 7, loyalty 7, piety 1
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+			unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+			unit		AS Trebuchet			exp 6 armour 0 weapon_lvl 0
+			unit		AS Trebuchet			exp 6 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+			faction mongols
+			character	Kuo_Kan, named character, age 22, x 288, y 168, family	;command 7, dread 7, loyalty 7, piety 0
+			traits EasternWarlord 2 , Bloodthirsty 2 , GoodCommander 2 , BattleDread 2 , StrategyDread 2 , PublicFaith 1, Loyal 2, ContentGeneral 3	;command 7, dread 7, loyalty 7, piety 1
+			unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Infantry			exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Foot Archers		exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Light Lancers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		Mongol Horse Archers	exp 6 armour 0 weapon_lvl 0
+			unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+			unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+			unit		AS Trebuchet			exp 6 armour 0 weapon_lvl 0
+			unit		AS Trebuchet			exp 6 armour 0 weapon_lvl 0
+		end
+		
+		if I_CompareCounter mongols_sarkel = 1
+			reposition_character Hulegu, 280, 136
+			reposition_character Kitbuqa, 277, 133
+			reposition_character Abaqha, 278, 131
+			reposition_character Kuo_Kan, 277, 136
+		end_if
+		if I_CompareCounter mongols_yerevan = 1
+			reposition_character Hulegu, 291, 109
+			reposition_character Kitbuqa, 289, 108
+			reposition_character Abaqha, 291, 107
+			reposition_character Kuo_Kan, 288, 106
+		end_if
+		if I_CompareCounter mongols_baghdad = 1
+			reposition_character Hulegu, 292, 58
+			reposition_character Kitbuqa, 290, 60
+			reposition_character Abaqha, 293, 63
+			reposition_character Kuo_Kan, 290, 65
+		end_if
+
+		   terminate_monitor
+		end_if
+	end_monitor
+		
+        ;-- Timurids invasion --
+	monitor_event EventCounter EventCounterType timurids_invasion_warn
+		and EventCounter > 0
+		; ADD SCOUTING INVASION
+		add_events
+			event	counter	timurids_invasion
+			date	2 4
+		end_add_events
+		if I_EventCounter timurids_invasion_warn == 2
+			terminate_monitor
+		end_if
+	end_monitor
+
+	monitor_event EventCounter EventCounterType timurids_invasion
+		and EventCounter > 0
+		if I_EventCounter timurids_invasion == 1
+		;;; SCOUTING INVASION
+			add_events
+				event	emergent_faction	timurids
+				date	0
+; 				region 	Tbilisi_Province
+				region 	Yerevan_Province
+				region	Bulgar_Province
+				region	Sarkel_Province
+				region 	Baghdad_Province
+				movie	event/timurids_invade.bik
+				; ADD TIMURID INVASION 1
+				event	counter	timurids_invasion
+				date	2
+			end_add_events
+		end_if
+		if I_EventCounter timurids_invasion == 2
+		
+			;Sarkel
+			if I_CharacterTypeNearTile timurids named_character, 30 258, 134
+				set_counter timurids_sarkel 1
+			end_if
+			;Tbilisi / Yerevan
+			if I_CharacterTypeNearTile timurids named_character, 20 278, 101
+				set_counter timurids_yerevan 1
+			end_if
+			;Baghdad
+			if I_CharacterTypeNearTile timurids named_character, 30 291, 70
+				set_counter timurids_baghdad 1
+			end_if
+
+		;;; TIMURID INVASION 1 SCRIPT
+			spawn_army 
+				faction timurids
+				character	Timur, named character, age 30, x 292, y 166, family	;Command 9 Dread 9 Loyalty 6 Piety 4
+				traits EasternWarlord 3 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 3 , StrategyDread 2 , PublicFaith 4 , Loyal 1 , ContentGeneral 3	;command 9, dread 9, loyalty 6, piety 4
+				unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		Elephants				exp 6 armour 0 weapon_lvl 0
+				unit		Elephants				exp 6 armour 0 weapon_lvl 0
+				unit		Elephant Artillery		exp 6 armour 0 weapon_lvl 0
+				unit		Elephant Artillery		exp 6 armour 0 weapon_lvl 0
+			end
+			spawn_army 
+				faction timurids
+				character	Husayn, named character, age 24, x 290, y 168, family	;Command 7 Dread 7 Loyalty 6 Piety 4
+	 			traits EasternWarlord 2 , GoodCommander 1 , Anger 3 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3	;command 7, dread 7, loyalty 6, piety 4
+				unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		Elephants				exp 6 armour 0 weapon_lvl 0
+				unit		Elephants				exp 6 armour 0 weapon_lvl 0
+				unit		Elephant Artillery		exp 6 armour 0 weapon_lvl 0
+				unit		Elephant Artillery		exp 6 armour 0 weapon_lvl 0
+			end
+			spawn_army 
+				faction timurids
+				character	Umar_Shaykh, named character, age 23, x 292, y 162, family	;Command 6 Dread 7 Loyalty 6 Piety 4
+	 			traits EasternWarlord 2 , Anger 3 , BattleDread 3 , StrategyDread 2 , PublicFaith 4, Loyal 1, ContentGeneral 3	;command 6, dread 7, loyalty 6, piety 4
+				unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Naffatun				exp 6 armour 0 weapon_lvl 0
+				unit		AS Grand Bombard		exp 6 armour 0 weapon_lvl 0
+				unit		AS Grand Bombard		exp 6 armour 0 weapon_lvl 0
+			end
+			spawn_army 
+				faction timurids
+				character	Miran, named character, age 22, x 288, y 168, family	;Command 6 Dread 7 Loyalty 6 Piety 4
+	 			traits EasternWarlord 2 , Bloodthirsty 2 , GoodCommander 1 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3	;command 6, dread 7, loyalty 6, piety 4
+				unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Naffatun				exp 6 armour 0 weapon_lvl 0
+				unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+				unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+			end
+		
+			;;; move them to location of first invasion
+			if I_CompareCounter timurids_sarkel = 1
+				reposition_character Timur, 280, 136
+				reposition_character Husayn, 277, 133
+				reposition_character Umar_Shaykh, 278, 131
+				reposition_character Miran, 277, 136
+			end_if
+			if I_CompareCounter timurids_yerevan = 1
+				reposition_character Timur, 291, 109
+				reposition_character Husayn, 289, 108
+				reposition_character Umar_Shaykh, 291, 107
+				reposition_character Miran, 288, 106
+			end_if
+			if I_CompareCounter timurids_baghdad = 1
+				reposition_character Timur, 292, 58
+				reposition_character Husayn, 290, 60
+				reposition_character Umar_Shaykh, 293, 63
+				reposition_character Miran, 290, 65
+			end_if
+
+			; ADD TIMURID INVASION 2
+			add_events
+				event	counter	timurids_invasion
+ 				date	12 24
+			end_add_events
+		end_if
+		if I_EventCounter timurids_invasion == 3
+		;;; TIMURID INVASION 2 SCRIPT
+			spawn_army 
+				faction timurids
+				character	Shahrukh, named character, age 22, x 292, y 166, family	;Command 7 Dread 7 Loyalty 6 Piety 4
+	 			traits EasternWarlord 2 , GoodCommander 1 , Anger 3 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3	;command 7, dread 7, loyalty 6, piety 4
+				unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		Elephants				exp 6 armour 0 weapon_lvl 0
+				unit		Elephants				exp 6 armour 0 weapon_lvl 0
+				unit		Elephant Artillery		exp 6 armour 0 weapon_lvl 0
+				unit		Elephant Artillery		exp 6 armour 0 weapon_lvl 0
+			end
+			spawn_army 
+				faction timurids
+				character	Pir_Muhammed, named character, age 21, x 290, y 168, family	;Command 7 Dread 7 Loyalty 6 Piety 4
+	 			traits EasternWarlord 2 , GoodCommander 1 , Anger 3 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3	;command 7, dread 7, loyalty 6, piety 4
+				unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		Elephants				exp 6 armour 0 weapon_lvl 0
+				unit		Elephants				exp 6 armour 0 weapon_lvl 0
+				unit		Elephant Artillery		exp 6 armour 0 weapon_lvl 0
+				unit		Elephant Artillery		exp 6 armour 0 weapon_lvl 0
+			end
+			spawn_army 
+				faction timurids
+				character	Nayaga, named character, age 20, x 292, y 162, family	;Command 6 Dread 7 Loyalty 6 Piety 4
+	 			traits EasternWarlord 2 , Bloodthirsty 2 , GoodCommander 1 , BattleDread 3 , StrategyDread 2 , PublicFaith 4, Loyal 1, ContentGeneral 3	;command 6, dread 7, loyalty 6, piety 4
+				unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Naffatun				exp 6 armour 0 weapon_lvl 0
+				unit		AS Grand Bombard		exp 6 armour 0 weapon_lvl 0
+				unit		AS Grand Bombard		exp 6 armour 0 weapon_lvl 0
+			end
+			spawn_army 
+				faction timurids
+				character	Dayir, named character, age 19, x 288, y 168, family	;Command 6 Dread 7 Loyalty 6 Piety 4
+	 			traits EasternWarlord 2 , Bloodthirsty 2 , GoodCommander 1 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3	;command 6, dread 7, loyalty 6, piety 4
+				unit		Mongol Bodyguard		exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Lancers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Mongol Heavy Archers	exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		Sabadar Militia			exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		ME Halberd Militia	exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 6 armour 0 weapon_lvl 0
+				unit		Naffatun				exp 6 armour 0 weapon_lvl 0
+				unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+				unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+			end
+		
+			;;; move them to location of first invasion
+			if I_CompareCounter timurids_sarkel = 1
+				reposition_character Shahrukh, 280, 136
+				reposition_character Pir_Muhammed, 277, 133
+				reposition_character Nayaga, 278, 131
+				reposition_character Dayir, 277, 136
+			end_if
+			if I_CompareCounter timurids_yerevan = 1
+				reposition_character Shahrukh, 291, 109
+				reposition_character Pir_Muhammed, 289, 108
+				reposition_character Nayaga, 291, 107
+				reposition_character Dayir, 288, 106
+			end_if
+			if I_CompareCounter timurids_baghdad = 1
+				reposition_character Shahrukh, 292, 58
+				reposition_character Pir_Muhammed, 290, 60
+				reposition_character Nayaga, 293, 63
+				reposition_character Dayir, 290, 65
+			end_if
+	
+			terminate_monitor
+		end_if
+	end_monitor
+
+
+        ;-- World is round --
+	monitor_event EventCounter EventCounterType world_is_round
+	              and EventCounter > 0
+	              
+                ; unhide America
+                restrict_strat_radar false
+             	terminate_monitor
+	end_monitor
+
+
+        ;-- America discovered --
+        monitor_event TileSeen not FactionType aztecs
+                               and not FactionType slave
+                               and IsPositionInRect 0 48 40 141
+                historic_event america_discovered event/america_discovered.bik
+                terminate_monitor
+        end_monitor
+
+
+        ;-- Aztecs contacted --
+        monitor_event ObjSeen  TargetFactionType aztecs
+                               and not FactionType slave
+                unfreeze_faction_ai aztecs
+                add_events
+					event	counter	disable_no_brigands
+        			date	0
+					event	counter	disable_no_pirates
+        			date	0
+       			end_add_events
+                historic_event aztecs_contacted event/aztecs_contacted.bik
+                terminate_monitor
+        end_monitor
+
+        ;-- player built first huge cathedral --
+	monitor_event EventCounter EventCounterType building_completed_player_huge_cathedral
+	              and EventCounter = 1
+                historic_event player_first_huge_cathedral event/huge_cathedral_built.bik
+              	terminate_monitor
+	end_monitor
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;	STARTING SCRIPT FOR NEW CAMPAIGN	;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	;faction summary scroll opened or closed
+	monitor_event ScrollOpened ScrollOpened faction_summary_scroll
+		set_counter Opened_Faction_Overview_Scroll 1
+	end_monitor
+
+	monitor_event ScrollClosed ScrollClosed faction_summary_scroll
+		set_counter Opened_Faction_Overview_Scroll 0
+	end_monitor
+	
+	;settlement scroll opened or closed
+	monitor_event ScrollOpened ScrollOpened own_settlement_info_scroll
+		set_counter Opened_Settlement_Scroll 1
+	end_monitor
+
+	monitor_event ScrollClosed ScrollClosed own_settlement_info_scroll
+		set_counter Opened_Settlement_Scroll 0
+	end_monitor
+
+	; open the missions scroll
+; 	monitor_conditions I_TurnNumber = 0
+
+; ; 		select_ui_element 		mission_select
+; 		select_ui_element 		faction_button
+; 		simulate_mouse_click 	lclick_up
+; 	
+; 		terminate_monitor
+; 	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- England --
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	;their first campaign
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction england
+		and I_CampaignNumTimePlay = 1
+		and I_AdvisorVerbosityLevel > 0
+				
+		disable_save
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+				
+		campaign_wait 0.1
+		
+		snap_strat_camera 109, 155			;London 109, 147
+		zoom_strat_camera 0.1
+		
+		advance_advice_thread England_Initial_1_Advice_Thread		;English Campaign
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2	
+			settlement_flash_start London
+		end_if
+	
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+		settlement_flash_stop London
+		
+		advance_advice_thread Campaign_Initial_2_Advice_Thread		;Campaign Goals
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		select_ui_element 		faction_button
+		simulate_mouse_click 	lclick_up
+				
+		advance_advice_thread Campaign_Initial_3_Advice_Thread		;Achieving Victory
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		if I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		
+			advance_advice_thread Campaign_Initial_4_Advice_Thread		;Expansion and Conquest
+			
+			while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+			end_while
+			
+		end_if
+
+		advance_advice_thread Campaign_Initial_Goals_Button_Advice_Thread
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_start faction_button
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_stop
+
+		campaign_wait 1
+
+		;To expand the kingdom of England, you should first look to conquer the British Isles. 
+		;You must also contend with the Scots to the north and the French to the south. 
+		;The nearby rebel town of York will make an ideal first target.
+		advance_advice_thread England_Initial_5_Advice_Thread		;Where to Start
+
+		campaign_wait 1
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			zoom_strat_camera 1.0
+			move_strat_camera 95, 150
+			settlement_flash_start Edinburgh
+			settlement_flash_start York
+			settlement_flash_start Caernarvon
+			settlement_flash_start Dublin
+			settlement_flash_start Inverness
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+			
+		settlement_flash_stop York
+		settlement_flash_stop Caernarvon
+		settlement_flash_stop Dublin
+		settlement_flash_stop Inverness
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 95, 160
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Paris
+			move_strat_camera 98, 135
+			campaign_wait 1
+		end_if
+
+		settlement_flash_stop Edinburgh
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to York
+			settlement_flash_start York
+			move_strat_camera 106, 165		;York 106, 164
+			zoom_strat_camera 0.5
+		end_if
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		settlement_flash_stop Paris
+		campaign_wait 1
+
+		settlement_flash_stop York
+		
+		advance_advice_thread Campaign_Initial_6_Advice_Thread		;Where to Start
+
+		move_strat_camera 100, 142			;London 109, 147
+		zoom_strat_camera 0.5
+
+		settlement_flash_start Caen
+		settlement_flash_start London
+		settlement_flash_start Nottingham
+				
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		enable_save
+		
+		while I_CompareCounter Opened_Settlement_Scroll = 0
+		end_while
+
+		settlement_flash_stop Caen
+		settlement_flash_stop London
+		settlement_flash_stop Nottingham
+						
+		terminate_monitor
+	end_monitor
+
+	;not their first campaign
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction england
+		and I_CampaignNumTimePlay > 1
+		and I_CampaignNumTimePlay < 9999
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay england
+		
+		suspend_unscripted_advice true
+		hide_ui
+		disable_movie_view						;disables the black restriction bars
+		inhibit_camera_input true
+		disable_save
+		
+		campaign_wait 0.1
+		snap_strat_camera 100, 143			;London 109, 147
+
+		while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		end_while
+
+		;greeting
+		advance_advice_thread Campaign_Greeting_England_Advice_Thread
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		;To expand the kingdom of England, you should first look to conquer the British Isles. 
+		;You must also contend with the Scots to the north and the French to the south. 
+		;The nearby rebel town of York will make an ideal first target.
+		advance_advice_thread England_Initial_5_Advice_Thread		;Where to Start
+
+		campaign_wait 1
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			zoom_strat_camera 1.0
+			move_strat_camera 95, 150
+			settlement_flash_start Edinburgh
+			settlement_flash_start York
+			settlement_flash_start Caernarvon
+			settlement_flash_start Dublin
+			settlement_flash_start Inverness
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+			
+		settlement_flash_stop York
+		settlement_flash_stop Caernarvon
+		settlement_flash_stop Dublin
+		settlement_flash_stop Inverness
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 95, 160
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Paris
+			move_strat_camera 98, 135
+			campaign_wait 1
+		end_if
+
+		settlement_flash_stop Edinburgh
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to York
+			settlement_flash_start York
+			move_strat_camera 106, 165		;York 106, 164
+			zoom_strat_camera 0.5
+		end_if
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		settlement_flash_stop Paris
+		campaign_wait 1
+
+		settlement_flash_stop York
+		move_strat_camera 100, 142			;London 109, 147
+		zoom_strat_camera 0.5
+		campaign_wait 1
+		
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- France --
+	;;;;;;;;;;;;;;;;;;;;;;;;
+
+	;first campaign
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction france
+		and I_CampaignNumTimePlay = 1
+		and I_AdvisorVerbosityLevel > 0
+		
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		disable_save
+
+		campaign_wait 0.1
+		
+		snap_strat_camera 113, 139			;Paris	113, 131
+		zoom_strat_camera 0.1
+		
+		advance_advice_thread France_Initial_1_Advice_Thread		;French Campaign
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 1
+			settlement_flash_start Paris
+		end_if
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+		
+		settlement_flash_stop Paris
+				
+		advance_advice_thread Campaign_Initial_2_Advice_Thread		;Campaign Goals
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+		
+		select_ui_element 		faction_button
+		simulate_mouse_click 	lclick_up
+
+		advance_advice_thread Campaign_Initial_3_Advice_Thread		;Achieving Victory
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		if I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		
+			advance_advice_thread Campaign_Initial_4_Advice_Thread		;Expansion and Conquest
+			
+			while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+			end_while
+			
+		end_if
+
+		advance_advice_thread Campaign_Initial_Goals_Button_Advice_Thread
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_start faction_button
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_stop
+
+		campaign_wait 1
+		
+		;To strengthen the kingdom of France, you should first unite France by capturing the nearby rebel settlements. 
+		;You will then need to contend with England to the north, the Holy Roman Empire to the east and Spain to the south. 
+		;The nearby Rebel town of Dijon will make an ideal first target.		
+		advance_advice_thread France_Initial_5_Advice_Thread		;Where to Start
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;show rebel settlements briefly
+			settlement_flash_start Bruges
+			settlement_flash_start Antwerp
+			settlement_flash_start Metz
+			settlement_flash_start Rennes
+			settlement_flash_start Bordeaux
+			settlement_flash_start Dijon
+			zoom_strat_camera 1.0
+			move_strat_camera 110, 120
+			campaign_wait 3
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		settlement_flash_stop Bruges
+		settlement_flash_stop Antwerp
+		settlement_flash_stop Metz
+		settlement_flash_stop Rennes
+		settlement_flash_stop Bordeaux
+		settlement_flash_stop Dijon
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;England
+			settlement_flash_start London
+			move_strat_camera 103, 131
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;HRE
+			settlement_flash_start Frankfurt
+			move_strat_camera 120, 132
+			campaign_wait 1
+		end_if
+		
+		settlement_flash_stop London
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;Spain
+			settlement_flash_start Pamplona
+			move_strat_camera 102, 106
+			campaign_wait 1
+		end_if
+		
+		settlement_flash_stop Frankfurt
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to Dijon
+			settlement_flash_start Dijon
+			move_strat_camera 121, 123
+			zoom_strat_camera 0.5
+		end_if
+
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		settlement_flash_stop Pamplona
+		campaign_wait 1
+
+		settlement_flash_stop Dijon
+		
+		advance_advice_thread Campaign_Initial_6_Advice_Thread		;Where to Start
+		
+		move_strat_camera 112, 127			;Paris	113, 131
+		zoom_strat_camera 0.5
+
+		settlement_flash_start Angers
+		settlement_flash_start Paris
+		settlement_flash_start Rheims
+				
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		enable_save
+		
+		while I_CompareCounter Opened_Settlement_Scroll = 0
+		end_while
+
+		settlement_flash_stop Angers
+		settlement_flash_stop Paris
+		settlement_flash_stop Rheims
+		
+		terminate_monitor
+	end_monitor
+	
+	;not first campaign
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction france
+		and I_CampaignNumTimePlay > 1
+		and I_CampaignNumTimePlay < 9999
+		and I_AdvisorVerbosityLevel > 0
+		and I_FirstTimePlay france
+		
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+
+		campaign_wait 0.1
+	
+		while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		end_while
+		
+		;greeting
+		advance_advice_thread Campaign_Greeting_France_Advice_Thread
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		campaign_wait 1
+		
+		;To strengthen the kingdom of France, you should first unite France by capturing the nearby rebel settlements. 
+		;You will then need to contend with England to the north, the Holy Roman Empire to the east and Spain to the south. 
+		;The nearby Rebel town of Dijon will make an ideal first target.		
+		advance_advice_thread France_Initial_5_Advice_Thread		;Where to Start
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;show rebel settlements briefly
+			settlement_flash_start Bruges
+			settlement_flash_start Antwerp
+			settlement_flash_start Metz
+			settlement_flash_start Rennes
+			settlement_flash_start Bordeaux
+			settlement_flash_start Dijon
+; 			zoom_strat_camera 1.0
+; 			move_strat_camera 110, 125
+			campaign_wait 3
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		settlement_flash_stop Bruges
+		settlement_flash_stop Antwerp
+		settlement_flash_stop Metz
+		settlement_flash_stop Rennes
+		settlement_flash_stop Bordeaux
+		settlement_flash_stop Dijon
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;England
+			settlement_flash_start London
+			move_strat_camera 103, 131
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;HRE
+			settlement_flash_start Frankfurt
+			move_strat_camera 120, 132
+			campaign_wait 1
+		end_if
+		
+		settlement_flash_stop London
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;Spain
+			settlement_flash_start Pamplona
+			move_strat_camera 102, 106
+			campaign_wait 1
+		end_if
+		
+		settlement_flash_stop Frankfurt
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to Dijon
+			settlement_flash_start Dijon
+			move_strat_camera 121, 123
+			zoom_strat_camera 0.5
+		end_if
+
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		settlement_flash_stop Pamplona
+		campaign_wait 1
+
+		settlement_flash_stop Dijon
+		move_strat_camera 112, 127			;Paris	113, 131
+		zoom_strat_camera 0.5
+		campaign_wait 1
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+		
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- HRE --
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction hre
+		and I_CampaignNumTimePlay = 1
+		and I_AdvisorVerbosityLevel > 0
+		
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		disable_save
+		
+		campaign_wait 0.1
+		snap_strat_camera 138, 147			;Frankfurt 138, 139
+		zoom_strat_camera 0.1
+				
+		advance_advice_thread HRE_Initial_1_Advice_Thread		;Imperial Campaign
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+			settlement_flash_start Frankfurt
+		end_if
+	
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Frankfurt
+				
+		advance_advice_thread Campaign_Initial_2_Advice_Thread		;Campaign Goals
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+		
+		select_ui_element 		faction_button
+		simulate_mouse_click 	lclick_up
+				
+		advance_advice_thread Campaign_Initial_3_Advice_Thread		;Achieving Victory
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		if I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		
+			advance_advice_thread Campaign_Initial_4_Advice_Thread		;Expansion and Conquest
+			
+			while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+			end_while
+			
+		end_if
+
+		advance_advice_thread Campaign_Initial_Goals_Button_Advice_Thread
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_start faction_button
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_stop
+
+		campaign_wait 1
+
+		;Although the Holy Roman Empire is strong, it is surrounded by enemies. 
+		;You will need to contend with the French to the west, the Italians to the south, the Danes to the north 
+		;and the Poles to the east. You should first strengthen your position by conquering the rebels to the north-east. 
+		;The nearby Rebel town of Prague will make an ideal first target.		
+		advance_advice_thread HRE_Initial_5_Advice_Thread		;Where to Start
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		zoom_strat_camera 1.0
+		move_strat_camera 148, 126
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;french
+			settlement_flash_start Paris
+			move_strat_camera 131, 126
+			campaign_wait 0.5
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;italians
+			settlement_flash_start Milan
+			settlement_flash_start Venice
+			move_strat_camera 141, 108
+			campaign_wait 0.5
+		end_if
+		
+		settlement_flash_stop Paris
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;danes
+			settlement_flash_start Arhus
+			move_strat_camera 142, 142
+		end_if
+		
+		settlement_flash_stop Milan
+		settlement_flash_stop Venice
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 1
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;poles
+			move_strat_camera 155, 132
+			settlement_flash_start Cracow
+			campaign_wait 1
+		end_if
+		
+		settlement_flash_stop Arhus
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to Prague
+			move_strat_camera 157, 143
+			zoom_strat_camera 0.5
+			settlement_flash_start Magdeburg
+			settlement_flash_start Breslau
+			settlement_flash_start Hamburg
+			settlement_flash_start Stettin
+			settlement_flash_start Thorn
+			settlement_flash_start Prague
+			campaign_wait 1
+		end_if
+
+		settlement_flash_stop Cracow
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 1
+		end_if
+		
+		settlement_flash_stop Magdeburg
+		settlement_flash_stop Breslau
+		settlement_flash_stop Hamburg
+		settlement_flash_stop Stettin
+		settlement_flash_stop Thorn
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Prague
+				
+		advance_advice_thread Campaign_Initial_6_Advice_Thread		;Where to Start
+
+		zoom_strat_camera 0.8
+		move_strat_camera 148, 126			;Frankfurt 138, 139
+
+		settlement_flash_start Frankfurt
+		settlement_flash_start Nuremburg
+		settlement_flash_start Vienna
+		settlement_flash_start Innsbruck
+		settlement_flash_start Hohenstauffen
+		
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		enable_save
+
+		while I_CompareCounter Opened_Settlement_Scroll = 0
+		end_while
+
+		settlement_flash_stop Frankfurt
+		settlement_flash_stop Nuremburg
+		settlement_flash_stop Vienna
+		settlement_flash_stop Innsbruck
+		settlement_flash_stop Hohenstauffen
+
+		terminate_monitor
+	end_monitor
+	
+	;not first campaign
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction hre
+		and I_CampaignNumTimePlay > 1
+		and I_CampaignNumTimePlay < 9999
+		and I_AdvisorVerbosityLevel > 0
+		and I_FirstTimePlay hre
+		
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+
+		campaign_wait 0.1
+		zoom_strat_camera 1.0
+		snap_strat_camera 148, 127			;Frankfurt 138, 139
+	
+		while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		end_while
+		
+		;greeting
+		advance_advice_thread Campaign_Greeting_HRE_Advice_Thread
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+		
+		;Although the Holy Roman Empire is strong, it is surrounded by enemies. 
+		;You will need to contend with the French to the west, the Italians to the south, the Danes to the north 
+		;and the Poles to the east. You should first strengthen your position by conquering the rebels to the north-east. 
+		;The nearby Rebel town of Prague will make an ideal first target.		
+		advance_advice_thread HRE_Initial_5_Advice_Thread		;Where to Start
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 1
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;french
+			settlement_flash_start Paris
+			move_strat_camera 129, 127
+			campaign_wait 0.5
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;italians
+			settlement_flash_start Milan
+			settlement_flash_start Venice
+			move_strat_camera 141, 110
+			campaign_wait 0.5
+		end_if
+		
+		settlement_flash_stop Paris
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;danes
+			settlement_flash_start Arhus
+			move_strat_camera 142, 152
+		end_if
+		
+		settlement_flash_stop Milan
+		settlement_flash_stop Venice
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;poles
+			move_strat_camera 155, 132
+			settlement_flash_start Cracow
+			campaign_wait 1
+		end_if
+
+		settlement_flash_stop Arhus
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to Prague
+			move_strat_camera 157, 144
+			zoom_strat_camera 0.5
+			settlement_flash_start Magdeburg
+			settlement_flash_start Breslau
+			settlement_flash_start Hamburg
+			settlement_flash_start Stettin
+			settlement_flash_start Thorn
+			settlement_flash_start Prague
+			campaign_wait 1
+		end_if
+
+		settlement_flash_stop Cracow
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 1
+		end_if
+		
+		settlement_flash_stop Magdeburg
+		settlement_flash_stop Breslau
+		settlement_flash_stop Hamburg
+		settlement_flash_stop Stettin
+		settlement_flash_stop Thorn
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Prague
+		
+		zoom_strat_camera 0.8
+		move_strat_camera 148, 125			;Frankfurt 138, 139
+		campaign_wait 1
+		
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+		
+	
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Spain
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction spain
+		and I_CampaignNumTimePlay = 1
+		and I_AdvisorVerbosityLevel > 0
+		
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		disable_save
+	
+		campaign_wait 0.1
+		
+		snap_strat_camera 74, 112			;Leon 74, 104
+		zoom_strat_camera 0.1
+			
+		advance_advice_thread Spain_Initial_1_Advice_Thread		;Spanish Campaign
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 1
+			settlement_flash_start Leon
+		end_if
+	
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Leon
+		
+		advance_advice_thread Campaign_Initial_2_Advice_Thread		;Campaign Goals
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+		
+		select_ui_element 		faction_button
+		simulate_mouse_click 	lclick_up
+				
+		advance_advice_thread Campaign_Initial_3_Advice_Thread		;Achieving Victory
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		if I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		
+			advance_advice_thread Campaign_Initial_4_Advice_Thread		;Expansion and Conquest
+			
+			while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+			end_while
+		
+		end_if
+
+		advance_advice_thread Campaign_Initial_Goals_Button_Advice_Thread
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_start faction_button
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_stop
+
+		campaign_wait 1
+
+		;You are sharing the Iberian Peninsula with the much-feared Moors. You should work with the 
+		;Portuguese for now to reclaim the Peninsula from the Moors to the south. You can then expand 
+		;south into Africa, but be wary of the French to the north. The nearby rebel town of Valencia will make an ideal first target.		
+		advance_advice_thread Spain_Initial_5_Advice_Thread		;Where to Start
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		zoom_strat_camera 1.0
+		move_strat_camera 76, 80
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 3
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Lisbon
+			settlement_flash_start Pamplona
+			campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Lisbon
+		settlement_flash_stop Pamplona
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Granada
+			settlement_flash_start Cordoba
+			move_strat_camera 76, 70
+			campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Granada
+		settlement_flash_stop Cordoba
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Toulouse
+			settlement_flash_start Angers
+			move_strat_camera 90, 100
+			campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Toulouse
+		settlement_flash_stop Angers
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to Valencia
+			settlement_flash_start Valencia
+			move_strat_camera 92, 86
+			zoom_strat_camera 0.5
+		end_if
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Valencia
+		
+		advance_advice_thread Campaign_Initial_6_Advice_Thread		;Where to Start
+
+		move_strat_camera 85, 90			;Leon 74, 104
+		zoom_strat_camera 0.5
+
+		inhibit_camera_input false
+		suspend_unscripted_advice false
+		enable_save
+
+		settlement_flash_start Leon
+		settlement_flash_start Toledo
+				
+		while I_CompareCounter Opened_Settlement_Scroll = 0
+		end_while
+
+		settlement_flash_stop Leon
+		settlement_flash_stop Toledo
+
+		terminate_monitor
+	end_monitor
+	
+	;not first campaign
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction spain
+		and I_CampaignNumTimePlay > 1
+		and I_CampaignNumTimePlay < 9999
+		and I_AdvisorVerbosityLevel > 0
+		and I_FirstTimePlay spain
+		
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+
+		campaign_wait 0.1
+		snap_strat_camera 76, 98			;Leon 74, 104
+		zoom_strat_camera 0.5
+			
+		while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		end_while
+		
+		;greeting
+		advance_advice_thread Campaign_Greeting_Spain_Advice_Thread
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		campaign_wait 1
+	
+		;You are sharing the Iberian Peninsula with the much-feared Moors. You should work with the 
+		;Portuguese for now to reclaim the Peninsula from the Moors to the south. You can then expand 
+		;south into Africa, but be wary of the French to the north. The nearby rebel town of Valencia will make an ideal first target.		
+		advance_advice_thread Spain_Initial_5_Advice_Thread		;Where to Start
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			zoom_strat_camera 1.0
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Lisbon
+			settlement_flash_start Pamplona
+			campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Lisbon
+		settlement_flash_stop Pamplona
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Granada
+			settlement_flash_start Cordoba
+			move_strat_camera 76, 70
+			campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Granada
+		settlement_flash_stop Cordoba
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Toulouse
+			settlement_flash_start Angers
+			move_strat_camera 90, 100
+			campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Toulouse
+		settlement_flash_stop Angers
+
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to Valencia
+			settlement_flash_start Valencia
+			move_strat_camera 92, 86
+			zoom_strat_camera 0.5
+		end_if
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Valencia
+
+		move_strat_camera 85, 90			;Leon 74, 104
+		zoom_strat_camera 0.5
+		campaign_wait 1
+		
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+	
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Venice
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction venice
+		and I_CampaignNumTimePlay = 1
+		and I_AdvisorVerbosityLevel > 0
+		
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		disable_save
+		
+		campaign_wait 0.1
+		
+		snap_strat_camera 146, 116			;Venice 146, 108
+		zoom_strat_camera 0.1
+		
+		advance_advice_thread Venice_Initial_1_Advice_Thread		;Venetian Campaign
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 3
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+				
+		settlement_flash_start Venice
+	
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Venice
+		
+		advance_advice_thread Campaign_Initial_2_Advice_Thread		;Campaign Goals
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+		
+		select_ui_element 		faction_button
+		simulate_mouse_click 	lclick_up
+				
+		advance_advice_thread Campaign_Initial_3_Advice_Thread		;Achieving Victory
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		if I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		
+			advance_advice_thread Campaign_Initial_4_Advice_Thread		;Expansion and Conquest
+			
+			while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+			end_while
+			
+		end_if
+
+		advance_advice_thread Campaign_Initial_Goals_Button_Advice_Thread
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_start faction_button
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+	
+		ui_flash_stop
+
+		campaign_wait 1
+
+		;Venice's lands are divided and surrounded by enemies. You will need to use your legendary navy to conquer your rivals. 
+		;Your best plan is to move east by land and south by sea, but be wary of the Byzantines and the Turks. 
+		;You should also fortify your regions against Milan and the Holy Roman empire to the west. 
+		;The nearby rebel town of Zagreb will make an ideal first target.
+		advance_advice_thread Venice_Initial_5_Advice_Thread		;Where to Start
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		zoom_strat_camera 1.0
+		move_strat_camera 161, 100
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 3
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;east
+			move_strat_camera 180, 100
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;south
+			move_strat_camera 186, 64
+			settlement_flash_start Corinth
+			settlement_flash_start Thessalonica
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;hre and milan
+			settlement_flash_start Milan
+			settlement_flash_start Genoa
+			settlement_flash_start Innsbruck
+			settlement_flash_start Bologna
+			move_strat_camera 141, 108
+			zoom_strat_camera 0.5
+			campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Corinth
+		settlement_flash_stop Thessalonica
+		settlement_flash_stop Milan
+		settlement_flash_stop Genoa
+		settlement_flash_stop Innsbruck
+		settlement_flash_stop Bologna
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to Zagreb
+			settlement_flash_start Zagreb
+			move_strat_camera 160, 111
+		end_if
+	
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Zagreb
+		
+		advance_advice_thread Campaign_Initial_6_Advice_Thread		;Where to Start
+
+		move_strat_camera 159, 101			;Venice 149, 109
+		zoom_strat_camera 0.5
+
+		inhibit_camera_input false
+		suspend_unscripted_advice false
+		enable_save
+
+		settlement_flash_start Venice
+		settlement_flash_start Ragusa
+				
+		while I_CompareCounter Opened_Settlement_Scroll = 0
+		end_while
+
+		settlement_flash_stop Venice
+		settlement_flash_stop Ragusa
+
+		terminate_monitor
+	end_monitor
+		
+	;not first campaign
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction venice
+ 		and I_CampaignNumTimePlay > 1
+		and I_CampaignNumTimePlay < 9999
+		and I_AdvisorVerbosityLevel > 0
+		and I_FirstTimePlay venice
+		
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		campaign_wait 0.1
+	
+		while I_CompareCounter Opened_Faction_Overview_Scroll = 1
+		end_while
+		
+		;greeting
+		advance_advice_thread Campaign_Greeting_Venice_Advice_Thread
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+		
+		;Venice's lands are divided and surrounded by enemies. You will need to use your legendary navy to conquer your rivals. 
+		;Your best plan is to move east by land and south by sea, but be wary of the Byzantines and the Turks. 
+		;You should also fortify your regions against Milan and the Holy Roman empire to the west. 
+		;The nearby rebel town of Zagreb will make an ideal first target.
+		advance_advice_thread Venice_Initial_5_Advice_Thread		;Where to Start
+
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		zoom_strat_camera 1.0
+		move_strat_camera 161, 100
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 3
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 2
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;east
+			move_strat_camera 180, 100
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;south
+			move_strat_camera 186, 64
+			settlement_flash_start Corinth
+			settlement_flash_start Thessalonica
+			campaign_wait 1
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;hre and milan
+			settlement_flash_start Milan
+			settlement_flash_start Genoa
+			settlement_flash_start Innsbruck
+			settlement_flash_start Bologna
+			move_strat_camera 141, 108
+			zoom_strat_camera 0.5
+			campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Corinth
+		settlement_flash_stop Thessalonica
+		settlement_flash_stop Milan
+		settlement_flash_stop Genoa
+		settlement_flash_stop Innsbruck
+		settlement_flash_stop Bologna
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;zoom to Zagreb
+			settlement_flash_start Zagreb
+			move_strat_camera 160, 111
+		end_if
+	
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		campaign_wait 1
+
+		settlement_flash_stop Zagreb
+
+		move_strat_camera 159, 101			;Venice 149, 109
+		zoom_strat_camera 0.5
+		campaign_wait 1
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;;;;;;;;;;;;		MINOR FACTIONS		;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+	
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Sicily
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction sicily
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay sicily
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		;Greetings, Sire. The Kingdom of Sicily awaits your orders. Your kingdom is surrounded by Italians and the Holy Roman Empire to the North, 
+		;the Byzantines to the East and the Moors to the South. 
+		;It would be prudent to first acquire the nearby rebel settlements on the islands to the West, 
+		;then move to establish a foothold in Africa to the south-west and Greece to the East.
+		advance_advice_thread Sicily_Initial_Advice_Thread		;Where to Start
+		campaign_wait 0.1
+		zoom_strat_camera 1.0
+		snap_strat_camera 150, 70			;Palermo 150, 70
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 4.5
+		end_if
+		
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Bologna
+			settlement_flash_start Venice
+			settlement_flash_start Genoa
+			settlement_flash_start Milan
+			settlement_flash_start Innsbruck
+			move_strat_camera 149, 96
+			campaign_wait 1.25
+		end_if
+		
+			settlement_flash_stop Bologna
+			settlement_flash_stop Venice
+			settlement_flash_stop Genoa
+			settlement_flash_stop Milan
+			settlement_flash_stop Innsbruck
+		
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+		     settlement_flash_start Thessalonica
+		     move_strat_camera 175, 87
+		   campaign_wait 2
+		end_if
+	  
+			settlement_flash_stop Thessalonica
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+		   move_strat_camera 141, 84
+		   settlement_flash_start Ajaccio
+		   settlement_flash_start Cagliari
+		   campaign_wait 2
+		end_if
+		
+		settlement_flash_stop Ajaccio
+		settlement_flash_stop Cagliari
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+		   move_strat_camera 173, 74
+		   settlement_flash_start Durazzo
+		   settlement_flash_start Corinth
+		    campaign_wait 1
+		end_if
+		
+	
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while   
+		
+		campaign_wait 1
+
+		settlement_flash_stop Durazzo
+		settlement_flash_stop Corinth
+		move_strat_camera 150, 70			;Palermo 150, 70
+		zoom_strat_camera 0.5
+		campaign_wait 1
+		   
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Milan
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction milan
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay milan
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		;Buongiorno, Duke. Welcome to the Duchy of Milan. Your lands are bordered by the Holy Roman Empire to the North, 
+		;Venice to the East, the Papal States to the South and the French to the West. 
+		;It would be wise to move to conquer the rebels on the islands to the South, then expand your territory into France to the North-West.
+		advance_advice_thread Milan_Initial_Advice_Thread		;Where to Start
+		
+		campaign_wait 0.1
+		zoom_strat_camera 1.0
+		snap_strat_camera 136, 111			;Milan 136, 111
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 6.0
+		end_if
+		
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Hohenstauffen
+			settlement_flash_start Nuremburg
+			settlement_flash_start Innsbruck
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Hohenstauffen
+			settlement_flash_stop Nuremburg
+			settlement_flash_stop Innsbruck
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Venice
+			campaign_wait 1.5
+		end_if	
+		
+			settlement_flash_stop Venice
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Rome
+			;settlement_flash_start Marseille
+			move_strat_camera 135, 101
+			campaign_wait 1.0
+		end_if
+		
+			settlement_flash_stop Rome
+			campaign_wait 0.5
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;settlement_flash_start Rome
+			settlement_flash_start Marseille
+			move_strat_camera 135, 101
+			campaign_wait 2.0
+		end_if
+		
+			
+			settlement_flash_stop Marseille
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			;settlement_flash_start Ajaccio
+		    ;settlement_flash_start Cagliari
+			move_strat_camera 135, 86
+			campaign_wait 1.0
+		end_if
+		
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Ajaccio
+		    settlement_flash_start Cagliari
+			move_strat_camera 135, 86
+			campaign_wait 1.25
+		end_if
+		
+			settlement_flash_stop Ajaccio
+			settlement_flash_stop Cagliari
+				
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Bern
+		    settlement_flash_start Hohenstauffen
+		    ;settlement_flash_start Metz
+		    settlement_flash_start Dijon
+			move_strat_camera 136, 108
+			campaign_wait 1.0
+		end_if
+		
+			settlement_flash_stop Bern
+			settlement_flash_stop Hohenstauffen	
+			settlement_flash_stop Metz
+			settlement_flash_stop Dijon
+				
+		;move_strat_camera 136, 111			;Milan 136, 111	
+		;campaign_wait 0.1
+		zoom_strat_camera 0.5
+		campaign_wait 1
+			
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+	
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Scotland
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction scotland
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay scotland
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Scotland_Initial_Advice_Thread		;Where to Start
+		campaign_wait 0.1
+		zoom_strat_camera 1.0
+		snap_strat_camera 102, 174			;Edinburgh 102, 174
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 5.0
+		end_if
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 99, 164
+		campaign_wait 1.0
+		end_if
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Dublin
+			settlement_flash_start Caernarvon
+			settlement_flash_start York
+			campaign_wait 3.0
+		end_if
+		
+			settlement_flash_stop Dublin
+			settlement_flash_stop York
+			settlement_flash_stop Caernarvon
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 106, 152
+		campaign_wait 1.0
+		end_if
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start London
+			settlement_flash_start Nottingham
+			campaign_wait 1.5
+		end_if
+		
+			settlement_flash_stop London
+			settlement_flash_stop Nottingham
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 124, 165
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Arhus
+			campaign_wait 1.0
+		end_if
+		
+			settlement_flash_stop Arhus
+			
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 117, 150
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Bruges
+			settlement_flash_start Antwerp
+			campaign_wait 3.0
+		end_if
+		
+			settlement_flash_stop Bruges
+			settlement_flash_stop Antwerp
+			
+		move_strat_camera 102, 174
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Byzantium
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction byzantium
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay byzantium
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Byzantium_Initial_Advice_Thread		;Where to Start
+		campaign_wait 0.1
+		snap_strat_camera 213, 93
+		zoom_strat_camera 1.0					;Constantinople 213, 93
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 4.0
+		end_if
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 201, 79
+			campaign_wait 1.0
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Constantinople
+			settlement_flash_start Nicaea
+			settlement_flash_start Thessalonica
+			settlement_flash_start Corinth
+		campaign_wait 1.0
+		end_if
+		   
+		    settlement_flash_stop Constantinople
+		    settlement_flash_stop Nicaea
+		    settlement_flash_stop Thessalonica
+		    settlement_flash_stop Corinth
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 200, 97
+		campaign_wait 2.0
+		end_if	
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Bucharest
+			settlement_flash_start Sofia
+			
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Bucharest
+			settlement_flash_stop Sofia
+			
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 218, 84
+			settlement_flash_start Iconium
+			campaign_wait 2.0
+			end_if
+			settlement_flash_stop Iconium
+		
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 183, 105
+			settlement_flash_start Bran
+			settlement_flash_start Budapest
+			settlement_flash_start Ragusa
+		campaign_wait 2.5
+		end_if
+		
+		settlement_flash_stop Bran
+		settlement_flash_stop Budapest
+		settlement_flash_stop Ragusa
+		
+		
+		move_strat_camera 213, 93
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+		
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Russia
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction russia
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay russia
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Russia_Initial_Advice_Thread		;Where to Start
+		campaign_wait 0.1
+		snap_strat_camera 202, 179				;Novgorod 202, 179
+		zoom_strat_camera 1.0					
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 6.0
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 222, 166
+			campaign_wait 1.5
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Moscow
+			settlement_flash_start Smolensk
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Moscow
+			settlement_flash_stop Smolensk
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 193, 168
+			;campaign_wait 1.0
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Riga
+			settlement_flash_start Helsinki
+			settlement_flash_start Vilnius
+			campaign_wait 1.0
+		end_if
+		   
+		    settlement_flash_stop Riga
+		    settlement_flash_stop Helsinki
+		    settlement_flash_stop Vilnius
+		    			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 160, 167
+			campaign_wait 1.0
+		end_if    
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Arhus
+			campaign_wait 2.0
+		end_if
+		
+		settlement_flash_stop Arhus
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 202, 179
+		end_if	   
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		move_strat_camera 202, 179
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+		
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Moors
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction moors
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay moors
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Moors_Initial_Advice_Thread		;Where to Start
+		
+		campaign_wait 0.1
+		snap_strat_camera 71, 80				;Cordoba 71, 80
+		zoom_strat_camera 1.0					
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 5.0
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 84, 89
+			campaign_wait 1.5
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Valencia
+			settlement_flash_start Zaragoza
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Valencia
+			settlement_flash_stop Zaragoza
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 66, 99
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Toledo
+			settlement_flash_start Leon
+			settlement_flash_start Lisbon
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Toledo
+			settlement_flash_stop Leon
+			settlement_flash_stop Lisbon
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 122, 68
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Tunis
+			campaign_wait 2.0
+		end_if
+		
+		settlement_flash_stop Tunis
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 128, 88
+			end_if
+				
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Milan
+			settlement_flash_start Genoa
+			settlement_flash_start Bologna
+			settlement_flash_start Venice
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Milan
+			settlement_flash_stop Genoa
+			settlement_flash_stop Bologna
+			settlement_flash_stop Venice
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 78, 90
+			campaign_wait 1.0
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 71, 80
+			end_if
+			
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		move_strat_camera 71, 80
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Turks
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction turks
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay turks
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Turks_Initial_Advice_Thread		;Where to Start
+		campaign_wait 0.1
+		snap_strat_camera 232, 76				;Iconium 232, 76
+		zoom_strat_camera 1.0					
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 5.0
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 253, 59
+			campaign_wait 0.5
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Adana
+			settlement_flash_start Aleppo
+			settlement_flash_start Antioch
+			settlement_flash_start Damascus
+			settlement_flash_start Edessa
+			campaign_wait 1.5
+			settlement_flash_stop Adana
+			settlement_flash_stop Aleppo
+			settlement_flash_stop Antioch
+			settlement_flash_stop Damascus
+			settlement_flash_stop Edessa
+			settlement_flash_stop Jerusalem
+			settlement_flash_start Jerusalem
+			campaign_wait 1.5
+		end_if
+			
+		
+		
+			settlement_flash_stop Adana
+			settlement_flash_stop Aleppo
+			settlement_flash_stop Antioch
+			settlement_flash_stop Damascus
+			settlement_flash_stop Edessa
+			settlement_flash_stop Jerusalem
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 239, 45
+			end_if
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Alexandria
+			settlement_flash_start Gaza
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Alexandria
+			settlement_flash_stop Gaza
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 224, 81
+			end_if
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Constantinople
+			settlement_flash_start Nicaea
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Constantinople
+			settlement_flash_stop Nicaea
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 203, 98
+			campaign_wait 1.0
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 232, 76
+			end_if
+			
+		move_strat_camera 232, 76
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+		
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Egypt
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction egypt
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay egypt
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Egypt_Initial_Advice_Thread		;Where to Start
+		campaign_wait 0.1
+		snap_strat_camera 235, 32				;Cairo 71, 80
+		zoom_strat_camera 1.0					
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 5.0
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 253, 63
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Adana
+			settlement_flash_start Acre
+			settlement_flash_start Aleppo
+			settlement_flash_start Antioch
+			settlement_flash_start Damascus
+			settlement_flash_start Edessa
+			settlement_flash_start Jerusalem
+			campaign_wait 2.0
+		end_if
+			settlement_flash_stop Adana
+			settlement_flash_stop Aleppo
+			settlement_flash_stop Antioch
+			settlement_flash_stop Damascus
+			settlement_flash_stop Edessa
+			settlement_flash_stop Acre
+			settlement_flash_stop Jerusalem	
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 262, 80
+			end_if
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Mosul
+			settlement_flash_start Caesarea
+			settlement_flash_start Yerevan
+			campaign_wait 2.0
+		end_if
+		
+			settlement_flash_stop Mosul
+			settlement_flash_stop Caesarea
+			settlement_flash_stop Yerevan
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 207, 44
+			end_if
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 169, 73
+			campaign_wait 1.0
+			end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 235, 32
+			end_if
+			
+		move_strat_camera 235, 32
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+		
+				
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Denmark
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction denmark
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay denmark
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Denmark_Initial_Advice_Thread		;Where to Start
+campaign_wait 0.1
+		snap_strat_camera 141, 166				;Arhus 141, 166
+		zoom_strat_camera 1.0					
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			campaign_wait 6.5
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 145, 167
+		end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Oslo
+			settlement_flash_start Stockholm
+			settlement_flash_start Stettin
+			settlement_flash_start Hamburg
+			campaign_wait 2.5
+		end_if
+			settlement_flash_stop Oslo
+			settlement_flash_stop Stockholm
+			settlement_flash_stop Stettin
+			settlement_flash_stop Hamburg
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 189, 168
+			end_if
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Riga
+			settlement_flash_start Helsinki
+			settlement_flash_start Vilnius
+			settlement_flash_start Novgorod
+			campaign_wait 2.0
+		end_if
+			settlement_flash_stop Riga
+			settlement_flash_stop Helsinki
+			settlement_flash_stop Vilnius
+			settlement_flash_stop Novgorod
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 155, 138
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Cracow
+			settlement_flash_start Nuremburg
+			settlement_flash_start Frankfurt
+			campaign_wait 2.0
+		end_if
+			
+			settlement_flash_stop Cracow
+			settlement_flash_stop Nuremburg
+			settlement_flash_stop Frankfurt
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 141, 166
+			end_if
+			
+		move_strat_camera 141, 166
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+			
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+	
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Portugal
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction portugal
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay portugal
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Portugal_Initial_Advice_Thread		;Where to Start
+
+		campaign_wait 0.1
+		snap_strat_camera 55, 88				;Lisbon 55, 88
+		zoom_strat_camera 1.0					
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+			campaign_wait 2.0
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 73, 90
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Lisbon
+			settlement_flash_start Pamplona
+			campaign_wait 1.5
+			end_if
+		
+			settlement_flash_stop Lisbon
+			settlement_flash_stop Pamplona
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Leon
+			settlement_flash_start Toledo
+			settlement_flash_start Cordoba
+			campaign_wait 2.5
+		end_if
+			settlement_flash_stop Leon
+			settlement_flash_stop Toledo
+			settlement_flash_stop Cordoba
+					
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 93, 95
+			campaign_wait 1.0
+			end_if
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Zaragoza
+			campaign_wait 1.0
+		end_if
+			
+		settlement_flash_stop Zaragoza
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 93, 72
+			campaign_wait 0.5
+			end_if
+		
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 100, 105
+			campaign_wait 0.5
+			end_if	
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 55, 88
+			end_if
+			
+		move_strat_camera 55, 88
+			campaign_wait 0.25
+		zoom_strat_camera 0.5	
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Poland
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction poland
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay poland
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Poland_Initial_Advice_Thread		;Where to Start
+		campaign_wait 0.1
+		snap_strat_camera 174, 136				;Krakow Cracow 174, 136
+		zoom_strat_camera 1.0					
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+			campaign_wait 7.5
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 168, 143
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Thorn
+			settlement_flash_start Breslau
+			campaign_wait 2.5
+			end_if
+		
+			settlement_flash_stop Thorn
+			settlement_flash_stop Breslau
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 153, 138
+			end_if
+			
+		if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Nuremburg
+			campaign_wait 2.5
+		end_if
+			settlement_flash_stop Nuremburg
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 153, 165
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Arhus
+			settlement_flash_start Stockholm
+			campaign_wait 1.5
+			end_if
+			
+			settlement_flash_stop Arhus
+			settlement_flash_stop Stockholm
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 180, 170
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Helsinki
+			settlement_flash_start Riga
+			settlement_flash_start Novgorod
+			campaign_wait 1.5
+			end_if
+			
+			settlement_flash_stop Helsinki
+			settlement_flash_stop Riga
+			settlement_flash_stop Novgorod
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 174, 136
+			end_if
+			
+		move_strat_camera 174, 136
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+					
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	; -- Hungary
+	;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	monitor_conditions I_TurnNumber = 0
+		and I_LocalFaction hungary
+		and I_AdvisorVerbosityLevel > 0
+ 		and I_FirstTimePlay hungary
+		and I_CampaignNumTimePlay < 9999
+
+		suspend_unscripted_advice true
+		inhibit_camera_input true
+		hide_ui
+		disable_movie_view
+		disable_save
+		
+		advance_advice_thread Hungary_Initial_Advice_Thread		;Where to Start
+		campaign_wait 0.1
+		snap_strat_camera 172, 122				;Budapest 172, 122
+		zoom_strat_camera 1.0					
+		while not I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+		
+			campaign_wait 7.0
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Vienna
+			campaign_wait 1.5
+			end_if
+			
+			settlement_flash_stop Vienna
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Cracow
+			campaign_wait 1.0
+			end_if
+			
+			settlement_flash_stop Cracow
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 186, 97
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Thessalonica
+			campaign_wait 2.0
+			end_if
+			
+			settlement_flash_stop Thessalonica
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 196, 104
+			end_if
+		
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			settlement_flash_start Sofia
+			settlement_flash_start Bucharest
+			campaign_wait 2.0
+			end_if
+			
+			settlement_flash_stop Sofia
+			settlement_flash_stop Bucharest
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 220, 129
+			campaign_wait 0.5
+			end_if
+			
+			if I_AdvisorSpeechPlaying and I_AdvisorVisible
+			move_strat_camera 172, 122
+			end_if
+			
+		move_strat_camera 172, 122
+			campaign_wait 0.25
+		zoom_strat_camera 0.5
+		
+		while I_AdvisorSpeechPlaying
+			and I_AdvisorVisible
+		end_while
+
+		suspend_unscripted_advice false
+		inhibit_camera_input false
+		show_ui
+		enable_save
+		
+		terminate_monitor
+	end_monitor
+		        
+        ; keep script unfinised until last monitor termination
+	wait_monitors
+
+end_script
+

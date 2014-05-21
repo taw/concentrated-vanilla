@@ -1,0 +1,4015 @@
+; Special effects for projectile impacts
+
+
+;GROUND SMOKE AFTER LEFT AFTER IMPACT AND EXPLOSION
+
+effect ground_smoke_medium
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke3.tga
+
+		sprite_origin			0.1, 0.4
+		sprite_size				1.0, 1.0
+		size_range      		1, 5
+		age_range       		1.0, 4.0
+        grow_range	 			1, 4 
+        vel_range				0.5,0.18
+        fade_time				0.5
+        die_size				10, 7.4
+		colour     				255, 255, 255
+		alpha_max	   			155			 ; maximum alpha value
+		spin_rate			    -0.01, 0.01
+		acceleration			0,0.1,0
+		system_radius			30
+		sort_bias				1
+		sort 					instance
+		fade_in_time			3.0;
+		;clr_adjust_by_ambient_intensity 
+		
+		emitter time			
+		{
+			density					3	     	; how many particles per second
+			emitter_falloff_dist	50		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.8			; 			
+		}
+	}
+}
+
+;IMPACTS FOR GROUND
+
+;Large impact
+
+effect ground_dirt_explosion_large_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			10
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     30
+        debris_lifetime_range    4, 20
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7, 9
+        debris_scale_range       0.9, 1.2
+	}
+}
+
+effect ground_dirt_explosion_large_02
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				2.4
+		max_scale   			15
+		max_particle_scale 		3.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9	
+		;clr_adjust_by_ambient_intensity 	
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     35
+        debris_lifetime_range    5.4, 7
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    16, 6
+        debris_scale_range       0.8,0.6
+	}
+}
+
+
+effect ground_dust_wave_large
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				5
+		max_scale   			40
+		max_particle_scale 		1.7
+		scale_time_bias			.9
+		alpha_time_bias			0.9	
+		sort_bias               1	
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     70
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle       360             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.0, 14.5
+        debris_scale_range       0.4, 0.14
+	}
+}
+
+effect ground_smoke_explosion_rising_large
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/smoke_cloud_explosion.CAS
+		sort_for_speed
+		anim_time				12
+		max_scale   			18
+		max_particle_scale 		1
+		scale_time_bias			0.85
+		alpha_time_bias			0.95		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     35
+        debris_lifetime_range    8, 15
+        debris_emit_angle        120            ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    12.5, 3.5
+        debris_scale_range       0.8, 0.1
+        
+	}
+}
+effect ground_explosion_rising_large
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				8
+		max_scale   			10
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     90
+        debris_lifetime_range    11, 14
+        debris_emit_angle        180             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.5, 3.5
+        debris_scale_range       0.6, 0.7
+	}
+}
+
+
+;Medium impact
+
+effect ground_smoke_explosion_rising_medium
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/smoke_cloud_explosion.CAS
+		sort_for_speed
+		anim_time				14
+		max_scale   			13
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     30
+        debris_lifetime_range    11, 14
+        debris_emit_angle        180             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    10.5, 3.5
+        debris_scale_range       1.2, 0.7
+	}
+}
+effect ground_dirt_explosion_medium_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.5
+		max_scale   			8
+		max_particle_scale 		1.0
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     15
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    13.5, 16.5
+        debris_scale_range       0.3, 0.4
+	}
+}
+
+effect ground_dirt_explosion_medium_02
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			8
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     11
+        debris_lifetime_range    3.4, 7
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    11, 9
+        debris_scale_range       1,0.6
+	}
+}
+
+effect ground_explosion_medium_flash
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0
+		max_scale   			7
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect ground_fire_dust_medium
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_ground.CAS
+		sort_for_speed
+		anim_time				0
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect ground_dust_medium
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dust_ground.CAS
+		sort_for_speed
+		anim_time				0
+		max_scale   			25
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect fire_dust_medium
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_debri.CAS
+		sort_for_speed
+		anim_time				0
+		max_scale   			2.4
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect ground_dust_wave_medium
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			25
+		max_particle_scale 		2.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     70
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    6.5, 11.5
+        debris_scale_range       0.4, 0.14
+	}
+}
+
+effect ground_explosion_rising_medium
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				4
+		max_scale   			7
+		max_particle_scale 		4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect_set ground_impact_medium_set
+
+{
+	play_time 100
+	lod 1000
+	{
+		ground_dirt_explosion_medium_01
+		ground_dirt_explosion_medium_02
+		ground_dust_wave_medium
+		ground_explosion_rising_medium
+		shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;mortar;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ground_dirt_explosion_mortar_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.5
+		max_scale   			4
+		max_particle_scale 		1.0
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    13.5, 16.5
+        debris_scale_range       0.3, 0.4
+	}
+}
+
+
+effect ground_dust_wave_mortar
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			10
+		max_particle_scale 		4.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     40
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle        100              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    2.5, 8.5
+        debris_scale_range       0.3, 0.14
+	}
+}
+effect ground_explosion_rising_mortar
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				11
+		max_scale   			3.5
+		max_particle_scale 		2
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect_set ground_impact_mortar_set
+
+{
+	play_time 100
+	lod 1000
+	{
+		ground_dirt_explosion_mortar_01
+		;ground_dirt_explosion_mortar_02
+		ground_dust_wave_mortar
+		ground_explosion_rising_mortar
+		shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;Small impact
+
+effect ground_dirt_explosion_small_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				0.3
+		max_scale   			3
+		max_particle_scale 		1.0
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     9
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    6.0, 7.4
+        debris_scale_range       0.3, 0.4
+	}
+}
+
+effect ground_dirt_explosion_small_02
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				0.7
+		max_scale   			5
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     6
+        debris_lifetime_range    3.4, 7
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    3, 5
+        debris_scale_range       1,0.6
+	}
+}
+
+effect ground_dust_wave_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				3
+		max_scale   			7
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     70
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    2.5, 3.5
+        debris_scale_range       0.4, 0.14
+	}
+}
+
+effect ground_explosion_rising_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				9
+		max_scale   			2
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     15
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    3.4, 7.4
+        debris_scale_range       0.4, 0.7
+	}
+}
+
+effect bullet_impact_ground_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/bullet_impact_ground.CAS
+		sort_for_speed
+		anim_time				0.8
+		max_scale   			1
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    3.4, 7.4
+        debris_scale_range       0.4, 0.7
+	}
+}
+
+effect bullet_impact_wall_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/bullet_impact_wall.CAS
+		sort_for_speed
+		anim_time				1
+		max_scale   			1
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    3.4, 7.4
+        debris_scale_range       0.4, 0.7
+	}
+}
+
+effect arrow_broken_impact_wall_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/bullet_impact_wall.CAS
+		sort_for_speed
+		anim_time				1
+		max_scale   			1
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/arrow_projectile_broken.CAS
+        debris_num_particles     1
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    3.4, 7.4
+        debris_scale_range       0.4, 0.7
+	}
+}
+
+effect arrow_flaming_broken_impact_wall_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/bullet_impact_wall.CAS
+		sort_for_speed
+		anim_time				1
+		max_scale   			1
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/arrow_projectile_flaming_broken.CAS
+        debris_num_particles     1
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    3.4, 7.4
+        debris_scale_range       0.4, 0.7
+	}
+}
+
+
+effect_set bullet_impact_wall_set
+
+{
+		play_time 100
+
+	lod 1000	
+	{
+		bullet_impact_wall_small
+	}
+}
+
+effect_set arrow_broken_impact_wall_set
+
+{
+		play_time 100
+
+	lod 1000	
+	{
+		bullet_impact_wall_small
+		arrow_broken_impact_wall_small
+	}
+}
+
+effect_set arrow_flaming_broken_impact_wall_set
+
+{
+		play_time 100
+
+	lod 1000	
+	{
+		bullet_impact_wall_small
+		arrow_flaming_broken_impact_wall_small
+	}
+}
+
+
+
+effect_set bullet_impact_ground_set
+
+{
+		play_time 100
+
+	lod 1000
+	{
+		bullet_impact_ground_small
+	}
+}
+
+effect arrow_ground_impact
+{
+	type projectile
+	{
+		model		models_effects/arrow_projectile_ground_impact.CAS
+		sort_for_speed
+		clr_adjust_by_ambient_intensity
+
+		fade_time	3
+	}
+}
+
+effect arrow_wall_impact
+{
+	type projectile
+	{
+		model		models_effects/arrow_projectile_wall_impact.CAS
+		sort_for_speed
+		clr_adjust_by_ambient_intensity
+		fade_time	3
+	}
+}
+
+
+effect_set arrow_impact_ground_set
+
+{
+	play_time 5
+	lod 1000
+	{
+		arrow_ground_impact
+		bullet_impact_ground_small	
+		
+	}
+}
+
+effect_set arrow_impact_wall_set
+
+{
+	play_time 3
+	lod 1000
+	{
+		arrow_wall_impact
+		bullet_impact_ground_small	
+		
+	}
+}
+
+effect arrow_torch_fire1
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.01, 0.02
+		age_range        	0.6, 0.7
+	    grow_range		 	1.0, 1.0
+		vel_range  			0.5, 0.7
+		wind_modifier 		7.0
+		
+		keyframe_colour
+		{
+;				0.0		255, 255, 255, 255
+				0.0, 	255,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	50,   255,   255,   255
+		}
+		
+		alpha_max	   		255			 ; maximum alpha value
+		initial_size		0.2, 0.4
+		blend_type			additive
+		offset				0.0, 0.1, 0.0
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        20 	     	; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		5
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0, 0.1
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+
+effect arrow_flaming_glow_model
+{
+	type projectile
+	{
+		model models_effects/arrow_flaming_glow.cas
+		sort_for_speed
+		view_dist 70
+		fade_time	0.3
+	}
+}
+
+
+effect_set arrow_flaming_impact_ground_set
+
+{
+	play_time 5
+	lod 1000
+	{
+		arrow_ground_impact
+		bullet_impact_ground_small
+		arrow_torch_fire1
+		arrow_flaming_glow_model
+		torch_sound
+	}
+}
+
+effect_set arrow_flaming_impact_wall_set
+
+{
+	play_time 5
+	lod 1000
+	{
+		arrow_wall_impact
+		bullet_impact_ground_small
+		arrow_torch_fire1
+		torch_sound	
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Ribault effect;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+effect ground_dirt_explosion_ribault_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				0.3
+		max_scale   			3
+		max_particle_scale 		1.0
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    6.0, 7.4
+        debris_scale_range       0.3, 0.4
+	}
+}
+
+
+
+effect ground_explosion_rising_ribault
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				6
+		max_scale   			1.5
+		max_particle_scale 		3
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     15
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    3.4, 7.4
+        debris_scale_range       0.1, 0.25
+	}
+}
+
+effect_set ground_impact_ribault_set
+
+{
+		play_time 100
+	lod 1000
+	{
+		ground_dirt_explosion_ribault_01
+		ground_explosion_rising_ribault
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+effect_set ground_impact_small_set
+
+{
+		play_time 100
+	lod 1000
+	{
+		ground_dirt_explosion_small_01
+		ground_dirt_explosion_small_02
+		ground_dust_wave_small
+		ground_explosion_rising_small
+		small_shockwave
+		
+	}
+}
+
+
+;IMPACTS FOR WALLS
+
+;Large impact
+
+effect explosive_cloud_large_01
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				1.0
+		max_scale   			10
+		max_particle_scale 		3.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.5, 1
+        debris_emit_angle        120              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    14.5, 17
+        debris_scale_range       0.1, 1.2
+	}
+}
+
+effect explosive_cloud_large_02
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				7.6
+		max_scale   			19
+		max_particle_scale 		5.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri03.cas
+        debris_num_particles     30
+        debris_lifetime_range    1.5,3.0
+        debris_emit_angle        120               ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    12.5, 17.5
+        debris_scale_range       0.3, 1.2
+	}
+}
+
+
+
+
+
+
+;Medium impact
+
+effect explosive_cloud_medium_01
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			12
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     0
+        debris_lifetime_range    14, 35
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    2.5, 11
+        debris_scale_range       0.2, 1.0
+	}
+}
+
+effect explosive_cloud_medium_02
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				9.6
+		max_scale   			13
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     15
+        debris_lifetime_range    14, 35
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.6
+        debris_velocity_range    2.5, 8.5
+        debris_scale_range       0.1, 0.9
+	}
+}
+
+
+
+
+effect_set wall_impact_medium_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_medium_01
+	explosive_cloud_medium_02
+	shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;serpentine wall impact
+effect explosive_cloud_serpentine_01
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			8
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     0
+        debris_lifetime_range    14, 35
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    2.5, 11
+        debris_scale_range       0.2, 1.0
+	}
+}
+effect explosive_cloud_serpentine_02
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				7.6
+		max_scale   			8
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     12
+        debris_lifetime_range    6, 8
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.6
+        debris_velocity_range    2.5, 12.5
+        debris_scale_range       0.1, 0.9
+	}
+}
+
+effect_set wall_impact_serpentine_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_serpentine_01
+	explosive_cloud_serpentine_02
+	small_shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Small impact
+
+effect explosive_cloud_small_01
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				1.1
+		max_scale   			5
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     5
+        debris_lifetime_range    14, 35
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.85, 11
+        debris_scale_range       0.1, 0.3
+	}
+}
+
+effect explosive_cloud_small_02
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				8.4
+		max_scale   			6
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     10
+        debris_lifetime_range    14, 35
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.1, 0.24
+	}
+}
+
+
+
+
+effect_set wall_impact_small_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_small_01
+	;explosive_cloud_small_02
+	}
+}
+
+
+
+;IMPACTS FOR MEN
+
+;Large impact
+
+effect explosive_cloud_large_man_01
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				4.5
+		max_scale   			9
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     11
+        debris_lifetime_range    14, 35
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    7.5, 11
+        debris_scale_range       0.25, 0.34
+	}
+}
+
+
+effect explosive_cloud_blood_large
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_blood.CAS
+		sort_for_speed
+		anim_time				3.4
+		max_scale   			5
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     4
+        debris_lifetime_range    3, 2.
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.1, 0.24
+	}
+}
+
+effect_set man_impact_large_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_large
+	explosive_cloud_large_man_01
+	shockwave
+	cannon_hit_ground_sound
+	
+	}
+}
+
+
+
+;Medium impact
+
+effect explosive_cloud_medium_man_01
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				3.5
+		max_scale   			7
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     30
+        debris_lifetime_range    14, 35
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    7.5, 11
+        debris_scale_range       0.24, 0.34
+	}
+}
+
+
+effect explosive_cloud_blood_medium
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 					models_effects/explosive_cloud_blood.CAS
+		sort_for_speed
+		anim_time				2.4
+		max_scale   			4
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     4
+        debris_lifetime_range    3, 2.
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.1, 0.24
+	}
+}
+
+effect explosive_cloud_fire_puff_medium
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 					models_effects/flaming_ballista_fire_puff.CAS
+		sort_for_speed
+		anim_time				11.4
+		max_scale   			2.4
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     14
+        debris_lifetime_range    3, 2.
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.5, 0.24
+	}
+}
+
+
+effect_set man_impact_medium_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_medium
+	explosive_cloud_medium_man_01
+	cannon_hit_ground_sound
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;catapult man impact effect;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
+effect explosive_cloud_blood_catapult
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 					models_effects/explosive_cloud_blood.CAS
+		sort_for_speed
+		anim_time				3.4
+		max_scale   			1.2
+		max_particle_scale 		2.0
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/blood_droplet.CAS
+        debris_num_particles     30
+        debris_lifetime_range    5, 4.
+        debris_emit_angle       120              ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    2.5, 6.5
+        debris_scale_range       1.0, 3.4
+	}
+}
+effect ground_dirt_explosion_catapult_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.5
+		max_scale   			3
+		max_particle_scale 		1.0
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/blood_droplet.CAS
+        debris_num_particles     20
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        120              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    2.5, 6.5
+        debris_scale_range       3.0, 6.4
+	}
+}
+effect ground_dust_wave_catapult
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			12
+		max_particle_scale 		2.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    6.5, 11.5
+        debris_scale_range       0.4, 0.14
+	}
+}
+
+effect ground_dirt_explosion_catapult_02
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			4.5
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     11
+        debris_lifetime_range    3.4, 7
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    11, 9
+        debris_scale_range       0.1,0.6
+	}
+}
+
+effect_set man_impact_catapult_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_catapult
+	;ground_dirt_explosion_catapult_01
+	;ground_dirt_explosion_catapult_02
+	;ground_dust_wave_catapult
+	;shockwave
+	;cannon_hit_ground_sound
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;catapult firey impact ground effects
+
+effect ground_fiery_fire_dust_catapult
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/fire_dust_ground.CAS
+		sort_for_speed
+		anim_time				1.8
+		max_scale   			12
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debri01.CAS
+        debris_num_particles     20
+        debris_lifetime_range    2.4, 6
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 10.5
+        debris_scale_range       0.3, 1.0
+	}
+}
+
+effect ground_fiery_explosion_catapult_flash
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.87
+		max_scale   			12.0
+		max_particle_scale 		3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    6, 30
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         5.9
+        debris_velocity_range    5.5, 20.5
+        debris_scale_range       1.1, 1.5
+	}
+}
+
+}
+effect ground_smoke_explosion_rising_catapult
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/smoke_cloud_explosion.CAS
+		sort_for_speed
+		anim_time				5
+		max_scale   			11
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     20
+        debris_lifetime_range    8, 15
+        debris_emit_angle        180            ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    10.5, 3.5
+        debris_scale_range       1.0, 0.3
+        
+	}
+}
+effect fiery_catapult_explosion_light
+{
+	type light
+	{
+		offset		-0.0, 1.0, 0.0
+		fade_in_time	0.00
+		fade_out_time	0.4
+		keyframe_colour
+		{
+				0.00, 	230, 140, 60
+				0.6, 	230, 130, 60
+
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	23
+				0.10, 	24
+		}
+	}
+}
+
+effect_set ground_fiery_impact_catapult_set
+
+{
+		play_time 0.3
+
+	lod 1000
+	{
+		ground_smoke_explosion_rising_catapult
+		fiery_catapult_explosion_light
+		ground_fiery_explosion_catapult_flash
+		ground_fiery_fire_dust_catapult
+		shockwave
+		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;catapult firey impact wall effects
+
+effect ground_fiery_explosion_wall_catapult_flash
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.67
+		max_scale   			6.0
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    6, 30
+        debris_emit_angle        360              ; degrees
+        debris_time_bias         5.9
+        debris_velocity_range    5.5, 20.5
+        debris_scale_range       1.1, 1.5
+	}
+}
+
+effect explosive_fiery_cloud_catapult
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_firey.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			8
+		max_particle_scale 		3.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     15
+        debris_lifetime_range    14, 60
+        debris_emit_angle        80               ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    10.5, 6.5
+        debris_scale_range       0.3, 1.1
+	}
+}
+
+
+effect explosive_cloud_catapult
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				7.6
+		max_scale   			5
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     25
+        debris_lifetime_range    2, 35
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    6.5, 16
+        debris_scale_range       0.1, 1.2
+	}
+}
+
+effect fiery_catapult_wall_explosion_light
+{
+	type light
+	{
+		offset		0.0, 1.0, 5.0
+		fade_in_time	0.00
+		fade_out_time	0.4
+		keyframe_colour
+		{
+				0.00, 	230, 140, 60
+				0.6, 	230, 130, 60
+
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	25
+				0.10, 	24
+		}
+	}
+}
+
+effect_set wall_impact_fiery_catapult_set
+{
+	play_time 0.35
+	lod 1000
+	{
+	explosive_cloud_catapult
+	fiery_catapult_wall_explosion_light
+	ground_smoke_explosion_rising_catapult
+	explosive_fiery_cloud_catapult
+	ground_fiery_explosion_wall_catapult_flash
+	shockwave
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;treb firey impact wall effects
+
+effect ground_fiery_explosion_wall_treb_flash
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.67
+		max_scale   			6.0
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    6, 30
+        debris_emit_angle        360              ; degrees
+        debris_time_bias         5.9
+        debris_velocity_range    5.5, 20.5
+        debris_scale_range       1.1, 1.5
+	}
+}
+
+effect explosive_fiery_cloud_treb
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_firey.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			8
+		max_particle_scale 		3.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     15
+        debris_lifetime_range    14, 60
+        debris_emit_angle        80               ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    10.5, 6.5
+        debris_scale_range       0.3, 1.1
+	}
+}
+
+
+effect explosive_cloud_treb
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				7.6
+		max_scale   			5
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     25
+        debris_lifetime_range    2, 3
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    6.5, 16
+        debris_scale_range       0.1, 1.2
+	}
+}
+effect ground_smoke_explosion_rising_treb
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/smoke_cloud_explosion.CAS
+		sort_for_speed
+		anim_time				10
+		max_scale   			15
+		max_particle_scale 		1
+		scale_time_bias			0.89
+		alpha_time_bias			0.90		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     35
+        debris_lifetime_range    4, 5
+        debris_emit_angle        120            ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    12.5, 3.5
+        debris_scale_range       0.8, 0.1
+        
+	}
+}
+effect fiery_treb_wall_explosion_light
+{
+	type light
+	{
+		offset		0.0, 1.0, 5.0
+		fade_in_time	0.00
+		fade_out_time	0.4
+		keyframe_colour
+		{
+				0.00, 	230, 140, 60
+				0.6, 	230, 130, 60
+
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	28
+				0.10, 	30
+		}
+	}
+}
+effect_set wall_impact_fiery_treb_set
+{
+	play_time 0.4
+	lod 1000
+	{
+	explosive_cloud_treb
+	fiery_treb_wall_explosion_light
+	ground_smoke_explosion_rising_treb
+	explosive_fiery_cloud_treb
+	ground_fiery_explosion_wall_treb_flash
+	shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;grand bombard firey impact wall effects
+
+
+
+effect explosive_fiery_cloud_grand_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_firey.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			8
+		max_particle_scale 		3.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     15
+        debris_lifetime_range    14, 60
+        debris_emit_angle        80               ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    10.5, 6.5
+        debris_scale_range       0.3, 1.1
+	}
+}
+
+
+effect explosive_cloud_grand_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				7.6
+		max_scale   			5
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     25
+        debris_lifetime_range    2, 7
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    6.5, 16
+        debris_scale_range       0.3, 1.5
+	}
+}
+
+effect fiery_grand_bombard_wall_explosion_light
+{
+	type light
+	{
+		offset		0.0, 1.0, 5.0
+		fade_in_time	0.00
+		fade_out_time	0.4
+		keyframe_colour
+		{
+				0.00, 	230, 140, 60
+				0.6, 	230, 130, 60
+
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	34
+				0.10, 	35
+		}
+	}
+}
+effect ground_smoke_explosion_rising_grand_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/smoke_cloud_explosion.CAS
+		sort_for_speed
+		anim_time				15
+		max_scale   			22
+		max_particle_scale 		3
+		scale_time_bias			0.9
+		alpha_time_bias			0.95		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     50
+        debris_lifetime_range    2, 4
+        debris_emit_angle        100            ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    15.5, 8.5
+        debris_scale_range       1.2, 0.1
+        
+	}
+}
+effect ground_fiery_explosion_grand_bombard_flash
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.67
+		max_scale   			8.0
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.5, 0.67
+        debris_emit_angle        360              ; degrees
+        debris_time_bias         5.9
+        debris_velocity_range    18.5, 20.5
+        debris_scale_range       0.5, 1.5
+	}
+}
+
+effect_set wall_impact_fiery_grand_bombard_set
+{
+	play_time 0.4
+	lod 1000
+	{
+	explosive_cloud_grand_bombard
+	fiery_grand_bombard_wall_explosion_light
+	ground_smoke_explosion_rising_grand_bombard
+	explosive_fiery_cloud_grand_bombard
+	ground_fiery_explosion_grand_bombard_flash
+	shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Small impact
+
+effect explosive_cloud_small_man_01
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				2.4
+		max_scale   			4
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     0
+        debris_lifetime_range    14, 35
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    7.5, 11
+        debris_scale_range       0.24, 0.34
+	}
+}
+
+
+effect explosive_cloud_blood_small
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 					models_effects/explosive_cloud_blood.CAS
+		sort_for_speed
+		anim_time				3.2
+		max_scale   			1.2
+		max_particle_scale 		1.2
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/blood_droplet.CAS
+        debris_num_particles     15
+        debris_lifetime_range    5, 4.
+        debris_emit_angle        45               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    1.5, 3.5
+        debris_scale_range       1.0, 2.8
+	}
+}
+
+effect explosive_cloud_blood_tiny
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 					models_effects/explosive_cloud_blood.CAS
+		sort_for_speed
+		anim_time				3.1
+		max_scale   			1.5
+		max_particle_scale 		1.2
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/blood_droplet.CAS
+        debris_num_particles     15
+        debris_lifetime_range    5, 4.
+        debris_emit_angle        45               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    1.5, 3.5
+        debris_scale_range       0.5, 1.8
+	}
+}
+
+
+effect_set man_impact_small_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_small
+	;explosive_cloud_small_man_01
+	}
+}
+
+effect_set man_impact_tiny_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_tiny
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;IMPACTS FOR EXPOLSIVES
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;IMPACTS FOR DIRT (EXPLOSIVE)
+
+;Large impact
+
+effect ground_fiery_explosion_large_flash
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.67
+		max_scale   			6.0
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     10
+        debris_lifetime_range    6, 30
+        debris_emit_angle        360              ; degrees
+        debris_time_bias         5.9
+        debris_velocity_range    5.5, 20.5
+        debris_scale_range       1.1, 1.5
+	}
+}
+
+effect ground_fiery_fire_dust_large
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/fire_dust_ground.CAS
+		sort_for_speed
+		anim_time				2.2
+		max_scale   			13
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debri02.CAS
+        debris_num_particles     30
+        debris_lifetime_range    2.4, 6
+        debris_emit_angle        120              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    15.0, 8.0
+        debris_scale_range       0.1, 1.0
+	}
+}
+
+
+effect_set ground_fiery_impact_large_set
+
+{
+		play_time 0.4
+
+	lod 1000
+	{
+		fiery_catapult_explosion_light
+		ground_smoke_explosion_rising_large
+		ground_fiery_explosion_large_flash
+		ground_fiery_fire_dust_large
+		shockwave
+		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;grand bombard firey impact
+
+
+effect ground_fiery_fire_dust_grand_bombard
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/fire_dust_ground.CAS
+		sort_for_speed
+		anim_time				3.2
+		max_scale   			20
+		max_particle_scale 		2
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debri01.CAS
+        debris_num_particles     30
+        debris_lifetime_range    2.4, 4
+        debris_emit_angle        100              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    18.0, 13.0
+        debris_scale_range       0.5, 1.2
+	}
+}
+effect fiery_grand_bombard_explosion_light
+{
+	type light
+	{
+		offset		-0.0, 1.0, 0.0
+		fade_in_time	0.00
+		fade_out_time	0.5
+		keyframe_colour
+		{
+				0.00, 	230, 140, 60
+				0.6, 	230, 130, 60
+
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	30
+				0.10, 	32
+		}
+	}
+}
+effect_set ground_fiery_impact_grand_bombard_set
+
+{
+		play_time 0.5
+
+	lod 1000
+	{
+		fiery_grand_bombard_explosion_light
+		ground_smoke_explosion_rising_grand_bombard
+		ground_fiery_explosion_grand_bombard_flash
+		ground_fiery_fire_dust_grand_bombard
+		shockwave
+		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Medium impact
+
+effect ground_fiery_explosion_medium_flash
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.67
+		max_scale   			6.0
+		max_particle_scale 		9
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     10
+        debris_lifetime_range    6, 30
+        debris_emit_angle        360              ; degrees
+        debris_time_bias         5.9
+        debris_velocity_range    5.5, 10.5
+        debris_scale_range       1.1, 1.5
+	}
+}
+
+effect ground_fiery_fire_dust_medium
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/fire_dust_ground.CAS
+		sort_for_speed
+		anim_time				2.2
+		max_scale   			10
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debri02.CAS
+        debris_num_particles     30
+        debris_lifetime_range    2.4, 6
+        debris_emit_angle        120              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    15.0, 8.0
+        debris_scale_range       0.1, 1.0
+	}
+}
+effect_set ground_fiery_impact_medium_set
+
+{
+	play_time 0.35
+	lod 1000
+	{
+		fiery_catapult_explosion_light
+		ground_smoke_explosion_rising_medium
+		ground_fiery_explosion_medium_flash
+		ground_fiery_fire_dust_medium
+		
+	}
+}
+
+
+;Small impact
+
+effect ground_fiery_explosion_small_flash
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.11
+		max_scale   			5
+		max_particle_scale 		4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    14.5, 17.5
+        debris_scale_range       1.1, 1.5
+	}
+}
+
+effect ground_fiery_fire_dust_small
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_ground.CAS
+		sort_for_speed
+		anim_time				1.6
+		max_scale   			5
+		max_particle_scale 		2.3
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     7
+        debris_lifetime_range    2.4, 4
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    4.6, 7.4
+        debris_scale_range       0.4, 0.5
+	}
+}
+
+effect_set ground_fiery_impact_small_set
+
+{
+	play_time 100
+	lod 1000
+	{
+		ground_dirt_explosion_small_01
+		ground_dirt_explosion_small_02
+		ground_dust_wave_small
+		ground_explosion_rising_small
+		ground_fiery_explosion_small_flash
+		ground_fiery_fire_dust_small
+		small_shockwave
+		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Ballista Firey impact;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ground_explosion_rising_ballista
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				6
+		max_scale   			2.1
+		max_particle_scale 		2
+		scale_time_bias			.95
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     6
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    4.5, 7.5
+        debris_scale_range       0.1, 0.4
+	}
+}
+
+effect ground_fiery_explosion_ballista_flash
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.8
+		max_scale   			3
+		max_particle_scale 		2
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    4.5, 7.5
+        debris_scale_range       0.1, 0.4
+	}
+}
+
+effect ground_fiery_fire_dust_ballista
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_ground.CAS
+		sort_for_speed
+		anim_time				1.6
+		max_scale   			3
+		max_particle_scale 		2.0
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    2.4, 4
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    4.6, 7.4
+        debris_scale_range       0.4, 0.5
+	}
+}
+
+effect fiery_ballista_explosion_light
+{
+	type light
+	{
+		fade_out_time	0.2
+		keyframe_colour
+		{
+				0.05, 	240, 160,  90
+				0.1, 	234, 170, 90
+				0.15, 	246, 160,  90
+				0.2, 	236, 170, 90
+				0.25, 	244, 160, 90
+				0.3, 	234, 170, 90
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	12
+				0.1, 	13
+		}
+	}
+}
+
+effect_set ground_fiery_impact_ballista_set
+
+{
+	play_time 0.3
+	lod 1000
+	{
+	    ground_explosion_rising_ballista
+		ground_fiery_explosion_ballista_flash
+		fiery_ballista_explosion_light
+		ground_fiery_fire_dust_ballista		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;nahptha Firey impact;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ground_fiery_fire_dust_nahptha
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/fire_dust_ground.CAS
+		sort_for_speed
+		anim_time				1.8
+		max_scale   			6
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debri01.CAS
+        debris_num_particles     0
+        debris_lifetime_range    2.4, 6
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    2.5, 8.5
+        debris_scale_range       0.2, 0.8
+	}
+}
+
+effect ground_fiery_explosion_nahptha_flash
+{
+	type explosion
+	{
+		; main explosion
+		;clr_adjust_by_ambient_intensity 
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.87
+		max_scale   			3.0
+		max_particle_scale 		1.5
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    6, 30
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         5.9
+        debris_velocity_range    5.5, 20.5
+        debris_scale_range       1.1, 1.5
+	}
+}
+
+}
+effect ground_smoke_explosion_rising_nahptha
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/smoke_cloud_explosion.CAS
+		sort_for_speed
+		anim_time				2
+		max_scale   			3
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     10
+        debris_lifetime_range    8, 15
+        debris_emit_angle        180            ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 1.5
+        debris_scale_range       0.5, 0.1
+        
+	}
+}
+effect fiery_nahptha_explosion_light
+{
+	type light
+	{
+		offset		-0.0, 1.0, 0.0
+		fade_in_time	0.00
+		fade_out_time	0.4
+		keyframe_colour
+		{
+				0.00, 	230, 140, 60
+				0.6, 	230, 130, 60
+
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	10
+				0.10, 	8
+		}
+	}
+}
+
+effect_set ground_fiery_impact_nahptha_set
+
+{
+		play_time 0.3
+
+	lod 1000
+	{
+		ground_smoke_explosion_rising_nahptha
+		fiery_nahptha_explosion_light
+		ground_fiery_explosion_nahptha_flash
+		ground_fiery_fire_dust_nahptha
+		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect explosive_cloud_ballista
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				7.4
+		max_scale   			4
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     10
+        debris_lifetime_range    14, 35
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.1, 0.24
+	}
+}
+
+effect explosive_fiery_cloud_ballista
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_firey.CAS
+		sort_for_speed
+		anim_time				0.84
+		max_scale   			5
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     7
+        debris_lifetime_range    14, 35
+        debris_emit_angle        50              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    2.5, 8
+        debris_scale_range       0.1, 0.3
+	}
+}
+
+effect fiery_ballista_explosion_wall_light
+{
+	type light
+	{
+		fade_out_time	0.2
+		offset		-2.0, 1.0, 0.0
+		keyframe_colour
+		{
+				0.05, 	240, 160,  90
+				0.1, 	234, 170, 90
+				0.15, 	246, 160,  90
+				0.2, 	236, 170, 90
+				0.25, 	244, 160, 90
+				0.3, 	234, 170, 90
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	12
+				0.1, 	13
+		}
+	}
+}
+
+effect_set wall_impact_fiery_ballista_set
+{
+	play_time 0.3
+	lod 1000
+	{
+	explosive_cloud_ballista
+	fiery_ballista_explosion_wall_light
+	explosive_fiery_cloud_ballista
+	ground_fiery_explosion_ballista_flash
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;IMPACTS FOR WALLS (EXPLOSIVE)
+
+;Large impact
+
+effect explosive_fiery_cloud_large
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_firey.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			16
+		max_particle_scale 		3.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     30
+        debris_lifetime_range    14, 35
+        debris_emit_angle        50              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    11.5, 14
+        debris_scale_range       0.1, 1.7
+	}
+}
+
+
+effect_set wall_impact_fiery_large_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_large_02
+	explosive_fiery_cloud_large
+	ground_fiery_explosion_large_flash
+	shockwave
+	}
+}
+
+
+;Medium impact
+
+effect explosive_fiery_cloud_medium
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_firey.CAS
+		sort_for_speed
+		anim_time				1.14
+		max_scale   			14
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     15
+        debris_lifetime_range    14, 35
+        debris_emit_angle        50              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    11.5, 14
+        debris_scale_range       0.1, 0.6
+	}
+}
+
+
+effect_set wall_impact_fiery_medium_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_medium_02
+	explosive_fiery_cloud_medium
+	ground_fiery_explosion_medium_flash
+	}
+}
+
+
+
+;Small impact
+
+effect explosive_fiery_cloud_small
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_firey.CAS
+		sort_for_speed
+		anim_time				0.84
+		max_scale   			11
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     7
+        debris_lifetime_range    14, 35
+        debris_emit_angle        50              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    11.5, 14
+        debris_scale_range       0.1, 0.3
+	}
+}
+
+
+effect_set wall_impact_fiery_small_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_small_02
+	explosive_fiery_cloud_small
+	ground_fiery_explosion_small_flash
+	}
+}
+
+
+;IMPACTS FOR MEN (EXPLOSIVE)
+
+;Large impact
+
+effect_set man_impact_explosive_large_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_large
+	ground_smoke_explosion_rising_medium
+	explosive_cloud_large_man_01
+	explosive_fiery_cloud_small
+	ground_fiery_explosion_medium_flash
+	shockwave
+	cannon_hit_ground_fiery_sound
+	
+	}
+}
+
+
+;Medium impact
+
+effect_set man_impact_explosive_medium_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_medium
+	explosive_cloud_medium_man_01
+	explosive_fiery_cloud_small
+	ground_fiery_explosion_medium_flash
+	cannon_hit_ground_fiery_sound
+	}
+}
+
+
+;Small impact
+
+effect_set man_impact_explosive_small_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_small
+	explosive_cloud_small_man_01
+	explosive_fiery_cloud_small
+	ground_fiery_explosion_small_flash
+	}
+}
+
+
+;flaming tower ballista version
+effect_set flaming_ballista_man_impact_explosive_medium_set
+{
+	play_time 100
+	lod 1000
+	{
+	explosive_cloud_blood_medium
+	explosive_cloud_medium_man_01
+	explosive_fiery_cloud_small
+	explosive_cloud_fire_puff_medium
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;  SMOKE TRAILS
+
+effect smoke_rising_large
+{
+	type particle
+	{
+		texture				models_effects/textures/cloud_sprite4.tga
+
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+		
+		size_range       	30.0, 30.0
+		age_range        	15.0, 15.0
+	    grow_range		 	1.0, 1.0
+		vel_range  			1.5, 2.0
+		wind_modifier 		11.0
+		fade_time			0.5, 0.6
+		die_size			30, 30
+		
+		clr_adjust_by_ambient_intensity
+
+
+		colour     			255, 255, 255
+		alpha_max	   		255			 ; maximum alpha value
+		random_emit_radius  0.4, 0.4
+		initial_size		15.0, 25.0
+		system_radius		2.0
+		batched
+		offset				0.0, 0.0, 0.0
+		max_particles       3000
+		emitter				time
+		
+		{
+			density			1	     		 ; how many particels per second
+			distance_scale  3
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			max_distance			0.5			
+		}
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;COW SPLATTER EFFECT
+
+;COW HIT
+
+effect cow_splatter
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_blood.CAS
+		sort_for_speed
+		anim_time				3.0
+		max_scale   			14
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/cow_chunk.CAS
+        debris_num_particles     11
+        debris_lifetime_range    7, 14
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    6, 9
+        debris_scale_range       0.01, 0.14
+	}
+}
+
+effect cow_disease_cloud
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/disease_cloud.CAS
+		sort_for_speed
+		anim_time				300.0
+		max_scale   			7
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.8
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/cow_chunk_big.CAS
+        debris_num_particles     7
+        debris_lifetime_range    14, 35
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    3.5, 6
+        debris_scale_range       0.4, 0.7
+	}
+}
+
+effect cow_blood_cloud
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/blood_sprite.CAS
+		sort_for_speed
+		anim_time				16.0
+		max_scale   			3
+		max_particle_scale 		1.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/cow_chunk.CAS
+        debris_num_particles     0
+        debris_lifetime_range    14, 35
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    11.5, 14
+        debris_scale_range       0.1, 0.3
+	}
+}
+
+effect cow_blood_cloud_flash
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/blood_sprite.CAS
+		sort_for_speed
+		anim_time				3.7
+		max_scale   			4
+		max_particle_scale 		5.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/cow_chunk.CAS
+        debris_num_particles     11
+        debris_lifetime_range    3, 4
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    11.5, 14
+        debris_scale_range       0.1, 0.15
+	}
+}
+
+effect cow_blood_cloud_linger
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/blood_sprite.CAS
+		sort_for_speed
+		anim_time				11
+		max_scale   			2
+		max_particle_scale 		3.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/cow_chunk.CAS
+        debris_num_particles     11
+        debris_lifetime_range    3, 4
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    11.5, 14
+        debris_scale_range       0.1, 0.15
+	}
+}
+
+effect cow_splattered
+{
+	type projectile
+	{
+		model		models_effects/dead_cow_splatter.cas
+		sort_for_speed
+		fade_time	14
+	}
+}
+
+
+effect fly_effect
+{
+	type particle
+	{
+	texture battlefield/fire/fly.tga
+
+	sprite_origin 0.0, 0.0
+	sprite_size 1.0, 1.0
+
+	size_range       0.07, 0.03
+	age_range        2.0, 8.0
+  	  grow_range 1.0, 1.0
+  	  grow_speed 0.0 ; speed as a fraction of lifetime to grow to size
+	vel_range  -0.1, 0.1
+	colour     70, 70, 70
+	alpha_max    255     ; maximum alpha value
+	random_emit_radius  0.0, 0.0
+	initial_size 0.1, 0.1
+	system_radius 2.0
+	offset 0.0, 0.0, 0.0
+	max_particles 1000
+	fade_time       1.5
+
+	impulse_force -1.3, 1.3    ; m/s^2
+	impulse_length      0.021, 0.001    ; seconds 
+	wind_modifier 0.0
+
+	emitter sphere
+{
+	density 300
+	radius 2      ; sphere radius
+	velocity_modifier 0
+}
+}
+}
+
+
+effect_set cow_impact_wall_set
+{
+	play_time 300.01
+	lod 1000
+	{
+	cow_splatter
+	cow_disease_cloud
+	cow_blood_cloud
+	cow_blood_cloud_flash
+	cow_blood_cloud_linger
+	fly_effect
+	small_shockwave
+	cow_impact_sound
+	cow_flys_buzzing_sound
+	}
+}
+
+effect_set cow_impact_ground_set
+{
+	play_time 300.01
+	lod 1000
+	{
+	cow_splattered
+	cow_splatter
+	cow_disease_cloud
+	cow_blood_cloud
+	cow_blood_cloud_flash
+	cow_blood_cloud_linger
+	fly_effect
+	small_shockwave
+	cow_impact_sound
+	cow_flys_buzzing_sound
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+effect fire_dust_large
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/fire_dust_debri.CAS
+		sort_for_speed
+		anim_time				0
+		max_scale   			2.4
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect ground_dust_large
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dust_ground.CAS
+		sort_for_speed
+		anim_time				0
+		max_scale   			25
+		max_particle_scale 		1
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        70              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 30.5
+        debris_scale_range       0.4, 1.5
+	}
+}
+
+effect explosive_flash_medium
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0
+		max_scale   			30
+		max_particle_scale 		2.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Trebuchet ground impact
+
+effect ground_dirt_explosion_treb_01
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			8
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     30
+        debris_lifetime_range    4, 20
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7, 12
+        debris_scale_range       0.2, 1.0
+	}
+}
+effect ground_dirt_falling_treb
+{
+	type particle
+ 	{
+		texture			models_effects/textures/dirt_explode_sprite2.tga
+
+		sprite_origin			0.2, 0.2
+		sprite_size				0.6, 0.6
+		size_range      		15, 8
+		age_range       		2, 3
+        grow_range	 			1,1 
+        vel_range				28, 25
+        fade_time				0.0
+		colour     				255,255,255
+		alpha_max	   			255		 ; maximum alpha value
+		spin_rate				-0.1, 0.1
+		acceleration			0,-41,0
+		system_radius			20
+		sort_bias				-1
+		sort 					instance
+		fade_in_time			0.0
+		offset                  0,-1,0
+		wind_modifier			0
+		random_emit_radius		5.5
+			
+		
+		emitter 				time
+		{
+			density					30	     	; how many particles per second
+			offset_from_surface		0,0,0		; offset from surface to emit from
+
+			emitter_falloff_dist	500		; distance in meters to reduce emission over
+			emitter_falloff_bias	0.6			; 		
+		}
+	}
+}
+effect ground_dirt_explosion_treb_02
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				2.4
+		max_scale   			15
+		max_particle_scale 		3.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9	
+		;clr_adjust_by_ambient_intensity 	
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     35
+        debris_lifetime_range    5.4, 7
+        debris_emit_angle        180              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    16, 6
+        debris_scale_range       0.8,0.6
+	}
+}
+effect ground_dust_wave_treb
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				10
+		max_scale   			15
+		max_particle_scale 		3.0
+		scale_time_bias			.95
+		alpha_time_bias			0.95	
+		sort_bias               1	
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     30
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle       120             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.0, 14.5
+        debris_scale_range       0.4, 0.14
+	}
+}
+effect ground_explosion_rising_treb
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				12
+		max_scale   			5
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    11, 14
+        debris_emit_angle        180             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.5, 3.5
+        debris_scale_range       0.6, 0.7
+	}
+}
+
+effect_set ground_impact_treb_set
+
+{
+	play_time 0.8
+	lod 1000
+	{
+		ground_dirt_explosion_treb_01
+		;ground_dirt_falling_treb
+		;ground_dirt_explosion_treb_02
+		ground_dust_wave_treb
+		ground_explosion_rising_treb
+		shockwave
+		
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;bombard ground impact
+
+effect ground_dirt_explosion_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				2.0
+		max_scale   			5
+		max_particle_scale 		2.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+		
+
+		; debris
+        debris_model                             models_effects/debri01.cas
+        debris_num_particles     10
+        debris_lifetime_range    4, 20
+        debris_emit_angle        100              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7, 13
+        debris_scale_range       0.1, 0.6
+	}
+}
+
+effect ground_dust_wave_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				12
+		max_scale   			10
+		max_particle_scale 		5.0
+		scale_time_bias			.95
+		alpha_time_bias			0.95	
+		sort_bias               1	
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     25
+        debris_lifetime_range    2, 3
+        debris_emit_angle       100             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.0, 12.5
+        debris_scale_range       1.0, 0.14
+	}
+}
+effect ground_explosion_rising_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				12
+		max_scale   			5
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri03.cas
+        debris_num_particles     0
+        debris_lifetime_range    11, 14
+        debris_emit_angle        180             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.5, 3.5
+        debris_scale_range       0.1, 0.7
+	}
+}
+
+effect_set ground_impact_bombard_set
+
+{
+	play_time 0.8
+	lod 1000
+	{
+		ground_dirt_explosion_bombard
+		ground_dust_wave_bombard
+		ground_explosion_rising_bombard
+		shockwave
+		
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;grand bombard ground impact
+
+effect ground_dirt_explosion_grand_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.7
+		max_scale   			8
+		max_particle_scale 		2.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+		
+
+		; debris
+        debris_model                             models_effects/debri01.cas
+        debris_num_particles     10
+        debris_lifetime_range    4, 20
+        debris_emit_angle        140              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    8, 14
+        debris_scale_range       0.1, 0.6
+	}
+}
+
+effect ground_dust_wave_grand_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				10
+		max_scale   			14
+		max_particle_scale 		4.0
+		scale_time_bias			.95
+		alpha_time_bias			0.95	
+		sort_bias               1	
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     20
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle       120             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    4.0, 12.5
+        debris_scale_range       0.6, 0.14
+	}
+}
+effect ground_explosion_rising_grand_bombard
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				10
+		max_scale   			5
+		max_particle_scale 		6
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri03.cas
+        debris_num_particles     30
+        debris_lifetime_range    11, 14
+        debris_emit_angle        120             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.5, 13.0
+        debris_scale_range       0.1, 0.8
+	}
+}
+
+effect_set ground_impact_grand_bombard_set
+
+{
+	play_time 0.8
+	lod 1000
+	{
+		ground_dirt_explosion_grand_bombard
+		ground_dust_wave_grand_bombard
+		ground_explosion_rising_grand_bombard
+		shockwave
+		
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;culvern explosion ground impact
+effect explosive_fiery_cloud_culvern
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud_firey.CAS
+		sort_for_speed
+		anim_time				2.6
+		max_scale   			8
+		max_particle_scale 		2.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debris_fire.cas
+        debris_num_particles     40
+        debris_lifetime_range    14, 60
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    12.5, 6.5
+        debris_scale_range       0.1, 0.5
+	}
+}
+
+effect ground_fiery_explosion_culvern_flash
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/explosive_flash.CAS
+		sort_for_speed
+		anim_time				0.35
+		max_scale   			18
+		max_particle_scale 		3
+		scale_time_bias			0.95
+		alpha_time_bias			0.95		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    2.2, 20
+        debris_emit_angle        90              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    5.5, 12.5
+        debris_scale_range       0.1, 0.4
+	}
+}
+
+
+effect ground_dirt_explosion_culvern
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			4
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    4, 20
+        debris_emit_angle        140              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7, 12
+        debris_scale_range       0.1, 0.6
+	}
+}
+
+effect ground_dust_wave_culvern
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				10
+		max_scale   			20
+		max_particle_scale 		3.0
+		scale_time_bias			.95
+		alpha_time_bias			0.95	
+		sort_bias               1	
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     15
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle       90             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    4.0, 12.5
+        debris_scale_range       1.0, 0.2
+	}
+}
+effect ground_explosion_rising_culvern
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				8
+		max_scale   			6
+		max_particle_scale 		2
+		scale_time_bias			0.95
+		alpha_time_bias			0.95		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    11, 14
+        debris_emit_angle        180             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.5, 3.5
+        debris_scale_range       0.1, 0.5
+	}
+}
+effect fiery_culvern_explosion_light
+{
+	type light
+	{
+		offset		-2.0, 1.0, 0.0
+		fade_in_time	0.00
+		fade_out_time	0.4
+		keyframe_colour
+		{
+				0.00, 	230, 140, 60
+				0.6, 	230, 130, 60
+
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	25
+				0.10, 	24
+		}
+	}
+}
+
+effect_set ground_impact_explosion_culvern_set
+
+{
+	play_time 0.5
+	lod 1000
+	{
+		ground_dirt_explosion_culvern
+		fiery_culvern_explosion_light
+		ground_dust_wave_culvern
+		ground_explosion_rising_culvern
+		explosive_fiery_cloud_culvern
+		ground_fiery_explosion_culvern_flash
+		shockwave
+		
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;culvern explosion wall impact
+
+
+
+
+
+effect fiery_culvern_wall_explosion_light
+{
+	type light
+	{
+		offset		0.0, 1.0, 5.0
+		fade_in_time	0.00
+		fade_out_time	0.4
+		keyframe_colour
+		{
+				0.00, 	230, 140, 60
+				0.6, 	230, 130, 60
+
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	25
+				0.10, 	24
+		}
+	}
+}
+
+effect_set ground_impact_wall_explosion_culvern_set
+
+{
+	play_time 0.5
+	lod 1000
+	{
+		fiery_culvern_wall_explosion_light
+		explosive_fiery_cloud_culvern
+		ground_fiery_explosion_culvern_flash
+		explosive_cloud_treb
+		shockwave
+		
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;basilisk ground impact
+
+effect ground_dirt_explosion_basilisk
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explode_01.CAS
+		sort_for_speed
+		anim_time				1.4
+		max_scale   			4
+		max_particle_scale 		1.4
+		scale_time_bias			.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+		
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     10
+        debris_lifetime_range    4, 20
+        debris_emit_angle        140              ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7, 12
+        debris_scale_range       0.1, 0.6
+	}
+}
+
+effect ground_dust_wave_basilisk
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_wave.CAS
+		sort_for_speed
+		anim_time				10
+		max_scale   			10
+		max_particle_scale 		3.0
+		scale_time_bias			.95
+		alpha_time_bias			0.95	
+		sort_bias               1	
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     20
+        debris_lifetime_range    7.4, 11
+        debris_emit_angle       120             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    4.0, 12.5
+        debris_scale_range       0.4, 0.14
+	}
+}
+effect ground_explosion_rising_basilisk
+{
+	type explosion
+	{
+		; main explosion
+		model 				models_effects/dirt_explosion_ground_rising.CAS
+		sort_for_speed
+		anim_time				12
+		max_scale   			5
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.9		
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model                             models_effects/debri02.cas
+        debris_num_particles     0
+        debris_lifetime_range    11, 14
+        debris_emit_angle        180             ; degrees
+        debris_time_bias         0.9
+        debris_velocity_range    7.5, 3.5
+        debris_scale_range       0.1, 0.7
+	}
+}
+
+effect_set ground_impact_basilisk_set
+
+{
+	play_time 0.8
+	lod 1000
+	{
+		ground_dirt_explosion_basilisk
+		ground_dust_wave_basilisk
+		ground_explosion_rising_basilisk
+		shockwave
+		
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect_set ground_impact_large_set
+
+{
+	play_time 0.8
+	lod 1000
+	{
+		ground_dirt_explosion_large_01
+		ground_dirt_explosion_large_02
+		ground_dust_wave_large
+		ground_explosion_rising_large
+		shockwave
+		
+	}
+}
+
+effect_set wall_impact_large_set
+{
+	play_time 20
+	lod 1000
+	{
+	explosive_cloud_large_01
+	explosive_cloud_large_02
+	shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;wall_imapct_cannons_set
+
+effect explosive_cloud_cannons_01
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				1.0
+		max_scale   			8
+		max_particle_scale 		3.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.5, 1
+        debris_emit_angle        120              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    14.5, 11
+        debris_scale_range       0.1, 1.2
+	}
+}
+
+effect explosive_cloud_cannons_02
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				7.6
+		max_scale   			15
+		max_particle_scale 		5.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri03.cas
+        debris_num_particles     20
+        debris_lifetime_range    1.5,3.0
+        debris_emit_angle        120               ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    10.5, 15.5
+        debris_scale_range       0.3, 1.0
+	}
+}
+
+effect_set wall_impact_cannons_set
+{
+	play_time 20
+	lod 1000
+	{
+	explosive_cloud_cannons_01
+	explosive_cloud_cannons_02
+	shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;wall_imapct_monster_set
+
+effect explosive_cloud_monster_01
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				2.0
+		max_scale   			20
+		max_particle_scale 		3.7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+		
+		; debris
+        debris_model             models_effects/debri01.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.5, 1
+        debris_emit_angle        120              ; degrees
+        debris_time_bias         0.1
+        debris_velocity_range    14.5, 11
+        debris_scale_range       0.1, 1.2
+	}
+}
+
+effect explosive_cloud_monster_02
+{
+	type explosion
+	{
+		; main explosion
+		model 					models_effects/explosive_cloud.CAS
+		sort_for_speed
+		anim_time				10.6
+		max_scale   			25
+		max_particle_scale 		5.4
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+		;clr_adjust_by_ambient_intensity 
+
+		; debris
+        debris_model             models_effects/debri03.cas
+        debris_num_particles     45
+        debris_lifetime_range    2.5,4.0
+        debris_emit_angle        140               ; degrees
+        debris_time_bias         0.3
+        debris_velocity_range    12.5, 20.5
+        debris_scale_range       0.3, 1.5
+	}
+}
+
+effect_set wall_impact_monster_set
+{
+	play_time 20
+	lod 1000
+	{
+	explosive_cloud_monster_01
+	explosive_cloud_monster_02
+	shockwave
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

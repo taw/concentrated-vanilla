@@ -1,0 +1,453 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;STRAT MAP SFX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 10 minPitch .9 maxPitch 1.1 fadein .1 fadeout 1.0 probability 1 volume 0 randomdelay 0  effect_level .25 priority 500
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BANK: character		 - Sounds for character actions on stratmap
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+BANK: character_action
+	action idle
+		type general admiral assassin diplomat spy
+			event
+				folder data/sounds/SFX
+
+			end
+
+
+
+	action moving_normal
+		type general
+			event
+				folder data/sounds/SFX/
+
+			end
+		type admiral
+			event fadein 1.0 fadeout 1.0 volume -45 looped
+				folder data/sounds/SFX/Campaign_Map
+				waves_sailship
+			end
+
+		type assassin diplomat spy
+			event
+				folder data/sounds/SFX/
+
+			end
+
+
+
+	action spying
+		type diplomat spy
+			event
+				folder data/sounds/SFX/Campaign_Map
+				spy_strat_map
+
+			end
+
+
+
+	action attack
+		type admiral
+			event fadein 0 fadeout 5.0
+				folder data/sounds/SFX/Campaign_Map
+				naval_battle
+			end
+
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BANK: disasters - These only apply to the disasters that have a graphical effect,
+;; for all others use disaster_xxx in the event sounds sample bank
+;;
+;; Keywords: type
+;;
+;; Valid types: earthquake, volcano, flood, storm, fire
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DEFAULT: 3d fadein 0 fadeout 2 mindist 7 volume -30 randomdelay 0  effect_level .25
+
+BANK: disasters
+	type volcano
+		event looped
+			folder data/sounds/SFX/Campaign_Map
+			Volcano22M
+		end
+	type fire
+		event looped
+			folder data/sounds/SFX/Campaign_Map
+			fire
+		end
+	type flood
+		event looped
+			folder data/sounds/SFX/Campaign_Map
+			flood22M
+		end
+
+	type storm
+		event looped
+			folder data/sounds/SFX/Campaign_Map
+			Storm22M
+		end
+
+		type earthquake
+		event looped
+			folder data/sounds/SFX/Campaign_Map
+			earthquake22M
+		end
+
+		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BANK: stratmap_terrain		 - Enviro sounds for terrains on stratmap
+;;
+;; Keywords: season, terrain
+;;
+;; terrain: fertile_low, fertile_medium, fertile_high, wilderness,
+;;          mountains_high, mountains_low, hills,
+;;          forest_dense, forest_sparse, swamp,
+;;          ocean, sea_deep, sea_shallow, beach
+;; climates: mediterranean, sandy_desert, rocky_desert,
+;;			unused1, steppe
+;;			 temperate_deciduous_forest, temperate_coniferous_forest, unused2
+;;			highland, alpine, tropical, semi_arid
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DEFAULT: 3d volume 0 probability 1 priority 0 distancepriority -1
+DEFAULT: fadein 0 fadeout 2 mindist 5 minPitch .8 maxPitch 1.2
+
+BANK: stratmap_terrain
+
+	channels	10		; number of sounds to be played simultaneously
+	delay		15		; delay between updates (in seconds)
+	radius		25  	; radius around the camera where the sounds are played (in tiles)
+	radius_min  0
+	area_min	7		; minimum area of a patch with sound (in tiles)
+
+	season summer
+		terrain fertile_low, wilderness ; fertile_medium, fertile_high, wilderness
+		climates sandy_desert, rocky_desert
+			ambient
+				event volume 0
+					folder data/sounds/SFX
+
+				end
+			looped
+				event volume 0 minPitch .9 maxPitch 1.1 mindist 5
+					folder data/sounds/SFX/environment/ambience
+					desert_wind_01
+					desert_wind_02
+					desert_wind_03
+					
+				end
+
+		terrain mountains_high ; mountains_low, hills
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX
+
+				end
+			looped
+				event volume -25
+					folder data/sounds/SFX/environment/weather
+					Wind_Winter_Light_01
+					Wind_Winter_Light_02
+				end
+
+		terrain forest_dense
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX/environment
+
+				end
+			looped
+				event volume 0 mindist 1 volume -15
+					folder data/sounds/SFX/environment/ambience
+					Jungle_01
+					Jungle_02
+					Jungle_03
+					Jungle_04
+					Jungle_05
+				end
+
+		terrain forest_sparse
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX/environment
+
+				end
+			looped
+				event mindist 3
+					folder data/sounds/SFX/environment/ambience
+					forest_01 volume -15
+					forest_02 volume -15
+					forest_03 volume -25 probability .5
+					forest_04 volume -25 probability .5
+					forest_05 volume -25 probability .5
+					
+					
+
+				end
+
+		terrain swamp
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0 mindist 1
+					folder data/sounds/SFX/environment
+
+				end
+			looped
+				event volume 0 mindist 2
+					folder data/sounds/SFX/environment/ambience
+					swamp_01
+					swamp_02
+				end
+
+		terrain ocean, sea_deep
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX
+
+				end
+			looped
+				event volume -35
+					folder data/sounds/SFX/environment/water
+					Ocean_Distant
+				end
+
+		terrain sea_shallow
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX
+
+				end
+			looped
+				event volume -40 mindist 1
+					folder data/sounds/SFX/Environment/water
+					ocean_wave_01
+					ocean_wave_02
+				end
+
+		terrain beach
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX
+
+				end
+			looped
+				event volume 0
+					folder data/sounds/SFX/environment/water
+					;Wave1
+					;Wave2
+				end
+
+				
+				
+;;;;;;  WINTER   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+season winter
+	terrain fertile_low,  fertile_medium, fertile_high, wilderness
+		climates sandy_desert, rocky_desert
+			ambient
+				event
+
+				end
+
+
+			looped
+				event volume 0 minPitch .9 maxPitch 1.1 mindist 5
+					folder data/sounds/SFX/environment/ambience
+					desert_wind_01
+					desert_wind_02
+					desert_wind_03
+					
+				end
+
+	terrain mountains_high ; mountains_low, hills
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+			event volume -35 probability 1 effect_level .8 mindist 2
+				folder data/sounds/SFX/Environment/Animals/winter_strat_animals
+				eagle01
+				eagle02
+				hawk01
+				wolf01
+ 				wolf02
+ 				wolf03
+ 				wolf04
+				owl_01
+				owl_02
+				end
+
+			looped
+				event volume -25
+					folder data/sounds/SFX/environment/weather
+					Wind_Winter_Light_01
+					Wind_Winter_Light_02
+				end
+
+	terrain forest_dense
+		climates mediterranean, sandy_desert, rocky_desert,  semi_arid
+			ambient
+			event
+
+				end
+
+
+			looped
+				event volume 0 mindist 1 volume -15
+					folder data/sounds/SFX/environment/ambience
+					Jungle_01
+					Jungle_02
+					Jungle_03
+					Jungle_04
+					Jungle_05
+				end
+
+
+
+	terrain forest_sparse
+	   climates mediterranean, sandy_desert, rocky_desert,  semi_arid
+			ambient
+				event
+
+				end
+
+			looped
+				event mindist 4
+					folder data/sounds/SFX/environment/ambience
+					forest_01 volume -15
+					forest_02 volume -15
+					
+					
+				end
+
+
+			climates unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest,  highland, alpine, tropical
+				ambient
+			event volume -35 probability 1 effect_level 1 mindist 2
+				folder data/sounds/SFX/Environment/Animals/winter_strat_animals
+				eagle01
+				eagle02
+				hawk01
+				wolf01
+ 				wolf02
+ 				wolf03
+ 				wolf04
+				owl_01
+				owl_02
+				end
+				looped
+				event mindist 3 volume -50 effect_level .5
+					folder data/sounds/SFX/environment/weather
+					Wind_winter
+				end
+
+
+	terrain swamp
+		climates mediterranean, sandy_desert, rocky_desert,  semi_arid
+			ambient
+				event
+
+
+				end
+			looped
+				event volume 0 mindist 2
+					folder data/sounds/SFX/environment/ambience
+					swamp_01
+					swamp_02
+				end
+
+	terrain ocean, sea_deep
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX
+
+				end
+			looped
+				event volume -35
+					folder data/sounds/SFX/environment/water
+					Ocean_Distant
+				end
+
+	terrain sea_shallow
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX
+
+				end
+			looped
+				event volume -35 mindist 1
+					folder data/sounds/SFX/Environment/water
+					ocean_wave_01
+					ocean_wave_02
+				end
+
+	terrain beach
+		climates mediterranean, sandy_desert, rocky_desert, unused1, steppe, temperate_deciduous_forest, temperate_coniferous_forest, highland, alpine, tropical, semi_arid
+			ambient
+				event volume 0
+					folder data/sounds/SFX
+
+				end
+			looped
+				event volume 0
+					folder data/sounds/SFX/environment/water
+					;Wave1
+					;Wave2
+				end
+
+				
+				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BANK: stratmap_object
+;; culture	southern_european, northern_european, middle_eastern, mesoamerican, greek, eastern_european
+;; level	village, town, large_town, city, large_city, huge_city
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DEFAULT: 3d volume 0 probability 1 fadein 0 fadeout 0
+DEFAULT: mindist 1 minPitch .9 maxPitch 1
+DEFAULT: priority 0 distancepriority -1
+
+BANK: stratmap_object
+
+	what settlement
+		culture	southern_european, northern_european, middle_eastern, mesoamerican, greek, eastern_european
+		level	village, town, large_town
+			event
+				folder data/sounds/SFX/Environment/Structures
+				;village
+			end
+
+	what settlement
+		culture	southern_european, northern_european, middle_eastern, mesoamerican, greek, eastern_european
+		level city, large_city, huge_city
+			event
+				folder data/sounds/SFX/Environment/Structures
+				;city
+			end
+
+	what port
+		culture	southern_european, northern_european, middle_eastern, mesoamerican, greek, eastern_european
+		level	fishing_village, sea_port, shipwright, dockyard
+			event
+				folder data/sounds/SFX/Environment/Structures
+				;port_01
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+

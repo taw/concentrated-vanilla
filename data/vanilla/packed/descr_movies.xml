@@ -1,0 +1,997 @@
+<?xml version="1.0"?>
+<root>
+    <missions>
+        <mission name="assassinate">
+            <movie name="ASP EUR" target_type="male" climate="temperate">
+                <success>
+                    <file name="assassinate/ASP EUR M.bik" />
+                    <file name="assassinate/ASP EUR S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/ASP EUR M.bik" />
+                    <file name="assassinate/ASP EUR E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/ASP EUR M.bik" />
+                    <file name="assassinate/ASP EUR D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="ASP MDE" target_type="male" climate="arid">
+                <success>
+                    <file name="assassinate/ASP MDE M.bik" />
+                    <file name="assassinate/ASP MDE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/ASP MDE M.bik" />
+                    <file name="assassinate/ASP MDE E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/ASP MDE M.bik" />
+                    <file name="assassinate/ASP MDE D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="ASP PRC" target_type="princess" climate="arid:temperate">
+                <success>
+                    <file name="assassinate/ASP PRC M.bik" />
+                    <file name="assassinate/ASP PRC S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/ASP PRC M.bik" />
+                    <file name="assassinate/ASP PRC E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/ASP PRC M.bik" />
+                    <file name="assassinate/ASP PRC D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BLW OAE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name="assassinate/BLW OAE M.bik" />
+                    <file name="assassinate/BLW OAE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BLW OAE M.bik" />
+                    <file name="assassinate/BLW OAE F.bik" />
+                    <file name="generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BLW OAE M.bik" />
+                    <file name="assassinate/BLW OAE F.bik" />
+                    <file name="generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BLW OAM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name="assassinate/BLW OAM M.bik" />
+                    <file name="assassinate/BLW OAM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BLW OAM M.bik" />
+                    <file name="assassinate/BLW OAM F.bik" />
+                    <file name="generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BLW OAM M.bik" />
+                    <file name="assassinate/BLW OAM F.bik" />
+                    <file name="generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BLW OLE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name="assassinate/BLW OLE M.bik" />
+                    <file name="assassinate/BLW OLE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BLW OLE M.bik" />
+                    <file name="assassinate/BLW OLE F.bik" />
+                    <file name="generic/END OLN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BLW OLE M.bik" />
+                    <file name="assassinate/BLW OLE F.bik" />
+                    <file name="generic/END OLN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BLW OLM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name="assassinate/BLW OLM M.bik" />
+                    <file name="assassinate/BLW OLM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BLW OLM M.bik" />
+                    <file name="assassinate/BLW OLM F.bik" />
+                    <file name="generic/END OLN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BLW OLM M.bik" />
+                    <file name="assassinate/BLW OLM F.bik" />
+                    <file name="generic/END OLN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BLW TEE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/BLW TEE M.bik" />
+                    <file name="assassinate/BLW TEE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BLW TEE M.bik" />
+                    <file name="assassinate/BLW TEE F.bik" />
+                    <file name="generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BLW TEE M.bik" />
+                    <file name="assassinate/BLW TEE F.bik" />
+                    <file name="generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BLW TEM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/BLW TEM M.bik" />
+                    <file name="assassinate/BLW TEM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BLW TEM M.bik" />
+                    <file name="assassinate/BLW TEM F.bik" />
+                    <file name="generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BLW TEM M.bik" />
+                    <file name="assassinate/BLW TEM F.bik" />
+                    <file name="generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BLW TME" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/BLW TME M.bik" />
+                    <file name="assassinate/BLW TME S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BLW TME M.bik" />
+                    <file name="assassinate/BLW TME F.bik" />
+                    <file name="generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BLW TME M.bik" />
+                    <file name="assassinate/BLW TME F.bik" />
+                    <file name="generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BLW TMM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/BLW TMM M.bik" />
+                    <file name="assassinate/BLW TMM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BLW TMM M.bik" />
+                    <file name="assassinate/BLW TMM F.bik" />
+                    <file name="generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BLW TMM M.bik" />
+                    <file name="assassinate/BLW TMM F.bik" />
+                    <file name="generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BON OAM" target_type="male" location="army" climate="arid">
+                <success>
+                    <file name="assassinate/BON OAM M.bik" />
+                    <file name="assassinate/BON OAM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BON OAM M.bik" />
+                    <file name="assassinate/BON OAM F.bik" />
+                    <file name="generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BON OAM M.bik" />
+                    <file name="assassinate/BON OAM F.bik" />
+                    <file name="generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BON OAW" target_type="witch" location="army" climate="arid">
+                <success>
+                    <file name="assassinate/BON OAM M.bik" />
+                    <file name="assassinate/BON OAW S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BON OAM M.bik" />
+                    <file name="assassinate/BON OAM F.bik" />
+                    <file name="generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BON OAM M.bik" />
+                    <file name="assassinate/BON OAM F.bik" />
+                    <file name="generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BON TEM" target_type="male" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/BON TEM M.bik" />
+                    <file name="assassinate/BON TEM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BON TEM M.bik" />
+                    <file name="assassinate/BON TEM F.bik" />
+                    <file name="generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BON TEM M.bik" />
+                    <file name="assassinate/BON TEM F.bik" />
+                    <file name="generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BON TEW" target_type="witch" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/BON TEM M.bik" />
+                    <file name="assassinate/BON TEW S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BON TEM M.bik" />
+                    <file name="assassinate/BON TEM F.bik" />
+                    <file name="generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BON TEM M.bik" />
+                    <file name="assassinate/BON TEM F.bik" />
+                    <file name="generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BON TMM" target_type="male" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/BON TMM M.bik" />
+                    <file name="assassinate/BON TMM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BON TMM M.bik" />
+                    <file name="assassinate/BON TMM F.bik" />
+                    <file name="generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BON TMM M.bik" />
+                    <file name="assassinate/BON TMM F.bik" />
+                    <file name="generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BON TMW" target_type="witch" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/BON TMM M.bik" />
+                    <file name="assassinate/BON TMW S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BON TMM M.bik" />
+                    <file name="assassinate/BON TMM F.bik" />
+                    <file name="generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BON TMM M.bik" />
+                    <file name="assassinate/BON TMM F.bik" />
+                    <file name="generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BSB OAM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name="assassinate/BSB OAM M.bik" />
+                    <file name="assassinate/BSB OAM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BSB OAM M.bik" />
+                    <file name="assassinate/BSB OAM F.bik" />
+                    <file name="generic/END OAN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BSB OAM M.bik" />
+                    <file name="assassinate/BSB OAM F.bik" />
+                    <file name="generic/END OAN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BSB OLE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name="assassinate/BSB OLE M.bik" />
+                    <file name="assassinate/BSB OLE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BSB OLE M.bik" />
+                    <file name="assassinate/BSB OLE F.bik" />
+                    <file name="generic/END OLN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BSB OLE M.bik" />
+                    <file name="assassinate/BSB OLE F.bik" />
+                    <file name="generic/END OLN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BSB TEE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/BSB TEE M.bik" />
+                    <file name="assassinate/BSB TEE S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BSB TEE M.bik" />
+                    <file name="assassinate/BSB TEE F.bik" />
+                    <file name="generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BSB TEE M.bik" />
+                    <file name="assassinate/BSB TEE F.bik" />
+                    <file name="generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BSB TMM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/BSB TMM M.bik" />
+                    <file name="assassinate/BSB TMM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BSB TMM M.bik" />
+                    <file name="assassinate/BSB TMM F.bik" />
+                    <file name="generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BSB TMM M.bik" />
+                    <file name="assassinate/BSB TMM F.bik" />
+                    <file name="generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BTD EUR" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" climate="arid:temperate">
+                <success>
+                    <file name="assassinate/BTD EUR M.bik" />
+                    <file name="assassinate/BTD EUR S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BTD EUR M.bik" />
+                    <file name="assassinate/BTD EUR E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BTD EUR M.bik" />
+                    <file name="assassinate/BTD EUR D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BTD MID" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" climate="arid:temperate">
+                <success>
+                    <file name="assassinate/BTD MID M.bik" />
+                    <file name="assassinate/BTD MID S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/BTD MID M.bik" />
+                    <file name="assassinate/BTD MID E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/BTD MID M.bik" />
+                    <file name="assassinate/BTD MID D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="CON EUR" target_type="priest" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name="event/church_built.bik" />
+                    <file name="assassinate/CON EUR M.bik" />
+                    <file name="assassinate/CON EUR S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="event/church_built.bik" />
+                    <file name="assassinate/CON EUR M.bik" />
+                    <file name="assassinate/CON EUR F.bik" />
+                    <file name="generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="event/church_built.bik" />
+                    <file name="assassinate/CON EUR M.bik" />
+                    <file name="assassinate/CON EUR F.bik" />
+                    <file name="generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KEY EUR" target_type="priest" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name="assassinate/KEY EUR M.bik" />
+                    <file name="assassinate/KEY EUR S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KEY EUR M.bik" />
+                    <file name="assassinate/KEY EUR F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KEY EUR M.bik" />
+                    <file name="assassinate/KEY EUR F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI OAI" target_type="priest" location="army" climate="arid" religion ="islam">
+                <success>
+                    <file name="assassinate/KNI OAI M.bik" />
+                    <file name="assassinate/KNI OAI S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI OAI M.bik" />
+                    <file name="assassinate/KNI OAI F.bik" />
+                    <file name="generic/END OAS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI OAI M.bik" />
+                    <file name="assassinate/KNI OAI F.bik" />
+                    <file name="generic/END OAS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI OAM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name="assassinate/KNI OAM M.bik" />
+                    <file name="assassinate/KNI OAM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI OAM M.bik" />
+                    <file name="assassinate/KNI OAM F.bik" />
+                    <file name="generic/END OAS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI OAM M.bik" />
+                    <file name="assassinate/KNI OAM F.bik" />
+                    <file name="generic/END OAS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI OAN" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="arid">
+                <success>
+                    <file name="assassinate/KNI OAN M.bik" />
+                    <file name="assassinate/KNI OAN S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI OAN M.bik" />
+                    <file name="assassinate/KNI OAN F.bik" />
+                    <file name="generic/END OAS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI OAN M.bik" />
+                    <file name="assassinate/KNI OAN F.bik" />
+                    <file name="generic/END OAS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI OAP" target_type="priest" location="army" climate="arid" religion ="catholic">
+                <success>
+                    <file name="assassinate/KNI OAP M.bik" />
+                    <file name="assassinate/KNI OAP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI OAP M.bik" />
+                    <file name="assassinate/KNI OAP F.bik" />
+                    <file name="generic/END OAS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI OAP M.bik" />
+                    <file name="assassinate/KNI OAP F.bik" />
+                    <file name="generic/END OAS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI OLI" target_type="priest" location="army" climate="temperate" religion ="islam">
+                <success>
+                    <file name="assassinate/KNI OLI M.bik" />
+                    <file name="assassinate/KNI OLI S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI OLI M.bik" />
+                    <file name="assassinate/KNI OLI F.bik" />
+                    <file name="generic/END OLS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI OLI M.bik" />
+                    <file name="assassinate/KNI OLI F.bik" />
+                    <file name="generic/END OLS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI OLM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name="assassinate/KNI OLM M.bik" />
+                    <file name="assassinate/KNI OLM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI OLM M.bik" />
+                    <file name="assassinate/KNI OLM F.bik" />
+                    <file name="generic/END OLS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI OLM M.bik" />
+                    <file name="assassinate/KNI OLM F.bik" />
+                    <file name="generic/END OLS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI OLN" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="army" climate="temperate">
+                <success>
+                    <file name="assassinate/KNI OLN M.bik" />
+                    <file name="assassinate/KNI OLN S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI OLN M.bik" />
+                    <file name="assassinate/KNI OLN F.bik" />
+                    <file name="generic/END OLS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI OLN M.bik" />
+                    <file name="assassinate/KNI OLN F.bik" />
+                    <file name="generic/END OLS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI OLP" target_type="priest" location="army" climate="temperate" religion ="catholic">
+                <success>
+                    <file name="assassinate/KNI OLP M.bik" />
+                    <file name="assassinate/KNI OLP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI OLP M.bik" />
+                    <file name="assassinate/KNI OLP F.bik" />
+                    <file name="generic/END OLS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI OLP M.bik" />
+                    <file name="assassinate/KNI OLP F.bik" />
+                    <file name="generic/END OLS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI TEI" target_type="priest" location="castle:city" climate="temperate" religion ="islam">
+                <success>
+                    <file name="assassinate/KNI TEI M.bik" />
+                    <file name="assassinate/KNI TEI S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI TEI M.bik" />
+                    <file name="assassinate/KNI TEI F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI TEI M.bik" />
+                    <file name="assassinate/KNI TEI F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI TEM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/KNI TEM M.bik" />
+                    <file name="assassinate/KNI TEM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI TEM M.bik" />
+                    <file name="assassinate/KNI TEM F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI TEM M.bik" />
+                    <file name="assassinate/KNI TEM F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI TEN" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/KNI TEN M.bik" />
+                    <file name="assassinate/KNI TEN S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI TEN M.bik" />
+                    <file name="assassinate/KNI TEN F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI TEN M.bik" />
+                    <file name="assassinate/KNI TEN F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI TEP" target_type="priest" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name="assassinate/KNI TEP M.bik" />
+                    <file name="assassinate/KNI TEP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI TEP M.bik" />
+                    <file name="assassinate/KNI TEP F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI TEP M.bik" />
+                    <file name="assassinate/KNI TEP F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI TMI" target_type="priest" location="castle:city" climate="arid" religion ="islam">
+                <success>
+                    <file name="assassinate/KNI TMI M.bik" />
+                    <file name="assassinate/KNI TMI S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI TMI M.bik" />
+                    <file name="assassinate/KNI TMI F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI TMI M.bik" />
+                    <file name="assassinate/KNI TMI F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI TMM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/KNI TMM M.bik" />
+                    <file name="assassinate/KNI TMM S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI TMM M.bik" />
+                    <file name="assassinate/KNI TMM F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI TMM M.bik" />
+                    <file name="assassinate/KNI TMM F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI TMN" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/KNI TMN M.bik" />
+                    <file name="assassinate/KNI TMN S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI TMN M.bik" />
+                    <file name="assassinate/KNI TMN F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI TMN M.bik" />
+                    <file name="assassinate/KNI TMN F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KNI TMP" target_type="priest" location="castle:city" climate="arid" religion ="catholic">
+                <success>
+                    <file name="assassinate/KNI TMP M.bik" />
+                    <file name="assassinate/KNI TMP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/KNI TMP M.bik" />
+                    <file name="assassinate/KNI TMP F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/KNI TMP M.bik" />
+                    <file name="assassinate/KNI TMP F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KPR TEP" target_type="princess" location="castle:city" climate="temperate">
+                <success>
+                    <file name="generic/EST EUR X.bik" />
+                    <file name="assassinate/KPR TEP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="generic/EST EUR X.bik" />
+                    <file name="assassinate/KPR TEP F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="generic/EST EUR X.bik" />
+                    <file name="assassinate/KPR TEP F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="KPR TMP" target_type="princess" location="castle:city" climate="arid">
+                <success>
+                    <file name="generic/EST MDE X.bik" />
+                    <file name="assassinate/KPR TMP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="generic/EST MDE X.bik" />
+                    <file name="assassinate/KPR TMP F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="generic/EST MDE X.bik" />
+                    <file name="assassinate/KPR TMP F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="MRK TEE" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/MRK TEE M.bik" />
+                    <file name="assassinate/MRK TEE S.bik" />
+                    <file name="generic/END TES E.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/MRK TEE M.bik" />
+                    <file name="assassinate/MRK TEE F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/MRK TEE M.bik" />
+                    <file name="assassinate/MRK TEE F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="MRK TEI" target_type="priest" location="castle:city" climate="temperate" religion ="islam">
+                <success>
+                    <file name="assassinate/MRK TEI M.bik" />
+                    <file name="assassinate/MRK TEI S.bik" />
+                    <file name="generic/END TES E.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/MRK TEI M.bik" />
+                    <file name="assassinate/MRK TEI F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/MRK TEI M.bik" />
+                    <file name="assassinate/MRK TEI F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="MRK TEM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="temperate">
+                <success>
+                    <file name="assassinate/MRK TEM M.bik" />
+                    <file name="assassinate/MRK TEM S.bik" />
+                    <file name="generic/END TES E.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/MRK TEM M.bik" />
+                    <file name="assassinate/MRK TEM F.bik" />
+                    <file name="generic/END TES E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/MRK TEM M.bik" />
+                    <file name="assassinate/MRK TEM F.bik" />
+                    <file name="generic/END TES D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="MRK TME" target_culture="southern_european:northern_european:greek:eastern_european" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/MRK TME M.bik" />
+                    <file name="assassinate/MRK TME S.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/MRK TME M.bik" />
+                    <file name="assassinate/MRK TME F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/MRK TME M.bik" />
+                    <file name="assassinate/MRK TME F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="MRK TMI" target_type="priest" location="castle:city" climate="arid" religion ="islam">
+                <success>
+                    <file name="assassinate/MRK TMI M.bik" />
+                    <file name="assassinate/MRK TMI S.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/MRK TMI M.bik" />
+                    <file name="assassinate/MRK TMI F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/MRK TMI M.bik" />
+                    <file name="assassinate/MRK TMI F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="MRK TMM" target_culture="middle_eastern" target_type="spy:assassin:diplomat:admiral:general:merchant" location="castle:city" climate="arid">
+                <success>
+                    <file name="assassinate/MRK TMM M.bik" />
+                    <file name="assassinate/MRK TMM S.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/MRK TMM M.bik" />
+                    <file name="assassinate/MRK TMM F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/MRK TMM M.bik" />
+                    <file name="assassinate/MRK TMM F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="MRK TMP" target_type="priest" location="castle:city" climate="arid" religion ="catholic">
+                <success>
+                    <file name="assassinate/MRK TMP M.bik" />
+                    <file name="assassinate/MRK TMP S.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/MRK TMP M.bik" />
+                    <file name="assassinate/MRK TMP F.bik" />
+                    <file name="generic/END TMS E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/MRK TMP M.bik" />
+                    <file name="assassinate/MRK TMP F.bik" />
+                    <file name="generic/END TMS D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="SNP TEP" target_type="pope" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name="assassinate/SNP TEP M.bik" />
+                    <file name="assassinate/SNP TEP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/SNP TEP M.bik" />
+                    <file name="assassinate/SNP TEP F.bik" />
+                    <file name="generic/END TED E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/SNP TEP M.bik" />
+                    <file name="assassinate/SNP TEP F.bik" />
+                    <file name="generic/END TED D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="STC TEP" target_type="priest" location="castle:city" climate="temperate" religion ="catholic">
+                <success>
+                    <file name="assassinate/STC TEP M.bik" />
+                    <file name="assassinate/STC TEP S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="assassinate/STC TEP M.bik" />
+                    <file name="assassinate/STC TEP F.bik" />
+                    <file name="generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="assassinate/STC TEP M.bik" />
+                    <file name="assassinate/STC TEP F.bik" />
+                    <file name="generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+        </mission>
+        <mission name="infiltrate">
+            <movie name="BSH TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name="infiltrate/BSH TEX M.bik" />
+                    <file name="infiltrate/BSH TEX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/BSH TEX M.bik" />
+                    <file name="infiltrate/BSH TEX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BSH TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name="infiltrate/BSH TMX M.bik" />
+                    <file name="infiltrate/BSH TMX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/BSH TMX M.bik" />
+                    <file name="infiltrate/BSH TMX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="CNV OAX" target_culture="middle_eastern" location="army" climate="arid">
+                <success>
+                    <file name="infiltrate/CNV OAX M.bik" />
+                    <file name="infiltrate/CNV OAX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/CNV OAX M.bik" />
+                    <file name="infiltrate/CNV OAX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="CNV OLX" target_culture="southern_european:northern_european:greek:eastern_european" location="army" climate="temperate">
+                <success>
+                    <file name="infiltrate/CNV OLX M.bik" />
+                    <file name="infiltrate/CNV OLX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/CNV OLX M.bik" />
+                    <file name="infiltrate/CNV OLX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="CNV TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name="infiltrate/CNV TEX M.bik" />
+                    <file name="infiltrate/CNV TEX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/CNV TEX M.bik" />
+                    <file name="infiltrate/CNV TEX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="CNV TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name="infiltrate/CNV TMX M.bik" />
+                    <file name="infiltrate/CNV TMX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/CNV TMX M.bik" />
+                    <file name="infiltrate/CNV TMX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="DED TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name="infiltrate/DED TEX M.bik" />
+                    <file name="infiltrate/DED TEX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/DED TEX M.bik" />
+                    <file name="infiltrate/DED TEX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="DED TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name="infiltrate/DED TMX M.bik" />
+                    <file name="infiltrate/DED TMX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/DED TMX M.bik" />
+                    <file name="infiltrate/DED TMX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="TNT OXE" target_culture="southern_european:northern_european:greek:eastern_european" location="army">
+                <success>
+                    <file name="infiltrate/TNT OXE M.bik" />
+                    <file name="infiltrate/TNT OXE S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/TNT OXE M.bik" />
+                    <file name="infiltrate/TNT OXE D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="TNT OXM" target_culture="middle_eastern" location="army">
+                <success>
+                    <file name="infiltrate/TNT OXM M.bik" />
+                    <file name="infiltrate/TNT OXM S.bik" />
+                </success>
+                <fail_die>
+                    <file name="infiltrate/TNT OXM M.bik" />
+                    <file name="infiltrate/TNT OXM D.bik" />
+                </fail_die>
+            </movie>
+        </mission>
+        <mission name="sabotage">
+            <movie name="BOM TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name="sabotage/BOM TEX M.bik" />
+                    <file name="sabotage/BOM TEX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="sabotage/BOM TEX M.bik" />
+                    <file name="sabotage/BOM TEX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BOM TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name="sabotage/BOM TMX M.bik" />
+                    <file name="sabotage/BOM TMX S.bik" />
+                </success>
+                <fail_die>
+                    <file name="sabotage/BOM TMX M.bik" />
+                    <file name="sabotage/BOM TMX D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BUR TEX" target_culture="southern_european:northern_european:greek:eastern_european" location="castle:city">
+                <success>
+                    <file name="sabotage/BUR TEX M.bik" />
+                    <file name="sabotage/BUR TEX S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="sabotage/BUR TEX M.bik" />
+                    <file name="sabotage/BUR TEX F.bik" />
+                    <file name="generic/END TEN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="sabotage/BUR TEX M.bik" />
+                    <file name="sabotage/BUR TEX F.bik" />
+                    <file name="generic/END TEN D.bik" />
+                </fail_die>
+            </movie>
+            <movie name="BUR TMX" target_culture="middle_eastern" location="castle:city">
+                <success>
+                    <file name="sabotage/BUR TMX M.bik" />
+                    <file name="sabotage/BUR TMX S.bik" />
+                </success>
+                <fail_escape>
+                    <file name="sabotage/BUR TMX M.bik" />
+                    <file name="sabotage/BUR TMX F.bik" />
+                    <file name="generic/END TMN E.bik" />
+                </fail_escape>
+                <fail_die>
+                    <file name="sabotage/BUR TMX M.bik" />
+                    <file name="sabotage/BUR TMX F.bik" />
+                    <file name="generic/END TMN D.bik" />
+                </fail_die>
+            </movie>
+        </mission>
+    </missions>
+    <events>
+    </events>
+</root>

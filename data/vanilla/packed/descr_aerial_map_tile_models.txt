@@ -1,0 +1,1880 @@
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; ALPHA PAGES
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+alpha_page	mountains
+{
+	filename		mountain_mask.tga
+	cells_across	6
+	cells_up		6
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; RIVERS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tile_set river_a
+{
+	allow_duplicate_vertices
+;	underlay_up_normals
+
+	model_files
+	{
+		river_a.cas
+	}
+							;edge tessellation
+							;top	bottom	left	right	
+	geom source
+	{
+		river_source1		true	true	true	false
+	}
+
+	geom line
+	{
+		river_straight1		true	true	false	false
+	}
+
+	geom line_b
+	{
+		river_straight1b	true	true	false	false
+	}
+
+	geom line_c
+	{
+		river_straight1		true	true	false	false
+	}
+
+	geom line_bg
+	{
+		river_bg			true	true	false	false
+	}
+
+	geom line_bi
+	{
+		river_bi			true	true	false	false
+	}
+
+	geom line_ag
+	{
+		river_ag			true	true	false	false
+	}
+
+	geom line_ah
+	{
+		river_ah			true	true	false	false
+	}
+
+	geom line_ai
+	{
+		river_ai			true	true	false	false
+	}
+
+	geom line_cg
+	{
+		river_cg			true	true	false	false
+	}
+
+	geom line_ch
+	{
+		river_ch			true	true	false	false
+	}
+
+	geom line_ci
+	{
+		river_ci			true	true	false	false
+	}
+
+	geom bend_cw
+	{
+		river_bends1		true	false	false	true
+	}
+
+	geom bend_cw_b
+	{
+		river_bends1b		true	false	false	true
+	}
+
+	geom bend_cw_c
+	{
+		river_bends1c		true	false	false	true
+	}
+
+	geom bend_cw_d
+	{
+		river_bends1d		true	false	false	true
+	}
+
+	geom bend_acw
+	{
+		river_bends2		false	true	false	true
+	}
+
+	geom bend_acw_b
+	{
+		river_bends2b		false	true	false	true
+	}
+
+	geom bend_acw_c
+	{
+		river_bends2c		false	true	false	true
+	}
+
+	geom bend_acw_d
+	{
+		river_bends2d		false	true	false	true
+	}
+
+	geom split1
+	{
+		river_splits1		false	false	false	true
+	}
+
+	geom split2
+	{
+		river_splits2		false	true	false	false
+	}
+
+	geom split3
+	{
+		river_splits3		true	false	false	false
+	}
+
+		geom split1
+	{
+		river_splits1		false	false	false	true
+	}
+
+	geom join1
+	{
+		river_joins1		false	false	true	false
+	}
+
+	geom join2
+	{
+		river_joins2		false	true	false	false
+	}
+
+	geom join3
+	{
+		river_joins3		true	false	false	false
+	}
+
+	geom end
+	{
+		river_end1			true	true	false	true	
+	}
+
+	geom ford
+	{
+		river_ford			true	true	false	false
+	}
+
+	geom_links
+	{
+							;defined geom	orientation
+
+		source_top			source			rotation_0
+		source_bottom		source			rotation_180
+		source_left			source			rotation_270
+		source_right		source			rotation_90
+
+		line_top			line			rotation_0
+		line_bottom			line			rotation_180	
+		line_left			line			rotation_270
+		line_right			line			rotation_90
+
+		line_b_top			line_b			rotation_0
+		line_b_bottom		line_b			rotation_180	
+		line_b_left			line_b			rotation_270
+		line_b_right		line_b			rotation_90
+
+		line_c_top			line_c			rotation_0
+		line_c_bottom		line_c			rotation_180	
+		line_c_left			line_c			rotation_270
+		line_c_right		line_c			rotation_90
+
+		line_bg_top			line_bg			rotation_0
+		line_bg_bottom		line_bg			rotation_180	
+		line_bg_left		line_bg			rotation_270
+		line_bg_right		line_bg			rotation_90
+
+		line_bi_top			line_bi			rotation_0
+		line_bi_bottom		line_bi			rotation_180	
+		line_bi_left		line_bi			rotation_270
+		line_bi_right		line_bi			rotation_90
+
+		line_ag_top			line_ag			rotation_0
+		line_ag_bottom		line_ag			rotation_180	
+		line_ag_left		line_ag			rotation_270
+		line_ag_right		line_ag			rotation_90
+
+		line_ah_top			line_ah			rotation_0
+		line_ah_bottom		line_ah			rotation_180	
+		line_ah_left		line_ah			rotation_270
+		line_ah_right		line_ah			rotation_90
+
+		line_ai_top			line_ai			rotation_0
+		line_ai_bottom		line_ai			rotation_180	
+		line_ai_left		line_ai			rotation_270
+		line_ai_right		line_ai			rotation_90
+
+		line_cg_top			line_cg			rotation_0
+		line_cg_bottom		line_cg			rotation_180	
+		line_cg_left		line_cg			rotation_270
+		line_cg_right		line_cg			rotation_90
+
+		line_ch_top			line_ch			rotation_0
+		line_ch_bottom		line_ch			rotation_180	
+		line_ch_left		line_ch			rotation_270
+		line_ch_right		line_ch			rotation_90
+
+		line_ci_top			line_ci			rotation_0
+		line_ci_bottom		line_ci			rotation_180	
+		line_ci_left		line_ci			rotation_270
+		line_ci_right		line_ci			rotation_90
+
+		bend_cw_tl			bend_cw			rotation_270
+		bend_cw_tr			bend_cw			rotation_0
+		bend_cw_bl			bend_cw			rotation_180
+		bend_cw_br			bend_cw			rotation_90
+
+		bend_cw_b_tl		bend_cw_b		rotation_270
+		bend_cw_b_tr		bend_cw_b		rotation_0
+		bend_cw_b_bl		bend_cw_b		rotation_180
+		bend_cw_b_br		bend_cw_b		rotation_90
+
+		bend_cw_c_tl		bend_cw_c		rotation_270
+		bend_cw_c_tr		bend_cw_c		rotation_0
+		bend_cw_c_bl		bend_cw_c		rotation_180
+		bend_cw_c_br		bend_cw_c		rotation_90
+
+		bend_cw_d_tl		bend_cw_d		rotation_270
+		bend_cw_d_tr		bend_cw_d		rotation_0
+		bend_cw_d_bl		bend_cw_d		rotation_180
+		bend_cw_d_br		bend_cw_d		rotation_90
+
+		bend_acw_tl			bend_acw		rotation_180
+		bend_acw_tr			bend_acw		rotation_270
+		bend_acw_bl			bend_acw		rotation_90
+		bend_acw_br			bend_acw		rotation_0
+
+		bend_acw_b_tl		bend_acw_b		rotation_180
+		bend_acw_b_tr		bend_acw_b		rotation_270
+		bend_acw_b_bl		bend_acw_b		rotation_90
+		bend_acw_b_br		bend_acw_b		rotation_0
+
+		bend_acw_c_tl		bend_acw_c		rotation_180
+		bend_acw_c_tr		bend_acw_c		rotation_270
+		bend_acw_c_bl		bend_acw_c		rotation_90
+		bend_acw_c_br		bend_acw_c		rotation_0
+
+		bend_acw_d_tl		bend_acw_d		rotation_180
+		bend_acw_d_tr		bend_acw_d		rotation_270
+		bend_acw_d_bl		bend_acw_d		rotation_90
+		bend_acw_d_br		bend_acw_d		rotation_0
+
+		split_in_t_out_lr	split1			rotation_90
+		split_in_t_out_lb	split3			rotation_90
+		split_in_t_out_rb	split2			rotation_90
+
+		split_in_b_out_lr	split1			rotation_270
+		split_in_b_out_lt	split2			rotation_270
+		split_in_b_out_rt	split3			rotation_270
+
+		split_in_l_out_tb	split1			rotation_0
+		split_in_l_out_tr	split2			rotation_0
+		split_in_l_out_br	split3			rotation_0
+
+		split_in_r_out_tb	split1			rotation_180
+		split_in_r_out_tl	split3			rotation_180
+		split_in_r_out_bl	split2			rotation_180
+
+		join_out_t_in_lr,	join1			rotation_270			
+		join_out_t_in_lb,	join2			rotation_270		
+		join_out_t_in_rb,	join3			rotation_270		
+
+		join_out_b_in_lr,	join1			rotation_90			
+		join_out_b_in_lt,	join3			rotation_90			
+		join_out_b_in_rt,	join2			rotation_90			
+									
+		join_out_l_in_tb,	join1			rotation_180		
+		join_out_l_in_tr,	join3			rotation_180	
+		join_out_l_in_br,	join2			rotation_180	
+							
+		join_out_r_in_tb,	join1			rotation_0		
+		join_out_r_in_tl,	join2			rotation_0		
+		join_out_r_in_bl,	join3			rotation_0		
+
+		end_top				end				rotation_0
+		end_bottom			end				rotation_180
+		end_left			end				rotation_270
+		end_right			end				rotation_90
+
+		ford_top			ford			rotation_0
+		ford_bottom			ford			rotation_180	
+		ford_left			ford			rotation_270
+		ford_right			ford			rotation_90
+	}
+
+	overlay river_source1
+	{
+		river_source1_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_straight1
+	{
+		river_straight1_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_straight1b
+	{
+		river_straight1b_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_straight1c
+	{
+		river_straight1c_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bg
+	{
+		river_bg_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bi
+	{
+		river_bi_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_ag
+	{
+		river_ag_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_ah
+	{
+		river_ah_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_ai
+	{
+		river_ai_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_cg
+	{
+		river_cg_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_ch
+	{
+		river_ch_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_ci
+	{
+		river_ci_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bends1
+	{
+		river_bends1_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bends1b
+	{
+		river_bends1b_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bends1c
+	{
+		river_bends1c_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bends1d
+	{
+		river_bends1d_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bends2
+	{
+		river_bends2_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bends2b
+	{
+		river_bends2b_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bends2c
+	{
+		river_bends2c_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_bends2d
+	{
+		river_bends2d_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_splits1
+	{
+		river_splits1_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_splits2
+	{
+		river_splits2_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_splits3
+	{
+		river_splits3_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_joins1
+	{
+		river_joins1_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_joins2
+	{
+		river_joins2_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_joins3
+	{
+
+		river_joins3_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_end1
+	{
+		river_end1_overlay_w
+		{
+			water
+		}
+	}
+
+	overlay river_ford
+	{
+		river_ford_overlay
+		{
+		}
+
+		river_ford_overlay_w
+		{
+			water
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; WALLS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tile_set wall_a
+{
+	allow_duplicate_vertices
+	underlay_up_normals
+	
+	model_files
+	{
+		wall_a.cas
+		riverwall.cas
+	}	
+
+	geom end
+	{
+		wall_end1		true	true	true	false
+	}
+
+	geom corner
+	{
+		wall_corner1	true	false	true	false
+	}
+
+	geom line
+	{
+		wall_straight1	true	true	false	false
+	}
+
+	geom line_tower
+	{
+		wall_straight2	true	true	false	false
+	}
+
+	geom t_piece
+	{
+		wall_tpiece1	false	true	false	false
+	}
+
+	geom cross
+	{
+		wall_cross1		false	false	false	false
+	}
+
+	geom line_gate
+	{
+		wall_gate1		false	false	true	true
+	}
+
+	geom solo
+	{
+		wall_solo1		true	true	true	true
+	}
+
+	geom river_a_line
+	{
+		riverwall_straight	false	false	false	false
+	}
+
+	geom_links
+	{
+		end_top				end				rotation_0
+		end_bottom			end				rotation_180
+		end_left			end				rotation_270
+		end_right			end				rotation_90
+
+		corner_tl			corner			rotation_0
+		corner_tr			corner			rotation_90
+		corner_bl			corner			rotation_270
+		corner_br			corner			rotation_180
+
+		line_horiz			line			rotation_0
+		line_vert			line			rotation_90
+		
+		t_top				t_piece			rotation_0
+		t_bottom			t_piece			rotation_180
+		t_left				t_piece			rotation_270
+		t_right				t_piece			rotation_90
+
+		cross				cross			rotation_0
+
+		line_tower_horiz	line_tower		rotation_0
+		line_tower_vert		line_tower		rotation_90
+
+		line_gate_horiz		line_gate		rotation_90
+		line_gate_vert		line_gate		rotation_0
+
+		solo				solo			rotation_0
+		
+		river_a_line_top	river_a_line	rotation_90
+		river_a_line_bottom	river_a_line	rotation_270	
+		river_a_line_left	river_a_line	rotation_0
+		river_a_line_right	river_a_line	rotation_180
+	}
+
+	overlay wall_end1
+	{
+		wall_end1_overlay
+		{
+		}
+	}
+
+	overlay wall_corner1
+	{
+		wall_corner1_overlay
+		{
+		}
+	}
+
+	overlay wall_straight1
+	{
+		wall_straight1_overlay
+		{
+		}
+	}
+
+	overlay wall_straight2
+	{
+		wall_straight2_overlay
+		{
+		}
+	}
+
+	overlay wall_tpiece1
+	{
+		wall_tpiece1_overlay
+		{
+		}
+	}
+
+	overlay wall_cross1
+	{
+		wall_cross1_overlay
+		{
+		}
+	}
+
+	overlay wall_gate1
+	{
+		wall_gate1_overlay
+		{
+		}
+	}
+
+	overlay wall_solo1
+	{
+		wall_solo1_overlay
+		{
+		}
+	}
+
+	overlay riverwall_straight
+	{
+		riverwall_straight_overlay 
+		{
+		}
+		
+		riverwall_straight_overlay_bank
+		{
+		}
+		
+		riverwall_straight_overlay_w
+		{
+			water
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; VOLCANOS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tile_set volcano
+{
+	allow_duplicate_vertices
+
+	model_files
+	{
+		volcano.cas
+	}
+
+	geom top_left
+	{
+		volcano_underlay_07	true	false	true	false	
+	}
+
+	geom top
+	{
+		volcano_underlay_04	true	false	false	false	
+	}
+
+	geom top_right
+	{
+		volcano_underlay_01	true	false	false	true	
+	}
+
+	geom left
+	{
+		volcano_underlay_08	false	false	true	false	
+	}
+
+	geom centre
+	{
+		volcano_underlay_05	false	false	false	false	
+	}
+
+	geom right
+	{
+		volcano_underlay_02	false	false	false	true	
+	}
+
+	geom bottom_left
+	{
+		volcano_underlay_09	false	true	true	false	
+	}
+
+	geom bottom
+	{
+		volcano_underlay_06	false	true	false	false	
+	}
+
+	geom bottom_right
+	{
+		volcano_underlay_03	false	true	false	true	
+	}
+
+	geom_links
+	{
+		top_left		top_left		rotation_0
+		top				top				rotation_0
+		top_right		top_right		rotation_0
+		left			left			rotation_0
+		centre			centre			rotation_0
+		right			right			rotation_0
+		bottom_left		bottom_left		rotation_0
+		bottom			bottom			rotation_0
+		bottom_right	bottom_right	rotation_0
+	}
+
+	overlay volcano_underlay_01
+	{
+		volcano_overlay_01
+		{
+		}
+	}
+
+	overlay volcano_underlay_02
+	{
+		volcano_overlay_02
+		{
+		}
+
+		volcano_overlay_l_02
+		{
+			lava
+		}
+	}
+
+	overlay volcano_underlay_03
+	{
+		volcano_overlay_03
+		{
+		}
+	}
+
+	overlay volcano_underlay_04
+	{
+		volcano_overlay_04
+		{
+		}
+
+		volcano_overlay_l_04
+		{
+			lava
+		}
+	}
+
+	overlay volcano_underlay_05
+	{
+		volcano_overlay_05
+		{
+		}
+
+		volcano_overlay_l_05
+		{
+			lava
+		}
+	}
+
+	overlay volcano_underlay_06
+	{
+		volcano_overlay_06
+		{
+		}
+
+		volcano_overlay_l_06
+		{
+			lava
+		}
+	}
+
+	overlay volcano_underlay_07
+	{
+		volcano_overlay_07
+		{
+		}
+	}
+
+	overlay volcano_underlay_08
+	{
+		volcano_overlay_08
+		{
+		}
+
+		volcano_overlay_l_08
+		{
+			lava
+		}
+	}
+
+	overlay volcano_underlay_09
+	{
+		volcano_overlay_09
+		{
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tile_set volcano_dormant
+{
+	allow_duplicate_vertices
+
+	model_files
+	{
+		volcano_dormant.cas
+	}
+
+	geom top_left
+	{
+		volcano_underlay_07	true	false	true	false	
+	}
+
+	geom top
+	{
+		volcano_underlay_04	true	false	false	false	
+	}
+
+	geom top_right
+	{
+		volcano_underlay_01	true	false	false	true	
+	}
+
+	geom left
+	{
+		volcano_underlay_08	false	false	true	false	
+	}
+
+	geom centre
+	{
+		volcano_underlay_05	false	false	false	false	
+	}
+
+	geom right
+	{
+		volcano_underlay_02	false	false	false	true	
+	}
+
+	geom bottom_left
+	{
+		volcano_underlay_09	false	true	true	false	
+	}
+
+	geom bottom
+	{
+		volcano_underlay_06	false	true	false	false	
+	}
+
+	geom bottom_right
+	{
+		volcano_underlay_03	false	true	false	true	
+	}
+
+	geom_links
+	{
+		top_left		top_left		rotation_0
+		top				top				rotation_0
+		top_right		top_right		rotation_0
+		left			left			rotation_0
+		centre			centre			rotation_0
+		right			right			rotation_0
+		bottom_left		bottom_left		rotation_0
+		bottom			bottom			rotation_0
+		bottom_right	bottom_right	rotation_0
+	}
+
+	overlay volcano_underlay_01
+	{
+		volcano_overlay_01
+		{
+		}
+	}
+
+	overlay volcano_underlay_02
+	{
+		volcano_overlay_02
+		{
+		}
+	}
+
+	overlay volcano_underlay_03
+	{
+		volcano_overlay_03
+		{
+		}
+	}
+
+	overlay volcano_underlay_04
+	{
+		volcano_overlay_04
+		{
+		}
+	}
+
+	overlay volcano_underlay_05
+	{
+		volcano_overlay_05
+		{
+		}
+	}
+
+	overlay volcano_underlay_06
+	{
+		volcano_overlay_06
+		{
+		}
+	}
+
+	overlay volcano_underlay_07
+	{
+		volcano_overlay_07
+		{
+		}
+	}
+
+	overlay volcano_underlay_08
+	{
+		volcano_overlay_08
+		{
+		}
+	}
+
+	overlay volcano_underlay_09
+	{
+		volcano_overlay_09
+		{
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; CLIFFS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tile_set cliffs
+{
+	allow_duplicate_vertices
+	allow_unsmooth_underlays
+	underlay_up_normals
+	seperate_overlay_normals
+
+	model_files
+	{
+		cliffs.cas
+	}
+
+	geom wall_1
+	{
+		cliff_1_01_underlay	true	true	true	true	
+	}
+
+	geom corner_1
+	{
+		cliff_2_01_underlay	true	true	true	true	
+	}
+
+	geom outcrop_1
+	{
+		cliff_3_01_underlay	true	true	true	true
+	}
+
+	geom pillar_1
+	{
+		cliff_4_01_underlay	true	true	true	true
+	}
+
+	geom bridge_1
+	{
+		cliff_5_01_underlay	true	true	true	true
+	}
+
+	geom end_cw_1
+	{
+		cliff_7_01_underlay	true	true	true	true
+	}
+
+	geom end_acw_1
+	{
+		cliff_6_01_underlay	true	true	true	true
+	}
+
+	geom end_dbl_1
+	{
+		cliff_8_01_underlay	true	true	true	true
+	}
+
+	geom_links
+	{
+		wall_1_top			wall_1			rotation_0
+		wall_1_bottom		wall_1			rotation_180
+		wall_1_left			wall_1			rotation_270
+		wall_1_right		wall_1			rotation_90
+
+		corner_1_tl			corner_1		rotation_0
+		corner_1_tr			corner_1		rotation_90
+		corner_1_bl			corner_1		rotation_270
+		corner_1_br			corner_1		rotation_180
+
+		outcrop_1_top		outcrop_1		rotation_0
+		outcrop_1_bottom	outcrop_1		rotation_180
+		outcrop_1_left		outcrop_1		rotation_270
+		outcrop_1_right		outcrop_1		rotation_90
+
+		pillar_1			pillar_1		rotation_0
+
+		bridge_1_horizontal	bridge_1		rotation_0
+		bridge_1_vertical	bridge_1		rotation_90
+
+		end_cw_1_top		end_cw_1		rotation_270
+		end_cw_1_bottom		end_cw_1		rotation_90
+		end_cw_1_left		end_cw_1		rotation_180
+		end_cw_1_right		end_cw_1		rotation_0
+
+		end_acw_1_top		end_acw_1		rotation_90
+		end_acw_1_bottom	end_acw_1		rotation_270
+		end_acw_1_left		end_acw_1		rotation_0
+		end_acw_1_right		end_acw_1		rotation_180
+
+		end_dbl_1_top		end_dbl_1		rotation_90
+		end_dbl_1_bottom	end_dbl_1		rotation_270
+		end_dbl_1_left		end_dbl_1		rotation_0
+		end_dbl_1_right		end_dbl_1		rotation_180
+	}
+
+	overlay cliff_1_01_underlay	
+	{
+		cliff_1_01_overlay	
+		{
+		}
+	}
+
+	overlay cliff_2_01_underlay	
+	{
+		cliff_2_01_overlay	
+		{
+		}
+	}
+
+	overlay cliff_3_01_underlay	
+	{
+		cliff_3_01_overlay	
+		{
+		}
+	}
+
+	overlay cliff_4_01_underlay	
+	{
+		cliff_4_01_overlay	
+		{
+		}
+	}
+
+	overlay cliff_5_01_underlay	
+	{
+		cliff_5_01_overlay	
+		{
+		}
+	}
+
+	overlay cliff_6_01_underlay	
+	{
+		cliff_6_01_overlay	
+		{
+		}
+	}
+
+	overlay cliff_7_01_underlay	
+	{
+		cliff_7_01_overlay	
+		{
+		}
+	}
+
+	overlay cliff_8_01_underlay	
+	{
+		cliff_8_01_overlay	
+		{
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; MOUNTAINS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tile_set mountains
+{
+	allow_duplicate_vertices
+	seperate_overlay_normals
+	surpress_warnings
+	advanced_edge_calculation
+	underlay_up_normals
+
+	model_files
+	{
+		mountain_tile_set.cas
+	}
+
+	geom line0
+	{
+		mount_1x4_00_underlay		true	true	true	false	
+	}
+
+	geom line1
+	{
+		mount_1x4_10_underlay		true	true	false	false	
+	}
+
+	geom line2
+	{
+		mount_1x4_20_underlay		true	true	false	false	
+	}
+
+	geom line3
+	{
+		mount_1x4_30_underlay		true	true	false	true	
+	}
+
+	geom l0
+	{
+		mount_L_01_underlay			true	false	true	false	
+	}
+
+	geom l1
+	{
+		mount_L_11_underlay			true	true	false	false	
+	}
+
+	geom l2
+	{
+		mount_L_21_underlay			true	true	false	true	
+	}
+
+	geom l3
+	{
+		mount_L_00_underlay			false	true	true	true	
+	}
+
+	geom lr0
+	{
+		mount_L_reverse_01_underlay	true	true	true	false	
+	}
+
+	geom lr1
+	{
+		mount_L_reverse_11_underlay	true	true	false	false	
+	}
+
+	geom lr2
+	{
+		mount_L_reverse_21_underlay	true	false	false	true	
+	}
+
+	geom lr3
+	{
+		mount_L_reverse_20_underlay	false	true	true	true	
+	}
+
+	geom t0
+	{
+		mount_T_01_underlay			true	true	true	false	
+	}
+
+	geom t1
+	{
+		mount_T_11_underlay			true	false	false	false	
+	}
+
+	geom t2
+	{
+		mount_T_21_underlay			true	true	false	true	
+	}
+
+	geom t3
+	{
+		mount_T_10_underlay			false	true	true	true	
+	}
+
+	geom s0
+	{
+		mount_S_11_underlay			true	false	true	false	
+	}
+
+	geom s1
+	{
+		mount_S_21_underlay			true	true	false	true	
+	}
+
+	geom s2
+	{
+		mount_S_00_underlay			true	true	true	false	
+	}
+
+	geom s3
+	{
+		mount_S_10_underlay			false	true	false	true	
+	}
+
+	geom sr0
+	{
+		mount_S_reverse_01_underlay	true	true	true	false	
+	}
+
+	geom sr1
+	{
+		mount_S_reverse_11_underlay	true	false	false	true	
+	}
+
+	geom sr2
+	{
+		mount_S_reverse_10_underlay	false	true	true	false	
+	}
+
+	geom sr3
+	{
+		mount_S_reverse_20_underlay	true	true	false	true	
+	}
+
+	geom square0
+	{
+		mount_2x2_01_underlay		true	false	true	false	
+		corners						true	true	true	false
+	}
+
+	geom square1
+	{
+		mount_2x2_11_underlay		true	false	false	true
+		corners						true	true	false	true
+	}
+
+	geom square2
+	{
+		mount_2x2_00_underlay		false	true	true	false
+		corners						true	false	true	true	
+	}
+
+	geom square3
+	{
+		mount_2x2_10_underlay		false	true	false	true
+		corners						false	true	true	true	
+	}
+
+	geom single
+	{
+		mount_1x1_underlay			true	true	true	true
+	}
+
+	geom_links
+	{
+		line0_0		line0	rotation_0
+		line0_90	line0	rotation_90
+		line0_180	line0	rotation_180
+		line0_270	line0	rotation_270
+
+		line1_0		line1	rotation_0
+		line1_90	line1	rotation_90
+		line1_180	line1	rotation_180
+		line1_270	line1	rotation_270
+
+		line2_0		line2	rotation_0
+		line2_90	line2	rotation_90
+		line2_180	line2	rotation_180
+		line2_270	line2	rotation_270
+
+		line3_0		line3	rotation_0
+		line3_90	line3	rotation_90
+		line3_180	line3	rotation_180
+		line3_270	line3	rotation_270
+
+		l0_0		l0		rotation_0
+		l0_90		l0		rotation_90
+		l0_180		l0		rotation_180
+		l0_270		l0		rotation_270
+
+		l1_0		l1		rotation_0
+		l1_90		l1		rotation_90
+		l1_180		l1		rotation_180
+		l1_270		l1		rotation_270
+
+		l2_0		l2		rotation_0
+		l2_90		l2		rotation_90
+		l2_180		l2		rotation_180
+		l2_270		l2		rotation_270
+
+		l3_0		l3		rotation_0
+		l3_90		l3		rotation_90
+		l3_180		l3		rotation_180
+		l3_270		l3		rotation_270
+
+		lr0_0		lr0		rotation_0
+		lr0_90		lr0		rotation_90
+		lr0_180		lr0		rotation_180
+		lr0_270		lr0		rotation_270
+
+		lr1_0		lr1		rotation_0
+		lr1_90		lr1		rotation_90
+		lr1_180		lr1		rotation_180
+		lr1_270		lr1		rotation_270
+
+		lr2_0		lr2		rotation_0
+		lr2_90		lr2		rotation_90
+		lr2_180		lr2		rotation_180
+		lr2_270		lr2		rotation_270
+
+		lr3_0		lr3		rotation_0
+		lr3_90		lr3		rotation_90
+		lr3_180		lr3		rotation_180
+		lr3_270		lr3		rotation_270
+
+		t0_0		t0		rotation_0
+		t0_90		t0		rotation_90
+		t0_180		t0		rotation_180
+		t0_270		t0		rotation_270
+
+		t1_0		t1		rotation_0
+		t1_90		t1		rotation_90
+		t1_180		t1		rotation_180
+		t1_270		t1		rotation_270
+
+		t2_0		t2		rotation_0
+		t2_90		t2		rotation_90
+		t2_180		t2		rotation_180
+		t2_270		t2		rotation_270
+
+		t3_0		t3		rotation_0
+		t3_90		t3		rotation_90
+		t3_180		t3		rotation_180
+		t3_270		t3		rotation_270
+
+		s0_0		s0		rotation_0
+		s0_90		s0		rotation_90
+		s0_180		s0		rotation_180
+		s0_270		s0		rotation_270
+
+		s1_0		s1		rotation_0
+		s1_90		s1		rotation_90
+		s1_180		s1		rotation_180
+		s1_270		s1		rotation_270
+
+		s2_0		s2		rotation_0
+		s2_90		s2		rotation_90
+		s2_180		s2		rotation_180
+		s2_270		s2		rotation_270
+
+		s3_0		s3		rotation_0
+		s3_90		s3		rotation_90
+		s3_180		s3		rotation_180
+		s3_270		s3		rotation_270
+
+		sr0_0		sr0		rotation_0
+		sr0_90		sr0		rotation_90
+		sr0_180		sr0		rotation_180
+		sr0_270		sr0		rotation_270
+
+		sr1_0		sr1		rotation_0
+		sr1_90		sr1		rotation_90
+		sr1_180		sr1		rotation_180
+		sr1_270		sr1		rotation_270
+
+		sr2_0		sr2		rotation_0
+		sr2_90		sr2		rotation_90
+		sr2_180		sr2		rotation_180
+		sr2_270		sr2		rotation_270
+
+		sr3_0		sr3		rotation_0
+		sr3_90		sr3		rotation_90
+		sr3_180		sr3		rotation_180
+		sr3_270		sr3		rotation_270
+
+		square0_0	square0	rotation_0
+		square0_90	square0	rotation_90
+		square0_180	square0	rotation_180
+		square0_270	square0	rotation_270
+
+		square1_0	square1	rotation_0
+		square1_90	square1	rotation_90
+		square1_180	square1	rotation_180
+		square1_270	square1	rotation_270
+
+		square2_0	square2	rotation_0
+		square2_90	square2	rotation_90
+		square2_180	square2	rotation_180
+		square2_270	square2	rotation_270
+
+		square3_0	square3	rotation_0
+		square3_90	square3	rotation_90
+		square3_180	square3	rotation_180
+		square3_270	square3	rotation_270
+
+		single_0	single	rotation_0
+		single_90	single	rotation_90
+		single_180	single	rotation_180
+		single_270	single	rotation_270
+	}
+
+	overlay mount_1x4_00_underlay
+	{
+		mount_1x4_00_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	0	5	rotation_0
+		}
+	}
+
+	overlay mount_1x4_10_underlay
+	{
+		mount_1x4_10_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	1	5	rotation_0
+		}
+	}
+	
+	overlay mount_1x4_20_underlay
+	{
+		mount_1x4_20_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	2	5	rotation_0
+		}
+	}
+	
+	overlay mount_1x4_30_underlay
+	{
+		mount_1x4_30_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	3	5	rotation_0
+		}
+	}
+
+	overlay mount_L_01_underlay	
+	{
+		mount_L_01_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	5	0	rotation_180
+		}	
+	}		
+
+	overlay mount_L_11_underlay	
+	{
+		mount_L_11_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	4	0	rotation_180
+		}
+	}		
+
+	overlay mount_L_21_underlay		
+	{
+		mount_L_21_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	3	0	rotation_180
+		}
+	}	
+
+	overlay mount_L_00_underlay	
+	{
+		mount_L_00_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	5	1	rotation_180
+		}
+	}	
+	
+	overlay mount_L_reverse_01_underlay	
+	{
+		mount_L_reverse_01_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	2	0	rotation_180
+		}	
+	}		
+
+	overlay mount_L_reverse_11_underlay	
+	{
+		mount_L_reverse_11_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	1	0	rotation_180
+		}
+	}		
+
+	overlay mount_L_reverse_21_underlay		
+	{
+		mount_L_reverse_21_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	0	0	rotation_180
+		}
+	}	
+
+	overlay mount_L_reverse_20_underlay	
+	{
+		mount_L_reverse_20_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	0	1	rotation_180
+		}
+	}
+	
+	overlay mount_T_01_underlay	
+	{
+		mount_T_01_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	4	1	rotation_270
+		}	
+	}
+	
+	overlay mount_T_11_underlay	
+	{
+		mount_T_11_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	4	2	rotation_270
+		}	
+	}			
+
+	overlay mount_T_21_underlay	
+	{
+		mount_T_21_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	4	3	rotation_270
+		}	
+	}
+
+	overlay mount_T_10_underlay	
+	{
+		mount_T_10_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	5	2	rotation_270
+		}	
+	}
+
+	overlay mount_S_11_underlay
+	{
+		mount_S_11_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	0	3	rotation_270
+		}
+	}
+
+	overlay mount_S_21_underlay
+	{
+		mount_S_21_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	0	4	rotation_270
+		}
+	}
+
+	overlay mount_S_00_underlay
+	{
+		mount_S_00_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	1	2	rotation_270
+		}
+	}
+
+	overlay mount_S_10_underlay
+	{
+		mount_S_10_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	1	3	rotation_270
+		}
+	}
+
+	overlay mount_S_reverse_01_underlay
+	{
+		mount_S_reverse_01_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	2	2	rotation_270
+		}
+	}
+
+	overlay mount_S_reverse_11_underlay
+	{
+		mount_S_reverse_11_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	2	3	rotation_270
+		}
+	}
+
+	overlay mount_S_reverse_10_underlay
+	{
+		mount_S_reverse_10_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	3	3	rotation_270
+		}
+	}
+
+	overlay mount_S_reverse_20_underlay
+	{
+		mount_S_reverse_20_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	3	4	rotation_270
+		}
+	}
+
+	overlay mount_2x2_01_underlay
+	{
+		mount_2x2_01_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	4	5	rotation_0
+		}
+	}
+
+	overlay mount_2x2_11_underlay
+	{
+		mount_2x2_11_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	5	5	rotation_0
+		}
+	}
+
+	overlay mount_2x2_00_underlay
+	{
+		mount_2x2_00_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	4	4	rotation_0
+		}
+	}
+
+	overlay mount_2x2_10_underlay
+	{
+		mount_2x2_10_overlay
+		{
+			texture_uv_strips	4
+			alpha_page			mountains	5	4	rotation_0
+		}
+	}
+
+	overlay mount_1x1_underlay
+	{
+		mount_1x1_overlay
+		{
+			texture_uv_strips 4
+			alpha_page			mountains	2	1	rotation_0
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; HILLS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tile_set hills
+{
+	allow_duplicate_vertices
+	surpress_warnings
+
+	model_files
+	{
+		hill2.CAS
+		Hill01.CAS
+		Hill02.CAS
+		Hill04pt1.CAS
+		Hill04pt2.CAS
+		Hill04pt3.CAS
+		Hill04pt4.CAS
+		Hill05.CAS
+		Hill06.CAS
+		Hill07.CAS
+	}
+
+	geom hill1
+	{
+		hill2		true	true	true	true	
+	}
+
+	geom hill2
+	{
+		Hill01		true	true	true	true	
+	}
+
+	geom hill3
+	{
+		Hill02		true	true	true	true	
+	}
+
+	geom hill4tl
+	{
+		Hill04pt2	true	false	true	false
+	}
+
+	geom hill4tr
+	{
+		Hill04pt4	true	false	false	true
+	}
+
+	geom hill4bl
+	{
+		Hill04pt1	false	true	true	false
+	}
+
+	geom hill4br
+	{
+		Hill04pt3	false	true	false	true
+	}
+
+	geom hills1
+	{
+		Hill05		true	true	true	true
+	}
+
+	geom crag1
+	{
+		Hill06		true	true	true	true
+	}
+
+	geom crag2
+	{
+		Hill07		true	true	true	true
+	}
+
+	geom_links
+	{
+		hill1		hill1		rotation_0
+		hill2		hill1		rotation_90
+		hill3		hill1		rotation_180
+		hill4		hill1		rotation_270
+
+		hill5		hill2		rotation_0
+		hill6		hill2		rotation_90
+		hill7		hill2		rotation_180
+		hill8		hill2		rotation_270
+
+		hill9		hill3		rotation_0
+		hill10		hill3		rotation_90
+		hill11		hill3		rotation_180
+		hill12		hill3		rotation_270
+
+		hill13tl	hill4tl		rotation_0
+		hill13tr	hill4tr		rotation_0
+		hill13bl	hill4bl		rotation_0
+		hill13br	hill4br		rotation_0
+
+		hill14tl	hill4bl		rotation_90
+		hill14tr	hill4tl		rotation_90
+		hill14bl	hill4br		rotation_90
+		hill14br	hill4tr		rotation_90
+
+		hill15tl	hill4br		rotation_180
+		hill15tr	hill4bl		rotation_180
+		hill15bl	hill4tr		rotation_180
+		hill15br	hill4tl		rotation_180
+
+		hill16tl	hill4tr		rotation_270
+		hill16tr	hill4br		rotation_270
+		hill16bl	hill4tl		rotation_270
+		hill16br	hill4bl		rotation_270
+
+		hills1		hills1		rotation_0
+		hills2		hills1		rotation_90
+		hills3		hills1		rotation_180
+		hills4		hills1		rotation_270
+
+		crag1		crag1		rotation_0
+		crag2		crag1		rotation_90
+		crag3		crag1		rotation_180
+		crag4		crag1		rotation_270
+
+		crag5		crag2		rotation_0
+		crag6		crag2		rotation_90
+		crag7		crag2		rotation_180
+		crag8		crag2		rotation_270
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

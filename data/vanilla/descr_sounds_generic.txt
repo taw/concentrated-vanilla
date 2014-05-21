@@ -1,0 +1,4128 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ENGINE SOUNDS THAT USE SND_SFX  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+DEFAULT: 3d mindist 5 minPitch .8 maxPitch 1.2 priority 70 fadein .25 fadeout 2 Volume 0 probability 1 distancepriority 0 randomdelay 0 effect_level .25
+
+
+event Rocket_Launcher_Fire mindist 15 priority 240 minPitch .5 maxPitch 1.2 fadein 0 fadeout 2 Volume -10 rndvolume -20 probability 1 distancepriority 0 randomdelay 0 effect_level .25
+	folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+	RL_fire_01
+	RL_fire_02
+	RL_fire_03
+	RL_fire_04
+	RL_fire_05
+	RL_fire_06
+	RL_fire_07
+end
+
+
+event Monster_Ribault_Fire mindist 20 priority 240 minPitch .5 maxPitch 1.5 fadein 0 fadeout 2 Volume 0 rndvolume -20 probability 1 distancepriority 0 randomdelay 0 effect_level .25
+	folder data/sounds/SFX/Individual/Siege_Engines/ribault
+	ribault_fire_01
+	ribault_fire_02
+	ribault_fire_03
+	ribault_fire_04
+	ribault_fire_05
+	ribault_fire_06
+	ribault_fire_07
+	ribault_fire_08
+	ribault_fire_09
+	ribault_fire_10
+	ribault_fire_11
+	ribault_fire_12
+end
+
+event Ribault_Fire mindist 20 priority 240 minPitch .5 maxPitch 1.5 fadein 0 fadeout 2 Volume 0 rndvolume -20 probability 1 distancepriority 0 randomdelay 0 effect_level .25
+	folder data/sounds/SFX/Individual/Siege_Engines/ribault
+	ribault_fire_01
+	ribault_fire_02
+	ribault_fire_03
+	ribault_fire_04
+	ribault_fire_05
+	ribault_fire_06
+	ribault_fire_07
+	ribault_fire_08
+	ribault_fire_09
+	ribault_fire_10
+	ribault_fire_11
+	ribault_fire_12
+	end
+	
+	
+	
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ANIMATION SOUNDS FOR STRAT MAP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+DEFAULT: 3D minPitch .9 maxPitch 1.1 fadein 0 fadeout 0 mindist 3 volume 0 probability 1 rndvolume 0 randomdelay 0  effect_level .25 priority 10
+
+event SM_ANIM_FOOTSTEP rndvolume -10 volume 0
+	folder data/sounds/SFX/Individual/Footsteps/Infantry
+	strat_dirt_walk_01
+	strat_dirt_walk_02
+	strat_dirt_walk_03
+	strat_dirt_walk_04
+	strat_dirt_walk_05
+	strat_dirt_walk_06
+	strat_dirt_walk_07
+	strat_dirt_walk_08
+	strat_dirt_walk_09
+	strat_dirt_walk_10
+		
+end
+
+event SM_ANIM_BATTLE mindist 8 volume -10 effect_level 0 minPitch 1 maxPitch 1
+folder data/sounds/SFX/Interface/Campaign
+engage_enemy_02
+end
+
+event SM_ANIM_SWOOSH
+folder data/sounds/SFX/Individual/Melee/Swooshes/Swoosh_Medium_Long
+Swoosh_Med_Long_01
+Swoosh_Med_Long_02
+end
+
+event SM_ANIM_SMALL_SWOOSH mindist 2
+folder data/sounds/SFX/Individual/Melee/Swooshes/Swoosh_Low_Long
+Swoosh_Low_Long_01
+Swoosh_Low_Long_02
+Swoosh_Low_Long_03
+Swoosh_Low_Long_04
+folder data/sounds/SFX/Individual/Melee/Swooshes/Swoosh_Medium_Short
+Swoosh_Medium_Short_01
+Swoosh_Medium_Short_02
+Swoosh_Medium_Short_03
+Swoosh_Medium_Short_04
+Swoosh_Medium_Short_05
+Swoosh_Medium_Short_06
+Swoosh_Medium_Short_07
+Swoosh_Medium_Short_08
+Swoosh_Medium_Short_09
+Swoosh_Medium_Short_10
+Swoosh_Medium_Short_11
+end
+
+event SM_ANIM_SCRAPE
+folder data/sounds/SFX/Individual/Melee/Sword/Sword_Hit_Breastplate
+Sword_Hit_Breastplate_06
+Sword_Hit_Breastplate_07
+
+end
+
+event SM_ANIM_FALL  
+folder data/sounds/SFX/Individual/Falls/Infantry
+Fall_Infantry_Grass_03
+Fall_Infantry_Grass_04
+Fall_Infantry_Grass_05
+Fall_Infantry_Grass_06
+Fall_Infantry_Grass_07
+end
+
+
+
+event SM_ANIM_IDLE_NECK_CRACK mindist 2 probability .1
+folder data/sounds/voice/human/Generic
+	Infantry_Neck_Cracking_01
+	Infantry_Neck_Cracking_01
+end
+
+event SM_ANIM_IDLE_STRETCH_ARMS mindist 2 probability .1
+folder data/sounds/voice/human/Generic
+	Inf_Stretch_02
+	Inf_Stretch_03
+	Inf_Stretch_04
+	Inf_Stretch_06
+	Inf_Stretch_07
+	Inf_Stretch_09
+end
+
+event SM_ANIM_IDLE_STRETCH_BACK mindist 2 probability .1
+folder data/sounds/voice/human/Generic
+	Inf_Stretch_02
+	Inf_Stretch_03
+	Inf_Stretch_04
+	Inf_Stretch_06
+	Inf_Stretch_07
+	Inf_Stretch_09
+end
+
+
+event SM_ANIM_IDLE_SNEEZE mindist 2 probability .1
+folder data/sounds/voice/human/Generic
+	Infantry_Sneezing_05
+	Infantry_Sneezing_02
+	Infantry_Sneezing_03
+	Infantry_Sneezing_01
+end
+
+event SM_ANIM_IDLE_SCRATCH_HEAD mindist 2 probability .1
+folder data/sounds/voice/human/Generic
+	Infantry_Scratch_Head_02
+	Infantry_Scratch_Head_01
+
+end
+
+event SM_ANIM_IDLE_CLEAR_THROAT mindist 2 probability .1
+folder data/sounds/voice/human/Generic
+	Infantry_ClearThroat_01
+	Infantry_ClearThroat_02
+	Infantry_ClearThroat_05
+	Infantry_ClearThroat_07
+end
+
+event SM_ANIM_IDLE_SNIFF mindist 2 probability .1
+folder data/sounds/voice/human/Generic
+	Infantry_Sniff_Nose_01
+	Infantry_Sniff_Nose_02
+end
+
+
+
+event SM_BODY_HIT volume 0
+				folder data/sounds/SFX/Individual/Melee/Elephant
+				Kick_Body_Low
+				Punch_Body_1
+				Punch_Body_2
+				Swipe_Kick
+			
+				folder data/sounds/SFX/Individual/Melee/Thuds
+				Axe_Hit_Flesh_02
+				Axe_Hit_Flesh_03
+				Dagger_Hit_Flesh_01
+				Mace_Hit_Flesh_02
+				
+				
+				end	
+
+	
+				
+				
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;; TOWER FIRING    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+DEFAULT: 3d mindist 5 minPitch .9 maxPitch 1.1 volume -10 probability 1 priority 190 distancepriority -1 fadein 0 fadeout 2 randomdelay 0  effect_level .25
+
+
+event TOWER_ARROW_FIRING priority 110 mindist 7 minPitch .7 maxPitch 1.2 rndvolume -10 volume -10
+folder data/sounds/SFX/Individual/Tower_cannons
+Tower_Crossbow_fire_01
+Tower_Crossbow_fire_02
+Tower_Crossbow_fire_03
+Tower_Crossbow_fire_04
+Tower_Crossbow_fire_05
+Tower_Crossbow_fire_06
+
+end
+
+
+
+event TOWER_BALLISTA_FIRING priority 190 mindist 10 minPitch .7 maxPitch 1.2 rndvolume -10 volume 0
+	folder data/sounds/SFX/Individual/Siege_Engines/Ballista
+	Ballista_fire_01
+	Ballista_fire_02
+end
+
+
+
+
+event CANNON_FIRING priority 190 mindist 15 minPitch .9 maxPitch 1.1 volume 0
+folder data/sounds/SFX/Individual/Siege_Engines/bombard
+	Bombard_Fire_01	
+	
+end
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;    AMBIENCE AND STRUCTURE SOUNDS     ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event ambient_Settlement mindist 4 minpitch .8 maxpitch 1.1 priority 0 volume 0 fadein .1 fadeout .2 looped
+				folder data/sounds/SFX/Environment/Ambience
+				
+				ambient_town_euro_01 probability .004 volume -15
+				ambient_town_euro_02 probability .004 volume -15
+				ambient_town_euro_03 probability .004 volume -15
+				ambient_town_euro_04 probability .004 volume -15
+				ambient_town_euro_05 probability .004 volume -15
+				
+				ambient_town_euro_birds_01a probability .004 volume 0 
+				ambient_town_euro_birds_01b probability .004 volume 0 
+				ambient_town_euro_birds_01c probability .004 volume 0 
+			
+				
+				ambient_town_euro_birds_02a probability .004 volume 0 
+				ambient_town_euro_birds_02b probability .004 volume 0 
+				ambient_town_euro_birds_02c probability .004 volume 0 
+				
+				
+				ambient_town_euro_birds_03a probability .004 volume 0 
+				ambient_town_euro_birds_03b probability .004 volume 0 
+				ambient_town_euro_birds_03c probability .004 volume 0 
+				
+				ambient_town_euro_birds_04a probability .004 volume 0 
+				ambient_town_euro_birds_04b probability .004 volume 0 
+				ambient_town_euro_birds_04c probability .004 volume 0 
+								
+				
+				ambient_town_euro_birds_05a probability .004 volume 0 
+				ambient_town_euro_birds_05b probability .004 volume 0 
+				
+end
+
+
+event ambient_Settlement_night mindist 4 minpitch .95 maxpitch .5 priority 0 volume 0 fadein 1 fadeout 1 looped
+				folder data/sounds/SFX/Environment/Ambience
+				
+				night_ambience_01 probability .001 volume -40
+				night_ambience_02 probability .001 volume -40
+				night_ambience_03 probability .001 volume -40
+				night_ambience_04 probability .001 volume -40
+
+end
+
+
+
+
+
+
+				
+event ambient_dog mindist 40 minpitch .8 maxpitch 1.1 priority 1 volume -25 fadein .1 fadeout .2  probability 1 distancepriority 0
+				folder data/sounds/SFX/Environment/Ambience
+			
+				ambient_town_dog_01
+				ambient_town_dog_02 
+				ambient_town_dog_03 
+				ambient_town_dog_04 
+				
+				ambient_town_dog_night_01 
+				ambient_town_dog_night_02 
+				ambient_town_dog_night_03 
+				ambient_town_dog_night_04 
+				ambient_town_dog_night_05 
+				ambient_town_dog_night_06 
+				ambient_town_dog_night_07 
+
+				 ;dog_03
+				 ;dog_04
+				 ;dog_05
+				 ;dog_06
+end
+				 
+event ambient_dog_night mindist 40 minpitch .8 maxpitch 1.1 priority 1 volume -25 fadein .1 fadeout .2  probability 1 distancepriority 0
+				folder data/sounds/SFX/Environment/Ambience
+			
+				ambient_town_dog_01
+				ambient_town_dog_02 
+				ambient_town_dog_03 
+				ambient_town_dog_04 
+				
+				ambient_town_dog_night_01 
+				ambient_town_dog_night_02 
+				ambient_town_dog_night_03 
+				ambient_town_dog_night_04 
+				ambient_town_dog_night_05 
+				ambient_town_dog_night_06 
+				ambient_town_dog_night_07 
+
+				 ;dog_03
+				 ;dog_04
+				 ;dog_05
+				 ;dog_06
+
+end
+				
+				
+event ambient_euro_bell mindist 40 minpitch .7 maxpitch 1.1 priority 0 volume -40 fadein .1 fadeout .2 probability 1 distancepriority 0				
+				folder data/sounds/SFX/Environment/Ambience	
+											
+ 				ambient_town_euro_bell_01 
+ 				ambient_town_euro_bell_02 
+ 				ambient_town_euro_bell_03 
+ 				ambient_town_euro_bell_04 
+ 				ambient_town_euro_bell_05 
+								
+end
+
+
+event ambient_Settlement_arabic mindist 4 minpitch .8 maxpitch 1.1 priority 0 volume 0 fadein .2 fadeout .5 looped 
+				folder data/sounds/SFX/Environment/Ambience
+								
+				ambient_town_euro_01 probability .004 volume -15
+				ambient_town_euro_02 probability .004 volume -15
+				ambient_town_euro_03 probability .004 volume -15
+				ambient_town_euro_04 probability .004 volume -15
+				ambient_town_euro_05 probability .004 volume -15
+				
+				ambient_town_euro_birds_01a probability .004 volume 0 
+				ambient_town_euro_birds_01b probability .004 volume 0 
+				ambient_town_euro_birds_01c probability .004 volume 0 
+			
+				
+				ambient_town_euro_birds_02a probability .004 volume 0 
+				ambient_town_euro_birds_02b probability .004 volume 0 
+				ambient_town_euro_birds_02c probability .004 volume 0 
+				
+				
+				ambient_town_euro_birds_03a probability .004 volume 0 
+				ambient_town_euro_birds_03b probability .004 volume 0 
+				ambient_town_euro_birds_03c probability .004 volume 0 
+				
+				ambient_town_euro_birds_04a probability .004 volume 0 
+				ambient_town_euro_birds_04b probability .004 volume 0 
+				ambient_town_euro_birds_04c probability .004 volume 0 
+								
+				
+				ambient_town_euro_birds_05a probability .004 volume 0 
+				ambient_town_euro_birds_05b probability .004 volume 0 
+				
+				
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ambient_farm mindist 4 minpitch 1.0 maxpitch 1.0 priority 20 looped fadein .2 fadeout .5 
+			folder data/sounds/SFX/structure
+			ambient_farmyard_light_chickens_02a
+			ambient_farmyard_light_chickens_02b
+end
+
+
+event ambient_swamp mindist 4 minpitch 1.0 maxpitch 1.0 priority 20 looped fadein .2 fadeout .5 volume -20
+			folder data/sounds/SFX/environment/ambience
+			swamp_01
+			swamp_02
+end
+
+
+
+
+event WELL mindist 1 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped 
+				folder data/sounds/SFX/Structure
+				village_well_02
+end
+
+
+
+event ambient_alchemy mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume -15 looped  fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_alchemy
+end
+
+
+event ambient_archery mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_archery
+end
+
+
+event ambient_ballista mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_ballista
+end
+
+event ambient_barracks mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume -15 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_barracks
+end
+
+event ambient_blacksmith mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_blacksmith
+end
+
+event ambient_brothel mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume -15 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_Brothel_a
+				ambient_Brothel_b
+end
+
+
+event ambient_gunsmith mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_gunsmith
+				
+end
+
+
+event ambient_cannon mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_cannon
+				
+end
+
+event ambient_cathedral mindist 4 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_cathedral_bell
+				
+end
+
+event ambient_catapult mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_catapult
+				
+end
+
+
+
+event ambient_church mindist 4 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_church_bell
+				
+end
+
+event ambient_market mindist 4 minpitch .8 maxpitch 1.1 priority 0 volume -15 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_market_03
+				
+end
+
+event ambient_arabic_market mindist 4 minpitch .8 maxpitch 1.1 priority 0 volume -15 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_arabic_market
+				
+end
+
+
+event ambient_tavern mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_tavern
+				
+end
+
+event ambient_small_church mindist 4 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_village_church_bell
+				
+end
+
+event ambient_horse_stables mindist 3 minpitch .8 maxpitch 1.1 priority 0 volume 0 looped fadein .2 fadeout .5
+				folder data/sounds/SFX/Structure
+				ambient_horse_stables_a
+				ambient_horse_stables_b
+end
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event Burning_building_large mindist 8 priority 190 volume -10 fadein .5 fadeout 1 distancepriority -2
+		folder data/sounds/SFX/Structure
+		Fire_large
+end
+
+
+event Burning_building_medium mindist 8 priority 190 volume -20 fadein .5 fadeout 1 distancepriority -2
+		folder data/sounds/SFX/Structure
+		Fire_medium
+end
+
+
+event Burning_building_small mindist 8 priority 190 volume -20 fadein .5 fadeout 1 distancepriority -2
+		folder data/sounds/SFX/Structure
+		Fire_small
+end
+
+
+event TORCH mindist .7 looped volume -45 minpitch .75  maxpitch 1.15 fadein .3 fadeout 1 priority 15 distancepriority -3
+		folder data/sounds/SFX/Individual
+		torch
+end
+
+event NAPTHA_LOOP mindist 1 looped volume -20 minpitch .75  maxpitch 1.15 fadein .5 fadeout 1 priority 15 distancepriority -3
+		folder data/sounds/SFX/Structure
+		Fire_small
+end
+	
+
+;; added to men and buildings - priority is -5 below deathscream
+event FIRE_FLARE_UP mindist 2 priority 125 volume 0 fadein 0 fadeout 0 distancepriority -2
+		folder data/sounds/SFX/Structure
+		Fire_flare_up_01
+		Fire_flare_up_02
+		Fire_flare_up_03
+		Fire_flare_up_04
+		Fire_flare_up_05
+		Fire_flare_up_06
+end
+
+
+event Burning_man_sound looped mindist 1.5 priority 60 volume -25 fadein .2 fadeout .5 distancepriority -3
+		folder data/sounds/SFX/Individual/misc
+		men_on_fire
+end
+
+event BURNING_SCREAM mindist 2 priority 130 volume -10 minpitch .7 maxpitch 1.1 fadein 0 fadeout 1 distancepriority -2
+		folder data/sounds/Voice/Human/Generic
+		burning_scream_01
+		burning_scream_02
+		burning_scream_03
+		burning_scream_04
+		burning_scream_05
+		burning_scream_06
+		burning_scream_07
+		burning_scream_08
+		burning_scream_09
+		burning_scream_10
+		burning_scream_11
+		burning_scream_12
+		burning_scream_13
+		burning_scream_14
+		burning_scream_15
+		burning_scream_16
+		burning_scream_17
+		burning_scream_18
+		burning_scream_19
+		burning_scream_20
+		burning_scream_21
+		burning_scream_22
+		
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;  DRUID CHANT   ;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event DRUID_CHANT mindist 4 priority 130 rndvolume -15 volume -10  minpitch .7 maxpitch 1 fadein .2 fadeout 2 distancepriority -2
+		folder data/sounds/Voice/Human/Generic
+		druid_chant_01
+		druid_chant_02
+		druid_chant_03
+		druid_chant_04
+		druid_chant_05
+		druid_chant_06
+		druid_chant_07
+		druid_chant_08
+		druid_chant_09
+		druid_chant_10
+		druid_chant_11
+		druid_chant_12
+		druid_chant_13
+		druid_chant_14
+		druid_chant_15
+		druid_chant_16
+		druid_chant_17
+		druid_chant_18
+
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event COW_IMPACT mindist 15 priority 200 volume 0 fadein 0 fadeout 0 distancepriority 0 probability 1 
+		folder data/sounds/SFX/individual/cow
+		cow_impact_01
+		cow_impact_02
+end
+
+event COW_FLYS_BUZZING mindist 2 looped priority 15 volume -10 fadein 0 fadeout 0 distancepriority 0 probability 1 
+		folder data/sounds/SFX/individual/cow
+		cow_flys_buzzing
+end
+
+event COW_FLY mindist 7 looped priority 170 volume 0 fadein .2 fadeout .5 distancepriority -1 
+		folder data/sounds/SFX/individual/cow
+		cow_fly
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event INCOMING mindist 3 looped priority 170 volume 0 fadein 1 fadeout .2 distancepriority 0 probradius 1 probability 1 
+		folder data/sounds/SFX/individual/siege_engines
+		incoming_short_01
+		incoming_short_02
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event CANNON_HIT_GROUND mindist 20 priority 200 volume -25 distancepriority 0 randomdelay 0 probability 1 
+		folder data/sounds/SFX/Individual/Siege_Engines
+			;peep
+end
+
+
+event CANNON_HIT_GROUND_FIERY mindist 20 priority 200 volume -25 distancepriority 0 randomdelay 0 probability 1 
+		folder data/sounds/SFX/Individual/Siege_Engines
+			;peep
+end
+
+
+
+
+
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;  WALL, TOWER DESTRUCTION  ;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;; BUILDING ;;;;;;;;
+event ANIM_Building_collapse mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	building_medium_destruction_01
+end
+
+
+event ANIM_Building_collapse_LARGE mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	building_collapse_medium_01
+	building_collapse_medium_02
+end
+
+ 
+event ANIM_Building_collapse_SMALL mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	building_hit_destruction_01
+	building_hit_destruction_02
+	building_hit_destruction_03
+	building_hit_destruction_04
+	building_hit_destruction_05
+	building_hit_destruction_06
+	building_hit_destruction_07
+	building_hit_destruction_08
+	building_hit_destruction_09
+	building_hit_destruction_10
+	building_hit_destruction_11
+	building_small_destruction_02
+end
+
+
+;;;;;; STONE ;;;;;;;;
+event ANIM_Stone_collapse_LARGE mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	stone_collapse_large_01
+	stone_collapse_large_02
+	
+end
+
+
+event ANIM_Stone_collapse_MEDIUM mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	stone_collapse_medium_01
+	stone_collapse_medium_02
+	stone_collapse_medium_03
+	stone_collapse_medium_04
+	stone_collapse_medium_05
+	
+end
+
+event ANIM_Stone_collapse_SMALL mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	stone_collapse_small_01
+	stone_collapse_small_02
+	stone_collapse_small_03
+	stone_collapse_small_04
+	stone_collapse_small_05
+		
+end
+
+
+event ANIM_Stone_HITS mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	stone_impact_01
+	stone_impact_02
+	stone_impact_03
+	stone_impact_04
+	stone_impact_05
+	stone_impact_06
+	stone_impact_07
+	stone_impact_08
+	stone_impact_09
+	stone_impact_10
+	stone_impact_11
+	stone_impact_12
+	
+end	
+	
+	
+
+;;;;;; WOOD ;;;;;;;;
+event ANIM_Wood_collapse_LARGE mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	building_wood_collapse_large_01
+	building_wood_collapse_large_02
+	building_wood_collapse_large_03
+	building_wood_collapse_large_04
+	
+end
+
+event ANIM_Wood_collapse_SMALL mindist 10 probability 1 priority 190
+	folder data/sounds/SFX/Structure
+	building_wood_collapse_small_01
+	building_wood_collapse_small_02
+	building_wood_collapse_small_03
+	building_wood_collapse_small_04
+	building_wood_collapse_small_05
+	building_wood_collapse_small_06
+	building_wood_collapse_small_07
+		
+end
+
+
+;;;;;;;;;;;  DISTANT COLLAPSE  ;;;;;;;;;;;;;;;;
+
+event ANIM_Stone_collapse_LARGE_DISTANT mindist 100 probability 1 priority 190 volume 0
+	folder data/sounds/SFX/Structure
+	stone_collapse_large_distant_01
+	stone_collapse_large_distant_02
+end	
+
+event ANIM_Stone_collapse_MEDIUM_DISTANT mindist 100 probability 1 priority 190 volume 0
+	folder data/sounds/SFX/Structure
+	stone_collapse_medium_distant_01
+	stone_collapse_medium_distant_02
+end	
+
+event ANIM_Stone_collapse_SMALL_DISTANT mindist 100 probability 1 priority 190 volume 0
+	folder data/sounds/SFX/Structure
+	stone_collapse_small_distant_01
+	stone_collapse_small_distant_02
+end	
+
+
+
+
+
+;;;;;;;;
+	
+event ANIM_Wood_collapse_LARGE_DISTANT mindist 100 probability 1 priority 190 volume 0
+	folder data/sounds/SFX/Structure
+	wood_collapse_large_distant_01
+	wood_collapse_large_distant_02
+	
+
+end	
+	
+event ANIM_Wood_collapse_SMALL_DISTANT mindist 100 probability 1 priority 190 volume 0
+	folder data/sounds/SFX/Structure
+	wood_collapse_small_distant_01
+	wood_collapse_small_distant_02
+
+end	
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;  GATES, PORTCULLIS  ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;;;;; SMALL WOOD ;;;;;
+
+event ANIM_Gate_wood_small_creak mindist 7 volume 0 probability 1 probradius 1 priority 20
+folder data/sounds/SFX/Structure
+gate_wood_small_creak_01
+gate_wood_small_creak_02
+end			
+
+
+event ANIM_Gate_wood_small_OPEN mindist 7 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_wood_small_open
+end		
+
+
+event ANIM_Gate_wood_small_CLOSE mindist 7 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_wood_small_close
+end	
+
+
+
+
+;;;;; LARGE WOOD ;;;;;
+
+event ANIM_Gate_wood_large_creak mindist 10 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_wood_large_creak_01
+end	
+
+
+event ANIM_Gate_wood_large_open mindist 10 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_wood_large_open
+end	
+
+
+event ANIM_Gate_wood_large_close mindist 10 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_wood_large_close
+end	
+
+
+
+;;;;; PORTCULLIS ;;;;;
+
+event ANIM_Gate_portcullis_move_down mindist 10 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_portcullis_move_down
+end	
+
+event ANIM_Gate_portcullis_move_up mindist 10 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_portcullis_move_up
+end	
+
+
+event ANIM_Gate_portcullis_UP mindist 10 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_portcullis_up
+end	
+
+event ANIM_Gate_portcullis_DOWN mindist 10 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_portcullis_down
+end	
+
+
+
+;;;;; WOOD DESTROYED ;;;;;
+
+event ANIM_Gate_wood_SMALL_DESTROYED mindist 25 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_wood_destroyed_small
+end	
+
+event ANIM_Gate_wood_LARGE_DESTROYED mindist 25 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_wood_destroyed_large
+end	
+
+
+
+;;;;; METAL DESTROYED ;;;;;
+
+event ANIM_Gate_metal_DESTROYED mindist 25 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_metal_destroyed
+end	
+
+
+
+;;;;; WOOD GATE IMPACT ;;;;;
+
+event ANIM_Gate_wood_IMPACT mindist 25 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_wood_impact_01
+gate_wood_impact_02
+gate_wood_impact_03
+gate_wood_impact_04
+end
+
+	
+
+;;;;; METAL GATE IMPACT ;;;;;
+
+
+event ANIM_Gate_metal_IMPACT mindist 25 volume 0 probability 1 probradius 1 priority 190
+folder data/sounds/SFX/Structure
+gate_metal_impact_01
+gate_metal_impact_02
+gate_metal_impact_03
+gate_metal_impact_04
+end
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;  IDLE HUMAN SOUNDS  ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Human_ready mindist 1 volume -35 probability .005 priority 60 probradius 0 minPitch .8 maxPitch 1
+
+				folder data/sounds/SFX/Individual/Human_ambient
+					 belch_01
+					 belch_02
+					 belch_03
+					 belch_04
+					 belch_05
+					 belch_06
+
+				folder data/sounds/SFX/Individual/Human_ambient
+					 cough_01
+					 cough_02
+					 cough_03
+					 cough_04
+					 cough_05
+					 cough_06
+					 cough_07
+					 cough_08
+					 cough_09
+					 cough_10
+ 				 
+				
+
+				folder data/sounds/SFX/Individual/Human_ambient
+					 fart_01 probability .002
+					 fart_02 probability .002
+					 fart_03 probability .002
+					 fart_04 probability .002
+					 fart_05 probability .002
+					 fart_06 probability .002
+					 fart_07 probability .002
+ 
+				
+ 
+				folder data/sounds/SFX/Individual/Human_ambient
+					sneeze_01
+					sneeze_02
+					sneeze_03
+					sneeze_04
+					sneeze_05
+					sneeze_06
+				 	sneeze_07
+				 	sneeze_08
+					sneeze_09
+					sneeze_10
+					sneeze_11
+					sneeze_12
+ 
+				folder data/sounds/SFX/Individual/Human_ambient
+					 sniff_01
+					 sniff_02
+					 sniff_03
+					 sniff_04
+					 sniff_05
+					 sniff_06
+ 
+				folder data/sounds/SFX/Individual/Human_ambient
+					 spit_01
+					 spit_02
+					 spit_03
+					 spit_04
+					 spit_05
+					 spit_06
+					 spit_07
+ 
+				folder data/sounds/SFX/Individual/Human_ambient
+					 throat_01
+					 throat_02
+					 throat_03
+					 throat_04
+					 throat_05
+					 throat_06
+					 throat_07
+					 throat_08
+					 throat_09
+					 throat_10
+					 throat_11
+					 throat_12
+					 throat_13
+					 throat_14
+					 throat_15
+					 throat_16
+					 throat_17
+					 throat_18
+ 
+				folder data/sounds/SFX/Individual/Human_ambient
+					 whistle_11 probability .01
+					 whistle_12 probability .01
+					 whistle_13 probability .01
+					 whistle_14 probability .01
+
+				folder data/sounds/SFX/Individual/Human_ambient
+					 yawn_01
+					 yawn_02
+					 yawn_03
+					 yawn_04
+					 yawn_05
+					 yawn_06
+					 yawn_07
+					 yawn_08
+
+				end	
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+				
+
+event ANIM_Flag_flapping mindist 1 volume 0 probability 1 priority 90 probradius 1
+folder data/sounds/SFX/Individual/Siege_Engines
+flag_flapping
+end			
+
+
+
+event ANIM_KILL_MOUNT mindist 1 volume -20 probability 1 priority 90
+folder data/sounds/SFX/Individual/Melee/Death_Hits
+Death_Hit_05
+Death_Hit_09
+Death_Hit_02
+end
+
+
+
+
+event ANIM_SWIM mindist 1 minPitch .8 maxPitch 1.1 priority 80 volume -20
+folder data/sounds/SFX/Individual/Swimming
+Swimming_01
+Swimming_02
+Swimming_03
+Swimming_04
+Swimming_05
+Swimming_06
+end
+
+
+
+event ANIM_KICK mindist 1.2 minPitch .8 maxPitch 1.1 priority 80 volume 0
+folder data/sounds/SFX/Individual/Melee/Elephant
+kick_body_low
+punch_body_1
+end
+
+event ANIM_STAB mindist .75 minPitch 1 maxPitch 1 priority 80 volume 0
+folder data/sounds/SFX/Individual/Melee
+Death_Hits_01
+Death_Hits_02
+Death_Hits_03
+Death_Hits_04
+Death_Hits_05
+Death_Hits_06
+Death_Hits_07
+Death_Hits_08
+Death_Hits_09
+Death_Hits_10
+Death_Hits_11
+Death_Hits_12
+Death_Hits_13
+Death_Hits_14
+Death_Hits_15
+Death_Hits_16
+Death_Hits_17
+Death_Hits_18
+Death_Hits_19
+end
+
+event ANIM_SWOOSH mindist 0.75 volume -25 priority 80
+folder data/sounds/SFX/Individual/Melee
+swoosh_01
+swoosh_02
+swoosh_03
+swoosh_04
+swoosh_05
+swoosh_06
+swoosh_07
+swoosh_08
+swoosh_09
+swoosh_10
+
+
+end
+
+event ANIM_SCRAPE mindist 0.75 minPitch .6 maxPitch 1.1 priority 80 volume -35
+folder data/sounds/SFX/Individual/Melee
+heavy_clangs_01
+heavy_clangs_02
+heavy_clangs_03
+heavy_clangs_04
+heavy_clangs_05
+heavy_clangs_06
+heavy_clangs_07
+heavy_clangs_08
+heavy_clangs_09
+heavy_clangs_10
+heavy_clangs_11
+heavy_clangs_12
+heavy_clangs_13
+heavy_clangs_14
+heavy_clangs_15
+end
+
+
+
+event ANIM_ARCHER_LOAD priority 40 mindist 1 rndvolume -10 randomdelay .25
+folder data/sounds/SFX/Individual/Missiles/Archers/Archer_Load
+Archer_Load_01
+Archer_Load_02
+Archer_Load_03
+Archer_Load_04
+Archer_Load_05
+Archer_Load_06
+end
+
+event ANIM_ARCHER_AIM priority 40 mindist 1 rndvolume -10 randomdelay .25
+folder data/sounds/SFX/Individual/Missiles/Archers/Archer_Aim
+Archer_Aim_01
+Archer_Aim_02
+Archer_Aim_03
+Archer_Aim_04
+Archer_Aim_05
+Archer_Aim_06
+Archer_Aim_07
+Archer_Aim_08
+Archer_Aim_09
+Archer_Aim_10
+Archer_Aim_11
+
+end
+
+event ANIM_ARCHER_FIRE priority 110 mindist 3 minPitch .8 maxPitch 1.2 volume -15 rndvolume -5 randomdelay .25
+folder data/sounds/SFX/Individual/Missiles/Archers
+bow_fire_01
+bow_fire_02
+bow_fire_03
+bow_fire_04
+bow_fire_05
+bow_fire_06
+end
+
+
+event ANIM_SPEAR_FIRE priority 110 minPitch .8 maxPitch 1.1 volume -20 mindist 1 rndvolume -10 randomdelay .25
+folder data/sounds/SFX/Individual/Spears
+Spear_01
+Spear_02
+Spear_03
+Spear_04
+Spear_05
+Spear_06
+Spear_07
+Spear_08
+Spear_09
+Spear_10
+Spear_11
+Spear_12
+Spear_13
+Spear_14
+Spear_15
+Spear_16
+Spear_17
+Spear_18
+Spear_19
+
+end
+
+event ANIM_Crossbow_Load priority 110 minPitch .7 maxPitch 1.2 volume -10 mindist 1 rndvolume -15 randomdelay .25
+folder data/sounds/SFX/Individual/Crossbows
+Crossbow_Load_01
+Crossbow_Load_02
+Crossbow_Load_03
+Crossbow_Load_04
+Crossbow_Load_05
+end
+
+event ANIM_Crossbow_Wind priority 110 minPitch .7 maxPitch 1.2 volume -15 mindist 1.3 rndvolume -15 randomdelay .25
+folder data/sounds/SFX/Individual/Crossbows
+Crossbow_Wind_01
+Crossbow_Wind_02
+end
+
+
+event ANIM_Crossbow_Wind_End priority 110 minPitch .7 maxPitch 1.2 volume -15 mindist 1 rndvolume -15 randomdelay .25
+folder data/sounds/SFX/Individual/Crossbows
+Crossbow_Wind_End_01
+Crossbow_Wind_End_02
+Crossbow_Wind_End_03
+end
+
+
+event ANIM_Crossbow_Fire priority 110 minPitch .9 maxPitch 1.2 volume 0 mindist 3 rndvolume -5 randomdelay .25
+folder data/sounds/SFX/Individual/Crossbows
+Crossbow_Fire_01
+Crossbow_Fire_02
+Crossbow_Fire_03
+Crossbow_Fire_04
+Crossbow_Fire_05
+Crossbow_Fire_06
+Crossbow_Fire_07
+Crossbow_Fire_08
+Crossbow_Fire_10
+Crossbow_Fire_11
+Crossbow_Fire_12
+Crossbow_Fire_13
+Crossbow_Fire_14
+Crossbow_Fire_15
+end
+
+
+
+
+event ARROW_FLY looped volume -30 mindist 3 priority 170 minpitch .5 maxpitch 1.5 rndvolume -10 probability .3 fadein .2 fadeout .2  probradius 3
+folder data/sounds/SFX/Individual/Missiles
+Missile_Normal_Arrow_Fly
+end
+
+event ARROW_WHIZZ_SOUND looped volume 0 mindist 1.2 priority 170 minpitch .7 maxpitch 1.3 rndvolume 0 probability 1 fadein .2 fadeout .2  probradius 3
+folder data/sounds/SFX/Individual/Missiles/Archers
+arrow_fly_01
+arrow_fly_02
+arrow_fly_03
+arrow_fly_04
+arrow_fly_05
+arrow_fly_06
+arrow_fly_07
+arrow_fly_08
+arrow_fly_09
+arrow_fly_10
+arrow_fly_11
+arrow_fly_12
+arrow_fly_13
+arrow_fly_14
+arrow_fly_15
+arrow_fly_16
+arrow_fly_17
+arrow_fly_18
+arrow_fly_19
+arrow_fly_20
+arrow_fly_21
+arrow_fly_22
+arrow_fly_23
+arrow_fly_24
+arrow_fly_25
+end
+
+
+event CROSSBOW_FLY_CONSTANT looped volume -20 mindist 3 priority 170 minpitch 1 maxpitch 1.8 rndvolume -10 probability .6 fadein 1 fadeout .2  probradius 3
+folder data/sounds/SFX/Individual/Crossbows
+Crossbow_fly_constant
+end
+
+
+event CROSSBOW_FLY mindist 1.2 priority 170 minPitch .6 maxPitch 1 volume -40 rndvolume -10 fadein .2 fadeout .2 probability .5 
+folder data/sounds/SFX/Individual/Crossbows
+crossbow_fly_01
+crossbow_fly_02
+crossbow_fly_03
+crossbow_fly_04
+crossbow_fly_05
+crossbow_fly_06
+crossbow_fly_07
+crossbow_fly_08
+crossbow_fly_09
+crossbow_fly_10
+crossbow_fly_11
+crossbow_fly_12
+crossbow_fly_13
+crossbow_fly_14
+crossbow_fly_15
+end
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event ANIM_Gunner_Fire priority 110 minPitch .9 maxPitch 1.1 volume 0 mindist 5 
+folder data/sounds/SFX/Individual/Gunners
+Gunner_Fire_01
+Gunner_Fire_02
+Gunner_Fire_03
+Gunner_Fire_04
+Gunner_Fire_05
+Gunner_Fire_06
+
+end
+
+
+event ANIM_Musket_Fire priority 110 minPitch .8 maxPitch 1.1 mindist 10 volume 0
+folder data/sounds/SFX/Individual/Muskets
+Musket_Fire_01
+Musket_Fire_02
+Musket_Fire_03
+Musket_Fire_04
+Musket_Fire_05
+Musket_Fire_06
+
+end
+
+
+
+event ANIM_Musket_Rod priority 110 minPitch .9 maxPitch 1.1 volume -30 mindist 1 
+folder data/sounds/SFX/Individual/Muskets
+Musket_rod_long_01
+Musket_rod_long_02
+end
+
+
+event ANIM_Musket_Ammo priority 110 minPitch .9 maxPitch 1.1 volume 0 mindist 1 
+folder data/sounds/SFX/Individual/Muskets
+Musket_ammo_01
+Musket_ammo_02
+Musket_ammo_03
+end
+
+event ANIM_Musket_Gunpowder priority 110 minPitch .9 maxPitch 1.1 volume 0 mindist 1 
+folder data/sounds/SFX/Individual/Muskets
+Musket_pour_gunpowder
+end
+
+
+event ANIM_Musket_cock priority 110 minPitch .6 maxPitch 1.4 volume -25 mindist 1 
+folder data/sounds/SFX/Individual/Muskets
+Musket_cock
+
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event ANIM_FALL_SQUASH priority 140 mindist 4 volume -20
+folder data/sounds/SFX/Individual/Misc
+Fall_squash_01
+Fall_squash_02
+Fall_squash_03
+Fall_squash_04
+Fall_squash_05
+Fall_squash_06
+Fall_squash_07
+end
+
+event ANIM_SQUASH mindist 3 priority 130 volume -25
+folder data/sounds/SFX/Individual/Misc
+body_squash_01
+body_squash_02
+body_squash_03
+end
+
+
+
+event ANIM_TESTUDO mindist 2 priority 150
+folder data/sounds/SFX/Individual/Movement
+Testudo_Indiv_01
+Testudo_Indiv_02
+Testudo_Indiv_03
+Testudo_Indiv_04
+Testudo_Indiv_05
+Testudo_Indiv_06
+Testudo_Indiv_07
+Testudo_Indiv_08
+end
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   HORSE
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;; used on horse charge ;;;;
+event ANIM_HORSE_ATTACK volume -20 priority 130 probability .05
+folder data/sounds/Voice/Animal/Horse
+horse_nay_02
+horse_nay_03
+horse_nay_04
+horse_nay_05
+horse_nay_08
+horse_nay_13
+horse_nay_14
+horse_nay_16
+horse_nay_17
+horse_nay_18
+horse_nay_22
+end
+
+event ANIM_HORSE_DEATH volume -15 priority 130 probability 1
+folder data/sounds/Voice/Animal/Horse
+horse_death_01
+horse_death_03
+horse_death_05
+horse_death_06
+horse_death_07
+horse_death_08
+horse_death_09
+horse_death_10
+horse_death_11
+horse_death_12
+horse_death_13
+horse_death_14
+end
+
+;;; this is used for horse mid attack - when general rears up ;;;
+;;; this is used for horse jump too ;;;;
+;;; this is used for horse refuse as well ;;;;
+event ANIM_HORSE_REGROUP volume -15 priority 120 probradius 8 probability .2
+folder data/sounds/Voice/Animal/Horse
+horse_nay_05
+horse_nay_13
+horse_nay_17
+horse_nay_08
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;    CAMEL
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_CAMEL_ATTACK priority 130 ;; probability .25
+folder data/sounds/Voice/Animal/Camel
+
+Camel_Roar_02
+Camel_Roar_03
+Camel_Roar_04
+Camel_Roar_05
+Camel_Roar_06
+Camel_Roar_07
+
+Camel_Roar_09
+
+Camel_Groan_25
+Camel_Groan_26
+
+end
+
+event ANIM_CAMEL_DEATH priority 130 volume -5 probability 1
+folder data/sounds/Voice/Animal/Camel
+Camel_Death_01
+Camel_Death_02
+
+Camel_Death_04
+
+Camel_Death_06
+
+Camel_Death_08
+Camel_Death_09
+Camel_Death_10
+Camel_Death_11
+Camel_Death_12
+
+
+
+end
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   ELEPHANT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event ANIM_ELE_ATTACK  priority 130 mindist 10 volume -30 distancepriority 0
+folder data/sounds/Voice/Animal/Elephant
+Elephant_Attack_02
+Elephant_Attack_04
+Elephant_Attack_05
+Elephant_Attack_06
+Elephant_Attack_07
+Elephant_Attack_08
+Elephant_Attack_09
+Elephant_Attack_10
+Elephant_Attack_11
+Elephant_Attack_12
+end
+
+event ANIM_ELE_DEATH priority 130 mindist 10 distancepriority 0 probability 1
+folder data/sounds/Voice/Animal/Elephant
+Elephant_Death_01
+Elephant_Death_02
+Elephant_Death_03
+Elephant_Death_04
+Elephant_Death_05
+Elephant_Death_06
+Elephant_Death_07
+Elephant_Death_08
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;  WARDOGS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event ANIM_WARDOG_BARK volume -30 priority 130 probability .8
+folder data/sounds/Voice/Animal/Wardog
+Wardog_Bark_05
+Wardog_Bark_06
+Wardog_Bark_07
+Wardog_Bark_08
+Wardog_Bark_09
+end
+
+
+event ANIM_WARDOG_ATTACK volume -20 priority 130 probability .3
+folder data/sounds/Voice/Animal/Wardog
+Wardog_Attack_05
+Wardog_Attack_06
+Wardog_Attack_07
+Wardog_Attack_08
+end
+
+event ANIM_WARDOG_DEATH  priority 130 minPitch .6 maxPitch .8 probability 1
+folder data/sounds/Voice/Animal/Wardog
+Wardog_Death_01
+Wardog_Death_02
+Wardog_Death_03
+Wardog_Death_04
+end
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;	SIEGE ENGINES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: mindist 12 priority 210 minpitch .7 maxpitch 1.2 distancepriority 0 volume 0 probability 1 fadeout 2
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; GENERIC SIEGE/CANNON
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; event ANIM_Siege_Move_Medium mindist 4 minpitch .9 maxpitch 1.1 volume -20
+; 	folder data/sounds/SFX/Individual/Siege_Engines
+; 	Siege_move_medium
+; 	
+; end
+
+; event ANIM_Siege_Move_Large mindist 6 minpitch .9 maxpitch 1.1 volume -5
+; 	folder data/sounds/SFX/Individual/Siege_Engines
+; 	Siege_move_large
+; 	
+; end
+
+
+event ANIM_cannon_load_in mindist 1 minpitch .9 maxpitch 1.1 volume -30 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_load_in_01
+	
+end
+
+event ANIM_cannon_load_out mindist 1 minpitch .9 maxpitch 1.1 volume -20 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_load_out_01
+	
+end
+
+event ANIM_cannon_load_ball mindist 2 volume 0 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_load_ball_01
+	cannon_load_ball_02
+	cannon_load_ball_03
+end
+
+
+event ANIM_destroyed_siege_SMALL mindist 15 priority 190 
+	folder data/sounds/SFX/Individual/Siege_Engines
+	siege_small_destroyed_01
+	
+end
+
+event ANIM_destroyed_siege_MEDIUM mindist 20 priority 190 
+	folder data/sounds/SFX/Individual/Siege_Engines
+	siege_medium_destroyed_01
+	siege_medium_destroyed_02
+	siege_medium_destroyed_03
+end
+
+
+event ANIM_destroyed_siege_LARGE mindist 20 priority 190 volume -15
+	folder data/sounds/SFX/Individual/Siege_Engines
+	siege_large_destroyed_01
+	siege_large_destroyed_02
+	
+end
+
+
+event ANIM_cannon_creaks mindist 2 volume -40 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_creak_01
+	cannon_creak_02
+	cannon_creak_03
+	cannon_creak_04
+	cannon_creak_05
+	cannon_creak_06
+	cannon_creak_07
+	
+end
+
+
+event ANIM_cannon_thud mindist 1 volume -50 minpitch .9 maxpitch 1.1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_thud_01
+	cannon_thud_02
+	cannon_thud_03
+	cannon_thud_04
+end
+
+event ANIM_cannon_wheel_bounce mindist 2 volume -30 rndvolume -20 minpitch .6 maxpitch 1.1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_wheel_bounce_01
+	cannon_wheel_bounce_02
+	cannon_wheel_bounce_03
+	
+end
+
+
+event ANIM_cannon_ball_roll mindist 2 volume -30  minpitch .9 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_ball_roll
+		
+end
+
+event ANIM_cannon_ball_jam mindist 2 volume 0  minpitch .9 maxpitch 1.0 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_jam_ball
+	
+end
+
+
+event ANIM_cannon_small_distant mindist 1500 volume -35  minpitch .8 maxpitch 1.1 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_small_distant_01
+	
+end
+
+
+event ANIM_cannon_large_distant mindist 1500 volume -35  minpitch .8 maxpitch 1.1 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_large_distant_01
+	
+end
+
+event ANIM_cannon_recover mindist 1.5 volume 0  minpitch .8 maxpitch 1.1 priority 100 fadein .1 fadeout .1
+	folder data/sounds/SFX/Individual/Siege_Engines
+	cannon_recover
+	
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ARTILLERY - typical cannon
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_artillery_Fire mindist 25 volume 0 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/artillery
+	artillery_fire_01
+	
+end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BASILISK
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Basilisk_Fire mindist 25 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/basilisk
+	Basilisk_Fire_01
+	
+end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BOMBARD
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Bombard_Fire mindist 25 volume -10 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/bombard
+	Bombard_Fire_01
+	
+end
+
+event ANIM_Bombard_Recover mindist 2 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/bombard
+	Bombard_recover_01 volume 0
+
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CULVERIN
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Culverin_Fire mindist 25 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Culverin
+	Culverin_Fire_01
+	
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; GREAT BOMBARD
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Great_Bombard_Fire mindist 25 volume 0 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Great_Bombard
+	Great_Bombard_Fire_01
+	
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; HUGE BOMBARD
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Huge_Bombard_Fire mindist 30 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Huge_Bombard
+	Huge_Bombard_Fire
+	
+end
+
+event ANIM_Huge_Bombard_Recoil mindist 3 volume -20  priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Huge_Bombard
+	Huge_Bombard_Recoil
+	
+end
+
+event ANIM_Huge_Bombard_Chain mindist 2 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Huge_Bombard
+	Huge_Bombard_chain_shake
+	
+end
+
+event ANIM_Huge_Bombard_Prepare mindist 2 minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Huge_Bombard
+	Huge_Bombard_prepare
+	
+end
+
+event ANIM_Huge_Bombard_Move mindist 3 minpitch .9 maxpitch 1.1 priority 110
+	folder data/sounds/SFX/Individual/Siege_Engines/Huge_Bombard
+	Huge_Bombard_move
+	
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MORTAR
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Mortar_Fire mindist 25 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Mortar
+	Mortar_Fire_01
+	
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; RIBAULT - infantry multifire
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_ribault_fuse mindist 2 volume -30 minpitch .7 maxpitch 1 priority 100
+ 	folder data/sounds/SFX/Individual/Siege_Engines/ribault
+		Ribault_fast_fuse
+
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SERPENTINE
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Serpentine_Fire mindist 25 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Serpentine
+	Serpentine_Fire_01	
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BALLISTA
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Ballista_Fire mindist 10 volume 0 minpitch .9 maxpitch 1.1 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Ballista
+	Ballista_fire_01
+	Ballista_fire_02
+
+end
+
+event ANIM_Ballista_distant_Fire mindist 20 volume -15 minpitch .9 maxpitch 1.1 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Ballista
+	Ballista_distant_fire_01
+	Ballista_distant_fire_02
+
+end
+;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Ballista_Crank mindist 2 volume -15 minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Ballista
+	Ballista_crank_01
+	Ballista_crank_02
+	Ballista_crank_03
+	Ballista_crank_04
+	Ballista_crank_05
+	Ballista_crank_06
+	
+end
+
+event ANIM_Ballista_Finish_Crank mindist 2 volume -15 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Ballista
+	Ballista_finish_crank_01
+	Ballista_finish_crank_02
+
+end
+
+
+
+event ANIM_Ballista_Load mindist 2 volume -5 priority 100 minpitch .9 maxpitch 1.1
+	folder data/sounds/SFX/Individual/Siege_Engines/Ballista
+	Ballista_load_01
+	Ballista_load_02
+
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CATAPULT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event ANIM_Catapult_whoosh mindist 2 volume 0 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Catapult
+	Catapult_whoosh
+
+end
+
+
+;;;;;;;;;;;;;;;;;;
+event ANIM_Catapult_Fire mindist 5 volume 0 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Catapult
+	Catapult_fire_01
+	Catapult_fire_02
+
+end
+
+event ANIM_Catapult_distant_Fire mindist 25 volume 0 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Catapult
+	Catapult_distant_fire_01
+	Catapult_distant_fire_02
+end
+
+
+
+
+;;;;;;;;;;;;;;;;;
+event ANIM_Catapult_Crank mindist 2.5 volume 0 minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Catapult
+	Catapult_crank_01
+	Catapult_crank_02
+	
+	
+end
+
+event ANIM_Catapult_Crank_Finish mindist 2.5 volume 0 minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Catapult
+	Catapult_crank_finish_01
+	Catapult_crank_finish_02
+
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; TREBUCHET
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_Trebuchet_Fire mindist 5 volume 0 minpitch .8 maxpitch 1.2 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Trebuchet
+	trebuchet_fire_01
+	trebuchet_fire_02
+	trebuchet_fire_03
+
+end
+
+event ANIM_Trebuchet_Crank mindist 5 volume -25 minpitch .8 maxpitch 1.2 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Trebuchet
+	trebuchet_crank_short_01
+	trebuchet_crank_short_02
+
+end
+
+
+event ANIM_Trebuchet_distant_Fire mindist 25 volume 0 minpitch .8 maxpitch 1.2  priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Trebuchet
+	trebuchet_distant_fire_01
+	trebuchet_distant_fire_02
+	trebuchet_distant_fire_03
+
+end
+
+event ANIM_Trebuchet_distant_Crank mindist 25 volume -25 minpitch .8 maxpitch 1.2 priority 190
+	folder data/sounds/SFX/Individual/Siege_Engines/Trebuchet
+	trebuchet_distant_crank_short_01
+	trebuchet_distant_crank_short_02
+
+end
+
+;;;;;;;;;;;;;;
+
+event ANIM_Trebuchet_recover mindist 5 volume 0 minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Trebuchet
+	trebuchet_recover_01
+	trebuchet_recover_02
+end
+
+
+event ANIM_Trebuchet_swing mindist 5 volume 0 minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Trebuchet
+	trebuchet_swing
+end
+
+
+event ANIM_Trebuchet_Rope_drop mindist 5 volume 0 minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Trebuchet
+	trebuchet_rope_drop
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ROCKET LAUNCHER
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event ANIM_RL_Fuse mindist 2 volume -20 minpitch .5 maxpitch 1.5 priority 100
+ 	folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+ 	Fuse_light_01
+ 	Fuse_light_02
+	Fuse_light_03
+end
+
+event ANIM_RL_Prepare mindist 1 volume -40 minpitch .5 maxpitch 1.5 priority 100
+ 	folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+ 	RL_prepare_01
+ 	RL_prepare_02
+	RL_prepare_03
+end
+
+
+event ANIM_RL_Fuse_loop  mindist 2 volume -25 minpitch .8 maxpitch 1 priority 100
+ 	folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+ 	Fuse_loop
+ 	
+end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LADDER
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event ANIM_Ladder_Raised  minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Ladder
+	Siege_Ladder_Raised
+end
+event ANIM_Ladder_Destroyed priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines
+	Siege_Ladder_Destroyed
+end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SIEGE TOWERS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event ANIM_Siege_Tower_Open mindist 10 priority 180
+	folder data/sounds/SFX/Individual/Siege_Engines/Siege_Tower
+	Siege_Tower_Door_Open_01
+end
+event ANIM_Siege_Tower_Close mindist 10 priority 180
+	folder data/sounds/SFX/Individual/Siege_Engines/Siege_Tower
+	Siege_Tower_Door_Close_01
+end
+
+event ANIM_Siege_Tower_Creak mindist 10 volume -25 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Siege_Tower
+	Siege_Tower_Door_Creak_01
+	Siege_Tower_Door_Creak_02
+	Siege_Tower_Door_Creak_03
+end
+event ANIM_Siege_Tower_Wind mindist 10 volume -20 minpitch 1 maxpitch 1 priority 100
+	folder data/sounds/SFX/Individual/Siege_Engines/Siege_Tower
+	Siege_Tower_Door_Wind_01
+	Siege_Tower_Door_Wind_02
+end
+
+event ANIM_Siege_Tower_Destroyed mindist 25 volume 0 priority 180
+	folder data/sounds/SFX/Individual/Siege_Engines
+	siege_large_destroyed_01
+	siege_large_destroyed_02
+	
+end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;   RAM  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
+event ANIM_RAM_PREPARE mindist 5 minpitch .8 maxpitch 1 volume -30 priority 180
+	folder data/sounds/SFX/Individual/Siege_Engines/all_rams
+	Ram_Prepare_01
+	Ram_Prepare_02
+	Ram_Prepare_03
+	Ram_Prepare_04
+	Ram_Prepare_05
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;  BELL STANDARD  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event ANIM_Bell_Standard mindist 1.5 minpitch .95 maxpitch 1.05 volume -25 priority 50
+	folder data/sounds/SFX/Individual/Siege_Engines
+	bell_standard
+end
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;; INTERFACE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+
+DEFAULT: 1d volume -10 priority 250 fadein 0 fadeout 0
+DEFAULT: randomdelay 0 rndvolume 0 pan .5
+DEFAULT: dry_level 1 wet_level 1 delay 0 minpitch 1.0 maxpitch 1.0
+DEFAULT: pref INTERFACE
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   PRISONER EXECUTIONS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event STRAT_PRISONERS_EXECUTED volume 0 streamed
+folder data/sounds/SFX/interface/campaign
+;end_turn_mtw2_01
+
+prisoner_group_execution_guillotine_01.mp3
+prisoner_group_execution_guillotine_02.mp3
+prisoner_group_execution_hanging_01.mp3
+prisoner_group_execution_horse_01.mp3
+
+end
+
+
+event STRAT_PRISONERS_EXECUTED_GUNPOWDER volume 0 streamed
+folder data/sounds/SFX/interface/campaign
+;end_turn_mtw2_01
+prisoner_execution_musket.mp3
+prisoner_group_execution_guillotine_01.mp3
+prisoner_group_execution_guillotine_02.mp3
+prisoner_group_execution_hanging_01.mp3
+prisoner_group_execution_horse_01.mp3
+end
+
+
+event STRAT_PRISONERS_RELEASED volume 0 streamed
+folder data/sounds/SFX/interface/campaign
+;end_turn_mtw2_01
+prisoner_release_01.mp3
+prisoner_release_02.mp3
+prisoner_release_03.mp3
+prisoner_release_04.mp3
+prisoner_release_05.mp3
+prisoner_release_06.mp3
+prisoner_release_07.mp3
+prisoner_release_08.mp3
+prisoner_release_09.mp3
+prisoner_release_10.mp3
+end
+
+
+event STRAT_PRISONERS_RANSOMED volume 0  streamed
+folder data/sounds/SFX/interface/campaign
+;end_turn_mtw2_01
+prisoner_ransom_01.mp3
+prisoner_ransom_02.mp3
+prisoner_ransom_03.mp3
+prisoner_ransom_04.mp3
+prisoner_ransom_05.mp3
+prisoner_ransom_06.mp3
+prisoner_ransom_07.mp3
+prisoner_ransom_08.mp3
+prisoner_ransom_10.mp3
+prisoner_ransom_11.mp3
+prisoner_ransom_12.mp3
+end
+
+
+; event STRAT_PRISONERS_PRE_RELEASE_HIGH volume -15 fadeout 0.5 delay 0.5  
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_release_01
+; prisoner_voice_release_02
+; prisoner_voice_release_03
+; end
+
+; event STRAT_PRISONERS_PRE_RELEASE_MED volume -15 fadeout 0.5 delay 0.5 
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_release_01
+; prisoner_voice_release_02
+; prisoner_voice_release_03
+; end
+
+; event STRAT_PRISONERS_PRE_RELEASE_LOW volume -15 fadeout 0.5 delay 0.5  
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_release_01
+; prisoner_voice_release_02
+; prisoner_voice_release_03
+; end
+
+; event STRAT_PRISONERS_PRE_RANSOM_HIGH volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_ransom_01
+; prisoner_voice_ransom_02
+; prisoner_voice_ransom_03
+; prisoner_voice_ransom_04
+; end
+
+; event STRAT_PRISONERS_PRE_RANSOM_MED volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_ransom_01
+; prisoner_voice_ransom_02
+; prisoner_voice_ransom_03
+; prisoner_voice_ransom_04
+; end
+
+; event STRAT_PRISONERS_PRE_RANSOM_LOW volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_ransom_01
+; prisoner_voice_ransom_02
+; prisoner_voice_ransom_03
+; prisoner_voice_ransom_04
+; end
+
+; event STRAT_PRISONERS_PRE_EXECUTE_HIGH volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_execute_01
+; prisoner_voice_execute_02
+; prisoner_voice_execute_03
+; prisoner_voice_execute_04
+; end
+
+; event STRAT_PRISONERS_PRE_EXECUTE_MED volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_execute_01
+; prisoner_voice_execute_02
+; prisoner_voice_execute_03
+; prisoner_voice_execute_04
+; end
+
+; event STRAT_PRISONERS_PRE_EXECUTE_LOW volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_execute_01
+; prisoner_voice_execute_02
+; prisoner_voice_execute_03
+; prisoner_voice_execute_04
+; end
+
+; event STRAT_PRISONERS_PRE_ACCEPT_HIGH volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_release_01
+; prisoner_voice_release_02
+; prisoner_voice_release_03
+; end
+
+; event STRAT_PRISONERS_PRE_ACCEPT_MED volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_release_01
+; prisoner_voice_release_02
+; prisoner_voice_release_03
+; end
+
+; event STRAT_PRISONERS_PRE_ACCEPT_LOW volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_release_01
+; prisoner_voice_release_02
+; prisoner_voice_release_03
+; end
+
+; event STRAT_PRISONERS_PRE_REJECT_HIGH volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_execute_01
+; prisoner_voice_execute_02
+; prisoner_voice_execute_03
+; prisoner_voice_execute_04
+; end
+
+; event STRAT_PRISONERS_PRE_REJECT_MED volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_execute_01
+; prisoner_voice_execute_02
+; prisoner_voice_execute_03
+; prisoner_voice_execute_04
+; end
+
+; event STRAT_PRISONERS_PRE_REJECT_LOW volume -15 fadeout 0.5 delay 0.5
+; folder data/sounds/SFX/interface/campaign
+; prisoner_voice_execute_01
+; prisoner_voice_execute_02
+; prisoner_voice_execute_03
+; prisoner_voice_execute_04
+; end
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   COMMONLY USED
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event STRAT_SELECT_CARD volume -35  dry_level 1 wet_level .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event STRAT_DESELECT_CARD volume -35 minpitch .5 maxpitch .5 dry_level 1 wet_level .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event BATTLE_UI_START_DRAG_FORMATION volume -40 minpitch 1 maxpitch 1 dry_level 0.9 wet_level 1
+folder data/sounds/SFX/interface/Battlefield
+drag_formation
+end
+
+
+event BATTLE_UI_END_DRAG_FORMATION volume -25 minpitch 1.0 maxpitch 1.0 dry_level 0.9 wet_level 1
+folder data/sounds/SFX/interface/Battlefield
+move
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+event BATTLE_UI_START_DRAG_SELECTION volume -50 dry_level 0.9 wet_level 1
+folder data/sounds/SFX/interface/Battlefield
+group_select
+end
+
+event BATTLE_UI_END_DRAG_SELECTION volume -25  dry_level 0.9 wet_level 1
+folder data/sounds/SFX/interface/Battlefield
+card_select_mtw_01
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; WORKING GLOBAL
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event BUTTON_DOWN  volume -50 streamed
+	folder data/sounds/SFX/Interface
+	button_down.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; WORKING  FRONT END
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 1d dry_level 1 wet_level .5
+
+
+event  BATTLE_UI_FLASH_UNIT_UNDERLAYS volume -50 streamed
+folder data/sounds/SFX/interface/battlefield
+flash_units.mp3
+end
+
+event  UI_NEXT_FACTION_BUTTON  volume -35 streamed
+folder data/sounds/SFX/interface/frontend
+change_faction_mtw2.mp3
+
+end
+
+event UI_NEXT_TEAM_BUTTON volume -40 streamed
+folder data/sounds/SFX/interface/frontend
+next_team.mp3
+end
+
+
+event UI_CHANGE_ARMOUR volume -40 streamed
+folder data/sounds/SFX/interface/frontend
+upgrade_armour.mp3
+end
+
+
+event  UI_CHANGE_EXPERIENCE volume -40 streamed
+folder data/sounds/SFX/interface/frontend
+upgrade_experience.mp3
+end
+
+
+event   UI_CHANGE_WEAPON volume -40 streamed
+folder data/sounds/SFX/interface/frontend
+upgrade_weapon.mp3
+end
+
+
+event   UI_CLEAR_CURRENT_ARMY volume -30 streamed
+folder data/sounds/SFX/interface/frontend
+remove_army.mp3
+end
+
+
+event  UI_COMPUTER_CHOOSE_ARMY volume -30 streamed
+folder data/sounds/SFX/interface/frontend
+computer_choose_Army.mp3
+end
+
+
+event  UI_REFRESH_GAME_LIST streamed
+folder data/sounds/SFX/interface
+button_down.mp3
+end
+
+
+event  UI_MULTIPLAYER_TOGGLE_RECIEVE_INCOMING streamed
+folder data/sounds/SFX/interface/frontend
+quick_03.mp3
+end
+
+
+event UI_MULTIPLAYER_TOGGLE_RECIEVE_OUTGOING streamed
+folder data/sounds/SFX/interface/frontend
+quick_03.mp3
+end
+
+
+event  UI_LOAD_KEY_SETTINGS streamed
+folder data/sounds/SFX/interface
+button_down.mp3
+end
+
+
+event  UI_SAVE_KEY_SETTINGS streamed
+folder data/sounds/SFX/interface
+button_down.mp3
+end
+
+
+event START_GAME volume 0 streamed
+folder data/sounds/SFX/interface/frontend
+start_MTW2_short.mp3
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event UI_HIGHLIGHT priority 100 volume -30 streamed 
+folder data/sounds/SFX/interface/frontend
+text_slide.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Main 'next' sound in front end
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event UI_SELECT_MENU_ITEM volume -25 streamed
+folder data/sounds/SFX/interface/frontend
+next_mtw_01.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;
+
+event UI_RETURN_TO_PREVIOUS volume -40 streamed
+folder data/sounds/SFX/interface/frontend
+go_back_02.mp3
+end
+
+event UI_TEXT_FIELD_CLICKED 
+folder data/sounds/SFX/interface/frontend
+;text_field_clicked
+end
+
+event UI_TEXT_FIELD_ENTERED 
+folder data/sounds/SFX/interface/frontend
+text_input volume -70
+end
+
+event UI_FIELD_CHANGED 
+folder data/sounds/SFX/interface/frontend
+text_input volume -70
+end
+
+; this doubles up on choose defender or attacker
+event UI_TICK_BOX_ON streamed
+folder data/sounds/SFX/interface/frontend
+tick_on.mp3 volume -50
+end
+
+; this doubles up on choose defender or attacker
+event UI_TICK_BOX_OFF streamed
+folder data/sounds/SFX/interface/frontend
+tick_off.mp3 volume -65
+end
+
+; this is the semi-transparent window that pops up
+event UI_HELP_DIALOG_APPEAR streamed
+folder data/sounds/SFX/interface/frontend
+remove_army.mp3 volume -50
+end
+
+; this is the semi-transparent window that pops and closes
+event UI_HELP_DIALOG_DISAPPEAR streamed
+folder data/sounds/SFX/interface/frontend
+dialog_disappear.mp3
+end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;  WORKING STRAT MAP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+DEFAULT: 1d volume -10
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;  ON STRAT MAP
+;;; - UNIT AND BUILDING SELECT/HIGHLIGHT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+; Strat map - when new message is clicked on and opened
+event OPEN_MSG volume -70 streamed
+folder data/sounds/SFX/interface
+	open_message_mtw2.mp3
+end
+
+event MERGE_ARMIES volume -35 
+	folder data/sounds/SFX/campaign_map
+	merge_armies_02
+end
+
+event STRAT_SELECT_CHARACTER volume -25 dry_level 1 wet_level .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+
+
+
+
+; This is when you click on a city on the strat map - currently it plays on the big button on the UI
+event STRAT_SELECT_CITY_DOWN volume -35 dry_level .5 wet_level 1 streamed
+   folder data/sounds/SFX/Interface
+	select_building_city_noise_mtw2_01.mp3
+	select_building_city_noise_mtw2_02.mp3
+	select_building_city_noise_mtw2_03.mp3
+	select_building_city_noise_mtw2_04.mp3
+	select_building_city_noise_mtw2_05.mp3
+	select_building_city_noise_mtw2_06.mp3
+	select_building_city_noise_mtw2_07.mp3
+	select_building_city_noise_mtw2_08.mp3
+	end
+
+
+event STRAT_SELECT_CITY volume -35 dry_level .5 wet_level .5
+folder data/sounds/SFX/campaign_map
+  
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event STRAT_TAB_SELECT volume -30 streamed
+   folder data/sounds/SFX/interface
+	tab.mp3
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;; END TURN SOUNDS - CULTURE SPECIFIC   ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;  mouse UP
+
+;;; SOUTHERN_EURO
+event END_TURN volume -15 priority 260 streamed
+  folder data/sounds/SFX/interface/campaign
+   _end_turn_mtw2_bell_01.mp3
+   _end_turn_mtw2_bell_02.mp3
+   _end_turn_mtw2_chimes_01.mp3
+   _end_turn_mtw2_chimes_02.mp3
+  
+end
+
+;;; NORTHERN_EURO
+event END_TURN_CULTURE_1 volume -15 priority 260 streamed
+  folder data/sounds/SFX/interface/campaign
+   _end_turn_mtw2_bell_01.mp3
+   _end_turn_mtw2_bell_02.mp3
+   _end_turn_mtw2_chimes_01.mp3
+   _end_turn_mtw2_chimes_02.mp3
+  
+end
+
+
+;;; MESOAMERICAN
+event END_TURN_CULTURE_2 volume -15 priority 260 streamed
+  folder data/sounds/SFX/interface/campaign
+   _end_turn_mtw2_bell_01.mp3
+   _end_turn_mtw2_bell_02.mp3
+   _end_turn_mtw2_chimes_01.mp3
+   _end_turn_mtw2_chimes_02.mp3
+  
+end
+
+
+;;; GREEK
+event END_TURN_CULTURE_3 volume -15 priority 260 streamed
+  folder data/sounds/SFX/interface/campaign
+   _end_turn_mtw2_bell_01.mp3
+   _end_turn_mtw2_bell_02.mp3
+   _end_turn_mtw2_chimes_01.mp3
+   _end_turn_mtw2_chimes_02.mp3
+  
+end
+
+
+;;; EASTERN_EURO
+event END_TURN_CULTURE_4 volume -15 priority 260 streamed
+  folder data/sounds/SFX/interface/campaign
+   _end_turn_mtw2_bell_01.mp3
+   _end_turn_mtw2_bell_02.mp3
+   _end_turn_mtw2_chimes_01.mp3
+   _end_turn_mtw2_chimes_02.mp3
+  
+end
+
+
+;;; MIDDLE_EASTERN
+event END_TURN_CULTURE_5 volume -15 priority 260 streamed
+  folder data/sounds/SFX/interface/campaign
+   end_turn_arabic_01.mp3
+   end_turn_arabic_02.mp3
+   end_turn_arabic_03.mp3
+   end_turn_arabic_04.mp3
+   end_turn_arabic_05.mp3
+   end_turn_arabic_06.mp3
+  
+end
+
+
+;;; not currently present
+; event END_TURN_CULTURE_6 volume -15 priority 260 streamed
+;   folder data/sounds/SFX/interface/campaign
+;    _end_turn_mtw2_bell_01.mp3
+;    _end_turn_mtw2_bell_02.mp3
+;    _end_turn_mtw2_chimes_01.mp3
+;    _end_turn_mtw2_chimes_02.mp3
+;   
+; end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;; mouse DOWN
+event  STRAT_END_TURN_DOWN volume -30 streamed
+  folder data/sounds/SFX/interface
+button_down.mp3
+end
+
+
+event STRAT_BATTLE_ZOOM streamed volume -40
+folder data/sounds/SFX/interface
+view_settlement_battlefield_mtw2.mp3
+end
+;;;;;;;;;;;;
+
+event STRAT_BUILD_FORT volume -30 minpitch .8 maxpitch .8 streamed
+   folder data/sounds/SFX/interface
+	button_down.mp3
+end
+
+event STRAT_BUILD_WATCHTOWER volume -30 minpitch .8 maxpitch .8 streamed
+folder data/sounds/SFX/interface
+	button_down.mp3
+end
+
+;;;;;;;;;;;;
+
+event STRAT_TRAINING_QUEUE_SELECT_UNIT streamed
+   folder data/sounds/SFX/interface
+	select_building.mp3
+end
+
+event STRAT_TRAINING_QUEUE_DELETE_UNIT volume -60 streamed
+   folder data/sounds/SFX/interface
+	remove_from_queue_mtw2.mp3
+end
+
+event STRAT_TRAINING_QUEUE_DRAG_UNIT volume -30 streamed
+    folder data/sounds/SFX/interface
+	pickup_card.mp3
+end
+
+;;;;;;;;;;;;
+
+
+event STRAT_CONSTRUCTION_SELECT_BUILDING volume -55 streamed
+   folder data/sounds/SFX/interface
+	add_building_mtw2.mp3
+end
+
+event STRAT_CONSTRUCTION_DELETE_BUILDING volume -60 streamed
+      folder data/sounds/SFX/interface
+	remove_from_queue_mtw2.mp3
+end
+
+event STRAT_CONSTRUCTION_DRAG_BUILDING volume -30 streamed
+   folder data/sounds/SFX/interface
+	pickup_building_mtw2.mp3
+	end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;;; not needed
+; event STRAT_HIGHLIGHT
+; end
+
+event STRAT_TOOLTIP  volume -70 streamed
+folder data/sounds/SFX/interface
+tooltip_02.mp3
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event STRAT_SHOW_INFO_RIGHT_CLICK
+
+; folder data/sounds/SFX/interface
+; paper_07
+end
+
+event STRAT_HIDE_INFO_RIGHT_CLICK_AGAIN
+
+; folder data/sounds/SFX/interface
+; paper_07_deselect
+end
+
+event STRAT_DISBAND_UNIT volume -35 
+	folder data/sounds/SFX/campaign_map
+	merge_armies_02
+end
+
+event STRAT_DESTROY_BUILDING volume -15 streamed
+folder data/sounds/SFX/interface 
+keep_collapse.mp3
+end
+
+event STRAT_SCROLL_OPENS volume -15 streamed
+	folder data/sounds/SFX/interface
+	scroll_02_open.mp3
+	scroll_03_open.mp3
+	scroll_06_open.mp3
+	scroll_08_open.mp3
+	scroll_10_open.mp3
+	scroll_12_open.mp3
+	scroll_13_open.mp3
+	scroll_14_open.mp3
+	scroll_16_open.mp3
+	scroll_17_open.mp3
+	scroll_18_open.mp3
+	scroll_19_open.mp3
+	
+end
+
+event STRAT_SCROLL_CLOSES volume -25 streamed
+	folder data/sounds/SFX/interface
+	scroll_01_close.mp3
+	scroll_04_close.mp3
+	scroll_05_close.mp3
+	scroll_07_close.mp3
+	scroll_09_close.mp3
+	scroll_11_close.mp3
+	scroll_15_close.mp3
+	scroll_22_close.mp3
+		
+	end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+event STRAT_PANEL_MENU_SELECT
+	folder data/sounds/SFX/interface
+	;button_down
+end
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event STRAT_PANEL_MENU_SCROLL_BALL streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+event STRAT_PANEL_MENU_SCROLL_ARROWS streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+event STRAT_PANEL_MENU_SCROLLING volume -15 
+folder data/sounds/SFX/interface
+slider
+end
+
+event STRAT_PANEL_MENU_TICK_BOX_ON volume -30 
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event STRAT_PANEL_MENU_TICK_BOX_OFF volume -10 minpitch .5 maxpitch .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event STRAT_PANEL_MENU_CLOSE_BUTTON volume -25
+folder data/sounds/SFX/interface
+;panel_close
+end
+
+;removed
+event STRAT_PANEL_MENU_CHECK_BUTTON
+folder data/sounds/SFX/interface
+;check_button_mtw2
+end
+
+event STRAT_PANEL_MENU_X_BUTTON volume -20
+folder data/sounds/SFX/interface
+;panel_close
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+event STRAT_PANEL_MENU_FACTION_SHIELD_BUTTON streamed
+	folder data/sounds/SFX/interface
+	button_down.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;  FOUR LEFT BUTTONS  ;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event STRAT_SET_GAME_OPTIONS  volume -10
+folder data/sounds/SFX/interface
+;left_four_buttons
+end
+
+event STRAT_OPEN_DIPLOMATIC_STANDING_WINDOW  volume -10 streamed looped
+folder data/sounds/SFX/campaign_map
+; summary_generic_01.mp3
+; summary_generic_02.mp3
+; summary_generic_03.mp3
+; summary_generic_04.mp3
+end
+
+event STRAT_OPEN_FACTION_SUMMARY volume -10 streamed looped
+folder data/sounds/SFX/campaign_map
+; summary_generic_01.mp3
+; summary_generic_02.mp3
+; summary_generic_03.mp3
+; summary_generic_04.mp3
+end
+
+event STRAT_OPEN_MISSIONS_LOG volume -10 streamed looped
+folder data/sounds/SFX/campaign_map
+summary_generic_01.mp3
+summary_generic_02.mp3
+summary_generic_03.mp3
+summary_generic_04.mp3
+end
+
+
+event STRAT_SHOW_TRADE_SUMMARY volume -25 streamed looped
+folder data/sounds/SFX/campaign_map
+summary_generic_01.mp3
+summary_generic_02.mp3
+summary_generic_03.mp3
+summary_generic_04.mp3
+end
+
+
+event STRAT_OPEN_FINANCES_WINDOW volume -25 streamed looped
+folder data/sounds/SFX/campaign_map
+summary_finance_01.mp3
+summary_finance_02.mp3
+end
+
+
+event STRAT_OPEN_POPE_TAB volume -10 streamed looped
+folder data/sounds/SFX/campaign_map
+; summary_pope_01.mp3
+; summary_pope_02.mp3
+end
+
+
+
+event STRAT_SHOW_FAMILY_TREE
+folder data/sounds/SFX/campaign_map
+;report.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event STRAT_OPEN_CONTRUCTION_PANEL volume -25 streamed looped
+folder data/sounds/SFX/campaign_map
+summary_building_01.mp3
+summary_building_02.mp3
+
+end
+
+event STRAT_OPEN_TRAINING_PANEL volume -25 streamed looped
+folder data/sounds/SFX/campaign_map
+summary_training_01.mp3
+summary_training_02.mp3
+summary_training_03.mp3
+summary_training_04.mp3
+summary_training_05.mp3
+end
+
+event STRAT_CLICK_ON_RADAR_TELEPORTS_SCREEN volume -80 streamed
+folder data/sounds/SFX/interface
+radar_click_mtw2.mp3
+end
+
+
+event STRAT_PICKUP_CARD volume -30 streamed
+folder data/sounds/SFX/interface
+pickup_card.mp3
+end
+
+event STRAT_DROP_CARD volume -50 streamed
+folder data/sounds/SFX/interface
+drop_building_mtw2.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   FOUR SHOW TABS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event STRAT_SHOW_UNITS_IN_GARRISON volume -30 streamed
+folder data/sounds/SFX/interface
+tab.mp3
+end
+
+event STRAT_SHOW_BUILDS_IN_SETTLEMENT volume -30 streamed
+folder data/sounds/SFX/interface
+tab.mp3
+end
+
+event STRAT_SHOW_VISITORS_IN_SETTLEMENT volume -30 streamed
+folder data/sounds/SFX/interface
+tab.mp3
+end
+
+event STRAT_SHOW_UNITS_ON_SHIP volume -30 streamed
+folder data/sounds/SFX/interface
+tab.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event STRAT_MOVE_CAMERA_TO_SELECTION_BUTTON volume -50 streamed
+folder data/sounds/SFX/interface
+move_camera_mtw2.mp3
+end
+
+
+
+event STRAT_SELECT_NEXT streamed
+folder data/sounds/SFX/interface
+select_and_locate.mp3
+end
+
+event STRAT_SELECT_PREVIOUS streamed
+folder data/sounds/SFX/interface
+select_and_locate.mp3
+end
+
+event STRAT_SHOW_MISSION_TARGET
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_SHOW_CARDINAL_LIST
+folder data/sounds/SFX/interface
+;button_down
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;  ON STRAT MAP - construction screen
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event STRAT_SELECT_BUILDING volume -40
+folder data/sounds/SFX/interface
+;select_building
+end
+
+event STRAT_ADD_BUILDING_TO_QUEUE
+folder data/sounds/SFX/interface
+;add_building
+end
+
+event STRAT_REMOVE_FROM_QUEUE
+folder data/sounds/SFX/interface
+;remove_from_queue
+end
+
+event STRAT_PICKUP_BUILDING
+folder data/sounds/SFX/interface
+;pickup_building
+end
+
+event STRAT_DROP_BUILDING volume -50 streamed
+folder data/sounds/SFX/interface
+drop_building_mtw2.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ON STRAT MAP - training screen
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event STRAT_ADD_UNIT_TO_QUEUE volume -40
+folder data/sounds/SFX/interface
+;select_building
+end
+
+event STRAT_REMOVE_UNIT_FROM_QUEUE
+folder data/sounds/SFX/interface
+;remove_from_queue
+end
+
+
+event STRAT_PICKUP_UNIT
+folder data/sounds/SFX/interface
+;pickup_card
+end
+
+event STRAT_DROP_UNIT volume -50 streamed
+folder data/sounds/SFX/interface
+drop_building_mtw2.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event STRAT_ASK_FOR_ADVICE
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_LOCATE_POSITION_OF_SETTLEMENT streamed
+folder data/sounds/SFX/interface
+select_and_locate.mp3
+end
+
+
+event STRAT_ASK_FOR_UNIT_ADVICE
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_SHOW_RALLY_POINTS
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_REMOVE_RALLY_POINT
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_SHOW_UNITS_IN_GARRISON_THAT_REQURE_RETRAINING
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_SHOW_EVENTS_LOG
+folder data/sounds/SFX/interface
+;button_down
+end
+
+
+
+event STRAT_LOCATE_SELECTED_CHARACTER_ON_MAP volume -50 streamed
+folder data/sounds/SFX/interface
+move_camera_mtw2.mp3
+end
+
+event STRAT_SET_FACTION_HEIR
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_VIEW_SETTLEMENT_ON_BATTLEMAP streamed volume -10
+folder data/sounds/SFX/interface
+view_settlement_battlefield_mtw2.mp3
+end
+
+
+
+event STRAT_LOCATION_POSITION_OF_SETTLEMENT
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_SHOW_BUILDINGS_IN_SETTLEMENT
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event STRAT_ARROW_BUTTONS
+folder data/sounds/SFX/interface
+;slidey_03
+end
+
+event STRAT_SELECT_DETAIL volume -30 streamed
+folder data/sounds/SFX/interface
+	radar_zoom.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;
+;slide out
+event STRAT_ADVICE_PANEL_SLIDING_IN volume -20 pan .25 streamed
+	folder data/sounds/SFX/interface
+	advisor_popout.mp3
+end
+
+;slide in
+event STRAT_ADVICE_PANEL_SLIDING_OUT volume -60 pan .25  streamed
+	folder data/sounds/SFX/interface
+	advisor_popin.mp3
+end
+
+event STRAT_ADVICE_BUBBLE_APPEARS pan .25
+	folder data/sounds/SFX/interface
+	;advisor_bubble_appear
+end
+
+;; advice slide out covers sound - RV
+event STRAT_ADVICE_BUBBLE_DISAPPEARS pan .25
+	folder data/sounds/SFX/interface
+	;advisor_bubble_disappear
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event STRAT_NEW_MESSAGES_AVAILABLE volume -55 streamed
+folder data/sounds/SFX/interface
+message.mp3
+end
+
+event STRAT_EVENT_CARD_STARTS_TO_FALL pan .25  volume -65 streamed
+folder data/sounds/SFX/interface
+message_fall.mp3
+end
+
+event STRAT_EVENT_CARD_STOPS_FALLING pan .25 volume -50 streamed
+folder data/sounds/SFX/interface
+message_stop.mp3
+end
+
+event STRAT_MESSAGE_DISMISS pan .25 volume -20 streamed
+folder data/sounds/SFX/interface
+panel_close.mp3
+end
+
+
+;;;;;;;;;;;   New diplomatic window August 2004 ;;;;;;;;;;;;;
+
+event STRAT_DIPLOMACY_AMBIENT  volume -40 streamed looped
+folder data/sounds/SFX/Campaign_Map
+report.mp3
+end
+
+event STRAT_DIPLOMACY_SCROLL_OPEN  volume -25 streamed
+folder data/sounds/SFX/interface
+	scroll_02_open.mp3
+	scroll_03_open.mp3
+	scroll_06_open.mp3
+	scroll_08_open.mp3
+	scroll_10_open.mp3
+	scroll_12_open.mp3
+	scroll_13_open.mp3
+	scroll_14_open.mp3
+	scroll_16_open.mp3
+	scroll_17_open.mp3
+	scroll_18_open.mp3
+	scroll_19_open.mp3
+end
+
+event STRAT_DIPLOMACY_SCROLL_CLOSE  volume -30 streamed
+folder data/sounds/SFX/interface
+	scroll_01_close.mp3
+	scroll_04_close.mp3
+	scroll_05_close.mp3
+	scroll_07_close.mp3
+	scroll_09_close.mp3
+	scroll_11_close.mp3
+	scroll_15_close.mp3
+	scroll_22_close.mp3
+end
+
+event STRAT_DIPLOMACY_TEXT_CLICK  volume -20 streamed
+folder data/sounds/SFX/interface
+button_down.mp3
+end
+
+event STRAT_DIPLOMACY_ARROW_BUTTONS volume -30 streamed
+folder data/sounds/SFX/interface
+tab.mp3
+end
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; WORKING BATTLE MAP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: volume 0 
+
+
+
+
+
+event BATTLE_UI_SELECT_UNIT
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_SWORD_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_QUICK_SWORD_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_SPEAR_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_QUICK_SPEAR_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_MISSILE_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_QUICK_MISSILE_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_SIEGE_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_GRAB_SIEGE_WEAPON
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_WALK_TO_LOCATION
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_UI_RUN_TO_LOCATION
+folder data/sounds/SFX
+;peep
+end
+
+
+
+event BATTLE_SCROLL_OPENS streamed
+folder data/sounds/SFX/interface
+	scroll_02_open.mp3
+	scroll_03_open.mp3
+	scroll_06_open.mp3
+	scroll_08_open.mp3
+	scroll_10_open.mp3
+	scroll_12_open.mp3
+	scroll_13_open.mp3
+	scroll_14_open.mp3
+	scroll_16_open.mp3
+	scroll_17_open.mp3
+	scroll_18_open.mp3
+	scroll_19_open.mp3
+	
+end
+
+event BATTLE_SCROLL_CLOSES volume -15 streamed
+folder data/sounds/SFX/interface
+	scroll_01_close.mp3
+	scroll_04_close.mp3
+	scroll_05_close.mp3
+	scroll_07_close.mp3
+	scroll_09_close.mp3
+	scroll_11_close.mp3
+	scroll_15_close.mp3
+	scroll_22_close.mp3
+end
+
+event BATTLE_PANEL_MENU_SELECT
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event BATTLE_PANEL_MENU_SCROLL_BALL streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+event BATTLE_PANEL_MENU_SCROLL_ARROWS streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+event BATTLE_PANEL_MENU_SCROLLING volume -15
+folder data/sounds/SFX/interface
+slider
+end
+
+event BATTLE_PANEL_MENU_TICK_BOX_ON volume -30 minpitch .5 maxpitch .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event BATTLE_PANEL_MENU_TICK_BOX_OFF volume -10
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event BATTLE_PANEL_MENU_CLOSE_BUTTON volume -20 streamed
+folder data/sounds/SFX/interface
+panel_close.mp3
+end
+
+event BATTLE_PANEL_MENU_CHECK_BUTTON
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event BATTLE_PANEL_MENU_X_BUTTON volume -20 streamed
+folder data/sounds/SFX/interface
+panel_close.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event BATTLE_END_DEPLOYMENT
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event BATTLE_FOLLOW_UNIT
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event BATTLE_STOP_FOLLOWING_UNIT
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event BATTLE_ZOOM_UNIT volume -80 streamed
+folder data/sounds/SFX/interface
+radar_click_mtw2.mp3
+end
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event BATTLE_HIDE_UI streamed
+	folder data/sounds/SFX/interface/battlefield
+	GUI_slide_down.mp3
+end
+
+event BATTLE_UNHIDE_UI streamed
+folder data/sounds/SFX/interface/battlefield
+	GUI_slide_up.mp3
+end
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event BATTLE_TURN_MUSIC_ON
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event BATTLE_TURN_MUSIC_OFF minpitch .5 maxpitch .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event BATTLE_TURN_SOUND_EFFECTS_ON_
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event BATTLE_TURN_SOUND_EFFECTS_OFF minpitch .5 maxpitch .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event BATTLE_ZOOM_RADAR_IN volume -30 streamed
+folder data/sounds/SFX/interface
+	radar_zoom.mp3
+end
+
+event BATTLE_ZOOM_RADAR_OUT volume -30 streamed
+folder data/sounds/SFX/interface
+	radar_zoom.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event BATTLE_PAUSE
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event BATTLE_UNPAUSE
+folder data/sounds/SFX/interface
+;button_down
+end
+
+event BATTLE_DOUBLE_SPEED streamed
+folder data/sounds/SFX/interface
+double_button.mp3
+end
+
+event BATTLE_TRIPLE_SPEED streamed
+folder data/sounds/SFX/interface
+double_button.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event BATTLE_SELECT_CARD volume 0
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event BATTLE_DESELECT_CARD minpitch .5 maxpitch .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event BATTLE_PICKUP_CARD volume -30 streamed
+folder data/sounds/SFX/interface
+pickup_card.mp3
+end
+
+event BATTLE_DROP_CARD volume -50 streamed
+folder data/sounds/SFX/interface
+drop_building_mtw2.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event BATTLE_ZOOM_TO_UNIT volume -40 streamed
+folder data/sounds/SFX/interface/battlefield
+zoom_to_unit.mp3
+end
+
+event BATTLE_ZOOM_GENERAL volume -40 streamed
+folder data/sounds/SFX/interface/battlefield
+zoom_to_unit.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event BATTLE_SELECT_ALL volume -35 dry_level 1 wet_level .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+
+event BATTLE_DESELECT_ALL minpitch .5 maxpitch .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event BATTLE_SELECT_CAVALRY
+folder data/sounds/SFX
+;peep
+end
+
+
+event BATTLE_SELECT_INFANTRY
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SELECT_MELEE
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SELECT_MISSILE_
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SELECT_SIEGE
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SELECT_NEXT_GROUP
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SELECT_PREVIOUS_GROUP
+folder data/sounds/SFX
+;peep
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event BATTLE_HALT_STOP_CURRENT_ORDERS
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_WITHDRAW
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_GROUP_SELECTED_UNITS
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_UNGROUP_SELECTED_UNITS
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_ENABLE_LINKING
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_DISABLE_LINKING
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_TIGHT_FORMATION
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_LOOSE_FORMATION
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_ENABLE_SKIRMISH_MODE
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_DISABLE_SKIRMISH_MODE
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_ENABLE_FIRE_AT_WILL
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_DISABLE_FIRE_AT_WILL
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_NORMAL_FORMATION
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SPECIAL_FORMATION
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_ENABLE_GUARD_MODE
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_DISABLE_GUARD_MODE
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_RUN_MODE
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_WALK_MODE
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SHOW_GROUP_FORMATIONS
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_HIDE_GROUP_FORMATIONS
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SELECT_GROUP_FORMATION
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_AI_ASSISTANCE_ON
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_AI_ASSISTANCE_OFF
+folder data/sounds/SFX
+;peep
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;  NOT WORKING FRONTEND 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event UI_F1_HELP volume -5
+folder data/sounds/SFX
+;peep
+end
+
+
+event UI_HELP_DIALOG_CHECK
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+
+event UI_ESC_KEY
+folder data/sounds/SFX
+;peep
+end
+
+event UI_QUIT_DIALOG_APPEAR
+folder data/sounds/SFX
+;peep
+end
+
+;;;; removed
+event UI_QUIT_DIALOG_CHECK
+folder data/sounds/SFX/interface/frontend
+;check_button_mtw2
+end
+
+event UI_QUIT_DIALOG_X streamed
+folder data/sounds/SFX/interface
+check_button_mtw2.mp3
+end
+
+
+event UI_QUIT_DIALOG_DISAPPEAR
+folder data/sounds/SFX
+;peep
+end
+
+
+event UI_ERROR_DIALOG_APPEAR
+folder data/sounds/SFX
+;peep
+end
+
+event UI_ERROR_DIALOG_CHECK streamed
+folder data/sounds/SFX/interface
+check_button_mtw2.mp3
+end
+
+event UI_ERROR_DIALOG_DISAPPEAR
+folder data/sounds/SFX
+;peep
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+event UI_DROP_MENUS_DOWN volume -10 streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+event UI_DROP_MENUS_UP streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+event UI_DROP_MENU_ITEM_HIGHLIGHT
+folder data/sounds/SFX
+;peep
+end
+
+event UI_DROP_MENU_ITEM_SELECT
+folder data/sounds/SFX
+;peep
+end
+
+event UI_DROP_MENU_SCROLL_ARROW_HEAD streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+
+event UI_DROP_MENU_SCROLL_BALL streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+
+event UI_DROP_MENU_SCROLLING volume -15
+folder data/sounds/SFX/interface
+slider
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event UI_CONTINUE_CAMPAIGN streamed
+folder data/sounds/SFX/campaign_map
+engage_enemy.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event UI_SELECT_A_FACTION streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_FACTION_SHIELD_BUTTONS streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+
+event UI_START_THE_CAMPAIGN streamed
+folder data/sounds/SFX/campaign_map
+engage_enemy.mp3
+end
+
+event UI_SELECT_CAMPAIGN streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_SELECT_BATTLE streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event UI_CHOOSE_AN_ARMY streamed
+folder data/sounds/SFX/interface/frontend
+slam_01.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event UI_START_THE_HISTORICAL_BATTLE streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_CHOOSE_LOCATION streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_CUSTOMISE_THE_BATTLE streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_ARROW_BUTTONS streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event UI_ATTACKER_BUTTON streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_DEFFENDER_BUTTON streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event UI_NO_FACTION_BUTTON streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_CUSTOMISE_THE_ARMIES streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_PICK_UP_CARD
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event UI_DROP_CARD minpitch .5 maxpitch .5
+folder data/sounds/SFX/interface/battlefield
+card_select_mtw_01
+end
+
+event UI_SELECT_UNIT streamed
+folder data/sounds/SFX/interface
+select_building.mp3
+end
+
+event UI_REMOVE_UNIT streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_LEVELS_ARROWS streamed
+folder data/sounds/SFX/interface/frontend
+scroll_arrow.mp3
+end
+
+event UI_START_THE_BATTLE streamed
+folder data/sounds/SFX/campaign_map
+engage_enemy.mp3
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event UI_GAME_APPEARS
+folder data/sounds/SFX
+;peep
+end
+
+event UI_GAME_DISAPPEARS streamed
+folder data/sounds/SFX/interface/frontend
+slam_01.mp3
+end
+
+
+event UI_JOIN_AS_SPECTATOR
+folder data/sounds/SFX
+;peep
+end
+
+event UI_JOIN_GAME
+folder data/sounds/SFX
+;peep
+end
+
+event UI_HOST_GAME
+folder data/sounds/SFX
+;peep
+end
+
+event UI_REFRESH_GAME_LIST streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_SORT_BY_COLUMN_BUTTONS streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_SELECT_GAME streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event UI_CHOOSE_CONDITIONS_FOR_BATTLE streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_LOAD_SELECT_GAME streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_APPLY_VIDEO_SETTINGS streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_SELECT_FUNCTION streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_START_REASSIGNMENT streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_KEY_REASSIGNED streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+event UI_RESTORE_DEFAULT_KEYS streamed
+folder data/sounds/SFX/interface/frontend
+apply_change.mp3
+end
+
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;  NOT WORKING BATTLEMAP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+event BATTLE_SELECT_UNIT_DESTINATION
+folder data/sounds/SFX/interface
+;promote_02
+end
+
+event BATTLE_INVALID_DESTINATION
+folder data/sounds/SFX/interface
+;lock
+end
+
+event BATTLE_MELEE_ATTACK_UNIT
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_CHARGE_MELEE_ATTACK_UNIT
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_MISSILE_ATTACK_UNIT
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_CHARGE_MISSILE_ATTACK_UNIT
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_SIEGE_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_CHARGE_SIEGE_ATTACK
+folder data/sounds/SFX
+;peep
+end
+
+event BATTLE_INVALID_ATTACK_TARGET
+folder data/sounds/SFX
+;peep
+end
+
+
+
+
+
+
+
+
+

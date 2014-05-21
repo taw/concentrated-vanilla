@@ -1,0 +1,3980 @@
+BANK: ADVICE
+  ;; exporting Campaign Advice
+  text Advisor_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Advisor_Advice_Text_01_Text1.mp3
+  end
+  text New_Campaign_Turn_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_New_Turn_Text_01_Text1.mp3
+  end
+  text Following_AI_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Following_AI_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Advice_Text_02_Text1.mp3
+  end
+  text UI_Panel_Settlement_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Advice_Text_03_Text1.mp3
+  end
+  text UI_Panel_Settlement_Advice_Text_04_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Advice_Text_04_Text1.mp3
+  end
+  text UI_Panel_Settlement_Advice_Text_05_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Advice_Text_05_Text1.mp3
+  end
+  text UI_Panel_Settlement_Auto_Managed_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Auto_Managed_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_City_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_City_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Castle_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Castle_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Icons_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Icons_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Construction_Tab_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Construction_Tab_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Construction_Tab_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Construction_Tab_Advice_Text_02_Text1.mp3
+  end
+  text UI_Panel_Settlement_Construction_Tab_Advice_Text_04_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Construction_Tab_Advice_Text_04_Text1.mp3
+  end
+  text UI_Panel_Settlement_Recruitment_Tab_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Recruitment_Tab_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Recruitment_Tab_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Recruitment_Tab_Advice_Text_02_Text1.mp3
+  end
+  text UI_Panel_Settlement_Recruitment_Tab_Advice_Text_04_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Recruitment_Tab_Advice_Text_04_Text1.mp3
+  end
+  text UI_Panel_Settlement_Recruitment_Tab_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Recruitment_Tab_Advice_Text_03_Text1.mp3
+  end
+  text UI_Panel_Settlement_Repair_Tab_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Repair_Tab_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Retrain_Tab_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Retrain_Tab_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Settlement_Retrain_Tab_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Retrain_Tab_Advice_Text_02_Text1.mp3
+  end
+  text UI_Scroll_Settlement_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Settlement_Details_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Settlement_Details_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Settlement_Details_Advice_Text_02_Text1.mp3
+  end
+  text UI_Scroll_Settlement_Details_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Settlement_Details_Advice_Text_03_Text1.mp3
+  end
+  text UI_Scroll_Settlement_Details_Advice_Text_04_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Settlement_Details_Advice_Text_04_Text1.mp3
+  end
+  text UI_Scroll_Settlement_Details_Advice_Text_05_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Settlement_Details_Advice_Text_05_Text1.mp3
+  end
+  text UI_Scroll_Trade_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Trade_Details_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Building_Browser_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Building_Browser_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Overview_Faction_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Faction_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Overview_Financial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Financial_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Overview_Diplomacy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Diplomacy_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Overview_Pope_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Pope_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Overview_Pope_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Pope_Advice_Text_02_Text1.mp3
+  end
+  text UI_Scroll_College_of_Cardinals_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_College_of_Cardinals_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Lists_Military_Forces_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Lists_Military_Forces_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Lists_Agents_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Lists_Agents_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Lists_Settlement_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Lists_Settlement_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Faction_Ranking_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Faction_Ranking_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Building_Information_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Building_Information_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Unit_Information_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Unit_Information_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Agent_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Details_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Agent_Spy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Spy_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Agent_Diplomat_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Diplomat_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Agent_Assassin_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Assassin_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Agent_Merchant_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Merchant_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Agent_Priest_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Priest_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Agent_Princess_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Princess_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_General_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_General_Details_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_General_Details_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_General_Details_Advice_Text_02_Text1.mp3
+  end
+  text UI_Scroll_Navy_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Navy_Details_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Diplomacy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Diplomacy_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Diplomacy_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Diplomacy_Advice_Text_02_Text1.mp3
+  end
+  text UI_Panel_Diplomacy_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Diplomacy_Advice_Text_03_Text1.mp3
+  end
+  text UI_Panel_Diplomacy_Advice_Text_05_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Diplomacy_Advice_Text_05_Text1.mp3
+  end
+  text UI_Scroll_Denounce_Mission_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Denounce_Mission_Target_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Acquisition_Mission_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Acquisition_Mission_Target_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Assassin_Mission_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Assassin_Mission_Target_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Other_Faction_Settlement_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Other_Faction_Settlement_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Other_Faction_Army_Fleet_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Other_Faction_Army_Fleet_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Other_Faction_Agent_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Other_Faction_Agent_Details_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Siege_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Siege_Details_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Siege_Details_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Siege_Details_Advice_Text_02_Text1.mp3
+  end
+  text UI_Panel_Battle_Deployment_Army_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Battle_Deployment_Army_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Battle_Results_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Battle_Results_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Battle_Statistics_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Battle_Statistics_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Merge_Armies_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Merge_Armies_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Field_Construction_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Field_Construction_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Captured_Settlement_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Captured_Settlement_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Fort_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Fort_Details_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Marriage_Mission_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Marriage_Mission_Target_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Attack_Allies_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Attack_Allies_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Attack_Neutral_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Attack_Neutral_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Papal_Election_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Papal_Election_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Diplomacy_Buy_Votes_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Diplomacy_Buy_Votes_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Papal_Election_Diplomacy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Papal_Election_Diplomacy_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Papal_Election_Results_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Papal_Election_Results_Advice_Text_01_Text1.mp3
+  end
+  text Crusading_Army_Garrison_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Crusading_Army_Garrison_Advice_Text_01_Text1.mp3
+  end
+  text Jihad_Army_Garrison_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Jihad_Army_Garrison_Advice_Text_01_Text1.mp3
+  end
+  text UI_Panel_Overview_Missions_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Missions_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Excommunication_Warning_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Excommunication_Warning_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Break_Siege_Confirmation_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Break_Siege_Confirmation_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Convert_Settlement_Warning_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Convert_Settlement_Warning_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Prisoners_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Prisoners_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Prisoners_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Prisoners_Advice_Text_02_Text1.mp3
+  end
+  text UI_Scroll_Ransom_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Ransom_Advice_Text_01_Text1.mp3
+  end
+  text UI_Scroll_Ransom_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Ransom_Advice_Text_02_Text1.mp3
+  end
+  text Help_UI_Panel_Settlement_Auto_Managed_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Auto_Managed_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Settlement_Construction_Tab_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Construction_Tab_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Settlement_Recruitment_Tab_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Recruitment_Tab_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Settlement_Repair_Tab_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Repair_Tab_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Settlement_Retrain_Tab_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Settlement_Retrain_Tab_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Settlement_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Scroll_Settlement_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Trade_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Trade_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Building_Browser_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Building_Browser_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Overview_Faction_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Faction_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Overview_Financial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Financial_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Overview_Diplomacy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Diplomacy_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Overview_Pope_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Pope_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Crusade_Targets_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Crusade_Targets_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Jihad_Targets_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Jihad_Targets_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Family_Tree_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Scroll_Family_Tree_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_College_of_Cardinals_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_College_of_Cardinals_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Lists_Military_Forces_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Lists_Military_Forces_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Lists_Agents_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Lists_Agents_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Lists_Settlement_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Lists_Settlement_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Faction_Ranking_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Faction_Ranking_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Building_Information_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Building_Information_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Unit_Information_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Unit_Information_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Agent_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Agent_Spy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Spy_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Agent_Diplomat_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Diplomat_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Agent_Assassin_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Assassin_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Agent_Priest_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Priest_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Agent_Princess_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Princess_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Agent_Merchant_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Agent_Merchant_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_General_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_General_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Army_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Scroll_Army_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Navy_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Navy_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Diplomacy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Diplomacy_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Denounce_Mission_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Denounce_Mission_Target_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Acquisition_Mission_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Acquisition_Mission_Target_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Assassin_Mission_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Assassin_Mission_Target_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Other_Faction_Settlement_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Other_Faction_Settlement_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Other_Faction_Army_Fleet_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Other_Faction_Army_Fleet_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Other_Faction_Agent_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Other_Faction_Agent_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Siege_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Siege_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Battle_Deployment_Army_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Battle_Deployment_Army_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Battle_Results_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Battle_Results_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Battle_Statistics_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Battle_Statistics_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Merge_Armies_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Merge_Armies_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Field_Construction_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Field_Construction_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Captured_Settlement_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Captured_Settlement_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Fort_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Fort_Details_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Marriage_Mission_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Marriage_Mission_Target_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Attack_Allies_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Attack_Allies_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Attack_Neutral_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Attack_Neutral_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Papal_Election_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Papal_Election_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Papal_Election_Diplomacy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Papal_Election_Diplomacy_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Diplomacy_Buy_Votes_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Diplomacy_Buy_Votes_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Papal_Election_Results_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Papal_Election_Results_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Crusading_Army_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Panel_Crusading_Army_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Jihad_Army_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Panel_Jihad_Army_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Overview_Missions_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Panel_Overview_Missions_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Game_Options_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Panel_Game_Options_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Panel_Load_Save_Screen_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Panel_Load_Save_Screen_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Keyboard_Shortcuts_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Help_UI_Keyboard_Shortcuts_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Excommunication_Warning_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Excommunication_Warning_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Break_Siege_Confirmation_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Break_Siege_Confirmation_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Convert_Settlement_Warning_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Convert_Settlement_Warning_Advice_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Prisoners_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Prisoners_Text_01_Text1.mp3
+  end
+  text Help_UI_Scroll_Ransom_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Scroll_Ransom_Advice_Text_01_Text1.mp3
+  end
+  text UI_Message_First_Incoming_Message_Advice_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             UI_Message_First_Incoming_Message_Advice_Thread_Text1.mp3
+  end
+  text Message_Open_Pope_Mission_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Pope_Mission_Advice_Text_01_Text1.mp3
+  end
+  text Message_Cease_Hostilities_Mission_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Cease_Hostilities_Mission_Advice_Text_01_Text1.mp3
+  end
+  text Message_Incoming_Mission_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Incoming_Mission_Advice_Text_01_Text1.mp3
+  end
+  text Message_Incoming_Mission_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Incoming_Mission_Advice_Text_02_Text1.mp3
+  end
+  text Message_Open_End_Year_Report_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_End_Year_Report_Advice_Text_01_Text1.mp3
+  end
+  text Message_Incoming_War_Declared_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Incoming_War_Declared_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Adoption_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Adoption_Advice_Text_01_Text1.mp3
+  end
+  text Message_Incoming_Disaster_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Incoming_Disaster_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Available_Suitor_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Available_Suitor_Advice_Text_01_Text1.mp3
+  end
+  text Message_Incoming_Crusade_Called_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Incoming_Crusade_Called_Advice_Text_01_Text1.mp3
+  end
+  text Message_Incoming_Jihad_Called_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Incoming_Jihad_Called_Advice_Text_01_Text1.mp3
+  end
+  text Message_Incoming_Excommunicate_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Incoming_Excommunicate_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Cardinals_Selected_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Cardinals_Selected_Advice_Text_01_Text1.mp3
+  end
+  text Player_Pope_Elected_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Player_Pope_Elected_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Recommunicate_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Recommunicate_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Settlement_Riots_Check_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Settlement_Riots_Check_Details_Advice_Text_01_Text1.mp3
+  end
+  text Message_Settlement_Riots_Check_Details_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Settlement_Riots_Check_Details_Advice_Text_02_Text1.mp3
+  end
+  text Message_Open_Settlement_Rebels_Take_Action_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Settlement_Rebels_Take_Action_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Princess_Retires_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Princess_Retires_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Priest_Becomes_Heretic_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Priest_Becomes_Heretic_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Mullah_Becomes_Heretic_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Mullah_Becomes_Heretic_Advice_Text_01_Text1.mp3
+  end
+  text Inquisition_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Inquisition_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Character_Denounced_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Character_Denounced_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Character_Innocent_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Character_Innocent_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Guild_Offer_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Guild_Offer_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Guild_Upgrade_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Guild_Upgrade_Advice_Text_01_Text1.mp3
+  end
+  text Armies_Movement_No_MPs_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Armies_Movement_No_MPs_Advice_Text_01_Text1.mp3
+  end
+  text Armies_Movement_Click_Beyond_Highlighted_Area_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Armies_Movement_Click_Beyond_Highlighted_Area_Advice_Text_01_Text1.mp3
+  end
+  text Army_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Army_Advice_Text_01_Text1.mp3
+  end
+  text Army_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Army_Advice_Text_02_Text1.mp3
+  end
+  text Army_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Army_Advice_Text_03_Text1.mp3
+  end
+  text Army_Advice_Text_04_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Army_Advice_Text_04_Text1.mp3
+  end
+  text Army_Advice_Text_05_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Army_Advice_Text_05_Text1.mp3
+  end
+  text Army_Advice_Text_06_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Army_Advice_Text_06_Text1.mp3
+  end
+  text Army_Advice_Text_07_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Army_Advice_Text_07_Text1.mp3
+  end
+  text Fleet_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Fleet_Advice_Text_01_Text1.mp3
+  end
+  text Fleet_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Fleet_Advice_Text_02_Text1.mp3
+  end
+  text Fleet_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Fleet_Advice_Text_03_Text1.mp3
+  end
+  text Fleet_Advice_Text_04_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Fleet_Advice_Text_04_Text1.mp3
+  end
+  text Warning_Fort_Abandoned_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Warning_Fort_Abandoned_Advice_Text_01_Text1.mp3
+  end
+  text Crusading_Army_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Crusading_Army_Advice_Text_01_Text1.mp3
+  end
+  text Crusading_Army_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Crusading_Army_Advice_Text_02_Text1.mp3
+  end
+  text Crusading_Army_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Crusading_Army_Advice_Text_03_Text1.mp3
+  end
+  text Message_Open_Crusading_Army_Desertion_Warning_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Crusading_Army_Desertion_Warning_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Crusading_Army_Desertion_Progress_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Crusading_Army_Desertion_Progress_Advice_Text_01_Text1.mp3
+  end
+  text Message_Open_Crusading_Army_Desertion_Off_Crusade_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Open_Crusading_Army_Desertion_Off_Crusade_Advice_Text_01_Text1.mp3
+  end
+  text Jihad_Army_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Jihad_Army_Advice_Text_01_Text1.mp3
+  end
+  text Jihad_Army_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Jihad_Army_Advice_Text_02_Text1.mp3
+  end
+  text Jihad_Army_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Jihad_Army_Advice_Text_03_Text1.mp3
+  end
+  text Agent_Diplomat_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Diplomat_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Spy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Spy_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Spy_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Spy_Advice_Text_02_Text1.mp3
+  end
+  text Agent_Assassin_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Assassin_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Assassin_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Assassin_Advice_Text_02_Text1.mp3
+  end
+  text Agent_Merchant_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Merchant_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Merchant_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Merchant_Advice_Text_02_Text1.mp3
+  end
+  text Agent_Merchant_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Merchant_Advice_Text_03_Text1.mp3
+  end
+  text Agent_Merchant_Advice_Text_04_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Merchant_Advice_Text_04_Text1.mp3
+  end
+  text Agent_Merchant_Advice_Text_05_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Merchant_Advice_Text_05_Text1.mp3
+  end
+  text Agent_Merchant_Advice_Text_06_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Merchant_Advice_Text_06_Text1.mp3
+  end
+  text Agent_Princess_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Princess_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Princess_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Princess_Advice_Text_02_Text1.mp3
+  end
+  text Agent_Priest_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Priest_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Priest_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Priest_Advice_Text_02_Text1.mp3
+  end
+  text Agent_Priest_Advice_Text_03_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Priest_Advice_Text_03_Text1.mp3
+  end
+  text Agent_Mullah_Advice_Text_04_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Mullah_Advice_Text_04_Text1.mp3
+  end
+  text Agent_Merchant_New_Capital_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Merchant_New_Capital_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Heretic_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Heretic_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Inquisitor_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Inquisitor_Advice_Text_01_Text1.mp3
+  end
+  text Agent_Witch_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Agent_Witch_Advice_Text_01_Text1.mp3
+  end
+  text Character_Gets_Relic_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Character_Gets_Relic_Advice_Text_01_Text1.mp3
+  end
+  text Message_Needs_Resolving_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Message_Needs_Resolving_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Settlement_Panel_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Settlement_Panel_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Settlement_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Settlement_Details_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Trade_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Trade_Details_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Building_Browser_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Building_Browser_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Building_Information_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Building_Information_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Unit_Information_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Unit_Information_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Overviews_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Overviews_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Overview_Pope_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Overview_Pope_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Overview_Mission_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Overview_Mission_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Overview_Financial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Overview_Financial_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Overview_Diplomacy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Overview_Diplomacy_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_College_of_Cardinals_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_College_of_Cardinals_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Family_Tree_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Family_Tree_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Faction_Ranking_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Faction_Ranking_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Character_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Character_Details_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Foreign_Entity_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Foreign_Entity_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Strat_Speed_Settings_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Strat_Speed_Settings_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Recruitment_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Recruitment_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Construction_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Construction_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Retrain_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Retrain_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Recruit_Mercenaries_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Recruit_Mercenaries_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Denounce_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Denounce_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Acquisition_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Acquisition_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Trade_Resource_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Trade_Resource_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Assassination_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Assassination_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Sabotage_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Sabotage_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Marry_General_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Marry_General_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Marriage_Alliance_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Marriage_Alliance_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Spying_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Spying_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Spy_Settlement_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Spy_Settlement_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Convert_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Convert_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Diplomacy_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Diplomacy_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Field_Construction_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Field_Construction_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Suggest_Crusade_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Suggest_Crusade_Target_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Call_Jihad_Target_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Call_Jihad_Target_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Agent_Idle_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Agent_Idle_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Army_Fleet_Idle_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Army_Fleet_Idle_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Attack_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Attack_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Attack_Fleet_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Attack_Fleet_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Create_Crusade_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Create_Crusade_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Create_Jihad_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Create_Jihad_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Advisor_Request_Help_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Advisor_Request_Help_Advice_Text_01_Text1.mp3
+  end
+  text Unexplored_Right_Click_For_Lists_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Unexplored_Right_Click_For_Lists_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Governor_Corruption_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Governor_Corruption_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Details_General_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Details_General_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Details_Super_General_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Details_Super_General_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Details_Governor_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Details_Governor_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Details_Super_Governor_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Details_Super_Governor_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Details_Useless_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Details_Useless_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Details_All_Rounder_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Details_All_Rounder_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Chivaly_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Chivaly_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Chivaly_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Chivaly_Advice_Text_02_Text1.mp3
+  end
+  text Specific_Character_Dread_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Dread_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Character_Dread_Advice_Text_02_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Character_Dread_Advice_Text_02_Text1.mp3
+  end
+  text Specific_Settlement_Negative_Cashflow_Low_Reserve_High_Tax_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Negative_Cashflow_Low_Reserve_High_Tax_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Negative_Cashflow_Low_Reserve_High_Tax_Overdrawn_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Negative_Cashflow_Low_Reserve_High_Tax_Overdrawn_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Faction_Negative_Cashflow_High_Support_Costs_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Faction_Negative_Cashflow_High_Support_Costs_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Faction_Negative_Cashflow_High_Support_Costs_Overdrawn_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Faction_Negative_Cashflow_High_Support_Costs_Overdrawn_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Cashflow_Tax_Oversight_Problem_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Cashflow_Tax_Oversight_Problem_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Cashflow_Tax_Oversight_Problem_Overdrawn_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Cashflow_Tax_Oversight_Problem_Overdrawn_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Construction_Generalised_Mines_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Construction_Generalised_Mines_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Construction_Generalised_Trader_Roads_Done_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Construction_Generalised_Trader_Roads_Done_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Construction_Generalised_Taxmen_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Construction_Generalised_Taxmen_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Construction_Generalised_Trader_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Construction_Generalised_Trader_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Construction_Generalised_Farms_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Construction_Generalised_Farms_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Loyalty_Low_Overtaxed_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Loyalty_Low_Overtaxed_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Loyalty_High_Undertaxed_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Loyalty_High_Undertaxed_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Loyalty_Low_High_Tax_Reduce_or_Garrison_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Loyalty_Low_High_Tax_Reduce_or_Garrison_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Health_Low_No_Sewers_Plague_Risk_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Health_Low_No_Sewers_Plague_Risk_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Health_Slow_Breeding_Effect_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Health_Slow_Breeding_Effect_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Health_Plague_Garrison_Present_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Health_Plague_Garrison_Present_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Loyalty_Low_High_Tax_Increase_Garrison_Warning_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Loyalty_Low_High_Tax_Increase_Garrison_Warning_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Loyalty_Garrison_Leaves_Warning_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Loyalty_Garrison_Leaves_Warning_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Loyalty_Low_No_Garrison_Warning_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Loyalty_Low_No_Garrison_Warning_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Public_Order_Low_Check_Details_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Public_Order_Low_Check_Details_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Riots_Reduce_Taxes_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Riots_Reduce_Taxes_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Riots_Garrison_Properly_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Riots_Garrison_Properly_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Riots_Install_Better_Governor_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Riots_Install_Better_Governor_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Riots_Install_A_Governor_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Riots_Install_A_Governor_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_No_Facilities_Here_City_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_No_Facilities_Here_City_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_No_Facilities_Here_Castle_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_No_Facilities_Here_Castle_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Population_Limit_Reached_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Population_Limit_Reached_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Population_Limit_Reached_Castle_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Population_Limit_Reached_Castle_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Raise_Buildings_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Raise_Buildings_Advice_Text_01_Text1.mp3
+  end
+  text Specific_Settlement_Devastation_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Specific_Settlement_Devastation_Advice_Text_01_Text1.mp3
+  end
+  text Reminder_Mission_Outstanding_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Reminder_Mission_Outstanding_Advice_Text_01_Text1.mp3
+  end
+  text Reminder_Crusade_Mission_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Reminder_Crusade_Mission_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Greeting_England_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Greeting_England_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Greeting_France_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Greeting_France_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Greeting_HRE_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Greeting_HRE_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Greeting_Spain_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Greeting_Spain_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Greeting_Venice_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Greeting_Venice_Advice_Text_01_Text1.mp3
+  end
+  text England_Initial_1_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             England_Initial_1_Advice_Text_01_Text1.mp3
+  end
+  text France_Initial_1_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             France_Initial_1_Advice_Text_01_Text1.mp3
+  end
+  text HRE_Initial_1_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             HRE_Initial_1_Advice_Text_01_Text1.mp3
+  end
+  text Spain_Initial_1_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Spain_Initial_1_Advice_Text_01_Text1.mp3
+  end
+  text Venice_Initial_1_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Venice_Initial_1_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Initial_2_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Initial_2_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Initial_3_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Initial_3_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Initial_4_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Initial_4_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Initial_Goals_Button_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Initial_Goals_Button_Advice_Text_01_Text1.mp3
+  end
+  text England_Initial_5_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             England_Initial_5_Advice_Text_01_Text1.mp3
+  end
+  text France_Initial_5_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             France_Initial_5_Advice_Text_01_Text1.mp3
+  end
+  text HRE_Initial_5_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             HRE_Initial_5_Advice_Text_01_Text1.mp3
+  end
+  text Spain_Initial_5_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Spain_Initial_5_Advice_Text_01_Text1.mp3
+  end
+  text Venice_Initial_5_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Venice_Initial_5_Advice_Text_01_Text1.mp3
+  end
+  text Sicily_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Sicily_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Milan_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Milan_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Scotland_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Scotland_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Byzantium_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Byzantium_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Russia_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Russia_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Moors_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Moors_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Turks_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Turks_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Egypt_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Egypt_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Denmark_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Denmark_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Portugal_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Portugal_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Poland_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Poland_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Hungary_Initial_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Hungary_Initial_Advice_Text_01_Text1.mp3
+  end
+  text Campaign_Initial_6_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Campaign_Initial_6_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Castle_Upgrade_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Castle_Upgrade_Advice_Text_01_Text1.mp3
+  end
+  text Construction_City_Upgrade_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_City_Upgrade_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Towers_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Towers_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Barracks_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Barracks_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Market_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Market_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Smith_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Smith_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Port_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Port_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Health_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Health_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Farms_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Farms_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Roads_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Roads_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Mines_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Mines_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Academic_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Academic_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Siege_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Siege_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Cannon_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Cannon_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Temple_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Temple_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Sea_Trade_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Sea_Trade_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Taverns_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Taverns_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Convert_To_Castle_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Convert_To_Castle_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Covert_To_City_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Covert_To_City_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Equestrian_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Equestrian_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Missiles_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Missiles_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Hospital_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Hospital_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Urban_Equestrian_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Urban_Equestrian_Advice_Text_01_Text1.mp3
+  end
+  text Construction_City_Hall_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_City_Hall_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Professional_Military_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Professional_Military_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Art_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Art_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Bullring_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Bullring_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Bank_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Bank_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Paper_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Paper_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Icon_Art_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Icon_Art_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Admiralty_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Admiralty_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Music_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Music_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Tourney_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Tourney_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Castle_Academic_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Castle_Academic_Advice_Text_01_Text1.mp3
+  end
+  text Construction_Caravan_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_Caravan_Advice_Text_01_Text1.mp3
+  end
+  text Construction_No_Building_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Construction_No_Building_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Heavy_Infantry_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Heavy_Infantry_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Light_Infantry_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Light_Infantry_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Longbowmen_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Longbowmen_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Archers_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Archers_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Javelinmen_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Javelinmen_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Crossbowmen_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Crossbowmen_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Missile_Cavalry_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Missile_Cavalry_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Spearmen_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Spearmen_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Polearm_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Polearm_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Artillery_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Artillery_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Light_Cavalry_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Light_Cavalry_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Heavy_Cavalry_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Heavy_Cavalry_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Gunpowder_Infantry_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Gunpowder_Infantry_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Gunpowder_Artillery_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Gunpowder_Artillery_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Gunpowder_Cavalry_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Gunpowder_Cavalry_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_Knights_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_Knights_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_No_Unit_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_No_Unit_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_No_Unit_No_Facilities_Castle_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_No_Unit_No_Facilities_Castle_Advice_Text_01_Text1.mp3
+  end
+  text Recruitment_No_Unit_No_Facilities_City_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Recruitment_No_Unit_No_Facilities_City_Advice_Text_01_Text1.mp3
+  end
+  text Show_Me_Settlement_Help_Governors_Panel_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Settlement_Help_Governors_Panel_Advice_Text_01_Text1.mp3
+  end
+  text Show_Me_Settlement_Help_Management_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Settlement_Help_Management_Advice_Text_01_Text1.mp3
+  end
+  text Show_Me_Settlement_Help_Tax_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Settlement_Help_Tax_Advice_Text_01_Text1.mp3
+  end
+  text Settlement_Help_Icons_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Settlement_Help_Icons_Text_01_Text1.mp3
+  end
+  text Show_Me_Settlement_Help_Construction_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Settlement_Help_Construction_Advice_Text_01_Text1.mp3
+  end
+  text Show_Me_Settlement_Help_Recruitment_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Settlement_Help_Recruitment_Advice_Text_01_Text1.mp3
+  end
+  text Show_Me_Settlement_Help_Agents_Retrain_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Settlement_Help_Agents_Retrain_Advice_Text_01_Text1.mp3
+  end
+  text Show_Me_Construction_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Construction_Advice_Text_01_Text1.mp3
+  end
+  text Show_Me_Recruitment_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Recruitment_Advice_Text_01_Text1.mp3
+  end
+  text Show_Me_Build_Siege_Equipment_1_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Build_Siege_Equipment_1_Text_01_Text1.mp3
+  end
+  text Show_Me_Build_Siege_Equipment_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Build_Siege_Equipment_2_Text_01_Text1.mp3
+  end
+  text Show_Me_Build_Siege_Equipment_3_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Build_Siege_Equipment_3_Text_01_Text1.mp3
+  end
+  text Show_Me_Build_Siege_Equipment_4_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Show_Me_Build_Siege_Equipment_4_Text_01_Text1.mp3
+  end
+  text Night_Prebattle_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Night_Prebattle_Advice_Text_01_Text1.mp3
+  end
+  ;; exporting Battle Advice
+  text Start_Battle_Defend_Against_Cavalry_With_Spears_text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Defend_Against_Cavalry_With_Spears_text_01_Text1.mp3
+  end
+  text Missile_Troops_Attacking_Spearmen_text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Missile_Troops_Attacking_Spearmen_text_01_Text1.mp3
+  end
+  text Start_Battle_Spearmen_Form_Schiltrom_text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Spearmen_Form_Schiltrom_text_01_Text1.mp3
+  end
+  text Start_Battle_Spearmen_Support_Heavy_Infantry_text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Spearmen_Support_Heavy_Infantry_text_01_Text1.mp3
+  end
+  text Start_Battle_Shoot_Spearmen_text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Shoot_Spearmen_text_01_Text1.mp3
+  end
+  text Start_Battle__Heavy_Cavalry__text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle__Heavy_Cavalry__text_01_Text1.mp3
+  end
+  text Start_Battle__Heavy_Cavalry__text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle__Heavy_Cavalry__text_01_Text2.mp3
+  end
+  text Start_Battle__Heavy_Cavalry_Avoid_Spearmen_text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle__Heavy_Cavalry_Avoid_Spearmen_text_01_Text1.mp3
+  end
+  text Start_Battle__Heavy_Cavalry_Do_Not_Engage_Skirmishers_text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle__Heavy_Cavalry_Do_Not_Engage_Skirmishers_text_01_Text1.mp3
+  end
+  text Battle_Heavy_Cavalry_Engage_Light_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Heavy_Cavalry_Engage_Light_Cavalry_Text_01_Text1.mp3
+  end
+  text Gunpowder_Causes_Fear_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Gunpowder_Causes_Fear_Text_01_Text1.mp3
+  end
+  text Incendiaries_Cause_Fear_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Incendiaries_Cause_Fear_Text_01_Text1.mp3
+  end
+  text Siege_Defend_With_Spears_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Defend_With_Spears_Text_01_Text1.mp3
+  end
+  text Siege_Defend_With_Missiles_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Defend_With_Missiles_Text_01_Text1.mp3
+  end
+  text Keyboard_Shortcuts_Scroll_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Keyboard_Shortcuts_Scroll_Text_01_Text1.mp3
+  end
+  text Battle_Heavy_Cavalry_Group_Together_Charge_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Heavy_Cavalry_Group_Together_Charge_Text_01_Text1.mp3
+  end
+  text Keep_Cavalry_In_Reserve_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Keep_Cavalry_In_Reserve_Text_01_Text1.mp3
+  end
+  text Cannon_Keep_Out_Of_The_Way_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cannon_Keep_Out_Of_The_Way_Text_01_Text1.mp3
+  end
+  text End_Battle_Scroll_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             End_Battle_Scroll_Text_01_Text1.mp3
+  end
+  text Using_Mortars_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Using_Mortars_Text_01_Text1.mp3
+  end
+  text Use_Artillery_To_Kill_Missile_Units_On_Walls_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Use_Artillery_To_Kill_Missile_Units_On_Walls_Text_01_Text1.mp3
+  end
+  text Use_Artillery_To_Kill_Non_Missile_Units_On_Walls_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Use_Artillery_To_Kill_Non_Missile_Units_On_Walls_Text_01_Text1.mp3
+  end
+  text Throw_Cows_At_Enemy_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Throw_Cows_At_Enemy_Text_01_Text1.mp3
+  end
+  text Use_Standards_To_Improve_Morale_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Use_Standards_To_Improve_Morale_Text_01_Text1.mp3
+  end
+  text Knights_To_The_Fore_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Knights_To_The_Fore_Text_01_Text1.mp3
+  end
+  text Rocket_Launchers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Rocket_Launchers_Text_01_Text1.mp3
+  end
+  text Archers_Deploy_Stakes_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Archers_Deploy_Stakes_Text_01_Text1.mp3
+  end
+  text Gunpowder_Deploy_in_Blocks_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Gunpowder_Deploy_in_Blocks_Text_01_Text1.mp3
+  end
+  text Only_Cavalry_Vs_Only_Spearmen_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Only_Cavalry_Vs_Only_Spearmen_Text_01_Text1.mp3
+  end
+  text Only_Spearmen_Vs_Only_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Only_Spearmen_Vs_Only_Cavalry_Text_01_Text1.mp3
+  end
+  text Start_Battle_Horse_Archers_Harrassing_Defensive_Enemy_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Horse_Archers_Harrassing_Defensive_Enemy_Text_01_Text1.mp3
+  end
+  text Start_Battle_Horse_Archers_Harrassing_Defensive_Enemy_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Horse_Archers_Harrassing_Defensive_Enemy_Text_01_Text2.mp3
+  end
+  text Start_Battle_Horse_Archers_Harrassing_Advancing_Enemy_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Horse_Archers_Harrassing_Advancing_Enemy_Text_01_Text1.mp3
+  end
+  text Start_Battle_Horse_Archers_Harrassing_Advancing_Enemy_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Horse_Archers_Harrassing_Advancing_Enemy_Text_01_Text2.mp3
+  end
+  text Battle_Advice_General_Friendly_Fire_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Advice_General_Friendly_Fire_Text_01_Text1.mp3
+  end
+  text Start_Battle_Enemy_Forming_For_Attack_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Enemy_Forming_For_Attack_Text_01_Text1.mp3
+  end
+  text Start_Battle_Enemy_Forming_For_Attack_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Enemy_Forming_For_Attack_Text_01_Text2.mp3
+  end
+  text Battle_Units_Matchup_Cavalry_Attack_Spears_Frontally_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Cavalry_Attack_Spears_Frontally_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Cavalry_Attack_Spears_Frontally_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Cavalry_Attack_Spears_Frontally_Text_01_Text2.mp3
+  end
+  text Start_Battle_Enemy_On_Defensive_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Enemy_On_Defensive_Text_01_Text1.mp3
+  end
+  text Start_Battle_Enemy_On_Defensive_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Enemy_On_Defensive_Text_01_Text2.mp3
+  end
+  text Close_Formation_Change_Loose_Warning_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Close_Formation_Change_Loose_Warning_Text_01_Text1.mp3
+  end
+  text Loose_Formation_Change_Wedge_Warning_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Loose_Formation_Change_Wedge_Warning_Text_01_Text1.mp3
+  end
+  text Wedge_Formation_Change_Loose_Warning_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Wedge_Formation_Change_Loose_Warning_Text_01_Text1.mp3
+  end
+  text Peasants_Good_For_Nothing_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Peasants_Good_For_Nothing_Text_01_Text1.mp3
+  end
+  text Heavy_Cavalry_Strong_Pincer_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Heavy_Cavalry_Strong_Pincer_Text_01_Text1.mp3
+  end
+  text Heavy_Cavalry_Strong_Pincer_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Heavy_Cavalry_Strong_Pincer_Text_01_Text2.mp3
+  end
+  text Destroy_Enemy_Artillery_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Destroy_Enemy_Artillery_Text_01_Text1.mp3
+  end
+  text Create_Fire_Base_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Create_Fire_Base_Text_01_Text1.mp3
+  end
+  text Large_battle_Kill_Archers_With_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Large_battle_Kill_Archers_With_Cavalry_Text_01_Text1.mp3
+  end
+  text Outflanking_Basics_1_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Outflanking_Basics_1_Text_01_Text1.mp3
+  end
+  text Outflanking_Basics_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Outflanking_Basics_2_Text_01_Text1.mp3
+  end
+  text Outflanking_Basics_3_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Outflanking_Basics_3_Text_01_Text1.mp3
+  end
+  text Outflanking_Basics_4_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Outflanking_Basics_4_Text_01_Text1.mp3
+  end
+  text Anti_Flanking_Basics_1_Trigger_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Anti_Flanking_Basics_1_Trigger_Text1.mp3
+  end
+  text Stay_Close_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Stay_Close_Text_01_Text1.mp3
+  end
+  text Cavalry_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cavalry_Basics_Text_01_Text1.mp3
+  end
+  text Cavalry_In_Defence_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cavalry_In_Defence_Text_01_Text1.mp3
+  end
+  text Cavalry_Archers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cavalry_Archers_Text_01_Text1.mp3
+  end
+  text Flanking_With_Cavalry_1_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Flanking_With_Cavalry_1_Text_01_Text1.mp3
+  end
+  text Flanking_With_Cavalry_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Flanking_With_Cavalry_2_Text_01_Text1.mp3
+  end
+  text Flanking_With_Cavalry_And_Infantry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Flanking_With_Cavalry_And_Infantry_Text_01_Text1.mp3
+  end
+  text Cavalry_Cycle_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cavalry_Cycle_Text_01_Text1.mp3
+  end
+  text Tiring_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Tiring_Cavalry_Text_01_Text1.mp3
+  end
+  text Start_Battle_Enemy_Defending_Only_Crossing_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Enemy_Defending_Only_Crossing_Text_01_Text1.mp3
+  end
+  text Start_Battle_Enemy_Defending_Only_Crossing_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Enemy_Defending_Only_Crossing_Text_01_Text2.mp3
+  end
+  text Battle_Units_Matchup_Player_Spears_Attack_Cavalry_Front_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Spears_Attack_Cavalry_Front_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Spears_Attack_Engaged_Cavalry_Flank_And_Rear_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Spears_Attack_Engaged_Cavalry_Flank_And_Rear_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Enemy_Spears_Attack_Engaged_Cavalry_Flank_And_Rear_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Enemy_Spears_Attack_Engaged_Cavalry_Flank_And_Rear_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Enemy_Cavalry_Flank_Attack_Engaged_Spears_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Enemy_Cavalry_Flank_Attack_Engaged_Spears_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Cavalry_Attack_Camels_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Cavalry_Attack_Camels_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Camels_Attack_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Camels_Attack_Cavalry_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Enemy_Cavalry_Attack_Camels_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Enemy_Cavalry_Attack_Camels_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Enemy_Camels_Attack_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Enemy_Camels_Attack_Cavalry_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Heavy_Cavalry_Attack_Skirmishers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Heavy_Cavalry_Attack_Skirmishers_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Horse_Archers_Attack_Hedgehog_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Horse_Archers_Attack_Hedgehog_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Horse_Archers_Attack_Camels_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Horse_Archers_Attack_Camels_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Artillery_Attacks_Schiltrom_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Artillery_Attacks_Schiltrom_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Artillery_Attacks_Skirmishers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Artillery_Attacks_Skirmishers_Text_01_Text1.mp3
+  end
+  text Start_Battle_Missiles_Engage_Centre_Then_Assault_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Missiles_Engage_Centre_Then_Assault_Text_01_Text1.mp3
+  end
+  text Start_Battle_Missiles_Engage_Centre_Then_Assault_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Missiles_Engage_Centre_Then_Assault_Text_01_Text2.mp3
+  end
+  text Battle_Units_Matchup_Player_Elephants_Attack_Light_Infantry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Elephants_Attack_Light_Infantry_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Horse_Archers_Attack_Spears_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Horse_Archers_Attack_Spears_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Light_Cavalry_Attack_Skirmishers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Light_Cavalry_Attack_Skirmishers_Text_01_Text1.mp3
+  end
+  text Battle_Units_Matchup_Player_Artillery_Attack_Elephants_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Battle_Units_Matchup_Player_Artillery_Attack_Elephants_Thread_Text1.mp3
+  end
+  text Game_Options_Scroll_Battle_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Game_Options_Scroll_Battle_Text_01_Text1.mp3
+  end
+  text Using_trebuchets_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Using_trebuchets_Text_01_Text1.mp3
+  end
+  text Light_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Light_Cavalry_Text_01_Text1.mp3
+  end
+  text Offer_Bait_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Offer_Bait_Text_01_Text1.mp3
+  end
+  text Enticing_The_Enemy_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Enticing_The_Enemy_Text_01_Text1.mp3
+  end
+  text Enrage_The_Enemy_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Enrage_The_Enemy_Text_01_Text1.mp3
+  end
+  text Outnumbering_The_Enemy_10to1_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Outnumbering_The_Enemy_10to1_Text_01_Text1.mp3
+  end
+  text When_Outnumbered_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             When_Outnumbered_Text_01_Text1.mp3
+  end
+  text When_Massively_Outnumbered_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             When_Massively_Outnumbered_Text_01_Text1.mp3
+  end
+  text Wagon_Fort_Usage_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Wagon_Fort_Usage_Text_01_Text1.mp3
+  end
+  text Attacking_Wagon_Forts_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Attacking_Wagon_Forts_Text_01_Text1.mp3
+  end
+  text Spread_Panic_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Spread_Panic_Text_01_Text1.mp3
+  end
+  text Maintain_Momentum_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Maintain_Momentum_Text_01_Text1.mp3
+  end
+  text Timing_Is_Everything_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Timing_Is_Everything_Text_01_Text1.mp3
+  end
+  text Help_Game_Options_Scroll_Battle_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Help_Game_Options_Scroll_Battle_Text_01_Text1.mp3
+  end
+  text Dangerous_When_Cornered_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Dangerous_When_Cornered_Text_01_Text1.mp3
+  end
+  text Your_Men_Fight_To_The_Death_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Your_Men_Fight_To_The_Death_Text_01_Text1.mp3
+  end
+  text Start_Battle_Withdraw_Now_Run_Away_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Withdraw_Now_Run_Away_Text_01_Text1.mp3
+  end
+  text Start_Battle_Withdraw_Now_Run_Away_Text_01_Text2
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Start_Battle_Withdraw_Now_Run_Away_Text_01_Text2.mp3
+  end
+  text Skirmish_Mode_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Skirmish_Mode_Advice_Text_01_Text1.mp3
+  end
+  text Missile_Attack_Before_Engaging_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Missile_Attack_Before_Engaging_Text_01_Text1.mp3
+  end
+  text Missile_Attack_Heavy_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Missile_Attack_Heavy_Cavalry_Text_01_Text1.mp3
+  end
+  text Missile_Attack_Light_Cavalry_Moving_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Missile_Attack_Light_Cavalry_Moving_Text_01_Text1.mp3
+  end
+  text Concentrate_Your_Fire_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Concentrate_Your_Fire_Text_01_Text1.mp3
+  end
+  text Concentrate_Your_Fire_Flank_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Concentrate_Your_Fire_Flank_Text_01_Text1.mp3
+  end
+  text Cannon_Fodder_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cannon_Fodder_Text_01_Text1.mp3
+  end
+  text Infantry_Counter_Attack_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Infantry_Counter_Attack_Text_01_Text1.mp3
+  end
+  text Infantry_Combine_Unit_Types_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Infantry_Combine_Unit_Types_Text_01_Text1.mp3
+  end
+  text Target_Their_Best_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Target_Their_Best_Text_01_Text1.mp3
+  end
+  text Loose_Formation_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Loose_Formation_Button_Text_01_Text1.mp3
+  end
+  text Skirmish_Mode_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Skirmish_Mode_Button_Text_01_Text1.mp3
+  end
+  text Fire_At_Will_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Fire_At_Will_Button_Text_01_Text1.mp3
+  end
+  text Special_Abilities_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Special_Abilities_Button_Text_01_Text1.mp3
+  end
+  text Guard_Mode_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Guard_Mode_Button_Text_01_Text1.mp3
+  end
+  text Group_Formations_Button_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Group_Formations_Button_2_Text_01_Text1.mp3
+  end
+  text Withdraw_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Withdraw_Button_Text_01_Text1.mp3
+  end
+  text Cancel_Order_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cancel_Order_Button_Text_01_Text1.mp3
+  end
+  text AI_Assistance_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             AI_Assistance_Button_Text_01_Text1.mp3
+  end
+  text Grouped_Units_Button_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Grouped_Units_Button_Text_01_Text1.mp3
+  end
+  text Special_Abilities_Rallying_Horn_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Special_Abilities_Rallying_Horn_Text_01_Text1.mp3
+  end
+  text Special_Abilities_Flaming_Ammo_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Special_Abilities_Flaming_Ammo_Text_01_Text1.mp3
+  end
+  text Special_Abilities_Flaming_Ammo_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Special_Abilities_Flaming_Ammo_2_Text_01_Text1.mp3
+  end
+  text Routing_Flags_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Routing_Flags_Text_01_Text1.mp3
+  end
+  text Facing_Elephants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Facing_Elephants_Text_01_Text1.mp3
+  end
+  text Concentrate_Fire_On_Elephants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Concentrate_Fire_On_Elephants_Text_01_Text1.mp3
+  end
+  text Target_Elephants_With_Artillery_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Target_Elephants_With_Artillery_Text_01_Text1.mp3
+  end
+  text Light_Troops_Against_Elephants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Light_Troops_Against_Elephants_Text_01_Text1.mp3
+  end
+  text Keep_Cavalry_Away_Elephants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Keep_Cavalry_Away_Elephants_Text_01_Text1.mp3
+  end
+  text Flaming_Ammo_Elephants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Flaming_Ammo_Elephants_Text_01_Text1.mp3
+  end
+  text Using_Elephants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Using_Elephants_Text_01_Text1.mp3
+  end
+  text Clear_Path_Elephants_Attack_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Clear_Path_Elephants_Attack_Text_01_Text1.mp3
+  end
+  text Kill_Your_Elephants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Kill_Your_Elephants_Text_01_Text1.mp3
+  end
+  text Use_Flaming_Ammo_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Use_Flaming_Ammo_Text_01_Text1.mp3
+  end
+  text Concentrate_Fire_On_Walls_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Concentrate_Fire_On_Walls_Text_01_Text1.mp3
+  end
+  text Attack_The_Ram_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Attack_The_Ram_Text_01_Text1.mp3
+  end
+  text Attack_The_Tower_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Attack_The_Tower_Text_01_Text1.mp3
+  end
+  text Under_Fire_Artillery_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Under_Fire_Artillery_Text_01_Text1.mp3
+  end
+  text Use_Your_Archers_Against_Artillery_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Use_Your_Archers_Against_Artillery_Text_01_Text1.mp3
+  end
+  text Keep_Archers_Back_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Keep_Archers_Back_Text_01_Text1.mp3
+  end
+  text Fire_At_Their_Rear_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Fire_At_Their_Rear_Text_01_Text1.mp3
+  end
+  text Flaming_Ammo_Wavering_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Flaming_Ammo_Wavering_Text_01_Text1.mp3
+  end
+  text Facing_Archers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Facing_Archers_Text_01_Text1.mp3
+  end
+  text Facing_Missile_Infantry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Facing_Missile_Infantry_Text_01_Text1.mp3
+  end
+  text Using_Javelinmen_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Using_Javelinmen_Text_01_Text1.mp3
+  end
+  text Facing_Missile_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Facing_Missile_Cavalry_Text_01_Text1.mp3
+  end
+  text Using_Missile_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Using_Missile_Cavalry_Text_01_Text1.mp3
+  end
+  text Facing_Cavalry_With_Infantry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Facing_Cavalry_With_Infantry_Text_01_Text1.mp3
+  end
+  text Rallying_The_Troops_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Rallying_The_Troops_Text_01_Text1.mp3
+  end
+  text Stand_Up_Guy_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Stand_Up_Guy_Text_01_Text1.mp3
+  end
+  text Morale_Is_Low_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Morale_Is_Low_Text_01_Text1.mp3
+  end
+  text General_Threatened_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             General_Threatened_Text_01_Text1.mp3
+  end
+  text Wedge_Formation_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Wedge_Formation_Text_01_Text1.mp3
+  end
+  text Skirmishing_Watch_Out_For_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Skirmishing_Watch_Out_For_Cavalry_Text_01_Text1.mp3
+  end
+  text River_Crossing_Attack_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             River_Crossing_Attack_Text_01_Text1.mp3
+  end
+  text River_Crossing_Attack_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             River_Crossing_Attack_2_Text_01_Text1.mp3
+  end
+  text River_Crossing_Defence_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             River_Crossing_Defence_Text_01_Text1.mp3
+  end
+  text River_Crossing_Defence_No_Archers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             River_Crossing_Defence_No_Archers_Text_01_Text1.mp3
+  end
+  text River_Crossing_Defence_Archers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             River_Crossing_Defence_Archers_Text_01_Text1.mp3
+  end
+  text River_Crossing_Defence_Archers_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             River_Crossing_Defence_Archers_2_Text_01_Text1.mp3
+  end
+  text Fatigue_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Fatigue_Text_01_Text1.mp3
+  end
+  text Fatigue_4_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Fatigue_4_Text_01_Text1.mp3
+  end
+  text Fatigue_6_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Fatigue_6_Text_01_Text1.mp3
+  end
+  text Frightening_Units_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Frightening_Units_Text_01_Text1.mp3
+  end
+  text Breaking_Off_From_Combat_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Breaking_Off_From_Combat_Text_01_Text1.mp3
+  end
+  text Ambush_5_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Ambush_5_Text_01_Text1.mp3
+  end
+  text Attack_Their_General_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Attack_Their_General_Text_01_Text1.mp3
+  end
+  text Attack_Their_General_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Attack_Their_General_2_Text_01_Text1.mp3
+  end
+  text Killing_At_The_End_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Killing_At_The_End_Text_01_Text1.mp3
+  end
+  text Speed_Settings_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Speed_Settings_Text_01_Text1.mp3
+  end
+  text Radar_Map_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Radar_Map_Text_01_Text1.mp3
+  end
+  text Hour_Glass_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Hour_Glass_Text_01_Text1.mp3
+  end
+  text Cavalry_Charges_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cavalry_Charges_Text_01_Text1.mp3
+  end
+  text Help_Battle_Replay_Screen_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Help_Battle_Replay_Screen_Text_01_Text1.mp3
+  end
+  text Help_End_Battle_Scroll_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Help_End_Battle_Scroll_Text_01_Text1.mp3
+  end
+  text Help_Battle_Stats_Screen_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Help_Battle_Stats_Screen_Text_01_Text1.mp3
+  end
+  text Help_Keyboard_Shortcuts_Scroll_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Help_Keyboard_Shortcuts_Scroll_Text_01_Text1.mp3
+  end
+  text Cantabrian_Circle_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cantabrian_Circle_Text_01_Text1.mp3
+  end
+  text Large_battle_Use_Infantry_Core_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Large_battle_Use_Infantry_Core_Text_01_Text1.mp3
+  end
+  text Gunpowder_Infantry_Dont_Block_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Gunpowder_Infantry_Dont_Block_Text_01_Text1.mp3
+  end
+  text Gunpowder_Troops_Destroy_Infantry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Gunpowder_Troops_Destroy_Infantry_Text_01_Text1.mp3
+  end
+  text Gunpowder_Troops_Vs_Elephants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Gunpowder_Troops_Vs_Elephants_Text_01_Text1.mp3
+  end
+  text Stealthy_walk_unit_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Stealthy_walk_unit_Text_01_Text1.mp3
+  end
+  text Pikemen_Form_Block_Defense_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Pikemen_Form_Block_Defense_Text_01_Text1.mp3
+  end
+  text Pike_And_Shot_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Pike_And_Shot_Text_01_Text1.mp3
+  end
+  text Knights_and_Pikes_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Knights_and_Pikes_Text_01_Text1.mp3
+  end
+  text Heavy_Cavalry_and_Pikes_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Heavy_Cavalry_and_Pikes_Text_01_Text1.mp3
+  end
+  text Exploding_Shell_Special_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Exploding_Shell_Special_Text_01_Text1.mp3
+  end
+  text Cannons_Point_Blank_Range_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Cannons_Point_Blank_Range_Thread_Text1.mp3
+  end
+  text Ribaults_Barrage_Ability_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Ribaults_Barrage_Ability_Text_01_Text1.mp3
+  end
+  text Draw_Their_Fire_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Draw_Their_Fire_Text_01_Text1.mp3
+  end
+  text Draw_Their_Fire_Heavy_Infantry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Draw_Their_Fire_Heavy_Infantry_Text_01_Text1.mp3
+  end
+  text Facing_A_Shield_Wall_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Facing_A_Shield_Wall_Text_01_Text1.mp3
+  end
+  text Using_A_Shield_Wall_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Using_A_Shield_Wall_Text_01_Text1.mp3
+  end
+  text Facing_Swimmers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Facing_Swimmers_Text_01_Text1.mp3
+  end
+  text Using_Swimmers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Using_Swimmers_Text_01_Text1.mp3
+  end
+  text Choose_Your_Ground_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Choose_Your_Ground_Text_01_Text1.mp3
+  end
+  text Hold_Down_Right_Button_Formation_Move_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Hold_Down_Right_Button_Formation_Move_Text_01_Text1.mp3
+  end
+  text Alternate_Attack_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Alternate_Attack_Text_01_Text1.mp3
+  end
+  text Alternate_Stakes_Deploy_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Alternate_Stakes_Deploy_Thread_Text1.mp3
+  end
+  text Spearwall_Formation_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Spearwall_Formation_Thread_Text1.mp3
+  end
+  text Armour_Piercing_Gunpowder_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Armour_Piercing_Gunpowder_Thread_Text1.mp3
+  end
+  text Armour_Piercing_Crossbows_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Armour_Piercing_Crossbows_Thread_Text1.mp3
+  end
+  text middle_mouse_zoom_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             middle_mouse_zoom_Thread_Text1.mp3
+  end
+  text click_rotate_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             click_rotate_Thread_Text1.mp3
+  end
+  text Show_unit_destinations_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Show_unit_destinations_Thread_Text1.mp3
+  end
+  text Selecting_multiple_units_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Selecting_multiple_units_Thread_Text1.mp3
+  end
+  text Moving_Units_Via_Waypoints_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Moving_Units_Via_Waypoints_Thread_Text1.mp3
+  end
+  text Speeding_up_controls_thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Speeding_up_controls_thread_Text1.mp3
+  end
+  text Mouselook_thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Mouselook_thread_Text1.mp3
+  end
+  text Pikemen_1_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Pikemen_1_Thread_Text1.mp3
+  end
+  text Pikemen_2_Thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Pikemen_2_Thread_Text1.mp3
+  end
+  text reveal_friend_or_foe_2_thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             reveal_friend_or_foe_2_thread_Text1.mp3
+  end
+  text Running_out_of_ammo_thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Running_out_of_ammo_thread_Text1.mp3
+  end
+  text Out_of_ammo_thread_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Out_of_ammo_thread_Text1.mp3
+  end
+  text Mortars_Fire_Over_Walls_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Mortars_Fire_Over_Walls_Text_01_Text1.mp3
+  end
+  text Siege_Defend_With_Mortars_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Defend_With_Mortars_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Battering_Ram_Breaks_Through_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Battering_Ram_Breaks_Through_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Battering_Ram_Breaks_Through_Your_Gate_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Battering_Ram_Breaks_Through_Your_Gate_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Defence_Objectives_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Defence_Objectives_Text_01_Text1.mp3
+  end
+  text Siege_Advice_First_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_First_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Attack_Breach_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Attack_Breach_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Defend_Breach_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Defend_Breach_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Defence_Battering_Rams_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Defence_Battering_Rams_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Defence_Ladders_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Defence_Ladders_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Defence_Towers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Defence_Towers_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Siege_Weapon_Breaks_Through_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Siege_Weapon_Breaks_Through_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Siege_Weapon_Breaks_Through_Your_Gate_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Siege_Weapon_Breaks_Through_Your_Gate_Text_01_Text1.mp3
+  end
+  text Deploying_Siege_Equipment_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Deploying_Siege_Equipment_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Defence_trebuchets_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Defence_trebuchets_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Defence_Ballistae_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Defence_Ballistae_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Defence_Catapult_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Defence_Catapult_Text_01_Text1.mp3
+  end
+  text Player_Siege_Engine_Destroyed_Enemy_Other_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Player_Siege_Engine_Destroyed_Enemy_Other_Text_01_Text1.mp3
+  end
+  text Enemy_Siege_Engine_Destroyed_Player_Other_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Enemy_Siege_Engine_Destroyed_Player_Other_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Siege_Assault_Friendly_Fire_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Siege_Assault_Friendly_Fire_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Attack_Tower_Defenses_Thread_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Attack_Tower_Defenses_Thread_Text_01_Text1.mp3
+  end
+  text Ballistas_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Ballistas_Text_01_Text1.mp3
+  end
+  text Arrow_Towers_Defend_With_trebuchets_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Arrow_Towers_Defend_With_trebuchets_Text_01_Text1.mp3
+  end
+  text Castles_With_More_Than_One_Ring_Assault_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Castles_With_More_Than_One_Ring_Assault_Text_01_Text1.mp3
+  end
+  text Castles_With_More_Than_One_Ring_Defend_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Castles_With_More_Than_One_Ring_Defend_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Defence_cannons_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Defence_cannons_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Defence_mortars_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Defence_mortars_Text_01_Text1.mp3
+  end
+  text Settlement_Tower_Advice_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Settlement_Tower_Advice_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Attack_Battering_Rams_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Attack_Battering_Rams_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Attack_Ladders_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Attack_Ladders_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Equipment_Attack_Towers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Equipment_Attack_Towers_Text_01_Text1.mp3
+  end
+  text Siege_Advice_Attack_Objectives_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Siege_Advice_Attack_Objectives_Text_01_Text1.mp3
+  end
+  ;; exporting Campaign Prologue
+  text Prologue_Welcome_First_Turn_1_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Welcome_First_Turn_1_Text_01_Text1.mp3
+  end
+  text Prologue_Welcome_First_Turn_3_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Welcome_First_Turn_3_Text_01_Text1.mp3
+  end
+  text Prologue_Welcome_First_Turn_4_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Welcome_First_Turn_4_Text_01_Text1.mp3
+  end
+  text Prologue_Welcome_First_Turn_5_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Welcome_First_Turn_5_Text_01_Text1.mp3
+  end
+  text Prologue_This_is_Rufus_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_This_is_Rufus_Text_01_Text1.mp3
+  end
+  text Prologue_Moving_Armies_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Moving_Armies_Text_01_Text1.mp3
+  end
+  text Prologue_Campaign_HUD_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Campaign_HUD_Text_01_Text1.mp3
+  end
+  text Prologue_Rufus_Army_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Rufus_Army_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_Rufus_Scroll_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Rufus_Scroll_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_New_Turn_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_New_Turn_Text_01_Text1.mp3
+  end
+  text Prologue_Event_Message_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Event_Message_Text_01_Text1.mp3
+  end
+  text Prologue_Rebels_Near_Caen_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Rebels_Near_Caen_Text_01_Text1.mp3
+  end
+  text Prologue_Fortify_Caen_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Fortify_Caen_Text_01_Text1.mp3
+  end
+  text Prologue_Board_the_Fleet_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Board_the_Fleet_Text_01_Text1.mp3
+  end
+  text Prologue_Fleet_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Fleet_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_Fleet_Movement_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Fleet_Movement_Text_01_Text1.mp3
+  end
+  text Prologue_Move_Army_Into_Normandy_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Move_Army_Into_Normandy_Text_01_Text1.mp3
+  end
+  text Prologue_Take_England_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Take_England_Text_01_Text1.mp3
+  end
+  text Prologue_Pre_Siege_Window_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Pre_Siege_Window_Text_01_Text1.mp3
+  end
+  text Prologue_End_Turn_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_End_Turn_2_Text_01_Text1.mp3
+  end
+  text Prologue_Ready_To_Siege_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Ready_To_Siege_Text_01_Text1.mp3
+  end
+  text Prologue_Prebattle_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Prebattle_Text_01_Text1.mp3
+  end
+  text Prologue_Capturing_a_Settlement_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Capturing_a_Settlement_Text_01_Text1.mp3
+  end
+  text Prologue_London_Captured_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_London_Captured_Text_01_Text1.mp3
+  end
+  text Prologue_Settlement_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Settlement_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_Church_In_Queue_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Church_In_Queue_Text_01_Text1.mp3
+  end
+  text Prologue_City_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_City_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_City_Details_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_City_Details_Text_01_Text1.mp3
+  end
+  text Prologue_End_Turn_3_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_End_Turn_3_Text_01_Text1.mp3
+  end
+  text Prologue_New_Mission_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_New_Mission_Text_01_Text1.mp3
+  end
+  text Prologue_Build_Church_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Build_Church_Text_01_Text1.mp3
+  end
+  text Prologue_Build_Church_Completed_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Build_Church_Completed_Text_01_Text1.mp3
+  end
+  text Prologue_Recruitment_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Recruitment_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_Recruitment_Basics_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Recruitment_Basics_2_Text_01_Text1.mp3
+  end
+  text Prologue_Retrain_Units_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Retrain_Units_Text_01_Text1.mp3
+  end
+  text Prologue_Recruit_Units_London_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Recruit_Units_London_Text_01_Text1.mp3
+  end
+  text Prologue_Move_Out_Of_London_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Move_Out_Of_London_Text_01_Text1.mp3
+  end
+  text Prologue_Move_Out_Of_London_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Move_Out_Of_London_2_Text_01_Text1.mp3
+  end
+  text Prologue_Pre_Siege_Nottingham_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Pre_Siege_Nottingham_Text_01_Text1.mp3
+  end
+  text Prologue_Agent_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Agent_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_Assassin_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Assassin_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_Assassination_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Assassination_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_Assassination_Success_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Assassination_Success_Text_01_Text1.mp3
+  end
+  text Prologue_Assassination_Failed_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Assassination_Failed_Text_01_Text1.mp3
+  end
+  text Prologue_End_Turn_4_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_End_Turn_4_Text_01_Text1.mp3
+  end
+  text Prologue_Assassination_Not_Ordered_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Assassination_Not_Ordered_Text_01_Text1.mp3
+  end
+  text Prologue_Caen_Under_Siege_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Caen_Under_Siege_Text_01_Text1.mp3
+  end
+  text Prologue_Attack_Nottingham_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Attack_Nottingham_Text_01_Text1.mp3
+  end
+  text Prologue_Castle_Basics_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Castle_Basics_Text_01_Text1.mp3
+  end
+  text Prologue_Building_Browser_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Building_Browser_Text_01_Text1.mp3
+  end
+  text Prologue_Open_Caen_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Open_Caen_Text_01_Text1.mp3
+  end
+  text Prologue_Faction_Summary_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Faction_Summary_Text_01_Text1.mp3
+  end
+  text Prologue_Faction_Overview_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Faction_Overview_Text_01_Text1.mp3
+  end
+  text Prologue_Faction_Finances_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Faction_Finances_Text_01_Text1.mp3
+  end
+  text Prologue_Diplomatic_Standing_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Diplomatic_Standing_Text_01_Text1.mp3
+  end
+  text Prologue_Missions_Scroll_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Missions_Scroll_Text_01_Text1.mp3
+  end
+  text Prologue_Pope_Scroll_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Pope_Scroll_Text_01_Text1.mp3
+  end
+  text Prologue_You_Win_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_You_Win_Text_01_Text1.mp3
+  end
+  text Prologue_London_Lost_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_London_Lost_Text_01_Text1.mp3
+  end
+  text Prologue_Campaign_Turns_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Campaign_Turns_Text_01_Text1.mp3
+  end
+  text Prologue_Rufus_Out_Of_Moves_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Rufus_Out_Of_Moves_Text_01_Text1.mp3
+  end
+  text Prologue_William_Out_Of_Moves_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_William_Out_Of_Moves_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Lost_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Nottingham_Lost_Text_01_Text1.mp3
+  end
+  text Prologue_Prisoners_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Campaign
+                                             Prologue_Prisoners_Text_01_Text1.mp3
+  end
+  ;; exporting Battle Prologue
+  text Prologue_Hastings_Battle_Advisor_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Battle_Advisor_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Wait_Here_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Wait_Here_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Select_Rufus_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Select_Rufus_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Generals_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Generals_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Move_General_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Move_General_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Select_Cavalry_Card_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Select_Cavalry_Card_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Double_Click_To_Pan_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Double_Click_To_Pan_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Battle_HUD_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Battle_HUD_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Cavalry_Run_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Cavalry_Run_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Walking_Is_Better_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Walking_Is_Better_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Change_Unit_Speed_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Change_Unit_Speed_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Halt_Orders_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Halt_Orders_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Select_All_Units_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Select_All_Units_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Move_All_Units_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Move_All_Units_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Deselect_All_Units_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Deselect_All_Units_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Banners_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Banners_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Saxon_Reinforcements_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Saxon_Reinforcements_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Select_Archers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Select_Archers_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Attack_With_Archers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Attack_With_Archers_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Friendly_Fire_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Friendly_Fire_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Attack_With_Infantry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Attack_With_Infantry_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Zoom_On_Action_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Zoom_On_Action_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Run_Down_With_Cavalry_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Run_Down_With_Cavalry_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Unit_Status_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Unit_Status_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Called_Into_Main_Battle_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Called_Into_Main_Battle_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Cross_The_Bridge_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Cross_The_Bridge_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Move_Into_Position_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Move_Into_Position_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Move_Into_Position_2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Move_Into_Position_2_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Normans_Flee_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Normans_Flee_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Peasants_Charging_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Peasants_Charging_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Fire_On_Peasants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Fire_On_Peasants_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Using_Archers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Using_Archers_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Infantry_Attack_Peasants_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Infantry_Attack_Peasants_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Attack_Shield_Wall_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Attack_Shield_Wall_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_King_Harold_Dead_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_King_Harold_Dead_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Chase_Routers_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Chase_Routers_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Move_Into_Position_3_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Move_Into_Position_3_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Battle_Speed_Bridge_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Battle_Speed_Bridge_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Battle_Speed_Form_Up_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Battle_Speed_Form_Up_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Slow_Speed_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Slow_Speed_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Attack_Huscarls_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Attack_Huscarls_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Pause_Game_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Pause_Game_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Move_Into_Position_4_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Move_Into_Position_4_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Post_Battle_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Post_Battle_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Quitting_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Quitting_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Post_Battle_Demo_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Post_Battle_Demo_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Tilt_Camera_RTS_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Tilt_Camera_RTS_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Click_And_Drag_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Click_And_Drag_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Radar_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Radar_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Archers_Firing_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Archers_Firing_Text_01_Text1.mp3
+  end
+  text Prologue_Hastings_Move_View_RTS_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Hastings_Move_View_RTS_Text_01_Text1.mp3
+  end
+  text Prologue_London_Intro_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_London_Intro_Text_01_Text1.mp3
+  end
+  text Prologue_London_Start_Deployment_Intro_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_London_Start_Deployment_Intro_Text_01_Text1.mp3
+  end
+  text Prologue_London_Deployment_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_London_Deployment_Text_01_Text1.mp3
+  end
+  text Prologue_London_Deployment_3_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_London_Deployment_3_Text_01_Text1.mp3
+  end
+  text Prologue_London_Using_Ram_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_London_Using_Ram_Text_01_Text1.mp3
+  end
+  text Prologue_London_Take_Plaza_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_London_Take_Plaza_Text_01_Text1.mp3
+  end
+  text Prologue_London_Sieging_A_City_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_London_Sieging_A_City_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Intro_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Intro_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Deployment_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Deployment_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Deployment1_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Deployment1_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Deployment2_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Deployment2_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Deployment3_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Deployment3_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Draw_Fire_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Draw_Fire_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Catapult_Attack_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Catapult_Attack_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Storm_Castle_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Storm_Castle_Text_01_Text1.mp3
+  end
+  text Prologue_Nottingham_Dominate_The_Plaza_Text_01_Text1
+  event
+   folder data/sounds/Voice/Human/Localized/Advice/Battle
+                                             Prologue_Nottingham_Dominate_The_Plaza_Text_01_Text1.mp3
+  end

@@ -1,0 +1,585 @@
+event HASTINGS_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_1.mp3
+end
+
+event HASTINGS_NARRATOR_2a
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_2a.mp3
+end
+
+event HASTINGS_NARRATOR_2b
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_2b.mp3
+end
+
+event HASTINGS_NARRATOR_2c
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_2c.mp3
+end
+
+event HASTINGS_NARRATOR_2d
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_2d.mp3
+end
+
+event HASTINGS_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_3.mp3
+end
+
+event HASTINGS_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_4.mp3
+end
+
+event HASTINGS_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_5.mp3
+end
+
+event HASTINGS_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_6.mp3
+end
+
+event HASTINGS_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_7.mp3
+end
+
+event HASTINGS_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_8.mp3
+end
+
+event HASTINGS_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_9.mp3
+end
+
+event HASTINGS_NARRATOR_10
+         folder data/sounds/Voice/Human/Localized/Narration
+         HASTINGS_NARRATOR_10.mp3
+end
+
+event PAVIA_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_1.mp3
+end
+
+event PAVIA_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_2.mp3
+end
+
+event PAVIA_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_3.mp3
+end
+
+event PAVIA_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_4.mp3
+end
+
+event PAVIA_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_5.mp3
+end
+
+event PAVIA_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_6.mp3
+end
+
+event PAVIA_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_7.mp3
+end
+
+event PAVIA_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_8.mp3
+end
+
+event PAVIA_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_9.mp3
+end
+
+event PAVIA_NARRATOR_10
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_10.mp3
+end
+
+event PAVIA_NARRATOR_11
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_11.mp3
+end
+
+event PAVIA_NARRATOR_12
+         folder data/sounds/Voice/Human/Localized/Narration
+         PAVIA_NARRATOR_12.mp3
+end
+
+event OTUMBA_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_1.mp3
+end
+
+event OTUMBA_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_2.mp3
+end
+
+event OTUMBA_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_3.mp3
+end
+
+event OTUMBA_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_4.mp3
+end
+
+event OTUMBA_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_5.mp3
+end
+
+event OTUMBA_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_6.mp3
+end
+
+event OTUMBA_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_7.mp3
+end
+
+event OTUMBA_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_8.mp3
+end
+
+event OTUMBA_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_9.mp3
+end
+
+event OTUMBA_NARRATOR_10
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_10.mp3
+end
+
+event OTUMBA_NARRATOR_11
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_11.mp3
+end
+
+event OTUMBA_NARRATOR_12
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_12.mp3
+end
+
+event OTUMBA_NARRATOR_13
+         folder data/sounds/Voice/Human/Localized/Narration
+         OTUMBA_NARRATOR_13.mp3
+end
+
+event AGINCOURT_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_1.mp3
+end
+
+event AGINCOURT_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_2.mp3
+end
+
+event AGINCOURT_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_3.mp3
+end
+
+event AGINCOURT_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_4.mp3
+end
+
+event AGINCOURT_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_5.mp3
+end
+
+event AGINCOURT_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_6.mp3
+end
+
+event AGINCOURT_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_7.mp3
+end
+
+event AGINCOURT_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_8.mp3
+end
+
+event AGINCOURT_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_9.mp3
+end
+
+event AGINCOURT_NARRATOR_10
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_10.mp3
+end
+
+event AGINCOURT_NARRATOR_11
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_11.mp3
+end
+
+event AGINCOURT_NARRATOR_12
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_12.mp3
+end
+
+event AGINCOURT_NARRATOR_13
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_13.mp3
+end
+
+event AGINCOURT_NARRATOR_14
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_14.mp3
+end
+
+event AGINCOURT_NARRATOR_15
+         folder data/sounds/Voice/Human/Localized/Narration
+         AGINCOURT_NARRATOR_15.mp3
+end
+
+event DORYLAEUM_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_1.mp3
+end
+
+event DORYLAEUM_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_2.mp3
+end
+
+event DORYLAEUM_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_3.mp3
+end
+
+event DORYLAEUM_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_4.mp3
+end
+
+event DORYLAEUM_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_5.mp3
+end
+
+event DORYLAEUM_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_6.mp3
+end
+
+event DORYLAEUM_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_7.mp3
+end
+
+event DORYLAEUM_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_8.mp3
+end
+
+event DORYLAEUM_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_9.mp3
+end
+
+event DORYLAEUM_NARRATOR_10
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_10.mp3
+end
+
+event DORYLAEUM_NARRATOR_11
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_11.mp3
+end
+
+event DORYLAEUM_NARRATOR_12
+         folder data/sounds/Voice/Human/Localized/Narration
+         DORYLAEUM_NARRATOR_12.mp3
+end
+
+event SETENIL_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_1.mp3
+end
+
+event SETENIL_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_2.mp3
+end
+
+event SETENIL_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_3.mp3
+end
+
+event SETENIL_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_4.mp3
+end
+
+event SETENIL_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_5.mp3
+end
+
+event SETENIL_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_6.mp3
+end
+
+event SETENIL_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_7.mp3
+end
+
+event SETENIL_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_8.mp3
+end
+
+event SETENIL_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         SETENIL_NARRATOR_9.mp3
+end
+
+event HATTIN_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_1.mp3
+end
+
+event HATTIN_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_2.mp3
+end
+
+event HATTIN_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_3.mp3
+end
+
+event HATTIN_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_4.mp3
+end
+
+event HATTIN_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_5.mp3
+end
+
+event HATTIN_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_6.mp3
+end
+
+event HATTIN_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_7.mp3
+end
+
+event HATTIN_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_8.mp3
+end
+
+event HATTIN_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_9.mp3
+end
+
+event HATTIN_NARRATOR_10
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_10.mp3
+end
+
+event HATTIN_NARRATOR_11
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_11.mp3
+end
+
+event HATTIN_NARRATOR_12
+         folder data/sounds/Voice/Human/Localized/Narration
+         HATTIN_NARRATOR_12.mp3
+end
+
+event TANNENBERG_NARRATOR_1a
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_1a.mp3
+end
+
+event TANNENBERG_NARRATOR_1b
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_1b.mp3
+end
+
+event TANNENBERG_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_2.mp3
+end
+
+event TANNENBERG_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_3.mp3
+end
+
+event TANNENBERG_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_4.mp3
+end
+
+event TANNENBERG_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_5.mp3
+end
+
+event TANNENBERG_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_6.mp3
+end
+
+event TANNENBERG_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_7.mp3
+end
+
+event TANNENBERG_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_8.mp3
+end
+
+event TANNENBERG_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         TANNENBERG_NARRATOR_9.mp3
+end
+
+event ARSUF_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_1.mp3
+end
+
+event ARSUF_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_2.mp3
+end
+
+event ARSUF_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_3.mp3
+end
+
+event ARSUF_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_4.mp3
+end
+
+event ARSUF_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_5.mp3
+end
+
+event ARSUF_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_6.mp3
+end
+
+event ARSUF_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_7.mp3
+end
+
+event ARSUF_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_8.mp3
+end
+
+event ARSUF_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_9.mp3
+end
+
+event ARSUF_NARRATOR_10
+         folder data/sounds/Voice/Human/Localized/Narration
+         ARSUF_NARRATOR_10.mp3
+end
+
+event TUTORIAL_NARRATOR_1
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_1.mp3
+end
+
+event TUTORIAL_NARRATOR_2
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_2.mp3
+end
+
+event TUTORIAL_NARRATOR_3
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_3.mp3
+end
+
+event TUTORIAL_NARRATOR_4
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_4.mp3
+end
+
+event TUTORIAL_NARRATOR_5
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_5.mp3
+end
+
+event TUTORIAL_NARRATOR_6
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_6.mp3
+end
+
+event TUTORIAL_NARRATOR_7
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_7.mp3
+end
+
+event TUTORIAL_NARRATOR_8
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_8.mp3
+end
+
+event TUTORIAL_NARRATOR_9
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_9.mp3
+end
+
+event TUTORIAL_NARRATOR_10
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_10.mp3
+end
+
+event TUTORIAL_NARRATOR_11
+         folder data/sounds/Voice/Human/Localized/Narration
+         TUTORIAL_NARRATOR_11.mp3
+end
+

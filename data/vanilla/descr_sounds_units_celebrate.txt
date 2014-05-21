@@ -1,0 +1,99 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Units routing bank
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 5 priority 170 fadein 1 fadeout 3
+DEFAULT: minpitch .9 maxpitch 1.0 volume 0 probability 1
+DEFAULT: distancepriority -1 randomdelay 1  effect_level .5 pref SFX
+
+BANK: unit_celebrate
+
+
+	
+unit infantry light, heavy, spearmen, skirmish, missile
+
+		event lod 5  
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_small_01
+		end
+
+		event lod 10
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_small_01
+
+		end
+
+		event lod 30
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_large_01
+		end
+		
+	
+	   
+  
+;;;;;;;;;;;;;;;;		
+   
+unit cavalry light, heavy, spearmen, skirmish, missile
+
+		event lod 5  
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_small_01
+		end
+
+		event lod 10
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_small_01
+
+		end
+
+		event lod 30
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_large_01
+		end
+     
+;;;;;;;;;;;;;;;;		
+   
+unit siege light, heavy, spearmen, skirmish, missile
+
+		event lod 5  
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_small_01
+		end
+
+		event lod 10
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_small_01
+
+		end
+
+		event lod 30
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_large_01
+		end    
+  
+;;;;;;;;;;;;;;;;		
+   
+unit handler light, heavy, spearmen, skirmish, missile
+
+		event lod 5  
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_small_01
+		end
+
+		event lod 10
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_small_01
+
+		end
+
+		event lod 30
+			folder data/sounds/SFX/group/Infantry
+			infantry_group_celebrate_large_01
+		end 		
+		
+		   
+
+	
+			

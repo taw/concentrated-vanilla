@@ -1,0 +1,1530 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;	projectile descriptions text file
+;
+; to calculate projectile parameters take
+;	d = shot distance from export_unit_descr.txt
+;	d = v^2 / g (at 45 deg) -> v = sqrt(d*9.81)
+;	check weapon ranges with angle ranges using
+;	d = v^2 * sin(2*a) / g
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; IMPACT FLAGS
+; 
+; bounce		Will bounce when hits ground.  Parameters are threshold velocity and normal 
+;			component, and multipliers.  When it's movement falls below threshold projectile
+;			will stick, shatter or vanish depending on other flags.
+;			1st param: velocity threshold (will only bounce if velocity is above this % of the original)
+;			2nd param: up vector threshold (will only bounce if up vector is above this % of the original)
+;			3rd param: velocity dampener (% of velocity retained after bounce)
+;			4th param: up vector dampener (% of up vector retained after bounce - ie get flatter with every bounce)
+;
+; body_piercing		Indicates this projectile can hit several soldiers in a single tick (ie not
+;			stopped by soldiers).  Will bounce, shatter or vanish when it hits the ground 
+;			depending on other flags.  There is also a bp flag in descr_engines.txt.  This flag
+;			tells the AI the engine is capable of body piercing attacks.  These two flags may
+;			be merged in a future release but for now the engine flag should be set if it is 
+;			capable of firing a "body_piercing" projectile.
+;
+; ground_shatter	Projectile shatters when it hits ground, package or soldiers (if not body_piercing)
+;			This flag is required for the area_effect tag.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ROCKETS
+;
+; Normal rockets have a min angle check as rockets can spiral after launch and a negative		
+; minimum angle could result in a rocket plowing into the ground almost immediately which		
+; could kill the launching crew.  Rockets fired from elephants have a launch point about		
+; 4 metres in the air so reasonable negative angle is safe and necessary for can_hit_target	
+; tests later on.  Elevated rockets and rockets are identical except for the minimum angle		
+; check.																						
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Projectile Delays
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+delay		standard	0.0
+delay		flaming		15.0
+delay		gunpowder	0.0
+
+
+
+
+projectile arrow
+
+effect			arrows_new_set
+end_effect				arrow_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_impact_wall_set
+end_shatter_effect		arrow_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_broken_impact_wall_set
+
+effect_offset	-1.5
+damage		0
+radius		0.1
+mass		0.05
+accuracy_vs_units		0.05
+affected_by_rain
+min_angle	-75
+max_angle	65
+velocity	20 48
+display		aimed
+effect_only
+
+
+projectile arrow_fiery
+
+flaming		arrow
+effect 			arrows_fire_new_set
+end_effect				arrow_flaming_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_flaming_impact_wall_set
+end_shatter_effect		arrow_flaming_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_flaming_broken_impact_wall_set
+
+effect_offset -0.85
+damage		0
+radius		0.1
+mass		0.05
+accuracy_vs_units		0.07
+affected_by_rain
+fiery
+min_angle	-60
+max_angle	65
+velocity	20	48
+display		aimed
+effect_only
+
+projectile composite_arrow
+
+effect			arrows_new_set
+end_effect				arrow_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_impact_wall_set
+end_shatter_effect		arrow_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_broken_impact_wall_set
+
+effect_offset	-1.5
+damage		0
+radius		0.1
+mass		0.05
+;accuracy_vs_units		0.0010
+affected_by_rain
+min_angle	-75
+max_angle	65
+velocity	20 48
+display		aimed
+effect_only
+
+projectile composite_arrow_fiery
+
+flaming		composite_arrow
+effect 			arrows_fire_new_set
+end_effect				arrow_flaming_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_flaming_impact_wall_set
+end_shatter_effect		arrow_flaming_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_flaming_broken_impact_wall_set
+
+effect_offset -0.85
+damage		0
+radius		0.1
+mass		0.05
+;accuracy_vs_units		0.0005
+affected_by_rain
+fiery
+min_angle	-60
+max_angle	65
+velocity	20	48
+display		aimed
+effect_only
+
+projectile cav_composite_arrow
+
+effect			arrows_new_set
+end_effect				arrow_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_impact_wall_set
+end_shatter_effect		arrow_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_broken_impact_wall_set
+
+effect_offset	-1.5
+damage		0
+radius		0.1
+mass		0.05
+;accuracy_vs_units		0.0010
+affected_by_rain
+min_angle	-75
+max_angle	65
+velocity	20 48
+display		aimed
+effect_only
+
+projectile cav_composite_arrow_fiery
+
+flaming		cav_composite_arrow
+effect 			arrows_fire_new_set
+end_effect				arrow_flaming_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_flaming_impact_wall_set
+end_shatter_effect		arrow_flaming_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_flaming_broken_impact_wall_set
+
+effect_offset -0.85
+damage		0
+radius		0.1
+mass		0.05
+;accuracy_vs_units		0.0005
+affected_by_rain
+fiery
+min_angle	-60
+max_angle	65
+velocity	20	48
+display		aimed
+effect_only
+
+projectile bodkin_arrow
+
+effect			arrows_new_set
+end_effect				arrow_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_impact_wall_set
+end_shatter_effect		arrow_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_broken_impact_wall_set
+
+effect_offset	-1.5
+damage		0
+radius		0.1
+mass		0.05
+;accuracy_vs_units		0.00001
+affected_by_rain
+min_angle	-75
+max_angle	65
+velocity	20 48
+display		aimed
+effect_only
+
+projectile bodkin_arrow_fiery
+
+flaming		bodkin_arrow
+effect 			arrows_fire_new_set
+end_effect				arrow_flaming_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_flaming_impact_wall_set
+end_shatter_effect		arrow_flaming_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_flaming_broken_impact_wall_set
+
+effect_offset -0.85
+damage		0
+radius		0.1
+mass		0.05
+;accuracy_vs_units		0.0005
+affected_by_rain
+fiery
+min_angle	-60
+max_angle	65
+velocity	20	48
+display		aimed
+effect_only
+
+projectile cav_bodkin_arrow
+
+effect			arrows_new_set
+end_effect				arrow_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_impact_wall_set
+end_shatter_effect		arrow_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_broken_impact_wall_set
+
+effect_offset	-1.5
+damage		0
+radius		0.1
+mass		0.05
+;accuracy_vs_units		0.00001
+affected_by_rain
+min_angle	-75
+max_angle	65
+velocity	20 48
+display		aimed
+effect_only
+
+projectile cav_bodkin_arrow_fiery
+
+flaming		cav_bodkin_arrow
+effect 			arrows_fire_new_set
+end_effect				arrow_flaming_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_flaming_impact_wall_set
+end_shatter_effect		arrow_flaming_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_flaming_broken_impact_wall_set
+
+effect_offset -0.85
+damage		0
+radius		0.1
+mass		0.05
+;accuracy_vs_units		0.0005
+affected_by_rain
+fiery
+min_angle	-60
+max_angle	65
+velocity	20	48
+display		aimed
+effect_only
+
+projectile catapult
+
+effect 			boulder_medium_set
+end_effect				ground_impact_medium_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_medium_set
+end_shatter_effect		ground_impact_medium_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect	wall_impact_medium_set
+
+
+area_effect				ae_mortar_shot
+damage			30
+damage_to_troops 30
+radius			0.3
+mass			2.4
+area			2.0
+accuracy_vs_units		0.0625
+accuracy_vs_buildings	0.0500
+accuracy_vs_towers      0.0325 
+min_angle		-15
+max_angle		70
+velocity		75	;61
+ground_shatter
+body_piercing
+;bounce			0.5 0.6 0.5 0.4
+display			aimed
+effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+;model			data/models_missile/onager_rock.CAS,  max
+;model			data/models_missile/Big_Boulder_high.CAS, 40.0
+;model			data/models_missile/Big_Boulder_med.CAS,  80.0
+;model			data/models_missile/Big_Boulder_low.CAS,  max
+
+projectile fiery_catapult
+
+flaming			catapult
+effect 			fiery_boulder_catapult_set
+end_effect				ground_fiery_impact_catapult_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_fiery_catapult_set
+end_shatter_effect		ground_fiery_impact_catapult_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect	wall_impact_fiery_catapult_set
+
+
+damage			30
+damage_to_troops 30
+radius			0.3
+mass			0.8
+area			2.5
+accuracy_vs_units		0.0625
+accuracy_vs_buildings	0.05
+accuracy_vs_towers      0.035 
+fiery					; uncomment this to make all boulders fiery
+min_angle		-15
+max_angle		70
+velocity		75	;61
+ground_shatter
+body_piercing
+display			aimed
+effect_only
+
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+;model			data/models_missile/onager_rock.CAS,  max
+;model			data/models_missile/Big_Boulder_high.CAS, 40.0
+;model			data/models_missile/Big_Boulder_med.CAS,  80.0
+;model			data/models_missile/Big_Boulder_low.CAS,  max
+
+projectile trebuchet
+
+effect 			boulder_medium_set
+end_effect				ground_impact_treb_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_medium_set
+end_shatter_effect		ground_impact_treb_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect	wall_impact_medium_set
+
+
+damage			90
+damage_to_troops 10
+radius			0.3
+mass			2.4		;appears to be units of 100kg (given a man is 0.8)
+area			2.0
+accuracy_vs_units		0.075
+accuracy_vs_buildings	0.05
+accuracy_vs_towers      0.0305 
+min_angle		-15
+max_angle		70
+velocity		75 ;61
+;bounce			0.01 0.01 0.93 0.5
+body_piercing
+display			aimed 
+effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+;model			data/models_missile/onager_rock.CAS,  max
+;model			data/models_missile/Big_Boulder_high.CAS, 40.0
+;model			data/models_missile/Big_Boulder_med.CAS,  80.0
+;model			data/models_missile/Big_Boulder_low.CAS,  max
+
+projectile fiery_trebuchet
+
+flaming			trebuchet
+effect 			fiery_boulder_set
+end_effect				ground_fiery_impact_large_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_fiery_treb_set
+end_shatter_effect		ground_fiery_impact_large_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect	wall_impact_fiery_treb_set
+
+
+damage			90
+damage_to_troops 40
+radius			0.30
+mass			0.8
+area			3.0
+accuracy_vs_units		0.125
+accuracy_vs_buildings	0.075
+accuracy_vs_towers      0.055 
+fiery					; uncomment this to make all boulders fiery
+min_angle		-15
+max_angle		70
+velocity		75 ;61
+ground_shatter
+body_piercing
+display			aimed
+effect_only
+
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+;model			data/models_missile/onager_rock.CAS,  max
+;model			data/models_missile/Big_Boulder_high.CAS, 40.0
+;model			data/models_missile/Big_Boulder_med.CAS,  80.0
+;model			data/models_missile/Big_Boulder_low.CAS,  max
+
+projectile tarred_rock
+
+damage		5
+radius		0.3
+mass		0.1
+fiery
+min_angle	-15
+max_angle	70
+velocity	60
+display		particle_trail shatter_dust shatter_debris vanish_debris invert_model_z
+model		data/models_missile/onager_rock.CAS,  max
+
+projectile stone
+
+effect		small_arrow_trail_set
+damage		0
+radius		0.1
+mass		0.05
+min_angle	-60
+max_angle	70
+velocity	60
+display 
+model		data/models_missile/sling_stone.cas, max
+
+projectile bolt
+
+damage		3
+radius		0
+mass		0.05
+min_angle	-60
+max_angle	65
+velocity	60
+display		aimed particle_trail invert_model_z
+model		data/models_missile/Bolt_high.CAS,  40.0
+model		data/models_missile/Bolt_med.CAS,  80.0
+model		data/models_missile/Bolt_low.CAS,  max
+
+projectile javelin
+
+damage		0
+radius		0
+mass		0.05
+min_angle	-60
+max_angle	70
+velocity	30
+display		aimed invert_model_z 
+model		data/models_missile/weapon_javelin_high.cas, 40
+model		data/models_missile/weapon_javelin_low.cas,  max
+
+
+projectile ballista
+
+effect	    large_arrow_trail_set
+end_effect   large_arrow_explode_set
+end_man_effect			man_impact_small_set
+end_package_effect    	wall_impact_small_set
+end_shatter_effect		large_arrow_explode_set
+end_shatter_man_effect		man_impact_small_set
+end_shatter_package_effect	wall_impact_small_set
+
+
+damage		10
+damage_to_troops 5
+radius		0
+mass		0.8
+accuracy_vs_units		0.005
+accuracy_vs_buildings	0.05
+accuracy_vs_towers      0.025 
+min_angle	-30
+max_angle	35
+velocity	60
+;bounce		0.5 0.6 0.5 0.4
+body_piercing
+display		aimed particle_trail invert_model_z
+model		data/models_missile/missile_ballista_bolt_high.CAS,  40.0
+model		data/models_missile/missile_ballista_bolt_med.CAS,  80.0
+model		data/models_missile/missile_ballista_bolt_low.CAS,  max
+
+projectile flaming_ballista
+
+flaming		ballista
+effect	        flaming_ballista_projectile_set
+end_effect				ground_fiery_impact_ballista_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	wall_impact_fiery_ballista_set
+end_shatter_effect		ground_fiery_impact_ballista_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	wall_impact_fiery_ballista_set
+
+
+effect_offset 1.0
+damage		10
+damage_to_troops 5
+radius		0
+mass		0.8
+accuracy_vs_units		0.01
+accuracy_vs_buildings	0.05
+accuracy_vs_towers      0.025 
+fiery
+min_angle	-60
+max_angle	70
+velocity	60
+;bounce		0.5 0.6 0.5 0.4
+body_piercing
+display		aimed invert_model_z
+model		data/models_missile/missile_ballista_bolt_high.CAS,  40.0
+model		data/models_missile/missile_ballista_bolt_med.CAS,  80.0
+model		data/models_missile/missile_ballista_bolt_low.CAS,  max
+
+;tower ballistas are identical to normal ballistas, have do reduced damage
+;intoduced when the number of artillery pieces per unit was reduced, as this
+;required doubling the power of each hit to save having to rebalance all the 
+;wall and building hit points.
+
+projectile tower_ballista
+
+effect	    large_arrow_trail_set
+end_effect   large_arrow_explode_set
+end_man_effect			man_impact_small_set
+damage		1
+damage_to_troops 5
+radius		0
+mass		0.05
+accuracy_vs_units	0.05
+accuracy_vs_buildings	0.0001
+min_angle	-30
+max_angle	70
+velocity	60
+;bounce		0.5 0.6 0.5 0.4
+display		aimed particle_trail invert_model_z
+model		data/models_missile/missile_ballista_bolt_high.CAS,  40.0
+model		data/models_missile/missile_ballista_bolt_med.CAS,  80.0
+model		data/models_missile/missile_ballista_bolt_low.CAS,  max
+
+projectile tower_flaming_ballista
+
+flaming		tower_ballista
+effect	        flaming_ballista_projectile_set
+end_effect				ground_fiery_impact_ballista_set
+end_man_effect			man_impact_explosive_small_set
+end_package_effect    	wall_impact_fiery_ballista_set
+end_shatter_effect		ground_fiery_impact_ballista_set
+end_shatter_man_effect		man_impact_explosive_small_set
+end_shatter_package_effect	wall_impact_fiery_ballista_set
+
+effect_offset 1.0
+damage		6
+damage_to_troops 5
+radius		0
+mass		0.05
+accuracy_vs_units	0.04 ;This effects siege towers
+accuracy_vs_buildings	0.05
+fiery
+min_angle	-60
+max_angle	70
+velocity	60
+;bounce		0.5 0.6 0.5 0.4
+display		aimed invert_model_z
+model		data/models_missile/missile_ballista_bolt_high.CAS,  40.0
+model		data/models_missile/missile_ballista_bolt_med.CAS,  80.0
+model		data/models_missile/missile_ballista_bolt_low.CAS,  max
+
+projectile scorpion
+
+effect	    large_arrow_trail_set
+end_effect  large_arrow_explode_set
+damage		0
+damage_to_troops 2
+radius		0
+mass		0.05
+min_angle	-30
+max_angle	70
+velocity	90
+display		aimed particle_trail
+model		data/models_missile/missile_scorpion_bolt_high.CAS,  40.0
+model		data/models_missile/missile_scorpion_bolt_med.CAS,  80.0
+model		data/models_missile/missile_scorpion_bolt_low.CAS,  max
+
+projectile flaming_scorpion
+
+flaming		scorpion
+effect	    	fiery_ballista_trail_set
+end_effect      fiery_ballista_explosion_set
+effect_offset	1.0
+damage		0
+damage_to_troops 2
+radius		0
+mass		0.05
+accuracy_vs_units		0.15
+fiery
+min_angle	-60
+max_angle	70
+velocity	90
+display		aimed particle_trail
+model		data/models_missile/missile_scorpion_bolt_high.CAS,  40.0
+model		data/models_missile/missile_scorpion_bolt_med.CAS,  80.0
+model		data/models_missile/missile_scorpion_bolt_low.CAS,  max
+
+projectile repeating_ballista
+
+effect	    large_arrow_trail_set
+end_effect  large_arrow_explode_set
+damage		0
+damage_to_troops 2
+radius		0
+mass		0.05
+accuracy_vs_units		0.15
+min_angle	-30
+max_angle	70
+velocity	60
+display		aimed particle_trail
+model		data/models_missile/missile_scorpion_bolt_high.CAS,  40.0
+model		data/models_missile/missile_scorpion_bolt_med.CAS,  80.0
+model		data/models_missile/missile_scorpion_bolt_low.CAS,  max
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; NEW MTW Cannon Shots
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+projectile bombard_shot
+
+effect 			bombard_set
+end_effect				ground_impact_bombard_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_medium_set
+end_shatter_effect		ground_impact_bombard_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_medium_set
+
+
+damage			120
+damage_to_troops 10
+radius			0.3
+mass			6.0
+area			2.0
+accuracy_vs_units		0.0725
+accuracy_vs_buildings	0.0455
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+bounce			0.01 0.01 0.93 0.5
+body_piercing
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile flaming_bombard_shot
+
+flaming			bombard_shot
+effect 			fiery_boulder_bombard_set
+end_effect				ground_fiery_impact_medium_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_fiery_treb_set
+end_shatter_effect		ground_fiery_impact_medium_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_fiery_treb_set
+
+damage			75
+damage_to_troops 30
+radius			0.3
+mass			0.8
+area			1.5
+accuracy_vs_units	0.0825
+accuracy_vs_buildings	0.0455
+accuracy_vs_towers      0.025 
+fiery					
+min_angle		-10
+max_angle		40
+velocity		80
+ground_shatter
+body_piercing
+display			aimed
+effect_only
+
+;*********************************************
+
+projectile ribault_shot
+
+effect 					ribault_shot_set
+end_effect				ground_impact_ribault_set
+end_man_effect			man_impact_small_set
+end_package_effect    	wall_impact_small_set
+end_shatter_effect		ground_impact_ribault_set
+end_shatter_man_effect		man_impact_small_set
+end_shatter_package_effect		wall_impact_small_set
+
+damage			5
+damage_to_troops 10
+radius			0.3
+mass			0.1
+area			1.0
+accuracy_vs_units		0.04
+accuracy_vs_buildings	0.0625
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+ground_shatter
+;bounce			0.01 0.01 0.93 0.5
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+model			data/models_effects/none.CAS, max,  max
+model			data/models_effects/none.CAS,  40.0
+model			data/models_effects/none.CAS,  80.0
+model			data/models_effects/none.CAS,  max
+
+;*********************************************
+
+projectile monster_ribault_shot
+
+effect 					monster_ribault_shot_set
+end_effect				ground_impact_ribault_set
+end_man_effect			man_impact_small_set
+end_package_effect    	wall_impact_small_set
+end_shatter_effect		ground_impact_ribault_set
+end_shatter_man_effect		man_impact_small_set
+end_shatter_package_effect		wall_impact_small_set
+
+damage			5
+damage_to_troops 5
+radius			0.3
+mass			0.1
+area			1.0
+accuracy_vs_units		0.040
+accuracy_vs_buildings	0.0625
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+;bounce			0.01 0.01 0.93 0.5
+ground_shatter
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+;*********************************************
+
+projectile grand_bombard_shot
+
+effect 					bombard_set
+end_effect				ground_impact_grand_bombard_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_medium_set
+end_shatter_effect		ground_impact_grand_bombard_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_medium_set
+
+;area_effect				ae_cannon_shot_large
+damage			180
+damage_to_troops 10
+radius			0.5
+mass			3.5
+area			2.0
+accuracy_vs_units		0.055
+accuracy_vs_buildings	0.040
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+;ground_shatter`
+bounce			0.01 0.01 0.93 0.5
+;bounce			0.01 0.01 0.93 0.93
+body_piercing
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile flaming_grand_bombard_shot
+
+flaming				grand_bombard_shot
+effect 					fiery_boulder_grand_bombard_set
+end_effect				ground_fiery_impact_grand_bombard_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_fiery_grand_bombard_set
+end_shatter_effect		ground_fiery_impact_grand_bombard_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_fiery_grand_bombard_set
+
+damage			180
+damage_to_troops 10
+radius			0.3
+mass			0.8
+area			1.5
+accuracy_vs_units	0.075
+accuracy_vs_buildings	0.0425
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+ground_shatter
+body_piercing
+;bounce			0.5 0.6 0.5 0.4
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+
+projectile monster_bombard_shot
+
+effect 					huge_cannon_ball_set
+end_effect				ground_impact_large_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_monster_set
+end_shatter_effect		ground_impact_large_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_monster_set
+
+;area_effect		ae_monster_shot_large
+damage			1000
+damage_to_troops 50
+radius			1.0
+mass			6.0
+area			2.0
+accuracy_vs_units		0.09
+accuracy_vs_buildings	0.04
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		110
+bounce			0.01 0.01 0.93 0.5
+body_piercing
+;ground_shatter
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile cannon_shot
+
+effect 					cannon_ball_medium_set
+end_effect				ground_impact_bombard_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_cannons_set
+end_shatter_effect		ground_impact_bombard_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_cannons_set
+
+;area_effect		ae_cannon_shot_large
+damage			250
+damage_to_troops 30
+radius			0.3
+mass			3.5
+area			12.0
+accuracy_vs_units		0.05
+accuracy_vs_buildings	0.035
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+;ground_shatter
+bounce			0.01 0.01 0.93 0.5
+body_piercing
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile exploding_cannon_shot
+
+exploding				cannon_shot
+effect 					cannon_ball_medium_set
+end_effect				ground_impact_explosion_culvern_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	ground_impact_wall_explosion_culvern_set
+end_shatter_effect		ground_impact_explosion_culvern_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		ground_impact_wall_explosion_culvern_set
+
+area_effect		ae_cannon_shot_large
+damage			250
+damage_to_troops 30
+radius			0.3
+mass			4.5
+area			15.0
+accuracy_vs_units		0.065
+accuracy_vs_buildings	0.0375
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+ground_shatter
+body_piercing
+;bounce			0.5 0.6 0.5 0.4
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile culverin_shot
+
+effect 					cannon_ball_medium_set
+end_effect				ground_impact_bombard_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_cannons_set
+end_shatter_effect		ground_impact_bombard_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_cannons_set
+
+;area_effect		ae_cannon_shot_large
+damage			230
+damage_to_troops 30
+radius			0.3
+mass			3.5
+area			2.0
+accuracy_vs_units		0.045
+accuracy_vs_buildings	0.035
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+;ground_shatter
+bounce			0.01 0.01 0.93 0.5
+body_piercing
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile exploding_culverin_shot
+
+exploding 				culverin_shot
+effect 					cannon_ball_medium_set
+end_effect				ground_impact_explosion_culvern_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	ground_impact_wall_explosion_culvern_set
+end_shatter_effect		ground_impact_explosion_culvern_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		ground_impact_wall_explosion_culvern_set
+
+area_effect		ae_cannon_shot_large
+damage			230
+damage_to_troops 30
+radius			0.3
+mass			4.5
+area			15.0
+accuracy_vs_units		0.065
+accuracy_vs_buildings	0.0475
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+ground_shatter
+body_piercing
+;bounce			0.5 0.6 0.5 0.4
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile mortar_shot
+effect 			cannon_ball_medium_set
+end_effect				ground_impact_mortar_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_medium_set
+end_shatter_effect		ground_impact_mortar_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_medium_set
+
+area_effect				ae_mortar_shot
+damage			150
+damage_to_troops 15
+radius			0.3
+mass			0.4
+area			2.0
+accuracy_vs_units	0.05
+accuracy_vs_buildings	0.0355
+accuracy_vs_towers      0.0355 
+min_angle		40
+max_angle		60
+prefer_high
+velocity		55, 30
+ground_shatter
+body_piercing		
+;bounce			0.5 0.6 0.5 0.4
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile basilisk_shot
+
+effect 					cannon_ball_medium_set
+end_effect				ground_impact_grand_bombard_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_large_set
+end_shatter_effect		ground_impact_grand_bombard_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_large_set
+
+;area_effect				ae_cannon_shot_large
+damage			330
+damage_to_troops 30
+radius			0.3
+mass			6.0
+area			8.0
+accuracy_vs_units	0.0425
+accuracy_vs_buildings	0.035
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+;ground_shatter
+bounce			0.01 0.01 0.93 0.5
+body_piercing
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile exploding_basilisk_shot
+
+exploding				basilisk_shot
+effect 					cannon_ball_medium_set
+end_effect				ground_impact_explosion_culvern_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	ground_impact_wall_explosion_culvern_set
+end_shatter_effect		ground_impact_explosion_culvern_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		ground_impact_wall_explosion_culvern_set
+
+area_effect				ae_cannon_shot_large
+damage			330
+damage_to_troops 30
+radius			0.3
+mass			4.5
+area			18.0
+accuracy_vs_units	0.0425
+accuracy_vs_buildings	0.0375
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+ground_shatter
+body_piercing
+;bounce			0.5 0.6 0.5 0.4
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+
+projectile serpentine_shot
+
+effect 			cannon_ball_medium_set
+end_effect				ground_impact_mortar_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_serpentine_set
+end_shatter_effect		ground_impact_mortar_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_serpentine_set
+
+;area_effect				ae_small_cannon_shot
+damage			10
+damage_to_troops 10
+radius			0.3
+mass			4.0
+area			2.0
+accuracy_vs_units		0.03
+accuracy_vs_buildings	0.04
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		80
+;ground_shatter
+bounce			0.01 0.01 0.93 0.5
+body_piercing
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile elephant_cannon_shot
+
+effect 			cannon_ball_medium_set
+end_effect				ground_impact_mortar_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_serpentine_set
+end_shatter_effect		ground_impact_mortar_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect		wall_impact_serpentine_set
+
+;area_effect				ae_small_cannon_shot
+damage			10
+damage_to_troops 10
+radius			0.3
+mass			4.5
+area			2.0
+accuracy_vs_units		0.055
+accuracy_vs_buildings	0.055
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+;ground_shatter
+bounce			0.01 0.01 0.93 0.5
+body_piercing
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+effect_only
+
+projectile 		cow_carcass
+
+effect 			cow_carcass_projectile_set
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;NB: effects for cow cow_carcass are now handled in ae_cow_carcass described in descr_area_effects.xml;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;end_effect 	 			cow_impact_ground_set
+;end_man_effect			cow_impact_ground_set
+;end_package_effect    	cow_impact_wall_set
+;end_shatter_effect		cow_impact_ground_set
+;end_shatter_man_effect		cow_impact_ground_set
+;end_shatter_package_effect		cow_impact_wall_set
+
+area_effect		ae_cow_carcass
+damage			0
+damage_to_troops 	5
+radius			0.30
+mass			0.1
+area			3.0
+accuracy_vs_units	0.15
+accuracy_vs_buildings	0.15
+accuracy_vs_towers      0.525 
+min_angle		-15
+max_angle		70
+velocity		61
+ground_shatter
+cow_carcass
+display			aimed
+effect_only
+
+
+;*******************************
+projectile		rocket
+effect 			rocket_projectile_set
+end_effect				ground_fiery_impact_small_set
+end_man_effect			man_impact_explosive_small_set
+end_package_effect    	wall_impact_fiery_small_set
+end_shatter_effect		ground_fiery_impact_small_set
+end_shatter_man_effect		man_impact_explosive_small_set
+end_shatter_package_effect		wall_impact_fiery_small_set
+
+;explode_effect	wall_impact_fiery_small_set
+
+effect_offset	-0.85
+area_effect		ae_rocket_shot
+damage			10
+radius			0.3
+mass			0.05
+accuracy_vs_units		0.06
+accuracy_vs_buildings	0.09
+accuracy_vs_towers      0.05 
+affected_by_rain
+fiery
+min_angle		-15
+max_angle		30
+velocity		90
+ground_shatter
+; rocket		<trail time sec> <spin prob> <spin tick> <max radius dlt> <angle min deg> <angle max deg> <erratic prob> <erratic tick> <erratic max angle>
+rocket			3.5	0.6 10 0.3 120 360 0.3 12 10
+; self_explode	<prob> <min sec> <max sec> [<area effect>]
+self_explode	0.3 1.5 3.0
+display			aimed spin
+triangle	
+texture			data/textures/arrow_test.tga
+tail			0.3
+length			2.5
+tail_tex0		0 0.0 
+tail_tex1		0 0.25 
+head_tex		1 0.125
+end
+
+projectile		elephant_rocket
+effect 			rocket_projectile_set
+end_effect				ground_fiery_impact_small_set
+end_man_effect			man_impact_explosive_small_set
+end_package_effect    	wall_impact_fiery_small_set
+end_shatter_effect		ground_fiery_impact_small_set
+end_shatter_man_effect		man_impact_explosive_small_set
+end_shatter_package_effect		wall_impact_fiery_small_set
+
+explode_effect	wall_impact_fiery_small_set
+
+effect_offset	-0.85
+;area_effect		ae_cannon_shot
+damage			10
+radius			0.2
+mass			0.05
+accuracy_vs_units		0.06
+accuracy_vs_buildings	0.09
+accuracy_vs_towers      0.05 
+affected_by_rain
+fiery
+min_angle		-30
+max_angle		30
+velocity		90
+ground_shatter
+
+; See notes in file header about rockets and elevated rockets
+; rocket		<trail time sec> <spin prob> <spin tick> <max radius dlt> <angle min deg> <angle max deg> <erratic prob> <erratic tick> <erratic max angle>
+elevated_rocket		3.5	0.6 10 0.3 120 360 0.3 12 10
+
+; self_explode	<prob> <min sec> <max sec> [<area effect>]
+self_explode	0.3 1.5 3.0
+display			aimed spin
+triangle	
+texture			data/textures/arrow_test.tga
+tail			0.3
+length			2.5
+tail_tex0		0 0.0 
+tail_tex1		0 0.25 
+head_tex		1 0.125
+end
+
+;*******************************
+projectile		test_cannon_ball
+;effect 			cannon_ball
+effect 			fiery_arrow_set
+end_effect				ground_impact_medium_set
+end_man_effect			man_impact_medium_set
+end_package_effect    	wall_impact_medium_set
+end_shatter_effect		ground_impact_medium_set
+end_shatter_man_effect		man_impact_medium_set
+end_shatter_package_effect		wall_impact_medium_set
+
+damage			110
+damage_to_troops 10
+radius			0.3
+mass			0.8
+area			2.0
+accuracy_vs_units		0.02
+accuracy_vs_buildings	0.01
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		30
+velocity		90
+bounce			0.01 0.01 0.93 0.5
+body_piercing
+display			aimed 
+;effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+;model			data/models/cannon_ball4.cas,	max
+;model			data/models/cannon_ball3.cas,	40.0
+;model			data/models/cannon_ball2.cas,	80.0
+;model			data/models/cannon_ball.cas,	max
+triangle	
+texture			data/textures/arrow_test.tga
+tail			0.3
+length			2.5
+tail_tex0		0 0.0 
+tail_tex1		0 0.25 
+head_tex		1 0.125
+end
+
+;******************************************************************
+; New MTW Personal Weapons
+;******************************************************************
+
+projectile nahptha_bomb
+
+effect					nahptha_bomb_projectile_set
+end_effect				ground_fiery_impact_nahptha_set
+end_man_effect			man_impact_explosive_small_set
+end_package_effect    	wall_impact_fiery_ballista_set
+end_shatter_effect		ground_fiery_impact_nahptha_set
+;end_shatter_man_effect		man_impact_explosive_small_set
+;end_shatter_package_effect		wall_impact_fiery_ballista_set
+
+area_effect				ae_nahptha_shot
+damage		0
+radius		0.1
+mass		0.05
+min_angle	-60
+max_angle	70
+velocity	30
+ground_shatter
+display		aimed
+effect_only
+
+projectile hand_gun_bullet
+
+effect					bullet_model_set
+end_effect				bullet_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	bullet_impact_wall_set
+end_shatter_effect		bullet_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect		bullet_impact_wall_set
+
+damage		0
+radius		0
+mass		0.05
+accuracy_vs_units		0.035
+min_angle	-60
+max_angle	70
+velocity	40 65
+display		aimed
+effect_only
+
+projectile arquebus_bullet
+
+effect					bullet_model_set
+end_effect				bullet_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	bullet_impact_wall_set
+end_shatter_effect		bullet_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect		bullet_impact_wall_set
+
+damage		0
+radius		0
+mass		0.09
+accuracy_vs_units		0.001
+min_angle	-60
+max_angle	70
+velocity	55 75
+display		aimed
+effect_only
+
+projectile musket_bullet
+
+effect					bullet_model_set
+end_effect				bullet_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	bullet_impact_wall_set
+end_shatter_effect		bullet_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect		bullet_impact_wall_set
+
+damage		0
+radius		0
+mass		0.05
+accuracy_vs_units		0.001
+min_angle	-60
+max_angle	70
+velocity	60 85
+display		aimed
+effect_only
+
+projectile pistol_bullet
+
+effect					bullet_model_set
+end_effect				bullet_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	bullet_impact_wall_set
+end_shatter_effect		bullet_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect			bullet_impact_wall_set
+
+damage		0
+radius		0
+mass		0.05
+min_angle	-60
+max_angle	70
+velocity	80
+display		aimed
+effect_only
+
+projectile camel_gun_bullet
+
+effect					bullet_model_set
+end_effect				bullet_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	bullet_impact_wall_set
+end_shatter_effect		bullet_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect		bullet_impact_wall_set
+
+damage		0
+radius		0
+mass		0.05
+accuracy_vs_units		0.0650
+min_angle	-60
+max_angle	70
+velocity	80
+display		aimed
+effect_only
+
+projectile crossbow_bolt
+
+effect			crossbow_arrows_new_set
+end_effect				bullet_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	bullet_impact_wall_set
+end_shatter_effect		bullet_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect		bullet_impact_wall_set
+
+damage		0
+radius		0
+mass		0.05
+accuracy_vs_units		0.04
+min_angle	-60
+max_angle	65
+velocity	20 80
+display		aimed
+effect_only
+
+projectile steel_crossbow_bolt
+
+effect			crossbow_steel_arrows_new_set
+end_effect				bullet_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	bullet_impact_wall_set
+end_shatter_effect		bullet_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect		bullet_impact_wall_set
+
+damage		0
+radius		0
+mass		0.05
+accuracy_vs_units		0.04
+min_angle	-60
+max_angle	65
+velocity	20 80
+display		aimed
+effect_only
+
+
+projectile norman_catapult
+
+effect 			boulder_medium_set
+end_effect				ground_impact_medium_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_medium_set
+end_shatter_effect		ground_impact_medium_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect	wall_impact_medium_set
+
+
+area_effect				ae_mortar_shot
+damage			30
+damage_to_troops 30
+radius			0.3
+mass			0.8
+area			2.0
+accuracy_vs_units		0.0625
+accuracy_vs_buildings	0.0300
+accuracy_vs_towers      0.025 
+min_angle		-15
+max_angle		70
+velocity		75	;61
+ground_shatter
+bounce			0.5 0.6 0.5 0.4
+body_piercing
+display			aimed
+effect_only
+; Stuck model not used at the mo, shatter effect is better, but adding some shatter debris for ground impact would be good?
+;stuck
+;model			data/models_missile/onager_rock.CAS,  max
+;model			data/models_missile/Big_Boulder_high.CAS, 40.0
+;model			data/models_missile/Big_Boulder_med.CAS,  80.0
+;model			data/models_missile/Big_Boulder_low.CAS,  max
+
+projectile fiery_norman_catapult
+
+flaming			norman_catapult
+effect 			fiery_boulder_catapult_set
+end_effect				ground_fiery_impact_catapult_set
+end_man_effect			man_impact_catapult_set
+end_package_effect    	wall_impact_fiery_catapult_set
+end_shatter_effect		ground_fiery_impact_catapult_set
+end_shatter_man_effect		man_impact_catapult_set
+end_shatter_package_effect	wall_impact_fiery_catapult_set
+
+
+damage			30
+damage_to_troops 30
+radius			0.3
+mass			0.8
+area			2.5
+accuracy_vs_units		0.0625
+accuracy_vs_buildings	0.065
+accuracy_vs_towers      0.025 
+fiery					; uncomment this to make all boulders fiery
+min_angle		-15
+max_angle		70
+velocity		75	;61
+ground_shatter
+body_piercing
+display			aimed
+effect_only

@@ -1,0 +1,233 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	This file contains the miscelanious resource names for the game,
+;	so that it doesn't have (any) hardcoded file names
+;
+;	Fields should be entered in the order shown.
+;
+;	;							indicates a comment ;-)
+;	;regexp						indicates a regular expression for data search
+;
+;	unique_tag_name				<file name without data prefix>
+
+; frontend section
+fe_loading_logo					loading_screen/loading_logo.tga
+fe_loading_bar					loading_screen/loading_bar.tga
+fe_loading_screen_demo			loading_screen/loading_screen_demo.tga
+;regexp							loading_screen/loading_screen_1.tga
+fe_promo						menu/promo.tga
+fe_splash						menu/splash.tga
+fe_splash_demo						menu/splash_demo.tga
+fe_legal						menu/legal.tga
+
+; fmv
+fmv_prologue					fmv/faction/prologue_intro.bik
+fmv_logo						logos.bik
+fmv_title						faction/game_intro.bik
+
+; ui
+ui_generic_ancillary			ui/generic/generic_ancillary.tga
+ui_generic_unit_info			ui/generic/generic_unit_info.tga
+ui_generic_unit_card			ui/generic/generic_unit_card.tga
+ui_generic_construction			ui/generic/#generic_construction.tga
+ui_generic_building				ui/generic/generic_building.tga
+ui_generic_constructed_building	ui/generic/generic_constructed_building.tga
+ui_generic_preconstructed_building	ui/generic/generic_preconstructed_building.tga
+ui_generic_bribed_portrait		ui/generic/bribed_portrait.tga
+ui_generic_city					ui/generic/generic_city.tga
+ui_generic_fort					ui/generic/generic_fort.tga
+ui_generic_placement_message	ui/generic/placement_message.tga
+ui_resource_gold				ui/resources/resource_gold.tga
+
+; battle site marker
+;re battle_site_marker			models_strat/crossed_swords.cas
+
+; battlefield
+bf_formation_horde				battlefield/formation/horde.tga
+bf_info_bridge_a_end			terrain/battlefield/bridges/info_bridge_A_end_piece.cas
+bf_info_bridge_b_end			terrain/battlefield/bridges/info_bridge_B_end_piece.cas
+bf_info_bridge_a_section		terrain/battlefield/bridges/info_bridge_A_section.cas
+bf_info_bridge_b_section		terrain/battlefield/bridges/info_bridge_B_section.cas
+bf_stake				models/stakes.mesh
+
+; misc art listed for search 
+;regexp							battlefield/battlefield_deployment_marker.cas
+;regexp							battlefield/deployment_control_point_marker.cas
+
+;regexp							models/tree_large_high.cas
+;regexp							models/marker_waypoint.cas
+;regexp							models/marker_no_one.cas
+;regexp							models/marker_extra.cas
+;regexp							models/marker_ally.cas
+;regexp							models/marker_enemy.cas
+;regexp							models/ground marker.cas
+;regexp							models/attack marker.cas
+;regexp							models/weapon_hoplite_pike_high.cas
+;regexp							models/weapon_hoplite_pike_low.cas
+;regexp							models/textures/weapon_phalanx_spear.tga
+;regexp							models/battlefield_arrow.cas
+; regexp							models_building/models_spot/burning_oil.cas
+;regexp							models_building/models_spot/flag_vertical_small_low.cas
+;regexp							models_building/models_spot/flag_vertical_large.cas	
+; regexp							models_landscape/river_meander2_underlay.cas
+; regexp							models_landscape/river_meander3_underlay.cas
+; regexp							models_landscape/river_meander4_underlay.cas
+; regexp							models_landscape/river3_fordable_underlay.cas
+;regexp							models_landscape/far_models/volcano.cas
+;regexp							models_strat/flood_water.cas
+;regexp							models_strat/volcano_rock.cas
+;regexp							models_strat/vertex_pointer.cas
+; regexp							models_effects/fireball.cas
+
+;regexp							terrain/aerial_map/fire.tga
+;regexp							terrain/aerial_map/#weather.tga
+;regexp							terrain/aerial_map/sea/waves.tga
+;regexp							terrain/aerial_map/sea/sky_environment_summer.tga
+;regexp							terrain/aerial_map/bridges/bridge_dirt.cas
+;regexp							terrain/aerial_map/bridges/bridge_stone.cas
+;regexp							terrain/aerial_map/bridges/bridge_highway.cas
+;regexp							terrain/aerial_map/sea/surf2b.tga
+;regexp							terrain/aerial_map/sea/beach_strip.tga
+;regexp							terrain/aerial_map/indicators/move_arrow_3.tga
+;regexp							terrain/aerial_map/indicators/move_arrow_2.tga
+;regexp							terrain/aerial_map/indicators/move_arrow_1.tga
+;regexp							terrain/aerial_map/indicators/region_borders_primary.tga
+;regexp							terrain/aerial_map/indicators/region_borders_secondary.tga
+;regexp							terrain/aerial_map/roads/road_dirt.tga
+;regexp							terrain/aerial_map/roads/road_dirt_X.tga
+;regexp							terrain/aerial_map/roads/road_dirt_T.tga
+;regexp							terrain/aerial_map/roads/road_stone.tga
+;regexp							terrain/aerial_map/roads/road_stone_X.tga
+;regexp							terrain/aerial_map/roads/road_stone_T.tga
+;regexp							terrain/aerial_map/roads/road_highway.tga
+;regexp							terrain/aerial_map/roads/road_highway_X.tga
+;regexp							terrain/aerial_map/roads/road_highway_T.tga
+;regexp							terrain/aerial_map/wagons/trade_wagon1.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon2.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon3.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon4.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon5.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon6.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon7.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon8.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon9.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon10.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon11.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon12.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon13.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon14.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon15.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon16.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon17.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon18.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon19.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon20.cas
+;regexp							terrain/aerial_map/wagons/trade_wagon.cas
+;regexp							terrain/aerial_map/indicators/sea_route.tga
+;regexp							terrain/aerial_map/ships/trade_boat.cas
+;regexp							terrain/aerial_map/water.tga
+;regexp							terrain/aerial_map/indicators/region_borders_main_colour.tga
+;regexp							terrain/aerial_map/indicators/region_borders_secondary_colour.tga
+;regexp							terrain/aerial_map/detail_texture.tga
+;regexp							terrain/aerial_map/trees/sprites/strat_tree_spritepage.tga
+
+;regexp							textures/#weather.tga
+; regexp							textures/#man_shadow_128.tga
+;regexp							textures/#siegesaptexture.tga
+;regexp							textures/#siegesaptexture_alpha.tga
+;regexp							textures/#green_circle.tga
+;regexp							textures/#arrow.tga
+;regexp							textures/#arrow_distance.tga
+;regexp							textures/#outline.tga
+;regexp							textures/#unit_indicator_arrow.tga
+;regexp							textures/battlefield_border.tga
+;regexp							textures/deployment_area_border.tga
+;regexp							textures/#splash_ring.tga
+;regexp							textures/#water_drop.tga
+;regexp							textures/placeholder.tga
+;regexp							textures/#al_outline.tga
+
+;regexp							ui/icons/infantry.tga
+;regexp							ui/icons/cavalry.tga
+;regexp							ui/icons/artillery.tga
+;regexp							ui/icons/missiles.tga
+;regexp							ui/icons/spears.tga
+;regexp							ui/pips/pip_farming_level.tga
+;regexp							ui/pips/pip_farms_built.tga
+;regexp							ui/pips/pip_health.tga
+;regexp							ui/pips/pip_buildings.tga
+;regexp							ui/pips/pip_tax_rate_bonus.tga
+;regexp							ui/pips/pip_buildings_fun.tga
+;regexp							ui/pips/pip_trade.tga
+;regexp							ui/pips/pip_squalour.tga
+;regexp							ui/pips/pip_plague.tga
+;regexp							ui/pips/pip_tax_rate_penalty.tga
+;regexp							ui/pips/pip_tax_rate_penalty.tga
+;regexp							ui/pips/pip_garrison.tga
+;regexp							ui/pips/pip_buildings_law.tga
+;regexp							ui/pips/pip_buildings_fun.tga
+;regexp							ui/pips/pip_governors_influence.tga
+;regexp							ui/pips/pip_tax_bonus.tga
+;regexp							ui/pips/pip_triumph.tga
+;regexp							ui/pips/pip_fear.tga
+;regexp							ui/pips/pip_glory.tga
+;regexp							ui/pips/pip_religious_unrest.tga
+;regexp							ui/pips/pip_excommunication.tga
+;regexp							ui/pips/pip_boom.tga
+;regexp							ui/pips/pip_squalour.tga
+;regexp							ui/pips/pip_distance_to_capital.tga
+;regexp							ui/pips/pip_no_governance.tga
+;regexp							ui/pips/pip_tax_penalty.tga
+;regexp							ui/pips/pip_turmoil.tga
+;regexp							ui/pips/pip_besieged.tga
+;regexp							ui/pips/pip_blockaded.tga
+;regexp							ui/pips/pip_entertained.tga
+;regexp							ui/pips/pip_health.tga
+;regexp							ui/pips/pip_placeholder.tga
+;regexp							ui/pips/pip_farms.tga
+;regexp							ui/pips/pip_taxes.tga
+;regexp							ui/pips/pip_mining.tga
+;regexp							ui/pips/pip_trade.tga
+;regexp							ui/pips/pip_diplomatic_income.tga
+;regexp							ui/pips/pip_demolition.tga
+;regexp							ui/pips/pip_looting.tga
+;regexp							ui/pips/pip_buildings.tga
+;regexp							ui/pips/pip_admin.tga
+;regexp							ui/pips/pip_wages.tga
+;regexp							ui/pips/pip_upkeep.tga
+;regexp							ui/pips/pip_construction.tga
+;regexp							ui/pips/pip_recruitment.tga
+;regexp							ui/pips/pip_diplomatic_outgoings.tga
+;regexp							ui/pips/pip_corruption.tga
+;regexp							ui/pips/pip_entertained.tga
+;regexp							ui/pips/pip_devastation.tga
+; default culture
+;regexp							ui/southern_european/advisor battlemap.tga
+;regexp							ui/southern_european/advisor stratmap.tga
+; regexp						ui/<culture>/#watchtower.tga
+; regexp						ui/<culture>/#fort.tga
+
+;regexp							menu/cursor.tga
+;regexp							menu/buttons_composite2.tga
+;regexp							menu/slider_composite.tga
+;regexp							menu/slider_composite2.tga
+;regexp							menu/slider_composite.tga
+;regexp							menu/border_4pix_black_gold2.tga
+;regexp							menu/text_border.tga
+;regexp							menu/yellow_highlight.tga
+;regexp							menu/border_4pix_black_gold_selected.tga
+;regexp							menu/border_4pix_black_gold_black.tga
+;regexp							menu/unit_card.tga
+;regexp							menu/icons.tga
+;regexp							menu/textures/backdrop.tga
+;regexp							menu/custom_map_landscape.tga
+;regexp							menu/map_composite.tga
+;regexp							menu/flag.tga
+;regexp							menu/symbols/FE_flags/flag_red_i.tga
+;regexp							menu/symbols/FE_flags/flag_red_ii.tga
+;regexp							menu/symbols/FE_flags/flag_red_iii.tga
+;regexp							menu/symbols/FE_flags/flag_red_iv.tga
+;regexp							menu/symbols/FE_flags/flag_red_v.tga
+;regexp							menu/symbols/FE_flags/flag_red_vi.tga
+;regexp							menu/symbols/FE_flags/flag_red_vii.tga
+;regexp							menu/symbols/FE_flags/flag_red_viii.tga

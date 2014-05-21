@@ -1,0 +1,672 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Daytypes description file
+;
+; In two parts overall. Part 1 describes different weather patterns which can be referenced
+; from a given type of day.
+;
+;	weatherevent <type_id>
+;			cloud			<type>	[ <colour: r g b> ]
+;			precipitate		<type>	<level>
+;			wind			<level>
+;			fog				<level> <density> [ <colour: r g b> ]
+;
+; Notes:
+;
+; - It isn`t necessary to define all the elements.  The first event in the list will provide a base setting which
+;	subsequent events can override.
+;
+; - Fog and cloud colours are optional. If no colour is specified the cloud colour is assumed to be white and the fog colour is assumed to be (0.8 0.8 1).
+;
+; - The intensity of the fog colour will be adjusted with the time of day so the fog darkens as the sun sets and is black at night.
+;
+; - The in game fog colour moves from the current haze colour to the current adjusted fog colour from fog density 0.00035 to 0.0004
+;
+; - Some reasonable values for fog density (haze->heavy)  0.00005, 0.0005, 0.001, 0.002
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Cloud types			light, medium, heavy
+; Precipitate types:	none, rain, snow, hail
+; Precipitate levels:	dry, drizzle, light, heavy, torrential
+; Wind levels:			calm, breezes, wind, gusts, gales
+; Fog levels:			clear, haze, light, heavy
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+weatherevent rain_storm
+		cloud			heavy		0.69	0.69	0.69
+		precipitate		rain heavy
+		wind			gusts
+		fog				heavy		0.003
+
+weatherevent rain_summer_shower
+		cloud			heavy
+		precipitate		rain light
+		wind			breezes
+		fog				haze		0.0008
+
+weatherevent rain_drizzle
+		cloud			medium
+		precipitate		rain drizzle
+		wind			breezes
+		fog				light		0.0015
+
+weatherevent hail_shower
+		cloud			medium
+		precipitate		hail heavy
+		wind			gusts
+		fog				heavy		0.0003
+
+weatherevent snow_falling
+		cloud			medium
+		precipitate		snow light
+		wind			gusts
+		fog				heavy		0.0015
+
+weatherevent blizzard
+		cloud			heavy
+		precipitate		snow torrential
+		wind			gales
+		fog				heavy		0.004
+
+weatherevent calm
+		cloud			light
+		precipitate		none
+		wind			calm
+		fog				clear		0.00015
+
+weatherevent hazy
+		cloud			light
+		precipitate		none
+		wind			calm
+		fog				haze		0.0002
+
+weatherevent light_fog
+		cloud			medium
+		precipitate		none
+		wind			calm
+		fog				light		0.002
+
+weatherevent heavy_fog
+		cloud			heavy
+		precipitate		none
+		wind			calm
+		fog				heavy		0.003
+
+weatherevent jeffs_brain
+		cloud			heavy
+		precipitate		rain torrential
+		wind			gales
+		fog				heavy		0.0003
+
+weatherevent dust_storm
+		cloud		    heavy
+		precipitate		dust torrential
+		wind			gusts
+		fog				heavy		0.004	0.67	0.61	0.56
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	Part 2 : daytypes are different kind of days which can occur in different climates
+;	and seasons, allowing control over the lighting settings of the game in widely
+;	differing environments
+;
+;	daytype {type_id}
+;
+;		climates		{climates that this daytype is applicable to - space seperated list}
+;		seasons			{seasons that this daytype is applicable to}
+;		weatherevents	{weather events that can occur coupled with weight indicating chance of happening - space seperated list}
+;		next_day		{space seperated list of days that can follow this type}
+;
+;		event
+;			time			{24hr value for time event starts}
+;			sun_colour		r g b
+;			sunlight		{diffuse}
+;			moonlight		{full diffuse} {new diffuse}
+;			haze_colour		r g b
+;			cloud_colour	{east r g b} {west r g b}
+;
+;		event
+;			....
+;	daytype
+;		....
+;
+; Notes:
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Climates:				As described in descr_climates.txt
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+daytype	temperate_summer
+
+	climates		unused1 steppe temperate_deciduous_forest temperate_coniferous_forest unused2 alpine
+	seasons			summer
+	weatherevents	calm 0.25, hazy 0.4, light_fog 0.15, rain_summer_shower 0.13, rain_storm 0.05, hail_shower 0.02
+	next_day		temperate_summer 1.0
+
+; night
+	event
+		time			0
+
+		sun_colour		1		.9	0.5
+		sunlight		1		1		1
+		moonlight		0.7		0.65	1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+; sunrise
+	event
+		time			7
+
+		sun_colour		1		.9	0.5
+		sunlight			1		.9	0.5
+		moonlight			0.5		0.5		1			0.75	0.1		0.2
+		haze_colour		0.5		0.5		0.5
+		cloud_colour		1		1		0.8			1		1		1
+
+; straight after sunrise
+	event
+		time			8
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.8		0.8		0.8
+		cloud_colour	1		1		1			1		1		1
+
+; midday
+	event
+		time			12
+
+		sun_colour		0.7		0.74	0.72
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.4		0.51 	0.55
+		cloud_colour	1		1		1			1		1		1
+
+;afternoon
+	event
+		time			16
+
+		sun_colour		0.7		0.74	0.72
+		sunlight		1.0		1.0		0.8
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.4		0.51 	0.55
+		cloud_colour	1		1		1			1		1		1
+
+; sun going down
+	event
+		time			18
+
+		sun_colour		0.7		0.74	0.72
+		sunlight		1.0		0.6		0.6
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.4		0.51 	0.55
+		cloud_colour	1		1.0		1.0			1.0		0.6		0.6
+
+; night
+	event
+		time			21
+
+		sun_colour		1		1		1
+		sunlight		1		1		1
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+daytype	temperate_winter
+
+	climates		unused1 steppe temperate_deciduous_forest temperate_coniferous_forest unused2 alpine
+	seasons			winter
+	weatherevents	calm 0.25, hazy 0.25, snow_falling 0.5
+	next_day		temperate_winter 1.0
+
+; night
+	event
+		time			0
+
+		sun_colour		1		.9	0.5
+		sunlight		1		1		1
+		moonlight		0.7		0.65	1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+; sunrise
+	event
+		time			7
+
+		sun_colour		1		.9	0.5
+		sunlight			1		.9	0.5
+		moonlight			0.5		0.5		1			0.75	0.1		0.2
+		haze_colour		0.5		0.5		0.5
+		cloud_colour		1		1		0.8			1		1		1
+
+; straight after sunrise
+	event
+		time			8
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+; midday
+	event
+		time			12
+
+		sun_colour		0.85	0.89	0.929
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+;afternoon
+	event
+		time			16
+
+		sun_colour		1.0		1.0		0.8
+		sunlight		1.0		1.0		0.8
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.8		0.8		0.8
+		cloud_colour	1		1		1			1		1		1
+
+; sun going down
+	event
+		time			18
+
+		sun_colour		1.0		0.6		0.6
+		sunlight		1.0		0.6		0.6
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.65	0.7		0.75
+		cloud_colour	1		1.0		1.0			1.0		0.6		0.6
+
+; night
+	event
+		time			21
+
+		sun_colour		1		1		1
+		sunlight		1		1		1
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+daytype	mediterranean_summer
+
+	climates		mediterranean semi_arid
+	seasons			summer winter
+	weatherevents	calm 0.5, hazy 0.5
+	next_day		mediterranean_summer 1.0
+
+; night
+	event
+		time			0
+
+		sun_colour		1		.9	0.5
+		sunlight		1		1		1
+		moonlight		0.7		0.65	1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+; sunrise
+	event
+		time			7
+
+		sun_colour		1	.9	   0.5
+		sunlight			1		.9	0.5
+		moonlight			0.5		0.5		1			0.75	0.1		0.2
+		haze_colour		0.5		0.5		0.5
+		cloud_colour		1		1		0.8			1		1		1
+
+; straight after sunrise
+	event
+		time			8
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+; midday
+	event
+		time			12
+
+		sun_colour		0.85	0.89	0.929
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+;afternoon
+	event
+		time			16
+
+		sun_colour		1.0		1.0		0.8
+		sunlight		1.0		1.0		0.8
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+; sun going down
+	event
+		time			18
+
+		sun_colour		1.0		0.6		0.6
+		sunlight		1.0		0.6		0.6
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.65	0.7		0.75
+		cloud_colour	1		1.0		1.0			1.0		0.6		0.6
+
+; night
+	event
+		time			21
+
+		sun_colour		1		1		1
+		sunlight		1		1		1
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+daytype	arctic_summer
+
+	climates		highland tropical
+	seasons			summer
+	weatherevents	calm 0.25, hazy 0.4, light_fog 0.15, rain_summer_shower 0.13, rain_storm 0.05, hail_shower 0.02
+	next_day		arctic_summer 1.0
+
+; night
+	event
+		time			0
+
+		sun_colour		1		.9	0.5
+		sunlight		1		1		1
+		moonlight		0.7		0.65	1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+; sunrise
+	event
+		time			7
+
+		sun_colour		1		.9	0.5
+		sunlight			1		.9	0.5
+		moonlight			0.5		0.5		1			0.75	0.1		0.2
+		haze_colour		0.5		0.5		0.5
+		cloud_colour		1		1		0.8			1		1		1
+
+; straight after sunrise
+	event
+		time			8
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+; midday
+	event
+		time			12
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+;afternoon
+	event
+		time			16
+
+		sun_colour		1.0		1.0		0.8
+		sunlight		1.0		1.0		0.8
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+; sun going down
+	event
+		time			18
+
+		sun_colour		1.0		0.6		0.6
+		sunlight		1.0		0.6		0.6
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.65	0.7		0.75
+		cloud_colour	1		1.0		1.0			1.0		0.6		0.6
+
+; night
+	event
+		time			21
+
+		sun_colour		1		1		1
+		sunlight		1		1		1
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+daytype	arctic_winter
+
+	climates		highland tropical
+	seasons			winter
+	weatherevents	snow_falling 0.5, blizzard 0.5
+	next_day		arctic_winter 1.0
+
+; night
+	event
+		time			0
+
+		sun_colour		1		.9	0.5
+		sunlight		1		1		1
+		moonlight		0.7		0.65	1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+; sunrise
+	event
+		time			7
+
+		sun_colour		1		.9	0.5
+		sunlight			1		.9	0.5
+		moonlight			0.5		0.5		1			0.75	0.1		0.2
+		haze_colour		0.5		0.5		0.5
+		cloud_colour		1		1		0.8			1		1		1
+
+; straight after sunrise
+	event
+		time			8
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+; midday
+	event
+		time			12
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+;afternoon
+	event
+		time			16
+
+		sun_colour		1.0		1.0		0.8
+		sunlight		1.0		1.0		0.8
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+; sun going down
+	event
+		time			18
+
+		sun_colour		1.0		0.6		0.6
+		sunlight		1.0		0.6		0.6
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.65	0.7		0.75
+		cloud_colour	1		1.0		1.0			1.0		0.6		0.6
+
+; night
+	event
+		time			21
+
+		sun_colour		1		1		1
+		sunlight		1		1		1
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+daytype	desert_summer
+
+	climates		sandy_desert rocky_desert
+	seasons			summer winter
+	weatherevents	hazy 0.2, calm 0.7, dust_storm 0.1
+	next_day		desert_summer 1.0
+
+; night
+	event
+		time			0
+
+		sun_colour		0.8		0.3		0.1
+		sunlight		0.7		0.55	0.3
+		moonlight		0.2		0.25	0.5			0.75	0.1		0.2
+		haze_colour		0.0		0.0		0.0
+		cloud_colour	0		0		0			0		0		0
+
+; sunrise
+	event
+		time			7
+
+		sun_colour		0.8		0.6		0.5
+		sunlight		1		0.8	0.2
+		moonlight		0.2		0.25	0.5			0.75	0.1		0.2
+		haze_colour		0.5		0.5		0.5
+		cloud_colour	1		1		0.8			1		1		1
+
+; straight after sunrise
+	event
+		time			8
+
+		sun_colour		1.0		1.0		0.8
+		sunlight		1.0		1.0		0.8
+		moonlight		0.2		0.25	0.5			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		0.8			1		1		1
+
+; midday
+	event
+		time			12
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		0.2		0.25	0.5			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+
+; sun going down
+	event
+		time			18
+
+		sun_colour		1.0		0.7		0.5
+		sunlight		1.0		0.7		0.7
+		moonlight		0.2		0.25	0.5			0.75	0.1		0.2
+		haze_colour		0.8		0.6		0.6
+		cloud_colour	1		1.0		1.0			1.0		0.7		0.7
+
+; night
+	event
+		time			21
+
+		sun_colour		1.0		1.0		0.7
+		sunlight		0.9		0.8		0.6
+		moonlight		0.2		0.25	0.5			0.75	0.1		0.2
+		haze_colour		0.0		0.0		0.0
+		cloud_colour	0		0		0			0		0		0
+
+daytype	sound_test
+
+	climates		mediterranean unused1 steppe temperate_deciduous_forest temperate_deciduous_forest unused2 highland alpine tropical semi_arid
+	seasons			summer winter
+	weatherevents	jeffs_brain 0.11, rain_storm 0.11, rain_summer_shower 0.11, rain_drizzle 0.11, hail_shower 0.11, snow_falling 0.11, calm 0.11, hazy 0.11, light_fog 0.11
+	next_day		sound_test 1.0
+	test
+
+; night
+	event
+		time			0
+
+		sun_colour		1		1		1
+		sunlight		1		1		1
+		moonlight		0.7		0.65	1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0
+
+; sunrise
+	event
+		time			6
+
+		sun_colour		1		0.75	0.3
+		sunlight		1		0.75	0.3
+		moonlight		0.5		0.5		1			0.75	0.1		0.2
+		haze_colour		0.5		0.5		0.5
+		cloud_colour	1		1		0.8			1		1		1
+
+; straight after sunrise
+	event
+		time			8
+
+		sun_colour		1.0		1.0		0.8
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.8		0.84	0.88
+		cloud_colour	1		1		1			1		1		1
+
+; midday
+	event
+		time			12
+
+		sun_colour		1.0		1.0		1.0
+		sunlight		1.0		1.0		1.0
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+;afternoon
+	event
+		time			16
+
+		sun_colour		1.0		1.0		0.8
+		sunlight		1.0		1.0		0.8
+		moonlight		.5		.5		1			0.75	0.1		0.2
+		haze_colour		0.9		0.94	0.98
+		cloud_colour	1		1		1			1		1		1
+
+; sun going down
+	event
+		time			18
+
+		sun_colour		1.0		0.6		0.6
+		sunlight		1.0		0.6		0.6
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.65	0.7		0.75
+		cloud_colour	1		1.0		1.0			1.0		0.6		0.6
+
+; night
+	event
+		time			21
+
+		sun_colour		1		1		1
+		sunlight		1		1		1
+		moonlight		.7		.65		1			0.75	0.1		0.2
+		haze_colour		0.15	0.15	0.15
+		cloud_colour	0		0		0			0		0		0

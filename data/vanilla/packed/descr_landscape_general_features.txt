@@ -1,0 +1,470 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	format:
+;	-------------------------------------------------------------------------
+;
+;		general_feature
+;		{
+;			base		<filename>
+;			overlay		<filename>
+;			texture		<filename>
+;			collision	<filename>
+;
+;			[ st	<suitability tolerance> ]
+;
+;			[
+;				climates
+;				{
+;					<climate name>
+;					{
+;						<map type>	<probability>
+;						...
+;					}
+;					...
+;				}
+;			]
+;		}
+;		...
+;
+;	------------------------------------------------------------------------
+;
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; hills
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+general_feature bighill3_SMEG
+{
+	base		data/models_landscape/bighill3_underlay.cas
+	overlay		data/models_landscape/bighill3_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/bighill3_collision.cas
+
+	st			-20.0
+	ground_types	ground_rock.tga	-64	-64	64	64
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature mediumhill03
+{
+	base		data/models_landscape/mediumhill03_underlay.cas
+	overlay		data/models_landscape/mediumhill03_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/mediumhill03_collision.cas
+	ground_types	ground_rock.tga	-64	-64	64	64
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature mediumhill4
+{
+	base		data/models_landscape/mediumhill4_underlay.cas
+	overlay		data/models_landscape/mediumhill4_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/mediumhill4_collision.cas
+	ground_types	ground_rock.tga	-64	-64	64	64
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; boulders
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+general_feature boulders01
+{
+	base			data/models_landscape/boulders01_underlay.cas
+	overlay			data/models_landscape/boulders01_overlay.cas
+	texture			data/models_landscape/textures
+	collision		data/models_landscape/boulders01_collision.cas
+
+	st				-20.0
+
+	ground_types	ground_rock.tga	-32	-32	32	32
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature boulders02
+{
+	base			data/models_landscape/boulders02_underlay.cas
+	overlay			data/models_landscape/boulders02_overlay.cas
+	texture			data/models_landscape/textures
+	collision		data/models_landscape/boulders02_collision.cas
+
+	st				-20.0
+
+	ground_types	ground_rock.tga	-32	-32	32	32
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; earth
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+general_feature earth1
+{
+	base		data/models_landscape/earth1_underlay.cas
+	overlay		data/models_landscape/earth1_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature earth2
+{
+	base		data/models_landscape/earth2_underlay.cas
+	overlay		data/models_landscape/earth2_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature earth3
+{
+	base		data/models_landscape/earth3_underlay.cas
+	overlay		data/models_landscape/earth3_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature earth4
+{
+	base		data/models_landscape/earth4_underlay.cas
+	overlay		data/models_landscape/earth4_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature earth5
+{
+	base		data/models_landscape/earth5_underlay.cas
+	overlay		data/models_landscape/earth5_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; rocks
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+general_feature rocks1
+{
+	base		data/models_landscape/rocks1_underlay.cas
+	overlay		data/models_landscape/rocks1_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/rocks1_collision.cas
+
+	st			-20.0
+	ground_types	ground_rock.tga	-32	-32	32	32
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature rocks2
+{
+	base		data/models_landscape/rocks2_underlay.cas
+	overlay		data/models_landscape/rocks2_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/rocks2_collision.cas
+
+	st			-20.0
+	ground_types	ground_rock.tga	-32	-32	32	32
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature rocks3
+{
+	base		data/models_landscape/rocks3_underlay.cas
+	overlay		data/models_landscape/rocks3_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/rocks3_collision.cas
+
+	st			-20.0
+	ground_types	ground_rock.tga	-32	-32	32	32
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; steps
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+general_feature steps1
+{
+	base		data/models_landscape/steps1_underlay.cas
+	overlay		data/models_landscape/steps1_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature steps2
+{
+	base		data/models_landscape/steps2_underlay.cas
+	overlay		data/models_landscape/steps2_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature steps3
+{
+	base		data/models_landscape/steps3_underlay.cas
+	overlay		data/models_landscape/steps3_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature steps4
+{
+	base		data/models_landscape/steps4_underlay.cas
+	overlay		data/models_landscape/steps4_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature steps5
+{
+	base		data/models_landscape/steps5_underlay.cas
+	overlay		data/models_landscape/steps5_overlay.cas
+	texture		data/models_landscape/textures
+
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; valleys
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+general_feature valley1
+{
+	base		data/models_landscape/vally1_underlay.cas
+	overlay		data/models_landscape/vally1_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/vally1_collision.cas
+
+	st			-20.0
+	ground_types	ground_rock.tga	-128	-128	128	128
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature valley2
+{
+	base		data/models_landscape/vally2_underlay.cas
+	overlay		data/models_landscape/vally2_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/vally2_collision.cas
+
+	st			1.0
+	ground_types	ground_rock.tga	-128	-128	128	128
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+general_feature valley3
+{
+	base		data/models_landscape/vally3_underlay.cas
+	overlay		data/models_landscape/vally3_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/vally3_collision.cas
+
+	st			-20.0
+	ground_types	ground_rock.tga	-128	-128	128	128
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; cliffs
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+general_feature cliff_big
+{
+	base		data/models_landscape/cliff_big_underlay.cas
+	overlay		data/models_landscape/cliff_big_overlay.cas
+	texture		data/models_landscape/textures
+	collision	data/models_landscape/cliff_big_collision.cas
+
+	st			-20.0
+	ground_types	ground_rock.tga	-128	-128	128	128
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; lakes & bogs & swamps & oases
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; MILESTONE 1 HACK
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+general_feature TEST_SETTLEMENT
+{
+	base		data/models_landscape/milestone_settlement_01_underlay.CAS
+	overlay		data/models_landscape/milestone_settlement_01_overlay.CAS
+	texture		data/models_landscape/textures
+
+	st			-20.0
+	ground_types	ground_rock.tga	-128	-128	128	128
+	climates
+	{
+		all
+		{
+			all	0.1
+		}
+	}
+}

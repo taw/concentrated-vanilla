@@ -1,0 +1,91 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Units routing bank
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 5 priority 170 fadein .25 fadeout 1
+DEFAULT: minpitch .8 maxpitch 1.1 volume 0 probability 1
+DEFAULT: distancepriority -1 randomdelay .5  delay 1.5 effect_level .5 pref SFX
+
+BANK: unit_retreat
+
+
+;;;;;;;;;;;;;;;;		
+   
+unit infantry light, heavy, spearmen, skirmish, missile
+
+					
+		event lod 5  
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_small_01
+		end
+	
+		event lod 10
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_small_01
+		end
+		
+		event lod 30
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_large_01
+		end     
+
+unit cavalry light, heavy, spearmen, skirmish, missile
+
+					
+		event lod 5  
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_small_01
+		end
+	
+		event lod 10
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_small_01
+		end
+		
+		event lod 30
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_large_01
+		end   		
+
+unit siege light, heavy, spearmen, skirmish, missile
+
+					
+		event lod 5  
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_small_01
+		end
+	
+		event lod 10
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_small_01
+		end
+		
+		event lod 30
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_large_01
+		end   				
+ 
+		
+unit handler light, heavy, spearmen, skirmish, missile
+
+					
+		event lod 5  
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_small_01
+		end
+	
+		event lod 10
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_small_01
+		end
+		
+		event lod 30
+		folder data/sounds/SFX/group/Infantry
+		;infantry_group_retreat_large_01
+		end       
+
+
+	
+			

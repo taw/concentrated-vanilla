@@ -1,0 +1,265 @@
+<config>
+	<!-- global combat balancing factors -->
+	<combat-balancing>
+		<missile-target-accuracy>
+			<infantry>0.79</infantry>
+			<cavalry>0.56</cavalry>
+			<elephants>0.39</elephants>
+		</missile-target-accuracy>
+
+		<melee-hit-rate>1.75</melee-hit-rate>
+	</combat-balancing>
+
+	<!-- per unit task configuration -->
+	<unit-tasks>
+		<!-- wall reform - used for split up units -->
+		<wall-reform>
+			<!-- once more than this number are queued up, split across the other ladders -->
+			<queue-length-before-split>10</queue-length-before-split>
+		</wall-reform>
+
+		<!-- unformed charge -->
+		<unformed-charge>
+			<!-- proportion of unit that will charge before unit task will finish -->
+			<finish-proportion-infantry>0.75</finish-proportion-infantry>
+			<finish-proportion-cavalry>0.4</finish-proportion-cavalry>
+		</unformed-charge>
+	</unit-tasks>
+	
+	<unit>
+		<!-- skirmish configuration -->
+		<skirmish>
+			<infantry>
+				<default>
+					<!-- ignore targets at a distance greater than the maximum range times this scale factor -->
+					<max-range-scale>1.5</max-range-scale>
+					
+					<!-- must skirmish if within this range -->
+					<min-range>40</min-range>
+					
+					<!-- stop at this distance if the enemy is blocking the path -->
+					<min-stopping-range>50</min-stopping-range>
+					
+					<!-- time to react to being intercepted -->
+					<collision-reaction-time>8</collision-reaction-time>
+					
+					<!-- retreat buffer time -->
+					<retreat-time>12</retreat-time>
+					
+					<!-- don't skirmish until attackers are within this fraction of the missile range -->
+					<range-factor>
+						<moving>1.1</moving>
+						
+						<shooting>0.80</shooting>
+					</range-factor>
+				</default>
+				
+				<gunpowder>
+					<!-- ignore targets at a distance greater than the maximum range times this scale factor -->
+					<max-range-scale>1.5</max-range-scale>
+					
+					<!-- must skirmish if within this range -->
+					<min-range>40</min-range>
+					
+					<!-- stop at this distance if the enemy is blocking the path -->
+					<min-stopping-range>50</min-stopping-range>
+					
+					<!-- time to react to being intercepted -->
+					<collision-reaction-time>12</collision-reaction-time>
+					
+					<!-- retreat buffer time -->
+					<retreat-time>14</retreat-time>
+					
+					<!-- don't skirmish until attackers are within this fraction of the missile range -->
+					<range-factor>
+						<moving>1.15</moving>
+						
+						<shooting>0.80</shooting>
+					</range-factor>
+				</gunpowder>
+			</infantry>
+			
+			<cavalry>
+				<default>
+					<!-- ignore targets at a distance greater than the maximum range times this scale factor -->
+					<max-range-scale>1.5</max-range-scale>
+					
+					<!-- must skirmish if within this range -->
+					<min-range>30</min-range>
+					
+					<!-- stop at this distance if the enemy is blocking the path -->
+					<min-stopping-range>50</min-stopping-range>
+					
+					<!-- time to react to being intercepted -->
+					<collision-reaction-time>8</collision-reaction-time>
+					
+					<!-- retreat buffer time -->
+					<retreat-time>12</retreat-time>
+					
+					<!-- don't skirmish until attackers are within this fraction of the missile range -->
+					<range-factor>
+						<moving>1.1</moving>
+						
+						<shooting>0.80</shooting>
+					</range-factor>
+					
+					<!-- reaction time for cantabrian circle -->					
+					<cantabrian-reaction-time>20</cantabrian-reaction-time>
+				</default>
+				
+				<gunpowder>
+					<!-- ignore targets at a distance greater than the maximum range times this scale factor -->
+					<max-range-scale>1.5</max-range-scale>
+					
+					<!-- must skirmish if within this range -->
+					<min-range>30</min-range>
+					
+					<!-- stop at this distance if the enemy is blocking the path -->
+					<min-stopping-range>50</min-stopping-range>
+					
+					<!-- time to react to being intercepted -->
+					<collision-reaction-time>8</collision-reaction-time>
+					
+					<!-- retreat buffer time -->
+					<retreat-time>12</retreat-time>
+					
+					<!-- don't skirmish until attackers are within this fraction of the missile range -->
+					<range-factor>
+						<moving>1.1</moving>
+						
+						<shooting>0.80</shooting>
+					</range-factor>
+					
+					<!-- reaction time for cantabrian circle -->					
+					<cantabrian-reaction-time>20</cantabrian-reaction-time>
+				</gunpowder>
+			</cavalry>			
+			
+		</skirmish>
+	</unit>
+	
+	<settlements>
+		<rules>
+			<!-- rules relating to plaza capture -->
+			<plaza-capture>
+				<!-- time the plaza needs to be held for to capture -->
+				<time-limit>3.0</time-limit>
+				
+				<!-- ratio of attackers to defenders to hold a plaza -->
+				<soldier-ratio>0.8</soldier-ratio>
+			</plaza-capture>
+		</rules>
+	</settlements>
+	
+	<movement>
+		<ladders>
+			<!-- should run be the default? -->
+			<default-run>1</default-run>
+			
+			<!-- start distance for the blockout region -->
+			<entry-blockout-inner>0.0</entry-blockout-inner>
+			
+			<!-- end distance for the blockout region -->
+			<entry-blockout-outer>25.0</entry-blockout-outer>
+			
+			<!-- limit on number of soldiers in the blockout region -->
+			<number-in-blockout>0</number-in-blockout>
+			
+			<!-- distance soldiers should stop at if the entrance is blocked (in metres squared) -->
+			<stand-off-distance>25.0</stand-off-distance>
+			
+			<!-- distance within which soldiers will step onto the line (in metres squared) -->
+			<step-on-distance>4.0</step-on-distance>
+			
+			<!-- queue length limit before movement will be stopped (in number of soldiers -->
+			<maximum-queue-length>10</maximum-queue-length>
+			
+			<!-- distance soldiers should stop at if the queue is too long (in metres squared) -->
+			<long-queue-stand-off-distance>64.0</long-queue-stand-off-distance>
+			
+			<!-- when the entrance to a line is blocked all of the soldiers are stopped. -->
+			<!-- once the entrance is clear then the first x soldiers will be restarted moving. x is set below -->
+			<restart-threshold>10</restart-threshold>
+			
+			<!-- when the entrance to a line is block any soldiers beyond this position in the queue will be halted. -->
+			<halt-threshold>-1</halt-threshold>
+			
+			<!-- do the soldiers have to enter in a precise order? -->
+			<precise-order>0</precise-order>
+		</ladders>
+		<siege-tower-ladders>
+			<!-- should run be the default? -->
+			<default-run>1</default-run>
+			
+			<!-- start distance for the blockout region -->
+			<entry-blockout-inner>0.0</entry-blockout-inner>
+			
+			<!-- end distance for the blockout region -->
+			<entry-blockout-outer>16.0</entry-blockout-outer>
+			
+			<!-- limit on number of soldiers in the blockout region -->
+			<number-in-blockout>1</number-in-blockout>
+			
+			<!-- distance soldiers should stop at if the entrance is blocked (in metres squared) -->
+			<stand-off-distance>25.0</stand-off-distance>
+			
+			<!-- distance within which soldiers will step onto the line (in metres squared) -->
+			<step-on-distance>4.0</step-on-distance>
+			
+			<!-- queue length limit before movement will be stopped (in number of soldiers -->
+			<maximum-queue-length>10</maximum-queue-length>
+			
+			<!-- distance soldiers should stop at if the queue is too long (in metres squared) -->
+			<long-queue-stand-off-distance>64.0</long-queue-stand-off-distance>
+			
+			<!-- when the entrance to a line is blocked all of the soldiers are stopped. -->
+			<!-- once the entrance is clear then the first x soldiers will be restarted moving. x is set below -->
+			<restart-threshold>10</restart-threshold>
+			
+			<!-- when the entrance to a line is block any soldiers beyond this position in the queue will be halted. -->
+			<halt-threshold>-1</halt-threshold>
+			
+			<!-- do the soldiers have to enter in a precise order? -->
+			<precise-order>0</precise-order>
+		</siege-tower-ladders>
+		<corridors>
+			<!-- should run be the default? -->
+			<default-run>0</default-run>
+			
+			<!-- start distance for the blockout region -->
+			<entry-blockout-inner>0.0</entry-blockout-inner>
+			
+			<!-- end distance for the blockout region -->
+			<entry-blockout-outer>16.0</entry-blockout-outer>
+			
+			<!-- limit on number of soldiers in the blockout region -->
+			<number-in-blockout>10</number-in-blockout>
+			
+			<!-- distance soldiers should stop at if the entrance is blocked (in metres squared) -->
+			<stand-off-distance>25.0</stand-off-distance>
+			
+			<!-- distance within which soldiers will step onto the line (in metres squared) -->
+			<step-on-distance>9.0</step-on-distance>
+			
+			<!-- queue length limit before movement will be stopped (in number of soldiers -->
+			<maximum-queue-length>50</maximum-queue-length>
+			
+			<!-- distance soldiers should stop at if the queue is too long (in metres squared) -->
+			<long-queue-stand-off-distance>225.0</long-queue-stand-off-distance>
+			
+			<!-- when the entrance to a line is blocked all of the soldiers are stopped. -->
+			<!-- once the entrance is clear then the first x soldiers will be restarted moving. x is set below -->
+			<restart-threshold>15</restart-threshold>
+			
+			<!-- when the entrance to a line is block any soldiers beyond this position in the queue will be halted. -->
+			<halt-threshold>10</halt-threshold>
+			
+			<!-- do the soldiers have to enter in a precise order? -->
+			<precise-order>0</precise-order>
+		</corridors>
+	</movement>
+	<audio-triggers>
+	<!-- minimum time in seconds between warnings for each unit that it is idle and under fire from missiles -->
+	<min-time-between-attacked-idle-warnings>120.0</min-time-between-attacked-idle-warnings>
+	</audio-triggers>
+</config>

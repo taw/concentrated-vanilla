@@ -1,0 +1,48 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Units collision bank
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d priority 180 fadein 0 fadeout .5
+DEFAULT: minpitch .8 maxpitch 1.1 probability 1
+DEFAULT: distancepriority -2 randomdelay .25 effect_level .5
+
+BANK: unit_collide
+
+	unit infantry heavy, spearmen
+	event lod 1 volume -15 probability .6 mindist 2
+		folder data/sounds/SFX/Group/Collide
+		metal_collide_01
+		metal_collide_02
+		metal_collide_03
+		metal_collide_04
+		metal_collide_05
+		metal_collide_06
+		metal_collide_07
+		end
+		
+	event lod 4 mindist 10 volume -5 distancepriority 0
+		folder data/sounds/SFX/Group/Collide
+		army_collide_01
+		army_collide_02
+		end
+
+	
+	unit cavalry heavy
+	event lod 1 volume -15 probability .5 mindist 2
+		folder data/sounds/SFX/Group/Collide
+		metal_collide_01
+		metal_collide_02
+		metal_collide_03
+		metal_collide_04
+		metal_collide_05
+		metal_collide_06
+		metal_collide_07
+		end
+		
+	event lod 4 mindist 10 volume -5 distancepriority 0
+		folder data/sounds/SFX/Group/Collide
+		army_collide_01
+		army_collide_02
+		end

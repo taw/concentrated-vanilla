@@ -1,0 +1,76 @@
+;
+;	This file contains the item model linkages; it gets parsed on application
+;	startup but is not otherwise referred to. The data format is thus:
+;
+;	;						indicates a comment ;-)
+;
+;	type					indicates a new model type, must be followed by id name string (phrase)
+;	model_rigid				indicates a new model in the lod series, must be followed by file name with path and lod
+;								range in m (no range supplied means maximum range - last mode including sprite)
+;
+;								all mesh model lods must be supplied in order, smallest distance (highest detail) first
+;
+
+; spot items
+include di_spot_items.txt
+
+include di_slot_fillers.txt
+
+include di_wooden_walls.txt
+include di_walls_roman.txt
+include di_walls_greek.txt
+include di_walls_eastern.txt
+include di_walls_egyptian.txt
+include di_walls_barbarian.txt
+
+include di_nicks_roman_buildings.txt
+include di_nicks_egyptian_buildings.txt
+include di_nicks_greek_buildings.txt
+include di_nicks_eastern_buildings.txt
+
+include di_barbarian_buildings.txt
+
+include di_foliage.txt
+
+include di_kevins_buildings.txt
+include di_bens_buildings.txt
+include di_andrews_buildings.txt
+include di_pauls_buildings.txt
+include di_johns_buildings.txt
+include di_joss_buildings.txt
+
+include di_roads.txt
+
+include di_animals.txt
+
+include di_gates.txt
+
+include di_ambient.txt
+
+
+type			scale_soldier
+lod
+max_distance	200
+model_rigid		scale_soldier_high.cas
+
+
+type			rubble_20x20
+lod
+max_distance	2000
+model_rigid		rubble.cas
+
+
+type			construction_site_48x32
+lod
+max_distance	4000
+model_rigid		construction_48x32_high.CAS
+
+type			construction_site_112x64
+lod
+max_distance	4000
+model_rigid		construction_112x64_high.CAS
+
+type			construction_site_160x128
+lod
+max_distance	4000
+model_rigid		construction_160x128_high.CAS

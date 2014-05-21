@@ -1,0 +1,45 @@
+ 
+Primary banner:
+- if there is general, uses general version
+- uses primary faction version otherwise
+- single 512x512 texture contains all primary versions and a general version
+ 
+Experience banner (mini banner):
+- 4 variants, randomly selected per mini banner instance
+- all on 512x512 texture
+ 
+For rendering purposes, primary and experience texture will reside on single 1024x512 texture allowing us to use single render call to render main and all mini banners.
+ 
+Secondary banner: (can be only one per unit in the following order of preference)
+- royal (if there is a king)
+- unit specific
+- holy (jihad, crusader)
+ 
+All of these secondary banner options use separate texture (whatever size) as only one of them can be used at a time.
+Secondary banner (if unit has one) will be rendered using separate render call.
+ 
+Multiplayer:
+in order to enable different flags for the same faction, we'll have:
+- 3 generic flag variations for ally
+- 4 generic flag variations for enemies
+This means variations of primary and experience banner textures only, none for secondary banner textures.
+ 
+ 
+Banner_DB_New (xml file)
+ 
+* FactionBanner entries, store:
+   - Mesh used for main banner
+   - Mesh used for general banner (used instead of main banner if unit has a general)
+   - Mesh used for mini banner
+   - Array of per faction textures - in addition to normal factions, we will use virtual faction names "allyX" and "enemyY", where X is 1,2 or 3 and Y is 1,2,3 or 4 - this will allow us to specify multiplayer variations
+ 
+* GlobalBanner entries, store:
+   -  per faction information: mesh and texture. This will not use virtual faction names as FactionBanners as miltiplayer version will just use normal faction textures.
+ 
+In addition to data to which UnitDB links to (see bellow), this database will store information about Royal Banners stored in GlobalBanner entry type. No database links to it and it's looked up in case king is part of a unit.
+ 
+Unit_DB
+Unit_DB will use following references to Banner_DB_New:
+- Faction banner (pointing to FactionBanner type) - specifies main and mini banner details
+- Unit Specific banner (pointing to GlobalBanner type)
+- Holy banner (points to GlobalBanner type) - either jidah or crusader banner

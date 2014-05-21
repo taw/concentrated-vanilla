@@ -1,0 +1,1241 @@
+;
+;	descr_water_types.txt
+;	---------------------
+;
+;	Defines the water surface and depth effects for the sea and rivers. The records are
+;	organised by:
+;
+;		water_type		- <sea, river>
+;		climate_type	- as listed in descr_landscape_ground_types.txt
+;		season_type		- <summer, winter>
+;
+;	The game will request the appropriate record based upon the settings of the current battle.
+;	A fully described record is shown in "sea default", with each of the record entries commented
+;	regarding their use and acceptable input bounds.
+;
+;	The records also support inheritance by defining a "parent" record. This is illustrated in
+;	the "sea test_climate summer" record, which has "sea default" as a parent. Any entries in the
+;	record not specified in "sea test_climate summer" will take their values from "sea default".
+;	Subsequently, unnecessary repetition may be avoided by linking to a parent and specifying
+;	only the relevent changes. This is done in "sea test_climate summer" which substitutes the
+;	textures for surface layers 0 and 1.
+;
+
+;**************************************************************************************************
+;*                                           DEFAULT                                              *
+;**************************************************************************************************
+
+sea default
+{
+	surface
+	{
+		layer 0
+		{
+			type				specular
+			texture				battlefield/water/water_bump.texture
+			texture_shader1			battlefield/water/test/oceantest_shader1.texture
+			scale				20.0	20.0
+			offset				0.0		0.0
+			rotation			0.0
+			scroll_speed		0.26
+			scroll_direction	0.0
+			wave_strength		25.0				; <meters>
+		}
+
+		layer 1
+		{
+			type				specular
+			texture				battlefield/water/water_bump.texture
+			texture_shader1			battlefield/water/test/oceantest_shader1.texture
+			scale				50.0	50.0
+			offset				0.0		0.0
+			rotation			2.0
+			scroll_speed		0.35
+			scroll_direction	180.0
+			wave_strength		50.0				; <meters>
+		}
+
+		colour				61 59 47				; <r g b>
+		min_alpha			0.9
+		max_alpha			1.0
+		max_depth			4.0
+		max_fresnel_alpha		1.0					; angle never makes more transparent then this
+		depth_alpha_fade_start		50.0					; fades depth part of transparency with distance - start of the range
+		depth_alpha_fade_end		200.0					; fades depth part of transparency with distance - end of the range
+		tint_amount			0.5					; amount of colour applied
+	}
+
+	shore
+	{
+		min_dist			50.0
+		max_dist			250.0
+		normal_factor		0.1
+
+		;											BREADTH
+		;											=======
+		;
+		;							wide		medium		narrow		verry_narrow
+		;						+---------------------------------------------------+
+		;			long		|	X			X			.			.			|
+		;	LENGTH	medium		|	X			X			X			.			|
+		;	======	short		|	.			X			X			X			|
+		;			very_short	|	.			.			X			X			|
+		;						+----------------------------------------------------
+		;
+		;	NOTE: options marked with 'X' are present and valid.
+
+
+		; ************************************** long length **************************************************
+
+		segment long, wide							; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				80					; <metres>
+			breadth				80					; <metres>
+
+			max_bend			25					; <degrees>
+			max_slope			25					; <degrees>
+
+			shore_ratio			0.20				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		30.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.75,	255			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.3,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment long, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				80					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			25					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************* medium length **************************************************
+
+		segment medium, wide						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				80					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			25					; <degrees>
+
+			shore_ratio			0.20				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		30.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.75,	255			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.3,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment medium, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment medium, narrow						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************** short length **************************************************
+
+		segment short, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment short, narrow						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment short, very_narrow					; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				10					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			40					; <degrees>
+
+			shore_ratio			0.05				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		7.0					; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>>
+				keyframe		0.8,	255			; <progress>, <alpha>
+				keyframe		1.0,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************** very_short length *********************************************
+
+		segment very_short, narrow					; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				10					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			135					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment very_short, very_narrow				; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				10					; <metres>
+			breadth				10					; <metres>
+
+			max_bend			170					; <degrees>
+			max_slope			40					; <degrees>
+
+			shore_ratio			0.05				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		7.0					; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.8,	255			; <progress>, <alpha>
+				keyframe		1.0,	0			; <progress>, <alpha>
+			}
+		}
+
+	}
+}
+
+;--------------------------------------------------------------------------------------------------
+
+river default
+{
+	surface
+	{
+		layer 0
+		{
+			type				specular
+			texture				battlefield/water/water_bump.texture
+			texture_shader1			battlefield/water/test/oceantest_shader1.texture
+			scale				20.0	20.0
+			offset				0.0		0.0
+			rotation			0.0
+			scroll_speed		0.26
+			scroll_direction	-60.0
+			wave_strength		25.0				; <meters>
+		}
+
+		layer 1
+		{
+			type				specular
+			texture				battlefield/water/water_bump.texture
+			texture_shader1			battlefield/water/test/oceantest_shader1.texture
+			scale				50.0	50.0
+			offset				0.0		0.0
+			rotation			2.0
+			scroll_speed		0.35
+			scroll_direction	-90.0
+			wave_strength		50.0				; <meters>
+		}
+
+		colour				44 40 30				; <r g b>
+		min_alpha			0.8
+		max_alpha			1.0
+		max_depth			4.0
+		max_fresnel_alpha		1.0					; angle never makes more transparent then this
+		depth_alpha_fade_start		50.0					; fades depth part of transparency with distance - start of the range
+		depth_alpha_fade_end		200.0					; fades depth part of transparency with distance - end of the range
+		tint_amount			0.6					; amount of colour applied
+	}
+
+	shore
+	{
+		min_dist			50.0
+		max_dist			250.0
+		normal_factor		0.1
+	}
+}
+
+;--------------------------------------------------------------------------------------------------
+
+package default
+{
+	surface
+	{
+		layer 0
+		{
+			type				specular
+			texture				battlefield/water/water_bump.texture
+			texture_shader1			battlefield/water/test/oceantest_shader1.texture
+			scale				20.0	20.0
+			offset				0.0		0.0
+			rotation			0.0
+			scroll_speed		0.26
+			scroll_direction	0.0
+			wave_strength		25.0				; <meters>
+		}
+
+		layer 1
+		{
+			type				specular
+			texture				battlefield/water/water_bump.texture
+			texture_shader1			battlefield/water/test/oceantest_shader1.texture
+			scale				50.0	50.0
+			offset				0.0		0.0
+			rotation			2.0
+			scroll_speed		0.35
+			scroll_direction	180.0
+			wave_strength		50.0				; <meters>
+		}
+
+		colour				61 59 47				; <r g b>
+		min_alpha			0.9
+		max_alpha			1.0
+		max_depth			4.0
+		max_fresnel_alpha		1.0					; angle never makes more transparent then this
+		depth_alpha_fade_start		50.0					; fades depth part of transparency with distance - start of the range
+		depth_alpha_fade_end		200.0					; fades depth part of transparency with distance - end of the range
+		tint_amount			0.5					; amount of colour applied
+	}
+
+	shore
+	{
+		min_dist			50.0
+		max_dist			250.0
+		normal_factor		0.1
+
+		;											BREADTH
+		;											=======
+		;
+		;							wide		medium		narrow		verry_narrow
+		;						+---------------------------------------------------+
+		;			long		|	X			X			.			.			|
+		;	LENGTH	medium		|	X			X			X			.			|
+		;	======	short		|	.			X			X			X			|
+		;			very_short	|	.			.			X			X			|
+		;						+----------------------------------------------------
+		;
+		;	NOTE: options marked with 'X' are present and valid.
+
+
+		; ************************************** long length **************************************************
+
+		segment long, wide							; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				80					; <metres>
+			breadth				80					; <metres>
+
+			max_bend			25					; <degrees>
+			max_slope			25					; <degrees>
+
+			shore_ratio			0.20				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		30.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.75,	255			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.3,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment long, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				80					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			25					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************* medium length **************************************************
+
+		segment medium, wide						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				80					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			25					; <degrees>
+
+			shore_ratio			0.20				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		3					;
+				cycle_time		30.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.75,	255			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.3,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment medium, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment medium, narrow						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				40					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			35					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************** short length **************************************************
+
+		segment short, medium						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				40					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			30					; <degrees>
+
+			shore_ratio			0.25				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_256_128.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		20.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.95,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment short, narrow						; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment short, very_narrow					; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				20					; <metres>
+			breadth				10					; <metres>
+
+			max_bend			45					; <degrees>
+			max_slope			40					; <degrees>
+
+			shore_ratio			0.05				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		7.0					; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>>
+				keyframe		0.8,	255			; <progress>, <alpha>
+				keyframe		1.0,	0			; <progress>, <alpha>
+			}
+		}
+
+		; ************************************** very_short length *********************************************
+
+		segment very_short, narrow					; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				10					; <metres>
+			breadth				20					; <metres>
+
+			max_bend			135					; <degrees>
+			max_slope			35					; <degrees>
+
+			shore_ratio			0.15				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		10.0				; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.9,	255			; <progress>, <alpha>
+				keyframe		1.2,	0			; <progress>, <alpha>
+			}
+		}
+
+		segment very_short, very_narrow				; <long, medium, short, very_short>, <wide, medium, narrow, very_narrow>
+		{
+			length				10					; <metres>
+			breadth				10					; <metres>
+
+			max_bend			170					; <degrees>
+			max_slope			40					; <degrees>
+
+			shore_ratio			0.05				; <0.0 to 1.0>
+			wave_ratio			0.5					; <0.0 to 1.0>
+
+			texture				battlefield/water/waves/waves_128_64.texture
+			;texture			...					; <filename> - additional variant
+			;texture			...					; <filename> - additional variant
+
+			lapping
+			{
+				num_layers		2					;
+				cycle_time		7.0					; <seconds>
+				max_delay		0.0					; <seconds>
+
+				keyframe		0.0,	0			; <progress>, <alpha>
+				keyframe		0.5,	200			; <progress>, <alpha>
+				keyframe		0.8,	255			; <progress>, <alpha>
+				keyframe		1.0,	0			; <progress>, <alpha>
+			}
+		}
+
+	}
+}
+
+;**************************************************************************************************
+;*                                         TEST_CLIMATE                                           *
+;**************************************************************************************************
+
+sea mediterranean summer
+{
+	parent	sea default
+}
+
+sea mediterranean winter
+{
+	parent	sea default
+}
+
+river mediterranean summer
+{
+	parent	river default
+}
+
+river mediterranean winter
+{
+	parent	river default
+}
+
+package mediterranean summer
+{
+	parent	package default
+}
+
+package mediterranean winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                         SANDY_DESERT                                           *
+;**************************************************************************************************
+
+sea sandy_desert summer
+{
+	parent	sea default
+}
+
+sea sandy_desert winter
+{
+	parent	sea default
+}
+
+river sandy_desert summer
+{
+	parent	river default
+}
+
+river sandy_desert winter
+{
+	parent	river default
+}
+
+package sandy_desert summer
+{
+	parent	package default
+}
+
+package sandy_desert winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                         ROCKY_DESERT                                           *
+;**************************************************************************************************
+
+sea rocky_desert summer
+{
+	parent	sea default
+}
+
+sea rocky_desert winter
+{
+	parent	sea default
+}
+
+river rocky_desert summer
+{
+	parent	river default
+}
+
+river rocky_desert winter
+{
+	parent	river default
+}
+
+package rocky_desert summer
+{
+	parent	package default
+}
+
+package rocky_desert winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                         MEDITERRANEAN                                          *
+;**************************************************************************************************
+
+;sea mediterranean summer
+;{
+;	parent	sea default
+;}
+
+;sea mediterranean winter
+;{
+;	parent	sea default
+;}
+
+;river mediterranean summer
+;{
+;	parent	river default
+;}
+
+;river mediterranean winter
+;{
+;	parent	river default
+;}
+
+;**************************************************************************************************
+;*                                   TEMPERATE_GRASSLAND_FERTILE                                  *
+;**************************************************************************************************
+
+sea unused1 summer
+{
+	parent	sea default
+}
+
+sea unused1 winter
+{
+	parent	sea default
+}
+
+river unused1 summer
+{
+	parent	river default
+}
+
+river unused1 winter
+{
+	parent	river default
+}
+
+package unused1 summer
+{
+	parent	package default
+}
+
+package unused1 winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                  TEMPERATE_GRASSLAND_INFERTILE                                 *
+;**************************************************************************************************
+
+sea steppe summer
+{
+	parent	sea default
+}
+
+sea steppe winter
+{
+	parent	sea default
+}
+
+river steppe summer
+{
+	parent	river default
+}
+
+river steppe winter
+{
+	parent	river default
+}
+
+package steppe summer
+{
+	parent	package default
+}
+
+package steppe winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                      TEMPERATE_FOREST_OPEN                                     *
+;**************************************************************************************************
+
+sea temperate_deciduous_forest summer
+{
+	parent	sea default
+}
+
+sea temperate_deciduous_forest winter
+{
+	parent	sea default
+}
+
+river temperate_deciduous_forest summer
+{
+	parent	river default
+}
+
+river temperate_deciduous_forest winter
+{
+	parent	river default
+}
+
+package temperate_deciduous_forest summer
+{
+	parent	package default
+}
+
+package temperate_deciduous_forest winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                      TEMPERATE_FOREST_DEEP                                     *
+;**************************************************************************************************
+
+sea temperate_coniferous_forest summer
+{
+	parent	sea default
+}
+
+sea temperate_coniferous_forest winter
+{
+	parent	sea default
+}
+
+river temperate_coniferous_forest summer
+{
+	parent	river default
+}
+
+river temperate_coniferous_forest winter
+{
+	parent	river default
+}
+
+package temperate_coniferous_forest summer
+{
+	parent	package default
+}
+
+package temperate_coniferous_forest winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                             SWAMP                                              *
+;**************************************************************************************************
+
+sea unused2 summer
+{
+	parent	sea default
+}
+
+sea unused2 winter
+{
+	parent	sea default
+}
+
+river unused2 summer
+{
+	parent	river default
+}
+
+river unused2 winter
+{
+	parent	river default
+}
+
+package unused2 summer
+{
+	parent	package default
+}
+
+package unused2 winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                            HIGHLAND                                            *
+;**************************************************************************************************
+
+sea highland summer
+{
+	parent	sea default
+}
+
+sea highland winter
+{
+	parent	sea default
+}
+
+river highland summer
+{
+	parent	river default
+}
+
+river highland winter
+{
+	parent	river default
+}
+
+package highland summer
+{
+	parent	package default
+}
+
+package highland winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                             ALPINE                                             *
+;**************************************************************************************************
+
+sea alpine summer
+{
+	parent	sea default
+}
+
+sea alpine winter
+{
+	parent	sea default
+}
+
+river alpine summer
+{
+	parent	river default
+}
+
+river alpine winter
+{
+	parent	river default
+}
+
+package alpine summer
+{
+	parent	package default
+}
+
+package alpine winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                            SUB_ARTIC                                           *
+;**************************************************************************************************
+
+sea tropical summer
+{
+	parent	sea default
+}
+
+sea tropical winter
+{
+	parent	sea default
+}
+
+river tropical summer
+{
+	parent	river default
+}
+
+river tropical winter
+{
+	parent	river default
+}
+
+package tropical summer
+{
+	parent	package default
+}
+
+package tropical winter
+{
+	parent	package default
+}
+
+;**************************************************************************************************
+;*                                            VOLCANIC                                            *
+;**************************************************************************************************
+
+;sea volcanic summer
+;{
+;	parent	sea default
+;}
+
+;sea volcanic winter
+;{
+;	parent	sea default
+;}
+
+;river volcanic summer
+;{
+;	parent	river default
+;}
+
+;river volcanic winter
+;{
+;	parent	river default
+;}
+
+;**************************************************************************************************
+;*                                            SEMI_ARID                                           *
+;**************************************************************************************************
+
+sea semi_arid summer
+{
+	parent	sea default
+}
+
+sea semi_arid winter
+{
+	parent	sea default
+}
+
+river semi_arid summer
+{
+	parent	river default
+}
+
+river semi_arid winter
+{
+	parent	river default
+}
+
+package semi_arid summer
+{
+	parent	package default
+}
+
+package semi_arid winter
+{
+	parent	package default
+}
+

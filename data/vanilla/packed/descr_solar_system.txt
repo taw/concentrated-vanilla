@@ -1,0 +1,89 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; solar system bodies and other cosmic entities
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+body sun
+{
+	body earth
+	{
+		body moon
+		{
+		}
+	}
+}
+
+distant
+{
+					;bearing	elevation
+	global_offset	90			22
+
+	stars 
+	{
+		; bearing	elevation	size	colour
+		
+		; pole star
+		0			0			1.0
+		
+		; ursa minor - the little bear (includes the pole star)
+		219			16			0.5
+		225			19			0.5
+		231			12			0.4
+		241			15			0.4
+		250			8			0.4
+		270			5			0.4
+
+		; ursa major - the great bear (the plough or, more recently, the saucepan)
+		163			28			0.8
+		163			34			0.8
+		175			34			0.8
+		180			32			0.6
+		191			33			0.8
+		200			34			0.8
+		203			40			0.8
+		
+		; cassiopeia 
+		0			31			0.8
+		6			35			0.8
+		12			30			0.8
+		20			31			0.6
+		22			28			0.6
+		
+		; draco
+		208			27			0.5
+		225			31			0.8
+		241			28			0.5
+		257			25			0.5
+		261			38			0.6
+		261			34			0.4
+		267			38			0.7
+		267			33			0.5
+		276			18			0.5
+		288			24			0.4
+		289			27			0.5
+		
+		; pegasus
+		343			76			0.7
+		344			62			0.8
+		0			62			0.8
+		1			75			0.8
+		7			56			0.6
+		14			53			0.7
+		25			47			0.6
+
+		; orion	- the hunter
+									
+
+					;number		bearing range	elevation range		size range
+		random		500			0	360			0	120				0.1	0.3	
+	}
+
+	nebula
+	{
+	}
+
+	galaxies
+	{
+	}
+}

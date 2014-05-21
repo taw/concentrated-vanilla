@@ -1,0 +1,402 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Water interaction definition file.
+;; ----------------------------------
+;;
+;;
+;; effect_set < lod > name
+;; lod - optional, if not present then effect_set it used for all lod's.
+;;
+;; !warning! -  the lod specification must have a space following the opening angle bracket
+;;              in between each lod and before the closing angle bracket.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+version 1.0
+
+; Small trails left if soldier is in ankle deep water
+effect soldier_foot_water_trail 
+{
+		type decal
+		{
+				start_size [ 0.2 0.5 ]
+				end_size   [ 0.4 0.6 ]
+				anim_time  2.0
+
+				colour_lookup
+				{
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.4		164 255 255 255	
+					keyframe		0.6		164 255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+		
+				texture data/battlefield/water/ripple_01.tga ;; pink.tga ; trail_01.tga 
+		}
+}
+
+; Aimated water trail if soldier is waist deep in water.
+effect soldier_water_trail 
+{
+		type decal
+		{
+				start_size  	1.4
+				end_size    	1.4
+				anim_time   	0.25
+				delay_time		0.125 ; Will halts the colour cycle animtion until the state is set to expire.
+
+				colour_lookup
+				{				
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.4		164  255 255 255	
+					keyframe		0.6		164  255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+		
+				texture data/battlefield/water/trail.tga ;trail.tga
+
+				tex_anim
+				{
+					speed 	1.0
+					frame	0.0 0.0 1.0 0.5
+					frame	0.0 0.5 1.0 0.5
+				}
+		}
+}
+
+; Simple non animated water trails for soldiers.
+effect soldier_water_trail_simple
+{
+		type decal
+		{
+				start_size 1.4 
+				end_size   1.4
+				anim_time  0.25
+				delay_time 0.125
+
+				colour_lookup
+				{
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.4		164 255 255 255	
+					keyframe		0.6		164 255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+		
+				texture data/battlefield/water/trail_01.tga 
+		}
+}
+
+;; Animated water trail for horses and camels.
+effect horse_water_trail 
+{
+		type decal
+		{
+				start_size  	2.4
+				end_size    	2.4
+				anim_time   	0.5
+				delay_time		0.25 ; Will halts the colour cycle animtion until the state is set to expire.
+
+				colour_lookup
+				{				
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.4		164  255 255 255	
+					keyframe		0.6		164  255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+		
+				texture data/battlefield/water/trail.tga ; trail.tga
+
+				tex_anim
+				{
+					speed 	1.0
+					frame	0.0 0.0 1.0 0.5
+					frame	0.0 0.5 1.0 0.5
+				}
+		}
+}
+
+;; Simple non animated water trail for horses and camels.
+effect horse_water_trail_simple
+{
+		type decal
+		{
+				start_size 2.4 
+				end_size   2.4
+				anim_time  0.25
+				delay_time 0.125
+
+				colour_lookup
+				{
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.4		164 255 255 255	
+					keyframe		0.6		164 255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+		
+				texture data/battlefield/water/trail_01.tga 
+		}
+}
+ 
+effect elephant_water_trail 
+{
+		;; type water_trail_effect
+		;; {
+		;;     depth 
+		type decal
+		{
+				start_size  	3.4
+				end_size    	3.4
+				anim_time   	0.5
+				delay_time		0.25 ; Will halts the colour cycle animtion until the state is set to expire.
+
+				colour_lookup
+				{				
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.4		164  255 255 255	
+					keyframe		0.6		164  255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+		
+				texture data/battlefield/water/trail.tga ;trail.tga
+
+				tex_anim
+				{
+					speed 	1.0
+					frame	0.0 0.0 1.0 0.5
+					frame	0.0 0.5 1.0 0.5
+				}
+		}
+
+		;; type sub
+}
+
+effect chariot_water_trail 
+{
+		;; type water_trail_effect
+		;; {
+		;;     depth 
+		type decal
+		{
+				start_size  	3.4
+				end_size    	3.4
+				anim_time   	0.5
+				delay_time		0.25 ; Will halts the colour cycle animtion until the state is set to expire.
+
+				colour_lookup
+				{				
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.4		164  255 255 255	
+					keyframe		0.6		164  255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+		
+				texture data/battlefield/water/trail.tga ;trail.tga
+
+				tex_anim
+				{
+					speed 	1.0
+					frame	0.0 0.0 1.0 0.5
+					frame	0.0 0.5 1.0 0.5
+				}
+		}
+
+		;; type sub
+}
+
+; Ripple effect when arrow hts water
+effect arrow_ripple ; <effect_name>
+{
+	   type		decal			; <decal | ribbon | particle> 
+	   {
+				start_size		[ 0.2 0.5 ]		; <meters>
+				end_size		[ 0.6 1.0 ]		; <meters>
+				anim_time		[ 1.0 2.0 ]		; <seconds>
+				
+				colour_lookup
+				{
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.5		255 255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+
+				texture			data/battlefield/water/ripple_01.tga
+	   }			   
+}
+
+; Ripple effect when arrow hts water
+effect arrow_ripple ; <effect_name>
+{
+	   type		decal			; <decal | ribbon | particle> 
+	   {
+				start_size		[ 0.2 0.5 ]		; <meters>
+				end_size		[ 0.6 1.0 ]		; <meters>
+				anim_time		[ 1.0 2.0 ]		; <seconds>
+				
+				colour_lookup
+				{
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.5		255 255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+
+				texture			data/battlefield/water/ripple_01.tga
+	   }			   
+}
+
+effect footstep_ripple
+{
+	   type		decal			; <decal | ribbon | particle> 
+	   {
+				start_size		[ 0.2 0.5 ]		; <meters>
+				end_size		[ 0.6 1.0 ]		; <meters>
+				anim_time		[ 0.5 1.5 ]		; <seconds>
+				
+				colour_lookup
+				{
+					keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+					keyframe		0.5		44  255 255 255	
+					keyframe		1.0		0   255 255 255
+				}
+
+				texture			data/battlefield/water/ripple_01.tga
+	   }			   
+}
+
+effect_set < 0 1 2 3 > default_water_set ; < lods > name
+{
+	lod 100   ; max distance from the camera to use this effect in meters.
+	{
+		arrow_ripple
+;		default_spray
+	}
+	
+	lod 300
+	{
+		arrow_ripple
+	}
+}
+
+effect_set < 4 > default_water_set
+{
+	lod 100
+	{
+;		default_ripple
+	}
+}
+
+effect_set seige_engine_effect_set
+{
+	lod 200
+	{
+;		default_spray
+	}
+}
+
+effect_set water_footsteps
+{
+	lod 50
+	{
+		footstep_ripple 
+	}
+}
+
+effect_set soldier_water_trail
+{
+	lod 50
+	{
+		soldier_water_trail
+	}
+	lod
+	{
+		soldier_water_trail_simple
+	}
+}
+
+effect_set horse_water_trail 
+{
+	lod 50
+	{
+		horse_water_trail
+	}
+	lod 100
+	{
+		horse_water_trail_simple
+	}
+}
+
+effect_set chariot_water_trail 
+{
+	lod 50
+	{
+		chariot_water_trail
+	}
+}
+
+effect_set camel_water_trail 
+{
+	lod 50
+	{
+		horse_water_trail
+	}
+
+	lod 100
+	{
+		horse_water_trail_simple
+	}
+}
+
+
+; Placeholder water splash.
+;; effect default_spray
+;; {
+;;   	type particle
+;;  	{				
+;; 		max_systems     10  ; <maximum number of systems of this type to run concurrently>
+
+;; 		modifier texture_emitter
+;; 		{
+;; 			emitter
+;; 			{
+;; 				max_particles	20  ; <maximum number of particles>
+;; 				spawn_rate		10	; <particles per second>
+;; 				lifetime    	2.0	; <seconds>
+;; 				velocity		2.5	; <m/s>
+
+;; 				start_size [ 0.1 0.2 ]
+;; 				end_size   [ 0.3 0.5 ]
+;; 			}
+
+;; 			width		0.5 	; <meters>
+;; 			height 		0.5		; <meters>
+	
+;; 			texture		data/battlefield/water/ripple_01.tga
+;; 		}
+	
+;; 		modifier colour_lookup
+;; 		{
+;; 			op				set
+;; 			input			elapsed_time
+			
+;; 			colour_lookup
+;; 			{
+;; 				keyframe		0.0		0   255 255 255	; <0.0 to 1.0> <a r g b>
+;; 				keyframe		0.5		128 255 255 255	
+;; 				keyframe		1.0		0   255 255 255
+;; 			}
+;; 		}
+
+;; 		modifier apply_force
+;; 		{
+;; 			acceleration	(0, -9.81, 0)  ; <m/s^2> gravity
+;; 		}
+
+;; 		modifier linear_growth
+;; 		{
+;; 			input			elapsed_time
+;; 			start_size		0.25
+;; 			end_size		0.5 
+;; 		}
+
+;; 		modifier static_texture
+;; 		{
+;; 			texture data/battlefield/water/ripple_01.tga
+;; 		}
+;; 	}
+;; }

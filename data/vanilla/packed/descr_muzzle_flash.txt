@@ -1,0 +1,1157 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; MUZZLE FLASHES FOR SIEGE WEAPONS AND HAND HELD GUN POWDER WEAPONS
+;
+;	please note that some of the older muzzle flash effects still reside in descr_artillery_effects
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;small muzzle flash
+
+
+effect cannon_shot_Mortar_small
+{
+	type shot
+	{
+		; main explosion
+		clr_adjust_by_ambient_intensity 
+		model 					models_effects/cannon_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.35
+		max_scale   			5
+		max_particle_scale 		3
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_flash_small
+
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.17
+		max_scale   			3
+		max_particle_scale 		17
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+;;;;;
+
+effect mortar_shot_Mortar_small
+{
+	type shot
+	{
+		; main explosion
+		clr_adjust_by_ambient_intensity 
+		model 					models_effects/mortar_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.24
+		max_scale   			3
+		max_particle_scale 		5
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect mortar_shot_Mortar_flash_small
+
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/mortar_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.17
+		max_scale   			3
+		max_particle_scale 		18
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect mortar_shot_Mortar_smoke_trail_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/mortar_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			7
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect mortar_shot_Mortar_smoke_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/mortar_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				3
+		max_scale   			4
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+;;;;;
+
+;;;;; SERPENTINE AND CULVERIN ANGLED FLASHES AND SMOKE
+
+effect culverin_shot_Mortar_small
+{
+	type shot
+	{
+		; main explosion
+		clr_adjust_by_ambient_intensity 
+		model 					models_effects/cannon_muzzle_flash_serpentine.CAS
+		sort_for_speed
+		anim_time				0.24
+		max_scale   			7
+		max_particle_scale 		4
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect culverin_shot_Mortar_flash_small
+
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_serpentine.CAS
+		sort_for_speed
+		anim_time				0.17
+		max_scale   			3
+		max_particle_scale 		18
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect culverin_shot_Mortar_smoke_trail_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke_serpentine.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			11
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect culverin_shot_Mortar_smoke_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke_serpentine.CAS
+		sort_for_speed
+		anim_time				3
+		max_scale   			4
+		max_particle_scale 		7
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+;;;;;
+
+
+effect cannon_shot_Mortar_smoke_trail_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			15
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_smoke_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				3
+		max_scale   			4
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_linger_small
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust.CAS
+		sort_for_speed
+		anim_time				30
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			0.7
+		alpha_time_bias			0.93
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+
+effect_set cannon_shot_small_muzzle_flash_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Mortar_smoke_small
+		cannon_shot_Mortar_smoke_trail_small
+		cannon_shot_Mortar_flash_small
+		cannon_shot_Mortar_small
+		cannon_shot_Mortar_smoke_linger_small
+	}
+}
+
+effect_set mortar_shot_small_muzzle_flash_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		mortar_shot_Mortar_smoke_small
+		mortar_shot_Mortar_smoke_trail_small
+		mortar_shot_Mortar_flash_small
+		mortar_shot_Mortar_small
+		cannon_shot_Mortar_smoke_linger_small
+	}
+}
+
+effect_set culverin_shot_small_muzzle_flash_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		culverin_shot_Mortar_smoke_small
+		culverin_shot_Mortar_smoke_trail_small
+		culverin_shot_Mortar_flash_small
+		culverin_shot_Mortar_small
+		cannon_shot_Mortar_smoke_linger_small
+	}
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;medium muzzle flash
+
+
+effect cannon_shot_Mortar_medium
+{
+	type shot
+	{
+		; main explosion
+		clr_adjust_by_ambient_intensity 
+		model 					models_effects/cannon_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.35
+		max_scale   			7
+		max_particle_scale 		3
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_flash_medium
+
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.17
+		max_scale   			4
+		max_particle_scale 		18
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_trail_medium
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			19
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_smoke_medium
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				3
+		max_scale   			4
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_linger_medium
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust.CAS
+		sort_for_speed
+		anim_time				30
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			0.7
+		alpha_time_bias			0.93
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+
+effect_set cannon_shot_medium_muzzle_flash_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Mortar_smoke_medium
+		cannon_shot_Mortar_smoke_trail_medium
+		cannon_shot_Mortar_flash_medium
+		cannon_shot_Mortar_medium
+		cannon_shot_Mortar_smoke_linger_medium
+	}
+}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;large muzzle flash
+
+
+effect cannon_shot_Mortar_large
+{
+	type shot
+	{
+		; main explosion
+		clr_adjust_by_ambient_intensity 
+		model 					models_effects/cannon_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.35
+		max_scale   			9
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_flash_large
+
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.17
+		max_scale   			4
+		max_particle_scale 		21
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_trail_large
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				9
+		max_scale   			21
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_smoke_large
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				4
+		max_scale   			5
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_linger_large
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust.CAS
+		sort_for_speed
+		anim_time				30
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			0.7
+		alpha_time_bias			0.93
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+
+effect_set cannon_shot_large_muzzle_flash_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Mortar_smoke_large
+		cannon_shot_Mortar_smoke_trail_large
+		cannon_shot_Mortar_flash_large
+		cannon_shot_Mortar_large
+		cannon_shot_Mortar_smoke_linger_large
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;large muzzle huge
+
+
+effect cannon_shot_Mortar_huge
+{
+	type shot
+	{
+		; main explosion
+		clr_adjust_by_ambient_intensity 
+		model 					models_effects/cannon_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.35
+		max_scale   			14
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_flash_huge
+
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash.CAS
+		sort_for_speed
+		anim_time				0.19
+		max_scale   			7
+		max_particle_scale 		25
+		scale_time_bias			0.7
+		alpha_time_bias			0.9
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_trail_huge
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke_dark.CAS
+		sort_for_speed
+		anim_time				5
+		max_scale   			24
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_smoke_huge
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke_dark.CAS
+		sort_for_speed
+		anim_time				3
+		max_scale   			7
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_linger_huge
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust_dark.CAS
+		sort_for_speed
+		anim_time				35
+		max_scale   			15
+		max_particle_scale 		5
+		scale_time_bias			0.7
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_linger_huge_01
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust_dark.CAS
+		sort_for_speed
+		anim_time				11
+		max_scale   			11
+		max_particle_scale 		7
+		scale_time_bias			0.7
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+
+effect_set cannon_shot_huge_muzzle_flash_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Mortar_smoke_huge
+		cannon_shot_Mortar_smoke_trail_huge
+		cannon_shot_Mortar_flash_huge
+		cannon_shot_Mortar_huge
+		cannon_shot_Mortar_smoke_linger_huge
+		cannon_shot_Mortar_smoke_linger_huge_01
+	}
+}
+
+;	DARK SMOKE VARIANTS
+
+effect cannon_shot_Mortar_smoke_trail_small_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			15
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_smoke_small_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke.CAS
+		sort_for_speed
+		anim_time				3
+		max_scale   			4
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_linger_small_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust.CAS
+		sort_for_speed
+		anim_time				30
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			0.7
+		alpha_time_bias			0.93
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_trail_medium_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke_dark.CAS
+		sort_for_speed
+		anim_time				7
+		max_scale   			19
+		max_particle_scale 		1
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_smoke_medium_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke_dark.CAS
+		sort_for_speed
+		anim_time				3
+		max_scale   			4
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_linger_medium_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust_dark.CAS
+		sort_for_speed
+		anim_time				30
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			0.7
+		alpha_time_bias			0.93
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_trail_large_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke_dark.CAS
+		sort_for_speed
+		anim_time				9
+		max_scale   			21
+		max_particle_scale 		2
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+
+effect cannon_shot_Mortar_smoke_large_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/cannon_muzzle_flash_smoke_dark.CAS
+		sort_for_speed
+		anim_time				4
+		max_scale   			5
+		max_particle_scale 		11
+		scale_time_bias			0.9
+		alpha_time_bias			0.95
+
+		; debris
+        debris_model             models_effects/debris.cas
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        50               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       0.2, 0.5
+	}
+}
+
+effect cannon_shot_Mortar_smoke_linger_large_dark
+{
+	type shot
+	{
+		; main explosion
+				clr_adjust_by_ambient_intensity 
+
+		model 					models_effects/muzzle_flash_dust_dark.CAS
+		sort_for_speed
+		anim_time				30
+		max_scale   			11
+		max_particle_scale 		3
+		scale_time_bias			0.7
+		alpha_time_bias			0.93
+
+		; debris
+        debris_model             models_effects/debris_fire.CAS
+        debris_num_particles     0
+        debris_lifetime_range    0.05, 0.06
+        debris_emit_angle        90               ; degrees
+        debris_time_bias         0.97
+        debris_velocity_range    6.5, 8.5
+        debris_scale_range       1.2, 1.5
+	}
+}
+
+effect_set cannon_shot_large_muzzle_flash_dark_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Mortar_smoke_large_dark
+		cannon_shot_Mortar_smoke_trail_large_dark
+		cannon_shot_Mortar_flash_large
+		cannon_shot_Mortar_large
+		cannon_shot_Mortar_smoke_linger_large_dark
+	}
+}
+
+effect_set cannon_shot_medium_muzzle_flash_dark_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Mortar_smoke_medium_dark
+		cannon_shot_Mortar_smoke_trail_medium_dark
+		cannon_shot_Mortar_flash_medium
+		cannon_shot_Mortar_medium
+		cannon_shot_Mortar_smoke_linger_medium_dark
+	}
+}
+
+effect_set cannon_shot_small_muzzle_flash_dark_set
+{
+	play_time 0.01
+	lod 1000
+	{
+		cannon_shot_Mortar_smoke_small_dark
+		cannon_shot_Mortar_smoke_trail_small_dark
+		cannon_shot_Mortar_flash_small
+		cannon_shot_Mortar_small
+		cannon_shot_Mortar_smoke_linger_small_dark
+	}
+}

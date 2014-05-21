@@ -1,0 +1,703 @@
+;; S = Select
+;; NA = Not Allowed
+;; NM = Move not allowed (may be same as NA)
+;; Mov = Move
+;; Mov+ = Move cursor + number of turns needed to arrive
+;; Ig = Ignore the item and treat as an empty square
+;; Mer = Merge (Will always bring up merge screen)
+;; Mer* = Automerge if allowed, otherwise Merge
+;; Em = Embark (Will always bring up embarkation screen)
+;; Em * = AutoEmbark if allowed, otherwise Embark)
+;; G = Garrison (Will always bring up merge screen)
+;; G* = AutoGerrison if allowed, otherwise Garrison)
+;; A = Attack
+;; Talk = Begin diplomatic negotiation
+;; Talk / Bribe Choice between talk and bribe is bribe is allowed. Otherwise just talk
+;; Spy = Perform a spying mission
+;; Inf = Infiltrate the settlement
+;; Ass = Assassinate one of the characters in the square 
+;; Ass / NA = Assassinate one of the characters in the square. Not allowed if no characters in square
+;; Mission = Perform one of a range of missions that are allowed to either the spy, assassin or diplomat
+;; SetRP = Set rally_point point
+;; SetRP* = Set one or more rally_point points
+;; Disem / NM = If the target square is a costal one, and the admiral can reach an adjacent square, and has something to disembark, then show the disembark cursor, otherwise NM
+
+;; Valid items for 'over' flag and 'selected' flag: 	nothing, army, admiral, diplomat, spy, assassin, family, settlement, fort, rally_point
+;; Valid alignments: own, enemy, neutral
+
+;; The default is nothing selected, in which case when over own pieces, show S, and when over enemy or allied, show Na
+
+selected nothing
+{
+	over own
+	{
+		default S S
+		land	Ig
+		sea		Ig
+	}
+	over enemy
+	{
+		default Na Na
+	}
+	over allied
+	{
+		default Na Na
+	}
+}
+
+selected army
+{
+	over own
+	{
+		land						Mov Mov
+		sea							Na Na
+		army						S (Mer*) Mer* (Mer)
+		admiral						S (Em*) Em* (Em)
+		diplomat					S S
+		spy							S S
+		assassin					S S
+		family						S (Mer*) Mer* (Mer)
+		settlement					S (G*) G* (G)
+		fort						S (G*) G* (G)
+		rally_point					S Mov
+		garrisoned_settlement		S (Mer*) Mer* (Mer)
+		garrisoned_fort				S (Mer*) Mer* (Mer)
+		garrisoned_ship				S (Em*) Em* (Em)
+		sieged_settlement			S (Na) S (Na)
+		sieged_fort					S (Na) S (Na)
+	}
+	over enemy
+	{
+		army						A (A) A (A)
+		admiral						Na
+		diplomat					A (A) A (A)
+		spy							A (A) A (A)
+		assassin					A (A) A (A)
+		family						A (A) A (A)
+		settlement					A (A) A (A)
+		fort						A (A) A (A)
+		rally_point					Ig
+		garrisoned_settlement		A (A) A (A)
+		garrisoned_fort				A (A) A (A)
+		garrisoned_ship				Na
+		sieged_settlement			A (A) A (A)
+		sieged_fort					A (A) A (A)
+	}
+	over allied
+	{
+		army						A (A) A (A)
+		admiral						Na
+		diplomat					A (A) A (A)
+		spy							A (A) A (A)
+		assassin					A (A) A (A)
+		family						A (A) A (A)
+		settlement					A (A) A (A)
+		fort						A (A) A (A)
+		rally_point					Ig
+		garrisoned_settlement		A (A) A (A)
+		garrisoned_fort				A (A) A (A)
+		garrisoned_ship				Na
+		sieged_settlement			A (A) A (A)
+		sieged_fort					A (A) A (A)
+	}
+}
+
+selected admiral
+{
+	over own
+	{
+		land						Na  Na
+		sea							Mov Mov
+		army						S Na 
+		admiral						S (Mer*) Mer* (Mer)
+		diplomat					S Ig
+		spy							S Ig
+		assassin					S Ig
+		family						S Ig
+		settlement					S Ig
+		fort						S Ig
+		rally_point					S Mov
+		garrisoned_settlement		S Ig
+		garrisoned_fort				S Ig
+		garrisoned_ship				S (Mer*) Mer* (Mer)
+		sieged_settlement			S Ig
+		sieged_fort					S Ig
+		port						Mov
+	}
+	over enemy
+	{
+		army						Na
+		admiral						A (A) A (A)
+		diplomat					Na
+		spy							Na
+		assassin					Na
+		family						Na
+		settlement					Na
+		fort						Na
+		rally_point					Na
+		garrisoned_settlement		Na
+		garrisoned_fort				Na
+		garrisoned_ship				A (A) A (A)
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						A (A) A (A)
+	}
+	over allied
+	{
+		army						Na
+		admiral						A (A) A (A)
+		diplomat					Na
+		spy							Na
+		assassin					Na
+		family						Na
+		settlement					Na
+		fort						Na
+		rally_point					Na
+		garrisoned_settlement		Na
+		garrisoned_fort				Na
+		garrisoned_ship				A (A) A (A)
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						A (A) A (A)
+	}
+}
+
+selected garrisoned_ship
+{
+	over own
+	{
+		land						Disem Disem
+		sea							Mov Mov
+		army						S (Mer*) Mer* (Mer)
+		admiral						S (Mer*) Mer* (Mer)
+		diplomat					S Ig
+		spy							S Ig
+		assassin					S Ig
+		family						S Ig
+		settlement					S (Disem) Disem (Disem)
+		fort						S (Mer*) Mer* (Mer)
+		rally_point					S Mov
+		garrisoned_settlement		S (Mer*) Mer* (Mer)
+		garrisoned_fort				S (Mer*) Mer* (Mer)
+		garrisoned_ship				S (Mer*) Mer* (Mer)
+		sieged_settlement			S Ig
+		sieged_fort					S Ig
+	}
+	over enemy
+	{
+		army						Na
+		admiral						A (A) A (A)
+		diplomat					Na
+		spy							Na
+		assassin					Na
+		family						Na
+		settlement					Na
+		fort						Na
+		rally_point					Na
+		garrisoned_settlement		Na
+		garrisoned_fort				Na
+		garrisoned_ship				A (A) A (A)
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						A (A) A (A)
+	}
+	over allied
+	{
+		army						Na
+		admiral						A (A) A (A)
+		diplomat					Na
+		spy							Na
+		assassin					Na
+		family						Na
+		settlement					Na
+		fort						Na
+		rally_point					Na
+		garrisoned_settlement		Na
+		garrisoned_fort				Na
+		garrisoned_ship				A (A) A (A)
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						A (A) A (A)
+	}
+}
+
+selected diplomat
+{
+	over own
+	{
+		land						Mov Mov
+		sea							Na Na
+		army						S (Mer*) Mer* (Mer)
+		admiral						S (Em*) Em* (Em)
+		diplomat					S Na
+		spy							S Na
+		assassin					S Na
+		family						S Na
+		settlement					S (G*) G* (G)
+		fort						S (G*) G* (G)
+		rally_point					S Mov
+		garrisoned_settlement		S (G*) G* (G)
+		garrisoned_fort				S (G*) G* (G)
+		garrisoned_ship				S (Em*) Em* (Em)
+		sieged_settlement			S Na
+		sieged_fort					S Na
+	}
+	over enemy
+	{
+		army						TB	Na
+		admiral						Na
+		diplomat					T	Na
+		spy							Na
+		assassin					Na
+		family						T	Na
+		settlement					T	Na
+		fort						T	Na
+		rally_point					Mov
+		garrisoned_settlement		TB	Na
+		garrisoned_fort				TB	Na
+		garrisoned_ship				Na	
+		sieged_settlement			Na
+		sieged_fort					Na
+	}
+	over allied
+	{
+		army						TB	Na
+		admiral						Na
+		diplomat					T	Na
+		spy							Na
+		assassin					Na
+		family						T	Na
+		settlement					T   Na
+		fort						T	Na
+		rally_point					Mov
+		garrisoned_settlement		TB	Na
+		garrisoned_fort				TB	Na
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+	}
+}
+
+selected spy
+{
+	over own
+	{
+		land						Mov Mov
+		sea							Na Na
+		army						S (Mer*) Mer* (Mer)
+		admiral						S (Em*) Em* (Em)
+		diplomat					S Ig
+		spy							S Ig
+		assassin					S Ig
+		family						S Ig
+		settlement					S (G*) G* (G)
+		fort						S (G*) G* (G)
+		rally_point					S Mov
+		garrisoned_settlement		S (G*) G* (G)
+		garrisoned_fort				S (G*) G* (G)
+		garrisoned_ship				S (Em*) Em* (Em)
+		sieged_settlement			S Na
+		sieged_fort					S Na
+	}
+	over enemy
+	{
+		default Mission Na
+		
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov Mov
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						Na
+	}
+	over allied
+	{
+		default Mission Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov Mov
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						Na
+	}
+}
+
+selected assassin
+{
+	over own
+	{
+		land						Mov Mov
+		sea							Na Na
+		army						S (Mer*) Mer* (Mer)
+		admiral						S (Em*) Em* (Em)
+		diplomat					S Ig
+		spy							S Ig
+		assassin					S Ig
+		family						S Ig
+		settlement					S (G*) G* (G)
+		fort						S (G*) G* (G)
+		rally_point					S Mov
+		garrisoned_settlement		S (G*) G* (G)
+		garrisoned_fort				S (G*) G* (G)
+		garrisoned_ship				S (Em*) Em* (Em)
+		sieged_settlement			S Na
+		sieged_fort					S Na
+	}
+	over enemy
+	{
+		default Mission Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						Na
+	}
+	over allied
+	{
+		default Mission	Na
+	
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						Na
+	}
+}
+
+selected family
+{
+	over own
+	{
+		land						Mov Mov
+		sea							Na Na
+		army						S (Mer*) Mer* (Mer)
+		admiral						S (Em*) Em* (Em)
+		diplomat					S Ig
+		spy							S Ig
+		assassin					S Ig
+		family						S Ig
+		settlement					S (G*) G* (G)
+		fort						S (G*) G* (G)
+		rally_point					S Mov
+		garrisoned_settlement		S (G*) G* (G)
+		garrisoned_fort				S (G*) G* (G)
+		garrisoned_ship				S (Em*) Em* (Em)
+		sieged_settlement			S Na
+		sieged_fort					S Na
+	}
+	over enemy
+	{
+		default Mission Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						Na
+	}
+	over allied
+	{
+		default Mission Na
+
+		land						Mov Mov
+		sea							Mov Mov
+		rally_point					Mov
+		garrisoned_ship				Na
+		sieged_settlement			Na
+		sieged_fort					Na
+		port						Na
+	}
+}
+
+selected settlement
+{
+	over own
+	{
+		land						Ig (SetRp) SetRp
+		sea							Ig (SetRp) SetRp
+		army						S  (SetRp) SetRp
+		admiral						S  (SetRp) SetRp
+		diplomat					S  (SetRp) SetRp
+		spy							S  (SetRp) SetRp
+		assassin					S  (SetRp) SetRp
+		family						S  (SetRp) SetRp
+		settlement					S S
+		fort						S S
+		rally_point					S S
+		garrisoned_settlement		S S
+		garrisoned_fort				S S
+		garrisoned_ship				S S
+		sieged_settlement			S S
+		sieged_fort					S S
+	}
+	over enemy
+	{
+		default Na
+	}
+	over allied
+	{
+		default Na
+	}
+}
+
+selected garrisoned_settlement
+{
+	over own
+	{
+		land						Ig (SetRp) SetRp
+		sea							Ig (SetRp) SetRp
+		army						S  (SetRp) SetRp
+		admiral						S  (SetRp) SetRp
+		diplomat					S  (SetRp) SetRp
+		spy							S  (SetRp) SetRp
+		assassin					S  (SetRp) SetRp
+		family						S  (SetRp) SetRp
+		settlement					S S
+		fort						S S
+		rally_point					S S
+		garrisoned_settlement		S S
+		garrisoned_fort				S S
+		garrisoned_ship				S S
+		sieged_settlement			S S
+		sieged_fort					S S
+	}
+	over enemy
+	{
+		army						A (A) A (A)
+		admiral						Na
+		diplomat					A (A) A (A)
+		spy							A (A) A (A)
+		assassin					A (A) A (A)
+		family						A (A) A (A)
+		settlement					A (A) A (A)
+		fort						A (A) A (A)
+		rally_point					Ig
+		garrisoned_settlement		A (A) A (A)
+		garrisoned_fort				A (A) A (A)
+		garrisoned_ship				Na
+		sieged_settlement			A (A) A (A)
+		sieged_fort					A (A) A (A)
+	}
+	over allied
+	{
+		army						A (A) A (A)
+		admiral						Na
+		diplomat					A (A) A (A)
+		spy							A (A) A (A)
+		assassin					A (A) A (A)
+		family						A (A) A (A)
+		settlement					A (A) A (A)
+		fort						A (A) A (A)
+		rally_point					Ig
+		garrisoned_settlement		A (A) A (A)
+		garrisoned_fort				A (A) A (A)
+		garrisoned_ship				Na
+		sieged_settlement			A (A) A (A)
+		sieged_fort					A (A) A (A)
+	}
+}
+
+selected sieged_settlement
+{
+	over own
+	{
+		land						Ig (SetRp) SetRp
+		sea							Ig (SetRp) SetRp
+		army						S  (SetRp) SetRp
+		admiral						S  (SetRp) SetRp
+		diplomat					S  (SetRp) SetRp
+		spy							S  (SetRp) SetRp
+		assassin					S  (SetRp) SetRp
+		family						S  (SetRp) SetRp
+		settlement					S S
+		fort						S S
+		rally_point					S S
+		garrisoned_settlement		S S
+		garrisoned_fort				S S
+		garrisoned_ship				S S
+		sieged_settlement			S S
+		sieged_fort					S S
+	}
+	over enemy
+	{
+		army						A (A) A (A)
+		admiral						Na
+		diplomat					A (A) A (A)
+		spy							A (A) A (A)
+		assassin					A (A) A (A)
+		family						A (A) A (A)
+		settlement					A (A) A (A)
+		fort						A (A) A (A)
+		rally_point					Ig
+		garrisoned_settlement		A (A) A (A)
+		garrisoned_fort				A (A) A (A)
+		garrisoned_ship				Na
+		sieged_settlement			A (A) A (A)
+		sieged_fort					A (A) A (A)
+	}
+	over allied
+	{
+		army						A (A) A (A)
+		admiral						Na
+		diplomat					A (A) A (A)
+		spy							A (A) A (A)
+		assassin					A (A) A (A)
+		family						A (A) A (A)
+		settlement					A (A) A (A)
+		fort						A (A) A (A)
+		rally_point					Ig
+		garrisoned_settlement		A (A) A (A)
+		garrisoned_fort				A (A) A (A)
+		garrisoned_ship				Na
+		sieged_settlement			A (A) A (A)
+		sieged_fort					A (A) A (A)
+	}
+}
+
+selected fort
+{
+	over own
+	{
+		land						Ig Ig
+		sea							Ig Ig
+		army						S SetRp
+		admiral						S SetRp
+		diplomat					S SetRp
+		spy							S SetRp
+		assassin					S SetRp
+		family						S SetRp
+		settlement					S S
+		fort						S S
+		rally_point					S S
+		garrisoned_settlement		S S
+		garrisoned_fort				S S
+		garrisoned_ship				S S
+		sieged_settlement			S S
+		sieged_fort					S S
+	}
+	over enemy
+	{
+		default Na
+	}
+	over allied
+	{
+		default Na
+	}
+}
+
+selected garrisoned_fort
+{
+	over own
+	{
+		land						Ig Ig
+		sea							Ig Ig
+		army						S SetRp
+		admiral						S SetRp
+		diplomat					S SetRp
+		spy							S SetRp
+		assassin					S SetRp
+		family						S SetRp
+		settlement					S S
+		fort						S S
+		rally_point					S S
+		garrisoned_settlement		S S
+		garrisoned_fort				S S
+		garrisoned_ship				S S
+		sieged_settlement			S S
+		sieged_fort					S S
+	}
+	over enemy
+	{
+		army						A (A) A (A)
+		admiral						Na
+		diplomat					A (A) A (A)
+		spy							A (A) A (A)
+		assassin					A (A) A (A)
+		family						A (A) A (A)
+		settlement					A (A) A (A)
+		fort						A (A) A (A)
+		rally_point					Ig
+		garrisoned_settlement		A (A) A (A)
+		garrisoned_fort				A (A) A (A)
+		garrisoned_ship				Na
+		sieged_settlement			A (A) A (A)
+		sieged_fort					A (A) A (A)
+	}
+	over allied
+	{
+		army						A (A) A (A)
+		admiral						Na
+		diplomat					A (A) A (A)
+		spy							A (A) A (A)
+		assassin					A (A) A (A)
+		family						A (A) A (A)
+		settlement					A (A) A (A)
+		fort						A (A) A (A)
+		rally_point					Ig
+		garrisoned_settlement		A (A) A (A)
+		garrisoned_fort				A (A) A (A)
+		garrisoned_ship				Na
+		sieged_settlement			A (A) A (A)
+		sieged_fort					A (A) A (A)
+	}
+}
+
+selected sieged_fort
+{
+	over own
+	{
+		land						Ig Ig
+		sea							Ig Ig
+		army						S SetRp
+		admiral						S SetRp
+		diplomat					S SetRp
+		spy							S SetRp
+		assassin					S SetRp
+		family						S SetRp
+		settlement					S S
+		fort						S S
+		rally_point					S S
+		garrisoned_settlement		S S
+		garrisoned_fort				S S
+		garrisoned_ship				S S
+		sieged_settlement			S S
+		sieged_fort					S S
+	}
+	over enemy
+	{
+		default Na
+	}
+	over allied
+	{
+		default Na
+	}
+}
+
+selected rally_point
+{
+	over own
+	{
+		default		S (SetRp) SetRp (SetRp)
+		rally_point	S (SetRp) SetRp (SetRp) 
+		land		SetRp (SetRp) SetRp (SetRp)
+		sea			SetRp (SetRp) SetRp (SetRp)
+	}
+	over enemy
+	{
+		default		Na
+	}
+	over allied
+	{
+		default		Na
+	}
+}

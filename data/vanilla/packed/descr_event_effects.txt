@@ -1,0 +1,182 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;IMPACTS FOR NON-EXPLOSIVE
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect shockwave
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/shockwave.evt
+        shockwave_mass 20
+    }
+}
+
+effect small_shockwave
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/shockwave.evt
+        shockwave_mass 5
+    }
+}
+
+effect very_small_shockwave
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/shockwave.evt
+        shockwave_mass 1.2
+    }
+}
+
+
+effect torch_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/torch.evt
+    }
+}
+
+
+
+effect burning_building_sound_small
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/burning_building_sound_small.evt
+    }
+}
+
+effect burning_building_sound_medium
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/burning_building_sound_medium.evt
+    }
+}
+
+
+effect burning_building_sound_large
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/burning_building_sound_large.evt
+    }
+}
+
+
+
+effect naptha_loop
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/naptha_loop.evt
+    }
+}
+
+
+effect burning_man_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/burning_man_sound.evt
+    }
+}
+
+effect fire_flare_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/fire_flare.evt
+    }
+}
+
+effect burning_scream_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/burning_scream.evt
+    }
+}
+
+effect cannon_hit_ground_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/cannon_hit_ground_sound.evt
+    }
+}
+
+
+effect cannon_hit_ground_fiery_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/cannon_hit_ground_fiery_sound.evt
+    }
+}
+
+
+effect cow_impact_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/cow_impact.evt
+    }
+}
+
+effect cow_flys_buzzing_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/cow_flys_buzzing.evt
+    }
+}
+
+effect cow_fly_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/cow_fly.evt
+    }
+}
+
+effect incoming_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/incoming_loop.evt
+    }
+}
+
+
+effect crossbow_fly_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/crossbow_fly.evt
+    }
+}
+
+effect arrow_fly_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/arrow_fly.evt
+    }
+}
+
+
+
+effect arrow_whizz_sound
+{
+    type sound
+    {    
+        evt_file sounds/Effect_EVT/arrow_whizz_sound.evt
+    }
+}
+
+

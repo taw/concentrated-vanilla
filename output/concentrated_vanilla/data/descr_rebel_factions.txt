@@ -1,0 +1,448 @@
+;;;;;;;;;;;;		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;				
+;non region			based
+;;;;;;;;;;;;		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+					
+rebel_type			gladiator_uprising
+category			gladiator_revolt
+chance				100
+description			gladiator_uprising
+unit				Peasants
+
+;======================================================================================
+					
+rebel_type			brigands
+category			brigands
+chance				50
+description			brigands
+unit				Peasants
+					
+rebel_type			pirates
+category			pirates
+chance				50
+description			pirates
+unit				pirate ship		
+
+;;;;;;;;;;;;		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;				
+;region			based
+;;;;;;;;;;;;		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+					
+		
+rebel_type			Livonian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Livonian_Rebels
+unit				Woodsmen
+unit				EE Peasant Archers
+unit				Lithuanian Archers
+unit				Viking Raiders
+unit				Lithuanian Cavalry
+
+rebel_type			Bohemian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Bohemian_Rebels
+unit				Feudal Knights
+unit				EE Peasant Archers
+unit				EE Peasants
+unit				Sergeant Spearmen
+unit				Armored Sergeants
+unit				Crossbow Militia
+unit				Hussites
+unit				Hussites
+
+rebel_type			Bulgarian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Bulgarian_Rebels
+unit				Bulgarian Brigands
+unit				Bulgarian Brigands
+unit				Slav Levies
+unit				Slav Levies
+unit				Magyar Cavalry
+unit				Feudal Knights
+unit				E Chivalric Knights
+
+rebel_type			Wallachian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Wallachian_Rebels
+unit				Bulgarian Brigands
+unit				Slav Levies
+unit				Slav Levies
+unit				Magyar Cavalry
+unit				Feudal Knights
+unit				E Chivalric Knights
+unit				Transilvanian Peasants
+unit				Transilvanian Peasants
+
+rebel_type			Greek_Rebels
+category			peasant_revolt 
+chance				3					
+description			Greek_Rebels
+unit				SE Town Militia
+unit				SE Spear Militia
+unit				S Archer Militia
+unit				S Archer Militia
+unit				Skythikon
+unit				Byzantine Cavalry
+unit				Byzantine Lancers
+unit				Byzantine Spearmen
+
+rebel_type			Native_Rebels
+category			peasant_revolt 
+chance				3					
+description			Native_Rebels
+unit				Native Warriors
+unit				Native Archers
+unit				Aztec Peasants
+
+rebel_type			Croatian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Croatian_Rebels
+unit				Croat Axemen
+unit				Croat Axemen
+unit				Peasant Archers
+unit				Peasant Crossbowmen
+unit				Pavise Crossbowmen
+unit				Mailed Knights
+unit				Feudal Knights
+
+rebel_type			Anatolian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Anatolian_Rebels
+unit				SE Town Militia
+unit				SE Town Militia
+unit				SE Spear Militia
+unit				S Archer Militia
+unit				Skythikon
+unit				Byzantine Cavalry
+unit				Byzantine Lancers
+unit				Byzantine Spearmen
+unit				Trebizond Archers
+unit				Southern Peasants
+unit				Turkomans
+
+rebel_type			English_Rebels
+category			peasant_revolt 
+chance				3					
+description			English_Rebels
+unit				Peasants
+unit				Levy Spearmen
+unit				Armored Swordsmen
+unit				Longbowmen
+unit				Longbowmen
+unit				Mailed Knights
+unit				English Knights
+unit				Town Militia
+unit				Spear Militia
+unit				Archer Militia
+
+rebel_type			French_Rebels
+category			peasant_revolt 
+chance				3					
+description			French_Rebels
+unit				Peasant Archers
+unit				Peasant Crossbowmen
+unit				Crossbowmen
+unit				Peasants
+unit				Sergeant Spearmen
+unit				Sergeant Spearmen
+unit				Armored Sergeants
+unit				Feudal Knights
+unit				Chivalric Knights
+unit				Town Militia
+unit				Spear Militia
+unit				Crossbow Militia
+
+rebel_type			Magyar_Rebels
+category			peasant_revolt 
+chance				3					
+description			Magyar_Rebels
+unit				EE Peasants
+unit				Slav Levies
+unit				Croat Axemen
+unit				Magyar Cavalry
+unit				Magyar Cavalry
+unit				Magyar Cavalry
+unit				Feudal Knights
+unit				E Chivalric Knights
+unit				Crossbowmen
+
+rebel_type			Iberian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Iberian_Rebels
+unit				ME Peasants
+unit				ME Town Militia
+unit				ME Spear Militia
+unit				ME Peasant Crossbowmen
+unit				ME Peasant Crossbowmen
+unit				Desert Cavalry
+unit				Arab Cavalry
+unit				Granadine Jinetes
+unit				Desert Archers
+
+rebel_type			Irish_Rebels
+category			peasant_revolt 
+chance				3					
+description			Irish_Rebels
+unit				Peasants
+unit				Levy Spearmen
+unit				Armored Swordsmen
+unit				Hobilars
+unit				Irish Kerns
+unit				Irish Kerns
+unit				Galloglaich
+
+rebel_type			Rus_Rebels
+category			peasant_revolt 
+chance				3					
+description			Rus_Rebels
+unit				Kazaks
+unit				Kazaks
+unit				Boyar Sons
+unit				EE Archer Militia
+unit				EE Spear Militia
+unit				EE Crossbow Militia
+unit				Woodsmen
+
+rebel_type			Mexican_Rebels
+category			peasant_revolt 
+chance				3					
+description			Mexican_Rebels
+unit				Aztec Peasants
+unit				Aztec Spearmen
+unit				Aztec Archers
+unit				Aztec Spear Throwers
+unit				Aztec Warriors
+unit				Aztec Warriors
+unit				Jaguar Warriors
+
+rebel_type			Norse_Rebels
+category			peasant_revolt 
+chance				3					
+description			Norse_Rebels
+unit				Crossbowmen
+unit				Peasant Archers
+unit				Viking Raiders
+unit				Viking Raiders
+unit				Viking Raiders
+unit				Huscarls
+unit				Feudal Knights
+unit				Norse Swordsmen
+
+rebel_type			Polish_Rebels
+category			peasant_revolt 
+chance				3					
+description			Polish_Rebels
+unit				EE Peasant Archers
+unit				Lithuanian Archers
+unit				EE Peasants
+unit				EE Spear Militia
+unit				Woodsmen
+unit				Polish Shooters
+unit				Polish Nobles
+unit				Polish Knights
+
+rebel_type			Saharan_Rebels
+category			peasant_revolt 
+chance				3					
+description			Saharan_Rebels
+unit				Desert Archers
+unit				Sudanese Javelinmen
+unit				Sudanese Tribesmen
+unit				Tuareg Camel Spearmens
+unit				Nubian Spearmen
+unit				Nubian Archers
+
+rebel_type			Scots_Rebels
+category			peasant_revolt 
+chance				3					
+description			Scots_Rebels
+unit				Highland Archers
+unit				Highland Rabble
+unit				Highlanders
+unit				Feudal Knights
+unit				Town Militia
+unit				Archer Militia
+unit				Scots Pike Militia
+unit				Scots Pike Militia
+unit				Galloglaich
+unit				Border Horse
+
+rebel_type			Seljuk_Rebels
+category			peasant_revolt 
+chance				3					
+description			Seljuk_Rebels
+unit				ME Peasants
+unit				ME Town Militia
+unit				ME Spear Militia
+unit				Saracen Militia
+unit				Arab Cavalry
+unit				Turkish Archers
+unit				Turkomans
+unit				Turkomans
+unit				Turkomans
+
+rebel_type			Island_Rebels
+category			peasant_revolt 
+chance				3					
+description			Island_Rebels
+unit				S Peasant Archers
+unit				Southern Peasants
+unit				Sergeant Spearmen
+unit				Armored Sergeants
+unit				Mailed Knights
+unit				Norman Knights
+unit				Italian Militia
+unit				Italian Spear Militia
+unit				Pavise Crossbow Militia
+unit				Sicilian Muslim Archers
+
+rebel_type			Spanish_Rebels
+category			peasant_revolt 
+chance				3					
+description			Spanish_Rebels
+unit				Peasants
+unit				Javelinmen
+unit				Peasant Archers
+unit				Crossbow Militia
+unit				Spear Militia
+unit				Mailed Knights
+unit				Chivalric Knights
+unit				Town Militia
+unit				Jinetes
+unit				Jinetes
+
+rebel_type			Steppe_Rebels
+category			peasant_revolt 
+chance				3					
+description			Steppe_Rebels
+unit				Turkomans
+unit				Turkomans
+unit				ME Peasant Archers
+
+rebel_type			Swiss_Rebels
+category			peasant_revolt 
+chance				3					
+description			Swiss_Rebels
+unit				Feudal Knights
+unit				Crossbow Militia
+unit				Swiss Pikemen
+unit				Swiss Pikemen
+unit				Swiss Pikemen
+unit				Swiss Pikemen
+unit				Halberd Militia
+
+rebel_type			Welsh_Rebels
+category			peasant_revolt 
+chance				3					
+description			Welsh_Rebels
+unit				Peasants
+unit				Welsh Longbowmen
+unit				Welsh Longbowmen
+unit				Welsh Spearmen
+unit				Welsh Spearmen
+unit				Armored Swordsmen
+unit				Mailed Knights
+
+rebel_type			Fatimid_Rebels
+category			peasant_revolt 
+chance				3					
+description			Fatimid_Rebels
+unit				ME Peasants
+unit				ME Town Militia
+unit				Nubian Spearmen
+unit				Arab Cavalry
+unit				Mamluks
+unit				Desert Archers
+unit				Mamluk Archers
+
+rebel_type			Flemish_Rebels
+category			peasant_revolt 
+chance				3					
+description			Flemish_Rebels
+unit				Flemish Pikemen
+unit				Flemish Pikemen
+unit				Flemish Pikemen
+unit				Feudal Knights
+unit				Crossbowmen
+unit				Armored Sergeants
+
+rebel_type			Italian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Italian_Rebels
+unit				Mailed Knights
+unit				Feudal Knights
+unit				Italian MAA
+unit				Peasant Archers
+unit				Peasant Crossbowmen
+unit				Peasants
+unit				Sergeant Spearmen
+unit				Armored Sergeants
+unit				Italian Militia
+unit				Italian Militia
+unit				Italian Spear Militia
+unit				Italian Spear Militia
+unit				Pavise Crossbow Militia
+
+rebel_type			Arab_Rebels
+category			peasant_revolt 
+chance				3					
+description			Arab_Rebels
+unit				ME Peasants
+unit				ME Town Militia
+unit				ME Spear Militia
+unit				Saracen Militia
+unit				Arab Cavalry
+unit				Mamluks
+unit				Mamluk Archers
+unit				Desert Cavalry
+unit				Bedouin Cavalry
+unit				Bedouin Camel Riders
+
+rebel_type			German_Rebels
+category			peasant_revolt 
+chance				3					
+description			German_Rebels
+unit				Mailed Knights
+unit				Feudal Knights
+unit				Imperial Knights
+unit				Armored Sergeants
+unit				Town Militia
+unit				Spear Militia
+unit				Spear Militia
+unit				Crossbow Militia
+unit				Crossbow Militia
+unit				Peasants
+unit				Halberd Militia
+			
+rebel_type			Burgundian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Burgundian_Rebels
+unit				Crossbowmen
+unit				Peasants
+unit				Sergeant Spearmen
+unit				Feudal Knights
+unit				Chivalric Knights
+unit				Town Militia
+unit				Spear Militia
+unit				Crossbow Militia
+unit				Flemish Pikemen
+unit				Swiss Pikemen
+
+rebel_type			Armenian_Rebels
+category			peasant_revolt 
+chance				3					
+description			Armenian_Rebels
+unit				Armenian Archers
+unit				Armenian Archers
+unit				Armenian Cavalry
+unit				SE Spear Militia
+unit				Southern Peasants
+
+					

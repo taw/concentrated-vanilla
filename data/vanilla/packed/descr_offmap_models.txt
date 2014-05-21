@@ -1,0 +1,512 @@
+navy
+{
+	faction venice
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction sicily
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction milan
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction papal_states
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction denmark
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction egypt
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction scotland
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction aztecs
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction mongols
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction turks
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction france
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction hre
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction england
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction saxons
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction normans
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+	
+	faction portugal
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction poland
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction byzantium
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction moors
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction russia
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction spain
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction hungary
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction slave
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+
+	faction timurids
+	{
+		large 	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		medium	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+		small	data/models_off_map/bireme_OFF_MAP.CAS	100 0
+	}
+}
+
+settlement
+{
+	culture southern_european
+	{        
+		level village		    
+        {
+            data/models_building/offmap_village_dummy.cas	        200         0
+        }
+
+		level town		    
+        {
+            data/models_building/offmap_town_roman.cas	        200         0
+		}
+
+		level large_town	    
+        {
+            data/models_building/offmap_town_roman.cas	        200         0
+        }
+
+		level city		    
+        {
+            data/models_building/offmap_city_roman.cas 	        200         0
+        }
+
+		level large_city		
+        {
+            data/models_building/offmap_city_roman.cas 	        200         0
+        }
+
+		level huge_city		
+        {
+            data/models_building/offmap_city_roman.cas	        200         0
+        }
+	}
+
+	culture northern_european
+	{
+		level village		    
+        {
+            data/models_building/offmap_village_dummy.cas	        200         0
+        }
+
+		level town		    
+        {
+            data/models_building/offmap_town_barb.cas	        200         0
+        }
+
+		level large_town	    
+        {
+            data/models_building/offmap_town_barb.cas	        200         0
+        }
+
+		level city		    
+        {
+            data/models_building/offmap_town_barb.cas 	        200         0
+        }
+
+		level large_city		
+        {
+            data/models_building/offmap_town_barb.cas	        200         0
+        }
+
+		level huge_city		
+        {
+            data/models_building/offmap_town_barb.cas	        200         0
+        }
+	}
+
+	culture mesoamerican
+	{
+		level village		    
+        {
+            data/models_building/offmap_village_dummy.cas	        200         0
+        }
+
+		level town		    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level large_town	    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level city		    
+        {
+            data/models_building/offmap_city_east.cas 	        200         0
+        }
+
+		level large_city		
+        {
+            data/models_building/offmap_city_east.cas  	        200         0
+        }
+
+		level huge_city		
+        {
+            data/models_building/offmap_city_east.cas 	        200         0
+        }
+	}
+
+	culture greek
+	{
+		level village		    
+        {
+            data/models_building/offmap_village_dummy.cas	    200         0
+        }
+
+		level town		    
+        {
+            data/models_building/offmap_town_roman.cas	        200         0
+        }
+
+		level large_town	    
+        {
+            data/models_building/offmap_town_roman.cas	        200         0
+        }
+
+		level city		    
+        {
+            data/models_building/offmap_city_roman.cas 	        200         0
+        }
+
+		level large_city		
+        {
+            data/models_building/offmap_city_roman.cas 	        200         0
+        }
+
+		level huge_city		
+        {
+            data/models_building/offmap_city_roman.cas	        200         0
+        }
+	}
+
+	culture eastern_european
+	{
+		level village		    
+        {
+            data/models_building/offmap_village_dummy.cas	        200         0
+        }
+
+		level town		    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level large_town	    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level city		    
+        {
+            data/models_building/offmap_city_east.cas 	        200         0
+        }
+
+		level large_city		
+        {
+            data/models_building/offmap_city_east.cas	        200         0
+        }
+
+		level huge_city		
+        {
+            data/models_building/offmap_city_east.cas	        200         0
+        }
+	}
+
+	culture middle_eastern
+	{
+		level village		    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level town		    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level large_town	    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level city		    
+        {
+            data/models_building/offmap_city_east.cas	        200         0
+        }
+
+		level large_city		
+        {
+            data/models_building/offmap_city_east.cas 	        200         0
+        }
+
+		level huge_city		
+        {
+            data/models_building/offmap_city_east.cas	        200         0
+        }
+	}
+}
+
+port
+{
+	culture southern_european
+	{        
+		level fishing_village
+		{
+			data/models_building/offmap_fishing_village_roman.CAS	        200         0
+		}
+
+		level sea_port
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
+		}
+
+		level shipwright
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
+		}
+
+		level dockyard
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
+		}
+	}
+
+	culture northern_european
+	{        
+		level fishing_village
+		{
+			data/models_building/offmap_fishing_village_barb.CAS	        200         0
+		}
+
+		level sea_port
+		{
+            data/models_building/offmap_port_barb.cas	        200         0
+		}
+
+		level shipwright
+		{
+            data/models_building/offmap_port_barb.cas	        200         0
+		}
+
+		level dockyard
+		{
+            data/models_building/offmap_port_barb.cas	        200         0
+		}
+	}
+
+	culture mesoamerican
+	{        
+		level fishing_village
+		{
+			data/models_building/offmap_fishing_village_east.CAS	        200         0
+		}
+
+		level sea_port
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+
+		level shipwright
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+
+		level dockyard
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+	}
+
+	culture greek
+	{        
+		level fishing_village
+		{
+			data/models_building/offmap_fishing_village_roman.CAS	        200         0
+		}
+
+		level sea_port
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
+		}
+
+		level shipwright
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
+		}
+
+		level dockyard
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
+		}
+	}
+
+	culture eastern_european
+	{        
+		level fishing_village
+		{
+			data/models_building/offmap_fishing_village_east.CAS	        200         0
+		}
+
+		level sea_port
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+
+		level shipwright
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+
+		level dockyard
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+	}
+
+	culture middle_eastern
+	{        
+		level fishing_village
+		{
+			data/models_building/offmap_fishing_village_east.CAS	        200         0
+		}
+
+		level sea_port
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+
+		level shipwright
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+
+		level dockyard
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+	}
+}

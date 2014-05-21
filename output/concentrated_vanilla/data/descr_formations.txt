@@ -1,0 +1,1831 @@
+;
+; "Sinuhet's Human Player Formations Mod"  by Sinuhet/Pavel Vesely
+; for MTW2 1.2, version 3.0, July 8, 2007 
+; (This file was manually modified - Sinuhet.)
+;	
+;	This file describes the unit group formation templates, any number of group formations can be specified
+;	these templates are used to give a group of units a formation, the units available  in the group may not	
+;	totally fit the template in which case a best-fit is determined when the formation is created
+;	
+;	Formation block positions can either be specified with a relative normalised (x,z) or they can be specified
+;	relative to another formation block (when specifying in this manner rotation CANNOT be given)
+;	a formation must be described entirely in one method or the other
+;
+;	Dummy blocks can be specified when positioning blocks relatively. They do not contain units but encompass other
+;	blocks, blocks can then be positioned relative to dummy blocks. When specifying multiple rows of troops each row
+;	should be encased in a dummy block and the row behind should be position relative to this. This will avoid intersecting
+;	blocks which would occur if the block that the rear row was positioned relative to had no units assigned to it.
+;							
+;	formation								the name given to this formation template
+;									
+;	BLOCK SPEC						
+;									
+;	begin_block <block_num>					begin a formation block
+;	end_block								end a formation block
+;
+;	begin_dummy_block						begin a dummy block
+;	spans <spanned blocks>					specify the blocks it will span
+;	end_dummy_block							end dummy block
+;
+;	unit_type								specifies units that can be allocated to the block
+;											either : -
+;												any
+;												general_unit
+;												<UNIT_CLASS> <UNIT_CATEGORY> <PRIORITY> if either unit class or priority is not present then the missing field can be anything
+;											the priority dictates the order of assigning different unit types
+;											a priority of zero means that type will only ever be assigned to this block
+;											to fulfill block minimums
+;	default_melee_state <OPTIONAL>			the melee state that will be assigned to units
+;											in the formation
+;	unit_formation							the formation the units within this block will be in (wedge, square, ...)
+;	unit_density							either loose or close
+;	block_formation							the formation to organise the block into	(square, column, line)
+;	normalised_pos							(x,z) position relative to the center of the template (in normalised coords)
+;	normalised_rot							rotation in degress relative to the orientation of the template															
+;	block_relative_pos						b x z (x,z) position (in metres) relative to formation block b		
+;	inter_unit_spacing						distance to space units (in metres) 
+;	priority								dictates the order in which units are assigned to the block
+
+
+;****************************************************************
+;The simplest formation. The units are lined up in a single line
+;****************************************************************
+
+begin_formation simple_line
+
+	general_order Group_Formation_Single_Line
+
+	;;; Only one slot main slot
+	begin_block						0
+		unit_type					any 1.0
+		block_formation				line
+		block_relative_pos			0 0.0 0.0
+		inter_unit_spacing			2.0
+		priority					1.0
+	end_block
+
+end_formation
+
+
+
+
+;****************************************************************
+;More historical formation for Romans with premarian units (and 
+; other factions with precursor weapons) - created by Sinuhet
+;****************************************************************
+
+
+begin_formation special_Roman_premarian_1
+
+		; Screen of skirmish infantry - velites
+		begin_block 0
+			;max_units			3
+			unit_type			skirmish infantry	1.0
+			unit_type			missile infantry	0.8
+			unit_density		close
+			block_formation		line
+			block_relative_pos	0 0.0 0.0
+			inter_unit_spacing	2.0
+			priority			0.5
+		end_block
+
+		;; First line of infantry - 1-5x hastati
+		begin_block 1
+			;min_units			1
+			;max_units			5
+			unit_type			light infantry 1.0
+			unit_density		close
+			block_formation		line
+			block_relative_pos	0 0.0 -7.0
+			inter_unit_spacing	10.0
+			priority			1.0
+		end_block
+
+		;; Second line of infantry - 1-5x princeps
+		begin_block 2
+			;min_units			1
+			;max_units			5
+			unit_type			heavy infantry 1.0
+			unit_density		close
+			block_formation		line
+			block_relative_pos	1 0.0 -10.0
+			inter_unit_spacing	10.0
+			priority			1.0
+		end_block
+
+		;; 3rd line of infantry - 1-3x triarii
+		begin_block 3
+			;min_units			1
+			;max_units			3
+			unit_type			spearmen infantry 1.0
+			block_formation		line
+			block_relative_pos	2 0.0 -10.0
+			inter_unit_spacing	2.0
+			priority			1.0
+		end_block
+
+		;; Archers behind
+		begin_block 4
+			;max_units			2
+			unit_type			ranged_missile_infantry 1.0			
+			block_formation		line
+			block_relative_pos	3 0.0 -10.0
+			inter_unit_spacing	2.0
+			priority			0.6
+		end_block
+
+		;; general at the back
+		begin_block 5
+			max_units				1
+			unit_type				general_unit			1.0
+			unit_density			close
+			block_formation			line
+			block_relative_pos		4 0.0 -5.0
+			inter_unit_spacing		3.0
+			priority				1.0
+		end_block
+
+		;; artillery and handlers at the back
+		begin_block 6
+			unit_type			handler				1.0
+			unit_type			siege				1.0
+			unit_type			any					0.01
+			block_formation		line
+			block_relative_pos	5 0.0 -30.0
+			inter_unit_spacing	2.0
+			priority			0.1
+		end_block
+
+		begin_dummy_block 7
+			spans 4 5
+		end_dummy_block
+
+		;; cavalry on the flanks and back a bit, not_general for all cavalry
+
+		;; left flank cav
+		begin_block 8
+			;max_units			1
+			not_general
+			unit_type			cavalry 1.0
+			block_formation		line
+			block_relative_pos	5 -50.0 -1.0
+			inter_unit_spacing	4.0
+			priority			0.5
+		end_block
+
+		;; right_flank cav
+		begin_block 9
+			;max_units			1
+			not_general
+			unit_type			cavalry 1.0
+			block_formation		line
+			block_relative_pos	5 50.0 -1.0
+			inter_unit_spacing	4.0
+			priority			0.5
+		end_block
+
+		;; left flank missile cav
+		begin_block 10
+			;max_units			1
+			not_general
+			unit_type			missile cavalry 1.0
+			block_formation		line
+			block_relative_pos	8 -5.0 0.0
+			inter_unit_spacing	4.0
+			priority			0.6
+		end_block
+
+		;; right_flank missile cav
+		begin_block 11
+			;max_units			1
+			not_general
+			unit_type			missile cavalry 1.0
+			block_formation		line
+			block_relative_pos	9 5.0 0.0
+			inter_unit_spacing	4.0
+			priority			0.6
+		end_block
+
+end_formation
+
+
+
+
+;*********************************************************************************
+;More historical formation for Romans with premarian units 
+;(and other factions with precursor weapons) - Single line - created by Sinuhet
+;*********************************************************************************
+
+
+begin_formation special_Roman_premarian_2
+
+		;; hastati line
+		begin_block 0
+			unit_type		light infantry 1.0
+			block_formation		line
+			block_relative_pos	0 0.0 0.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		;; princeps left side
+		begin_block 1
+			unit_type		heavy infantry 1.0
+			block_formation		line
+			block_relative_pos	0 -0.3 0.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		;; princeps right side
+		begin_block 2
+			unit_type		heavy infantry 1.0
+			block_formation		line
+			block_relative_pos	0 0.3 0.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		;; triarii left side
+		begin_block 3
+			unit_type		spearmen infantry 1.0
+			block_formation		line
+			block_relative_pos	1 -0.3 0.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		;; triarii right side
+		begin_block 4
+			unit_type		spearmen infantry 1.0
+			block_formation		line
+			block_relative_pos	2 0.3 0.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		begin_dummy_block 5
+			spans 0 1 2 3 4
+		end_dummy_block
+
+		;; missile troops behind the infantry
+
+		begin_block 6
+			unit_type			skirmish infantry	1.0
+			unit_type			missile infantry	0.8
+			block_formation		line
+			block_relative_pos	5 0.0 -10.0
+			inter_unit_spacing	2.0
+			priority			0.7
+		end_block
+
+		begin_block 7
+			unit_type			ranged_missile_infantry 1.0			
+			block_formation		line
+			block_relative_pos	6 0.0 -10.0
+			inter_unit_spacing	2.0
+			priority			0.8
+		end_block
+
+		;; general
+		begin_block 8
+			max_units				1
+			unit_type				general_unit	1.0
+			unit_density			close
+			block_formation			line
+			block_relative_pos		7 0.0 -5.0
+			inter_unit_spacing		3.0
+			priority				1.0
+		end_block
+
+		;; artillery and handler on the sides
+
+		begin_block 9
+			unit_type			handler			1.0
+			unit_type			siege			1.0
+			block_formation				line
+			block_relative_pos			8 -10.0 0.0
+			inter_unit_spacing			3.0
+			priority					0.1
+		end_block
+
+		begin_block 10
+			unit_type			handler			1.0
+			unit_type			siege			1.0
+			block_formation				line
+			block_relative_pos			8 10.0 0.0
+			inter_unit_spacing			3.0
+			priority					0.1
+		end_block
+
+		;; cavalry on the flanks
+
+		;; left flank
+		begin_block 11
+			not_general
+			unit_type			cavalry 1.0
+			block_formation		line
+			block_relative_pos	9 -5.0 0.0
+			inter_unit_spacing	4.0
+			priority			0.5
+		end_block
+
+		;; right_flank
+		begin_block 12
+			not_general
+			unit_type			cavalry 1.0
+			block_formation		line
+			block_relative_pos	10 5.0 0.0
+			inter_unit_spacing	4.0
+			priority			0.5
+		end_block
+
+		;; left flank missile cav
+		begin_block 13
+			not_general
+			unit_type			missile cavalry 1.0
+			block_formation		line
+			block_relative_pos	11 -5.0 0.0
+			inter_unit_spacing	4.0
+			priority			0.6
+		end_block
+
+		;; right_flank missile cav
+		begin_block 14
+			not_general
+			unit_type			missile cavalry 1.0
+			block_formation		line
+			block_relative_pos	12 5.0 0.0
+			inter_unit_spacing	4.0
+			priority			0.6
+		end_block
+
+		begin_dummy_block 15
+			spans 8 9 10 11 12 13 14
+		end_dummy_block
+
+		;; back line of other units
+		begin_block 16
+			unit_type			any			0.01
+			block_formation				line
+			block_relative_pos			15 0.0 -20.0
+			inter_unit_spacing			0.3
+			priority					0.01
+		end_block
+
+end_formation
+
+
+
+
+
+;****************************************************************
+; Double Line. 
+; Non missile infantry in front
+; Missile troops and general behind
+; Melee Cavalry split between wings
+;****************************************************************
+
+
+begin_formation ordered_double_line
+
+	general_order Group_Formation_Sorted_Double_Line
+
+	;; front block
+	begin_block 0
+		unit_type					heavy infantry		1.0
+		unit_type					light infantry		1.0
+		unit_type					skirmish infantry	1.0
+		unit_type					spearmen infantry	1.0
+;;		unit_type					artillery			1.0
+		block_formation				line
+		block_relative_pos			0 0.0 0.0
+		inter_unit_spacing			2.0
+		priority					1.0
+	end_block
+
+	;; rear block
+	begin_block 1
+		unit_type					general_unit		1.0
+		unit_type					missile cavalry		1.0
+		unit_type					missile infantry	1.0
+		block_formation				line
+		block_relative_pos			0 0.0 -15.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block
+
+	;; dummy block
+	begin_dummy_block 2
+		spans			0 1
+	end_dummy_block
+
+	;; right wing cavalry
+	begin_block 3
+		not_general
+		unit_type					heavy cavalry		1.0
+		unit_type					light cavalry		1.0
+		unit_type					skirmish cavalry	1.0
+		unit_type					missile cavalry		0.3	;;; put some missile cav here too if there are lots
+		unit_type					spearmen cavalry	1.0
+		block_formation				line
+		block_relative_pos			2 10.0 0.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block
+		
+	;; left wing cavalry
+	begin_block 4
+		not_general
+		unit_type					heavy cavalry		1.0
+		unit_type					light cavalry		1.0
+		unit_type					skirmish cavalry	1.0
+		unit_type					missile cavalry		0.3	;;; put some missile cav here too if there are lots
+		unit_type					spearmen cavalry	1.0
+		block_formation				line
+		block_relative_pos			2 -10.0 0.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block
+
+	;; put the artillery and handlers behind everyone
+	begin_dummy_block 5
+		spans 0 1 2 3 4
+	end_dummy_block
+
+	begin_block 6
+		unit_type					handler				1.0
+		unit_type					siege				1.0
+		block_formation				line
+		block_relative_pos			5 0.0 -15.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block
+
+end_formation
+
+
+
+
+;****************************************************************
+; Sinuhet's Triple Line. Missile troops in front, foot in second 
+; row, mounted in third row - modified by Sinuhet
+;****************************************************************
+
+begin_formation ai_triple_missiles_in_front
+
+
+    ;;; the missile units
+
+    begin_block 0
+        max_units               6
+        unit_type               missile infantry    1.0
+        unit_type               skirmish infantry   0.8
+        unit_density            close
+	min_unit_width		30
+	max_unit_width		30
+        block_formation         line
+        block_relative_pos      0 0.0 0.0
+        inter_unit_spacing      3.0
+        priority                1.0
+    end_block
+
+    begin_block 1
+        max_units               6
+        unit_type               missile infantry    1.0
+        unit_type               skirmish infantry   0.8
+        unit_density            close
+	min_unit_width		30
+	max_unit_width		30
+        block_formation         line
+        block_relative_pos      0 0.0 -2.0
+        inter_unit_spacing      3.0
+        priority                0.9
+    end_block
+
+    begin_block 2
+        max_units               4
+        unit_type               missile infantry    1.0
+        unit_type               skirmish infantry   0.8
+        unit_density            close
+	min_unit_width		30
+	max_unit_width		30
+        block_formation         line
+        block_relative_pos      1 0.0 -2.0
+        inter_unit_spacing      3.0
+        priority                0.8
+    end_block
+
+    begin_block 3
+        ;max_units               4
+        unit_type               missile infantry    1.0
+        unit_type               skirmish infantry   0.8
+        unit_density            close
+	min_unit_width		30
+	max_unit_width		30
+        block_formation         line
+        block_relative_pos      2 0.0 -2.0
+        inter_unit_spacing      3.0
+        priority                0.7
+    end_block
+
+    begin_dummy_block 4
+        spans 0 1 2 3
+    end_dummy_block
+
+
+    ;;; the infantry units
+
+    begin_block 5
+        max_units               10
+        ;unit_type               heavy infantry      1.0
+        ;unit_type               spearmen infantry   0.9
+        unit_type               light infantry      1.0
+        unit_density            close
+	min_unit_width		20
+	max_unit_width		20
+        block_formation         line
+        block_relative_pos      4 0.0 -5.0
+        inter_unit_spacing      1.0
+        priority                1.0
+    end_block
+
+    begin_block 6
+        max_units               10
+        unit_type               heavy infantry      1.0
+        ;unit_type               spearmen infantry   0.9
+        ;unit_type               light infantry      0.7
+        unit_density            close
+	min_unit_width		20
+	max_unit_width		20
+        block_formation         line
+        block_relative_pos      5 0.0 -2.5
+        inter_unit_spacing      1.0
+        priority                0.9
+    end_block
+
+    begin_block 7
+        max_units               10
+        ;unit_type               heavy infantry      1.0
+        unit_type               spearmen infantry   0.9
+        ;unit_type               light infantry      0.7
+        unit_density            close
+	min_unit_width		20
+	max_unit_width		20
+        block_formation         line
+        block_relative_pos      6 0.0 -1.5
+        inter_unit_spacing      1.0
+        priority                0.8
+    end_block
+
+    begin_block 8
+        ;max_units               10
+        unit_type               heavy infantry      1.0
+        unit_type               spearmen infantry   0.9
+        unit_type               light infantry      0.7
+        unit_density            close
+	min_unit_width		20
+	max_unit_width		20
+        block_formation         line
+        block_relative_pos      7 0.0 -1.0
+        inter_unit_spacing      1.0
+        priority                0.7
+    end_block
+
+    begin_dummy_block 9
+        spans 5 6 7 8
+    end_dummy_block
+
+    begin_dummy_block 10
+        spans 4 9
+    end_dummy_block
+
+
+    ;;; missile cavalry
+
+    begin_block 11
+        unit_type               missile cavalry 1.0
+        unit_density            close
+	min_unit_width		30
+	max_unit_width		30
+        block_formation         line
+        block_relative_pos      10 20.0 -10.0
+        inter_unit_spacing      3.0
+        priority                1.0
+    end_block
+
+    begin_block 12
+        unit_type               missile cavalry 1.0
+        unit_density            close
+	min_unit_width		30
+	max_unit_width		30
+        block_formation         line
+        block_relative_pos      10 -20.0 -10.0
+        inter_unit_spacing      3.0
+        priority                1.0
+    end_block
+
+    ;;; cavalry
+
+    begin_block 13
+        max_units               6
+        unit_type               heavy cavalry      1.0
+        unit_type               spearmen cavalry   0.9
+        unit_type               skirmish cavalry   0.8
+        unit_type               light cavalry      0.7
+        unit_density            close
+	min_unit_width		20
+	max_unit_width		20
+        block_formation         line
+        block_relative_pos      10 0.0 -2.5
+        inter_unit_spacing      3.0
+        priority                1.0
+    end_block
+
+    begin_block 14
+        max_units               6
+        unit_type               heavy cavalry      1.0
+        unit_type               spearmen cavalry   0.9
+        unit_type               skirmish cavalry   0.8
+        unit_type               light cavalry      0.7
+        unit_density            close
+	min_unit_width		20
+	max_unit_width		20
+        block_formation         line
+        block_relative_pos      13 0.0 -1.0
+        inter_unit_spacing      3.0
+        priority                0.9
+    end_block
+
+    begin_block 15
+        ;max_units               6
+        unit_type               heavy cavalry      1.0
+        unit_type               spearmen cavalry   0.9
+        unit_type               skirmish cavalry   0.8
+        unit_type               light cavalry      0.7
+        unit_density            close
+	min_unit_width		20
+	max_unit_width		20
+        block_formation         line
+        block_relative_pos      14 0.0 -1.0
+        inter_unit_spacing      3.0
+        priority                0.8
+    end_block
+
+    begin_block 16
+        ;max_units               6
+        unit_type               heavy cavalry      1.0
+        unit_type               spearmen cavalry   0.9
+        unit_type               skirmish cavalry   0.8
+        unit_type               light cavalry      0.7
+        unit_density            close
+        block_formation         line
+        block_relative_pos      15 0.0 -1.0
+        inter_unit_spacing      3.0
+        priority                0.7
+    end_block
+
+    begin_dummy_block 17
+        spans 13 14 15 16
+    end_dummy_block
+
+    begin_dummy_block 18
+        spans 10 17
+    end_dummy_block
+
+    ;; put the artillery and handlers behind everyone
+
+    begin_block 19
+        unit_type                   handler             1.0
+        unit_type                   siege               1.0
+        block_formation             line
+        block_relative_pos          18 0.0 -5.0
+        inter_unit_spacing          1.0
+        priority                    1.0
+    end_block
+
+    ;;; special general block
+    begin_block 20
+        ;min_units               1
+        max_units               1
+        unit_type               general_unit            1.0
+        unit_density            close
+        block_formation         line
+        block_relative_pos      19 0 -5.0
+        inter_unit_spacing      1.0
+        priority                1.0
+    end_block
+
+end_formation
+
+
+
+
+;****************************************************************
+; Universal Attack formation - created by Sinuhet
+;****************************************************************
+
+begin_formation open_battle
+
+
+; skirmishing missile units part
+;****************************************************************
+
+		; Screen of missile cavalry
+		begin_block 0
+			max_units			3
+			not_general
+			unit_type			missile cavalry 1.0
+			default_melee_state	fire_at_will_and_skirmish
+			block_formation		line
+			block_relative_pos	0 0.0 0.0
+			inter_unit_spacing	4.0
+			priority			1.0
+		end_block
+		
+		;; first missile units group
+		begin_block 1
+			max_units			1
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	0 0.0 -5.0
+			inter_unit_spacing	2.0
+			priority			0.56
+		end_block
+
+		;; second missile units group
+		begin_block 2
+			max_units			2
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	1 0.0 -2.0
+			inter_unit_spacing	2.0
+			priority			0.57
+		end_block
+
+		;; third missile units group
+		begin_block 3
+			max_units			1
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	2 -2.0 -2.0
+			inter_unit_spacing	2.0
+			priority			0.58
+		end_block
+
+		begin_block 4
+			max_units			1
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	2 2.0 -2.0
+			inter_unit_spacing	2.0
+			priority			0.58
+		end_block
+
+		;; 4th missile units group
+		begin_block 5
+			max_units			1
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	3 -2.0 -2.0
+			inter_unit_spacing	2.0
+			priority			0.59
+		end_block
+
+		begin_block 6
+			max_units			1
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	4 2.0 -2.0
+			inter_unit_spacing	2.0
+			priority			0.59
+		end_block
+
+		;; 5th missile units group
+		begin_block 7
+			max_units			1
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	5 -2.0 -2.0
+			inter_unit_spacing	2.0
+			priority			0.6
+		end_block
+
+		begin_block 8
+			max_units			1
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	6 2.0 -2.0
+			inter_unit_spacing	2.0
+			priority			0.6
+		end_block
+
+		begin_dummy_block 9
+			spans 1 2 3 4 5 6 7 8
+		end_dummy_block
+
+		; Row of skirmish/missile inf
+		begin_block 10
+			;max_units			5
+			unit_type			skirmish infantry	1.0
+			unit_type			chanting_screeching 0.9
+			unit_type			missile infantry	0.8
+			default_melee_state	fire_at_will_and_skirmish
+			unit_density		close
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	9 0.0 -2.0
+			inter_unit_spacing	2.0
+			priority			0.6
+		end_block
+
+		begin_dummy_block 11
+			spans 0 9 10
+		end_dummy_block
+		
+
+; cavalry units part
+;****************************************************************
+
+		;; light cav on either wing
+
+		;; left side
+		begin_block 12
+			max_units			2
+			not_general
+			unit_type		missile cavalry 	1.0
+			unit_type		elephants		1.0
+			unit_type		heavy_chariots		1.0
+			default_melee_state	fire_at_will_and_engage_at_will
+			block_formation		line
+			block_relative_pos	11 -0.1 -2.0
+			inter_unit_spacing	3.0
+			priority			1.0
+		end_block
+
+		;; right side
+		begin_block 13
+			max_units			2
+			not_general
+			unit_type		missile cavalry 	1.0
+			unit_type		elephants		1.0
+			unit_type		heavy_chariots		1.0
+			default_melee_state	fire_at_will_and_engage_at_will
+			block_formation		line
+			block_relative_pos	11 0.1 -2.0
+			inter_unit_spacing	3.0
+			priority			1.0
+		end_block
+
+		;; Missile cavalry centre
+		begin_block 14
+			max_units			6
+			not_general
+			unit_type			skirmish cavalry 1.0
+			unit_type			missile cavalry 0.8
+			default_melee_state	fire_at_will_and_engage_at_will
+			block_formation		line
+			block_relative_pos	11 0.0 -30.0
+			inter_unit_spacing	5.0
+			priority			0.5
+		end_block
+
+		begin_dummy_block 15
+			spans 11 12 13 14
+		end_dummy_block
+
+
+; heavy and light infantry before the spearmen
+;****************************************************************
+
+		;; First line of infantry
+		begin_block 16
+			unit_type			light infantry 0.6
+			default_melee_state	fire_at_will_and_engage_at_will
+			unit_density		close
+			block_formation		line
+			block_relative_pos	15 0.0 -5.0
+			inter_unit_spacing	3.0
+			priority			0.6
+		end_block
+
+		;; second line of infantry
+		begin_block 17
+			unit_type			heavy infantry 0.6
+			default_melee_state	fire_at_will_and_engage_at_will
+			unit_density		close
+			block_formation		line
+			block_relative_pos	16 0.0 -2.0
+			inter_unit_spacing	3.0
+			priority			0.6
+		end_block
+
+		;; 3rd line of infantry
+		;; heavy centre
+		begin_block 18
+			max_units			8
+			unit_type			heavy infantry 1.0
+			default_melee_state	fire_at_will_and_engage_at_will
+			unit_density		close
+			block_formation		line
+			block_relative_pos	17 0.0 -2.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		;; light left side
+		begin_block 19
+			max_units			4
+			unit_type			light infantry 1.0
+			default_melee_state	fire_at_will_and_engage_at_will
+			unit_density		close
+			block_formation		line
+			block_relative_pos	18 -0.3 0.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		;; light right side
+		begin_block 20
+			max_units			4
+			unit_type			light infantry 1.0
+			default_melee_state	fire_at_will_and_engage_at_will
+			unit_density		close
+			block_formation		line
+			block_relative_pos	18 0.3 0.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		begin_dummy_block 21
+			spans 15 16 17 18 19 20
+		end_dummy_block
+
+
+; non-phalanx spearmen part
+;****************************************************************
+
+		;; first spearmen line
+		begin_block 22
+			unit_type			non_phalanx_spear 0.2
+			unit_density		close
+			block_formation		line
+			block_relative_pos	21 0.0 -2.0
+			inter_unit_spacing	0.3
+			priority			0.2
+		end_block
+
+		;; second spearmen line
+		begin_block 23
+			max_units			7
+			unit_type			non_phalanx_spear 0.6
+			unit_density		close
+			block_formation		line
+			block_relative_pos	22 0.0 -2.0
+			inter_unit_spacing	0.3
+			priority			0.6
+		end_block
+
+		;; third spearmen line
+		begin_block 24
+			max_units			6
+			unit_type			non_phalanx_spear 1.0
+			unit_density		close
+			block_formation		line
+			block_relative_pos	23 0.0 -2.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		begin_dummy_block 25
+			spans 21 22 23 24
+		end_dummy_block
+
+
+; phalanx-spearmen part
+;****************************************************************
+
+		;; first spearmen line
+		begin_block 26
+			;max_units			10
+			unit_type			phalanx 0.6
+			default_melee_state	defend
+			unit_density		close
+			block_formation		line
+			block_relative_pos	25 0.0 -2.0
+			inter_unit_spacing	0.3
+			priority			0.6
+		end_block
+
+		;; second spearmen line
+		begin_block 27
+			max_units			10
+			unit_type			phalanx 1.0
+			default_melee_state	defend
+			unit_density		close
+			block_formation		line
+			block_relative_pos	26 0.0 -2.0
+			inter_unit_spacing	0.3
+			priority			1.0
+		end_block
+
+		begin_dummy_block 28
+			spans 25 26 27
+		end_dummy_block
+
+
+; archers behind the spearmen
+;****************************************************************
+
+		begin_block 29
+			max_units			6
+			unit_type			ranged_missile_infantry 1.0			
+			default_melee_state	fire_at_will_and_defend
+                        max_unit_width		40
+			block_formation		line
+			block_relative_pos	28 0.0 -2.0
+			inter_unit_spacing	2.0
+			priority			1.0
+		end_block
+
+		begin_dummy_block 30
+			spans 28 29
+		end_dummy_block
+
+
+		;; cavalry center
+		begin_block 31
+			max_units			6
+			not_general
+			unit_type		heavy cavalry 1.0
+			unit_type		light cavalry 1.0
+			default_melee_state	engage_at_will
+			unit_formation		square
+			unit_density		close
+			block_formation		line
+			block_relative_pos	30 0.0 -5.0
+			inter_unit_spacing	4.0
+			priority			0.8
+		end_block
+
+
+		;; artillery and handler behind
+		begin_block 32
+			unit_type			handler		1.0
+			unit_type			siege		1.0
+			default_melee_state	fire_at_will_and_defend
+			block_formation		line
+			block_relative_pos	31 0.0 -5.0
+			inter_unit_spacing	3.0
+			priority			0.1
+		end_block
+
+
+; cavalry on the flanks and back a bit
+;****************************************************************
+
+		;; left flank
+		begin_block 33
+			not_general
+			unit_type			cavalry 1.0
+			default_melee_state	engage_at_will
+			unit_formation		square
+			unit_density		close
+			block_formation		column
+			block_relative_pos	32 -10.0 -2.0
+			inter_unit_spacing	4.0
+			priority			0.5
+		end_block
+
+		;; right_flank
+		begin_block 34
+			not_general
+			unit_type			cavalry 1.0
+			default_melee_state	engage_at_will
+			unit_formation		square
+			unit_density		close
+			block_formation		column
+			block_relative_pos	32 10.0 -2.0
+			inter_unit_spacing	4.0
+			priority			0.5
+		end_block
+
+		;; left flank missile cav
+		begin_block 35
+			not_general
+			unit_type			missile cavalry 1.0
+			default_melee_state	fire_at_will_and_skirmish
+			unit_formation		square
+			unit_density		close
+			block_formation		column
+			block_relative_pos	33 -5.0 0.0
+			inter_unit_spacing	4.0
+			priority			0.6
+		end_block
+
+		;; right_flank missile cav
+		begin_block 36
+			not_general
+			unit_type			missile cavalry 1.0
+			default_melee_state	fire_at_will_and_skirmish
+			unit_formation		square
+			unit_density		close
+			block_formation		column
+			block_relative_pos	34 5.0 0.0
+			inter_unit_spacing	4.0
+			priority			0.6
+		end_block
+
+
+; general unit
+;****************************************************************
+
+		;; general at the back
+		begin_block 37
+			max_units			1
+			unit_type			general_unit		1.0
+			default_melee_state	fire_at_will_and_defend_and_skirmish
+			unit_density			close
+			block_formation			line
+			block_relative_pos		31 0.0 -20.0
+			inter_unit_spacing		3.0
+			priority				1.0
+		end_block
+
+
+; any units in the back
+;****************************************************************
+
+		;; any behind
+		begin_block 38
+			unit_type		any		0.1
+		        unit_density            close
+			block_formation		line
+			block_relative_pos	37 0.0 -5.0
+			inter_unit_spacing	1.0
+			priority			0.01
+		end_block
+
+end_formation
+
+
+
+
+
+;*************************************************************************
+; Defensive 2x2 square formation - basic (created by Sinuhet)
+;*************************************************************************
+
+
+begin_formation defence_square
+
+		;; front phalanx line of square
+		begin_block 0
+			min_units			1
+			max_units			2
+			unit_type			any 1.0
+			default_melee_state	defend			
+			unit_density		close
+			min_unit_width			20
+			max_unit_width			25
+			block_formation		line
+			normalised_pos		0.495 0.71
+			normalised_rot		0
+			inter_unit_spacing	1.0
+			priority			1.0
+		end_block
+
+		;; right phalanx line of square
+		begin_block 1
+			min_units			1
+			max_units			2
+			unit_type			any 1.0
+			default_melee_state	defend
+			unit_density		close
+			min_unit_width			20
+			max_unit_width			25
+			block_formation		line
+			normalised_pos		0.71 0.515
+			normalised_rot		90.0
+			inter_unit_spacing	1.0
+			priority			0.95
+		end_block
+
+		;; left phalanx line of square
+		begin_block 2
+			min_units			1
+			max_units			2
+			unit_type			any 1.0
+			default_melee_state	defend
+			unit_density		close
+			min_unit_width			20
+			max_unit_width			25
+			block_formation		line
+			normalised_pos		0.30 0.50
+			normalised_rot		270.0
+			inter_unit_spacing	1.0
+			priority			0.95
+		end_block
+
+		;; back phalanx line of square
+		begin_block 3
+			min_units			1
+			max_units			2
+			unit_type			any 1.0
+			default_melee_state	defend
+			unit_density		close
+			min_unit_width			20
+			max_unit_width			25
+			block_formation		line
+			normalised_pos		0.52 0.30
+			normalised_rot		180.0
+			inter_unit_spacing	1.0
+			priority			0.95
+		end_block
+
+		;; general or missile unit inside the square
+		begin_block 4
+			max_units				1
+			unit_type			general_unit	1.00
+			default_melee_state	defend			
+			unit_density		close
+			max_unit_width			15
+			block_formation		line
+			normalised_pos		0.50 0.50
+			normalised_rot		0
+			inter_unit_spacing	0.5
+			priority			1.0
+		end_block
+
+end_formation
+
+
+
+
+;****************************************************************
+; Column, One unit wide - restructured by Sinuhet
+; Missile Cavalry
+; Non Missile Cavalry
+; Spearmen Infantry
+; Missile Infantry
+; Non Missile Infantry
+;****************************************************************
+
+
+begin_formation column_restructured
+
+	general_order Group_Formation_Column
+
+	;; front block
+	begin_block 0
+		unit_type				missile cavalry		1.0
+		block_formation			column
+		block_relative_pos		0 0.0 0.0
+		inter_unit_spacing		5.0
+		priority				0.9
+	end_block
+
+	;; middle block
+	begin_block 1
+		unit_type				heavy cavalry		1.0
+		unit_type				light cavalry		1.0
+		unit_type				skirmish cavalry	1.0
+		unit_type				spearmen cavalry	1.0
+		block_formation			column
+		block_relative_pos		0 0.0 -5.0
+		inter_unit_spacing		5.0
+		priority				0.9
+	end_block
+
+	;; spearmen block
+	begin_block 2
+		unit_type				spearmen infantry	1.0
+		block_formation			column
+		block_relative_pos		1 0.0 -5.0
+		inter_unit_spacing		5.0
+		priority				1.0
+	end_block
+
+	;; missile block
+	begin_block 3
+		unit_type				missile infantry	1.0
+		block_formation			column
+		block_relative_pos		2 0.0 -5.0
+		inter_unit_spacing		5.0
+		priority				1.0
+	end_block
+
+	;; rear block
+	begin_block 4
+		unit_type				heavy infantry		1.0
+		unit_type				light infantry		1.0
+		unit_type				skirmish infantry	1.0
+		block_formation			column
+		block_relative_pos		3 0.0 -5.0
+		inter_unit_spacing		5.0
+		priority				0.9
+	end_block
+
+	;; general at the back, inserted by Sinuhet
+	begin_block 5
+		max_units				1
+		unit_type				general_unit			1.0
+		unit_density			close
+		block_formation			column
+		block_relative_pos		4 0.0 -5.0
+		inter_unit_spacing		5.0
+		priority				1.0
+	end_block
+
+	;; put the artillery and handlers behind everyone
+	begin_dummy_block 6
+		spans 0 1 2 3 4 5
+	end_dummy_block
+
+	begin_block 7
+		unit_type					handler				1.0
+		unit_type					siege				1.0
+		block_formation				line
+		block_relative_pos			6 0.0 -5.0
+		inter_unit_spacing			3.0
+		priority					0.8
+	end_block	
+
+end_formation
+
+
+
+
+;****************************************************************
+; Formation used when multiply selected units get moved
+;****************************************************************
+
+
+begin_formation unit_selection
+
+	; row 0
+	begin_block 0
+		max_units			5
+		unit_type			any 1.0
+		unit_density		close
+		block_formation		line
+		block_relative_pos	0 0.0 0.0
+		inter_unit_spacing	1.0
+		priority			1.0
+	end_block
+
+	; row 1
+	begin_block 1
+		max_units			5
+		unit_type			any 1.0
+		unit_density		close
+		block_formation		line
+		block_relative_pos	0 0.0 -1.0
+		inter_unit_spacing	1.0
+		priority			0.0
+	end_block
+
+	; row 2
+	begin_block 2
+		max_units			5
+		unit_type			any 1.0
+		unit_density		close
+		block_formation		line
+		block_relative_pos	1 0.0 -1.0
+		inter_unit_spacing	1.0
+		priority			0.0
+	end_block
+
+	; row 3
+	begin_block 3
+		unit_type			any 1.0
+		unit_density		close
+		block_formation		line
+		block_relative_pos	2 0.0 -1.0
+		inter_unit_spacing	1.0
+		priority			0.0
+	end_block
+
+end_formation
+
+
+
+
+;****************************************************************
+; A single line, but with the units ordered with heavy infantry in the centre
+; lighter infantry on the flanks, and cavalry on the wings
+;****************************************************************
+
+begin_formation ordered_single_line
+
+	general_order Group_Formation_Sorted_Line
+
+	;; centre block
+	begin_block 0
+		min_units					1
+		unit_type					general_unit		1.0
+		unit_type					heavy infantry		1.0
+		unit_type					spearmen infantry	1.0
+		unit_type					light infantry		0.8
+		unit_type					skirmish infantry	0.6
+		unit_type					any					0.0
+		block_formation				line
+		block_relative_pos			0 0.0 0.0
+		inter_unit_spacing			2.0
+		priority					1.0
+	end_block
+
+	;; right of centre
+	begin_block 1
+		unit_type					missile infantry	1.0
+		unit_type					light infantry		1.0
+		unit_type					skirmish infantry	0.9
+		block_formation				line
+		block_relative_pos			0 2.0 0.0
+		inter_unit_spacing			2.0
+		priority					0.9
+	end_block
+
+	;; left of centre
+	begin_block 2
+		unit_type					missile infantry	1.0
+		unit_type					light infantry		1.0
+		unit_type					skirmish infantry	0.9
+		block_formation				line
+		block_relative_pos			0 -2.0 0.0
+		inter_unit_spacing			2.0
+		priority					0.9
+	end_block
+
+	;; right wing
+	begin_block 3
+		unit_type					cavalry				1.0
+		unit_density				close
+		block_formation				line
+		block_relative_pos			1 2.0 0.0
+		inter_unit_spacing			2.0
+		priority					0.9
+	end_block
+
+	;; left wing
+	begin_block 4
+		unit_type					cavalry				1.0
+		unit_density				close
+		block_formation				line
+		block_relative_pos			2 -2.0 0.0
+		inter_unit_spacing			2.0
+		priority					0.9
+	end_block
+
+	;; put the artillery and handlers behind everyone
+	begin_dummy_block 5
+		spans 0 1 2 3 4
+	end_dummy_block
+
+	begin_block 6
+		unit_type					handler				1.0
+		unit_type					siege				1.0
+		block_formation				line
+		block_relative_pos			5 0.0 -15.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block
+
+end_formation
+
+
+
+
+;****************************************************************
+;Units are lined up in two lines, but the lines are not sorted
+;****************************************************************
+
+
+begin_formation simple_double_line
+
+	general_order Group_Formation_Double_Line
+
+	;; front line
+	begin_block 0
+		min_units					1
+		max_units					8
+		unit_type					any			1.0
+		block_formation				line
+		block_relative_pos			0 0.0 0.0
+		inter_unit_spacing			2.0
+		priority					1.0
+	end_block	
+
+	;; rear line
+	begin_block 1
+		unit_type					any			1.0
+		block_formation				line
+		block_relative_pos			0 0.0 -15.0
+		inter_unit_spacing			2.0
+		priority					1.0
+	end_block
+
+end_formation
+
+
+
+
+;****************************************************************
+; Triple Line. 
+; Missile Infantry
+; Non Missile Infantry
+; Cavalry
+;****************************************************************
+
+
+begin_formation ordered_triple_line_1
+
+	general_order Group_Formation_Missile_First_3_lines
+
+	;; front block
+	begin_block 0
+		unit_type					missile infantry	1.0
+		default_melee_state			fire_at_will_and_skirmish
+		block_formation				line
+		block_relative_pos			0 0.0 0.0
+		inter_unit_spacing			2.0
+		priority					1.0
+	end_block
+
+	;; middle block
+	begin_block 1
+		unit_type					heavy infantry		1.0
+		unit_type					light infantry		1.0
+		unit_type					skirmish infantry	1.0
+		unit_type					spearmen infantry	1.0
+		block_formation				line
+		block_relative_pos			0 0.0 -15.0
+		inter_unit_spacing			2.0
+		priority					1.0
+	end_block
+
+	;; rear block
+	begin_block 2
+		unit_type					cavalry		1.0
+		block_formation				line
+		block_relative_pos			1 0.0 -15.0
+		inter_unit_spacing			2.0
+		priority					0.8
+	end_block
+	
+	;; put the artillery and handlers behind everyone
+	begin_dummy_block 3
+		spans 0 1 2
+	end_dummy_block
+
+	begin_block 4
+		unit_type					handler				1.0
+		unit_type					siege				1.0
+		block_formation				line
+		block_relative_pos			3 0.0 -15.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block		
+
+end_formation
+
+
+
+
+;****************************************************************
+; Triple Line. 
+; Non Missile Infantry
+; Missile troops
+; Non Missile Cavalry
+;****************************************************************	
+		
+
+begin_formation ordered_triple_line_2
+	
+	general_order Group_Formation_Infantry_First_3_Lines
+
+	;; front block
+	begin_block 0
+		unit_type				heavy infantry		1.0
+		unit_type				light infantry		1.0
+		unit_type				skirmish infantry	1.0
+		unit_type				spearmen infantry	1.0
+		block_formation			line
+		block_relative_pos		0 0.0 0.0
+		inter_unit_spacing		2.0
+		priority				1.0
+	end_block
+
+	;; middle block
+	begin_block 1
+		unit_type				missile infantry	1.0
+		unit_type				missile cavalry		1.0
+		block_formation			line
+		block_relative_pos		0 0.0 -15.0
+		inter_unit_spacing		2.0
+		priority				1.0
+	end_block
+
+	;; rear block
+	begin_block 2
+		unit_type				heavy cavalry		1.0
+		unit_type				light cavalry		1.0
+		unit_type				skirmish cavalry	1.0
+		unit_type				spearmen cavalry	1.0
+		block_formation			line
+		block_relative_pos		1 0.0 -15.0
+		inter_unit_spacing		2.0
+		priority				0.8
+	end_block
+	
+	;; put the artillery and handlers behind everyone
+	begin_dummy_block 3
+		spans 0 1 2
+	end_dummy_block
+
+	begin_block 4
+		unit_type					handler				1.0
+		unit_type					siege				1.0
+		block_formation				line
+		block_relative_pos			3 0.0 -15.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block				
+
+end_formation
+
+
+
+
+;****************************************************************
+; Triple Line. 
+; Cavalry
+; Missile Infantry
+; Non Missile Infantry
+;****************************************************************
+
+begin_formation ordered_triple_line_3
+
+	general_order Group_Formation_Cavalry_First_3_Lines
+
+	;; front block
+	begin_block 0
+		unit_type				cavalry		1.0
+		block_formation			line
+		block_relative_pos		0 0.0 0.0
+		inter_unit_spacing		2.0
+		priority				1.0
+	end_block
+
+	;; middle block
+	begin_block 1
+		unit_type				missile infantry	1.0
+		block_formation			line
+		block_relative_pos		0 0.0 -15.0
+		inter_unit_spacing		2.0
+		priority				1.0
+	end_block
+
+	;; rear block
+	begin_block 2
+		unit_type				heavy infantry		1.0
+		unit_type				light infantry		1.0
+		unit_type				skirmish infantry	1.0
+		unit_type				spearmen infantry	1.0
+		block_formation			line
+		block_relative_pos		1 0.0 -15.0
+		inter_unit_spacing		2.0
+		priority				0.8
+	end_block
+
+	;; put the artillery and handlers behind everyone
+	begin_dummy_block 3
+		spans 0 1 2
+	end_dummy_block
+
+	begin_block 4
+		unit_type					handler				1.0
+		unit_type					siege				1.0
+		block_formation				line
+		block_relative_pos			3 0.0 -15.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block	
+
+end_formation
+
+
+
+
+;****************************************************************
+; Column
+; One unit wide
+; Missile Cavalry
+; Non Missile Cavalry
+; Missile Infantry
+; Non Missile Infantry
+;****************************************************************
+
+
+begin_formation column
+
+	general_order Group_Formation_Column
+
+	;; front block
+	begin_block 0
+		unit_type				missile cavalry		1.0
+		block_formation			column
+		block_relative_pos		0 0.0 0.0
+		inter_unit_spacing		5.0
+		priority				0.9
+	end_block
+
+	;; middle block
+	begin_block 1
+		unit_type				heavy cavalry		1.0
+		unit_type				light cavalry		1.0
+		unit_type				skirmish cavalry	1.0
+		unit_type				spearmen cavalry	1.0
+		block_formation			column
+		block_relative_pos		0 0.0 -5.0
+		inter_unit_spacing		5.0
+		priority				0.9
+	end_block
+
+	;; missile block
+	begin_block 2
+		unit_type				missile infantry	1.0
+		unit_type				general_unit		1.0
+		block_formation			column
+		block_relative_pos		1 0.0 -5.0
+		inter_unit_spacing		5.0
+		priority				1.0
+	end_block
+
+	;; rear block
+	begin_block 3
+		unit_type				heavy infantry		1.0
+		unit_type				light infantry		1.0
+		unit_type				skirmish infantry	1.0
+		unit_type				spearmen infantry	1.0
+		block_formation			column
+		block_relative_pos		2 0.0 -5.0
+		inter_unit_spacing		5.0
+		priority				1.0
+	end_block
+
+	;; put the artillery and handlers behind everyone
+	begin_dummy_block 4
+		spans 0 1 2 3
+	end_dummy_block
+
+	begin_block 5
+		unit_type					handler				1.0
+		unit_type					siege				1.0
+		block_formation				line
+		block_relative_pos			4 0.0 -5.0
+		inter_unit_spacing			3.0
+		priority					1.0
+	end_block	
+
+end_formation

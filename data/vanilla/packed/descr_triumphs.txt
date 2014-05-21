@@ -1,0 +1,14 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Triumph values and boundaries
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Triumphs
+First_to_Britain				5
+First_to_Cyprus					5
+Hold_Gaul_Iberia_Britain		60
+
+triumph_boundary_1				100
+triumph_boundary_2				200
+triumph_boundary_3				300

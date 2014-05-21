@@ -1,0 +1,86 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;	descr_mounted_engines
+;
+;	This file contains data for mounted engine attachments such as those mounted on elephant artillery.  It
+;	is a subset of the data used for engines (see descr_engines.txt).  The layout is:
+;
+;	type:			type of mounted engine
+;	culture:		cultures that can have this engine
+;	reference_points:	[optional] path to reference points file
+;	artillery record as laid out in descr_engines.txt
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Dodgy entries
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;type				elephant_serpentine
+;culture				all
+;reference_points		siege_engines/Elephant_cannon_lod0.modelReferencePoints
+;missile_pos			0.0 1.0 0.0
+;crew_animations
+;    crank           		elephant_crew_reload
+;    crank_attachment		Right_Load, 	none, 	       	none,			cannon_ball, 	  	cannon_ball, 		none, 		  	none
+;    fire            		elephant_crew_fire	
+;end
+;shot_pfx_front			cannon_shot_culverin
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;type				elephant_rocket_launcher
+;culture				all
+;reference_points		siege_engines/Elephant_rocket_lod0.modelReferencePoints
+;missile_pos			0.0 1.0 0.0
+;crew_animations
+;    crank           		elephant_crew_reload
+;    crank_attachment		Right_Load, 	none, 	       	none,			cannon_ball, 	  	cannon_ball, 		none, 		  	none
+;    fire            		elephant_crew_fire
+;end
+;normal_shots			6	;36 for the bad boy
+;shot_delay			6
+;shot_pfx_front			cannon_shot_rocket_launcher_front
+;shot_pfx_back			cannon_shot_rocket_launcher_back
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;Proper entries
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type				elephant_serpentine
+culture				all
+class				serpentine
+reference_points		siege_engines/Elephant_cannon_lod0.modelReferencePoints
+missile_pos			0.0 1.0 0.0
+crew_animations
+    crank           		Cannon_Crew,	elephant_crew_reload,	elephant_crew_idle, 	
+;    crank_attachment		Right_Load, 	none, 	       		none,			
+    fire            		Cannon_Crew,	elephant_crew_fire,	elephant_crew_idle
+end
+shot_pfx_front			cannon_shot_elephant_serpentine_set
+shot_sfx			ANIM_Serpentine_Fire
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type				elephant_rocket_launcher
+culture				all
+class				rocket_launcher
+reference_points		siege_engines/Elephant_rocket_lod0.modelReferencePoints
+missile_pos			0.0 1.0 0.0
+crew_animations
+    crank           		Rocket_Crew,  	elephant_crew_reload,	elephant_crew_idle, 
+;    crank_attachment		Right_Load,  	none, 	       		none,	
+    fire            		Rocket_Crew,  	elephant_crew_fire,	elephant_crew_idle
+end
+normal_shots			6	;36 for the bad boy
+shot_delay			6
+shot_pfx_front			cannon_shot_rocket_launcher_front
+shot_pfx_back			cannon_shot_rocket_launcher_back
+shot_sfx			Rocket_Launcher_Fire
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

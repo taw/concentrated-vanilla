@@ -1,0 +1,356 @@
+version_info
+{
+	35
+}
+
+; This section defines all of the configuration parameters for the pathfinder
+multires_pathfinder
+{
+	; Configuration parameters for the scheduler
+	scheduler_configuration
+	{
+		; low load config
+		load low
+		{
+			max_paths		10			; maximum paths till shifting to the next loading
+			total_nodes		2000		; total nodes allocated across all paths
+		}
+
+		; medium load config
+		load medium
+		{
+			max_paths		20			; maximum paths till shifting to the next loading
+			total_nodes		4000		; total nodes allocated across all paths
+		}
+
+		; high load config
+		load high
+		{
+			max_paths		300			; maximum paths till shifting to the next loading
+			total_nodes		8000		; total nodes allocated across all paths
+		}
+		
+		; low priority config
+		priority low
+		{
+			budget			0.20		; percentage of budget for these paths
+			max_nodes		10000		; maximum nodes per path
+			max_zone_nodes	2000		; maximum zone nodes per path
+		}
+
+		; medium priority config
+		priority medium
+		{
+			budget			0.30		; percentage of budget for these paths
+			max_nodes		30000		; maximum nodes per path
+			max_zone_nodes	3000		; maximum zone nodes per path
+		}
+		
+		; high priority config
+		priority high
+		{
+			budget			0.50		; percentage of budget for these paths
+			max_nodes		40000		; maximum nodes per path
+			max_zone_nodes	4000		; maximum zone nodes per path
+		}
+		
+		; real time priority config
+		priority real_time
+		{
+			budget			1.0			; percentage of budget for these paths
+			max_nodes		50000		; maximum nodes per path
+			max_zone_nodes	5000		; maximum zone nodes per path
+		}
+		
+		; quick test priority config
+		priority quick_test
+		{
+			budget			1.0			; percentage of budget for these paths
+			max_nodes		300			; maximum nodes per path
+			max_zone_nodes	20			; maximum zone nodes per path
+		}
+	}
+	
+	; Zone configuration
+	zone_configuration
+	{
+		maximum_slope			40		; limit is 40 degrees
+	}
+	
+	; Heuristic configuration
+	heuristic_configuration
+	{
+		invalid_zone_cost		2.0		; invalid areas have double cost
+	}
+	
+	; Movement configuration
+	movement_configuration
+	{
+		formation_hold_distance 20.0	; formations update 20m after the last point
+	}
+	
+	silhouette_configuration
+	{
+		silhouette_ratio		0.75	; Silhouette points are 75% of unit width
+		enabled					no
+	}
+
+	; Defines what content types may be grouped together
+	content_groupings
+	{
+		free					free	forest	scrub	tall_vegetation average_vegetation	short_vegetation	large_rocks	small_rocks		bridge_platform
+		obstructed				obstructed	steep_terrain
+		tall_vegetation			free	forest	scrub	tall_vegetation average_vegetation	short_vegetation	large_rocks	small_rocks		bridge_platform
+		average_vegetation		free	forest	scrub	tall_vegetation average_vegetation	short_vegetation	large_rocks	small_rocks		bridge_platform
+		short_vegetation		free	forest	scrub	tall_vegetation average_vegetation	short_vegetation	large_rocks	small_rocks		bridge_platform
+		large_rocks				free	forest	scrub	tall_vegetation average_vegetation	short_vegetation	large_rocks	small_rocks		bridge_platform
+		small_rocks				free	forest	scrub	tall_vegetation average_vegetation	short_vegetation	large_rocks	small_rocks		bridge_platform
+		water					water
+		swamp					swamp
+		platform				platform
+		bridge_platform			free	forest	scrub	tall_vegetation average_vegetation	short_vegetation	large_rocks	small_rocks		bridge_platform
+		steep_terrain			obstructed	steep_terrain
+		ford   			        free	forest	scrub	tall_vegetation average_vegetation	short_vegetation	large_rocks	small_rocks		bridge_platform
+	}
+
+	; defines the priorities (ie. which content is more important than the other)
+	precedence_mask
+	{
+		; content type		lower priority types
+		free				all
+		obstructed			free	water	    swamp	tall_vegetation	average_vegetation	short_vegetation	large_rocks	small_rocks	platform
+		water				free	obstructed	swamp	tall_vegetation	average_vegetation	short_vegetation	large_rocks	small_rocks	platform
+		swamp				free	obstructed
+		tall_vegetation		free	swamp	    average_vegetation	short_vegetation	small_rocks	water
+		average_vegetation	free	swamp	    short_vegetation	small_rocks	water
+		short_vegetation	free	swamp
+		large_rocks			free	swamp	    short_vegetation	small_rocks	water
+		small_rocks			free	swamp
+		platform			free
+		bridge_platform		all
+		steep_terrain		free	average_vegetation	short_vegetation	large_rocks	small_rocks
+		ford   			    free
+	}
+
+	; Determines what parameters are checked for this content when filling in the zones
+	checking_level
+	{ ; slope, content or all
+		free				all
+		obstructed			all
+		water				content
+		swamp				all
+		tall_vegetation		all
+		average_vegetation	all
+		short_vegetation	all
+		large_rocks			all
+		small_rocks			all
+		platform			content
+		bridge_platform		content
+		steep_terrain		content
+		ford   			    content
+	}
+
+	; Configures the per unit behaviour of the pathfinding
+	unit_type_configuration
+	{
+		default
+		{
+			min_slope	15		; minimum slope before penalty applies
+			max_slope	40		; maximum slope the unit can handle
+			penalty		1.02	; penalty per degree     ; 1.5 for 40 degrees
+			min_width	0		; minimum width = 0m
+
+			content_costs
+			{
+				free					1.0
+				obstructed				inf
+				water					1.0
+				swamp					1.0
+				tall_vegetation			1.2
+				average_vegetation		1.0
+				short_vegetation		1.0
+				large_rocks				1.2
+				small_rocks				1.0
+				platform				1.0
+				bridge_platform			1.0
+				steep_terrain			inf
+				ford					1.0
+			}
+		}
+
+		infantry
+		{
+			min_slope	30		; minimum slope before penalty applies
+			max_slope	45		; maximum slope the unit can handle
+			penalty		1.01	; penalty per degree
+			min_width	0		; minimum width = 0m
+
+			content_costs
+			{
+				free					1.0
+				obstructed				inf
+				water					1.0
+				swamp					1.0
+				tall_vegetation			1.2
+				average_vegetation		1.0
+				short_vegetation		1.0
+				large_rocks				1.2
+				small_rocks				1.0
+				platform				1.0
+				bridge_platform			1.0
+				steep_terrain			inf
+				ford					1.0
+			}
+		}
+
+		cavalry
+		{
+			min_slope	30		; minimum slope before penalty applies
+			max_slope	45		; maximum slope the unit can handle
+			penalty		1.01	; penalty per degree
+			min_width	0		; minimum width = 0m
+
+			content_costs
+			{
+				free					1.0
+				obstructed				inf
+				water					1.0
+				swamp					1.0
+				tall_vegetation			1.2
+				average_vegetation		1.0
+				short_vegetation		1.0
+				large_rocks				1.2
+				small_rocks				1.0
+				platform				1.0
+				bridge_platform			1.0
+				steep_terrain			inf
+				ford					1.0
+			}
+		}
+
+		elephant
+		{
+			min_slope	15		; minimum slope before penalty applies
+			max_slope	40		; maximum slope the unit can handle
+			penalty		1.02	; penalty per degree
+			min_width	0		; minimum width = 0m
+
+			content_costs
+			{
+				free					1.0
+				obstructed				inf
+				water					1.0
+				swamp					1.0
+				tall_vegetation			1.0
+				average_vegetation		1.0
+				short_vegetation		1.0
+				large_rocks				1.0
+				small_rocks				1.0
+				platform				1.0
+				bridge_platform			1.0
+				steep_terrain			inf
+				ford					1.0
+			}
+		}
+
+		siege
+		{
+			min_slope	15		; minimum slope before penalty applies
+			max_slope	25		; maximum slope the unit can handle
+			penalty		1.02	; penalty per degree
+			min_width	0		; minimum width = 0m
+
+			content_costs
+			{
+				free					1.0
+				obstructed				inf
+				water					1.0
+				swamp					1.0
+				tall_vegetation			1.2
+				average_vegetation		1.0
+				short_vegetation		1.0
+				large_rocks				1.2
+				small_rocks				1.0
+				platform				1.0
+				bridge_platform			1.0
+				steep_terrain			inf
+				ford					1.0
+			}
+		}
+
+		ladder
+		{
+			min_slope	15		; minimum slope before penalty applies
+			max_slope	40		; maximum slope the unit can handle
+			penalty		1.02	; penalty per degree
+			min_width	0		; minimum width = 0m
+
+			content_costs
+			{
+				free					1.0
+				obstructed				inf
+				water					1.0
+				swamp					1.0
+				tall_vegetation			1.2
+				average_vegetation		1.0
+				short_vegetation		1.0
+				large_rocks				1.2
+				small_rocks				1.0
+				platform				1.0
+				bridge_platform			1.0
+				steep_terrain			inf
+				ford					1.0
+			}
+		}
+
+		ram
+		{
+			min_slope	10		; minimum slope before penalty applies
+			max_slope	25		; maximum slope the unit can handle
+			penalty		1.02	; penalty per degree
+			min_width	6		;
+
+			content_costs
+			{
+				free					1.0
+				obstructed				inf
+				water					1.0
+				swamp					1.0
+				tall_vegetation			1.2
+				average_vegetation		1.0
+				short_vegetation		1.0
+				large_rocks				1.2
+				small_rocks				1.0
+				platform				1.0
+				bridge_platform			1.0
+				steep_terrain			inf
+				ford					1.0
+			}
+		}
+
+		tower
+		{
+			min_slope	10		; minimum slope before penalty applies
+			max_slope	15		; maximum slope the unit can handle
+			penalty		1.02	; penalty per degree
+			min_width	8		;
+
+			content_costs
+			{
+				free					1.0
+				obstructed				inf
+				water					1.0
+				swamp					1.0
+				tall_vegetation			1.2
+				average_vegetation		1.0
+				short_vegetation		1.0
+				large_rocks				1.2
+				small_rocks				1.0
+				platform				1.0
+				bridge_platform			1.0
+				steep_terrain			inf
+				ford					1.0
+			}
+		}
+	}
+}

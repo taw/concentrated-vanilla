@@ -1,0 +1,308 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Units taunt bank
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 5 priority 170 fadein 1 fadeout 3
+DEFAULT: minpitch .8 maxpitch 1.0 volume -15 probability 1
+DEFAULT: distancepriority -1 randomdelay 1  effect_level .5
+
+BANK: unit_taunt
+
+	
+		
+		
+; unit infantry light, heavy, spearmen, skirmish, missile
+; 		event lod 5  volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_small_01
+; 		end
+; 	
+; 		event lod 10 volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_medium_01
+; 		     
+; 			end
+; 		
+; 		event lod 30 volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_large_01
+; 		end
+;     
+; unit cavalry light, heavy, spearmen, skirmish, missile
+; 		event lod 5  volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_small_01
+; 		end
+; 	
+; 		event lod 10 volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_medium_01
+; 		     
+; 			end
+; 		
+; 		event lod 30 volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_large_01
+; 		end
+; 		
+; unit siege light, heavy, spearmen, skirmish, missile
+; 		event lod 5  volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_small_01
+; 		end
+; 	
+; 		event lod 10 volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_medium_01
+; 		     
+; 			end
+; 		
+; 		event lod 30  volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_large_01
+; 		end
+
+; 			
+; unit handler light, heavy, spearmen, skirmish, missile
+; 		event lod 5  volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_small_01
+; 		end
+; 	
+; 		event lod 10 volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_medium_01
+; 		     
+; 			end
+; 		
+; 		event lod 30 volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			infantry_group_taunt_large_01
+; 		end	
+			 
+     
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ;;;; ARABS  ;;;;;;;;;;;;;;;
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+; 		;;;;;;;;; egyptian ARAB
+; 	type egyptian peasant,egyptian peltast,egyptian slingers,egyptian archer,egyptian archer elite,egyptian nubian spearmen,egyptian nile infantry,egyptian infantry,egyptian elite guards,egyptian cavalry,egyptian nubian cavalry,egyptian cleruch,egyptian bedouin,egyptian onager,egyptian heavy onager,egyptian general's bodyguard early,egyptian general's bodyguard
+; 		event lod 5  volume -35
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 		end
+
+; 		event lod 10 volume -10
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 			end
+; 		
+; 		event lod 30 volume 0
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Large_01
+; 			Arabic_Group_Taunt_Large_02
+; 		    Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 			end
+; 				
+; 			
+; 			
+; 			
+; 		;;;;;;;; aztecs ARAB
+; 	type carthaginian peasant,carthaginian peltast,carthaginian slinger,carthaginian archer,carthaginian city militia,carthaginian infantry,carthaginian medium infantry,carthaginian heavy infantry,carthaginian sacred band infantry,numidian javelinmen,numidian desert warriors,numidian legionaries,carthaginian cavalry,carthaginian medium cavalry,carthaginian general's cavalry early,carthaginian general's cavalry,carthaginian royal cavalry,numidian cavalry,numidian camel riders,carthaginian elephant forest,carthaginian elephant african,carthaginian elephant african cataphract,carthaginian onager,carthaginian heavy onager,carthaginian female peasant
+; 		event lod 5 volume -35
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 		end
+
+; 		event lod 10 volume -10
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 			end
+; 		
+; 		event lod 30 volume 0
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Large_01
+; 			Arabic_Group_Taunt_Large_02
+; 		    Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 			end
+; 		
+; 		
+; 				
+; 	;;;;;; eastern ARAB
+; 	type east peasant,east peltast,east slinger,east archer,east hillmen,east infantry,east heavy infantry,east hoplite,east hoplite brazen shield,east legionary,east cavalry,east heavy cavalry,east heavy cataphract,east cappodocian cavalry,east persian cavalry,east cataphract archer,east horse archer,east camel cataphract,east elephant,east generals cavalry early,east generals cavalry,east pontic general,east onager,eastern female peasant
+; 		event lod 5 volume -35
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 		end
+
+; 		event lod 10 volume -10
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 			end
+; 		
+; 		event lod 30 volume 0
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Large_01
+; 			Arabic_Group_Taunt_Large_02
+; 		    Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 			end
+; 		
+; 		
+; 		
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+; ;;;;;;;;;;;	BARBARIAN
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+; 			
+; 				
+; 	type barb peasant briton,barb peasant dacian,barb peasant gaul,barb peasant german,barb peasant scythian,barb peltast gaul,barb peltast german,barb slinger briton,barb archer dacian,barb archer scythian,warband archer dacian,warband archer german,warband archer scythian,warband huntsman gaul,warband hurler briton,barb infantry briton,barb infantry dacian,barb infantry gaul,warband spear german,warband sword briton,warband sword gaul,warband axe german,warband axe scythian,warband falx dacian,warband dhaxe german,barb warguard briton,barb warguard dacian,barb warguard gaul,warband woad briton,barb naked fanatics dacian,barb naked fanatics france,barb naked fanatics german,barb naked fanatics spain,barb druids briton,barb druids gaul,barb night raiders german,barb berserker german,barb wardogs briton,barb wardogs dacian,barb wardogs gaul,barb wardogs german,barb wardogs scythian,barb cavalry dacian,barb cavalry gaul,barb cavalry german,barb cavalry scythian,barb noble cavalry dacian,barb noble cavalry gaul,barb noble cavalry german,barb gothic cavalry german,barb horse archers scythian,barb noble horse archers scythian,barb scythian nobles scythian,barb ballista dacian,barb onager dacian,barb onager scythian,barb chieftain cavalry early dacian,barb chieftain cavalry early gaul,barb chieftain cavalry early german,barb chieftain cavalry early scythian,barb chieftain cavalry dacian,barb chieftain cavalry gaul,barb chieftain cavalry german,barb british general briton,barb scythian general scythian,spanish scutarii,spanish bull warriors,carthaginian warhounds,barbarian female peasant
+; 		event lod 5 volume -15
+; 			folder data/sounds/Voice/human/generic
+; 			Barb_Group_Taunt_Small
+; 			Barb_Group_Taunt_Med
+; 		end
+
+; 		event lod 10 volume -10
+; 			folder data/sounds/Voice/human/generic
+; 			Barb_Group_Taunt_Small
+; 			Barb_Group_Taunt_Med
+; 			Barb_Group_Taunt_OoohTaunt volume 0
+; 			end
+; 		
+; 		event lod 30
+; 			folder data/sounds/Voice/human/generic
+; 			Barb_Group_Taunt_Small
+; 			Barb_Group_Taunt_Med
+; 			Barb_Group_Taunt_OoohTaunt volume 0
+; 			end
+; 	
+; 		
+; 		
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+; ;;;;;;;;;;;	GREEK
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+; 		
+; 	
+; 	type warband falx thracian,greek peasant,greek peltast,greek archer,greek heavy peltast,greek hoplite militia,greek hoplite,greek hoplite elite,greek hoplite spartan,greek levy pikemen,greek pikemen,greek royal pikemen,greek silver shield pikemen,greek argyraspid,greek bastarnae,greek light lancer,greek cavalry,greek medium cavalry,greek heavy cavalry,greek royal cavalry,greek general's guard cavalry early,greek general's guard cavalry,thracian bodyguard early,thracian bodyguard,greek elephant small,greek elephant african,greek elephant cataphract,greek incendiary pigs,greek ballista,greek onager,greek heavy onager, cheat oliphants
+; 		event lod 5 volume -35
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 		end
+
+; 		event lod 10 volume -10
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 			end
+; 		
+; 		event lod 30 volume 0
+; 			folder data/sounds/Voice/human/generic
+; 			Arabic_Group_Taunt_Large_01
+; 			Arabic_Group_Taunt_Large_02
+; 		    Arabic_Group_Taunt_Med_01
+; 		    Arabic_Group_Taunt_Med_02
+; 			Arabic_Group_Taunt_Med_03
+; 			end
+; 		
+; 		
+; 		
+; 		
+; 		
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+; ;;;;;;;;;;;	ROMAN
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+; 		
+; 		
+; 	
+; 	type barb peasant slave,barb archer slave,barb infantry slave,barb naked fanatics slave,barb druids slave,barb cavalry slave,barb noble cavalry slave,barb horse archers slave,barb chieftain cavalry early slave,roman peasant,roman archer,roman archer auxillia,roman velite,roman light infantry auxillia,roman city militia,roman hastati,roman princeps,roman triarii,roman infantry auxillia,roman legionary cohort i,roman legionary first cohort i,roman legionary cohort ii,roman legionary first cohort ii,roman praetorian cohort i,roman praetorian cohort urban i,roman arcani,roman wardogs,roman pigs,roman velite gladiator,roman samnite gladiator,roman mirmillo gladiator,roman light cavalry,roman cavalry auxillia,roman medium cavalry,roman heavy cavalry,roman praetorian cavalry,roman generals guard cavalry early,roman generals guard cavalry,roman ballista,roman scorpion,roman onager,roman heavy onager,roman repeating ballista,generic rebel general,eastern rebel general,barbarian rebel general,rebel judaean zealots,merc peltast,merc illyrian,merc samnite,merc cilician pirate,merc thracian,merc bastarnae,merc sarmatian cavalry,merc horse archers,merc spanish infantry,merc eastern infantry,merc rhodian slingers,merc cretan archers,merc greek hoplites,merc libyan infantry,merc numidian cavalry,merc arab cavalry,merc bedouin,merc bedouin archers,merc balearic slingers,merc barbarian infantry,merc barbarian cavalry,merc elephants
+; 		event lod 5  volume -50
+; 			folder data/sounds/Voice/human/generic
+; 			Roman_Group_Taunt_Large
+; 		end
+; 	
+; 		event lod 10 volume -20
+; 			folder data/sounds/Voice/human/generic
+; 			Roman_Group_Taunt_Large
+; 		     
+; 			end
+; 		
+; 		event lod 30 
+; 			folder data/sounds/Voice/human/generic
+; 			Roman_Group_Taunt_Large
+; 		end
+; 	
+			
+	
+			
+				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+;;;;;;;;;;;	  SPECIAL ABILITY - DRUID CHANT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+
+; BANK: druid_chant
+
+; 	type warband hurler briton, warband huntsman gaul, warband archer scythian, warband archer german, warband archer dacian, barb druids briton, barb druids gaul, barb peasant slave,barb archer slave,barb infantry slave,barb naked fanatics slave,barb druids slave,barb cavalry slave,barb noble cavalry slave,barb horse archers slave,barb chieftain cavalry early slave,roman peasant,roman archer,roman archer auxillia,roman velite,roman light infantry auxillia,roman city militia,roman hastati,roman princeps,roman triarii,roman infantry auxillia,roman legionary cohort i,roman legionary first cohort i,roman legionary cohort ii,roman legionary first cohort ii,roman praetorian cohort i,roman praetorian cohort urban i,roman arcani,roman wardogs,roman pigs,roman velite gladiator,roman samnite gladiator,roman mirmillo gladiator,roman light cavalry,roman cavalry auxillia,roman medium cavalry,roman heavy cavalry,roman praetorian cavalry,roman generals guard cavalry early,roman generals guard cavalry,roman ballista,roman scorpion,roman onager,roman heavy onager,roman repeating ballista,generic rebel general,eastern rebel general,barbarian rebel general,rebel judaean zealots,merc peltast,merc illyrian,merc samnite,merc cilician pirate,merc thracian,merc bastarnae,merc sarmatian cavalry,merc horse archers,merc spanish infantry,merc eastern infantry,merc rhodian slingers,merc cretan archers,merc greek hoplites,merc libyan infantry,merc numidian cavalry,merc arab cavalry,merc bedouin,merc bedouin archers,merc balearic slingers,merc barbarian infantry,merc barbarian cavalry,merc elephants
+; 		event lod 5  volume -10 mindist 7
+; 			folder data/sounds/Voice/human/generic
+; 			Chant_Group_Small_01
+; 		end
+; 	
+; 		event lod 10 volume -10 mindist 8
+; 			folder data/sounds/Voice/human/generic
+; 			Chant_Group_Med_01
+; 		    end
+; 		
+; 		event lod 30 volume -10 mindist 10
+; 			folder data/sounds/Voice/human/generic
+; 			Chant_Group_Large_01
+; 		end
+
+		
+	
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; BANK: war_cry
+
+; 	type numidian cavalry, numidian legionaries, numidian desert warriors, numidian javelinmen, warband dhaxe german, warband falx thracian,barb peasant briton,barb peasant dacian,barb peasant gaul,barb peasant german,barb peasant scythian,barb peltast gaul,barb peltast german,barb slinger briton,barb archer dacian,barb archer scythian,warband archer dacian,warband archer german,warband archer scythian,warband huntsman gaul,warband hurler briton,barb infantry briton,barb infantry dacian,barb infantry gaul,warband spear german,warband sword briton,warband sword gaul,warband axe german,warband axe scythian,warband falx dacian,barb warguard briton,barb warguard dacian,barb warguard gaul,warband woad briton,barb naked fanatics dacian,barb naked fanatics france,barb naked fanatics german,barb naked fanatics spain,barb druids briton,barb druids gaul,barb night raiders german,barb berserker german,barb wardogs briton,barb wardogs dacian,barb wardogs gaul,barb wardogs german,barb wardogs scythian,barb cavalry dacian,barb cavalry gaul,barb cavalry german,barb cavalry scythian,barb noble cavalry dacian,barb noble cavalry gaul,barb noble cavalry german,barb gothic cavalry german,barb horse archers scythian,barb noble horse archers scythian,barb scythian nobles scythian,barb ballista dacian,barb onager dacian,barb onager scythian,barb chieftain cavalry early dacian,barb chieftain cavalry early gaul,barb chieftain cavalry early german,barb chieftain cavalry early scythian,barb chieftain cavalry dacian,barb chieftain cavalry gaul,barb chieftain cavalry german,barb british general briton,barb scythian general scythian,spanish scutarii,spanish bull warriors,carthaginian warhounds,barbarian female peasant
+; 		event lod 5  volume -10 mindist 7
+; 			folder data/sounds/Voice/human/generic
+; 			Warcry_Group_Small_01
+; 					end
+; 	
+; 		event lod 10 volume -5 mindist 8
+; 			folder data/sounds/Voice/human/generic
+; 			Warcry_Group_Medium_01
+; 		     
+; 			end
+; 		
+; 		event lod 30 volume 0 mindist 10
+; 			folder data/sounds/Voice/human/generic
+; 			Warcry_Group_Large_01
+; 			Warcry_Group_Large_02
+; 		end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<root>
+   <low>
+      <!-- shader_version: 1/2 -->
+      <shader_version>1</shader_version>
+      <battle_resolution>1024 768</battle_resolution>
+      <campaign_resolution>1024 768</campaign_resolution>
+      <!-- antialiasing: n samples -->
+      <antialiasing>0</antialiasing>
+      <!-- texture_filter: 0-bilinear/1-trilinear/2...-anisotropic x2... -->
+      <texture_filter>0</texture_filter>
+      <!-- vsync: true/false -->
+      <vsync>false</vsync>
+      <!-- widescreen: true/false -->
+      <widescreen>false</widescreen>
+      <!-- unit_detail: lowest/low/normal/high/highest -->
+      <unit_detail>low</unit_detail>
+      <!-- building_detail: low/high -->
+      <building_detail>low</building_detail>
+      <!-- vegetation_detail: low/normal/high -->
+      <vegetation_detail>low</vegetation_detail>
+      <!-- effect_detail: lowest/low/normal/high/highest -->
+      <effect_detail>lowest</effect_detail>
+      <!-- grass_detail: lowest/low/normal/high -->
+      <grass_detail>low</grass_detail>
+      <!-- terrain_detail: low/normal/high -->
+      <terrain_detail>low</terrain_detail>
+      <!-- texture_quality: low/normal/high -->
+      <texture_quality>low</texture_quality>
+      <!-- shadow_quality: off/lowest/low/normal/high/higher/highest/extreme -->
+      <shadow_quality>off</shadow_quality>
+      <!-- bloom: true/false -->
+      <bloom>false</bloom>
+      <!-- reflections: true/false -->
+      <reflections>false</reflections>
+      <!-- campaign_shadows: true/false -->
+      <campaign_shadows>false</campaign_shadows>
+   </low>
+   <medium>
+      <!-- shader_version: 1/2 -->
+      <shader_version>1</shader_version>
+      <battle_resolution>1024 768</battle_resolution>
+      <campaign_resolution>1024 768</campaign_resolution>
+      <!-- antialiasing: n samples -->
+      <antialiasing>2</antialiasing>
+      <!-- texture_filter: 0-bilinear/1-trilinear/2...-anisotropic x2... -->
+      <texture_filter>1</texture_filter>
+      <!-- vsync: true/false -->
+      <vsync>false</vsync>
+      <!-- widescreen: true/false -->
+      <widescreen>false</widescreen>
+      <!-- unit_detail: lowest/low/normal/high/highest -->
+      <unit_detail>normal</unit_detail>
+      <!-- building_detail: low/high -->
+      <building_detail>high</building_detail>
+      <!-- vegetation_detail: low/normal/high -->
+      <vegetation_detail>normal</vegetation_detail>
+      <!-- effect_detail: lowest/low/normal/high/highest -->
+      <effect_detail>normal</effect_detail>
+      <!-- grass_detail: lowest/low/normal/high -->
+      <grass_detail>normal</grass_detail>
+      <!-- terrain_detail: low/normal/high -->
+      <terrain_detail>normal</terrain_detail>
+      <!-- texture_quality: low/normal/high -->
+      <texture_quality>normal</texture_quality>
+      <!-- shadow_quality: off/lowest/low/normal/high/higher/highest/extreme -->
+      <shadow_quality>off</shadow_quality>
+      <!-- bloom: true/false -->
+      <bloom>false</bloom>
+      <!-- reflections: true/false -->
+      <reflections>false</reflections>
+      <!-- campaign_shadows: true/false -->
+      <campaign_shadows>true</campaign_shadows>
+   </medium>
+   <high>
+      <!-- shader_version: 1/2 -->
+      <shader_version>2</shader_version>
+      <battle_resolution>1024 768</battle_resolution>
+      <campaign_resolution>1024 768</campaign_resolution>
+      <!-- antialiasing: n samples -->
+      <antialiasing>4</antialiasing>
+      <!-- texture_filter: 0-bilinear/1-trilinear/2...-anisotropic x2... -->
+      <texture_filter>2</texture_filter>
+      <!-- vsync: true/false -->
+      <vsync>false</vsync>
+      <!-- widescreen: true/false -->
+      <widescreen>false</widescreen>
+      <!-- unit_detail: lowest/low/normal/high/highest -->
+      <unit_detail>high</unit_detail>
+      <!-- building_detail: low/high -->
+      <building_detail>high</building_detail>
+      <!-- vegetation_detail: low/normal/high -->
+      <vegetation_detail>high</vegetation_detail>
+      <!-- effect_detail: lowest/low/normal/high/highest -->
+      <effect_detail>high</effect_detail>
+      <!-- grass_detail: lowest/low/normal/high -->
+      <grass_detail>high</grass_detail>
+      <!-- terrain_detail: low/normal/high -->
+      <terrain_detail>high</terrain_detail>
+      <!-- texture_quality: low/normal/high -->
+      <texture_quality>high</texture_quality>
+      <!-- shadow_quality: off/lowest/low/normal/high/higher/highest/extreme -->
+      <shadow_quality>high</shadow_quality>
+      <!-- bloom: true/false -->
+      <bloom>true</bloom>
+      <!-- reflections: true/false -->
+      <reflections>true</reflections>
+      <!-- campaign_shadows: true/false -->
+      <campaign_shadows>true</campaign_shadows>
+   </high>
+</root>

@@ -1,0 +1,226 @@
+;;
+
+DEFAULT: 3d mindist 5 minPitch .8 maxPitch 1.1 volume -40 priority 60 probability 1 distancepriority -2 fadein 0 fadeout 0 randomdelay 0  effect_level .25 rndvolume -15
+
+
+
+
+BANK: unit_idle
+
+
+; Other units are anim based idle sounds
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;            ANIMALS                    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;   Get Your Meat While It's hot !    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+BANK: animal_idle
+
+
+;;;;;;;;;;;;;   CAMELS   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	mount camel
+		event lod 1 probability 0.04 volume -25 mindist 4
+			folder data/sounds/Voice/Animal/Camel
+			Camel_Groan_02
+			Camel_Groan_03
+			Camel_Groan_04
+			Camel_Groan_06
+			Camel_Groan_09
+			Camel_Groan_22
+			Camel_Groan_23
+			Camel_Groan_24
+			Camel_Groan_25
+			Camel_Groan_26
+			Camel_Groan_27
+			Camel_Groan_28
+			Camel_Groan_29
+			Camel_Groan_30
+			Camel_Groan_31
+			Camel_Groan_32
+			Camel_Groan_33
+			
+		end
+
+	event lod 10 probability 0.06 volume -20 mindist 5
+			folder  data/sounds/Voice/Animal/Camel
+			Camel_Groan_02
+			Camel_Groan_03
+			Camel_Groan_04
+			Camel_Groan_06
+			Camel_Groan_09
+			Camel_Groan_22
+			Camel_Groan_23
+			Camel_Groan_24
+			Camel_Groan_25
+			Camel_Groan_26
+			Camel_Groan_27
+			Camel_Groan_28
+			Camel_Groan_29
+			Camel_Groan_30
+			Camel_Groan_31
+			Camel_Groan_32
+			Camel_Groan_33
+			
+		end
+
+		event lod 20 probability 0.08 volume -20 mindist 6
+			folder data/sounds/Voice/Animal/Camel
+			Camel_Groan_02
+			Camel_Groan_03
+			Camel_Groan_04
+			Camel_Groan_06
+			Camel_Groan_09
+			Camel_Groan_22
+			Camel_Groan_23
+			Camel_Groan_24
+			Camel_Groan_25
+			Camel_Groan_26
+			Camel_Groan_27
+			Camel_Groan_28
+			Camel_Groan_29
+			Camel_Groan_30
+			Camel_Groan_31
+			Camel_Groan_32
+			Camel_Groan_33
+			
+		end
+
+
+
+;;;;;;;;;;;;;;;;;;   HORSES    ;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	mount pony, fast pony, heavy horse, barded horse, armoured horse, eastern armoured horse, mailed horse
+		event lod 1 probability 0.07 volume -45 mindist 3
+			folder data/sounds/Voice/Animal/Horse
+			horse_snort_01
+			horse_snort_02
+			horse_snort_03
+			horse_snort_04
+			folder data/sounds/Voice/Animal/Horse
+			horse_nay_01
+			horse_nay_06
+			horse_nay_07
+			horse_nay_09
+			horse_nay_10
+			horse_nay_11
+			horse_nay_12
+			
+		end
+
+
+
+		event lod 10 probability 0.08 volume -40 mindist 4
+			folder data/sounds/Voice/Animal/Horse
+			horse_snort_01
+			horse_snort_02
+			horse_snort_03
+			horse_snort_04
+			folder data/sounds/Voice/Animal/Horse
+			horse_nay_01
+			horse_nay_06
+			horse_nay_07
+			horse_nay_09
+			horse_nay_10
+			horse_nay_11
+			horse_nay_12
+			horse_nay_21
+			horse_nay_22
+		end
+
+
+		event lod 20 probability 0.09 volume -40 mindist 5
+			folder data/sounds/Voice/Animal/Horse
+			horse_snort_01
+			horse_snort_02
+			horse_snort_03
+			horse_snort_04
+			folder data/sounds/Voice/Animal/Horse
+			horse_nay_01
+			horse_nay_06
+			horse_nay_07
+			horse_nay_09
+			horse_nay_10
+			horse_nay_11
+			horse_nay_12
+			horse_nay_21
+			horse_nay_22
+		end
+
+
+
+;;;;;;;;;;;;;;;;   ELEPHANTS   ;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+	mount elephant_cannon, elephant_rocket, elephant
+		event lod 1 probability 0.06 volume -40 mindist 6
+			folder data/sounds/Voice/Animal/Elephant
+			Elephant_Trumpet_11
+			Elephant_Trumpet_12
+			Elephant_Trumpet_15
+			Elephant_Trumpet_18
+			Elephant_Trumpet_42
+			Elephant_Ambient_03
+			Elephant_Ambient_04
+			Elephant_Ambient_05
+			Elephant_Ambient_06
+			Elephant_Ambient_07
+			Elephant_Ambient_08
+			Elephant_Ambient_10
+			Elephant_Snort_04
+			Elephant_Snort_05
+			Elephant_Snort_06
+			Elephant_Snort_08
+			Elephant_Snort_09
+		end
+
+
+
+		event lod 3 probability 0.07 volume -35 mindist 7
+			folder data/sounds/Voice/Animal/Elephant
+			Elephant_Trumpet_11
+			Elephant_Trumpet_12
+			Elephant_Trumpet_15
+			Elephant_Trumpet_18
+			Elephant_Trumpet_42
+			Elephant_Ambient_03
+			Elephant_Ambient_04
+			Elephant_Ambient_05
+			Elephant_Ambient_06
+			Elephant_Ambient_07
+			Elephant_Ambient_08
+			Elephant_Ambient_10
+			Elephant_Snort_04
+			Elephant_Snort_05
+			Elephant_Snort_06
+			Elephant_Snort_08
+			Elephant_Snort_09
+		end
+
+
+	
+		event lod 5 probability 0.08 volume -35 mindist 8
+			folder data/sounds/Voice/Animal/Elephant
+			Elephant_Trumpet_11
+			Elephant_Trumpet_12
+			Elephant_Trumpet_15
+			Elephant_Trumpet_18
+			Elephant_Trumpet_42
+			Elephant_Ambient_03
+			Elephant_Ambient_04
+			Elephant_Ambient_05
+			Elephant_Ambient_06
+			Elephant_Ambient_07
+			Elephant_Ambient_08
+			Elephant_Ambient_10
+			Elephant_Snort_04
+			Elephant_Snort_05
+			Elephant_Snort_06
+			Elephant_Snort_08
+			Elephant_Snort_09
+		end

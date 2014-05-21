@@ -1,0 +1,771 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	format:
+;	-------------------------------------------------------------------------
+;
+;		ambient_settlement
+;		{
+;			type			<ambient_type>
+;			[
+;				culture		<culture_type>
+;				...
+;			]
+;
+;			[ 
+;				climate		<climate_name> 
+;				...
+;			]
+;
+;			plan			<resource id>
+;
+;			[ winter_plan	<resource id> ]
+;
+;			[ st			<suitability tolerance> ]
+;
+;			[
+;				children
+;				{
+;					<resource id>
+;					...
+;				}
+;			]
+;
+;			[ always ]
+;		}
+;		...
+;
+;	------------------------------------------------------------------------
+;
+;	valid ambient types:
+;	-------------------------------------------------------------------------
+;	
+;		farm
+;		watchtower
+;		forestry
+;		natural
+;		monument
+;		ruin
+;		ancient_battlefield
+;		child
+;		special
+;		
+;	-------------------------------------------------------------------------
+;
+;	valid culture types:
+;	-------------------------------------------------------------------------
+;	
+;		southern_european
+;		northern_european
+;		mesoamerican
+;		greek
+;		eastern_european
+;		middle_eastern
+;	-------------------------------------------------------------------------
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; farms
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;ambient_settlement forestry
+;{
+;	type	forestry
+;	culture	southern_european
+;
+;	plan	resource_forestry
+;}
+
+ambient_settlement	resource_roman_farm_A
+{
+	type	farm
+	culture	southern_european
+	plan	resource_roman_farm_A
+	children
+	{
+		hayfield_new
+		olive_grove
+		hay_field_small_ploughed
+		hay_field_ruin	
+	}
+}
+
+
+ambient_settlement	resource_roman_farm_B
+{
+	type	farm
+	culture	southern_european
+	plan	resource_roman_farm_B
+	children
+	{
+		hayfield_new
+		hay_field_new_128_64
+		hay_field_new_128_128
+		hay_field_long_ploughed
+	}
+}
+
+ambient_settlement	resource_roman_poor_farm_A
+{
+	type	farm
+	culture	southern_european
+	culture northern_european
+
+	plan	resource_roman_poor_farm_A
+
+	children
+	{
+		hayfield_new
+		farm_orchard_field
+		farm_hay_corn
+		farm_grove
+	}
+}
+
+
+ambient_settlement	resource_roman_poor_farm_B
+{
+	type	farm
+	culture	southern_european
+	culture northern_european
+
+	plan	resource_roman_poor_farm_B
+
+	children
+	{
+		hayfield_new
+		olive_grove
+		hay_field_new_128_128
+	}
+}
+
+ambient_settlement roman_country_villa
+{
+	type	farm
+	culture southern_european
+
+	plan	roman_country_villa
+
+	children
+	{
+		hayfield_new
+		hay_field_long_ploughed
+		hay_field_new_128_64
+	}	
+}
+
+
+ambient_settlement	resource_egyptian_farm_A
+{
+	type	farm
+	culture	eastern_european
+	plan	resource_egyptian_farm_A
+;	children
+;	{
+;		hayfield_new
+;		hay_field_small_ploughed
+;		hay_field_new_128_64
+;		hay_field_long_ploughed
+;	}
+}
+
+
+ambient_settlement	resource_egyptian_farm_B
+{
+	type	farm
+	culture	eastern_european
+
+	plan	resource_egyptian_farm_B
+
+;	children
+;	{
+;		hayfield_new
+;		hay_field_long_ploughed
+;		hay_field_new_128_64
+;	}
+}
+
+ambient_settlement	farm_orchard_field
+{
+	type		farm
+	plan		farm_orchard_field
+	winter_plan	farm_orchard_field_winter
+	children
+	{
+		hayfield_new
+		olive_grove
+		hay_field_new_128_128
+	}
+}
+
+ambient_settlement	farm_hay_corn
+{
+	type		farm
+	plan		farm_hay_corn
+	winter_plan	farm_hay_corn_winter
+	children
+	{
+		hayfield_new
+		hay_field_long_ploughed
+		hay_field_new_128_64
+	}
+}
+
+ambient_settlement	farm_grove
+{
+	type		farm
+	plan		farm_grove
+	winter_plan	farm_grove_winter
+	children
+	{
+		hayfield_new
+		hay_field_small_ploughed
+		hay_field_new_128_64
+		hay_field_long_ploughed
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; children (farm fields)
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ambient_settlement	resource_hay_field_with_stone_wall
+{
+	type	child
+	culture southern_european
+	plan	resource_hay_field_with_stone_wall
+	winter_plan	resource_hay_field_with_stone_wall_winter
+}
+
+ambient_settlement	hayfield_new
+{
+	type		child
+	plan		hayfield_new
+	winter_plan	hayfield_new_winter
+}
+
+ambient_settlement	olive_grove
+{
+	type		child
+	plan		olive_grove
+}
+
+ambient_settlement	hay_field_small_ploughed
+{
+	type		child
+	plan		hay_field_small_ploughed
+	winter_plan	hay_field_small_ploughed_winter
+}
+
+ambient_settlement	hay_field_ruin
+{
+	type		child
+	plan		hay_field_ruin
+	winter_plan	hay_field_ruin_winter
+}
+
+ambient_settlement	hay_field_new_128_64
+{
+	type		child
+	plan		hay_field_new_128_64
+	winter_plan	hay_field_new_128_64_winter
+}
+
+ambient_settlement	hay_field_new_128_128
+{
+	type		child
+	plan		hay_field_new_128_128
+	winter_plan	hay_field_new_128_128_winter
+}
+
+ambient_settlement	hay_field_long_ploughed
+{
+	type		child
+	plan		hay_field_long_ploughed
+	winter_plan	hay_field_long_ploughed_winter
+}
+
+;;;;;;;;;;;;;;;  greek  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ambient_settlement	ruined_greek_temple
+{
+	type	monument
+	culture greek
+
+	plan	ruined_greek_temple
+
+	
+
+}
+
+ambient_settlement	tholos_tomb
+{
+	type	monument
+	culture greek
+
+	plan	tholos_tomb
+
+	
+
+}
+
+;;;;;;;;;;;;;;; northern_european  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ambient_settlement	barrow_mound
+{
+	type	monument
+	culture northern_european
+
+	plan	barrow_mound
+}
+
+
+ambient_settlement	henge
+{
+	type	monument
+	culture	northern_european
+
+	plan	henge
+}
+
+ambient_settlement	henge_half_built
+{
+	type	monument
+	culture	northern_european
+
+	plan	henge_half_built
+}
+
+ambient_settlement	standing_stones
+{
+	type	monument
+	culture	northern_european
+
+	plan	standing_stones
+}
+
+
+ambient_settlement	wagon_laager
+{
+	type	special
+	culture	northern_european
+
+	plan	LION_wagon_laager
+
+	area	data/settlement_plans/LION_wagon_laager_area.CAS
+	info	data/settlement_plans/LION_wagon_laager_info.CAS
+}
+
+;;;;;;;;;;;;;;;;;;;  eastern_european   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ambient_settlement	meroitic_cemetery
+{
+	type	monument
+	culture eastern_european
+
+	plan	meroitic_cemetery
+	
+}
+
+
+ambient_settlement	egyptian_rock-cut_temple
+{
+	type	monument
+	culture eastern_european
+
+	plan	egyptian_rock-cut_temple
+
+	
+}
+
+ambient_settlement	egyptian_underground_tomb
+{
+	type	monument
+	culture eastern_european
+
+	plan	egyptian_underground_tomb
+
+	
+}
+
+
+ambient_settlement	clump_of_palm_trees_A
+{
+	type		natural
+
+	plan		clump_of_palm_trees_A
+}
+
+
+ambient_settlement	clump_of_palm_trees_B
+{
+	type		natural
+
+	plan		clump_of_palm_trees_B
+}
+
+
+ambient_settlement	oasis
+{
+	type		natural
+	climate		sandy_desert
+
+	plan		oasis
+}
+
+;;;;;;;;;;;;;;;;;;;;;   southern_european  ;;;;;;;;;;;;;;;
+
+ambient_settlement columbarium
+{
+	type	monument
+	culture southern_european
+
+	plan	resource_columbarium
+
+	
+}
+
+
+ambient_settlement former_marching_camp
+{
+	type	child
+	culture southern_european
+
+	plan	former_marching_camp
+
+	
+}
+
+
+ambient_settlement ancient_battlefield
+{
+	type	ancient_battlefield
+	culture southern_european
+
+	plan	ancient_battlefield
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;  watchtowers - eventually these will be moved to descr_settlement_plan
+;  once the code required to link them to the strat map has been done
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ambient_settlement	watchtower_roman_greek
+{
+	type		watchtower
+	culture		southern_european
+
+	plan		watchtower_roman_greek
+}
+
+
+ambient_settlement	watchtower_egyptian_eastern
+{
+	type		watchtower
+	culture 	eastern_european
+	
+	plan		watchtower_egyptian_eastern
+}
+
+
+ambient_settlement	watchtower_barbarian
+{
+	type		watchtower
+	culture 	northern_european
+
+	plan		watchtower_barbarian
+}
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; special
+;
+;  Wonders   -   battlefield versions have _battle on the end
+; 		  RTM versions (higher-poly, bigger textures etc)  don't.
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ambient_settlement	pyramids_at_giza_battle
+{
+	type	special
+
+	plan	pyramids_at_giza_battle
+
+	st		-20
+}
+
+ambient_settlement	olympia_battle
+{
+	type	special
+
+	plan	olympia_battle
+
+	st		-20
+}
+
+ambient_settlement	olympia
+{
+	type	special
+
+	plan	olympia
+
+	st		-20
+}
+
+;;;;;;;;;;;;;    RTM  scenery
+
+ambient_settlement	colosseum_interior_RTM
+{
+	type	special
+	
+	plan	colosseum_interior_RTM
+
+	st		-20
+
+	;always
+}
+
+ambient_settlement	circus_maximus_interior_RTM
+{
+	type	special
+
+	plan	circus_maximus_interior_RTM
+
+	st		-20
+
+	;always
+}
+
+ambient_settlement	long_roman_street
+{
+	type	special
+
+	plan	long_roman_street
+
+	st		-20
+
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	ruins
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ambient_settlement	roman_ruins
+{
+	type		ruin
+	plan		roman_ruins
+	culture 	southern_european
+}
+
+ambient_settlement	ruins_2
+{
+	type		ruin
+	plan		ruins_2
+	culture 	southern_european
+}
+
+ambient_settlement	abandoned_house
+{
+	type		ruin
+	plan		abandoned_house
+	culture 	southern_european
+}
+
+ambient_settlement	abandoned_house_2
+{
+	type		ruin
+	plan		abandoned_house_2
+	culture 	southern_european
+}
+
+ambient_settlement	barb_ruins
+{
+	type		ruin
+	plan		barb_ruins
+	culture 	northern_european
+}
+
+ambient_settlement	barb_ruins_01
+{
+	type		ruin
+	plan		barb_ruins_01	
+	culture 	northern_european
+}
+
+ambient_settlement	barb_ruins_02
+{
+	type		ruin
+	plan		barb_ruins_02
+	culture 	northern_european
+}
+
+ambient_settlement	barb_ruins_03
+{
+	type		ruin
+	plan		barb_ruins_03
+	culture 	northern_european
+}
+
+ambient_settlement	barb_ruins_04
+{
+	type		ruin
+	plan		barb_ruins_04
+	culture 	northern_european
+}
+
+;ambient_settlement	eastern_blacksmith_ruin
+;{
+;	type		ruin
+;	plan		eastern_blacksmith_ruin
+;	culture 	middle_eastern
+;}
+
+; broken, reason unknown
+;ambient_settlement	eastern_ruin_01
+;{
+;	type		ruin
+;	plan		eastern_ruin_01
+;	culture 	middle_eastern
+;}
+
+ambient_settlement	eastern_ruin_02
+{
+	type		ruin
+	plan		eastern_ruin_02
+	culture 	middle_eastern
+}
+
+ambient_settlement	eastern_ruin_03
+{
+	type		ruin
+	plan		eastern_ruin_03
+	culture 	middle_eastern
+}
+
+ambient_settlement	eastern_ruin_village
+{
+	type		ruin
+	plan		eastern_ruin_village
+	culture 	middle_eastern
+}
+
+ambient_settlement	egyptian_ruin_01
+{
+	type		ruin
+	plan		egyptian_ruin_01
+	culture 	eastern_european
+}
+
+ambient_settlement	egyptian_ruins_large
+{
+	type		ruin
+	plan		egyptian_ruins_large
+	culture 	eastern_european
+}
+
+ambient_settlement	egyptian_ruins_03
+{
+	type		ruin
+	plan		egyptian_ruins_03
+	culture 	eastern_european
+}
+
+ambient_settlement	egyptian_ruins_walls
+{
+	type		ruin
+	plan		egyptian_ruins_walls
+	culture 	eastern_european
+}
+
+ambient_settlement	greek_ruin_01
+{
+	type		ruin
+	plan		greek_ruin_01
+	culture 	greek
+}
+
+ambient_settlement	ruined_greek_temple_02
+{
+	type		ruin
+	plan		ruined_greek_temple_02
+	culture 	greek
+}
+
+ambient_settlement	swamp_ruins_01
+{
+	type		ruin
+	plan		swamp_ruins_01
+}
+
+ambient_settlement	swamp_ruins_02
+{
+	type		ruin
+	plan		swamp_ruins_02
+}
+
+ambient_settlement	swamp_ruins_03
+{
+	type		ruin
+	plan		swamp_ruins_03
+}
+
+ambient_settlement	swamp_ruins_04
+{
+	type		ruin
+	plan		swamp_ruins_04
+}
+
+ambient_settlement	swamp_ruins_05
+{
+	type		ruin
+	plan		swamp_ruins_05
+}
+
+;ambient_settlement	snowy_ruin_01
+;{
+;	type		ruin
+;	plan		snowy_ruin_01
+;}
+
+;ambient_settlement	snowy_ruin_02
+;{
+;	type		ruin
+;	plan		snowy_ruin_02
+;}
+
+;ambient_settlement	snow_ruins_walls
+;{
+;	type		ruin
+;	plan		snow_ruins_walls
+;}
+
+;ambient_settlement	snow_ruins_walls_2
+;{
+;	type		ruin
+;	plan		snow_ruins_walls_2
+;}
+
+;ambient_settlement	snow_ruins_walls_3
+;{
+;	type		ruin
+;	plan		snow_ruins_walls_3
+;}
+
+
+
+

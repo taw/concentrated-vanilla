@@ -1,0 +1,510 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;			FLAMING BALLISTA EFFECTS
+;
+;		ALSO PUTTING IN NEW ARROW EFFECTS IN THIS DESCR
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect ballista_model
+{
+	type projectile
+	{
+		model		models_effects/flaming_balista_bolt.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+effect bullet_model
+{
+	type projectile
+	{
+		model		models_effects/bullet.CAS
+		fade_time	0.01
+		view_dist  300
+		sort_for_speed
+	}
+}
+
+
+effect ballista_model_glow
+{
+	type projectile
+	{
+		model		models_effects/flaming_ballista_glow.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+effect boulder_flaming_model
+{
+	type projectile
+	{
+		model		models_effects/boulder_flaming.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+effect flaming_ballista_torch_fire
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.5, 0.2
+		age_range        	0.2, 0.3
+	    grow_range		 	1.0, 1.0
+		vel_range  			0.0, 0.0
+		
+		keyframe_colour
+		{
+				0.0, 	255,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	0,   255,   255,   255
+		}
+		
+		alpha_max	   		255			 ; maximum alpha value
+		initial_size		0.3, 0.5
+		blend_type			additive
+		offset				0.0, 0.0, 0.2
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        10 	     	; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		5
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0.2, 0.1
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+
+effect flaming_ballista_smoke
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      0.1, 0.5
+		initial_size	1.5, 1
+		age_range       0.3, 0.8
+        grow_range	 	1, 1
+		velocity   		0.01, 0.04
+		colour     		55, 50, 47
+		alpha_max	   	100			 ; maximum alpha value
+		batched			
+		sort_bias		0
+		fade_time		0.5
+		system_radius   20
+		max_particles   1500
+		random_emit_radius		0.2, 0.2
+		
+		keyframe_colour
+		{
+				0.0, 	0,   55, 50,     47
+				0.1, 	100, 55,  50,   47
+				1.0, 	0,   55,   50,  47
+		}
+		
+		emitter distance
+		{
+			emitter_falloff_dist	500			; distance in meters to reduce emission over
+			emitter_falloff_bias	0
+			
+			density			5 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+effect fiery_ballista_light
+{
+	type light
+	{
+		fade_out_time	0.1
+		keyframe_colour
+		{
+				0.05, 	240, 160,  90
+				0.1, 	234, 170, 90
+				0.15, 	246, 160,  90
+				0.2, 	236, 170, 90
+				0.25, 	244, 160, 90
+				0.3, 	234, 170, 90
+		}
+			
+		keyframe_radius
+		{
+				0.05, 	16
+				0.1, 	17
+		}
+	}
+}
+
+; EFFECT SET FOR FLAMING BALLISTA PROJECTILE EFFECTS
+
+effect_set flaming_ballista_projectile_set
+{
+	lod 1000
+	{
+		ballista_model
+		flaming_ballista_smoke
+		fiery_ballista_light
+		ballista_model_glow
+		flaming_ballista_torch_fire
+	}
+}
+
+effect arrow_model
+{
+	type projectile
+	{
+		model		models_effects/arrow_projectile.CAS
+		clr_adjust_by_ambient_intensity
+		fade_time	0.01
+		view_dist  300
+		sort_for_speed
+	}
+}
+
+effect crossbow_arrow_model
+{
+	type projectile
+	{
+		model		models_effects/arrow_projectile.CAS
+		clr_adjust_by_ambient_intensity
+		fade_time	0.01
+		view_dist  300
+		sort_for_speed
+	}
+}
+
+effect crossbow_steel_arrow_model
+{
+	type projectile
+	{
+		model		models_effects/arrow_projectile.CAS
+		clr_adjust_by_ambient_intensity
+		fade_time	0.01
+		view_dist  300
+		sort_for_speed
+	}
+}
+
+effect arrow_model_trail
+{
+	type ribbon
+	{
+		alpha_max	128	  ; Alpha value at start of trail
+		alpha_min	10	  ; Alpha value at end of trail
+		fade_start	100	  ; Distance to start fading out.
+		fade_end	200	  ; This should be the same as the max lod distance in the effect set.
+		head_width	0.1	  ; Width of the ribbon at arrow end
+		tail_width  0.01    ; Width of the ribbon at the tail end
+
+		texture	    models_effects/textures/arrow_trail.texture
+	}
+}
+
+effect crossbow_arrow_model_trail
+{
+	type ribbon
+	{
+		alpha_max	128	  ; Alpha value at start of trail
+		alpha_min	10	  ; Alpha value at end of trail
+		fade_start	100	  ; Distance to start fading out.
+		fade_end	200	  ; This should be the same as the max lod distance in the effect set.
+		head_width	0.1	  ; Width of the ribbon at arrow end
+		tail_width  0.01    ; Width of the ribbon at the tail end
+
+		texture	    models_effects/textures/arrow_trail.texture
+	}
+}
+
+effect crossbow_steel_arrow_model_trail
+{
+	type ribbon
+	{
+		alpha_max	128	  ; Alpha value at start of trail
+		alpha_min	10	  ; Alpha value at end of trail
+		fade_start	100	  ; Distance to start fading out.
+		fade_end	200	  ; This should be the same as the max lod distance in the effect set.
+		head_width	0.1	  ; Width of the ribbon at arrow end
+		tail_width  0.01    ; Width of the ribbon at the tail end
+
+		texture	    models_effects/textures/arrow_trail.texture
+	}
+}
+
+effect_set arrows_new_set
+{
+	lod 1000
+	{
+		arrow_model
+		arrow_model_trail
+		arrow_whizz_sound
+		arrow_fly_sound
+	}
+}
+
+effect_set crossbow_arrows_new_set
+{
+	lod 1000
+	{
+		crossbow_arrow_model
+		crossbow_arrow_model_trail
+		crossbow_fly_sound
+	}
+}
+
+effect_set crossbow_steel_arrows_new_set
+{
+	lod 1000
+	{
+		crossbow_steel_arrow_model
+		crossbow_steel_arrow_model_trail
+		crossbow_fly_sound
+	}
+}
+
+effect arrow_model_flaming
+{
+	type projectile
+	{
+		model		models_effects/arrow_projectile_flaming.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+effect crossbow_arrow_model_flaming
+{
+	type projectile
+	{
+		model		models_effects/arrow_projectile_flaming.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+effect nahptha_bomb_model
+{
+	type projectile
+	{
+		model		models_effects/nahptha_bomb.CAS
+		clr_adjust_by_ambient_intensity
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+
+effect arrow_model_flaming_glow
+{
+	type projectile
+	{
+		model		models_effects/arrow_projectile_flaming_glow.CAS
+		fade_time	0.01
+		sort_for_speed
+	}
+}
+
+
+effect arrow_model_trail_flaming
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      0.03, 0.04
+		initial_size	0.3, 0.3
+		age_range       0.03, 0.14
+        grow_range	 	1, 1
+		velocity   		0.0, 0.0
+		colour     		55, 50, 47
+		alpha_max	   	155			 ; maximum alpha value
+		batched			
+		sort_bias		15
+		die_size		0, 0.14
+		fade_time		0.1
+		system_radius   20
+		max_particles   2500
+		
+		emitter distance
+		{
+			emitter_falloff_dist	500			; distance in meters to reduce emission over
+			emitter_falloff_bias	0
+			
+			density			3 	     ; how many particels per meter
+		}
+		clr_adjust_by_ambient_intensity
+	}
+}
+
+effect arrow_torch_fire
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.01, 0.01
+		age_range        	0.1, 0.74
+	    grow_range		 	1.0, 1.0
+		vel_range  			0.0, 1.0
+		
+		keyframe_colour
+		{
+;				0.0		255, 255, 255, 255
+				0.0, 	255,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	50,   255,   255,   255
+		}
+		
+		alpha_max	   		255			 ; maximum alpha value
+		initial_size		0.1, 0.14
+		blend_type			additive
+		offset				0.0, 0.0, 0.2
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        3 	     	; how many particels per second
+			emitter_falloff_dist	100			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		5
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0, 0.05
+		system_radius			2.0			    ; radius used for culling
+		batched
+	}
+}
+
+;flaming boulder sparks trail
+
+effect boulder_flaming_torch_fire
+{
+	type particle
+	{
+		texture				battlefield/fire/#flame_wheel.tga		
+;		texture				models_effects/textures/checker_board.tga
+		sprite_origin		0.0, 0.0
+		sprite_size			1.0, 1.0
+
+		size_range       	0.01, 0.01
+		age_range        	0.3, 0.74
+	    grow_range		 	1.0, 1.5
+		vel_range  			0.4, 0.5
+		
+		keyframe_colour
+		{
+;				0.0		255, 255, 255, 255
+				0.0, 	255,   255, 255,     255
+				0.1, 	100, 255,  255,   255
+				0.5, 	100, 255,   255,   255
+				1.0, 	50,   255,   255,   255
+		}
+		
+		alpha_max	   		255			 ; maximum alpha value
+		initial_size		0.4, 1.7
+		blend_type			additive
+		offset				0.0, 0.0, -0.3
+		max_particles       3000
+
+		emitter distance_time
+		{
+			density			        1 	     	; how many particels per second
+			emitter_falloff_dist	1000			; distance in meters to reduce emission over
+			emitter_falloff_bias	0.5			
+			distance_scale  		50
+			max_distance			0.5			
+		}
+
+		random_emit_radius		0.5, 0.3
+		system_radius			1000.0			    ; radius used for culling
+		batched
+	}
+}
+
+
+effect flaming_boulder_smoke_trail
+{
+	type particle
+ 	{
+		texture			battlefield/fire/smoke0.tga
+
+		size_range      2.0, 2.5
+		age_range       1.4, 1.5
+	    grow_range		1.5, 2.8
+		velocity   		0.0, 0.2
+		
+		keyframe_colour
+		{
+				0.0, 	255,   80, 80,     80
+				0.7, 	0,   80, 80,     80
+
+		}
+
+		
+		alpha_max	   	190			 ; maximum alpha value
+		emitter distance
+		{
+			density			1 	     ; how many particels per meter
+		}
+		
+		fade_time		0.1		
+
+		clr_adjust_by_ambient_intensity		
+	}
+}
+
+
+
+effect_set arrows_fire_new_set
+{
+	lod 1000
+	{
+		arrow_model_flaming
+		arrow_model_trail_flaming
+		arrow_model_flaming_glow
+		arrow_torch_fire
+
+	}
+}
+
+effect_set nahptha_bomb_projectile_set
+{
+	lod 1000
+	{
+		nahptha_bomb_model
+		arrow_torch_fire
+		arrow_model_trail_flaming
+
+	}
+}
+
+
+effect_set bullet_model_set
+{
+	lod 1000
+	{
+		bullet_model
+		very_small_shockwave
+	}
+}

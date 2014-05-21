@@ -1,0 +1,21 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Prebattle speech
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 1d streamed priority 500 volume -20 fadein 0 fadeout 1
+DEFAULT: randomdelay 0 rndvolume 0 pan .5 delay 0
+DEFAULT: dry_level 1.0 wet_level 0
+DEFAULT: streamed pref SPEECH
+DEFAULT: probability 1 
+
+event PREBATTLE_CHEERING streamed looped volume -30 fadein 1 fadeout 5 delay 15.5 pref INTERFACE
+    folder data/sounds/Voice/Human/Generic
+   	background_ambience_prebattle.mp3
+end
+
+BANK: prebattle_speech
+
+source export_descr_sounds_prebattle.txt
+

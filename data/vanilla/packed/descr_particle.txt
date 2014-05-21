@@ -1,0 +1,87 @@
+;
+;	This is the setup file for the various particle systems the game uses. The entries in
+;	this file are here mostly for ease-of-editing the art content; the game requires all 
+;	of them to be present, because various pieces of code add particles to the systems 
+;	generated from these descriptions - ie the units push dust particles into the dust 
+;	system
+;
+;	;					denotes a comment ...
+;						
+;	type				identifier of the particle system type
+;						
+;	action				there can be up to 8 of these, and they are applied in the order in which
+;						they are specified - particle actions are the things which move, age and 
+;						kill particles in the world... not all particle types need an action list
+;
+;						advance []
+;						age_to_limit [float: maximum age in seconds]
+;						expand [expansion rate in meters/second]
+;						max_particles [integer : maximum number of particles in game]
+;						accel_simple [float : in_x, in_y, in_z]
+;						colour_shift [val to 255: red,green,blue start colour, red,green,blue end colour][float: transition time from particle birth]
+;
+;						these can appear in any order, and the order in which they are given is 
+;						the order in which it is applied
+;						
+;	renderer			what type of particle renderer to use for these particles; this must be
+;						one of the following, and note that each entry requires slightly different
+;						parameters, all seperated by comma's:
+;						
+;						tri
+;							no parameters
+;						
+;						quad
+;							no parameters
+;						
+;						quad_fade
+;							fade_in:	fraction of particle lifetime after birth spent fading in
+;							fade_out:	fraction of particle lifetime before death spent fading out
+;							alpha_key:	0-255 number which gives alpha draw threshold
+;
+;							fade_in_time + fade_out_time must be less than 1
+;
+;	renderer_class		class of rendering that the particle system falls into - this must be 
+;						one of normal,blended,far
+;
+;	anim				this should be followed by three fields, as follows
+;						
+;							<number of frames>		more than 1 means an animated particle, 
+;													0 is illegal
+;							<frames per second>		number of animation frames per second, if 
+;													not animated set to 0
+;							loop, do_not_loop		wether to loop the animation or hold on the
+;													final frame
+;
+;	random				the number of random texture frame tracks which are present... this allows you 
+;						to set up a particle with an appearance chosen from several random alternates;
+;						if there is animation present, the different alternate tracks all have to be the
+;						same number of frames, and the uv's should be specified as follows:
+;
+;							(frame1) {alt1,alt2,altt3} , (frame2) {alt1,alt2,alt3} and so on
+;						
+;	texture				texture to use for this particle type
+;
+;	texture_frame		there can be many of these, as each specifies a single frame of uv coordinates
+;						for the particle type; each statement should provide either 3 (if using the tri
+;						renderer) or 4 (quad renderers) sets of uv coordinates on the line following
+;
+;						animated types will need as many frames as are stated in the 'anim' statement
+;						random-choice particles will need as many sets per animation frame as specified
+;						in the random statement above
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type			dust
+action			accel_simple, 0.0, -9.8, 0.0
+action			advance
+action			damping, 0.95
+action			age_to_limit
+action			expand_param, 0.0
+action			max_particles, 8000
+renderer		quad_fade, 0.1, 0.65, 0
+renderer_class	blended
+anim			1, 0, do_not_loop
+texture			data/battlefield/cloud_sprite.tga
+texture_frame	0,1, 1,1, 1,0, 0,0
+

@@ -1,0 +1,5324 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Names Database Entries
+;;
+;; Holds non-localised Latin names for settlements and characters.  These are arranged on
+;; a per faction basis.
+;;
+;; Entries are specified by the following syntax:
+;;
+;; faction: <faction name>
+;;	settlements
+;;		<settlement names list>
+;;	characters
+;;		<character names list>
+;;
+;; faction ... etc
+
+
+
+;; Sicily
+
+;; Italy
+faction: papal_states
+
+	characters
+		Abbate
+		Accattus
+		Aczo
+		Aiutus
+		Albertus
+		Albizus
+		Alcabe
+		Alexander
+		Alexius
+		Alferius
+		Amatus
+		Andreas
+		Angellus
+		Arrigus
+		Bandinus
+		Barone
+		Benectus
+		Benencasa
+		Bernardus
+		Biancus
+		Bonus
+		Borghese
+		Buonacorsus
+		Canbius
+		Conpangnus
+		Datus
+		Domencius
+		Donatus
+		Falcone
+		Filippus
+		Froderigus
+		Gaitanus
+		Gherardus
+		Giannis
+		Gionta
+		Gratianus
+		Gregory
+		Gualandus
+		Guido
+		Iacobus
+		Iohannes
+		Lanbertus
+		Lanfrancus
+		Leonardus
+		Lutterius
+		Maczeus
+		Marcus
+		Martinus
+		Miccele
+		Nero
+		Niccolus
+		Oddus
+		Orlandus
+		Orsellus
+		Pagenellus
+		Petrus
+		Pierus
+		Pisanus
+		Ranerius
+		Renaldus
+		Rubertus
+		Salvi
+		Saracinus
+		Simon
+		Stephanus
+		Strenna
+		Talentus
+		Tomascius
+		Ubaldus
+		Ugo
+		Ugolinus
+		Ventura
+		Villanus
+		Vitalis
+		Vivianus
+		Zappa
+
+	surnames
+		Accorsi
+		Alberti
+		Albizi
+		Alexii
+		Altilie
+		Amichi
+		Arcadore
+		Arcarius
+		Arlocti
+		Arrigi
+		Aurifex
+		Bacarelli
+		Baldovini
+		Banbacarius
+		Bancherius
+		Banchiere
+		Bandini
+		Barberius
+		Baronis
+		Batacti
+		Beccus
+		Benenati
+		Benencase
+		Bernardi
+		Bocca
+		Boctarius
+		Borsarius
+		Bruni
+		Bursarius
+		Caldolarius
+		Calzolarius
+		Capellarius
+		Capitaneus
+		Coiarius
+		Corrigarius
+		Corsus
+		Ervarius
+		Faber
+		Falconis
+		Ferraius
+		Fornarius
+		Gherardi
+		Guidi
+		Iacobi
+		Iannis
+		Lanberti
+		Martini
+		Medicus
+		Morelli
+		Notarius
+		Nuntius
+		Olearius
+		Orlandi
+		Pannarius
+		Pellarius
+		Petri
+		Picconis
+		Pieri
+		Ranerii
+		Renaldi
+		Rossus
+		Rubeus
+		Sensalis
+		Soavizi
+		Specialis
+		Vicini
+		Vinarius
+;;bynames
+		de Avena
+		de Fabro
+		de Fondaco
+		de Sala
+		de Spino
+		Florentinus
+		de Spina
+		Arlocti
+		de Bangno
+		de Canpo
+		de Cantone
+		de Catallo
+		de Orticaio
+		de Vecchio
+		Pistoriensis
+		de Alario
+		de Arizio
+		de Balneo
+		de Bargio
+		de Bello
+		de Biancho
+		de Buona
+		de Calce
+		de Caldera
+		de Cardinale
+		de casa Lei
+		de Cava
+		de Cinabro
+		de Corso
+		de Dingna
+		de Embolo
+		de Fabro
+		de Fagiano
+		de Ferro
+		de Giallo
+		de Grasso
+		de Guardia
+		de Lama
+		de Magio
+		de Massa
+		de Modina
+		de Nino
+		de Occhio
+		de Paulo
+		de Pisce
+		de Puccio
+		de Turchio
+		de Turri
+		de Verde
+		de Vico
+		de Volta
+
+	women
+		Adelasia
+		Aiguana
+		Altadonna
+		Amata
+		Angela
+		Bella
+		Beldina
+		Benedacta
+		Benvenuta
+		Berta
+		Bona
+		Bruna
+		Clara
+		Complita
+		Conciata
+		Dialta
+		Divitia
+		Druda
+		Flore
+		Gilia
+		Iacoba
+		Letitia
+		Lucia
+		Margarita
+		Maria
+		Massaria
+		Palmeria
+		Pera
+		Pleneria
+		Riccha
+		Rosana
+		Santesa
+		Savia
+		Sibilia
+		Stefania
+		Verde
+		Verdiana
+		Ysa
+
+faction: venice
+
+	characters
+		Alberto
+		Alessandro
+		Almerico
+		Aluysio
+		Andrea
+		Anechino
+		Angelo
+		Antonio
+		Aureo
+		Baiamonte
+		Baldasera
+		Balsamo
+		Barbus
+		Bartolomeo
+		Benasuto
+		Benghi
+		Benintendi
+		Benvenuto
+		Bernabas
+		Bernardo
+		Bertuccio
+		Blasio
+		Bucello
+		Cataldo
+		Clario
+		Cristiano
+		Cristoforo
+		Daniele
+		Dardi
+		Dionisio
+		Domenico
+		Donato
+		Dragano
+		Enrico
+		Ermolao
+		Facio
+		Federico
+		Felle
+		Francesco
+		Frangibus
+		Galaxio
+		Gasparo
+		Geminiano
+		Geragio
+		Gerardo
+		Giorgio
+		Giovanni
+		Giuliano
+		Gregorio
+		Guido
+		Guilelmo
+		Gurian
+		Jacobo
+		Lenuzo
+		Leonardo
+		Lorenzo
+		Luca
+		Mafeo
+		Marco
+		Marino
+		Martino
+		Michael
+		Mora
+		Morosino
+		Nicolo
+		Oliverio
+		Paladin
+		Palmerio
+		Panelo
+		Pangratio
+		Pantaleone
+		Paolo
+		Pascal
+		Phylipo
+		Pietro
+		Poluccia
+		Prelatus
+		Raffiano
+		Rambaldo
+		Raynucio
+		Rigi
+		Rizardo
+		Rolandino
+		Romaso
+		Saraceno
+		Sclavo
+		Semelino
+		Simon
+		Tarvixio
+		Thadeo
+		Tomaso
+		Triadano
+		Tusco
+		Uberto
+		Vendramino
+		Victor
+		Vitaliano
+		Vito
+		Zilio
+		Zonta
+		Zusto
+
+	surnames
+		Aglietti
+		Barbarigo
+		Barberini
+		Baseggio
+		Basilio
+		Batlle
+		Bettiza
+		Biacchi
+		Bianchetti
+		Bon
+		Calza
+		Calzaghe
+		Calzolai
+		Carmelengo
+		Carnazza
+		Cesaresco
+		Cesti
+		Cestini
+		Clareno
+		Della Volpe
+		Delmonico
+		Delogu
+		Delvecchio
+		Deodato
+		Destefani
+		Detillo
+		Dettori
+		Dolfin
+		Donatello
+		Farinelli
+		Farnese
+		Fasanaro
+		Foscari
+		Fugosi
+		Funicello
+		Furillo
+		Furlano
+		Galilei
+		Gradenigo
+		Gusti
+		Lazzarini
+		Manselli
+		Martinella
+		Martinengo
+		Memo
+		Menegi
+		Mocenigo
+		Molin
+		Natale
+		Nesti
+		Niccoli
+		Nichetti
+		Pasqualigo
+		Pedercini
+		Pedrazzolli
+		Piovani
+		Premarin
+		Priuli
+		Ricco
+		Richelmi
+		Ricordi
+		Sanuto
+		Sardini
+		Sartor
+		Selvo
+		Soranzo
+		Tasso
+		Tauretto
+		Tedaldo
+		Tomado
+		Toscanelli
+		Venier
+		Zancani
+		Zane
+		Zanotti
+		Zaretti
+		Zen
+		Zeno
+		Zorzi
+;;bynames
+		de Venice
+		de Crete
+		de Dalmatia
+		de Baza
+		de Chiara
+		de Giemona
+		de Ponteba
+		de Tolmezo
+		de Concordia
+		de Costoa
+		de Draga
+		de Fiume
+		de Montona
+		de Parenzo
+		de Pola
+		de Ronigno
+		de Serso
+		de Vela
+		de Vinago
+		de Andura
+		de Castinous
+		de Clue foni
+		de Feun
+		de Finale
+		de Finiza
+		de Luca
+		de Monaco
+		de Torilia
+		de Lisano
+		de Pistoia
+		de Recho
+		da Canal
+		da Molin
+		de Marchi
+		de Martino
+		de Mauro
+		de Meo
+		de Michelis
+		de Negri
+		de Niro
+		de Rosa
+		de Ruggiero
+		de Sanctis
+		de Vesci
+		de Vito
+		di Biagio
+		di Caprio
+		di Centa
+		di Giovine
+		di Grande
+		di Iasio
+
+	women
+		Agnesina
+		Alegreza
+		Anna
+		Benevenuta
+		Besina
+		Bianca
+		Campagnola
+		Catarina
+		Colleta
+		Cristina
+		Donata
+		Elizabeta
+		Florentia
+		Flos
+		Francesca
+		Gerita
+		Helena
+		Luca
+		Lucia
+		Magdalena
+		Maria
+		Marte
+		Micola
+		Pasqualina
+		Pencina
+		Penina
+		Richa
+		Thomisina
+		Zaneta
+
+
+
+faction: sicily
+
+	characters
+		Alberto
+		Albizzo
+		Anselmo
+		Ario
+		Azzerello
+		Beca
+		Bernardo
+		Bieda
+		Bindello
+		Buffillo
+		Cederno
+		Cencio
+		Cencius
+		Ciapo
+		Coluccio
+		Corrado
+		Dauferi
+		Deo
+		Enrico
+		Fenso
+		Gano
+		Gelasius
+		Gherardo
+		Giacinto
+		Giovanni
+		Goffredo
+		Gonzo
+		Gregorio
+		Guido
+		Gusme
+		Jacopo
+		Lamberto
+		Lorenzo
+		Maccio
+		Marino
+		Migianino
+		Nene
+		Niccolo
+		Orso
+		Ottobono
+		Paolo
+		Papero
+		Pietro
+		Rino
+		Roger
+		Rolando
+		Romano
+		Sicco
+		Simon
+		Sinibaldo
+		Stagio
+		Teobaldo
+		Teofilatto
+		Tizrano
+		Ubaldo
+		Uberto
+		Viaro
+		Vitale
+
+	surnames
+		Abbado
+		Albani
+		Amocacci
+		Archibugi
+		Balani
+		Basile
+		Benoldi
+		Bobbio
+		Bonomi
+		Borghese
+		Borgia
+		Broccoli
+		Buccapeco
+		Buccaporci
+		Calazzo
+		Canonica
+		Carboni
+		Carracci
+		Castiglioni
+		Cellini
+		Cetani
+		Ciolino
+		Collina
+		Colonna
+		Corsini
+		Crescentius
+		Crivelli
+		Defazio
+		Dei Segni
+		Duccio
+		Fasano
+		Ferrario
+		Fieschi
+		Fonzi
+		Frangipani
+		Galliano
+		Giaconi
+		Giuliani
+		Granziano
+		Guerrieri
+		Infanti
+		Landolfi
+		Lanfranchi
+		Letizi
+		Maffi
+		Malatesta
+		Martelli
+		Masci
+		Merlin
+		Montella
+		Morosini
+		Natta
+		Odescalchi
+		Orsini
+		Paganelli
+		Palmarocchi
+		Papareschi
+		Perfelti
+		Piccolomini
+		Pierleoni
+		Plone
+		Prignano
+		Respigli
+		Salutari
+		Salviati
+		Savelli
+		Scarlatti
+		Scolari
+		Scotti
+		Simon
+		Sinibaldi
+		Sismondi
+		Spiteri
+		Tolo
+		Tomacelli
+		Torriani
+		Tusculani
+		Valbusa
+		Viotti
+		Zoppo
+;;bynames
+		de Sicily
+		de Naples
+		de Auleta
+		de Contuzzo
+		de Marano
+		de Potenza
+		de Rogiano
+		de Sere
+		de Vietre
+		de Bagnaro
+		de Bianco
+		de Calama
+		de Calpizato
+		de Cariati
+		de Crotone
+		de Larocha
+		de Lopizo
+		de Manchia
+		de Palma
+		de Rhezo
+		de Scylazo
+		de Trebesaio
+		de Vibona
+		de Benafri
+		de Casino
+		de Gualsto
+		de Salerno
+		de Anguino
+		de Bestia
+		de Toro
+		de Vaca
+		de Vleho
+		di Augusta
+		di Camarana
+		di Capizzi
+		di Catania
+		di Labruca
+		di Martamo
+		di Roca
+		di Taranto
+		di Castello
+		di Galeata
+		di Lucca
+		di Monsanto
+		di Suburra
+		da Baggio
+		da Gaetan
+		da Vinci
+		de Bardi
+		de Medici
+
+	women
+		Adelisa
+		Agnese
+		Alessandra
+		Andrea
+		Angela
+		Bandecca
+		Bartolomea
+		Belloza
+		Bona
+		Catalina
+		Chola
+		Ciecherella
+		Ciuta
+		Dea
+		Dolce
+		Elizabeth
+		Felicia
+		Filippa
+		Flora
+		Gemma
+		Ghita
+		Gilia
+		Giovanna
+		Gostanza
+		Isabetta
+		Joanna
+		Judith
+		Lapa
+		Leonarda
+		Lippa
+		Lisabetta
+		Lucia
+		Madelena
+		Margherita
+		Marsilia
+		Masina
+		Matilda
+		Nanna
+		Nencia
+		Nicolosa
+		Nucca
+		Pia
+		Paula
+		Riguardatta
+		Sandra
+		Serena
+		Stella
+		Tessa
+		Tomasia
+		Veroncia
+
+faction: milan
+
+	characters
+		Adelmo
+		Agostino
+		Alessandro
+		Amero
+		Antonio
+		Argometto
+		Arrichino
+		Baldassare
+		Banchello
+		Bassista
+		Beca
+		Beltramino
+		Benicio
+		Bernardo
+		Bindello
+		Borgognion
+		Brunaccio
+		Cataldo
+		Catelano
+		Cesare
+		Chimenti
+		Ciango
+		Co
+		Coccino
+		Corsello
+		Cristoforo
+		Dego
+		Evio
+		Fantino
+		Francesco
+		Frolio
+		Giacomo
+		Gian
+		Gilio
+		Gimignano
+		Giorgio
+		Giovanni
+		Girolamo
+		Giuliano
+		Giulio
+		Guadagno
+		Lerino
+		Manno
+		Marco
+		Maria
+		Matteo
+		Morello
+		Moreno
+		Nicola
+		Noddo
+		Paolo
+		Piccardo
+		Pietro
+		Puccio
+		Soderino
+		Stefano
+		Tamerighi
+		Vaggio
+		Vico
+		Virgilio
+
+	surnames
+		Andriani
+		Astolfi
+		Ballan
+		Bernardi
+		Biraghi
+		Biumi
+		Bombello
+		Borromini
+		Bossi
+		Caetani
+		Caimi
+		Canobio
+		Carbonetti
+		Carcano
+		Cernuschi
+		Ciocca
+		Columbana
+		Cremosano
+		Cristiani
+		Deganello
+		Delicati
+		Della Corte
+		Della Mea
+		Detillo
+		Fangio
+		Fantini
+		Ferrario
+		Florioli
+		Galli
+		Giannini
+		Guistiniani
+		Legnano
+		Licci
+		Luino
+		Maiuri
+		Matarrese
+		Mondello
+		Monetario
+		Nichetti
+		Palermo
+		Pensotti
+		Perego
+		Pessina
+		Pomardi
+		Regaino
+		Ribsi
+		Rossi
+		Rugiero
+		Sacchi
+		Settignano
+		Tedaldo
+		Ugurgieri
+		Varzi
+		Vollpato
+;;bynames
+		de Biella
+		de Bronzo
+		de Chrem
+		de Crenola
+		de Garda
+		de Gera
+		de Genoa
+		de Isoleta
+		de Madia
+		de Mantua
+		de Milan
+		de Palenza
+		de Sancia
+		de Tortona
+		de Treis
+		de Feltre
+		de Gorgeto
+		de Molta
+		de Scala
+		de Verona
+		de Chiza
+		de Ferraria
+		de Figarolo
+		de Lugana
+		de Parma
+		de Tobrio
+		de Alba
+		de Ciuas
+		de Turin
+		de Brunec
+		de Tippen
+		de Caro
+		de Felice
+		de Felitta 
+		de Giovanni
+		de Giusti
+		del Arco
+		del Fra
+		del Noce
+		del Piero
+		di Livio
+		di natali
+		di spina
+		di Tella
+		di Vittorio
+
+	women
+		Agnella
+		Agnola
+		Anastasia
+		Andreuola
+		Antonia
+		Bartola
+		Bella
+		Bice
+		Buona
+		Caterina
+		Cicilia
+		Ciosa
+		Cristina
+		Diana
+		Druda
+		Fiametta
+		Fiora
+		Francesca
+		Ghinga
+		Gianetta
+		Ginevra
+		Giuliana
+		Grana
+		Jacopa
+		Lagia
+		Lena
+		Letta
+		Lisa
+		Lorenza
+		Lucrezia
+		Magdalena
+		Maria
+		Martinella
+		Mea
+		Mella
+		Nezetta
+		Novella
+		Pasqua
+		Piera
+		Rigarda
+		Salvaza
+		Santa
+		Simona
+		Taddea
+		Tita
+		Tommasa
+
+faction: france
+
+	characters
+		Adam
+		Adenet
+		Adenin
+		Aleamme
+		Alixandre
+		Amaury
+		Andriet
+		Andry
+		Anseau
+		Anthoine
+		Arnoul
+		Arthur
+		Aubert
+		Audenin
+		Baldwin
+		Baudet
+		Bernard
+		Berthelmi
+		Bertin
+		Bertran
+		Blanchet
+		Bohemond
+		Bureau
+		Casin
+		Charles
+		Christofle
+		Clement
+		Colet
+		Conrrat
+		Denisot
+		Dimenche
+		Emery
+		Enguerran
+		Estienne
+		Evrart
+		Etienne
+		Francis
+		Francois
+		Foucher
+		Fulk
+		Francoys
+		Galoys
+		Garnot
+		Gaspard
+		Gassot
+		Gaston
+		Gauchier
+		Gautier
+		Gawain
+		Georges
+		Germain
+		Gervaisot
+		Gieffroy
+		Gilbert
+		Giles
+		Gilot
+		Girard
+		Godfrey
+		Guillaume
+		Guillemin
+		Guillemot
+		Guion
+		Guiot
+		Guy
+		Gerbert
+		Geoffroi
+		Henri
+		Henry
+		Hugues
+		Heliot
+		Hermant
+		Huet
+		Huguenin
+		Jaques
+		Jaquob
+		Jehanin
+		Jourdain
+		Junien
+		Jean
+		Lanfrank
+		Louis
+		Lancelot
+		Laurens
+		Laurentin
+		Lorin
+		Loys
+		Lucas
+		Luquin
+		Mahiet
+		Marc
+		Marcel
+		Martin
+		Michault
+		Michiel
+		Milet
+		Mathieu
+		Odo
+		Nicolas
+		Noel
+		Oudart
+		Oudin
+		Perrin
+		Perrot
+		Philip
+		Philippe
+		Pierre
+		Poncet
+		Raoulet
+		Raymond
+		Regnault
+		Remon
+		Rene
+		Richart
+		Robert
+		Robin
+		Rogier
+		Rolet
+		Rolin
+		Simon
+		Thevenin
+		Thibault
+		Thierry
+		Thomas
+		Vincent
+		Vilain
+		Volo
+		Yves
+		
+	surnames
+		Alacoque
+		Amyot
+		Arnaud
+		Becot
+		Bliaud
+		Borain
+		Brunius
+		Chanteur
+		Clement
+		Coeur
+		Cottaz
+		Douie
+		Febre
+		Fouinon
+		Gassou
+		Jeannin
+		Karembeu
+		le Brun
+		le Gris
+		le Maingre
+		le Sueur
+		Magliorie
+		Maquereau
+		Marcel
+		Mauclerc
+		Mauvoisin
+		Meurent
+		Oudet
+		Philibert
+		Plesseraud
+		Poitevin
+		Richelieu
+		Robert
+		Saisset
+		Sarrasin
+		Sorel
+		Tanlay
+		Touchet
+		Tristram
+		Veron
+		Xavier
+;;bynames
+		de Paris
+		de Provence
+		de Toulouse
+		de Champagne
+		d_Angers
+		d_Arles
+		de Bordeaux
+		de Bourges
+		de Bouillon
+		de Calais
+		de Dijon
+		de Foix
+		de Grasse
+		de Loches
+		de Lyon
+		de Marseille
+		de Nevers
+		de Poitiers
+		de Reims
+		de Valence
+		d_Albret
+		d_Artois
+		de Balliol
+		de Bethune
+		de Blois
+		de Bourbon
+		de Brabant
+		de Breze
+		de Brienne
+		de Chabannes
+		de Cleves
+		de Coligny
+		de Dampierre
+		de Lusignan
+		de Luynes
+		de Marigny
+		de Mauchaut
+		de Montfort
+		de Molay
+		de Neufville
+		de Nogaret
+		de Plaisians
+		de Plater
+		de Poitiers
+		de Richemont
+		de Tarante
+		de Toulouse
+		de Valois
+		de Vendome
+		de Vesc
+		des Roches
+		d_Orleans
+		du Guesclin
+		du Lac
+
+	women
+		Agnes
+		Agnesot
+		Alips
+		Alizan
+		Amelot
+		Aynarde
+		Benoite
+		Bertrada
+		Blanche
+		Catherine
+		Chrestienne
+		Collette
+		Constance
+		Denisette
+		Dete
+		Dorian
+		Emmelot
+		Eustace
+		Florete
+		Francoise
+		Genevote
+		Gervaise
+		Gillette
+		Guillemette
+		Guiote
+		Honnore
+		Isabelle
+		Jaquette
+		Jehanne
+		Jehannette
+		Juliote
+		Katherine
+		Leonete
+		Loyse
+		Mahault
+		Margot
+		Marguerite
+		Marie
+		Marion
+		Martine
+		Meraude
+		Nicole
+		Oudine
+		Perrette
+		Perronete
+		Phlipote
+		Plantee
+		Symonne
+		Tevenete
+		Thomasse
+		Ysabeau
+		Ysabel
+
+
+faction: england
+
+	characters
+		Alfred
+		Ambrose
+		Anselm
+		Augustine
+		Anthony
+		Aelfgar
+		Arthur
+		Aston
+		Auncell
+		Barnaby
+		Charles
+		Christopher
+		Davy
+		Edward
+		Edmund
+		Edgar
+		Francis
+		Fraunce
+		George
+		Gregory
+		Godwine
+		Geoffrey
+		Garret
+		Geiles
+		Harold
+		Harry
+		Howard
+		Henry
+		Hugh
+		Hubert
+		Humphrey
+		James
+		John
+		Jasper
+		Jacob
+		John
+		Josias
+		Laurence
+		Leonard
+		Lewes
+		Loefwine
+		Morcar
+		Michell
+		Morris
+		Nicholas
+		Nigel
+		Paul
+		Perkin
+		Phillip
+		Robert
+		Ralph
+		Roger
+		Robin
+		Rufus
+		Richard
+		Simon
+		Stephen
+		Samuel
+		Symond
+		Tostig
+		Thomas
+		Toby
+		Walter
+		William
+
+	surnames
+		Audley
+		Adames
+		Allen
+		Allthredge
+		Angell
+		Apperry
+		Arthure
+		Awood
+		Baker
+		Barnard
+		Barnes
+		Bennett
+		Bidell
+		Blacke
+		Bower
+		Bridgeman
+		Browne
+		Bucknell
+		Budinge
+		Buttler
+		Berkeley
+		Beaufort
+		Becket
+		Burnell
+		Basset
+		Bourchier		
+		Canton
+		Carpenter
+		Caston
+		Chamberlyn
+		Chapman
+		Churborne
+		Clarke
+		Clinton
+		Colesey
+		Cooke
+		Cornwall
+		Cowles
+		Cracker
+		Cromwell
+		Courtnay
+		Curnocke
+		Curtice
+		Curthose
+		Dane
+		Dangerfyeld
+		Davis
+		Dawby
+		Dawe
+		Dobes
+		Dowell
+		Despenser
+		de Vere
+		de Beauchamp
+		Edwardes
+		Ellice
+		Elliotts
+		Estington
+		Fitzwalter
+		Fitzneale
+		Filde
+		Flower
+		Fowler
+		Frankline
+		Frigge
+		Gilforde
+		Glassenbury
+		Godwinson
+		Grainger
+		Gryffin
+		Gaveston
+		Gascoigne
+		Giffard
+		Grey
+		Greystoke
+		Hasting
+		Herbert
+		Holland
+		Hardine
+		Harfford
+		Harmer
+		Harris
+		Harrold
+		Haynes
+		Heaven
+		Hewlinge
+		Heyway
+		Hicke
+		Higgines
+		Hill
+		Hobbes
+		Horston
+		Jenkines
+		Kinge
+		Knight
+		Kynner
+		Lambert
+		Learner
+		Lewes
+		Liddyatt
+		Longe
+		Langton
+		Longchamp
+		Mobray
+		Mortimer
+		Maitland
+		Montfort
+		Maise
+		Mantle
+		Marment
+		Merrett
+		Middlemore
+		Millord
+		Morgan
+		Mors
+		Mylles
+		Naishe
+		Neville
+		Pole
+		Peckham
+		Percy
+		Plantagenet
+		Paggs
+		Parsones
+		Payne
+		Pegler
+		Pilson
+		Potter
+		Powell
+		Robins
+		Rodgers
+		Russell
+		Roos
+		Scrope
+		Stuart
+		Stanley
+		Stafford
+		Swynford
+		Sandy
+		Selwin
+		Shillam
+		Smithe
+		Sparke
+		Spill
+		Spynner
+		Stainey
+		Staite
+		Stratford
+		Stringer
+		Swanley
+		Synnigar
+		Tailor
+		Terrett
+		Townsend
+		Tyler
+		Talbot
+		Uhtred
+		Underwood
+		Vicke
+		Walkley 
+		Warner
+		Watkins
+		Webbe
+		Went
+		Weste
+		Wilkines
+		Witcombe
+		Wolman
+		Wood
+		Wynckworth
+		Wyndow
+		Yeonge
+;;bynames
+		of London
+		of Nottingham
+		of Normandy
+		of Abingdon
+		of Albrighton
+		of Alcester
+		of Alnwick
+		of Amersham
+		of Amesbury
+		of Ashbourne
+		of Ashwell
+		of Axbridge
+		of Bampton
+		of Bedford
+		of Berwick
+		of Biggleswade
+		of Birmingham
+		of Borcastle
+		of Bristol
+		of Buckingham
+		of Cambridge
+		of Cantebury
+		of Cheltenham
+		of Chudleigh
+		of Darlington
+		of Doncaster
+		of Droitwich
+		of Dunwich
+		of Durham
+		of Evesham
+		of Eynsham
+		of Fairford
+		of Flookburgh
+		of Frampton
+		of Glastonbury
+		of Guildford
+		of Hartford
+		of Hastings
+		of Hereford
+		of Hinckley
+		of Hungerford
+		of Kendal
+		of Kingsbridge
+		of Knutsford
+		of Lancaster
+		of Leeds
+		of Lydham
+		of Maidstone
+		of Merryfield
+		of Northampton
+		of Old Sarum
+		of Oxford
+		of Painswick
+		of Pickering
+		of Plymouth
+		of Rochester
+		of Rothwell
+		of St Albans
+		of St Giles
+		of Thatcham
+		of Tisbury
+		of Wellington
+		of West Derby
+		of Westbury
+		of Whitby
+		of York
+		the Conqueror
+
+	women
+		Agatha
+		Aldet
+		Aleusa
+		Alisone
+		Alveva
+		Amelyn
+		Amycia
+		Anabella
+		Avelyn
+		Basilia
+		Beatrice
+		Bella
+		Caterina
+		Cecilia
+		Clare
+		Crystina
+		Deonisia
+		Drueta
+		Edhida
+		Edyth
+		Elianora
+		Elizabeth
+		Emeline
+		Emoni
+		Estrelda
+		Euphemia
+		Jakemina
+		Johanna
+		Julia
+		Katherine
+		Kyrstyan
+		Langliva
+		Linota
+		Linyeve
+		Lucia
+		Mabilia
+		Maggote
+		Matilda
+		Malina
+		Margaret
+		Maria
+		Marion
+		Marjory
+		Mary
+		Sabina
+		Scholast
+		Seloua
+		Sibel
+		Tillote
+		Udeline
+		Ybelote
+		Ysabelle
+
+;; England
+
+faction: normans
+
+	characters
+		Alfred
+		Ambrose
+		Anselm
+		Augustine
+		Anthony
+		Aelfgar
+		Arthur
+		Aston
+		Auncell
+		Barnaby
+		Charles
+		Christopher
+		Davy
+		Edward
+		Edmund
+		Edgar
+		Francis
+		Fraunce
+		George
+		Gregory
+		Godwine
+		Geoffrey
+		Garret
+		Geiles
+		Harold
+		Harry
+		Howard
+		Henry
+		Hugh
+		Hubert
+		Humphrey
+		James
+		John
+		Jasper
+		Jacob
+		John
+		Josias
+		Laurence
+		Leonard
+		Lewes
+		Loefwine
+		Morcar
+		Michell
+		Morris
+		Nicholas
+		Nigel
+		Paul
+		Perkin
+		Phillip
+		Robert
+		Ralph
+		Roger
+		Robin
+		Rufus
+		Richard
+		Simon
+		Stephen
+		Samuel
+		Symond
+		Tostig
+		Thomas
+		Toby
+		Walter
+		William
+
+	surnames
+		Audley
+		Adames
+		Allen
+		Allthredge
+		Angell
+		Apperry
+		Arthure
+		Awood
+		Baker
+		Barnard
+		Barnes
+		Bennett
+		Bidell
+		Blacke
+		Bower
+		Bridgeman
+		Browne
+		Bucknell
+		Budinge
+		Buttler
+		Berkeley
+		Beaufort
+		Becket
+		Burnell
+		Basset
+		Bourchier
+		Canton
+		Carpenter
+		Caston
+		Chamberlyn
+		Chapman
+		Churborne
+		Clarke
+		Clinton
+		Colesey
+		Cooke
+		Cornwall
+		Cowles
+		Cracker
+		Cromwell
+		Courtnay
+		Curnocke
+		Curtice
+		Curthose
+		Dane
+		Dangerfyeld
+		Davis
+		Dawby
+		Dawe
+		Dobes
+		Dowell
+		Despenser
+		de Vere
+		de Beauchamp
+		Edwardes
+		Ellice
+		Elliotts
+		Estington
+		Fitzwalter
+		Fitzneale
+		Filde
+		Flower
+		Fowler
+		Frankline
+		Frigge
+		Gilforde
+		Glassenbury
+		Godwinson
+		Grainger
+		Gryffin
+		Gaveston
+		Gascoigne
+		Giffard
+		Grey
+		Greystoke
+		Hasting
+		Herbert
+		Holland
+		Hardine
+		Harfford
+		Harmer
+		Harris
+		Harrold
+		Haynes
+		Heaven
+		Hewlinge
+		Heyway
+		Hicke
+		Higgines
+		Hill
+		Hobbes
+		Horston
+		Jenkines
+		Kinge
+		Knight
+		Kynner
+		Lambert
+		Learner
+		Lewes
+		Liddyatt
+		Longe
+		Langton
+		Longchamp
+		Mobray
+		Mortimer
+		Maitland
+		Montfort
+		Maise
+		Mantle
+		Marment
+		Merrett
+		Middlemore
+		Millord
+		Morgan
+		Mors
+		Mylles
+		Naishe
+		Neville
+		Pole
+		Peckham
+		Percy
+		Plantagenet
+		Paggs
+		Parsones
+		Payne
+		Pegler
+		Pilson
+		Potter
+		Powell
+		Robins
+		Rodgers
+		Russell
+		Roos
+		Scrope
+		Stuart
+		Stanley
+		Stafford
+		Swynford
+		Sandy
+		Selwin
+		Shillam
+		Smithe
+		Sparke
+		Spill
+		Spynner
+		Stainey
+		Staite
+		Stratford
+		Stringer
+		Swanley
+		Synnigar
+		Tailor
+		Terrett
+		Townsend
+		Tyler
+		Talbot
+		Uhtred
+		Underwood
+		Vicke
+		Walkley 
+		Warner
+		Watkins
+		Webbe
+		Went
+		Weste
+		Wilkines
+		Witcombe
+		Wolman
+		Wood
+		Wynckworth
+		Wyndow
+		Yeonge
+;;bynames
+		of London
+		of Nottingham
+		of Normandy
+		of Abingdon
+		of Albrighton
+		of Alcester
+		of Alnwick
+		of Amersham
+		of Amesbury
+		of Ashbourne
+		of Ashwell
+		of Axbridge
+		of Bampton
+		of Bedford
+		of Berwick
+		of Biggleswade
+		of Birmingham
+		of Borcastle
+		of Bristol
+		of Buckingham
+		of Cambridge
+		of Cantebury
+		of Cheltenham
+		of Chudleigh
+		of Darlington
+		of Doncaster
+		of Droitwich
+		of Dunwich
+		of Durham
+		of Evesham
+		of Eynsham
+		of Fairford
+		of Flookburgh
+		of Frampton
+		of Glastonbury
+		of Guildford
+		of Hartford
+		of Hastings
+		of Hereford
+		of Hinckley
+		of Hungerford
+		of Kendal
+		of Kingsbridge
+		of Knutsford
+		of Lancaster
+		of Leeds
+		of Lydham
+		of Maidstone
+		of Merryfield
+		of Northampton
+		of Old Sarum
+		of Oxford
+		of Painswick
+		of Pickering
+		of Plymouth
+		of Rochester
+		of Rothwell
+		of St Albans
+		of St Giles
+		of Thatcham
+		of Tisbury
+		of Wellington
+		of West Derby
+		of Westbury
+		of Whitby
+		of York
+		the Conqueror
+
+	women
+		Agatha
+		Aldet
+		Aleusa
+		Alisone
+		Alveva
+		Amelyn
+		Amycia
+		Anabella
+		Avelyn
+		Basilia
+		Beatrice
+		Bella
+		Caterina
+		Cecilia
+		Clare
+		Crystina
+		Deonisia
+		Drueta
+		Edhida
+		Edyth
+		Elianora
+		Elizabeth
+		Emeline
+		Emoni
+		Estrelda
+		Euphemia
+		Jakemina
+		Johanna
+		Julia
+		Katherine
+		Kyrstyan
+		Langliva
+		Linota
+		Linyeve
+		Lucia
+		Mabilia
+		Maggote
+		Matilda
+		Malina
+		Margaret
+		Maria
+		Marion
+		Marjory
+		Mary
+		Sabina
+		Scholast
+		Seloua
+		Sibel
+		Tillote
+		Udeline
+		Ybelote
+		Ysabelle
+		
+faction: denmark
+
+	characters
+		Anund
+		Bergthor
+		Birger
+		Burislev
+		Charles
+		Christoffer
+		Dan
+		Emund
+		Erik
+		Eystein
+		Gellir
+		Godafrid
+		Godfred
+		Grim
+		Gunnar
+		Haakon
+		Haflidhi
+		Halstan
+		Harald
+		Hardeknud
+		Inge
+		Jon
+		Knud
+		Kolbein
+		Leofric
+		Magnus
+		Niels
+		Olaf
+		Ragnvald
+		Sighvat
+		Sigifrid
+		Sigurd
+		Skapti
+		Snorri
+		Sten
+		Stenkil
+		Sweyn
+		Thorgeir
+		Thorgils
+		Thorkel
+		Toke
+		Toraren
+		Ulf
+		Ulfhedin
+		Valdemar
+		Bjorn		
+		Frederik
+		Gustav
+		Haldor
+		Henrik
+		Ingeborg
+		Jesper
+		Jens
+		Karl
+		Lars
+		Ulrik
+		Yngwie
+
+
+	surnames
+		Arneborg
+		Assenbjerg
+		Beleson
+		Bengtsson
+		Bjornsson
+		Bluetooth
+		Bolverksson
+		Burmeister
+		Chemnitz
+		Christensen
+		Eigod
+		Emundsson
+		Ericsson
+		Fallingborg
+		Flosason
+		Forkbeard
+		Fredskild
+		Gille
+		Grathe
+		Guddrodson
+		Gunnarsson
+		Haengsson
+		Haraldsson
+		Henriksson
+		Hildetand
+		Horby
+		Hrafnsson
+		Hunger
+		Hunmark
+		Hunthjofson
+		Hvass
+		Hviid
+		Hylgaard
+		Ironside
+		Jacobsen
+		Jarl
+		Lehtonen
+		Loftsson
+		Masson
+		Menved
+		Mikkelsen
+		Milling
+		Moesgaard
+		Nevjolvson
+		Orvendilson
+		Raefillsson
+		Skaaning
+		Skeggjason
+		Skotkonung
+		Skovgaard
+		Slembe
+		Slyngebard
+		Soerensen
+		Stenger
+		Stenkilsson
+		Storegaard
+		Stubbe
+		Stuer
+		Sturlasson
+		Surtsson
+		Svendsen
+		Tarnovius
+		Teglbjaerg
+		Telling
+		Thodberg
+		Thomsen
+		Thorkell
+		Thornom
+		Thorrodson
+		Tjorvason
+		Tryggvasson
+		Ulfsen
+		Willadsen	
+;;bynames
+		of Ans
+		of Bogense
+		of Copenhagen
+		of Dragor
+		of Esbjerg
+		of Faborg
+		of Grena
+		of Grindsted
+		of Haderslev
+		of Hadsund
+		of Herning
+		of Horsens
+		of Jyllinge
+		of Kalundborg
+		of Koge
+		of Lokken
+		of Marstal
+		of Nakskov
+		of Nordby
+		of Swendborg
+		of Tonder
+		of Varde
+		of Vojens
+		of Aalborg
+		of Runavik
+		of Tvoroyri
+		of Vestmanna
+		of Qaanaq
+		of Nanortalik
+		of Tasiilaq
+		of Ve
+		of Skyttingi
+		of Eikey
+		of Sandarr
+		of Vikhus
+		of Skolhamarr
+		of Svalunes
+		of Laughamarr
+		of Sikrum
+		of Svanabyr
+		of Holmr
+		of Valdinga
+		of Byggland
+		of Kleppr
+		of Kollr
+
+	women
+		Adela
+		Adisa
+		Agata
+		Alfrun
+		Amma
+		Bjorg
+		Bolla
+		Brynhildr
+		Cecile
+		Dyrhildr
+		Ellisif
+		Esja
+		Eyja
+		Fastny
+		Finna
+		Frakokk
+		Freydis
+		Geirny
+		Grima
+		Gunnvor
+		Gynna
+		Hallerna
+		Hallotta
+		Hekja
+		Herleif
+		Hjordis
+		Hrefna
+		Ingrid
+		Isibel
+		Jolinn
+		Kitta
+		Krafla
+		Margret
+		Melkorka
+		Randalin
+		Randve
+		Svana
+		Thorbjorg
+		Toka
+		Tove
+		Ulfhildr
+		Vedis
+		Veny
+		Yngvild
+		Yrsa
+
+faction: egypt
+
+	characters
+		al Adid
+		al Adil
+		al Amir
+		al Az_iz
+		al Faiz
+		al Hafiz
+		al Hakim
+		al Ikhshid
+		al Kamil
+		al Labi
+		al Mahdi
+		al Mansur
+		al Muazzam
+		al Mu_izz
+		al Mustain
+		al Mustakfi
+		al Mustali
+		al Mustamsik
+		al Mustanjid
+		Al-Mustansir
+		al Mutadid
+		al Mutasim
+		al Mutawakkil
+		al Qaim
+		al Wathiq
+		Al-Assel
+		Al-Fayed
+		Allam
+		Al-Sadat
+		Al-Zahir
+		Aly
+		Amir
+		as Salih
+		Ayyubid
+		az Zafir
+		Batrawi
+		Camona
+		Chahine
+		Eborolossy
+		Fahim
+		Fathy
+		Ghali
+		Ghandour
+		Habachi
+		Hakki
+		Hazem
+		Iamam
+		Imad ad Din
+		Mahfouz
+		Mahmoud
+		Marsal
+		Medhat
+		Mostafa
+		Moussa
+		Mubarak
+		Nabih
+		Nagib
+		Naguib
+		Najm ad Din
+		Nasir ad Din
+		Nasser
+		Rassul
+		Reis
+		Saad
+		Saadauri
+		Sabry
+		Saladin
+		Salahud Din
+		Salam
+		Samy
+		Sayf ad Din
+		Shabana
+		Shehata
+		Sindhom
+		Tamer
+		Tantawi
+		Tarek
+		Tulun
+		Youssef
+		Zein
+
+ 	surnames
+		Abbas
+		Ahmad
+		Ali
+		Biallah
+		Dawud
+		Duridar
+		Fathi
+		Gaballah
+		Gamal
+		Hamza
+		Hosni
+		Hossman
+		Ibrahim
+		Kafur
+		Kaikawus
+		Labib
+		Nader
+		Nasir
+		Omar
+		Saled
+		Samir
+		Sef
+		Shadi
+		Sulayman
+		Taha
+		Tamer
+		Umar
+		Unujur
+		Yahiya
+		Yasser
+		Yusuf
+		Zakariyya
+		Zaki
+;;bynames
+
+		of Cairo
+		of Gaza
+		of Akhmim
+		of Aswan
+		of Asyut
+		of Dakhla
+		of Damanhur
+		of Damietta
+		of Dandera
+		of Hurghada
+		of Imbaba
+		of Al Jizah
+		of Kharga
+		of Kom Ombo
+		of Luxor
+		of Al Minya
+		of Noubarya
+		of Siwah
+		of Suez
+		of Taba
+		of Tanta
+		of Zagazig
+
+	women
+		Abbasah
+		Azizah
+		Banujah
+		Chiklah
+		Ditas
+		Efra
+		Fatimah
+		Fazila
+		Hakeema
+		Hind
+		Indihar
+		Intisar
+		Itimad
+		Jaida
+		Kasif
+		Khayra
+		Layla
+		Lotus
+		Maha
+		Muhayya
+		Nabila
+		Nafisa
+		Nagla
+		Nyla
+		Ola
+		Rakia
+		Rasha
+		Raziya
+		Safiya
+		Salma
+		Shahira
+		Shiklah
+		Sumayya
+		Umayma
+		Zabeya
+		Zaynab
+
+	
+faction: aztecs
+
+	characters
+		Acacitli
+		Acamapichtli
+		Acampichtli
+		Acapipilotzin
+		Acatlotzin
+		Achicauhtli
+		Achitometl
+		Acolmiztli
+		Acxotecatl
+		Ahcambal
+		Ahexotl
+		Ahuitzotl
+		Amacui-Xolotl
+		Apanacatl
+		Atlixcatzin
+		Atonal
+		Atzauatzin
+		Auellitoctsin
+		Axayaca
+		Axayacatl
+		Axayactaztin
+		Axoacatzin
+		Axolohua
+		Axoquentzin
+		Cacama
+		Cacamatzin
+		Camargo
+		Cenyaotl
+		Chimalpahin
+		Chimalpopoca
+		Cihaucu
+		Cipactli
+		Citlacoatl
+		Coanacoch
+		Coatl
+		Coatzontli
+		Cocozca
+		Copil
+		Cuaucoatl
+		Cuauhtemoc
+		Cuauhtlecoatl
+		Cuautemoc
+		Cuetzpalli
+		Cuitlahuac
+		Cuitlalpitoc
+		Cuitlauac
+		Cuixtli
+		Ecatzin
+		Eyahue
+		Huemac
+		Huetzin
+		Huicton
+		Huitzilihuitl
+		Ilhuicamina
+		Itzcoatl
+		Itzquauatzin
+		Itzquemitl
+		Ixtlilxochitl
+		Iztahuatzin
+		Macuilmalinal
+		Mamexi
+		Matlal
+		Matlalihuitl
+		Maxixcatzin
+		Maxtla
+		Mayeuatzin
+		Mazatl
+		Meconetzin
+		Miahuaxochitl
+		Moctezuma
+		Montezuma
+		Moquihuix
+		Motecuhzoma
+		Motecuma
+		Motelchiuh
+		Nauyotl
+		Nezahualpilli
+		Nochehuatl
+		Nopaltzin
+		Ocelopan
+		Ocuitecatl
+		Olintecke
+		Ollin
+		Ometochtl
+		Opochtli
+		Opochtzin
+		Oquitzin
+		Panitzin
+		Pimotl
+		Pizotzin
+		Pochotl
+		Popopoyotl
+		Quahcoatl
+		Quahtlatoa
+		Qualpopoca
+		Quauhpopoca
+		Quauhtli
+		Quilaztli
+		Quimichetl
+		Quinatzin
+		Tangaxoan
+		Tayauh
+		Tecocoitzin
+		Temictzin
+		Temilotecatl
+		Temilotzin
+		Tenoch
+		Tenzacatetl
+		Teoctlamazqui
+		Teputzitoloc
+		Teuch
+		Teudile
+		Texcoyo
+		Tezozomoc
+		Tezozomoctzin
+		Thlohtzin
+		Tilicuetzpal
+		Tilmatzin
+		Timas
+		Tizoc
+		Tizoc
+		Tlacaelel
+		Tlacahuepan
+		Tlacateotl
+		Tlacochcalcatl
+		Tlacoteotzin
+		Tlacotzin
+		Tlacyelel
+		Tlahuicoli
+		Tlalchiac
+		Tlaltececatzin
+		Tlapaltecatl
+		Tlapanecatzin
+		Tlaquiach
+		Tlilpopoctazin
+		Tlilpotonqui
+		Tlotzin
+		Tochel
+		Tochintecuhtli
+		Tochtli
+		Topiltzin
+		Tototl
+		Tzompan
+		Tzompantli
+		Tzotzomatzin
+		Tzuitecatl
+		Xiconocatzin
+		Xicotencatl
+		Xilotzin
+		Xiucaque
+		Xiucozcatl
+		Xiuhcozcatl
+		Xochipanitzin
+		Xochipepe
+		Xochitl
+		Xocoyol
+		Xolotl
+		Xomimitl
+		Yaotl
+		Yaztachimal
+		Zincicha
+		Zolin
+		Zolton
+
+	surnames
+;; City Names
+		of Azcapotzalco
+		of Capilico
+		of Chalcatzingo
+		of Cholula
+		of Cuernavaca
+		of Cuexcomate
+		of Cuicuilco
+		of Otumba
+		of Pachuca
+		of Tenochtitlan
+		of Teotihuacan
+		of Tepexpan
+		of Texcoco
+		of Tlacopan
+		of Tlapacoya
+		of Tlatelolco
+		of Tlatilco
+		of Toluca
+		of Tula
+		of Valsequillo
+		of Xochicalco
+		of Yautepec
+
+	women
+		Acaxochitl
+		Anacaona
+		Atototl
+		Atotoztli
+		Ayauhcihuatl
+		Azcalxochitzin
+		Azcalxochizin
+		Cacauaxochitl
+		Centehua
+		Chimalman
+		Cihuaton
+		Cuetlaxochitl
+		Eloxochitl
+		Iczoxochitl
+		Ilancueitl
+		Izquixochitl
+		Malinal
+		Malinche
+		Malintzin
+		Matlacihuatl
+		Miahuaxiuitl
+		Miyaoaxochitl
+		Mizquixaual
+		Necahual
+		Nopalxochitl
+		Omixochitl
+		Papan
+		Papantzin
+		Quauhxochitl
+		Quiauhxochitl
+		Tacapantzin
+		Tecuelhuatzin
+		Tecuichpo
+		Teicuih
+		Teotalco
+		Tepin
+		Teuicui
+		Teyacapan
+		Tiacapan
+		Tiacapantzin
+		Tlacahuepan
+		Tlaco
+		Tlacoehua
+		Tlacotl
+		Tlacoxochitl
+		Tlillocapantin
+		Uacalxochitl
+		Xiloxoch
+		Xiloxochitl
+		Xochitl
+		Xoco
+		Xocoyotl
+
+faction: hre
+
+	characters
+		Adolf
+		Albrecht
+		Andreas
+		Ansehelm
+		Arnold
+		Athalwolf
+		Conrad
+		Charles
+		Dietrich
+		Dimarus
+		Edmund
+		Ehrhart
+		Elberhard
+		Eusebius
+		Fredericus
+		Friedrich
+		Godwine
+		Gottfied
+		Hans
+		Harold
+		Heinrich
+		Heinricus
+		Henry
+		Herrmann
+		Jobst
+		Johann
+		Johannes
+		Karl
+		Leopold
+		Lorenz
+		Ludwig
+		Maximillian
+		Michel
+		Nikolaus
+		Ortwinus
+		Otto
+		Peter
+		Philipp
+		Rainald
+		Rudolf
+		Ruprecht
+		Sifridus
+		Sigismund
+		Tancred
+		Theodericus
+		Welf
+		Wenzel
+		Wikerus
+		Wilhelm
+		Wilhelmus
+		Wolfgang
+		Bernhard
+		Dieter
+		Fritz
+		Gerhard
+		Gunther
+		Helmut
+		Hugo	
+		Jan	
+		Jens
+		Jonas
+		Kurt
+		Lothar
+		Lukas
+		Manfred
+		Markus
+		Matthias
+		Siegfried
+		Thorsten
+		Ulrich
+		Volkmar
+
+
+	surnames
+		Adam
+		Becker
+		Bresch
+		Deines
+		Dietrich
+		Engel
+		Ermolt
+		Godwinson
+		Hummel
+		Kniess
+		Ritter
+		Roht
+		Ruppel
+		Scherer
+		Weinmuth
+		Blankenberg
+		Courcy
+		de Lannoy
+		der Bar
+		der Bartige
+		der Rote
+		der Stoltze
+		Echter
+		Erlach
+		Guiskard
+		Herden
+		Karolinger
+		Mandorf
+		Merode
+		Merowinger
+		Otterbach
+		Plittersdorf
+		Raspe
+		Ruesdorf
+		Salier
+		Seubersdorf
+		Steffen
+		Uttenheim
+		Wahren
+		Windeck
+		Zirn
+;;bynames
+		von Franconia
+		von Saxony
+		von Bavaria
+		von Swabia
+		von Lombardy
+		von Austria
+		von Tyrolia
+		von Balk
+		von Bohmen
+		von Dassel
+		von der Pfalz
+		von Felben
+		von Franken
+		von Grunungen
+		von Hapsburg
+		von Holland
+		von Holstein
+		von Jungingen
+		von Kassel
+		von Kastilien
+		von Kniprode
+		von Luxemburg
+		von Mahren
+		von Nassau
+		von Salza
+		von Schwaben
+		von Berlin
+		von Bremen
+		von Duisberg
+		von Dusseldorf
+		von Frankfurt
+		von Hamburg
+		von Munich
+		von Numerberg
+		von Wolfsburg
+		von Hesse
+		von Augsburg
+		von Darmstadt
+		von Erfurt
+		von Essen
+		von Frieberg
+		von Heidelberg
+		von Lubeck
+		von Madgeburg
+		von Salzgitter
+
+	women
+		Adelheidis
+		Agnes
+		Aleidis
+		Alfgarda
+		Ayla
+		Bertha
+		Bertrada
+		Berthlenda
+		Chunegundis
+		Clare
+		Contzel
+		Cristina
+		Cristyne
+		Demuth
+		Ealdgyth
+		Elsebeth
+		Emeludt
+		Ethelgard
+		Eue
+		Fridewiga
+		Fye
+		Gerburg
+		Gersenda
+		Gertrudis
+		Gredechin
+		Guda
+		Hedewigis
+		Heidindrudis
+		Heilewif
+		Hette
+		Ingela
+		Judda
+		Kordula
+		Kungund
+		Lucardis
+		Lype
+		Lyse
+		Meckil
+		Meinburg
+		Methildis
+		Niesenn
+		Olga
+		Rainilda
+		Siburg
+		Syele
+		Trutilda
+		Ulgarda
+		Vuifken
+		Willelda
+
+faction: saxons
+
+	characters
+		Adolf
+		Albrecht
+		Andreas
+		Ansehelm
+		Arnold
+		Athalwolf
+		Conrad
+		Charles
+		Dietrich
+		Dimarus
+		Edmund
+		Ehrhart
+		Elberhard
+		Eusebius
+		Fredericus
+		Friedrich
+		Godwine
+		Gottfied
+		Hans
+		Harold
+		Heinrich
+		Heinricus
+		Henry
+		Herrmann
+		Jobst
+		Johann
+		Johannes
+		Karl
+		Leopold
+		Lorenz
+		Lothair
+		Ludwig
+		Maximillian
+		Michel
+		Nikolaus
+		Ortwinus
+		Otto
+		Peter
+		Philipp
+		Rainald
+		Rudolf
+		Ruprecht
+		Sifridus
+		Sigismund
+		Tancred
+		Theodericus
+		Welf
+		Wenzel
+		Wikerus
+		Wilhelm
+		Wilhelmus
+		Wolfgang
+
+	surnames
+		Adam
+		Becker
+		Bresch
+		Deines
+		Dietrich
+		Engel
+		Ermolt
+		Godwinson
+		Hummel
+		Kniess
+		Ritter
+		Roht
+		Ruppel
+		Scherer
+		Weinmuth
+		Blankenberg
+		Courcy
+		de Lannoy
+		der Bar
+		der Bartige
+		der Rote
+		der Stoltze
+		Echter
+		Erlach
+		Guiskard
+		Herden
+		Karolinger
+		Mandorf
+		Merode
+		Merowinger
+		Otterbach
+		Plittersdorf
+		Raspe
+		Ruesdorf
+		Salier
+		Seubersdorf
+		Steffen
+		Uttenheim
+		Wahren
+		Windeck
+		Zirn
+;;bynames
+		von Franconia
+		von Saxony
+		von Bavaria
+		von Swabia
+		von Lombardy
+		von Austria
+		von Tyrolia
+		von Balk
+		von Bohmen
+		von Dassel
+		von der Pfalz
+		von Felben
+		von Franken
+		von Grunungen
+		von Hapsburg
+		von Holland
+		von Holstein
+		von Jungingen
+		von Kassel
+		von Kastilien
+		von Kniprode
+		von Luxemburg
+		von Mahren
+		von Nassau
+		von Salza
+		von Schwaben
+		von Berlin
+		von Bremen
+		von Duisberg
+		von Dusseldorf
+		von Frankfurt
+		von Hamburg
+		von Munich
+		von Numerberg
+		von Wolfsburg
+		von Hesse
+		von Augsburg
+		von Darmstadt
+		von Erfurt
+		von Essen
+		von Frieberg
+		von Heidelberg
+		von Lubeck
+		von Madgeburg
+		von Salzgitter
+
+	women
+		Adelheidis
+		Agnes
+		Aleidis
+		Alfgarda
+		Ayla
+		Bertha
+		Bertrada
+		Berthlenda
+		Chunegundis
+		Clare
+		Contzel
+		Cristina
+		Cristyne
+		Demuth
+		Ealdgyth
+		Elsebeth
+		Emeludt
+		Ethelgard
+		Eue
+		Fridewiga
+		Fye
+		Gerburg
+		Gersenda
+		Gertrudis
+		Gredechin
+		Guda
+		Hedewigis
+		Heidindrudis
+		Heilewif
+		Hette
+		Ingela
+		Judda
+		Kordula
+		Kungund
+		Lucardis
+		Lype
+		Lyse
+		Meckil
+		Meinburg
+		Methildis
+		Niesenn
+		Olga
+		Rainilda
+		Siburg
+		Syele
+		Trutilda
+		Ulgarda
+		Vuifken
+		Willelda
+
+faction: byzantium
+
+	characters
+		Alexius
+		Alvanites
+		Anthes
+		Asemopoulos
+		Andronicus
+		Athanasios
+		Basil
+		Constantine
+		Demetrios
+		Dragos
+		Draganos
+		Eleutherios
+		Ermanes
+		Evangelos
+		Foteinos
+		Gavriel
+		Georgios
+		Imbert
+		Ioannes
+		Isaac
+		John
+		Komanos
+		Konstantinos
+		Kyriakos
+		Loumbertos
+		Manouel
+		Mavros
+		Michael
+		Modestos
+		Myristikos
+		Nikeforos
+		Niketas
+		Nikolaos
+		Panagiotes
+		Pelekanos
+		Petros
+		Prousenos
+		Romanus
+		Rossos
+		Slavos
+		Stefanos
+		Theodoros
+		Theotokios
+		Tobromeros
+		Trifyllios
+		Valsamon
+		Vasileios
+		Vlasios
+		Volkanos
+		Voulgariotes
+		Xenos
+
+	surnames
+		Abalantes
+		Agrites
+		Akapnes
+		Angelus
+		Argyrus
+		Alyates
+		Argyros
+		Axinites
+		Balantes
+		Barenos
+		Basilacius
+		Beriotes
+		Botaneiates
+		Bouches
+		Branas
+		Bringas
+		Bryennius
+		Calaphates
+		Cerularius
+		Chalkites
+		Chrysanthos
+		Comnenus
+		Dalassena
+		Dekanos
+		Diogenes
+		Drosinos
+		Ducas
+		Elesbaam
+		Exotrochos
+		Gabalas
+		Glykys
+		Hierakes
+		Iasites
+		Kaisar
+		Kaloudes
+		Kamytzes
+		Kaspax
+		Konops
+		Kyritzes
+		Lascaris
+		Limas
+		Loukites
+		Maleses
+		Maniakes
+		Metochites
+		Melissenus
+		Monomachus
+		Myron
+		Murtzuphlus
+		Nikerites
+		Olaskos
+		Palaeologus
+		Paphlagonian
+		Paxenos
+		Phocas
+		Pleures
+		Prvovencani
+		Radomiros
+		Rogerios
+		Semnos
+		Stratiocus
+		Thylakas
+		Tornikes
+		Tzimisces
+		Vatatzes
+		Zerbos
+;;bynames
+		of Trebizond
+		of Macedonia
+		of Peloponnese
+		of Cyprus
+		of Rhodes
+		of Ierissos
+		of Zichna
+		of Zavarnikeia
+		of Puoggion
+		of Loroton
+		of Velzistha
+		of Ermeleia
+		of Neakitou
+		of Pelorygion
+		of Portarea
+		of Plagena
+		of Kastrion
+		of Drymostia
+		of Lozikin
+		of Potholinos
+		of Preasnitza
+		of Kastrion
+		of Evniani
+		of Drachova
+		of Psalida
+		of Osdravikin
+		of Ezova
+		of Serres
+		of Stomion
+		of Karvaioi
+		of Mystakonon
+		of Pevista
+		of Pelorygion
+		of Adana
+		of Akrokos
+		of Alethina
+		of Athos
+		of Boüsa
+		of Chimara
+		of Chios
+		of Diabolos
+		of Ephesus
+		of Helenopolis
+		of Kibotos
+		of Krisis
+		of Lazica
+		of Lampe
+		of Myra
+		of Mylos
+		of Petrola
+		of Salona
+		of Zara
+
+	women
+		Aikaterine
+		Anna
+		Arete
+		Argyre
+		Cheilous
+		Christina
+		Dragna
+		Eudokia
+		Foteine
+		Georgia
+		Ioanna
+		Ioannousa
+		Irene
+		Kale
+		Komana
+		Kyriakia
+		Margarito
+		Malha
+		Maria
+		Marina
+		Merzanna
+		Nikaia
+		Rossa
+		Rossana
+		Semne
+		Siligno
+		Simonis
+		Slana
+		Sofia
+		Stammatike
+		Stania
+		Theodora
+		Theofano
+		Tobranna
+		Tobritza
+		Vasilike
+		Velkonia
+		Xene
+		Zoe
+		Zoranna
+		Zougla
+
+faction: scotland
+
+	characters
+		Adam
+		Aed
+		Alexander
+		Algune
+		Allan
+		Aodh
+		Arcill
+		Angus
+		Brian
+		Broccin
+		Cathal
+		Cennedig
+		Comgell
+		Cormac
+		Colin
+		Dauid
+		David
+		Domnall
+		Domongart
+		Donnchadh
+		Donald
+		Duncan
+		Dougall
+		Edmund
+		Edward
+		Eoin
+		Feradac
+		Fearghus
+		Finguine
+		Gille_Calline
+		Gille_Coimded
+		Gille_Petair
+		Gille_Patrick
+		Hew
+		James
+		Lulach
+		Mac_Bethad
+		Mac_Dobarchon
+		Malcolm
+		Matad
+		Morgunn
+		Nectan
+		Patrick
+		Stuart
+		Ruadri
+		Aidan
+		Farquar
+		Gawain
+		Gordon
+		Ian
+		Kirk
+		Kyle
+		Lachlan
+		Micheil
+		Nevin
+		Raibert
+		Ranald
+		Rory
+		Roy
+		Steaphan
+
+	surnames
+		Arthyn
+		Bell
+		Besat
+		Boyd
+		Brechyne
+		Broune
+		Buchan
+		Bunnok
+		Campbell
+		Canmore
+		Colison
+		Comyn
+		Cullane
+		Cwnyngame
+		Erskyn
+		Feniss
+		Forster
+		Inchmertyn
+		Lesly
+		Macconel
+		Macdonchie
+		Macdougall
+		Macgoulchane
+		Makartane
+		Makdowall
+		Makfulchiane
+		Makgullane
+		Makmartane
+		Maknab
+		Maknakill
+		Maknauchtan
+		Mar
+		Mensies
+		Nevell
+		Randall
+		Stewart
+		Vissman
+		Wallace
+		the Balleol
+		the Boroundoun
+		the Broiss
+		the Ross
+		the Sowlis
+		of Carnavarane
+		of Clair
+		of Cobhame
+		of Douglas
+		of Edinburgh
+		of Argyll
+		of Bute
+		of Midlothian
+		of Peeblesshire
+		of Sutherland
+		of Ayrshire
+		of Caithness
+		of East Lothian
+		of Moray
+		of Perthshire
+		of Selkirkshire
+		of West Lothian
+		of Aberdeen
+		of Banffshire
+		of Fife
+		of Nairnshire
+		of Renfrewshire
+		of Shetland
+		of Wigtownshire
+		of Angus
+		of Berwickshire
+		of Lanarkshire
+		of Orkney
+		of Ross-shire
+
+
+	women
+		Ada
+		Agnes
+		Aeschine
+		Afraig
+		Alicia
+		Anabella
+		Bethac
+		Burunild
+		Caitrina
+		Christian
+		Christina
+		Danea
+		Dearbhail
+		Deredere
+		Ealusaid
+		Ede
+		Edith
+		Ellen
+		Elizabeth
+		Esa
+		Eschina
+		Ethelred
+		Eufemie
+		Florie
+		Forveleth
+		Godit
+		Hextilda
+		Isabel
+		Joan
+		Julian
+		Katherine
+		Mabel
+		Margaret
+		Maria
+		Mariorie
+		Mariot
+		Marioziota
+		Matildis
+		Mor
+		Muriel
+		Nichola
+		Orabilia
+		Raghnailt
+		Seonaid
+		Sitheag
+		Swannoc
+		Ysenda
+		
+
+faction: mongols
+
+	characters
+		Abadai
+		Abadhun
+		Abangis
+		Abaqha
+		Abashan
+		Abayan
+		Aboke
+		Arabla
+		Arablai
+		Araboge
+		Aradai
+		Aragatai
+		Aragei
+		Araghun
+		Aragibag
+		Arajibal
+		Arghun
+		Argu
+		Argudhun
+		Arigboge
+		Arigh Boke
+		Ayurbarwada
+		Batu
+		Batuban
+		Batublai
+		Batudai
+		Batudhun
+		Batutai
+		Bavaboge
+		Bavdai
+		Bavjeitu
+		Bayan
+		Berkei
+		Berkhungis
+		Chagatai
+		Chagdhun
+		Chagdu
+		Chagduk
+		Chaghatai
+		Chagla
+		Chaglai
+		Chagoke
+		Chindu
+		Chinggis
+		Egiboge
+		Egidu
+		Egishan
+		El Temur
+		Gendai
+		Genduk
+		Genghis
+		Genke
+		Ghazan
+		Ghazandu
+		Ghazatai
+		Ghazuk
+		Guyke
+		Guyuk
+		Huleblai
+		Hulegu
+		Huleke
+		Irindhuk
+		Iringis
+		Irinjibal
+		Jagadai
+		Jagatai
+		Jagu
+		Jebdun
+		Jebe
+		Jeblai
+		Jebu
+		Jebuk
+		Jochi
+		Kaiblis
+		Kaidu
+		Kaishan
+		Kaizuk
+		Kara Hulegu
+		Khoblai
+		Khochi
+		Khodhun
+		Khoduk
+		Khodun
+		Khogadai
+		Khogibag
+		Khoshila
+		Khotai
+		Khoyan
+		Khoyu
+		Khublai
+		Khugis
+		Khundu
+		Khushan
+		Khuzuk
+		Kitbuqa
+		Kuo_Kan
+		Kubadai
+		Kubeke
+		Kubla
+		Kublai
+		Kubuk
+		Kundu
+		Kuyuk
+		Mamai
+		Mamdhuk
+		Mamdu
+		Mamgis
+		Mengadai
+		Menglai
+
+		Menguk
+		Monduk
+		Mongatai
+		Mongke
+		Mongu
+		Nayan
+		Naydhun
+		Nayu
+		Nayuk
+		Ogadai
+		Ogatai
+		Ogodei
+		Ogodhun
+		Ogoshila
+		Ogoshin
+		Oljeitu
+		Orda
+		Ordai
+		Ordhun
+		Orjibal
+		Sartaq
+		Shidadai
+		Shidebala
+		Shidedai
+		Shideghuk
+		Subutai
+		Subujin
+		Subuke
+		Tasguk
+		Temublai
+		Temudhuk
+		Temudhun
+		Temudur
+		Temugis
+		Temujin
+		Tobdun
+		Tobu
+		Tokhtamysh
+		Tolui
+		Toqoqan
+		Tsagadai
+		Tsagatai
+		Ugablai
+		Ugamysh
+		Ugedai
+		Ulaghci
+		Yesublai
+		Yesugatai
+		Yesugei
+		Yesugis
+		Yesuk
+		Zhen Jin
+
+	surnames
+;;Mongol clans
+		Khan
+		of the Arulad
+		of the Bagarin
+		of the Borjigin
+		of the Jirgin
+		of the Jurkin
+		of the Kereyid
+		of the Kharlugh
+		of the Khorilar
+		of the Geniges
+		of the Manghud
+		of the Merkid
+		of the Naiman
+		of the Oyirad
+		of the Tatar
+		of the Tayichigud
+		of the Ungirad
+		of the Uriangkhai
+		of the Qonggirat
+		of the Tartars
+		of the Kirghiz
+		of the Onggut
+		of the Bashkirs
+		of the Mordvins
+		of the Oirat
+;;places
+		of Annam
+		of Burma
+		of Champa
+		of Tibet
+		of Uighur
+		of Koryo
+		of Herat
+		of Fars
+		of Kirman
+		of Rus
+		of Georgia
+		of Rum
+
+	women
+		Agafia
+		Aigiarn
+		Anna
+		Baichu
+		Baragtchina
+		Ora
+		Borte
+		Chabi
+		Conchaka
+		Doquez-khatum
+		Eiji
+		Fedora
+		Goland
+		Jambyn
+		Jochi
+		Khultulun
+		Kokachin
+		Maidar
+		Mandughai
+		Maria
+		Minghan
+		Oghul Qamish
+		Orqina
+		Qacha
+		Sorghaghtani Beki
+		Suhe
+		Tilik
+		Toregene
+		Yaba
+		Yesukai
+
+faction: timurids
+
+	characters
+		Achigh
+		Aguchu
+		Ambaghai
+		Barghujin
+		Belgutei
+		Bodonchar
+		Chaghagan
+		Chagurkhai
+		Charakha
+		Dagun
+		Daidukul
+		Daritai
+		Dayir
+		Eligedei
+		Geugi
+		Ghunan
+		Guyag
+		Harghasun
+		Hobogetur
+		Horkhudagh
+		Illugei
+		Inalchi
+		Iturgen
+		Jajiradai
+		Jakha
+		Jangg
+		Khalja
+		Kharchu
+		Khubilai
+		Lablakha
+		Megujin
+		Menggei
+		Miran
+		Mongke
+		Nayaga
+		Nekun
+		Nikha
+		Odchigin
+		Oldaghar
+		Onggiran
+		Sacha
+		Sechequr
+		Shahrukh
+		Suyiketu
+		Temur
+		Timur
+		Tolun
+		Tungge
+		Udutai
+		Ukhuna
+		Usun
+		Yedi
+		Yegu
+		Yeke
+		Yurukhan
+		Husayn
+		Umar_Shaykh
+		Pir_Muhammed
+	surnames
+;;bynames
+		of Abarquh
+		of Ahvaz
+		of Andijan
+		of Avnik
+		of Baghdad
+		of Bam
+		of Damghan
+		of Delhi
+		of Ganja
+		of Ghazna
+		of Gurgan
+		of Hamadan
+		of Herat
+		of Hilla
+		of Hurmuz
+		of Isfahan
+		of Kabul
+		of Karbala
+		of Kashan
+		of Khojend
+		of Kirman
+		of Lahore
+		of Mardin
+		of Mashhad
+		of Merv
+		of Mosul
+		of Multan
+		of Nishapur
+		of Qudunz
+		of Qum
+		of Ray
+		of Sabzavar
+		of Shiraz
+		of Shushtar
+		of Simnan
+		of Siqhnaq
+		of Talas
+		of Tashkent
+		of Tiflis
+		of Timrid
+		of Turkistan
+		of Tus
+		of Tus
+		of Utrar
+		of Urgench
+		of Yazd
+		Mulk Khanum
+		Shah
+
+
+	women
+		Al Alta
+		Alagh
+		Alan
+		Altan
+		Agafia
+		Aigiarn
+		Borte
+		Botokhui
+		Baichu
+		Chagur
+		Checheyigen
+		Chotan
+		Doregene
+		Ebegei
+		Gurbesu
+		Hogelun
+		Holuikhan
+		Ibakha
+		Khadagan
+		Khojin
+		Khugurchin
+		Khulan
+		Mongoljin
+		Nomolun
+		Orbei
+		Sokhatai
+		Temulun
+		Yesugun
+		Yesui		
+		Borte
+		Chabi
+		Conchaka
+		Eiji
+		Fedora
+		Goland
+		Ho'elun
+		Jambyn
+		Jochi
+		Khultulun
+		Kokachin
+		Maidar
+		Mandughai
+		Maria
+		Minghan
+		Orqina
+		Qacha
+		Saray
+		Suhe
+		Tilik
+		Toregene
+		Yaba
+		Yesukai
+
+faction: turks
+
+	characters
+		Abi
+		Ali
+		Atilla
+		Aybak
+		Baraka
+		Barsbay
+		Baybars
+		Baydara
+		Bayezid
+		Berke
+		Caatay
+		Cerrah
+		Chaqmaq
+		Derya
+		Ekmel
+		Fadlullah
+		Faraj
+		Gunduz
+		Hajji
+		Halil
+		Haluk
+		Inal
+		Jalal
+		Janbulat
+		Jaqmaq
+		Kaikosru
+		Kaikubad
+		Kasim
+		Khalil
+		Khushqadam
+		Kilij
+		Kitbugha
+		Kuchuk
+		Kujuk
+		Lachin
+		Lajin
+		Malik
+		Masud
+		Mehmed
+		Muhammad
+		Murad
+		Mustafa
+		Nuzhet
+		Orhan
+		Osman
+		Qalawun
+		Qansawh
+		Qayit
+		Qilich
+		Qutuz
+		Salamish
+		Salih
+		Selim
+		Shaban
+		Shaykh
+		Suleyman
+		Suleymish
+		Sundak
+		Tatar
+		Tezcan
+		Timurbugha
+		Tutush
+		Uthman
+		Yalbay
+
+	surnames
+		Abas
+		Abu Bakr
+		Agca
+		Akalay
+		ad-Dawlah
+		al Alai
+		al Alfi
+		al Amin
+		al Ashqar
+		al Aziz
+		al Hadi
+		al Hasan
+		al Jashnakir
+		al Mahmudi
+		al Ma_mun
+		al Muizzi
+		al Muntasir
+		al Mu_tasim
+		al Rashid
+		al Turkumani
+		al Zahiri
+		al-Abbas
+		al-Mulk
+		al-Su_ud
+		Aricanli
+		Arif
+		Arikan
+		Arslan
+		Beg
+		Boratav
+		Bozbeyli
+		Bulent
+		Burji
+		Candarl
+		Cikirikci
+		Ciller
+		Cobanoglu
+		Denktash
+		Derbil
+		Deringil
+		Erim
+		Erkal
+		Gazi
+		Gezmen
+		Gocek
+		Gokalp
+		Ihsanoglu
+		Ilahi
+		Ilker
+		Kavur
+		Kaynetli
+		Khan
+		Mumcu
+		Murat
+		Musa
+		Rokh
+		Rustem
+		Shah
+		Skender
+		Sokollu
+		Soylu
+		Suker
+		Yalcin
+		Yalpat
+		Yamak
+		Yazici
+		Zafer
+;;bynames
+		of Rum
+		of Anatolia
+		of Armenia
+		of Mosul
+		Baghdadi
+		of Aleppo
+		of Hims
+		of Damascus
+		of Hilla
+		of Basra
+		of Tabriz
+		of Hamadan
+		of Shiraz
+		of Jiruft
+		of Bardasir
+		of Bust
+		of Tiginabad
+		of Kabul
+		of Merv
+		of Bukhara
+		of Samarqand
+		of Qatwan
+		of Urgench
+		of Khojend
+		of Tashkent
+		of Kashghar
+		of Yarkand
+		of Jand
+		of Ganja
+		of Ani
+		of Sivas
+		of Herat
+		of Tus
+		of Nishapur
+		of Yazd
+		of Isfahan
+		of Ray
+		of Darband
+		of Malayta
+
+	women
+		Asul
+		Ays_e
+		Behiye
+		Benefs_e
+		Canhabibe
+		Dervis_e
+		Devlet
+		Dilber
+		Dur-cihan
+		Emine
+		Fatima
+		Gulbahar
+		Gulfem
+		Gumus
+		Hadice
+		Hafza
+		Huban
+		Husni
+		Inanpas_a
+		Ine
+		Islah
+		Kadem
+		Kapabas_a
+		Mansure
+		Melike
+		Nar
+		NasIra
+		Nefise
+		Nergis
+		Neslihan
+		Pas_abegi
+		Rabiye
+		Safiye
+		S_ah-huban
+		Sara
+		Saruca
+		Selcuk
+		Selime
+		S_erife-bol
+		S_eruda
+		Sitti
+		Surur
+		Tohin
+		Zuhal
+
+	
+faction: portugal
+
+	characters
+		Affonso
+		Alvaro
+		Antonio
+		Ayras
+		Baltesar
+		Bellchior
+		Christovan
+		Diego
+		Diogo
+		Duarte
+		Fernam
+		Fernanado
+		Feram
+		Fytor
+		Gilherme
+		Gocauo
+		Gonsaluus
+		Gomez
+		Goncallo
+		Gonsaluu
+		Gill
+		Hanrrique
+		Henrique
+		Jacome
+		Jorge
+		Joham
+		Johao
+		Laurencius
+		Lopo
+		Lourenco
+		Manoel
+		Martym
+		Martinho
+		Martio
+		Meen
+		Menendus
+		Nuno
+		Paulo
+		Pedro
+		Pero
+		Ricardo
+		Rrui
+		Rui
+		Ruy
+		Rodrigo
+		Sallvador
+		Sancho
+		Stepham
+		Theodosio
+		Tillman
+		Tomas
+		Vaasco
+		Verisimo
+		Vermuu
+
+	surnames
+		Armea
+		Barroso
+		Baveca
+		Charinho
+		Codax
+		Corpancho
+		Diaz
+		Diaz
+		Fanrripas
+		Fernadic
+		Fernandez
+		Frojaz
+		Garcia
+		Ginzo
+		Gocaluic
+		Lagarto
+		Menendi
+		Meogo
+		Ordoniz
+		Pardal
+		Periz
+		Petri
+		Porco
+		Queimado
+		Ramiric
+		Redondo
+		Sanchiz
+		Soarez
+		Solaz
+		Suariz
+		Tenoiro
+		Vermuiz
+		Viviaez
+;;bynames
+		da Silva
+		de Lima
+		de Paiva
+		d_Allmeida
+		de Barros
+		de Loronha
+		de Sousa
+		d_Atayde
+		de Briho
+		de Mello
+		de Cunha
+		de Castro
+		de Menesses
+		da Costa
+		de Crasto
+		de Mota
+		d_Alvarez
+		d_Ulhoa
+		da Ponte
+		de Bonaval
+		de Calheiros
+		de Calvelo
+		de Cana
+		de Dardia
+		de Guilhade
+		de Lemos
+		de Sandin
+		de Santiago
+		de Seabra
+		de Talaveira
+		de Veer
+		do Coton
+		do Vinhal
+
+	women
+		Ageda
+		Aldonca
+		Ana
+		Angelina
+		Antonia
+		Biringeira
+		Branca
+		Brasia
+		Briatiz
+		Castelhana
+		Catalina
+		Cosma
+		Costanca
+		Crara
+		Demiana
+		Enes
+		Eva
+		Felipa
+		Francisca
+		Galinda
+		Genebra
+		Giomar
+		Ines
+		Isabell
+		Joana
+		Lianor
+		Lucrecia
+		Luzia
+		Madelena
+		Margaida
+		Maria
+		Marta
+		Mayor
+		Mecia
+		Monica
+		Mor
+		Orraca
+		Ramira
+		Sancha
+		Tareija
+		Teresa
+		Violante
+
+
+faction: poland
+
+	characters
+		Barnim
+		Bezprym
+		Boguslaw
+		Boleslaw
+		Bronisad
+		Casimir
+		Chrosciszko
+		Chwalimir
+		Godzimir
+		Jagielon
+		Jan
+		Janus
+		Joachim
+		Kasper
+		Kazimierz
+		Konrad
+		Leszek
+		Mieszko
+		Msciwoi
+		Niebor
+		Niegoslaw
+		Pakoslaw
+		Pawol
+		Przebor
+		Przemysl
+		Przemyslaw
+		Radoslaw
+		Ratibor
+		Ryksa
+		Sobislaw
+		Stanislaus
+		Svyatopolk
+		Swietopelk
+		Szymon
+		Tadeusz
+		Troiden
+		Vaclav
+		Wartislaw
+		Wenceslaus
+		Wladyslaw
+		Zbigniew
+		Ziemowit
+		Zygmunt
+		Albin
+		Aleksy
+		Czeslaw
+		Marcin
+		Miron
+		Piotr
+		Ryszard
+		Szczepan
+		Tobiasz
+		Tomasz
+
+
+	surnames
+		Adamczyk
+		Borzecki
+		Banaszak
+		Brodaty
+		Buczak
+		Ciesinski
+		Czajka
+		Czersk
+		Dudzik
+		Grycki
+		Herman
+		Jagiello
+		Kazczyk
+		Krawczyk
+		Kulwiec
+		Majtyka
+		Malewicz
+		Marosz
+		Maziwiecki
+		Mazovia
+		Miazga
+		Niemoj
+		Ogitzak
+		Orlicki
+		Penc
+		Petratz
+		Pieritz
+		Plast
+		Premysl
+		Premyslid
+		Psotka
+		Puch
+		Pyrzyce
+		Rzegotka
+		Sandomierz
+		Sochaczew
+		Stasiak
+		Stawecki
+		Turek
+		Wallach
+		Wojno
+		Wos
+		Wozniak
+		Wykowski
+		Zacharek
+		Zapolya
+		Zdeb
+		Zuraw
+		Zurawski
+;;bynames
+		of Volhynia
+		of Warsaw
+		of Lodz
+		of Krakow
+		of Poznan
+		of Gdansk
+		of Szczecin
+		of Lublin
+		of Torun
+		of Bytom
+		of Rybnik
+		of Tychy
+		of Opole
+		of Plock
+		of Elblag
+		of Tarnow
+		of Chorzow
+		of Kalisz
+		of Koszalin
+		of Legnica
+		of Grudziadz
+		of Slupsk
+		of Kalisz
+		of Sieradz
+		of Rawa
+		of Sanok
+		of Chelm
+		of Lwow
+		of Halicz
+		of Belz
+		of Rowne
+		of Braclaw
+		of Gdansk
+		of Lidzbark
+		of Jansbork
+		of Krolewlec
+
+	women
+		Agnes
+		Agnethem
+		Anna
+		Anny
+		Barbara
+		Chesna
+		Dobrila
+		Dorotha
+		Gertruda
+		Hedwigis
+		Judith
+		Jadwiga
+		Jadwigi
+		Jadwidze
+		Jadwige
+		Lechsinska
+		Katarzina
+		Katarziny
+		Katharzina
+		Nadzieja
+		Olga
+		Rasia
+		Regina
+		Sopianka
+		Zophia
+		Agata
+		
+	
+faction: spain
+
+	characters
+		Agosto
+		Alfonso
+		Algonso
+		Aluar
+		Areas
+		Arias
+		Berenguel
+		Diago
+		Diego
+		Domingo
+		Duran
+		Esteuao
+		Fernan
+		Ferran
+		Ferrando
+		Fernando
+		Ferrand
+		Francisco
+		Garcia
+		Gomes
+		Goncalo
+		Goncalvo
+		Goncaluo
+		Goncalu
+		Hernan
+		Johan
+		Jacome
+		Lope
+		Lopo
+		Mallobo
+		Martin
+		Miguel
+		Nicollas
+		Pasqual
+		Pedro
+		Pero
+		Rodrigo
+		Roy
+		Ruy
+		Saluador
+		Simon
+		Vaasco
+		Val
+		Alfredo
+		Americo
+		Antonio
+		Augusto
+		Bernardo
+		Carlos
+		Cristian
+		Emilio
+		Enrique
+		Esteban
+		Horacio
+		Jocabo
+		Jesus
+		Jose
+		Luis
+		Pablo
+		Raul
+		Ricardo
+		Sancho
+		Sebastian
+		El_Cid
+
+
+	surnames
+		Alexandre
+		Alonso
+		Alvares
+		Aparico
+		Arriba
+		Asturano
+		Bersiano
+		Barbas
+		Bernaldo
+		Bona
+		Caluela
+		Caluo
+		Caruallo
+		Cortes
+		Curral
+		Cybraenes
+		Dabodega
+		Descriua
+		Domingues
+		Eanes
+		Era
+		Estevanes
+		Eyanes
+		Ferrandes
+		Ferrer
+		Fouso
+		Franco
+		Garcia
+		Galego
+		Galindo
+		Goncales
+		Gomes
+		Guyllemes
+		Guillelmo
+		Guterres
+		Guteres
+		Hernandez
+		Hortiz
+		Iagues
+		Iohan
+		Johanes
+		Julian
+		Justeniano
+		Lopez
+		Lourenco
+		Macia
+		Manuel
+		Martinez
+		May
+		Mendez
+		Migueles
+		Montes
+		Munos
+		Natalez
+		Naueas
+		Neto
+		Nocelao
+		Neues
+		Nunez
+		Oares
+		Peres
+		Palmeyro
+		Paniagua
+		Pontferrada
+		Rodrigues
+		Roy
+		Ruberto
+		Ruyz
+		Sanches
+		Sandino
+		Santiago
+		Suarez
+		Tarcia
+		Telles
+		Teson
+		Vazques
+		Villelmes
+		Yanes
+;;bynames
+		d_Aquino
+		de Avolos
+		de Leon
+		de Castile
+		da Valgoma
+		de Acaudes
+		de Bolaque
+		de Feques
+		de Fereyrra 
+		de Fonpical
+		de Carracedo
+
+		de Canol
+		de Coco
+		de Narayola
+		de Magas
+		de Mesa
+		de Nogal
+		de Ribeyrina
+		de Riomor
+		de Sarrea
+		de Sarria
+		de Surriba
+
+		de Yuso
+		del Picoto
+		de Madrid
+		de Barcelona
+		de Valencia
+		de Sevilla
+		de Murcia
+		de Granada
+		de Vitoria
+		de Elche
+		de Vigo
+
+		de Tarragona
+		de Cordoba
+		de Oviedo
+		de Sevilla
+		de Bilbao
+		de Alicante
+		el Valiente
+
+	women
+		Aldara
+		Aldonca
+		Ana
+		Beatris
+		Castellana
+		Catalina
+		Clara
+		Constanca
+		Constance
+		Crus
+		Elena
+		Elvira
+		Engracia
+		Featris
+		Felipa
+		Francisca
+		Francisquita
+		Geronima
+		Gracia
+		Gregoria
+		Guiomar
+		Ines
+		Isabel
+		Isabelica
+		Johana
+		Juana
+		Leonor
+		Luzia
+		Madelena
+		Manuela
+		Margarida
+		Mari
+		Maria
+		Marina
+		Mayor
+		Mencia
+		Olalla
+		Pascuala
+		Serena
+		Sancha
+		Tareisa
+		Teresa
+		Toda
+		Urraca
+		Violante
+		Ynes
+
+faction: moors
+
+	characters
+		Abdelatif
+		Adil
+		Ahjmed
+		Ahmed
+		Alarbi
+		Aswad
+		Ayub
+		Azedine
+		Azizudeen
+		Benyounes
+		Brahim
+		Driss
+		Fakhir
+		Faraj
+		Hachim
+		Haddad
+		Hassan
+		Hicham
+		Jalloun
+		Karif
+		Khaled
+		Khayri
+		Kicham
+		Larbi
+		Lukman
+		Mahjoub
+		Masid
+		Mohamed
+		Mohsen
+		Moustafa
+		Muhammad
+		Nourreddine
+		Omar
+		Qassim
+		Rizah
+		Rushdi
+		Saeed
+		Said
+		Salan
+		Salheddine
+		Smail
+		Tahar
+		Tashfin
+		Aban
+		Abdu_llah
+		Asbat
+		Ayyub
+		Da_ud
+		Galib
+		Hamdin
+		Hisham
+		Jalaf
+		Miswar
+		Qasim
+		Salim
+		Shakir
+		Tamim
+		Ubaid
+		Umayyah
+		Yazid
+		Ziyad
+		Abu-Bakr
+		Ali
+		Ibrahim
+		Yahya
+		Yusuf
+
+	surnames
+		Abensur
+		Abrami
+		Abu Shakra
+		Akil
+		Akouayn
+		al Mubi
+		Al Sahaf
+		Alami
+		Al-Fayyoumi
+		Al-Jaber
+		Amzine
+		Arazi
+		Azzouzj
+		Ba_albaki
+		Belqola
+		Benezekri
+		Benhassi
+		Bin Haji
+		Boulami
+		Chadili
+		Chiba
+		Essaid
+		Faraj
+		Farrakhan
+		Filali
+		Hissou
+		Ismail
+		Kaouch
+		Khatabi
+		Lahlafi
+		Lahyani
+		Maazouzi
+		Mammeri
+		Matoub
+		Mellouk
+		Naybet 
+		Neqrouz
+		Nyambek
+		Ouakili
+		Ouaziz
+		Sahiri
+		Saidi-Sief
+		Skah
+		Sudani 
+		Ta_anari
+		Zitouna
+		Zuabi
+;;bynames
+
+		of Cordoba
+		of Morocco
+		of Algeria
+		of Grenada
+		of Ashir
+		of Oran
+		of Tlemcen
+		of Melilla
+		of Ceuta
+		of Fez
+		of Marrakesh
+		of Tangier
+		of Ceuta
+		of Malaga
+		of Almeria
+		of Seville
+		of Murcia
+		of Merida
+		of Zallaca
+		of Badajoz
+		of Coria
+		of Toledo
+		of Calatayud
+		al-Andalusi
+		al-Isbili
+		al-Mari
+		al-Mursi
+		al-Balansi
+		al-Jayyani
+		al-Rundi
+		al-Qurtubi
+		al-Garnati
+		al-Mayurqui
+		al-Talamanki
+		al-Tulaytuli
+		al-Dani
+		al-Ifriqi
+		al-Magribi
+		al-Tunayzi
+
+	women
+		Anya
+		Bahiyya
+		Bakka
+		Banujah
+		Bouchra
+		Fathima
+		Fedada
+		Ghayda
+		Hasna
+		Hassiba
+		Husniya
+		Iza
+		Jarita
+		Kahina
+		Kulla
+		Laysa
+		Lilith
+		Malika
+		Meysun
+		Myassa
+		Najet
+		Najia
+		Nezha
+		Ni_mah
+		Noor
+		Qubilah
+		Rahshia
+		Saduf
+		Sagirah
+		Saheena
+		Shiklah
+		Sithy
+		Talalit
+		Ulayyah
+		Ummu
+		Zahra
+		Zhor
+		Zizi
+	
+faction: russia
+
+	characters
+		Aleksei
+		Andrei
+		Bolda
+		Boris
+		Buiak
+		Chernek
+		Chort
+		Dmitrii
+		Domaslav
+		Domazhir
+		Drozd
+		Grechin
+		Grigorii
+		Guba
+		Iosif
+		Ivan
+		Kisel
+		Kozel
+		Kuritsa
+		Maksim
+		Mal
+		Mikhail
+		Mil
+		Miloslav
+		Miroslav
+		Mixail
+		Nezhek
+		Nikita
+		Orekh
+		Pavel
+		Radoslav
+		Sbyslav
+		Shchuka
+		Shuba
+		Sidor
+		Stanimir
+		Stepan
+		Sviatopolk
+		Tvorimir
+		Vasilii
+		Vladimir
+		Voislav
+		Volchok
+		Yaroslav
+		Ysevolod
+		Yuri
+		Zaiats
+		Zavid
+		Zhiroslav
+		Zhiznobud
+		Zub
+		Artyom
+		Boleslav
+		Semyon
+		Sergei
+		Viktor
+
+	surnames
+		Alekseev
+		Andreev
+		Boldin
+		Buiakov
+		Chernekov
+		Chortov
+		Dmitriev
+		Domaslavov
+		Domazhirov
+		Drozdov
+		Grechinov
+		Grigoriev
+		Gubin
+		Iecifovich
+		Ivanov
+		Ivanovich
+		Kiselev
+		Kozlov
+		Kuritsev
+		Kuz_mich
+		Maksimov
+		Malov
+		Mikhailovich
+		Miloslavov
+		Milov
+		Miroslavov
+		Monomakh
+		Nezhkov
+		Nikitin
+		Orekhov
+		Pavlov
+		Radoslavov
+		Sbyslavov
+		Semenov
+		Shchukin
+		Shubin
+		Sidorov
+		Stanimirov
+		Stepanov
+		Tvorimirov
+		Vasilievich
+		Voislavov
+		Volchkov
+		Zaitsev
+		Zakhariev
+		Zavidov
+		Zhiroslavov
+		Zhiznobudov
+		Zubov
+;;bynames
+		of Novgorod
+		of Bagut
+		of Belogorod
+		of Borovaia
+		of Chernigov
+		of Galich
+		of Istoma
+		of Ivashkovo
+		of Kaluga
+		of Kholm
+		of Kuchki
+		of Kursk
+		of Liubech
+		of Milovsh
+		of Moskva
+		of Neledina
+		of Obolensk
+		of Odoev
+		of Porkhov
+		of Pupki
+		of Radonezh
+		of Shakhova
+		of Smolensk
+		of Suzdal
+		of Trubetsk
+		of Turov
+		of Vasharovo
+		of Volga
+		of Vokshera
+		of Vyshgorod
+		of Zbarazh
+		of Zhmuda
+		of Belyigora
+		of Pogost
+		of Pole
+		of Zabolota
+
+	women
+		Agashka
+		Agna
+		Aleksandra
+		Anizka
+		Antonina
+		Belukha
+		Budshka
+		Cecislava
+		Chekhyna
+		Chemislava
+		Deda
+		Dekava
+		Ekaterina
+		Favsta
+		Feklitsa
+		Feona
+		Gandaza
+		Gravriia
+		Ianka
+		Jarena
+		Kalia
+		Kezhna
+		Khristin
+		Lanka
+		Maria
+		Margarita
+		Maritsa
+		Milehva
+		Nadezhda
+		Nastasiia
+		Nataliia
+		Niksha
+		Patrova
+		Radozta
+		Raina
+		Severina
+		Tatiana
+		Troika
+		Valenta
+		Veronika
+		Zbyshka
+	
+faction: hungary
+
+	characters
+		Abony
+		Adolar
+		Andras
+		Azzony
+		Balind
+		Baltasar
+		Banos
+		Benedek
+		Bertalan
+		Boldyszar
+		Boris
+		Bulcsu
+		Byrta
+		Cziriak
+		Damjan
+		Elek
+		Elemer
+		Fabyan
+		Fylep
+		Georgius
+		Gyorgy
+		Harkany
+		Humer
+		Istok
+		Istvan
+		Jakab
+		Kalman
+		Kenez
+		Keresztes
+		Kowacz
+		Laszlo
+		Lukac
+		Markus
+		Menhar
+		Miklos
+		Oremus
+		Peter
+		Petri
+		Shafar
+		Tamas
+		Ugron
+		Ulaszlo
+		Vtalyus
+		Denes
+		Endre
+		Tibor
+		Vilmos
+		Vlad
+		Zsigmond
+
+
+	surnames
+		Ambrus
+		Andras
+		Antal
+		Balazs
+		Balint
+		Bela
+		Benedek
+		Cizinski
+		Corvinus
+		Eltes
+		Eszes
+		Fazekas
+		Feher
+		Fejes
+		Ferenc
+		Fodor
+		Gergely
+		Geza
+		Gyorgy
+		Hasas
+		Hegedus
+		Hideg
+		Imre
+		Istvan
+		Jakab
+		Janos
+		Jo
+		Karoly
+		Kazimierz
+		Keblovszki
+		Kiraly
+		Kovacs
+		Marton
+		Mate
+		Matyas
+		Melles
+		Mihaly
+		Miklos
+		Oimeracz
+		Otto
+		Pal
+		Pap
+		Samuel
+		Sido
+		Sohnker
+		Szabo
+		Szekeres
+		Tolgyesi
+		Tot
+		Vadas
+		Vak
+		Vamos
+		Zavadsky
+;;bynames
+		of Carparthia
+		of Kassa
+		of Szeben
+		of Brasso
+		of Arad
+		of Temesvar
+		of Pecs
+		of Koros
+		of Zagrab
+		of Esztergom
+		of Pozsony
+		of Trencsen
+		of Nagyszombat
+		of Szolos
+		of Zara
+		of Spalato
+		of Trogir
+		of Nyitra
+		of Varad
+		of Oradea
+		of Kolozsvar
+		of Cenad
+		of Szegedin
+		of Verad
+		of Pest
+		of Fehervar
+		of Vidin
+
+	women
+		Ade
+		Adelaide
+		Agata
+		Anna
+		Barbara
+		Borbala
+		Dorottya
+		Erzsebet
+		Fruzsina
+		Helena
+		Ilona
+		Irisko
+		Jozsa
+		Judit
+		Katalin 
+		Katherina
+		Kato
+		Klara
+		Krisztina
+		Luca
+		Magdolna
+		Margareta
+		Marta
+		Orsolya
+		Pioska
+		Piroska
+		Sara
+		Zsofia
+		Zsuzsanna
+
+
+
+
+faction: slave
+
+	characters
+		Primus
+		Secundus
+		Sextus
+		Spartacus	
+		Solomon
+		Pontius
+		Abraham
+		Isaac
+		Esau
+		Moses
+		Aaron
+		Nautius
+		Oxynta
+		Juva
+		Jubal
+		Abdimilki
+		Abascantus
+		Decemius
+		Posthumus
+		Dentupes
+		Deopus
+		Desakenthos
+		Diazelmis
+		Diazenis
+		Rhaskos
+		Rhaskuporis
+		Rescuturme
+		Rhesus
+		Satres
+		Sautes
+		Skaris
+		Skílas
+
+	women
+		Beth
+		Rebecca
+		Bendis
+		Serapia
+		Dana
+		Afina
+		Birkita
+		Branka
+		Devnet
+		Dita
+		Fallon
+		Hestia
+		Karia
+		Bendidora
+		Cerzula
+		Dentysyka
+		Eptarys
+		Eptesyka
+		Ketripora
+		Mokasokos
+	

@@ -1,0 +1,3402 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; BANK: weapon hit
+;;  Keyword:
+;;
+;;		weapon {weapon type} {list of damage types}
+;;			hit	{armour type}
+;;			hit ground {list of terrain types}
+;;			hit building {list of building rcid's}
+;;
+;;		unit {list of <unit rcid:pri|sec>}
+;;			hit ...
+;;
+;;		weapon_type {weapon sound type: knife, sword, spear, axe, mace, club}
+;;			hit ...
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 3 priority 90 fadein 0 fadeout 0 minpitch .8 maxpitch 1.2 volume -25
+DEFAULT: probability 1 probradius 7 distancepriority -2 randomdelay 0 effect_level .5
+
+
+
+required_samples_cutoff 10
+
+;; EXAMPLE unit roman ballista:pri, romanscorpian:sec
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;     SAP POINT     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+event WEAPON_SAP_DIGGING mindist 2 volume 0 fadein .5 fadeout .5 probability 1  priority 210
+	folder data/sounds/SFX/Individual/Siege_Engines/Mining_Tunnel
+	Siege_Mining_Tunnel_Digging_04
+end
+
+
+
+	
+	
+	
+BANK: weapon_hit
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;              ELEPHANTS             ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ 
+	unit Elephants:sec, Elephant Rocketeer:sec, Elephants Mercs:sec, Elephant Artillery Mercs:sec, Elephant Artillery:sec
+
+		hit ground
+			event volume -10 mindist 4 priority 130
+				folder data/sounds/SFX/Individual/Melee/Elephant
+				Kick_Body_Low
+				Punch_Body_1
+				Punch_Body_2
+				Swipe_Kick
+			end
+
+		hit wood
+			event volume -10 mindist 4 priority 130
+				folder data/sounds/SFX/Individual/Melee/Elephant
+				Kick_Body_Low
+				Punch_Body_1
+				Punch_Body_2
+				Swipe_Kick
+			end
+
+		hit leather
+			event volume -10 mindist 4 priority 130
+				folder data/sounds/SFX/Individual/Melee/Elephant
+				Kick_Body_Low
+				Punch_Body_1
+				Punch_Body_2
+				Swipe_Kick
+			end
+
+		hit metal
+			event volume -10 mindist 4 priority 130
+				folder data/sounds/SFX/Individual/Melee/Elephant
+				Kick_Body_Low
+				Punch_Body_1
+				Punch_Body_2
+				Swipe_Kick
+			end
+
+		hit building 
+			event volume -10 mindist 4 priority 130
+				folder data/sounds/SFX/Individual/Melee/Elephant
+				Kick_Body_Low
+				Punch_Body_1
+				Punch_Body_2
+				Swipe_Kick
+			end
+
+		hit flesh
+			event volume -10 mindist 4 priority 130
+				folder data/sounds/SFX/Individual/Melee/Elephant
+				Kick_Body_Low
+				Punch_Body_1
+				Punch_Body_2
+				Swipe_Kick
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;      DAGGER / KNIFE      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+; when increasing/decreasing weapon hit sound - remember, swooshes, anim_scrapes
+
+
+	weapon_type knife
+
+	death_hit flesh
+			event volume 0 mindist 1.3 priority 180
+
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+
+				
+			end
+
+		hit metal
+			event mindist 0.75 volume -20 minpitch .6 maxpitch 1.1
+			
+				folder data/sounds/SFX/Individual/Melee
+				metal_clang_flesh_01
+				metal_clang_flesh_02
+				metal_clang_flesh_03
+				metal_clang_flesh_04
+				metal_clang_flesh_05
+				
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+				
+			end
+
+
+
+
+		hit wood
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				shield_hit_01
+				shield_hit_02
+				shield_hit_03
+				shield_hit_04
+				shield_hit_05
+				shield_hit_06
+				
+								
+			end
+
+
+		hit flesh
+			event mindist 1 volume 0
+
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+							
+		
+			end
+
+
+		hit leather 
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+
+			end
+
+
+		hit building
+			event volume -35 mindist 0.75 minpitch 0.6 maxpitch 1.3
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;      SWORD        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	weapon_type sword
+		death_hit flesh
+			event volume 0 mindist 1.3 priority 180
+
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+			end
+
+		hit metal
+			event mindist 0.75 volume -20 minpitch .6 maxpitch 1.1
+			
+				folder data/sounds/SFX/Individual/Melee
+				metal_clang_flesh_01
+				metal_clang_flesh_02
+				metal_clang_flesh_03
+				metal_clang_flesh_04
+				metal_clang_flesh_05
+				
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+				
+			end
+
+
+
+
+		hit wood
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+
+				
+				shield_hit_01
+				shield_hit_02
+				shield_hit_03
+				shield_hit_04
+				shield_hit_05
+				shield_hit_06
+
+			end
+
+
+		hit flesh
+			event mindist 1 volume 0
+
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+							
+		
+			end
+
+
+		hit leather 
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+
+			end
+
+
+		hit building
+			event volume -35 mindist 0.75 minpitch 0.6 maxpitch 1.3
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+			end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;      SPEAR        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	weapon_type spear
+
+		death_hit flesh
+			event volume 0 mindist 1.3 priority 180
+
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+			end
+
+		hit metal
+			event mindist 0.75 volume -20 minpitch .6 maxpitch 1.1
+			
+				folder data/sounds/SFX/Individual/Melee
+				metal_clang_flesh_01
+				metal_clang_flesh_02
+				metal_clang_flesh_03
+				metal_clang_flesh_04
+				metal_clang_flesh_05
+				
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+				
+			end
+
+
+
+
+		hit wood
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				shield_hit_01
+				shield_hit_02
+				shield_hit_03
+				shield_hit_04
+				shield_hit_05
+				shield_hit_06
+			
+			end
+
+
+		hit flesh
+			event mindist 0.75 volume 0
+
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+							
+		
+			end
+
+
+		hit leather 
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+
+			end
+
+
+		hit building
+			event volume -35 mindist 0.75 minpitch 0.6 maxpitch 1.3
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+			end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;      AXE          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	weapon_type axe
+
+	death_hit flesh
+			event volume 0 mindist 1.3 priority 180
+
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+			end
+
+		hit metal
+			event mindist 0.75 volume -20 minpitch .6 maxpitch 1.1
+			
+				folder data/sounds/SFX/Individual/Melee
+				metal_clang_flesh_01
+				metal_clang_flesh_02
+				metal_clang_flesh_03
+				metal_clang_flesh_04
+				metal_clang_flesh_05
+				
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+				
+			end
+
+
+
+
+		hit wood
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				shield_hit_01
+				shield_hit_02
+				shield_hit_03
+				shield_hit_04
+				shield_hit_05
+				shield_hit_06
+				
+							
+			end
+
+
+		hit flesh
+			event mindist 0.75 volume 0
+
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+							
+		
+			end
+
+
+		hit leather 
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+
+			end
+
+
+		hit building
+			event volume -35 mindist 0.75 minpitch 0.6 maxpitch 1.3
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+			end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;      MACE      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	weapon_type mace
+
+	death_hit flesh
+			event volume 0 mindist 1.3 priority 180
+
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+			end
+
+		hit metal
+			event mindist 0.75 volume -20 minpitch .6 maxpitch 1.1
+			
+				folder data/sounds/SFX/Individual/Melee
+				metal_clang_flesh_01
+				metal_clang_flesh_02
+				metal_clang_flesh_03
+				metal_clang_flesh_04
+				metal_clang_flesh_05
+				
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+				
+			end
+
+
+
+
+		hit wood
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				shield_hit_01
+				shield_hit_02
+				shield_hit_03
+				shield_hit_04
+				shield_hit_05
+				shield_hit_06
+			
+			end
+
+
+		hit flesh
+			event mindist 0.75 volume 0
+
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+							
+		
+			end
+
+
+		hit leather 
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+
+			end
+
+
+		hit building
+			event volume -35 mindist 0.75 minpitch 0.6 maxpitch 1.3
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+			end
+
+
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;       CLUB       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	weapon_type  club
+
+	death_hit flesh
+			event volume 0 mindist 1.3 priority 180
+
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+			end
+
+			
+		hit metal
+			event mindist 0.75 volume -20 minpitch .6 maxpitch 1.1
+			
+				folder data/sounds/SFX/Individual/Melee
+				metal_clang_flesh_01
+				metal_clang_flesh_02
+				metal_clang_flesh_03
+				metal_clang_flesh_04
+				metal_clang_flesh_05
+				
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+				
+			end
+
+
+
+
+		hit wood
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				shield_hit_01
+				shield_hit_02
+				shield_hit_03
+				shield_hit_04
+				shield_hit_05
+				shield_hit_06
+				
+							
+			end
+
+
+		hit flesh
+			event mindist 0.75 volume 0
+
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+							
+		
+			end
+
+
+		hit leather 
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+
+			end
+
+
+		hit building
+			event volume -35 mindist 0.75 minpitch 0.6 maxpitch 1.3
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+;;;;;;;;;;;;;;;;;; CANNON TOWER   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	weapon_type cannon_tower
+		fly
+			event mindist 7 volume 0 priority 100 distancepriority 0  fadein .35 fadeout .5 probability 1 minpitch .8 maxpitch 1.1
+				folder data/sounds/SFX/Individual/Siege_Engines
+				cannon_fly_08
+								
+			end
+
+		flaming fly
+			event mindist 8 volume -10 priority 100 distancepriority 0 fadein .35 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				cannon_fly_flaming_02
+			end
+
+;;;;;;;;;;;;;;;			
+
+		hit building
+			event mindist 20 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_stone_01
+				Cannon_hit_stone_02
+			end
+
+		flaming hit building
+			event mindist 20 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+			end
+	
+						
+;;; flesh;;;;;;;;;;;			
+									
+		hit flesh, leather
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+
+		flaming hit flesh, leather
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+				
+		death_hit flesh
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+		
+		flaming death_hit flesh
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+		
+;;; wood;;;;;;;;;;;				
+				
+				
+	hit wood
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_wood_01
+				Cannon_hit_wood_02
+				end
+		
+		flaming hit wood
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_wood_01
+				Cannon_hit_wood_02
+				end		
+				
+				
+;;;; metal;;;;;;;;;;;;				
+				
+		hit metal
+			event mindist 20 priority 201 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_01
+				Cannon_hit_ground_02
+			end
+
+				
+		flaming hit metal
+			event mindist 20 priority 201 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+			end
+				
+				
+;;; water	;;;;;;;;;;			
+				
+				
+		hit ground water
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Water
+				Cat_Rock_Hit_Water_01
+				Cat_Rock_Hit_Water_02
+				Cat_Rock_Hit_Water_03
+				Cat_Rock_Hit_Water_04
+			end
+
+			
+;;; ground	;;;;;;;;;;;;;		
+			
+		hit ground
+			event mindist 20 priority 201 volume -15 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_01
+				Cannon_hit_ground_02
+			end
+		
+		flaming hit ground
+			event mindist 20 priority 201 volume -15 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+			end
+
+		
+							
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;     BALLISTA TOWERS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	weapon_type ballista_tower
+		fly
+			event volume -15 mindist 4 priority 100 distancepriority 0 minpitch 0.7 maxpitch 1.1 fadein .25 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/Missiles
+				Missile_Ballista_Arrow_Fly
+			end
+
+			
+		flaming fly
+			event volume 0 mindist 4 priority 100 distancepriority 0 minpitch 0.8 maxpitch 1.1 fadein .25 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_Arrow_Fly_Flaming
+			end
+
+			
+;;;;;;;;;;;;;;;;;;;;;						
+			
+		hit building
+			event mindist 5 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Stone
+				Ballista_Arrow_Hit_Stone_01
+				Ballista_Arrow_Hit_Stone_02
+			end
+
+		flaming hit building
+			event mindist 5 priority 200 volume -10 distancepriority 0 randomdelay 0 probability 1
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_hit_ground_flaming_01
+				Ballista_hit_ground_flaming_02
+				Ballista_hit_ground_flaming_03
+			end
+
+;;;;;;;;;;;;;;;;;;;;			
+			
+			
+ 
+			   			   
+		hit flesh, leather
+			event mindist 5 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_01
+				Ballista_Arrow_Hit_Flesh_02
+				Ballista_Arrow_Hit_Flesh_04
+			end
+		
+		flaming hit flesh, leather
+			event mindist 5 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_Hit_Flesh_Flaming_01
+				Ballista_Hit_Flesh_Flaming_02
+				Ballista_Hit_Flesh_Flaming_03
+				
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;;
+			
+						
+		death_hit flesh
+			event mindist 5 priority 200 distancepriority 0 volume -10 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_01
+				Ballista_Arrow_Hit_Flesh_02
+				Ballista_Arrow_Hit_Flesh_03
+				Ballista_Arrow_Hit_Flesh_04
+				end
+			
+		flaming death_hit flesh
+			event mindist 5 priority 200 distancepriority 0 volume -10 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_Hit_Flesh_Flaming_01
+				Ballista_Hit_Flesh_Flaming_02
+				Ballista_Hit_Flesh_Flaming_03
+				
+				end
+	
+;;;;;;;;;;;;;;;;;;;;;;;				
+							
+		
+				
+		hit wood
+			event mindist 5 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_rock_hit_wood
+				Cat_rock_hit_wood_02
+				Cat_rock_hit_wood_03
+				Cat_rock_hit_wood_04
+				end
+		
+		flaming hit wood
+			event mindist 5 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_hit_ground_flaming_01
+				Ballista_hit_ground_flaming_02
+				Ballista_hit_ground_flaming_03
+				end	
+			
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+				
+		hit metal
+			event mindist 5 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_rock_hit_breastplate
+				Cat_rock_hit_breastplate_01
+				Cat_rock_hit_breastplate_02
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_rock_hit_chainmail
+				Cat_rock_hit_chainmail_01
+				end
+
+				
+		flaming hit metal
+			event mindist 5 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_hit_ground_flaming_01
+				Ballista_hit_ground_flaming_02
+				Ballista_hit_ground_flaming_03
+				end
+			
+	
+;;; water	;;;;;;;;;;			
+				
+				
+		hit ground water
+			event mindist 5 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Water
+				Cat_Rock_Hit_Water_01
+				Cat_Rock_Hit_Water_02
+				Cat_Rock_Hit_Water_03
+				Cat_Rock_Hit_Water_04
+			end
+
+			
+;;; ground	;;;;;;;;;;;;;		
+			
+		hit ground
+			event mindist 5 priority 200 volume -25 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Dirt
+				Ballista_arrow_hit_dirt_01
+				Ballista_arrow_hit_dirt_03
+				Ballista_arrow_hit_dirt_04
+				end
+		
+		flaming hit ground
+			event mindist 5 priority 200 volume -10 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_hit_ground_flaming_01
+				Ballista_hit_ground_flaming_02
+				Ballista_hit_ground_flaming_03
+				
+				end		
+
+				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;     ARROW TOWERS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+						
+weapon_type arrow_tower
+
+	death_hit flesh 
+			event volume 0 priority 180  mindist 3 randomdelay 0
+
+			folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+			end
+
+			
+	flaming death_hit flesh 
+		
+			event mindist 2 priority 180  volume 0 mindist 2 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_Flaming_01
+				Ballista_Arrow_Hit_Flesh_Flaming_02
+				Ballista_Arrow_Hit_Flesh_Flaming_03
+				Ballista_Arrow_Hit_Flesh_Flaming_04
+				end	
+	
+	;;;;;;;;;;;;;;;;;;		
+		fly
+			event volume -30 mindist 3 priority 170 minpitch .5 maxpitch 1.5 rndvolume -10 probability .3 fadein .2 fadeout .2  probradius 3
+				
+				folder data/sounds/SFX/Individual/Missiles
+				;Missile_Normal_Arrow_Fly
+			end
+			
+		flaming fly
+			event volume -20 rndvolume -10 mindist 3 priority 170  probability .02 fadein .25 fadeout .5  probradius 3
+				folder data/sounds/SFX/Individual/Missiles
+				Missile_Flaming_Arrow_Fly
+			end
+;;;;;;;;;;;;;;;
+		
+		hit building
+			event volume -15  rndvolume -10 minpitch 0.6 maxpitch 1.3 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				
+				Arrow_Hit_Stone_01
+				Arrow_Hit_Stone_02
+				
+				
+				
+				end
+	
+		flaming hit building
+			event volume -15  rndvolume -10 minpitch 0.6 maxpitch 1.3 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+		
+				Arrow_Hit_Stone_01
+				Arrow_Hit_Stone_02
+				
+				
+				
+				end
+;;;;;;;;;;;;;;;;;;;;;			
+				
+			
+					
+		hit wood
+			event volume 0  minpitch .8 maxpitch 1.2 rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_Wood_01
+				Arrow_Hit_Wood_02
+				Arrow_Hit_Wood_03
+				Arrow_Hit_Wood_04
+				
+			  end
+		
+		flaming hit wood
+			event volume 0  minpitch .8 maxpitch 1.2 rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_Wood_01
+				Arrow_Hit_Wood_02
+				Arrow_Hit_Wood_03
+				Arrow_Hit_Wood_04
+			
+			  end	  
+			  
+;;;;;;;;;;;;;  
+			  
+		 hit metal
+			event volume -10  minpitch .7 maxpitch 1.2 rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_metal_01
+				Arrow_Hit_metal_02
+				Arrow_Hit_metal_03
+				Arrow_Hit_metal_04
+				
+			end
+
+		flaming hit metal
+			event volume -10  minpitch .7 maxpitch 1.2 rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_metal_01
+				Arrow_Hit_metal_02
+				Arrow_Hit_metal_03
+				Arrow_Hit_metal_04
+			end
+			
+;;;;;;;;;;;;;;;		
+
+		hit flesh, leather
+			event  minpitch .8 maxpitch 1.2 volume 0  randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_flesh_01
+				Arrow_Hit_flesh_02
+				Arrow_Hit_flesh_03
+				Arrow_Hit_flesh_04
+				Arrow_Hit_flesh_05
+				Arrow_Hit_flesh_06
+				Arrow_Hit_flesh_07
+				Arrow_Hit_flesh_08
+				Arrow_Hit_flesh_09
+				Arrow_Hit_flesh_10
+				Arrow_Hit_flesh_11
+				Arrow_Hit_flesh_12
+				Arrow_Hit_flesh_13
+				Arrow_Hit_flesh_14
+				Arrow_Hit_flesh_15
+				Arrow_Hit_flesh_16
+				Arrow_Hit_flesh_17
+			end
+
+	flaming hit flesh, leather
+			event  minpitch .8 maxpitch 1.2 volume 0  randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_flesh_01
+				Arrow_Hit_flesh_02
+				Arrow_Hit_flesh_03
+				Arrow_Hit_flesh_04
+				Arrow_Hit_flesh_05
+				Arrow_Hit_flesh_06
+				Arrow_Hit_flesh_07
+				Arrow_Hit_flesh_08
+				Arrow_Hit_flesh_09
+				Arrow_Hit_flesh_10
+				Arrow_Hit_flesh_11
+				Arrow_Hit_flesh_12
+				Arrow_Hit_flesh_13
+				Arrow_Hit_flesh_14
+				Arrow_Hit_flesh_15
+				Arrow_Hit_flesh_16
+				Arrow_Hit_flesh_17
+			end
+
+;;;;;;;;;;;;;;;;;			
+			
+			
+		hit ground water 
+			event  minpitch .8 maxpitch 1.5 volume -20 rndvolume -40 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Arrow/Arrow_Hit_Water
+				Arrow_Hit_Water_01
+				Arrow_Hit_Water_02
+				Arrow_Hit_Water_03
+				Arrow_Hit_Water_04
+				Arrow_Hit_Water_05
+				Arrow_Hit_Water_06
+				Arrow_Hit_Water_07
+				Arrow_Hit_Water_08
+				
+			end
+
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+		hit ground
+			event  minpitch .5 maxpitch 1.5 volume -40 rndvolume -15 randomdelay 0 priority 89
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_Dirt_01
+				;Arrow_Hit_Dirt_02
+			end
+			
+	flaming hit ground
+			event  minpitch .7 maxpitch 1.1 volume -20 rndvolume -15 randomdelay 0 priority 89
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_Dirt_flaming_03
+				Arrow_Hit_Dirt_flaming_04
+				end		
+			
+			
+			
+		
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;   BOMBARD, BASILISK, ARTILLERY, SERPENTINE, CULVERIN, MORTAR, CANNON 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+		unit Elephant Artillery:pri, Elephant Artillery Mercs:pri, NE Culverin, NE Cannon, EE Cannon, ME Cannon, AS Cannon, NE Serpentine, EE Serpentine, NE Basilisk, EE Basilisk, NE Bombard, EE Bombard, ME Bombard, AS Bombard, GR Bombard, NE Grand Bombard, EE Grand Bombard, ME Grand Bombard, AS Grand Bombard, NE Mortar 
+	
+		fly
+			event mindist 7 volume 0 priority 100 distancepriority 0  fadein .35 fadeout .5 probability 1 minpitch .8 maxpitch 1.1
+				folder data/sounds/SFX/Individual/Siege_Engines
+				cannon_fly_08
+								
+			end
+
+		flaming fly
+			event mindist 8 volume -10 priority 100 distancepriority 0 fadein .35 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				cannon_fly_flaming_02
+			end
+
+;;;;;;;;;;;;;;;			
+
+		hit building
+			event mindist 20 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_stone_01
+				Cannon_hit_stone_02
+			end
+
+		flaming hit building
+			event mindist 20 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+			end
+	
+						
+;;; flesh;;;;;;;;;;;			
+									
+		hit flesh, leather
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+
+		flaming hit flesh, leather
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+				
+		death_hit flesh
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+		
+		flaming death_hit flesh
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+		
+;;; wood;;;;;;;;;;;				
+				
+				
+	hit wood
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_wood_01
+				Cannon_hit_wood_02
+				end
+		
+		flaming hit wood
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_wood_01
+				Cannon_hit_wood_02
+				end		
+				
+				
+;;;; metal;;;;;;;;;;;;				
+				
+		hit metal
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_01
+				Cannon_hit_ground_02
+			end
+
+				
+		flaming hit metal
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+			end
+				
+				
+;;; water	;;;;;;;;;;			
+				
+				
+		hit ground water
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Water
+				Cat_Rock_Hit_Water_01
+				Cat_Rock_Hit_Water_02
+				Cat_Rock_Hit_Water_03
+				Cat_Rock_Hit_Water_04
+			end
+
+			
+;;; ground	;;;;;;;;;;;;;		
+			
+		hit ground
+			event mindist 20 priority 201 volume -15 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_01
+				Cannon_hit_ground_02
+			end
+		
+		flaming hit ground
+			event mindist 20 priority 201 volume -15 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+			end
+				
+				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;    BALLISTA    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	unit NE Ballista, EE Ballista, GR Ballista, ME Ballista, AS Ballista			
+	
+		fly
+			event volume 0 mindist 4 priority 100 distancepriority 0 minpitch 0.7 maxpitch 1.1 fadein .25 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/Missiles
+				Missile_Ballista_Arrow_Fly
+			end
+
+			
+		flaming fly
+			event volume 0 mindist 4 priority 100 distancepriority 0 minpitch 0.8 maxpitch 1 fadein .25 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/Siege_engines
+				Ballista_Arrow_Fly_Flaming
+			end
+
+			
+;;;;;;;;;;;;;;;;;;;;;						
+			
+		hit building
+			event mindist 5 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Stone
+				Ballista_Arrow_Hit_Stone_01
+				Ballista_Arrow_Hit_Stone_02
+			end
+
+		flaming hit building
+			event mindist 5 priority 200 volume -10 distancepriority 0 randomdelay 0 probability 1
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_hit_ground_flaming_01
+				Ballista_hit_ground_flaming_02
+				Ballista_hit_ground_flaming_03
+			end
+
+;;;;;;;;;;;;;;;;;;;;			
+			
+			
+ 
+			   			   
+		hit flesh, leather
+			event mindist 5 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_01
+				Ballista_Arrow_Hit_Flesh_02
+				Ballista_Arrow_Hit_Flesh_04
+			end
+		
+		flaming hit flesh, leather
+			event mindist 5 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_Hit_Flesh_Flaming_01
+				Ballista_Hit_Flesh_Flaming_02
+				Ballista_Hit_Flesh_Flaming_03
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;;
+			
+						
+		death_hit flesh
+			event mindist 5 priority 200 distancepriority 0 volume -10 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_01
+				Ballista_Arrow_Hit_Flesh_02
+				Ballista_Arrow_Hit_Flesh_03
+				Ballista_Arrow_Hit_Flesh_04
+				end
+			
+		flaming death_hit flesh
+			event mindist 5 priority 200 distancepriority 0 volume -10 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_Hit_Flesh_Flaming_01
+				Ballista_Hit_Flesh_Flaming_02
+				Ballista_Hit_Flesh_Flaming_03
+				end
+	
+;;;;;;;;;;;;;;;;;;;;;;;				
+							
+		
+				
+		hit wood
+			event mindist 5 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_rock_hit_wood
+				Cat_rock_hit_wood_02
+				Cat_rock_hit_wood_03
+				Cat_rock_hit_wood_04
+				end
+		
+		flaming hit wood
+			event mindist 5 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_hit_ground_flaming_01
+				Ballista_hit_ground_flaming_02
+				Ballista_hit_ground_flaming_03
+				end	
+			
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+				
+		hit metal
+			event mindist 5 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_rock_hit_breastplate
+				Cat_rock_hit_breastplate_01
+				Cat_rock_hit_breastplate_02
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_rock_hit_chainmail
+				Cat_rock_hit_chainmail_01
+				end
+
+				
+		flaming hit metal
+			event mindist 5 priority 200 volume -40 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_hit_ground_flaming_01
+				Ballista_hit_ground_flaming_02
+				Ballista_hit_ground_flaming_03
+				end
+			
+	
+;;; water	;;;;;;;;;;			
+				
+				
+		hit ground water
+			event mindist 5 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Water
+				Cat_Rock_Hit_Water_01
+				Cat_Rock_Hit_Water_02
+				Cat_Rock_Hit_Water_03
+				Cat_Rock_Hit_Water_04
+			end
+
+			
+;;; ground	;;;;;;;;;;;;;		
+			
+		hit ground
+			event mindist 5 priority 200 volume -25 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Dirt
+				Ballista_arrow_hit_dirt_01
+				Ballista_arrow_hit_dirt_03
+				Ballista_arrow_hit_dirt_04
+				end
+		
+		flaming hit ground
+			event mindist 5 priority 200 volume -10 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/siege_engines
+				Ballista_hit_ground_flaming_01
+				Ballista_hit_ground_flaming_02
+				Ballista_hit_ground_flaming_03
+				
+				end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;   TREBUCHET  , CATAPULT  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+		unit NE Trebuchet, EE Trebuchet, GR Trebuchet, ME Trebuchet, AS Trebuchet, NE Catapult, EE Catapult, GR Catapult, ME Catapult, AS Catapult, norman catapult
+		
+		fly
+			event mindist 7 volume 0 priority 100 distancepriority 0  minpitch 1 maxpitch 1 fadein .35 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/Siege_Engines/trebuchet
+				trebuchet_fly
+			end
+
+		flaming fly
+			event mindist 8 volume 0 priority 100 distancepriority 0 minpitch 1 maxpitch 1 fadein .35 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines/trebuchet
+				trebuchet_fly_flaming
+			end
+
+;;;;;;;;;;;;;;;			
+
+		hit building
+			event mindist 20 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_stone_01
+				Cannon_hit_stone_02
+			end
+
+		flaming hit building
+			event mindist 22 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+			end
+	
+						
+;;; flesh;;;;;;;;;;;			
+									
+		hit flesh, leather
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+
+		flaming hit flesh, leather
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+		death_hit flesh
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+				
+		flaming death_hit flesh
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+		
+;;; wood;;;;;;;;;;;				
+				
+				
+	hit wood
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_wood_01
+				Cannon_hit_wood_02
+				end
+		
+		flaming hit wood
+			event mindist 22 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_wood_01
+				Cannon_hit_wood_02
+				end		
+				
+				
+;;;; metal;;;;;;;;;;;;				
+				
+		hit metal
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_01
+				Cannon_hit_ground_02
+				end
+
+				
+		flaming hit metal
+			event mindist 22 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+				end
+				
+;;; water	;;;;;;;;;;			
+				
+				
+		hit ground water
+			event mindist 20 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Water
+				Cat_Rock_Hit_Water_01
+				Cat_Rock_Hit_Water_02
+				Cat_Rock_Hit_Water_03
+				Cat_Rock_Hit_Water_04
+			end
+
+			
+;;; ground	;;;;;;;;;;;;;		
+			
+		hit ground
+			event mindist 20 priority 201 volume 0 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_01
+				Cannon_hit_ground_02
+				end
+		
+		flaming hit ground
+			event mindist 22 priority 201 volume -15 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+				end
+				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;   RIBAULT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	unit NE Ribault, EE Ribault, Mercenary Ribault
+		fly
+			event mindist 4 volume -20 priority 100 distancepriority 0 minpitch 1 maxpitch 1.7 fadein .2 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/siege_engines
+				ribault_fly
+			end
+
+		flaming fly
+			event mindist 7 volume -45 priority 100 distancepriority 0 minpitch 0.7 maxpitch 1.1 fadein .25 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Missiles
+				Missile_Scorpion_Fly_Flaming3
+			end
+
+;;;;;;;;;;;;;;;;;;;;			
+						
+		hit building
+			event mindist 15 priority 200 volume -5 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Scorpion/Scorpion_Arrow_Hit_Stone
+				Scorpion_Arrow_Hit_Stone_01
+				Scorpion_Arrow_Hit_Stone_02
+				Scorpion_Arrow_Hit_Stone_03
+				Scorpion_Arrow_Hit_Stone_04
+				Scorpion_Arrow_Hit_Stone_01
+			   end
+
+		flaming hit building
+			event mindist 15 priority 200 volume -5 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Scorpion/Scorpion_Arrow_Hit_Stone
+				Scorpion_Arrow_Hit_Stone_01
+				Scorpion_Arrow_Hit_Stone_02
+				Scorpion_Arrow_Hit_Stone_03
+				Scorpion_Arrow_Hit_Stone_04
+				Scorpion_Arrow_Hit_Stone_01
+			   end
+
+;;;;;;;;;;;;;;;;;	   
+			   			   
+		hit flesh, leather
+			event mindist 15 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_01
+				Ballista_Arrow_Hit_Flesh_02
+				Ballista_Arrow_Hit_Flesh_03
+				Ballista_Arrow_Hit_Flesh_04
+			end
+		
+		flaming hit flesh, leather
+			event mindist 15 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_Flaming_01
+				Ballista_Arrow_Hit_Flesh_Flaming_02
+				Ballista_Arrow_Hit_Flesh_Flaming_03
+				Ballista_Arrow_Hit_Flesh_Flaming_04
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;;
+			
+						
+		death_hit flesh
+			event mindist 15 priority 200 distancepriority 0 volume -10 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_01
+				Ballista_Arrow_Hit_Flesh_02
+				Ballista_Arrow_Hit_Flesh_03
+				Ballista_Arrow_Hit_Flesh_04
+				end
+			
+		flaming death_hit flesh
+			event mindist 15 priority 200 distancepriority 0 volume -10 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_Flaming_01
+				Ballista_Arrow_Hit_Flesh_Flaming_02
+				Ballista_Arrow_Hit_Flesh_Flaming_03
+				Ballista_Arrow_Hit_Flesh_Flaming_04
+				end
+
+;;;;;;;;;;;;;;;;;;;;;				
+							
+		hit wood
+			event mindist 15 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Wood
+				Cat_Rock_Hit_Wood_01
+				Cat_Rock_Hit_Wood_02
+				Cat_Rock_Hit_Wood_03
+				Cat_Rock_Hit_Wood_04
+				Cat_Rock_Hit_Wood_05
+			end
+
+			flaming hit wood
+			event mindist 15 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Wood
+				Cat_Rock_Hit_Wood_01
+				Cat_Rock_Hit_Wood_02
+				Cat_Rock_Hit_Wood_03
+				Cat_Rock_Hit_Wood_04
+				Cat_Rock_Hit_Wood_05
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;		
+			
+		hit metal
+			event mindist 15 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Breastplate
+				Cat_Rock_Hit_Breastplate_01
+				Cat_Rock_Hit_Breastplate_02
+
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Chainmail
+				Cat_Rock_Hit_Chainmail_01
+				Cat_Rock_Hit_Chainmail_02
+			end
+
+			
+		flaming hit metal
+			event mindist 15 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Breastplate
+				Cat_Rock_Hit_Breastplate_01
+				Cat_Rock_Hit_Breastplate_02
+
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Chainmail
+				Cat_Rock_Hit_Chainmail_01
+				Cat_Rock_Hit_Chainmail_02
+			end
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;		
+			
+		hit ground water
+			event mindist 15 priority 200 distancepriority 0 volume -15 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Scorpion/Scorpion_Arrow_Hit_Water
+				Scorpion_Arrow_Hit_Water_01
+				Scorpion_Arrow_Hit_Water_02
+				Scorpion_Arrow_Hit_Water_03
+				end
+
+;;;;;;;;;;;;;;;;;;;;;;				
+								
+		hit ground
+			event mindist 15 priority 200 distancepriority 0 volume -20 rndvolume -20 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Dirt
+				Ballista_Arrow_Hit_Dirt_01
+				Ballista_Arrow_Hit_Dirt_03
+				Ballista_Arrow_Hit_Dirt_04
+			end	
+				
+		flaming hit ground
+			event mindist 15 priority 200 distancepriority 0 volume -20 rndvolume -15 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Dirt
+				Ballista_Arrow_Hit_Dirt_Flaming_01
+				Ballista_Arrow_Hit_Dirt_Flaming_02
+				Ballista_Arrow_Hit_Dirt_Flaming_03
+				Ballista_Arrow_Hit_Dirt_Flaming_04
+				Ballista_Arrow_Hit_Dirt_Flaming_05
+				Ballista_Arrow_Hit_Dirt_Flaming_06
+			end				
+
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;  ROCKET LAUNCHER
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+		
+	unit AS Rocket Launcher, Mercenary Rocket Launcher, Elephant Rocketeer:pri
+		fly
+			event mindist 6 volume 0 priority 100 distancepriority 0 minpitch 0.8 maxpitch 1.3 fadein .2 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_fly
+				
+			end
+
+		flaming fly
+			event mindist 6 volume 0 priority 100 distancepriority 0 minpitch 0.8 maxpitch 1.3 fadein .2 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_fly
+				
+			end
+
+;;;;;;;;;;;;;;;;;;;;			
+						
+		hit building
+			event mindist 10 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			   end
+
+		flaming hit building
+			event mindist 10 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			   end
+
+;;;;;;;;;;;;;;;;;	   
+			   			   
+		hit flesh, leather
+			event mindist 10 priority 200 distancepriority 0 volume -15 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			end
+		
+		flaming hit flesh, leather
+			event mindist 10 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;;
+			
+						
+		death_hit flesh
+			event mindist 10 priority 200 distancepriority 0 volume -5 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+				end
+			
+		flaming death_hit flesh
+			event mindist 10 priority 200 distancepriority 0 volume -5 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+				end
+
+;;;;;;;;;;;;;;;;;;;;;				
+							
+		hit wood
+			event mindist 10 priority 200 distancepriority 0 volume -15 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			end
+
+			flaming hit wood
+			event mindist 10 priority 200 distancepriority 0 volume -15 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;		
+			
+		hit metal
+			event mindist 10 priority 200 distancepriority 0 volume -15 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			end
+
+			
+		flaming hit metal
+			event mindist 10 priority 200 distancepriority 0 volume -15 probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			end
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;		
+			
+		hit ground water
+			event mindist 10 priority 200 distancepriority 0  probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Missiles/Scorpion/Scorpion_Arrow_Hit_Water
+				Scorpion_Arrow_Hit_Water_01
+				Scorpion_Arrow_Hit_Water_02
+				Scorpion_Arrow_Hit_Water_03
+			end
+
+;;;;;;;;;;;;;;;;;;;;;;				
+								
+		hit ground
+			event mindist 10 priority 200 distancepriority 0 volume -15  probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			end	
+				
+		flaming hit ground
+			event mindist 10 priority 200 distancepriority 0 volume -15  probability 1 randomdelay 0 minpitch .6 maxpitch 1.5
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_Impact_01
+				RL_Impact_02
+			end			
+						
+				
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;  MONSTER RIBAULT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	unit NE Monster Ribault, Mercenary Monster Ribault		
+		fly
+			event mindist 4 volume -20 priority 100 distancepriority 0 minpitch 1 maxpitch 1.7 fadein .2 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/siege_engines
+				ribault_fly
+			end
+
+		flaming fly
+			event mindist 7 volume -30 priority 100 distancepriority 0 minpitch 0.7 maxpitch 1.1 fadein .25 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Missiles
+				Missile_Scorpion_Fly_Flaming3
+			end
+
+;;;;;;;;;;;;;;;;;;;;			
+						
+		hit building
+			event mindist 20 priority 200 volume -5 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Scorpion/Scorpion_Arrow_Hit_Stone
+				Scorpion_Arrow_Hit_Stone_01
+				Scorpion_Arrow_Hit_Stone_02
+				Scorpion_Arrow_Hit_Stone_03
+				Scorpion_Arrow_Hit_Stone_04
+				Scorpion_Arrow_Hit_Stone_01
+			   end
+
+		flaming hit building
+			event mindist 20 priority 200 volume -5 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Scorpion/Scorpion_Arrow_Hit_Stone
+				Scorpion_Arrow_Hit_Stone_01
+				Scorpion_Arrow_Hit_Stone_02
+				Scorpion_Arrow_Hit_Stone_03
+				Scorpion_Arrow_Hit_Stone_04
+				Scorpion_Arrow_Hit_Stone_01
+			   end
+
+;;;;;;;;;;;;;;;;;	   
+			   			   
+		hit flesh, leather
+			event mindist 3 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+		
+		flaming hit flesh, leather
+			event mindist 3 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+			
+;;;;;;;;;;;;;;;;;;;;;;;
+			
+						
+		death_hit flesh
+			event mindist 3 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+			
+		flaming death_hit flesh
+			event mindist 3 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+
+;;;;;;;;;;;;;;;;;;;;;				
+							
+		hit wood
+			event mindist 20 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Wood
+				Cat_Rock_Hit_Wood_01
+				Cat_Rock_Hit_Wood_02
+				Cat_Rock_Hit_Wood_03
+				Cat_Rock_Hit_Wood_04
+				Cat_Rock_Hit_Wood_05
+			end
+
+			flaming hit wood
+			event mindist 20 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Wood
+				Cat_Rock_Hit_Wood_01
+				Cat_Rock_Hit_Wood_02
+				Cat_Rock_Hit_Wood_03
+				Cat_Rock_Hit_Wood_04
+				Cat_Rock_Hit_Wood_05
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;		
+			
+		hit metal
+			event mindist 20 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Breastplate
+				Cat_Rock_Hit_Breastplate_01
+				Cat_Rock_Hit_Breastplate_02
+
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Chainmail
+				Cat_Rock_Hit_Chainmail_01
+				Cat_Rock_Hit_Chainmail_02
+			end
+
+			
+		flaming hit metal
+			event mindist 20 priority 200 distancepriority 0 volume 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Breastplate
+				Cat_Rock_Hit_Breastplate_01
+				Cat_Rock_Hit_Breastplate_02
+
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Chainmail
+				Cat_Rock_Hit_Chainmail_01
+				Cat_Rock_Hit_Chainmail_02
+			end
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;		
+			
+		hit ground water
+			event mindist 20 priority 200 distancepriority 0 volume -15 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Scorpion/Scorpion_Arrow_Hit_Water
+				Scorpion_Arrow_Hit_Water_01
+				Scorpion_Arrow_Hit_Water_02
+				Scorpion_Arrow_Hit_Water_03
+				end
+
+;;;;;;;;;;;;;;;;;;;;;;				
+								
+		hit ground
+			event mindist 20 priority 200 distancepriority 0 volume -30 rndvolume -20 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Dirt
+				Ballista_Arrow_Hit_Dirt_01
+				Ballista_Arrow_Hit_Dirt_03
+				Ballista_Arrow_Hit_Dirt_04
+			end	
+				
+		flaming hit ground
+			event mindist 20 priority 200 distancepriority 0 volume -30 rndvolume -15 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Dirt
+				Ballista_Arrow_Hit_Dirt_Flaming_01
+				Ballista_Arrow_Hit_Dirt_Flaming_02
+				Ballista_Arrow_Hit_Dirt_Flaming_03
+				Ballista_Arrow_Hit_Dirt_Flaming_04
+				Ballista_Arrow_Hit_Dirt_Flaming_05
+				Ballista_Arrow_Hit_Dirt_Flaming_06
+			end		
+								
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;  MONSTER BOMBARD
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	unit NE Monster Bombard, ME Monster Bombard, AS Monster Bombard, Mercenary Monster Bombard
+		fly
+			event mindist 8 volume 0 priority 100 distancepriority 0  fadein .35 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/Siege_Engines/Huge_bombard
+				huge_bombard_fly
+			end
+
+		flaming fly
+			event mindist 8 volume 0 priority 100 distancepriority 0 fadein .35 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines/Huge_bombard
+				huge_bombard_fly
+			end
+
+;;;;;;;;;;;;;;;			
+
+		hit building
+			event mindist 25 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1
+				folder data/sounds/SFX/Individual/Siege_Engines/Huge_bombard
+				huge_bombard_hit_wall_01
+				huge_bombard_hit_wall_02
+			end
+
+		flaming hit building
+			event mindist 25 priority 200 volume 0 distancepriority 0 randomdelay 0 probability 1
+				folder data/sounds/SFX/Individual/Siege_Engines/Huge_bombard
+				huge_bombard_hit_wall_01
+				huge_bombard_hit_wall_02
+			end
+	
+						
+;;; flesh;;;;;;;;;;;			
+									
+		hit flesh, leather
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+
+		flaming hit flesh, leather
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+				
+		death_hit flesh
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+				
+		flaming death_hit flesh
+			event mindist 2 priority 200 volume -15 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_flesh_01
+				Cannon_hit_flesh_02
+				Cannon_hit_flesh_03
+				Cannon_hit_flesh_04
+				Cannon_hit_flesh_05
+				Cannon_hit_flesh_06
+				Cannon_hit_flesh_07
+				Cannon_hit_flesh_08
+				Cannon_hit_flesh_09
+				Cannon_hit_flesh_10
+				Cannon_hit_flesh_11
+				end
+		
+;;; wood;;;;;;;;;;;				
+				
+				
+	hit wood
+			event mindist 25 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_wood_01
+				Cannon_hit_wood_02
+				end
+		
+		flaming hit wood
+			event mindist 25 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_wood_01
+				Cannon_hit_wood_02
+				end		
+				
+				
+;;;; metal;;;;;;;;;;;;				
+				
+		hit metal
+			event mindist 25 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_01
+				Cannon_hit_ground_02
+				end
+
+				
+		flaming hit metal
+			event mindist 25 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+				end
+				
+				
+;;; water	;;;;;;;;;;			
+				
+				
+		hit ground water
+			event mindist 25 priority 200 volume 0 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Catapult_Rock/Cat_Rock_Hit_Water
+				Cat_Rock_Hit_Water_01
+				Cat_Rock_Hit_Water_02
+				Cat_Rock_Hit_Water_03
+				Cat_Rock_Hit_Water_04
+			end
+
+			
+;;; ground	;;;;;;;;;;;;;		
+			
+		hit ground
+			event mindist 25 priority 201 volume 0 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_01
+				Cannon_hit_ground_02
+				end
+		
+		flaming hit ground
+			event mindist 25 priority 201 volume -25 distancepriority 0 randomdelay 0 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines
+				Cannon_hit_ground_fiery_01
+				Cannon_hit_ground_fiery_02
+				end
+	
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; THROWN WEAPONS ( spears )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	weapon thrown piercing
+
+
+		fly
+			event volume -15 mindist 3 priority 170  minpitch .6 maxpitch 1.1 probability .05 fadein .25 fadeout .5 probradius 3
+				folder data/sounds/SFX/Individual/Missiles
+				Missile_Spear_Fly5
+			end
+
+
+
+		death_hit flesh
+			event volume 0 mindist 1.3 priority 180
+
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+			end
+
+		hit metal
+			event mindist 0.75 volume -20 minpitch .6 maxpitch 1.1
+			
+				folder data/sounds/SFX/Individual/Melee
+				metal_clang_flesh_01
+				metal_clang_flesh_02
+				metal_clang_flesh_03
+				metal_clang_flesh_04
+				metal_clang_flesh_05
+				
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+				
+			end
+
+
+
+
+		hit wood
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				shield_hit_01
+				shield_hit_02
+				shield_hit_03
+				shield_hit_04
+				shield_hit_05
+				shield_hit_06
+			
+			end
+
+
+		hit flesh
+			event mindist 0.75 volume 0
+
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+							
+		
+			end
+
+
+		hit leather 
+			event mindist 0.75 volume 0
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_flesh_hit_01
+				sword_flesh_hit_02
+				sword_flesh_hit_03
+				sword_flesh_hit_04
+				sword_flesh_hit_05
+				sword_flesh_hit_06
+				sword_flesh_hit_07
+				sword_flesh_hit_08
+				sword_flesh_hit_09
+				sword_flesh_hit_10
+				sword_flesh_hit_11
+				sword_flesh_hit_12
+				sword_flesh_hit_13
+				sword_flesh_hit_14
+				sword_flesh_hit_15
+				sword_flesh_hit_16
+				sword_flesh_hit_17
+				sword_flesh_hit_18
+
+			end
+
+
+		hit building
+			event volume -35 mindist 0.75 minpitch 0.6 maxpitch 1.3
+			
+				folder data/sounds/SFX/Individual/Melee
+				sword_hit_shield_01
+				sword_hit_shield_02
+				sword_hit_shield_03
+				sword_hit_shield_04
+				sword_hit_shield_05
+				sword_hit_shield_06
+				
+			end			
+			
+			
+			
+			
+		hit ground water
+			event  volume 0 minpitch .7 maxpitch 1.3 rndvolume -10  randomdelay 0 priority 89
+				folder data/sounds/SFX/Individual/Missiles/Spear/Spear_Hit_Water
+				Spear_Hit_WaterS_03
+				Spear_Hit_WaterS_04
+				
+			end
+
+		hit ground
+			event  volume -40 minpitch .6 maxpitch 1.3 rndvolume -25  randomdelay 0 priority 89
+				folder data/sounds/SFX/Individual/Missiles/Spear/Spear_Hit_Ground
+				Spear_Hit_Ground_01
+				Spear_Hit_Ground_02
+				Spear_Hit_Ground_03
+				Spear_Hit_Ground_04
+			end
+			
+			
+		
+			
+			
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;   MUSKETS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	unit Elephants:pri, Elephants Mercs:pri, Reiters, Camel Gunners, Cossack Musketeers, Arquebusiers, Musketeers, Hand Gunners, Portuguese Arquebusiers, Mercenary Arquebusiers, Janissary Musketeers, ME Hand Gunners, Sudanese Gunners
+		fly
+			event mindist 1 volume -40 priority 100 distancepriority 0 minpitch .6 maxpitch 1.2 fadein 0 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/Muskets
+				Musket_fly
+			end
+
+		flaming fly
+			event mindist 1 volume -40 priority 100 distancepriority 0 minpitch .6 maxpitch 1.2 fadein 0 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Muskets
+				Musket_fly
+			end
+
+;;;;;;;;;;;;;;;;;;;;			
+						
+		hit building
+			event mindist 3 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Muskets
+				musket_hit_stone_01
+				musket_hit_stone_02
+				musket_hit_stone_03
+				
+			   end
+
+		flaming hit building
+			event mindist 3 priority 200 volume -10 distancepriority 0 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Muskets
+				musket_hit_stone_01
+				musket_hit_stone_02
+				musket_hit_stone_03
+				
+			   end
+
+;;;;;;;;;;;;;;;;;	   
+			   			   
+		hit flesh, leather
+			event mindist 5 priority 200 distancepriority 0 volume -25 minpitch 1.5 maxpitch 1.5 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_flesh_01
+				Arrow_Hit_flesh_02
+				Arrow_Hit_flesh_03
+				Arrow_Hit_flesh_04
+				Arrow_Hit_flesh_05
+				Arrow_Hit_flesh_06
+				Arrow_Hit_flesh_07
+				Arrow_Hit_flesh_08
+				Arrow_Hit_flesh_09
+				Arrow_Hit_flesh_10
+				Arrow_Hit_flesh_11
+				Arrow_Hit_flesh_12
+				Arrow_Hit_flesh_13
+				Arrow_Hit_flesh_14
+				Arrow_Hit_flesh_15
+				Arrow_Hit_flesh_16
+				Arrow_Hit_flesh_17
+			end
+		
+		flaming hit flesh, leather
+			event mindist 5 priority 200 volume -20 minpitch 1.5 maxpitch 1.5 distancepriority 0 probability 1 randomdelay 0
+				
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_flesh_01
+				Arrow_Hit_flesh_02
+				Arrow_Hit_flesh_03
+				Arrow_Hit_flesh_04
+				Arrow_Hit_flesh_05
+				Arrow_Hit_flesh_06
+				Arrow_Hit_flesh_07
+				Arrow_Hit_flesh_08
+				Arrow_Hit_flesh_09
+				Arrow_Hit_flesh_10
+				Arrow_Hit_flesh_11
+				Arrow_Hit_flesh_12
+				Arrow_Hit_flesh_13
+				Arrow_Hit_flesh_14
+				Arrow_Hit_flesh_15
+				Arrow_Hit_flesh_16
+				Arrow_Hit_flesh_17
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;;
+			
+						
+		death_hit flesh
+			event mindist 5 priority 200 distancepriority 0 volume -50 minpitch 1.5 maxpitch 1.5 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+				end
+			
+		flaming death_hit flesh
+			event mindist 5 priority 200 distancepriority 0 volume -50 minpitch 1.5 maxpitch 1.5 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+				end
+
+;;;;;;;;;;;;;;;;;;;;;				
+							
+		hit wood
+			event mindist 3 priority 200 distancepriority 0 volume -10 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Muskets
+				Musket_hit_wood_01
+				Musket_hit_wood_02
+				Musket_hit_wood_03
+				
+			end
+
+		flaming hit wood
+			event mindist 3 priority 200 distancepriority 0 volume -10 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Muskets
+				Musket_hit_wood_01
+				Musket_hit_wood_02
+				Musket_hit_wood_03
+				
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;		
+			
+		hit metal
+			event mindist 3 priority 200 distancepriority 0 volume -20 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Muskets
+				musket_hit_metal_01
+				musket_hit_metal_02
+				musket_hit_metal_03
+				musket_hit_metal_04
+				musket_hit_metal_05
+				
+			end
+
+			
+		flaming hit metal
+			event mindist 5 priority 200 distancepriority 0 volume -20 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Muskets
+				musket_hit_metal_01
+				musket_hit_metal_02
+				musket_hit_metal_03
+				musket_hit_metal_04
+				musket_hit_metal_05
+				
+			end
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;		
+			
+		hit ground water
+			event mindist 5 priority 200 distancepriority 0 volume -35 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Scorpion/Scorpion_Arrow_Hit_Water
+				Scorpion_Arrow_Hit_Water_01
+				Scorpion_Arrow_Hit_Water_02
+				Scorpion_Arrow_Hit_Water_03
+				end
+
+;;;;;;;;;;;;;;;;;;;;;;				
+								
+		hit ground
+			event mindist 2 priority 199 distancepriority 0 volume -55 rndvolume -20 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Rock/Rock_Hit_Dirt
+				Rock_Hit_Dirt_01
+				Rock_Hit_Dirt_03
+				Rock_Hit_Dirt_04
+				Rock_Hit_Dirt_05
+				Rock_Hit_Dirt_06
+						
+				
+			end	
+				
+		flaming hit ground 
+			event mindist 2 priority 199 distancepriority 0 volume -55 rndvolume -15 probability 1 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Rock/Rock_Hit_Dirt
+				Rock_Hit_Dirt_01
+				Rock_Hit_Dirt_03
+				Rock_Hit_Dirt_04
+				Rock_Hit_Dirt_05
+				Rock_Hit_Dirt_06
+			
+			end					
+			
+		
+			
+			
+						
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;   MISSILE  ARROWS (ARCHERS)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	weapon missile piercing
+
+;;;;;;;;;;;;;;;;;	
+	
+	death_hit flesh 
+			event volume 0 priority 180  mindist 2 randomdelay 0
+
+			folder data/sounds/SFX/Individual/Melee
+				Death_Hits_01
+				Death_Hits_02
+				Death_Hits_03
+				Death_Hits_04
+				Death_Hits_05
+				Death_Hits_06
+				Death_Hits_07
+				Death_Hits_08
+				Death_Hits_09
+				Death_Hits_10
+				Death_Hits_11
+				Death_Hits_12
+				Death_Hits_13
+				Death_Hits_14
+				Death_Hits_15
+				Death_Hits_16
+				Death_Hits_17
+				Death_Hits_18
+				Death_Hits_19
+
+			end
+
+			
+	flaming death_hit flesh 
+		
+			event mindist 2 priority 180  volume -10 mindist 2 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Ballista_Arrow/Ballista_Arrow_Hit_Flesh
+				Ballista_Arrow_Hit_Flesh_Flaming_01
+				Ballista_Arrow_Hit_Flesh_Flaming_02
+				Ballista_Arrow_Hit_Flesh_Flaming_03
+				Ballista_Arrow_Hit_Flesh_Flaming_04
+				end	
+	
+	;;;;;;;;;;;;;;;;;;		
+		; this is done on effect_set
+	
+		fly
+			event volume -30 mindist 3 priority 170 minpitch .5 maxpitch 1.5 rndvolume -10 probability .3 fadein .2 fadeout .2  probradius 3
+				
+				folder data/sounds/SFX/Individual/Missiles
+				;Missile_Normal_Arrow_Fly
+													
+			end
+
+		flaming fly
+			event volume -15 mindist 3 priority 170  minpitch .5 maxpitch 1.7 probability .3 fadein .25 fadeout .5  probradius 3
+				folder data/sounds/SFX/Individual/Missiles
+				Missile_Flaming_Arrow_Fly
+			end
+;;;;;;;;;;;;;;;
+		
+		hit building
+			event volume -15  rndvolume -10 minpitch 0.6 maxpitch 1.3 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				
+				Arrow_Hit_Stone_01
+				Arrow_Hit_Stone_02
+				
+				
+				
+				end
+	
+		flaming hit building
+			event volume -15  rndvolume -10 minpitch 0.6 maxpitch 1.3 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+		
+				Arrow_Hit_Stone_01
+				Arrow_Hit_Stone_02
+				
+				
+				
+				end
+;;;;;;;;;;;;;;;;;;;;;			
+				
+			
+					
+		hit wood
+			event volume 0  minpitch .8 maxpitch 1.2 rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_Wood_01
+				Arrow_Hit_Wood_02
+				Arrow_Hit_Wood_03
+				Arrow_Hit_Wood_04
+				
+			  end
+		
+		flaming hit wood
+			event volume 0  minpitch .8 maxpitch 1.2 rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_Wood_01
+				Arrow_Hit_Wood_02
+				Arrow_Hit_Wood_03
+				Arrow_Hit_Wood_04
+			
+			  end	  
+			  
+;;;;;;;;;;;;;  
+			  
+		 hit metal
+			event volume -20  minpitch .7 maxpitch 1.2 rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_metal_01
+				Arrow_Hit_metal_02
+				Arrow_Hit_metal_03
+				Arrow_Hit_metal_04
+				
+				
+			end
+
+		flaming hit metal
+			event volume -10  minpitch .7 maxpitch 1.2 rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_metal_01
+				Arrow_Hit_metal_02
+				Arrow_Hit_metal_03
+				Arrow_Hit_metal_04
+			end
+			
+;;;;;;;;;;;;;;;		
+
+		hit flesh, leather
+			event  minpitch .8 maxpitch 1.2 volume 0  randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_flesh_01
+				Arrow_Hit_flesh_02
+				Arrow_Hit_flesh_03
+				Arrow_Hit_flesh_04
+				Arrow_Hit_flesh_05
+				Arrow_Hit_flesh_06
+				Arrow_Hit_flesh_07
+				Arrow_Hit_flesh_08
+				Arrow_Hit_flesh_09
+				Arrow_Hit_flesh_10
+				Arrow_Hit_flesh_11
+				Arrow_Hit_flesh_12
+				Arrow_Hit_flesh_13
+				Arrow_Hit_flesh_14
+				Arrow_Hit_flesh_15
+				Arrow_Hit_flesh_16
+				Arrow_Hit_flesh_17
+				
+			end
+
+	flaming hit flesh, leather
+			event  minpitch .8 maxpitch 1.2 volume 0  randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_flesh_01
+				Arrow_Hit_flesh_02
+				Arrow_Hit_flesh_03
+				Arrow_Hit_flesh_04
+				Arrow_Hit_flesh_05
+				Arrow_Hit_flesh_06
+				Arrow_Hit_flesh_07
+				Arrow_Hit_flesh_08
+				Arrow_Hit_flesh_09
+				Arrow_Hit_flesh_10
+				Arrow_Hit_flesh_11
+				Arrow_Hit_flesh_12
+				Arrow_Hit_flesh_13
+				Arrow_Hit_flesh_14
+				Arrow_Hit_flesh_15
+				Arrow_Hit_flesh_16
+				Arrow_Hit_flesh_17
+			end
+
+;;;;;;;;;;;;;;;;;			
+			
+			
+		hit ground water 
+			event  minpitch .8 maxpitch 1.5 volume -20 rndvolume -40 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Arrow/Arrow_Hit_Water
+				Arrow_Hit_Water_01
+				Arrow_Hit_Water_02
+				Arrow_Hit_Water_03
+				Arrow_Hit_Water_04
+				Arrow_Hit_Water_05
+				Arrow_Hit_Water_06
+				Arrow_Hit_Water_07
+				Arrow_Hit_Water_08
+				
+			end
+
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+		hit ground
+			event  minpitch .5 maxpitch 1.5 volume -40 rndvolume -15 randomdelay 0 priority 89
+				folder data/sounds/SFX/Individual/Missiles
+				Arrow_Hit_Dirt_01
+				;Arrow_Hit_Dirt_02
+				
+			end
+			
+	flaming hit ground
+			event  minpitch .7 maxpitch 1.1 volume -20 rndvolume -15 randomdelay 0 priority 89
+				folder data/sounds/SFX/Individual/Missiles
+				
+				Arrow_Hit_Dirt_flaming_03
+				Arrow_Hit_Dirt_flaming_04
+				end	
+	
+					
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;   Naptha
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ 	weapon missile blunt
+		
+	
+		fly
+			event mindist 3 volume -15 priority 100 distancepriority 0 minpitch 0.6 maxpitch .9 fadein .25 fadeout .5 probability 1
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_fly
+				
+			end
+
+		flaming fly
+			event mindist 3 volume -15 priority 100 distancepriority 0 minpitch 0.6 maxpitch .9 fadein .25 fadeout .5 probability 1 
+				folder data/sounds/SFX/Individual/Siege_Engines/Rocket_Launcher
+				RL_fly
+				
+			end
+ 	
+ 		
+
+		hit building
+			event  volume 0 priority 180  mindist 8 probability 1 minpitch .9 maxpitch 1.1
+			folder data/sounds/SFX/Individual/Naptha
+			Naptha_impact_01
+			Naptha_impact_02
+			Naptha_impact_03
+			Naptha_impact_04
+			Naptha_impact_05
+			end
+
+		hit wood
+			event  volume 0 priority 180  mindist 8 probability 1 minpitch .9 maxpitch 1.1
+			folder data/sounds/SFX/Individual/Naptha
+			Naptha_impact_01
+			Naptha_impact_02
+			Naptha_impact_03
+			Naptha_impact_04
+			Naptha_impact_05
+			end
+
+
+			
+			
+		death_hit flesh 
+			event  volume 0 priority 180  mindist 8 randomdelay 0 minpitch .9 maxpitch 1.1
+			folder data/sounds/SFX/Individual/Naptha
+			Naptha_impact_01
+			Naptha_impact_02
+			Naptha_impact_03
+			Naptha_impact_04
+			Naptha_impact_05
+			end	
+					
+			
+
+		hit flesh, leather
+			event  volume 0 priority 180  mindist 8 probability 1 minpitch .9 maxpitch 1.1
+			folder data/sounds/SFX/Individual/Naptha
+			Naptha_impact_01
+			Naptha_impact_02
+			Naptha_impact_03
+			Naptha_impact_04
+			Naptha_impact_05
+			end
+
+		hit metal
+			event  volume 0 priority 180  mindist 8 probability 1 minpitch .9 maxpitch 1.1
+			folder data/sounds/SFX/Individual/Naptha
+			Naptha_impact_01
+			Naptha_impact_02
+			Naptha_impact_03
+			Naptha_impact_04
+			Naptha_impact_05
+			end
+
+		hit ground water
+			event  volume 0 priority 180  mindist 8 probability 1 minpitch .9 maxpitch 1.1
+			folder data/sounds/SFX/Individual/Naptha
+			Naptha_impact_01
+			Naptha_impact_02
+			Naptha_impact_03
+			Naptha_impact_04
+			Naptha_impact_05
+			end
+			
+		hit ground
+			event  volume 0 priority 180  mindist 8 probability 1 minpitch .9 maxpitch 1.1
+			folder data/sounds/SFX/Individual/Naptha
+			Naptha_impact_01
+			Naptha_impact_02
+			Naptha_impact_03
+			Naptha_impact_04
+			Naptha_impact_05
+			end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; THROWN WEAPONS ( heads )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+	weapon thrown fire
+	
+	death_hit flesh 
+	event  volume 0 priority 180 rndvolume -30 mindist 2 randomdelay 0
+	folder data/sounds/SFX/Individual/Melee/Death_Hits
+			Death_Hit_01
+			Death_Hit_02
+			Death_Hit_03
+			Death_Hit_04
+			Death_Hit_05
+			Death_Hit_06
+			Death_Hit_07
+			Death_Hit_08
+			Death_Hit_09
+			end
+
+		fly
+			event volume -15  mindist 3 priority 170  probability .01 minpitch .7 maxpitch 1.1 fadein .25 fadeout .25 rndvolume -30  probradius 3
+				folder data/sounds/SFX/Individual/Missiles
+				Missile_Head_Fly_01
+				Missile_Head_Fly_02
+			end
+
+			
+		hit metal
+			event  volume 0  rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Head/Head_Hit_Everything
+				Head_Hit_01
+				Head_Hit_02
+				Head_Hit_03
+				Head_Hit_04
+				Head_Hit_05
+				Head_Hit_06
+				Head_Hit_07
+			end
+
+
+		hit wood
+			event  volume 0  rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Head/Head_Hit_Everything
+				Head_Hit_01
+				Head_Hit_02
+				Head_Hit_03
+				Head_Hit_04
+				Head_Hit_05
+				Head_Hit_06
+				Head_Hit_07
+			end
+
+		hit flesh, leather
+			event   rndvolume -15 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Head/Head_Hit_Everything
+				Head_Hit_01
+				Head_Hit_02
+				Head_Hit_03
+				Head_Hit_04
+				Head_Hit_05
+				Head_Hit_06
+				Head_Hit_07
+			end
+
+			
+		hit ground
+			event volume 0  randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Head/Head_Hit_Everything
+				Head_Hit_01
+				Head_Hit_02
+				Head_Hit_03
+				Head_Hit_04
+				Head_Hit_05
+				Head_Hit_06
+				Head_Hit_07
+			end
+
+			
+	hit building
+			event volume -20  rndvolume -50 minpitch 0.6 maxpitch 1.0 randomdelay 0
+				folder data/sounds/SFX/Individual/Missiles/Head/Head_Hit_Everything
+				Head_Hit_01
+				Head_Hit_02
+				Head_Hit_03
+				Head_Hit_04
+				Head_Hit_05
+				Head_Hit_06
+				Head_Hit_07
+			end
+			
+				
+		hit ground water
+			event mindist 4 randomdelay 0 volume -20
+				folder data/sounds/SFX/Individual/Missiles/head/Head_Hit_Water
+				Head_Hit_Water_01
+				Head_Hit_Water_03
+		end
+
+
+	

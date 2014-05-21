@@ -1,0 +1,15 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 3d mindist 7 minPitch .8 maxPitch 1 priority 70 fadein 0 fadeout 0 Volume -20 probability 1 distancepriority -2 randomdelay 0  effect_level .25
+
+BANK: unit_reform
+
+	unit infantry light, skirmish, missile, heavy, spearmen
+		season summer, winter
+			terrain  grass_short, grass_long,forest_dense, scrub_dense, swamp, mud, mud_road, ice, snow, water, stone_road, rock, dirt, wood, sand
+				event lod 20
+					folder data/sounds/SFX/group/infantry
+					testudo_group_01
+				end
+
+

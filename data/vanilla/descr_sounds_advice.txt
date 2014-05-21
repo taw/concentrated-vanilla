@@ -1,0 +1,112 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Advisor speech bank
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 1D priority 500 volume -15
+DEFAULT: probability 1 fadein 0 fadeout .5
+DEFAULT: delay 0 randomdelay 0 rndvolume 0
+DEFAULT: streamed pref SPEECH ducking
+DEFAULT: ignore_pause 1
+
+source export_descr_sounds_advice.txt
+
+BANK: ADVICE
+    ignore ACTI_Misc09_Thread
+    ignore Historical_Asculum_Generic_10_Thread
+    ignore Historical_Asculum_Generic_1_Thread
+    ignore Historical_Asculum_Generic_2_Thread
+    ignore Historical_Asculum_Generic_3_Thread
+    ignore Historical_Asculum_Generic_4_Thread
+    ignore Historical_Asculum_Generic_5_Thread
+    ignore Historical_Asculum_Generic_6_Thread
+    ignore Historical_Asculum_Generic_7_Thread
+    ignore Historical_Asculum_Generic_8_Thread
+    ignore Historical_Asculum_Generic_9_Thread
+    ignore Prologue_Picenum_02_Thread
+    ignore Prologue_Picenum_03_Thread
+    ignore Prologue_Placeholder_Advice_Thread
+    ignore Prologue_South_Pass_01_Thread
+    ignore Prologue_Test_1_Thread
+    ignore Prologue_Test_2_Thread
+    ignore Prologue_Test_3_Thread
+    ignore Prologue_Test_4_Thread
+    ignore Prologue_Test_5_Thread
+    ignore Prologue_battle_1_army_formations_01_Thread
+    ignore Prologue_battle_1_army_formations_02_Thread
+    ignore Prologue_battle_1_army_formations_03_Thread
+    ignore Prologue_battle_1_army_formations_04_Thread
+    ignore Prologue_battle_1_army_formations_05_Thread
+    ignore Prologue_battle_1_army_formations_06_Thread
+    ignore Prologue_battle_1_army_formations_07_Thread
+    ignore Prologue_battle_1_army_formations_08_Thread
+    ignore Prologue_battle_1_army_formations_09_Thread
+    ignore Prologue_battle_1_army_formations_10_Thread
+    ignore Prologue_battle_1_cam_bookmarks_01_Thread
+    ignore Prologue_battle_1_cam_bookmarks_02_Thread
+    ignore Prologue_battle_1_cam_bookmarks_03_Thread
+    ignore Prologue_battle_1_cam_bookmarks_04_Thread
+    ignore Prologue_battle_1_cam_bookmarks_05_Thread
+    ignore Prologue_battle_1_ctrl_a_01_Thread
+    ignore Prologue_battle_1_ctrl_a_02_Thread
+    ignore Prologue_battle_1_ctrl_a_03_Thread
+    ignore Prologue_battle_1_ctrl_a_04_Thread
+    ignore Prologue_battle_1_ctrl_a_05_Thread
+    ignore Prologue_battle_1_drag_box_sel_02_Thread
+    ignore Prologue_battle_1_drag_box_sel_03_Thread
+    ignore Prologue_battle_1_drag_box_sel_04_Thread
+    ignore Prologue_battle_1_drag_box_sel_05_Thread
+    ignore Prologue_battle_1_engage_barb_army_04_Thread
+    ignore Prologue_battle_1_engage_barb_army_05_Thread
+    ignore Prologue_battle_1_engage_barb_army_06_Thread
+    ignore Prologue_battle_1_engage_barb_army_07_Thread
+    ignore Prologue_battle_1_engage_barb_army_08_Thread
+    ignore Prologue_battle_1_engage_barb_army_09_Thread
+    ignore Prologue_battle_1_engage_barb_army_10_Thread
+    ignore Prologue_battle_1_fight_cav_02_Thread
+    ignore Prologue_battle_1_fight_cav_03_Thread
+    ignore Prologue_battle_1_fight_cav_04_Thread
+    ignore Prologue_battle_1_fight_cav_05_Thread
+    ignore Prologue_battle_1_fighting_against_archers_02_Thread
+    ignore Prologue_battle_1_fighting_against_archers_03_Thread
+    ignore Prologue_battle_1_fighting_against_archers_04_Thread
+    ignore Prologue_battle_1_fighting_against_archers_05_Thread
+    ignore Prologue_battle_1_fighting_triarii_04_Thread
+    ignore Prologue_battle_1_fighting_triarii_05_Thread
+    ignore Prologue_battle_1_grouping_units_05_Thread
+    ignore Prologue_battle_1_move_cam_05_Thread
+    ignore Prologue_battle_1_move_cam_06_Thread
+    ignore Prologue_battle_1_move_cam_07_Thread
+    ignore Prologue_battle_1_move_cam_08_Thread
+    ignore Prologue_battle_1_move_cam_09_Thread
+    ignore Prologue_battle_1_move_cam_10_Thread
+    ignore Prologue_battle_1_pause_03_Thread
+    ignore Prologue_battle_1_pause_04_Thread
+    ignore Prologue_battle_1_pause_05_Thread
+    ignore Prologue_battle_1_sel_unit_02_Thread
+    ignore Prologue_battle_1_sel_unit_03_Thread
+    ignore Prologue_battle_1_sel_unit_04_Thread
+    ignore Prologue_battle_1_sel_unit_05_Thread
+    ignore Prologue_battle_1_sel_unit_06_Thread
+    ignore Prologue_battle_1_sel_unit_07_Thread
+    ignore Prologue_battle_1_sel_unit_08_Thread
+    ignore Prologue_battle_1_sel_unit_09_Thread
+    ignore Prologue_battle_1_sel_unit_10_Thread
+    ignore Prologue_battle_1_single_right_click_unit_03_Thread
+    ignore Prologue_battle_1_single_right_click_unit_04_Thread
+    ignore Prologue_battle_1_single_right_click_unit_05_Thread
+    ignore Prologue_battle_1_single_right_click_unit_06_Thread
+    ignore Prologue_battle_1_single_right_click_unit_07_Thread
+    ignore Prologue_battle_1_single_right_click_unit_08_Thread
+    ignore Prologue_battle_1_single_right_click_unit_09_Thread
+    ignore Prologue_battle_1_single_right_click_unit_10_Thread
+    ignore Prologue_battle_1_spare_06_Thread
+    ignore Prologue_battle_1_spare_07_Thread
+    ignore Prologue_battle_1_spare_08_Thread
+    ignore Prologue_battle_1_spare_09_Thread
+    ignore Prologue_battle_1_spare_10_Thread
+    ignore Prologue_battle_1_teach_player_to_fight_07_Thread
+    ignore Prologue_battle_1_teach_player_to_fight_08_Thread
+    ignore Prologue_battle_1_teach_player_to_fight_09_Thread
+    ignore Prologue_battle_1_teach_player_to_fight_10_Thread

@@ -1,0 +1,16 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Battle event notifications
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: 1d streamed priority 500 volume 0 fadein 0 fadeout .5
+DEFAULT: randomdelay 0 rndvolume 0 pan .5 delay 0
+DEFAULT: dry_level 1.0 wet_level 0
+DEFAULT: streamed pref SPEECH
+DEFAULT: probability 1 ignore_pause 1 ducking
+
+BANK: battle_events
+    repeat_timeout 20.0  ; timeout before repeating the same event
+
+source export_descr_sounds_units_battle_events.txt

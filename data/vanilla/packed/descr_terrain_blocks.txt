@@ -1,0 +1,770 @@
+; Define the tab attributes
+;
+; Layout
+; 
+; [attribute set name]
+; {
+;	define
+;	{
+;		[attribute names]
+;	}
+;	matching
+;	{
+;		[attribute name]	[names which attribute matches with]
+;	}
+;	transformation_effects
+;	{
+;		mirroring
+;		{
+;			[attribute name]
+;			{
+;				[mirrored attribute name]
+;			}
+;		}
+;		rotation
+;		{
+;			[attribute name]
+;			{
+;				[attribute name for 45 degrees rotation]
+;				[attribute name for 90 degrees rotation]
+;				[attribute name for 135 degrees rotation]
+;				[attribute name for 180 degrees rotation]
+;				[attribute name for 225 degrees rotation]
+;				[attribute name for 270 degrees rotation]
+;				[attribute name for 315 degrees rotation]
+;			}
+;		}
+;	}
+; }
+;
+tab_attributes
+{
+	cliff_attributes
+	{
+		define
+		{
+			cliff_attrib_north
+			cliff_attrib_north_east
+			cliff_attrib_east
+			cliff_attrib_south_east
+			cliff_attrib_south
+			cliff_attrib_south_west
+			cliff_attrib_west
+			cliff_attrib_north_west
+			cliff_attrib_high
+			cliff_attrib_medium
+			cliff_attrib_low
+			cliff_attrib_ground
+		}
+		matching
+		{
+			cliff_attrib_north		cliff_attrib_west		cliff_attrib_north_west	cliff_attrib_north_east	cliff_attrib_east
+			cliff_attrib_north_east	cliff_attrib_north_west	cliff_attrib_north		cliff_attrib_east		cliff_attrib_south_east
+			cliff_attrib_east		cliff_attrib_north		cliff_attrib_north_east	cliff_attrib_south_east	cliff_attrib_south
+			cliff_attrib_south_east	cliff_attrib_north_east	cliff_attrib_east		cliff_attrib_south		cliff_attrib_south_west
+			cliff_attrib_south		cliff_attrib_east		cliff_attrib_south_east	cliff_attrib_south_west	cliff_attrib_west
+			cliff_attrib_south_west	cliff_attrib_south_east	cliff_attrib_south		cliff_attrib_west		cliff_attrib_north_west
+			cliff_attrib_west		cliff_attrib_south		cliff_attrib_south_west	cliff_attrib_north_west	cliff_attrib_north
+			cliff_attrib_north_west	cliff_attrib_south_west	cliff_attrib_west		cliff_attrib_north		cliff_attrib_north_east
+			cliff_attrib_high		cliff_attrib_high
+			cliff_attrib_medium		cliff_attrib_medium
+			cliff_attrib_low		cliff_attrib_low
+			cliff_attrib_ground		cliff_attrib_ground
+		}
+		transformation_effects
+		{
+			mirroring
+			{
+				cliff_attrib_north
+				{
+					cliff_attrib_south
+				}
+				cliff_attrib_north_east
+				{
+					cliff_attrib_south_east
+				}
+				cliff_attrib_east
+				{
+					cliff_attrib_east
+				}
+				cliff_attrib_south_east
+				{
+					cliff_attrib_north_east
+				}
+				cliff_attrib_south
+				{
+					cliff_attrib_north
+				}
+				cliff_attrib_south_west
+				{
+					cliff_attrib_north_west
+				}
+				cliff_attrib_west
+				{
+					cliff_attrib_west
+				}
+				cliff_attrib_north_west
+				{
+					cliff_attrib_south_west
+				}
+				cliff_attrib_high
+				{
+					cliff_attrib_high
+				}
+				cliff_attrib_medium
+				{
+					cliff_attrib_medium
+				}
+				cliff_attrib_low
+				{
+					cliff_attrib_low
+				}
+				cliff_attrib_ground
+				{
+					cliff_attrib_ground
+				}
+			}
+			rotation
+			{
+				cliff_attrib_north
+				{
+					cliff_attrib_north_east
+					cliff_attrib_east
+					cliff_attrib_south_east
+					cliff_attrib_south
+					cliff_attrib_south_west
+					cliff_attrib_west
+					cliff_attrib_north_west
+				}
+				cliff_attrib_north_east
+				{
+					cliff_attrib_east
+					cliff_attrib_south_east
+					cliff_attrib_south
+					cliff_attrib_south_west
+					cliff_attrib_west
+					cliff_attrib_north_west
+					cliff_attrib_north
+				}
+				cliff_attrib_east
+				{
+					cliff_attrib_south_east
+					cliff_attrib_south
+					cliff_attrib_south_west
+					cliff_attrib_west
+					cliff_attrib_north_west
+					cliff_attrib_north
+					cliff_attrib_north_east
+				}
+				cliff_attrib_south_east
+				{
+					cliff_attrib_south
+					cliff_attrib_south_west
+					cliff_attrib_west
+					cliff_attrib_north_west
+					cliff_attrib_north
+					cliff_attrib_north_east
+					cliff_attrib_east
+				}
+				cliff_attrib_south
+				{
+					cliff_attrib_south_west
+					cliff_attrib_west
+					cliff_attrib_north_west
+					cliff_attrib_north
+					cliff_attrib_north_east
+					cliff_attrib_east
+					cliff_attrib_south_east
+				}
+				cliff_attrib_south_west
+				{
+					cliff_attrib_west
+					cliff_attrib_north_west
+					cliff_attrib_north
+					cliff_attrib_north_east
+					cliff_attrib_east
+					cliff_attrib_south_east
+					cliff_attrib_south
+				}
+				cliff_attrib_west
+				{
+					cliff_attrib_north_west
+					cliff_attrib_north
+					cliff_attrib_north_east
+					cliff_attrib_east
+					cliff_attrib_south_east
+					cliff_attrib_south
+					cliff_attrib_south_west
+				}
+				cliff_attrib_north_west
+				{
+					cliff_attrib_north
+					cliff_attrib_north_east
+					cliff_attrib_east
+					cliff_attrib_south_east
+					cliff_attrib_south
+					cliff_attrib_south_west
+					cliff_attrib_west
+				}
+				cliff_attrib_high
+				{
+					cliff_attrib_high
+					cliff_attrib_high
+					cliff_attrib_high
+					cliff_attrib_high
+					cliff_attrib_high
+					cliff_attrib_high
+					cliff_attrib_high
+				}
+				cliff_attrib_medium
+				{
+					cliff_attrib_medium
+					cliff_attrib_medium
+					cliff_attrib_medium
+					cliff_attrib_medium
+					cliff_attrib_medium
+					cliff_attrib_medium
+					cliff_attrib_medium
+				}
+				cliff_attrib_low
+				{
+					cliff_attrib_low
+					cliff_attrib_low
+					cliff_attrib_low
+					cliff_attrib_low
+					cliff_attrib_low
+					cliff_attrib_low
+					cliff_attrib_low
+				}
+				cliff_attrib_ground
+				{
+					cliff_attrib_ground
+					cliff_attrib_ground
+					cliff_attrib_ground
+					cliff_attrib_ground
+					cliff_attrib_ground
+					cliff_attrib_ground
+					cliff_attrib_ground
+				}
+			}
+		}
+	}
+}
+
+; Define the blockset groups
+;
+;	Layout
+;
+;	[group name]
+;	{
+;		attribute_set	[attribute set to use for this group]
+;	}
+;
+groups
+{
+	cliffs
+	{
+		attribute_set	cliff_attributes
+	}
+}
+
+; Define the names of the different slot types available
+;
+; Layout
+;
+;	[group name]
+;	{
+;		[names of supported slots. each on a separate line]
+;	}
+;
+slot_names
+{
+	; Define the names of the cliff slots available
+	cliffs
+	{
+		cliff_slot_a
+		cliff_slot_b
+	}
+}
+
+; Define the different transformations which can be performed
+;
+; Format
+;
+;	[transformation name]
+;	{
+;		rotation	[all | 0, 45, 90, 135, 180, 225, 270, 315]
+;		[mirror | no_mirror]
+;	}
+;
+transformation_types
+{
+	default
+	{
+		rotation	all
+		mirror
+	}
+}
+
+; Define the tab names and their coordinates
+;
+; Layout
+;	[tab name]			[x and y coordinates in a 4mx4m grid]	[name of tab which it links to]
+;
+tab_configuration
+{
+;	tab name			X	Y		Links to
+	north				0	4		south
+	north_north_east	2	4		south_south_west
+	north_east			4	4		south_west
+	east_north_east		4	2		west_south_west
+	east				4	0		west
+	east_south_east		4	-2		west_north_west
+	south_east			4	-4		north_west
+	south_south_east	2	-4		north_north_west
+	south				0	-4		north
+	south_south_west	-2	-4		north_north_east
+	south_west			-4	-4		north_east
+	west_south_west		-4	-2		east_north_east
+	west				-4	0		east
+	west_north_west		-4	2		east_south_east
+	north_west			-4	4		south_east
+	north_north_west	-2	4		south_south_east
+	
+	configuration
+	{
+		half_map_size	4	; half the size of the tab map in m
+		element_size	2	; size of each cell element
+	}
+	
+	; Define how the tabs are changed under each transformation
+	transform_behaviour
+	{
+		mirroring ; mirroring in the x axis
+		{
+			north				
+			{
+				south				
+			}
+			north_north_east				
+			{
+				south_south_east	
+			}
+			north_east				
+			{
+				south_east			
+			}
+			east_north_east				
+			{
+				east_south_east		
+			}
+			east				
+			{
+				east				
+			}
+			east_south_east				
+			{
+				east_north_east		
+			}
+			south_east				
+			{
+				north_east			
+			}
+			south_south_east				
+			{
+				north_north_east	
+			}
+			south				
+			{
+				north				
+			}
+			south_south_west				
+			{
+				north_north_west	
+			}
+			south_west				
+			{
+				north_west			
+			}
+			west_south_west				
+			{
+				west_north_west		
+			}
+			west				
+			{
+				west				
+			}
+			west_north_west				
+			{
+				west_south_west		
+			}
+			north_west				
+			{
+				south_west			
+			}
+			north_north_west				
+			{
+				south_south_west	
+			}
+		}
+		rotation ; rotating by 45, 90, 135, 180, 225, 270 and 315 degrees
+		{
+			north		
+			{
+				north_east
+				east
+				south_east
+				south
+				south_west
+				west
+				north_west
+			}		
+			north_north_east	
+			{
+				east_north_east
+				east_south_east
+				south_south_east
+				south_south_west
+				west_south_west
+				west_north_west
+				north_north_west
+			}		
+			north_east			
+			{
+				east
+				south_east
+				south
+				south_west
+				west
+				north_west
+				north
+			}		
+			east_north_east		
+			{
+				east_south_east
+				south_south_east
+				south_south_west
+				west_south_west
+				west_north_west
+				north_north_west
+				north_north_east
+			}		
+			east				
+			{
+				south_east
+				south
+				south_west
+				west
+				north_west
+				north
+				north_east
+			}		
+			east_south_east		
+			{
+				south_south_east
+				south_south_west
+				west_south_west
+				west_north_west
+				north_north_west
+				north_north_east
+				east_north_east
+			}		
+			south_east			
+			{
+				south
+				south_west
+				west
+				north_west
+				north
+				north_east
+				east
+			}		
+			south_south_east	
+			{
+				south_south_west
+				west_south_west
+				west_north_west
+				north_north_west
+				north_north_east
+				east_north_east
+				east_south_east
+			}		
+			south				
+			{
+				south_west
+				west
+				north_west
+				north
+				north_east
+				east
+				south_east
+			}		
+			south_south_west	
+			{
+				west_south_west
+				west_north_west
+				north_north_west
+				north_north_east
+				east_north_east
+				east_south_east
+				south_south_east
+			}		
+			south_west			
+			{
+				west
+				north_west
+				north
+				north_east
+				east
+				south_east
+				south
+			}		
+			west_south_west		
+			{
+				west_north_west
+				north_north_west
+				north_north_east
+				east_north_east
+				east_south_east
+				south_south_east
+				south_south_west
+			}		
+			west				
+			{
+				north_west
+				north
+				north_east
+				east
+				south_east
+				south
+				south_west
+			}		
+			west_north_west		
+			{
+				north_north_west
+				north_north_east
+				east_north_east
+				east_south_east
+				south_south_east
+				south_south_west
+				west_south_west
+			}		
+			north_west			
+			{
+				north
+				north_east
+				east
+				south_east
+				south
+				south_west
+				west
+			}		
+			north_north_west	
+			{
+				north_north_east
+				east_north_east
+				east_south_east
+				south_south_east
+				south_south_west
+				west_south_west
+				west_north_west
+			}		
+		}
+	}
+}
+
+; Define the different piece categories
+;
+; Format
+;
+;	[name]
+;	{
+;		group				[the group the piece belongs to. eg cliff]
+;		tabs				[tabs which are contained in the model]
+;		models				[path to load model files from]
+;		textures			[path to load the textures for the models from]
+;		transformations		[the name of the tranformation set to refer to]
+;		skewing_mode		[the mode for skewing the piece]
+;							Modes
+;							horizontal			skew around the x axis
+;							horizontal_lower	skew around the x axis for the lower half only
+;							none				no skewing
+;
+;		centre_offset		[the region where the centre node is aligned to (none, north, south, east or west) for non-square blocks]
+;		
+;		[attributes]	; defines the attributes for each tab
+;		{
+;			[attributes of this piece. either list one to apply to all tabs or specify per tab]
+;		}
+;	}
+;
+piece_categories
+{
+	cliff_straight
+	{
+		group				cliffs
+		tabs				north	south
+		models				models_terrain_blocks/cliffs/straight
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		horizontal
+		centre_offset		none
+		
+		attributes
+		{
+			cliff_attrib_west	cliff_attrib_high
+		}
+	}
+	
+	cliff_straight_slope_down
+	{
+		group				cliffs
+		tabs				north	south
+		models				models_terrain_blocks/cliffs/straight_slope_down
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		horizontal
+		centre_offset		none
+		
+		attributes
+		{
+			north	cliff_attrib_west	cliff_attrib_high
+			south	cliff_attrib_west	cliff_attrib_medium
+		}
+	}
+	
+	cliff_straight_join_ground
+	{
+		group				cliffs
+		tabs				north	south
+		models				models_terrain_blocks/cliffs/straight_join_ground
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		horizontal
+		centre_offset		none
+		
+		attributes
+		{
+			north	cliff_attrib_west	cliff_attrib_medium
+			south	cliff_attrib_west	cliff_attrib_ground
+		}
+	}
+	
+	cliff_corner_right_angle
+	{
+		group				cliffs
+		tabs				south	east
+		models				models_terrain_blocks/cliffs/corner_right_angle
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		none
+		centre_offset		none
+		
+		attributes
+		{
+			cliff_attrib_north_west	cliff_attrib_high
+		}
+	}
+	
+	cliff_corner_smooth
+	{
+		group				cliffs
+		tabs				south	north_east
+		models				models_terrain_blocks/cliffs/corner_smooth
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		horizontal_lower
+		centre_offset		south
+		
+		attributes
+		{
+			cliff_attrib_north_west	cliff_attrib_high
+		}
+	}
+	
+	cliff_sloped
+	{
+		group				cliffs
+		tabs				south_west	north_east
+		models				models_terrain_blocks/cliffs/slope
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		none
+		centre_offset		none
+		
+		attributes
+		{
+			cliff_attrib_north_west	cliff_attrib_high
+		}
+	}
+	
+	cliff_corner_u_shape
+	{
+		group				cliffs
+		tabs				south_west	south_east
+		models				models_terrain_blocks/cliffs/corner_u_shape
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		none
+		centre_offset		none
+		
+		attributes
+		{
+			cliff_attrib_north	cliff_attrib_high
+		}
+	}
+	
+	cliff_intersection_right_angle
+	{
+		group				cliffs
+		tabs				north	south	east
+		models				models_terrain_blocks/cliffs/intersection_right_angle
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		none
+		centre_offset		none
+		
+		attributes
+		{
+			north	cliff_attrib_east	cliff_attrib_high
+			south	cliff_attrib_east	cliff_attrib_high
+			east	cliff_attrib_south	cliff_attrib_high
+		}
+	}
+	
+	cliff_intersection_narrow
+	{
+		group				cliffs
+		tabs				north	south	south_east
+		models				models_terrain_blocks/cliffs/intersection_narrow
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		none
+		centre_offset		none
+		
+		attributes
+		{
+			north		cliff_attrib_east		cliff_attrib_high
+			south		cliff_attrib_east		cliff_attrib_high
+			south_east	cliff_attrib_south_west	cliff_attrib_high
+		}
+	}
+	
+	cliff_intersection_wide
+	{
+		group				cliffs
+		tabs				north	south	north_east
+		models				models_terrain_blocks/cliffs/intersection_wide
+		textures			models_terrain_blocks/cliffs/textures
+		transformations		default
+		skewing_mode		none
+		centre_offset		none
+		
+		attributes
+		{
+			north			cliff_attrib_east		cliff_attrib_high
+			south			cliff_attrib_east		cliff_attrib_high
+			north_east		cliff_attrib_south_east	cliff_attrib_high
+		}
+	}
+}

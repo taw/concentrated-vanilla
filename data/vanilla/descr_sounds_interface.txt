@@ -1,0 +1,212 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; FRONTEND AND GLOBAL GUI SFX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;   power pan level from 0 (hard-left) to 1.0 (hard-right).
+;;;;;;;    0.5 - centre
+
+
+
+DEFAULT: 1d priority 250 volume -30 fadein 0 fadeout 0
+DEFAULT: randomdelay 0 rndvolume 0 pan .5
+DEFAULT: dry_level 1 wet_level 1 delay 0 minpitch 1.0 maxpitch 1.0
+DEFAULT: pref INTERFACE
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; list of types:
+;   normal
+;   battle
+;   strat
+;   strat_v2
+
+; list of modes:
+; 	attack
+; 	attack_range
+; 	attack_thrown
+; 	attack_siege
+; 	attack_range_out_of_range
+; 	attack_thrown_out_of_range
+; 	attack_siege_out_of_range
+; 	move
+; 	move_in_range
+; 	move_out_of_range
+; 	select
+; 	timer
+; 	cohort
+; 	step_left
+; 	step_right
+; 	step_fwd
+; 	step_back
+; 	rotate_right
+; 	rotate_left
+; 	mouse_look
+; 	click_down
+; 	exchange
+; 	default_action
+; 	no_action
+; 	enter_settlement
+; 	disembark
+; 	set_rally_point
+; 	set_rally_point_and_select
+; 	object_placement
+; 	pickup_equipment
+; 	enter
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+BANK: cursor_click
+
+	type battle
+		
+	mode attack
+			event volume -25 streamed
+				folder data/sounds/SFX/interface/battlefield
+				attack.mp3
+			end
+		
+			double
+			event streamed
+				folder data/sounds/SFX/interface/battlefield
+				run.mp3 volume -45
+			end
+			
+			
+	mode attack_range
+			event volume -25 streamed
+				folder data/sounds/SFX/interface/battlefield
+				attack.mp3 
+			end
+		
+			double
+			event streamed
+				folder data/sounds/SFX/interface/battlefield
+				run.mp3 volume -45
+			end
+			
+			
+			
+	mode attack_thrown
+			event volume -25 streamed
+				folder data/sounds/SFX/interface/battlefield
+				attack.mp3
+			end
+		
+			double
+			event streamed
+				folder data/sounds/SFX/interface/battlefield
+				run.mp3 volume -45
+			end
+			
+			
+			
+	mode attack_siege
+			event streamed
+				folder data/sounds/SFX/interface/battlefield
+				siege_attack.mp3
+			end
+				
+				
+	mode move, move_in_range, move_out_of_range
+			event volume -40 minpitch 1 maxpitch 1 dry_level .9 wet_level 1
+				folder data/sounds/SFX/interface/battlefield
+				move
+			end
+			
+			double
+			event streamed
+				folder data/sounds/SFX/interface/battlefield
+				run.mp3 volume -45
+			end
+
+			
+;;;;;;;   triggers when cursor right-clicks an invalid position		
+	mode select
+			event 
+				folder data/sounds/SFX/interface/battlefield
+				
+			end
+			
+;;;;;;;;;;;;;;;;;;;;;;;;;;		
+
+			
+		mode attack_range_out_of_range
+			event volume -25 dry_level 0.9 wet_level 1 streamed
+				folder data/sounds/SFX/interface/battlefield
+				attack_out_of_range_01.mp3
+			end
+			
+		mode attack_thrown_out_of_range streamed
+			event volume -25 dry_level 0.9 wet_level 1 streamed
+				folder data/sounds/SFX/interface/battlefield
+				attack_out_of_range_01.mp3
+			end
+			
+		mode attack_siege_out_of_range 
+			event volume -25 dry_level 0.9 wet_level 1 streamed
+				folder data/sounds/SFX/interface/battlefield
+				attack_out_of_range_01.mp3
+			end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+		mode pickup_equipment
+			event streamed
+				folder data/sounds/SFX/interface/battlefield
+				grab_siege_06.mp3
+			end		
+
+		mode enter
+			event streamed
+				folder data/sounds/SFX/interface/battlefield
+				grab_siege_06.mp3
+			end				
+			
+;;;;;;;;;;;;;;;;;;;;
+
+			
+	type strat_v2
+		mode attack
+			event volume -40 streamed
+				folder data/sounds/SFX/interface/battlefield
+				attack.mp3
+			end
+			
+		mode move
+			event  volume -40 dry_level 0.9 wet_level 1
+				folder data/sounds/SFX/interface/battlefield
+				Move
+			end
+			
+		mode select
+			event  volume -40
+				folder data/sounds/SFX/interface/battlefield
+				
+			end
+
+		mode exchange
+			event  volume -40 dry_level 0.9 wet_level 1
+				folder data/sounds/SFX/interface/battlefield
+				Move
+			end			
+
+		mode enter_settlement
+			event  volume -40 dry_level 0.9 wet_level 1
+				folder data/sounds/SFX/interface/battlefield
+				Move
+			end				
+	
+			
+								
+; we need this here to signal the end of the bank
+DEFAULT: 1d volume -10
+

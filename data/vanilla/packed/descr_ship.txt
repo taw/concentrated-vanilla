@@ -1,0 +1,59 @@
+;	
+;	This file contains the mount linkages; it gets parsed on application 
+;	startup but is not otherwise referred to. The data format is thus:
+;
+;	;						indicates a comment ;-)
+;							
+;	type					indicates a new ship type, must be followed by id name string
+;	ship_type				either flag, transport, war
+;	size					size of the ship in metres (10-50)
+;	speed					speed of the ship in kmph (1-20)
+;	power					method of power	(sail, oars)
+;	artillery				artillery type (flame, rock) - this should refer to the engine_db eventually
+;	ram						(yes, no)
+;	durability				damage ship can take before sinking (0-20)
+;	armour					armour value of ship (0-20)
+;	depth					how much water it draws (in m), depth of water needed to operate
+;	beam					height of the sides, (for boarding, firing archers ect)
+
+
+type						heavy warship
+ship_type					war
+carrying_capacity			4
+size						200
+speed						40
+power						sail
+artillery					rock
+ram							yes
+durability					15
+armour						15
+depth						10
+ocean_going
+beam						20
+
+type						light warship
+ship_type					war
+carrying_capacity			3
+size						30
+speed						7
+power						sail
+artillery					flame
+ram							yes
+durability					10
+armour						10
+depth						10
+beam						20
+
+type						flagship
+ship_type					flag
+carrying_capacity			6
+size						200
+speed						40
+power						sail
+artillery					rock
+ram							yes
+durability					15
+armour						15
+depth						10
+ocean_going
+beam						20
