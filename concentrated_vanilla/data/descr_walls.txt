@@ -97,8 +97,8 @@ wall
 	}
 	tower
 	{
-		full_health 90
-		control_area_radius 1200
+		full_health 60
+		control_area_radius 300
 		manned 1
 		battle_stats  flammability_medium impact_damage_high
 		localised_name tower
@@ -145,8 +145,8 @@ wall
 	}
 	tower
 	{
-		full_health 187
-		control_area_radius 1200
+		full_health 125
+		control_area_radius 300
 		manned 1
 		battle_stats  flammability_medium impact_damage_high
 		localised_name tower
@@ -191,8 +191,8 @@ wall
 	}
 	tower
 	{
-		full_health 375
-		control_area_radius 1200
+		full_health 250
+		control_area_radius 300
 		manned 1
 		battle_stats flammability_none impact_damage_high
 		localised_name tower
@@ -249,8 +249,8 @@ wall
 	}
 	tower
 	{
-		full_health 1125
-		control_area_radius 1200
+		full_health 750
+		control_area_radius 300
 		manned 1
 		battle_stats flammability_none impact_damage_high
 		localised_name tower
@@ -321,8 +321,8 @@ wall
 	}
 	tower
 	{
-		full_health 1500
-		control_area_radius 1200
+		full_health 1000
+		control_area_radius 300
 		manned 1
 		battle_stats flammability_none impact_damage_high
 		localised_name tower

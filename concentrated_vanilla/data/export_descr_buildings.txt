@@ -26,7 +26,7 @@ building core_building
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min village
             upgrades
             {
@@ -57,7 +57,7 @@ building core_building
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min town
             upgrades
             {
@@ -107,7 +107,7 @@ building core_building
             }
             material stone
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min large_town
             upgrades
             {
@@ -156,7 +156,7 @@ building core_building
             }
             material stone
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min city
             upgrades
             {
@@ -212,7 +212,7 @@ building core_building
             }
             material stone
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min large_city
             upgrades
             {
@@ -259,7 +259,7 @@ building core_castle_building
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min village
             upgrades
             {
@@ -312,7 +312,7 @@ building core_castle_building
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min village
             upgrades
             {
@@ -369,7 +369,7 @@ building core_castle_building
             }
             material stone
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min town
             upgrades
             {
@@ -462,7 +462,7 @@ building core_castle_building
             }
             material stone
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min large_town
             upgrades
             {
@@ -574,7 +574,7 @@ building core_castle_building
             }
             material stone
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min city
             upgrades
             {
@@ -599,7 +599,7 @@ building tower
             }
             material stone
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_city
             upgrades
             {
@@ -615,7 +615,7 @@ building tower
             }
             material stone
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min huge_city
             upgrades
             {
@@ -640,7 +640,7 @@ building castle_tower
             }
             material stone
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_city
             upgrades
             {
@@ -656,7 +656,7 @@ building castle_tower
             }
             material stone
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -691,7 +691,7 @@ building equestrian
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min town
             upgrades
             {
@@ -727,7 +727,7 @@ building equestrian
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min large_town
             upgrades
             {
@@ -771,7 +771,7 @@ building equestrian
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min city
             upgrades
             {
@@ -834,7 +834,7 @@ building equestrian
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min large_city
             upgrades
             {
@@ -911,7 +911,7 @@ building equestrian
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min large_city
             upgrades
             {
@@ -944,7 +944,7 @@ building barracks
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min town
             upgrades
             {
@@ -973,7 +973,7 @@ building barracks
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min large_town
             upgrades
             {
@@ -1016,7 +1016,7 @@ building barracks
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min city
             upgrades
             {
@@ -1071,7 +1071,7 @@ building barracks
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min large_city
             upgrades
             {
@@ -1135,7 +1135,7 @@ building barracks
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min huge_city
             upgrades
             {
@@ -1204,7 +1204,7 @@ building barracks
             }
             material wooden
             construction  1 
-            cost  14400 
+            cost  18000 
             settlement_min huge_city
             upgrades
             {
@@ -1275,7 +1275,7 @@ building barracks
             }
             material wooden
             construction  1 
-            cost  18000 
+            cost  22500 
             settlement_min huge_city
             upgrades
             {
@@ -1303,7 +1303,7 @@ building castle_barracks
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min village
             upgrades
             {
@@ -1338,7 +1338,7 @@ building castle_barracks
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min town
             upgrades
             {
@@ -1384,7 +1384,7 @@ building castle_barracks
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min large_town
             upgrades
             {
@@ -1442,7 +1442,7 @@ building castle_barracks
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min city
             upgrades
             {
@@ -1512,7 +1512,7 @@ building castle_barracks
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min large_city
             upgrades
             {
@@ -1537,7 +1537,7 @@ building professional_military
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min huge_city
             upgrades
             {
@@ -1555,7 +1555,7 @@ building professional_military
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min huge_city
             upgrades
             {
@@ -1582,7 +1582,7 @@ building missiles
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min town
             upgrades
             {
@@ -1613,7 +1613,7 @@ building missiles
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min large_town
             upgrades
             {
@@ -1656,7 +1656,7 @@ building missiles
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min city
             upgrades
             {
@@ -1702,7 +1702,7 @@ building missiles
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min large_city
             upgrades
             {
@@ -1731,7 +1731,7 @@ building siege
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -1756,7 +1756,7 @@ building siege
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min city
             upgrades
             {
@@ -1786,7 +1786,7 @@ building siege
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -1815,7 +1815,7 @@ building castle_siege
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -1840,7 +1840,7 @@ building castle_siege
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min city
             upgrades
             {
@@ -1870,7 +1870,7 @@ building castle_siege
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -1900,7 +1900,7 @@ building cannon
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min city
             upgrades
             {
@@ -1930,7 +1930,7 @@ building cannon
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_city
             upgrades
             {
@@ -1970,7 +1970,7 @@ building cannon
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min huge_city
             upgrades
             {
@@ -2014,7 +2014,7 @@ building cannon
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min huge_city
             upgrades
             {
@@ -2044,7 +2044,7 @@ building castle_cannon
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min city
             upgrades
             {
@@ -2074,7 +2074,7 @@ building castle_cannon
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_city
             upgrades
             {
@@ -2114,7 +2114,7 @@ building castle_cannon
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_city
             upgrades
             {
@@ -2158,7 +2158,7 @@ building castle_cannon
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -2185,7 +2185,7 @@ building urban_equestrian
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min city
             upgrades
             {
@@ -2208,7 +2208,7 @@ building urban_equestrian
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min large_city
             upgrades
             {
@@ -2233,7 +2233,7 @@ building smith
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min town
             upgrades
             {
@@ -2249,7 +2249,7 @@ building smith
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min large_town
             upgrades
             {
@@ -2265,7 +2265,7 @@ building smith
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min city
             upgrades
             {
@@ -2281,7 +2281,7 @@ building smith
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -2297,7 +2297,7 @@ building smith
             }
             material wooden
             construction  1 
-            cost  12000 
+            cost  15000 
             settlement_min huge_city
             upgrades
             {
@@ -2313,7 +2313,7 @@ building smith
             }
             material wooden
             construction  1 
-            cost  18000 
+            cost  22500 
             settlement_min huge_city
             upgrades
             {
@@ -2338,7 +2338,7 @@ building castle_smith
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min town
             upgrades
             {
@@ -2354,7 +2354,7 @@ building castle_smith
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min large_town
             upgrades
             {
@@ -2370,7 +2370,7 @@ building castle_smith
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min city
             upgrades
             {
@@ -2386,7 +2386,7 @@ building castle_smith
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -2402,7 +2402,7 @@ building castle_smith
             }
             material wooden
             construction  1 
-            cost  12000 
+            cost  15000 
             settlement_min large_city
             upgrades
             {
@@ -2418,7 +2418,7 @@ building castle_smith
             }
             material wooden
             construction  1 
-            cost  18000 
+            cost  22500 
             settlement_min large_city
             upgrades
             {
@@ -2451,7 +2451,7 @@ building port
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min large_town
             upgrades
             {
@@ -2482,7 +2482,7 @@ building port
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min city
             upgrades
             {
@@ -2521,7 +2521,7 @@ building port
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_city
             upgrades
             {
@@ -2566,7 +2566,7 @@ building port
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min huge_city
             upgrades
             {
@@ -2599,7 +2599,7 @@ building castle_port
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min large_town
             upgrades
             {
@@ -2630,7 +2630,7 @@ building castle_port
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min city
             upgrades
             {
@@ -2669,7 +2669,7 @@ building castle_port
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_city
             upgrades
             {
@@ -2714,7 +2714,7 @@ building castle_port
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -2738,7 +2738,7 @@ building sea_trade
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min city
             upgrades
             {
@@ -2754,7 +2754,7 @@ building sea_trade
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_city
             upgrades
             {
@@ -2770,7 +2770,7 @@ building sea_trade
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min huge_city
             upgrades
             {
@@ -2794,7 +2794,7 @@ building admiralty
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min city
             upgrades
             {
@@ -2810,7 +2810,7 @@ building admiralty
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min large_city
             upgrades
             {
@@ -2839,7 +2839,7 @@ building market
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min town
             upgrades
             {
@@ -2860,7 +2860,7 @@ building market
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min large_town
             upgrades
             {
@@ -2881,7 +2881,7 @@ building market
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min city
             upgrades
             {
@@ -2902,7 +2902,7 @@ building market
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min large_city
             upgrades
             {
@@ -2923,7 +2923,7 @@ building market
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min huge_city
             upgrades
             {
@@ -2948,7 +2948,7 @@ building hinterland_roads
             }
             material wooden
             construction  1 
-            cost  480 
+            cost  600 
             settlement_min town
             upgrades
             {
@@ -2964,7 +2964,7 @@ building hinterland_roads
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min city
             upgrades
             {
@@ -2989,7 +2989,7 @@ building hinterland_castle_roads
             }
             material wooden
             construction  1 
-            cost  480 
+            cost  600 
             settlement_min town
             upgrades
             {
@@ -3005,7 +3005,7 @@ building hinterland_castle_roads
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min city
             upgrades
             {
@@ -3030,7 +3030,7 @@ building hinterland_farms
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min village
             upgrades
             {
@@ -3046,7 +3046,7 @@ building hinterland_farms
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min town
             upgrades
             {
@@ -3062,7 +3062,7 @@ building hinterland_farms
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min large_town
             upgrades
             {
@@ -3078,7 +3078,7 @@ building hinterland_farms
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min city
             upgrades
             {
@@ -3103,7 +3103,7 @@ building hinterland_mines
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  6000 
             settlement_min large_town
             upgrades
             {
@@ -3119,7 +3119,7 @@ building hinterland_mines
             }
             material wooden
             construction  1 
-            cost  6300 
+            cost  10500 
             settlement_min city
             upgrades
             {
@@ -3144,7 +3144,7 @@ building hinterland_castle_mines
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  6000 
             settlement_min large_town
             upgrades
             {
@@ -3160,7 +3160,7 @@ building hinterland_castle_mines
             }
             material wooden
             construction  1 
-            cost  6300 
+            cost  10500 
             settlement_min city
             upgrades
             {
@@ -3184,7 +3184,7 @@ building health
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min large_city
             upgrades
             {
@@ -3200,7 +3200,7 @@ building health
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min huge_city
             upgrades
             {
@@ -3224,7 +3224,7 @@ building hospital
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -3240,7 +3240,7 @@ building hospital
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min huge_city
             upgrades
             {
@@ -3263,7 +3263,7 @@ building academic
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_city
             upgrades
             {
@@ -3279,7 +3279,7 @@ building academic
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min huge_city
             upgrades
             {
@@ -3294,7 +3294,7 @@ building academic
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min huge_city
             upgrades
             {
@@ -3326,7 +3326,7 @@ building temple_catholic
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min town
             upgrades
             {
@@ -3348,7 +3348,7 @@ building temple_catholic
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -3370,7 +3370,7 @@ building temple_catholic
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min city
             upgrades
             {
@@ -3394,7 +3394,7 @@ building temple_catholic
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -3418,7 +3418,7 @@ building temple_catholic
             }
             material wooden
             construction  1 
-            cost  12000 
+            cost  15000 
             settlement_min huge_city
             upgrades
             {
@@ -3450,7 +3450,7 @@ building temple_catholic_castle
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min town
             upgrades
             {
@@ -3472,7 +3472,7 @@ building temple_catholic_castle
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -3502,7 +3502,7 @@ building temple_orthodox
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min town
             upgrades
             {
@@ -3522,7 +3522,7 @@ building temple_orthodox
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -3541,7 +3541,7 @@ building temple_orthodox
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min city
             upgrades
             {
@@ -3560,7 +3560,7 @@ building temple_orthodox
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -3579,7 +3579,7 @@ building temple_orthodox
             }
             material wooden
             construction  1 
-            cost  12000 
+            cost  15000 
             settlement_min huge_city
             upgrades
             {
@@ -3609,7 +3609,7 @@ building temple_orthodox_castle
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min town
             upgrades
             {
@@ -3629,7 +3629,7 @@ building temple_orthodox_castle
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -3658,7 +3658,7 @@ building temple_muslim
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min town
             upgrades
             {
@@ -3677,7 +3677,7 @@ building temple_muslim
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -3695,7 +3695,7 @@ building temple_muslim
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min city
             upgrades
             {
@@ -3713,7 +3713,7 @@ building temple_muslim
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -3731,7 +3731,7 @@ building temple_muslim
             }
             material wooden
             construction  1 
-            cost  12000 
+            cost  15000 
             settlement_min huge_city
             upgrades
             {
@@ -3760,7 +3760,7 @@ building temple_muslim_castle
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min town
             upgrades
             {
@@ -3779,7 +3779,7 @@ building temple_muslim_castle
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -3807,7 +3807,7 @@ building taverns
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min town
             upgrades
             {
@@ -3832,7 +3832,7 @@ building taverns
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -3858,7 +3858,7 @@ building taverns
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min city
             upgrades
             {
@@ -3884,7 +3884,7 @@ building taverns
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -3910,7 +3910,7 @@ building taverns
             }
             material wooden
             construction  1 
-            cost  12000 
+            cost  15000 
             settlement_min huge_city
             upgrades
             {
@@ -3939,7 +3939,7 @@ building city_hall
             }
             material wooden
             construction  1 
-            cost  720 
+            cost  900 
             settlement_min large_town
             upgrades
             {
@@ -3962,7 +3962,7 @@ building city_hall
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min city
             upgrades
             {
@@ -3986,7 +3986,7 @@ building city_hall
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min large_city
             upgrades
             {
@@ -4012,7 +4012,7 @@ building city_hall
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min huge_city
             upgrades
             {
@@ -4035,7 +4035,7 @@ building art
             }
             material wooden
             construction  1 
-            cost  2880 
+            cost  3600 
             settlement_min large_city
             upgrades
             {
@@ -4051,7 +4051,7 @@ building art
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min huge_city
             upgrades
             {
@@ -4075,7 +4075,7 @@ building bullring
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min city
             upgrades
             {
@@ -4099,7 +4099,7 @@ building bank
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min large_city
             upgrades
             {
@@ -4115,7 +4115,7 @@ building bank
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min huge_city
             upgrades
             {
@@ -4139,7 +4139,7 @@ building paper
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min large_city
             upgrades
             {
@@ -4155,7 +4155,7 @@ building paper
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min huge_city
             upgrades
             {
@@ -4179,7 +4179,7 @@ building icon_art
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min large_city
             upgrades
             {
@@ -4195,7 +4195,7 @@ building icon_art
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min huge_city
             upgrades
             {
@@ -4218,7 +4218,7 @@ building music
             }
             material wooden
             construction  1 
-            cost  5760 
+            cost  7200 
             settlement_min large_city
             upgrades
             {
@@ -4233,7 +4233,7 @@ building music
             }
             material wooden
             construction  1 
-            cost  11520 
+            cost  14400 
             settlement_min huge_city
             upgrades
             {
@@ -4256,7 +4256,7 @@ building tourney
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min city
             upgrades
             {
@@ -4273,7 +4273,7 @@ building tourney
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_city
             upgrades
             {
@@ -4299,7 +4299,7 @@ building castle_academic
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_city
             upgrades
             {
@@ -4319,7 +4319,7 @@ building castle_academic
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_city
             upgrades
             {
@@ -4343,7 +4343,7 @@ building caravan
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min large_town
             upgrades
             {
@@ -4360,7 +4360,7 @@ building caravan
             }
             material wooden
             construction  1 
-            cost  4320 
+            cost  5400 
             settlement_min large_city
             upgrades
             {
@@ -4383,7 +4383,7 @@ building guild_assassins_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4399,7 +4399,7 @@ building guild_assassins_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4415,7 +4415,7 @@ building guild_assassins_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -4438,7 +4438,7 @@ building guild_assassins_muslim_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4453,7 +4453,7 @@ building guild_assassins_muslim_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4468,7 +4468,7 @@ building guild_assassins_muslim_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -4497,7 +4497,7 @@ building guild_masons_guild
             }
             material stone
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4529,7 +4529,7 @@ building guild_masons_guild
             }
             material stone
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4559,7 +4559,7 @@ building guild_masons_guild
             }
             material stone
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -4581,7 +4581,7 @@ building guild_theologians_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4595,7 +4595,7 @@ building guild_theologians_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4609,7 +4609,7 @@ building guild_theologians_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -4638,7 +4638,7 @@ building guild_merchants_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4659,7 +4659,7 @@ building guild_merchants_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4681,7 +4681,7 @@ building guild_merchants_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -4704,7 +4704,7 @@ building guild_alchemists_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4723,7 +4723,7 @@ building guild_alchemists_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4742,7 +4742,7 @@ building guild_alchemists_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -4764,7 +4764,7 @@ building guild_thiefs_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4778,7 +4778,7 @@ building guild_thiefs_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4792,7 +4792,7 @@ building guild_thiefs_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -4814,7 +4814,7 @@ building guild_explorers_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4828,7 +4828,7 @@ building guild_explorers_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4842,7 +4842,7 @@ building guild_explorers_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -4867,7 +4867,7 @@ building guild_swordsmiths_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4887,7 +4887,7 @@ building guild_swordsmiths_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4907,7 +4907,7 @@ building guild_swordsmiths_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min large_city
             upgrades
             {
@@ -4933,7 +4933,7 @@ building guild_templars_chapter_house
             }
             material stone
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -4949,7 +4949,7 @@ building guild_templars_chapter_house
             }
             material stone
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -4965,7 +4965,7 @@ building guild_templars_chapter_house
             }
             material stone
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min large_city
             upgrades
             {
@@ -4992,7 +4992,7 @@ building guild_st_johns_chapter_house
             }
             material stone
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -5009,7 +5009,7 @@ building guild_st_johns_chapter_house
             }
             material stone
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -5026,7 +5026,7 @@ building guild_st_johns_chapter_house
             }
             material stone
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min large_city
             upgrades
             {
@@ -5052,7 +5052,7 @@ building guild_teutonic_knights_chapter_house
             }
             material stone
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -5068,7 +5068,7 @@ building guild_teutonic_knights_chapter_house
             }
             material stone
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -5084,7 +5084,7 @@ building guild_teutonic_knights_chapter_house
             }
             material stone
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min large_city
             upgrades
             {
@@ -5110,7 +5110,7 @@ building guild_knights_of_santiago_chapter_house
             }
             material stone
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -5126,7 +5126,7 @@ building guild_knights_of_santiago_chapter_house
             }
             material stone
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -5142,7 +5142,7 @@ building guild_knights_of_santiago_chapter_house
             }
             material stone
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min large_city
             upgrades
             {
@@ -5165,7 +5165,7 @@ building guild_woodsmens_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -5185,7 +5185,7 @@ building guild_woodsmens_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -5205,7 +5205,7 @@ building guild_woodsmens_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min large_city
             upgrades
             {
@@ -5228,7 +5228,7 @@ building guild_horse_breeders_guild
             }
             material wooden
             construction  1 
-            cost  1200 
+            cost  1500 
             settlement_min city
             upgrades
             {
@@ -5247,7 +5247,7 @@ building guild_horse_breeders_guild
             }
             material wooden
             construction  1 
-            cost  2400 
+            cost  3000 
             settlement_min large_city
             upgrades
             {
@@ -5266,7 +5266,7 @@ building guild_horse_breeders_guild
             }
             material wooden
             construction  1 
-            cost  3600 
+            cost  4500 
             settlement_min huge_city
             upgrades
             {
@@ -5290,7 +5290,7 @@ building convert_to_castle
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min village
             upgrades
             {
@@ -5305,7 +5305,7 @@ building convert_to_castle
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min town
             upgrades
             {
@@ -5320,7 +5320,7 @@ building convert_to_castle
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min large_town
             upgrades
             {
@@ -5344,7 +5344,7 @@ building convert_to_city
             }
             material wooden
             construction  1 
-            cost  960 
+            cost  1200 
             settlement_min village
             upgrades
             {
@@ -5359,7 +5359,7 @@ building convert_to_city
             }
             material wooden
             construction  1 
-            cost  1440 
+            cost  1800 
             settlement_min town
             upgrades
             {
@@ -5374,7 +5374,7 @@ building convert_to_city
             }
             material wooden
             construction  1 
-            cost  1920 
+            cost  2400 
             settlement_min large_town
             upgrades
             {
@@ -5388,7 +5388,7 @@ building convert_to_city
             }
             material wooden
             construction  1 
-            cost  3840 
+            cost  4800 
             settlement_min city
             upgrades
             {
@@ -5402,7 +5402,7 @@ building convert_to_city
             }
             material wooden
             construction  1 
-            cost  7680 
+            cost  9600 
             settlement_min large_city
             upgrades
             {
@@ -5428,7 +5428,7 @@ building temple_pagan
             }
             material wooden
             construction  1 
-            cost  18000 
+            cost  22500 
             settlement_min town
             upgrades
             {
