@@ -1,0 +1,1159 @@
+;This file is generated from the Spreadsheet MTW2-Guilds.xls
+;Please modify the spreadsheet and re-xport the data, rather than editing this file directly
+;===============================================================
+;== GUILD THREAD DATA STARTS HERE ==
+;===============================================================
+;------------------------------------------
+Guild assassins_guild
+    building guild_assassins_guild
+    levels	25 50 100
+;------------------------------------------
+Guild assassins_muslim_guild
+    building guild_assassins_muslim_guild
+    levels	25 50 100
+;------------------------------------------
+Guild masons_guild
+    building guild_masons_guild
+    levels	25 50 100
+;------------------------------------------
+Guild theologians_guild
+    building guild_theologians_guild
+    levels	25 50 100
+;------------------------------------------
+Guild merchants_guild
+    building guild_merchants_guild
+    levels	25 50 100
+;------------------------------------------
+Guild alchemists_guild
+    building guild_alchemists_guild
+    levels	25 50 100
+;------------------------------------------
+Guild thiefs_guild
+    building guild_thiefs_guild
+    levels	25 50 100
+;------------------------------------------
+Guild explorers_guild
+    building guild_explorers_guild
+    levels	25 50 100
+;------------------------------------------
+Guild swordsmiths_guild
+    building guild_swordsmiths_guild
+    levels	25 50 100
+;------------------------------------------
+Guild templars_chapter_house
+    building guild_templars_chapter_house
+
+    levels	25 50 100
+;------------------------------------------
+Guild st_johns_chapter_house
+    building guild_st_johns_chapter_house
+
+    levels	25 50 100
+;------------------------------------------
+Guild teutonic_knights_chapter_house
+    building guild_teutonic_knights_chapter_house
+    levels	25 50 100
+;------------------------------------------
+Guild knights_of_santiago_chapter_house
+    building guild_knights_of_santiago_chapter_house
+    levels	25 50 100
+;------------------------------------------
+Guild woodsmens_guild
+    building guild_woodsmens_guild
+    levels	25 50 100
+;------------------------------------------
+Guild horse_breeders_guild
+    building guild_horse_breeders_guild
+    levels	25 50 100
+;===============================================================
+;== TRIGGER DATA STARTS HERE ==
+;===============================================================
+;------------------------------------------
+Trigger 0001_Guild_Upgraded
+    WhenToTest GuildUpgraded
+    Guild this s  20 
+    Guild this o  10 
+;------------------------------------------
+Trigger 0002_Guild_Destroyed
+    WhenToTest GuildDestroyed
+    Guild this s -100 
+    Guild this o -20 
+;------------------------------------------
+Trigger 0003_Settlement_Upgraded
+    WhenToTest SettlementUpgraded
+    Guild all s  10 
+;------------------------------------------
+Trigger 0004_Normalise
+    WhenToTest SettlementTurnStart
+    Condition I_TurnNumber > 25
+    Guild all s -1 
+;------------------------------------------
+Trigger 0010_Recruit_Assassin
+    WhenToTest AgentCreated
+    Condition TrainedAgentType = assassin
+    Guild assassins_guild s  10 
+    Guild assassins_muslim_guild s  10 
+;------------------------------------------
+Trigger 0011_Successful_Assassination
+    WhenToTest AssassinationMission
+    Condition MissionSucceeded
+    Guild assassins_guild a  20 
+    Guild assassins_muslim_guild a  20 
+;------------------------------------------
+Trigger 0020_Build_Stone_Wall
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = stone_wall
+    Guild masons_guild s  10 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0021_Build_Large_Stone_Wall
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = large_stone_wall
+    Guild masons_guild s  15 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0022_Build_Huge_Stone_Wall
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = huge_stone_wall
+    Guild masons_guild s  25 
+    Guild masons_guild o  3 
+;------------------------------------------
+Trigger 0023_Build_Guards_Quarters
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = mustering_hall
+    Guild masons_guild s  10 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0024_Build_Outpost_Garrison
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = garrison_quarters
+    Guild masons_guild s  15 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0025_Build_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = drill_square
+    Guild masons_guild s  20 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0026_Build_Greater_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = barracks
+    Guild masons_guild s  25 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0027_Build_Fortified_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = armoury
+    Guild masons_guild s  30 
+    Guild masons_guild o  3 
+;------------------------------------------
+Trigger 0028_Build_Town_Watch
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = town_watch
+    Guild masons_guild s  10 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0029_Build_Town_Guard
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = town_guard
+    Guild masons_guild s  15 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0030_Build_City_Watch
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = city_watch
+    Guild masons_guild s  15 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0031_Build_Militia_Drill_Square
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = militia_drill_square
+    Guild masons_guild s  20 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0032_Build_Militia_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = militia_barracks
+    Guild masons_guild s  20 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0033_Build_Army_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = army_barracks
+    Guild masons_guild s  25 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0034_Build_Royal_Armoury
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = royal_armoury
+    Guild masons_guild s  30 
+    Guild masons_guild o  3 
+;------------------------------------------
+Trigger 0035_Build_Leather_Tanner
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = leather_tanner
+    Guild masons_guild s  10 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  10 
+;------------------------------------------
+Trigger 0036_Build_Blacksmith
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = blacksmith
+    Guild masons_guild s  15 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0037_Build_Armourer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = armourer
+    Guild masons_guild s  20 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0038_Build_Heavy_Armourer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = heavy_armourer
+    Guild masons_guild s  20 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  20 
+    Guild swordsmiths_guild o  1 
+;------------------------------------------
+Trigger 0039_Build_Plate_Armourer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = plate_armourer
+    Guild masons_guild s  25 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  25 
+    Guild swordsmiths_guild o  2 
+;------------------------------------------
+Trigger 0040_Build_Gothic_Armourer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = gothic_armourer
+    Guild masons_guild s  30 
+    Guild masons_guild o  3 
+    Guild swordsmiths_guild s  30 
+    Guild swordsmiths_guild o  5 
+;------------------------------------------
+Trigger 0041_Build_Castle_Leather_Tanner
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = c_leather_tanner
+    Guild masons_guild s  10 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  10 
+;------------------------------------------
+Trigger 0042_Build_Castle_Blacksmith
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = c_blacksmith
+    Guild masons_guild s  15 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0043_Build_Castle_Armourer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = c_armourer
+    Guild masons_guild s  15 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0045_Build_Castle_Heavy_Armourer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = c_heavy_armourer
+    Guild masons_guild s  20 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  20 
+    Guild swordsmiths_guild o  1 
+;------------------------------------------
+Trigger 0046_Build_Castle_Plate_Armourer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = c_plate_armourer
+    Guild masons_guild s  25 
+    Guild masons_guild o  2 
+    Guild swordsmiths_guild s  25 
+    Guild swordsmiths_guild o  2 
+;------------------------------------------
+Trigger 0047_Build_Castle_Gothic_Armouer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = c_gothic_armourer
+    Guild masons_guild s  30 
+    Guild masons_guild o  3 
+    Guild swordsmiths_guild s  30 
+    Guild swordsmiths_guild o  5 
+;------------------------------------------
+Trigger 0048_Build_Bowyer
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = bowyer
+    Guild masons_guild s  10 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0049_Build_Practice_Range
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = practice_range
+    Guild masons_guild s  15 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0050_Build_Archery_Range
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = archery_range
+    Guild masons_guild s  20 
+    Guild masons_guild o  2 
+;------------------------------------------
+Trigger 0051_Build_Archery_Academy
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = marksmans_range
+    Guild masons_guild s  30 
+    Guild masons_guild o  3 
+;------------------------------------------
+Trigger 0055_Recruit_Priest
+    WhenToTest AgentCreated
+    Condition TrainedAgentType = priest
+    Guild theologians_guild s  10 
+;------------------------------------------
+Trigger 0056_Build_Small_Church
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = small_church
+    Guild theologians_guild s  10 
+;------------------------------------------
+Trigger 0057_Build_Church
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = church
+    Guild theologians_guild s  15 
+;------------------------------------------
+Trigger 0058_Build_Abbey
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = abbey
+    Guild theologians_guild s  20 
+    Guild theologians_guild o  1 
+;------------------------------------------
+Trigger 0059_Build_Cathedral
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = cathedral
+    Guild theologians_guild s  25 
+    Guild theologians_guild o  2 
+;------------------------------------------
+Trigger 0060_Build_Huge_Cathedral
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = huge_cathedral
+    Guild theologians_guild s  30 
+    Guild theologians_guild o  5 
+;------------------------------------------
+Trigger 0061_Build_Small_Church_Orth
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = small_church_o
+    Guild theologians_guild s  10 
+;------------------------------------------
+Trigger 0062_Build_Church_Orth
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = church_o
+    Guild theologians_guild s  15 
+;------------------------------------------
+Trigger 0063_Build_Abbey_Orth
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = abbey_o
+    Guild theologians_guild s  20 
+    Guild theologians_guild o  1 
+;------------------------------------------
+Trigger 0064_Build_Cathedral_Orth
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = cathedral_o
+    Guild theologians_guild s  25 
+    Guild theologians_guild o  2 
+;------------------------------------------
+Trigger 0065_Build_Huge_Cathedral_Orth
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = huge_cathedral_o
+    Guild theologians_guild s  30 
+    Guild theologians_guild o  5 
+;------------------------------------------
+Trigger 0066_Build_Small_Masjid
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = small_masjid
+    Guild theologians_guild s  10 
+;------------------------------------------
+Trigger 0067_Build_Masjid
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = masjid
+    Guild theologians_guild s  15 
+;------------------------------------------
+Trigger 0068_Build_Minareted_Masjid
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = minareted_masjid
+    Guild theologians_guild s  20 
+    Guild theologians_guild o  1 
+;------------------------------------------
+Trigger 0069_Build_Jama
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = jama
+    Guild theologians_guild s  25 
+    Guild theologians_guild o  2 
+;------------------------------------------
+Trigger 0070_Build_Great_Jama
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = great_jama
+    Guild theologians_guild s  30 
+    Guild theologians_guild o  5 
+;------------------------------------------
+Trigger 0071_Faction_Pope_Elected
+    WhenToTest PopeElected
+    Guild theologians_guild a  30 
+;------------------------------------------
+Trigger 0072_Governors_Religion
+    WhenToTest SettlementTurnStart
+    Condition GovernorAttribute Piety > 5
+    Guild theologians_guild s  5 
+;------------------------------------------
+Trigger 0073_Successful_Denouncement
+    WhenToTest DenouncementMission
+    Condition MissionSucceeded
+    Guild theologians_guild a  10 
+;------------------------------------------
+Trigger 0074_Cardinal_Promoted
+    WhenToTest CardinalPromoted
+    Guild theologians_guild a  10 
+;------------------------------------------
+Trigger 0075_Priest_Becomes_Heretic
+    WhenToTest PriestBecomesHeretic
+    Guild theologians_guild a -5 
+;------------------------------------------
+Trigger 0076_Recruit_Merchant
+    WhenToTest AgentCreated
+    Condition TrainedAgentType = merchant
+    Guild merchants_guild s  10 
+    Guild explorers_guild s  10 
+;------------------------------------------
+Trigger 0077_Build_Port
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = port
+    Guild explorers_guild s  15 
+;------------------------------------------
+Trigger 0078_Build_Shipwright
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = shipwright
+    Guild explorers_guild s  20 
+;------------------------------------------
+Trigger 0079_Build_Dockyard
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = dockyard
+    Guild explorers_guild s  25 
+    Guild explorers_guild o  2 
+;------------------------------------------
+Trigger 0080_Build_Naval_Drydock
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = naval_drydock
+    Guild explorers_guild s  30 
+    Guild explorers_guild o  5 
+;------------------------------------------
+Trigger 0081_Build_Merchants_Wharf
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = merchants_wharf
+    Guild merchants_guild s  20 
+    Guild explorers_guild s  20 
+;------------------------------------------
+Trigger 0082_Build_Warehouse
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = warehouse
+    Guild merchants_guild s  25 
+    Guild explorers_guild s  25 
+    Guild merchants_guild o  2 
+    Guild explorers_guild o  2 
+;------------------------------------------
+Trigger 0083_Build_Docklands
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = docklands
+    Guild merchants_guild s  30 
+    Guild explorers_guild s  30 
+    Guild merchants_guild o  5 
+    Guild explorers_guild o  5 
+;------------------------------------------
+Trigger 0084_Build_Market
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = market
+    Guild merchants_guild s  10 
+;------------------------------------------
+Trigger 0085_Build_Fairground
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = fairground
+    Guild merchants_guild s  15 
+;------------------------------------------
+Trigger 0086_Build_Great_Market
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = great_market
+    Guild merchants_guild s  20 
+    Guild merchants_guild o  2 
+;------------------------------------------
+Trigger 0087_Build_Merchants_Quarters
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = merchants_quarter
+    Guild merchants_guild s  25 
+    Guild merchants_guild o  5 
+;------------------------------------------
+Trigger 0088_Make_Trade_Agreement
+    WhenToTest FactionTradeAgreementMade
+    Guild merchants_guild a  10 
+;------------------------------------------
+Trigger 0089_Successful_Acquisition
+    WhenToTest AcquisitionMission
+    Condition MissionSucceeded
+    Guild merchants_guild a  10 
+;------------------------------------------
+Trigger 0090_Exploring_Fleet
+    WhenToTest CharacterTurnEnd
+    Condition AgentType = admiral
+          and DistanceCapital > 50
+          and DistanceCapital < 100
+    Guild explorers_guild a  3 
+;------------------------------------------
+Trigger 0091_Exploring_Fleet_Far
+    WhenToTest CharacterTurnEnd
+    Condition AgentType = admiral
+          and DistanceCapital > 99
+    Guild explorers_guild a  5 
+;------------------------------------------
+Trigger 0101_High_Income1
+    WhenToTest FactionTurnStart
+    Condition FactionIncome > 1000
+          and FactionIncome < 2001
+    Guild merchants_guild a  1 
+;------------------------------------------
+Trigger 0102_High_Income2
+    WhenToTest FactionTurnStart
+    Condition FactionIncome > 2000
+          and FactionIncome < 5001
+    Guild merchants_guild a  2 
+;------------------------------------------
+Trigger 0103_High_Income3
+    WhenToTest FactionTurnStart
+    Condition FactionIncome > 5000
+          and FactionIncome < 10001
+    Guild merchants_guild a  3 
+;------------------------------------------
+Trigger 0104_High_Income4
+    WhenToTest FactionTurnStart
+    Condition FactionIncome > 10000
+    Guild merchants_guild a  4 
+;------------------------------------------
+Trigger 0130_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Sword and Buckler Men
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0131_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Swordsmen Militia
+    Guild swordsmiths_guild s  10 
+;------------------------------------------
+Trigger 0132_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Armored Swordsmen
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0133_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Highland Nobles
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0134_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Zweihander
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0135_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Noble Swordsmen
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0136_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Forlorn Hope
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0137_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Byzantine Infantry
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0138_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Battlefield Assassins
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0139_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Norse Swordsmen
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0140_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Feudal Knights
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0141_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Chivalric Knights
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0142_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Gothic Knights
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0143_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Conquistadores
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0144_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Italian MAA
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0145_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Broken Lances
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0146_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Norman Knights
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0147_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Polish Knights
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0148_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted E Chivalric Knights
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0149_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Byzantine Lancers
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0150_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Latinkon
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0151_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Sudanese Tribesmen
+    Guild swordsmiths_guild s  10 
+;------------------------------------------
+Trigger 0152_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Hashishim
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0153_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Urban Militia
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0154_Recruit_Sword_Unit
+    WhenToTest UnitTrained
+    Condition UnitType Dismounted Christian Guard
+    Guild swordsmiths_guild s  15 
+;------------------------------------------
+Trigger 0150_Crusading_Army_Created
+    WhenToTest GeneralJoinCrusade
+    Guild templars_chapter_house a  25 
+    Guild st_johns_chapter_house a  25 
+    Guild knights_of_santiago_chapter_house a  25 
+    Guild teutonic_knights_chapter_house a  25 
+;------------------------------------------
+Trigger 0151_Crusading_Army_Abandon
+    WhenToTest GeneralAbandonCrusade
+    Guild templars_chapter_house a -25 
+    Guild st_johns_chapter_house a -25 
+    Guild knights_of_santiago_chapter_house a -25 
+    Guild teutonic_knights_chapter_house a -25 
+;------------------------------------------
+Trigger 0155_Recruit_Templar_Knight
+    WhenToTest UnitTrained
+    Condition UnitType Knights Templar
+    Guild templars_chapter_house s  10 
+    Guild templars_chapter_house o  1 
+;------------------------------------------
+Trigger 0156_Governor_Dread
+    WhenToTest SettlementTurnStart
+    Condition GovernorAttribute Chivalry < -4
+    Guild assassins_guild s  4 
+    Guild assassins_muslim_guild s  4 
+    Guild thiefs_guild s  2 
+;------------------------------------------
+Trigger 0160_Recruit_Hospitaller_Knight
+    WhenToTest UnitTrained
+    Condition UnitType Knights Hospitaller
+    Guild st_johns_chapter_house s  10 
+    Guild st_johns_chapter_house o  1 
+;------------------------------------------
+Trigger 0170_Declare_War_Muslim_Faction
+    WhenToTest FactionWarDeclared
+    Condition TargetFactionReligion islam
+          and FactionReligion catholic
+    Guild st_johns_chapter_house a  10 
+;------------------------------------------
+Trigger 0171_Muslim_Neighbours
+    WhenToTest SettlementTurnStart
+    Condition NeighbourReligion islam > 50
+          and FactionReligion catholic
+    Guild st_johns_chapter_house s  10 
+    Guild st_johns_chapter_house o  1 
+;------------------------------------------
+Trigger 0175_Pagan_Neighbours
+    WhenToTest SettlementTurnStart
+    Condition NeighbourReligion pagan > 50
+          and FactionReligion catholic
+    Guild teutonic_knights_chapter_house s  10 
+    Guild teutonic_knights_chapter_house o  1 
+;------------------------------------------
+Trigger 0180_Recruit_Knights_Of_Santiago
+    WhenToTest UnitTrained
+    Condition UnitType Knights of Santiago
+    Guild knights_of_santiago_chapter_house s  10 
+    Guild knights_of_santiago_chapter_house o  1 
+;------------------------------------------
+Trigger 0181_Recruit_Teutonic_Knights
+    WhenToTest UnitTrained
+    Condition UnitType Teutonic Knights
+    Guild teutonic_knights_chapter_house s  10 
+    Guild teutonic_knights_chapter_house o  1 
+;------------------------------------------
+Trigger 0182_Recruit_Archers
+    WhenToTest UnitTrained
+    Condition FactionType england
+          and UnitType Peasant Archers
+    Guild woodsmens_guild s  10 
+;------------------------------------------
+Trigger 0183_Recruit_Archers
+    WhenToTest UnitTrained
+    Condition FactionType england
+          and UnitType Longbowmen
+    Guild woodsmens_guild s  15 
+;------------------------------------------
+Trigger 0184_Recruit_Archers
+    WhenToTest UnitTrained
+    Condition FactionType england
+          and UnitType Yeoman Archers
+    Guild woodsmens_guild s  15 
+;------------------------------------------
+Trigger 0185_Recruit_Archers
+    WhenToTest UnitTrained
+    Condition FactionType england
+          and UnitType Sherwood Archers
+    Guild woodsmens_guild s  20 
+;------------------------------------------
+Trigger 0186_Recruit_Archers
+    WhenToTest UnitTrained
+    Condition FactionType england
+          and UnitType Archer Militia
+    Guild woodsmens_guild s  10 
+;------------------------------------------
+Trigger 0187_Recruit_Archers
+    WhenToTest UnitTrained
+    Condition FactionType england
+          and UnitType Dismounted Longbowmen
+    Guild woodsmens_guild s  15 
+;------------------------------------------
+Trigger 0191_Build_Tavern
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = brothel
+    Guild woodsmens_guild s  10 
+    Guild assassins_guild s  10 
+    Guild assassins_muslim_guild s  10 
+    Guild thiefs_guild s  10 
+;------------------------------------------
+Trigger 0192_Build_Brothel
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = inn
+    Guild woodsmens_guild s  15 
+    Guild assassins_guild s  15 
+    Guild assassins_muslim_guild s  15 
+    Guild thiefs_guild s  15 
+;------------------------------------------
+Trigger 0193_Build_Inn
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = tavern
+    Guild woodsmens_guild s  20 
+    Guild assassins_guild s  20 
+    Guild assassins_muslim_guild s  20 
+    Guild thiefs_guild s  20 
+;------------------------------------------
+Trigger 0194_Build_Hotel
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = coaching_house
+    Guild woodsmens_guild s  25 
+    Guild woodsmens_guild o  2 
+    Guild assassins_muslim_guild s  25 
+    Guild assassins_guild s  25 
+    Guild thiefs_guild s  25 
+;------------------------------------------
+Trigger 0195_Buiild_Grand_Hotel
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = pleasure_palace
+    Guild woodsmens_guild s  30 
+    Guild woodsmens_guild o  5 
+    Guild assassins_muslim_guild s  30 
+    Guild assassins_guild s  30 
+    Guild thiefs_guild s  30 
+;------------------------------------------
+Trigger 0196_Governor_Chivalry
+    WhenToTest SettlementTurnStart
+    Condition GovernorAttribute Chivalry > 4
+    Guild woodsmens_guild s  5 
+    Guild knights_of_santiago_chapter_house s  5 
+    Guild st_johns_chapter_house s  5 
+;------------------------------------------
+Trigger 0197_Governor_Chivalry2
+    WhenToTest SettlementTurnStart
+    Condition GovernorAttribute Chivalry > 4
+    Guild templars_chapter_house s  5 
+    Guild teutonic_knights_chapter_house s  5 
+;------------------------------------------
+Trigger 0198_Build_Hotel2
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = coaching_house
+    Guild assassins_guild o  2 
+    Guild assassins_muslim_guild o  2 
+;------------------------------------------
+Trigger 0199_Buiild_Grand_Hotel2
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = pleasure_palace
+    Guild assassins_guild o  5 
+    Guild assassins_muslim_guild o  5 
+;------------------------------------------
+Trigger 0200_Train_Cavalry
+    WhenToTest UnitTrained
+    Condition TrainedUnitCategory cavalry
+    Guild horse_breeders_guild s  10 
+    Guild horse_breeders_guild o  1 
+;------------------------------------------
+Trigger 0201_Build_Stables
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = stables
+    Guild horse_breeders_guild s  10 
+    Guild horse_breeders_guild o  1 
+;------------------------------------------
+Trigger 0202_Build_Cavalry_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = knights_stables
+    Guild horse_breeders_guild s  15 
+    Guild horse_breeders_guild o  2 
+;------------------------------------------
+Trigger 0203_Build_Elite_Cavalry_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = earls_stables
+    Guild horse_breeders_guild s  20 
+    Guild horse_breeders_guild o  3 
+;------------------------------------------
+Trigger 0204_Build_Royal_Cavalry_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = barons_stables
+    Guild horse_breeders_guild s  25 
+    Guild horse_breeders_guild o  4 
+;------------------------------------------
+Trigger 0205_Build_Imperial_Cavalry_Barracks
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = kings_stables
+    Guild horse_breeders_guild s  30 
+    Guild horse_breeders_guild o  5 
+;------------------------------------------
+Trigger 0206_Build_Racing_Track
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = racing_track
+    Guild horse_breeders_guild s  50 
+    Guild horse_breeders_guild o  5 
+;------------------------------------------
+Trigger 0207_Build_Sultans_Racing_Track
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = sultans_racing_track
+    Guild horse_breeders_guild s  75 
+    Guild horse_breeders_guild o  5 
+;------------------------------------------
+Trigger 0208_Throw_Races
+    WhenToTest GovernorThrowRaces
+    Guild horse_breeders_guild s  5 
+;------------------------------------------
+Trigger 0210_Recruit_Spy
+    WhenToTest AgentCreated
+    Condition TrainedAgentType = spy
+    Guild thiefs_guild s  10 
+;------------------------------------------
+Trigger 0211_Spy_On_Settlement
+    WhenToTest CharacterTurnEnd
+    Condition EndedInSettlement
+          and not SettlementIsLocal
+    Guild thiefs_guild a  2 
+;------------------------------------------
+Trigger 0212_Spy_Mission
+    WhenToTest SpyMission
+    Condition MissionSucceeded
+    Guild thiefs_guild a  10 
+;------------------------------------------
+Trigger 0220_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0221_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType EE Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0222_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType GR Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0223_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType ME Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0224_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType AS Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0225_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType AS Rocket Launcher
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0226_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Grand Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0227_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType EE Grand Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0228_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType ME Grand Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0229_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType AS Grand Bombard
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0230_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Mortar
+    Guild alchemists_guild s  10 
+;------------------------------------------
+Trigger 0231_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Ribault
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0232_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType EE Ribault
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0233_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Culverin
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0234_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Cannon
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0235_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType EE Cannon
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0236_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType ME Cannon
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0237_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType AS Cannon
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0238_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Serpentine
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0239_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType EE Serpentine
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0240_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Basilisk
+    Guild alchemists_guild s  20 
+;------------------------------------------
+Trigger 0241_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType EE Basilisk
+    Guild alchemists_guild s  20 
+;------------------------------------------
+Trigger 0242_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType NE Monster Ribault
+    Guild alchemists_guild s  20 
+;------------------------------------------
+Trigger 0243_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType ME Monster Bombard
+    Guild alchemists_guild s  20 
+;------------------------------------------
+Trigger 0244_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType AS Monster Bombard
+    Guild alchemists_guild s  20 
+;------------------------------------------
+Trigger 0245_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Reiters
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0246_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Arquebusiers
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0247_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Musketeers
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0248_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Hand Gunners
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0249_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Portuguese Arquebusiers
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0250_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Mercenary Arquebusiers
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0251_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Camel Gunners
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0252_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Janissary Musketeers
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0253_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType ME Hand Gunners
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0254_Recruit_Guns
+    WhenToTest UnitTrained
+    Condition UnitType Sudanese Gunners
+    Guild alchemists_guild s  15 
+;------------------------------------------
+Trigger 0261_Build_Alchemists_Lab
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = alchemists_lab
+    Guild alchemists_guild s  10 
+    Guild alchemists_guild o  1 
+;------------------------------------------
+Trigger 0262_Build_Cannon_Maker
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = gunsmith
+    Guild alchemists_guild s  15 
+    Guild alchemists_guild o  2 
+;------------------------------------------
+Trigger 0263_Build_Cannon_Factory
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = cannon_maker
+    Guild alchemists_guild s  20 
+    Guild alchemists_guild o  3 
+;------------------------------------------
+Trigger 0264_Build_Artillery_Factory
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = cannon_foundry
+    Guild alchemists_guild s  25 
+    Guild alchemists_guild o  4 
+;------------------------------------------
+Trigger 0265_Build_Royal_Arsenal
+    WhenToTest BuildingCompleted
+    Condition SettlementBuildingFinished = royal_arsenal
+    Guild alchemists_guild s  30 
+    Guild alchemists_guild o  5 
+;------------------------------------------
+Trigger 0270_Mission_Success_Merchants_Min
+    WhenToTest LeaderMissionSuccess
+    Condition PaybackID guild_merchants_min
+    Guild merchants_guild a  10 
+;------------------------------------------
+Trigger 0271_Mission_Success_Merchants_Mod
+    WhenToTest LeaderMissionSuccess
+    Condition PaybackID guild_merchants_mod
+    Guild merchants_guild a  20 
+;------------------------------------------
+Trigger 0272_Mission_Success_Explorers_Major
+    WhenToTest LeaderMissionSuccess
+    Condition PaybackID guild_explorers_major
+    Guild explorers_guild a  30 
+;------------------------------------------
+Trigger 0273_Mission_Success_Assassins_Payback
+    WhenToTest LeaderMissionSuccess
+    Condition PaybackID guild_assassin_payback
+    Guild assassins_guild a  10 
+;------------------------------------------
+Trigger 0274_Mission_Fail_Merchants_Min
+    WhenToTest LeaderMissionFailed
+    Condition PaybackID guild_merchants_min
+    Guild merchants_guild a -10 
+;------------------------------------------
+Trigger 0275_Mission_Fail_Merchants_Mod
+    WhenToTest LeaderMissionFailed
+    Condition PaybackID guild_merchants_mod
+    Guild merchants_guild a -20 
+;------------------------------------------
+Trigger 0276_Mission_Fail_Explorers_Major
+    WhenToTest LeaderMissionFailed
+    Condition PaybackID guild_explorers_major
+    Guild explorers_guild a -30 
+;------------------------------------------
+Trigger 0277_Mission_Fail_Assassins_Payback
+    WhenToTest LeaderMissionFailed
+    Condition PaybackID guild_assassin_payback
+    Guild assassins_guild a -10 
+;------------------------------------------
+Trigger 0278_Mission_Success_Thiefs_Min
+    WhenToTest LeaderMissionSuccess
+    Condition PaybackID guild_thiefs_min
+    Guild thiefs_guild a  10 
+;------------------------------------------
+Trigger 0279_Mission_Fail_Thiefs_Min
+    WhenToTest LeaderMissionFailed
+    Condition PaybackID guild_thiefs_min
+    Guild thiefs_guild a -10 
+;------------------------------------------
+Trigger 0280_Mission_Success_Theologians_Min
+    WhenToTest LeaderMissionSuccess
+    Condition PaybackID guild_theologians_min
+    Guild theologians_guild a  10 
+;------------------------------------------
+Trigger 0281_Mission_Fail_Theologians_Min
+    WhenToTest LeaderMissionFailed
+    Condition PaybackID guild_theologians_min
+    Guild theologians_guild a -10 

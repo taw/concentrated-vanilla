@@ -1474,9 +1474,9 @@ engine_push_point	dummy	 2.5		 0.0
 engine_push_point	dummy	 2.5		-2.3
 engine_push_point	dummy	 2.5		-4.6
 
-engine_health		150
+engine_health		75
 
-attack_stat         10, 4, no, 0, 0, melee, melee_simple, blunt
+attack_stat         2, 2, no, 0, 0, melee, melee_simple, blunt
 attack_stat_attr    no
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

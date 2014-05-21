@@ -40,9 +40,8 @@ marian_reforms_disabled
 rebelling_characters_active
 gladiator_uprising_disabled
 night_battles_enabled
-show_date_as_turns
-brigand_spawn_value 200
-pirate_spawn_value 280
+brigand_spawn_value 20
+pirate_spawn_value 28
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; >>>> start of resources section <<<<
@@ -304,7 +303,7 @@ resource	grain,	94,	128
 faction	england, balanced smith
 ai_label		 catholic 
 denari	10000
-denari_kings_purse	5000
+denari_kings_purse	2500
 settlement
 {
 	level large_town
@@ -410,13 +409,10 @@ unit		cog				exp 0 armour 0 weapon_lvl 0
 character	Richard, spy, male, age 20, x 107, y 160 
 traits GoodSpy 2 
 
-character	Samuel Blacke, merchant, male, age 25, x 110, y 134 
-traits GoodMerchant 1
-
 character	Laurence Bidell, diplomat, male, age 29, x 107, y 130 
 traits GoodDiplomat 2
 
-character	Aston, priest, male, age 35, x 113, y 151 
+character	Aston, priest, male, age 50, x 113, y 151 
 traits NaturalPriestSkill 2 , StrongFaith 2 , PriestLevel 1 
 
 character	Robert, named character, male, age 24, x 104, y 134 
@@ -455,7 +451,7 @@ relative 	William, 	Matilda,		Rufus,	Cecilia,	Robert,	Henry,	end
 faction	france, balanced smith
 ai_label		 catholic 
 denari	8000
-denari_kings_purse	3000
+denari_kings_purse	1500
 settlement
 {
 	level large_town
@@ -596,7 +592,7 @@ unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Etienne Tristram, priest, male, age 37, x 100, y 114 
+character	Etienne Tristram, priest, male, age 52, x 100, y 114 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
 
 character	Raoulet Poitevin, named character, male, age 40, x 119, y 133 
@@ -657,7 +653,7 @@ relative 	Philip, 	Bertrada de Montfort,		Louis,	Constance,	Michiel,	Henry,	end
 faction	hre, balanced smith
 ai_label		 catholic 
 denari	6000
-denari_kings_purse	3000
+denari_kings_purse	1500
 settlement
 {
 	level large_town
@@ -856,7 +852,7 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 character	Rainald Erlach, spy, male, age 20, x 156, y 138 
 traits GoodSpy 1 
 
-character	Peter Scherer, priest, male, age 45, x 142, y 135 
+character	Peter Scherer, priest, male, age 60, x 142, y 135 
 traits NaturalPriestSkill 1 , StrongFaith 3 , PriestLevel 1 
 
 character	Agnes, princess, female, age 21, x 145, y 127 
@@ -888,7 +884,7 @@ relative 	Heinrich, 	Bertrada,		Henry,	Agnes,	Leopold,	end
 faction	spain, balanced smith
 ai_label		 catholic 
 denari	9000
-denari_kings_purse	5000
+denari_kings_purse	2500
 settlement
 {
 	level large_town
@@ -954,7 +950,7 @@ unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Domingo Franco, priest, male, age 33, x 77, y 93 
+character	Domingo Franco, priest, male, age 48, x 77, y 93 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
 
 character	Urraca, princess, female, age 20, x 79, y 86 
@@ -992,7 +988,7 @@ relative 	Alfonso el Valiente, 	Constance,		Rodrigo,	Urraca,	Teresa,	end
 faction	venice, balanced smith
 ai_label		 catholic 
 denari	8000
-denari_kings_purse	5000
+denari_kings_purse	2500
 settlement
 {
 	level city
@@ -1123,10 +1119,7 @@ traits GoodDiplomat 3
 character	Victor Calza, spy, male, age 29, x 158, y 109 
 traits GoodSpy 2 
 
-character	Tusco Delogu, merchant, male, age 30, x 148, y 111 
-traits GoodMerchant 2 
-
-character	Oliverio Gusti, priest, male, age 34, x 140, y 99 
+character	Oliverio Gusti, priest, male, age 49, x 140, y 99 
 traits NaturalPriestSkill 1 , StrongFaith 3 , PriestLevel 1 
 
 character	Paolo Nesti, admiral, male, age 29, x 148, y 107 
@@ -1170,7 +1163,7 @@ relative 	Alessandro Selvo, 	Alegreza,		Barbus Selvo,	end
 faction	sicily, balanced smith
 ai_label		 catholic 
 denari	9000
-denari_kings_purse	3000
+denari_kings_purse	1500
 settlement castle
 {
 	level large_town
@@ -1273,7 +1266,7 @@ unit		galley				exp 0 armour 0 weapon_lvl 0
 character	Papero Archibugi, spy, male, age 23, x 156, y 86 
 traits GoodSpy 1 
 
-character	Niccolo Amocacci, priest, male, age 28, x 162, y 72 
+character	Niccolo Amocacci, priest, male, age 43, x 162, y 72 
 traits NaturalPriestSkill 2 , StrongFaith 2 , PriestLevel 1 
 
 character	Alberto, named character, male, age 25, x 147, y 68 
@@ -1298,7 +1291,7 @@ relative 	Roger, 	Judith,		Simon,	Matilda,	Adelisa,	end
 faction	milan, balanced smith
 ai_label		 catholic 
 denari	6000
-denari_kings_purse	4000
+denari_kings_purse	2000
 settlement
 {
 	level city
@@ -1393,10 +1386,7 @@ traits GoodDiplomat 2
 character	Chimenti Bossi, spy, male, age 20, x 131, y 105 
 traits GoodSpy 3 
 
-character	Lerino Matarrese, merchant, male, age 30, x 138, y 107 
-traits GoodMerchant 2 
-
-character	Evio Perego, priest, male, age 38, x 137, y 111 
+character	Evio Perego, priest, male, age 53, x 137, y 111 
 traits NaturalPriestSkill 2 , StrongFaith 2 , PriestLevel 1 
 
 character	Adelmo Galli, admiral, male, age 22, x 133, y 102 
@@ -1427,7 +1417,7 @@ relative 	Cristoforo Rossi, 	Bella,		Simona,	Agostino Rossi,	end
 faction	scotland, balanced smith
 ai_label		 catholic 
 denari 8000
-denari_kings_purse	3000
+denari_kings_purse	1500
 settlement
 {
 	level large_town
@@ -1505,7 +1495,7 @@ unit		cog				exp 0 armour 0 weapon_lvl 0
 character	Patrick Macdougall, diplomat, male, age 20, x 106, y 169 
 traits GoodDiplomat 3 
 
-character	Brian Maknab, priest, male, age 51, x 97, y 171 
+character	Brian Maknab, priest, male, age 66, x 97, y 171 
 traits NaturalPriestSkill 2 , StrongFaith 2 , PriestLevel 1 
 
 character_record		Margaret, 	female, age 40, alive, never_a_leader
@@ -1518,7 +1508,7 @@ relative 	Malcolm Canmore, 	Margaret,		Edward Canmore,	Edmund Canmore,	Alexander
 faction	byzantium, balanced smith
 ai_label	default 
 denari	6000
-denari_kings_purse	4000
+denari_kings_purse	2000
 settlement
 {
 	level large_city
@@ -1692,9 +1682,6 @@ army
 unit		dromon				exp 1 armour 0 weapon_lvl 0
 unit		dromon				exp 1 armour 0 weapon_lvl 0
 
-character	Demetrios Calaphates, merchant, male, age 30, x 219, y 91 
-traits GoodMerchant 3 
-
 character	Kyriakos Loukites, spy, male, age 30, x 188, y 85 
 traits GoodSpy 2 
 ancillaries catamite
@@ -1704,7 +1691,7 @@ army
 unit		dromon				exp 1 armour 0 weapon_lvl 0
 unit		dromon				exp 1 armour 0 weapon_lvl 0
 
-character	Gavriel Branas, priest, male, age 44, x 216, y 85 
+character	Gavriel Branas, priest, male, age 59, x 216, y 85 
 traits NaturalPriestSkill 2 , GoodDenouncer 1 , PriestLevel 1 
 
 character	Anna, princess, female, age 20, x 210, y 92 
@@ -1721,7 +1708,7 @@ relative 	Alexius Comnenus, 	Irene,		John Comnenus,	Anna,	Andronicus Comnenus,	I
 faction	russia, balanced smith
 ai_label	default 
 denari	11000
-denari_kings_purse	5000
+denari_kings_purse	2500
 settlement
 {
 	level city
@@ -1786,7 +1773,7 @@ unit		EE Archer Militia				exp 0 armour 0 weapon_lvl 0
 character	Chernek Grechinov, spy, male, age 20, x 195, y 179 
 traits GoodSpy 1 
 
-character	Radoslav, priest, male, age 29, x 199, y 175 
+character	Radoslav, priest, male, age 44, x 199, y 175 
 traits NaturalPriestSkill 2 , GoodDenouncer 1 , PriestLevel 1 
 
 character	Antonina, princess, female, age 20, x 212, y 174 
@@ -1805,7 +1792,7 @@ relative 	Vladimir, 	Gravriia,		Miroslav,	Ivan,	end
 faction	moors, balanced smith
 ai_label	default 
 denari	7000
-denari_kings_purse	3000
+denari_kings_purse	1500
 settlement
 {
 	level city
@@ -1941,7 +1928,7 @@ traits GoodDiplomat 3
 character	Hassan Saidi-Sief, spy, male, age 20, x 70, y 60 
 traits GoodSpy 2 
 
-character	Fakhir, priest, male, age 40, x 65, y 76 
+character	Fakhir, priest, male, age 55, x 65, y 76 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 
 
 
@@ -1961,7 +1948,7 @@ relative 	Qasim, 	Saheena,		Zizi,	end
 faction	turks, balanced smith
 ai_label	default 
 denari	8000
-denari_kings_purse	4000
+denari_kings_purse	2000
 settlement
 {
 	level large_town
@@ -2094,7 +2081,7 @@ traits GoodSpy 4
 character	Kilij Murat, diplomat, male, age 20, x 242, y 96 
 traits GoodDiplomat 4 
 
-character	Baraka, priest, male, age 30, x 232, y 78 
+character	Baraka, priest, male, age 45, x 232, y 78 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 
 
 
@@ -2108,7 +2095,7 @@ relative 	Jalal ad-Dawlah, 	Islah,		Mustafa ad-Dawlah,	Tutush ad-Dawlah,	Nefise 
 faction	egypt, balanced smith
 ai_label	default 
 denari	8000
-denari_kings_purse	3000
+denari_kings_purse	1500
 settlement
 {
 	level city
@@ -2230,7 +2217,7 @@ unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		ME Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Mahfouz, priest, male, age 34, x 239, y 39 
+character	Mahfouz, priest, male, age 49, x 239, y 39 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 
 
 
@@ -2248,7 +2235,7 @@ relative 	Mubarak, 	Zaynab,		Moussa,	end
 faction	denmark, balanced smith
 ai_label		 catholic 
 denari	10000
-denari_kings_purse	4000
+denari_kings_purse	2000
 settlement
 {
 	level large_town
@@ -2320,11 +2307,8 @@ traits sailor 1
 army
 unit		longboat				exp 0 armour 0 weapon_lvl 0
 
-character	Halstan, priest, male, age 40, x 136, y 165 
+character	Halstan, priest, male, age 55, x 136, y 165 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
-
-character	Toke, merchant, male, age 30, x 136, y 163 
-traits NaturalMerchantSkill 2 , GoodMerchant 1 
 
 character	Ingrid, princess, female, age 18, x 138, y 160 
 traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 
@@ -2339,7 +2323,7 @@ relative 	Knud, 	Adela,		Charles,	Ingrid,	Cecile,	end
 faction	portugal, balanced smith
 ai_label		 catholic 
 denari	9000
-denari_kings_purse	4000
+denari_kings_purse	2000
 settlement
 {
 	level large_town
@@ -2431,9 +2415,6 @@ unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
 character	Lopo Periz, spy, male, age 20, x 62, y 82 
 traits GoodSpy 4 
 
-character	Verisimo Ramiric, merchant, male, age 25, x 63, y 89 
-traits GoodMerchant 3 
-
 character	Johao, named character, male, age 26, x 90, y 101 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
 army
@@ -2452,7 +2433,7 @@ character	Meen, admiral, male, age 34, x 88, y 109
 army
 unit		cog				exp 0 armour 0 weapon_lvl 0
 
-character	Manoel, priest, male, age 40, x 57, y 86 
+character	Manoel, priest, male, age 55, x 57, y 86 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
 
 character	Maria, princess, female, age 18, x 58, y 83 
@@ -2467,7 +2448,7 @@ relative 	Henrique, 	Teresa,		Affonso,	Maria,	end
 faction	poland, balanced smith
 ai_label		 catholic 
 denari	12000
-denari_kings_purse	5000
+denari_kings_purse	2500
 settlement
 {
 	level large_town
@@ -2552,7 +2533,7 @@ unit		EE Peasant Archers				exp 0 armour 0 weapon_lvl 0
 character	Konrad Psotka, spy, male, age 20, x 168, y 145 
 traits GoodSpy 3 
 
-character	Godzimir, priest, male, age 46, x 173, y 138 
+character	Godzimir, priest, male, age 61, x 173, y 138 
 traits NaturalPriestSkill 3 , GoodDenouncer 1 , PriestLevel 1 
 
 character	Agnes, princess, female, age 18, x 173, y 135 
@@ -2567,7 +2548,7 @@ relative 	Wladyslaw Herman, 	Judith,		Zbigniew Herman,	Boleslaw Herman,	Agnes,	e
 faction	hungary, balanced smith
 ai_label		 catholic 
 denari	11000
-denari_kings_purse	5000
+denari_kings_purse	2500
 settlement
 {
 	level large_town
@@ -2653,7 +2634,7 @@ unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Bosnian Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Ulaszlo, priest, male, age 34, x 192, y 115 
+character	Ulaszlo, priest, male, age 49, x 192, y 115 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
 
 character	Kalman, named character, male, heir, age 20, x 196, y 114 
@@ -2677,7 +2658,7 @@ relative 	Laszlo, 	Adelaide,		Kalman,	Pioska,	end
 faction	papal_states, balanced smith
 ai_label	papal_faction 
 denari	5000
-denari_kings_purse	3000
+denari_kings_purse	1500
 settlement
 {
 	level city
@@ -2705,7 +2686,7 @@ settlement
 	}
 }
 
-character	Gregory, named character, male, leader, age 40, x 145, y 91 
+character	Gregory, named character, male, leader, age 65, x 145, y 91 
 traits IAmPope 1 , GoodCommander 1 , PoliticsSkill 2 , GoodAdministrator 2 , Austere 1 , ReligionStarter 1 
 ancillaries doctor
 army
@@ -2737,7 +2718,7 @@ unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Italian Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Italian Spear Militia				exp 1 armour 0 weapon_lvl 0
 
-character	Froderigus, priest, male, age 28, x 147, y 90 
+character	Froderigus, priest, male, age 43, x 147, y 90 
 traits NaturalPriestSkill 2 , StrongFaith 2 , PriestLevel 1 
 
 
@@ -2746,7 +2727,7 @@ faction	aztecs, balanced smith
 ai_label	default 
 undiscovered
 denari	50000
-denari_kings_purse	20000
+denari_kings_purse	10000
 settlement
 {
 	level city
@@ -2967,20 +2948,20 @@ faction	mongols, balanced smith
 ai_label	default 
 dead_until_resurrected
 denari	10000
-denari_kings_purse	6000
+denari_kings_purse	3000
 
 
 faction	timurids, balanced smith
 ai_label	default 
 dead_until_resurrected
 denari	10000
-denari_kings_purse	6000
+denari_kings_purse	3000
 
 
 faction	slave, balanced smith
 ai_label	slave_faction 
 denari	5000
-denari_kings_purse	1000
+denari_kings_purse	500
 settlement
 {
 	level town
@@ -3848,6 +3829,18 @@ unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 1 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction aztecs, Cocozca, named character, male, age 22, x 19, y 175 
 army
@@ -3857,6 +3850,16 @@ unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction aztecs, Tezozomoc, named character, male, age 22, x 23, y 159 
 army
@@ -3864,6 +3867,14 @@ unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
 unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Archers				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
+unit		Native Warriors				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction moors, Kicham, general, male, age 20, x 31, y 20 
 army
@@ -3873,6 +3884,16 @@ unit		Sudanese Javelinmen				exp 1 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 1 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction egypt, Amir Yahiya, general, male, age 23, x 228, y 2 
 army
@@ -3881,6 +3902,15 @@ unit		Nubian Archers				exp 0 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 1 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction england, Harold Dowell, general, male, age 24, x 90, y 162 
 army
@@ -3892,6 +3922,18 @@ unit		Galloglaich				exp 0 armour 0 weapon_lvl 0
 unit		Galloglaich				exp 0 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction moors, Rizah, general, male, age 29, x 68, y 10 
 army
@@ -3902,18 +3944,43 @@ unit		Tuareg Camel Spearmens				exp 1 armour 0 weapon_lvl 0
 unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 unit		Sudanese Tribesmen				exp 1 armour 0 weapon_lvl 0
 unit		Nubian Spearmen				exp 1 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hre, Ehrhart von Luxemburg, general, male, age 27, x 155, y 155 
 army
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hre, Johannes von Essen, general, male, age 30, x 156, y 155 
 army
 unit		Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction poland, Zygmunt Majtyka, general, male, age 28, x 189, y 158 
 army
@@ -3926,18 +3993,43 @@ unit		Woodsmen				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction byzantium, Gavriel, general, male, age 26, x 233, y 117 
 army
 unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
 unit		SE Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		S Archer Militia				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction sicily, Ottobono, general, male, age 40, x 132, y 76 
 army
 unit		Sicilian Muslim Archers				exp 1 armour 0 weapon_lvl 0
 unit		S Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Southern Peasants				exp 0 armour 0 weapon_lvl 0
+unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Sicilian Muslim Archers				exp 0 armour 0 weapon_lvl 0
+unit		Sicilian Muslim Archers				exp 0 armour 0 weapon_lvl 0
+unit		Sicilian Muslim Archers				exp 0 armour 0 weapon_lvl 0
+unit		Sicilian Muslim Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction byzantium, Rossos, general, male, age 20, x 209, y 73 
 army
@@ -3946,18 +4038,41 @@ unit		SE Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		SE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		S Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		S Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction byzantium, Pelekanos, general, male, age 28, x 175, y 87 
 army
 unit		S Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		SE Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		SE Town Militia				exp 1 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction byzantium, Romanus Angelus, general, male, age 28, x 214, y 65 
 army
 unit		S Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		SE Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		SE Town Militia				exp 1 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Khushqadam, general, male, age 21, x 246, y 76 
 army
@@ -3967,6 +4082,16 @@ unit		Armenian Archers				exp 1 armour 0 weapon_lvl 0
 unit		Armenian Archers				exp 0 armour 0 weapon_lvl 0
 unit		SE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		SE Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction byzantium, Trifyllios, general, male, age 25, x 201, y 109 
 army
@@ -3976,6 +4101,16 @@ unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
 unit		Bulgarian Brigands				exp 1 armour 0 weapon_lvl 0
 unit		SE Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Magyar Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hungary, Ugron, general, male, age 28, x 194, y 99 
 army
@@ -3986,6 +4121,17 @@ unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
 unit		Bulgarian Brigands				exp 1 armour 0 weapon_lvl 0
 unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hungary, Markus Sohnker, general, male, age 24, x 160, y 108 
 army
@@ -3993,6 +4139,14 @@ unit		S Archer Militia				exp 1 armour 0 weapon_lvl 0
 unit		S Archer Militia				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands				exp 0 armour 0 weapon_lvl 0
+unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Croat Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction moors, Omar Al Sahaf, general, male, age 35, x 136, y 63 
 army
@@ -4000,6 +4154,14 @@ unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Nubian Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Suleymish Ilahi, general, male, age 34, x 251, y 73 
 army
@@ -4009,6 +4171,16 @@ unit		ME Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Zavid Drozdov, general, male, age 29, x 258, y 134 
 army
@@ -4018,6 +4190,16 @@ unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 unit		ME Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		ME Peasant Archers				exp 1 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction poland, Wartislaw, general, male, age 28, x 163, y 143 
 army
@@ -4025,6 +4207,14 @@ unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Grechin, general, male, age 27, x 217, y 139 
 army
@@ -4036,6 +4226,18 @@ unit		EE Archer Militia				exp 1 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hre, Wilhelm von Bohmen, general, male, age 23, x 157, y 136 
 army
@@ -4045,6 +4247,16 @@ unit		Armored Sergeants				exp 1 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction france, Guion de Molay, general, male, age 31, x 121, y 122 
 army
@@ -4052,6 +4264,14 @@ unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction france, Jehanin Maquereau, general, male, age 31, x 125, y 131 
 army
@@ -4059,6 +4279,14 @@ unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction byzantium, Modestos Branas, general, male, age 30, x 258, y 104 
 army
@@ -4066,6 +4294,14 @@ unit		Skythikon				exp 0 armour 0 weapon_lvl 0
 unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 unit		SE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		SE Spear Militia				exp 1 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Byzantine Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
+unit		Trebizond Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hre, Ehrhart von Madgeburg, general, male, age 29, x 148, y 147 
 army
@@ -4073,6 +4309,14 @@ unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction egypt, Mahfouz Labib, general, male, age 24, x 150, y 40 
 army
@@ -4080,6 +4324,14 @@ unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction poland, Przebor of Volhynia, general, male, age 28, x 205, y 125 
 army
@@ -4087,12 +4339,27 @@ unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
 unit		Slav Mercenaries				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasants				exp 0 armour 0 weapon_lvl 0
 unit		EE Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Iosif of Smolensk, general, male, age 26, x 212, y 162 
 army
 unit		EE Archer Militia				exp 1 armour 0 weapon_lvl 0
 unit		EE Archer Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Grigorii Sidorov, general, male, age 31, x 235, y 169 
 army
@@ -4100,6 +4367,14 @@ unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 unit		EE Archer Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Archer Militia				exp 1 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Yuri Nezhkov, general, male, age 33, x 244, y 158 
 army
@@ -4109,6 +4384,16 @@ unit		EE Archer Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Archer Militia				exp 1 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction russia, Drozd Buiakov, general, male, age 29, x 281, y 163 
 army
@@ -4117,6 +4402,15 @@ unit		EE Archer Militia				exp 1 armour 0 weapon_lvl 0
 unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Kazaks				exp 0 armour 0 weapon_lvl 0
 unit		Kazaks				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		Druzhina				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Kuchuk Ilker, general, male, age 23, x 278, y 109 
 army
@@ -4124,6 +4418,14 @@ unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Yalbay Arikan, general, male, age 24, x 291, y 70 
 army
@@ -4133,6 +4435,16 @@ unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Town Militia				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction egypt, Medhat Hossman, general, male, age 25, x 268, y 13 
 army
@@ -4142,6 +4454,16 @@ unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia				exp 1 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction egypt, Ghali Saled, general, male, age 26, x 254, y 51 
 army
@@ -4155,12 +4477,30 @@ unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Bedouin Camel Riders				exp 1 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Sudanese Tribesmen				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
+unit		Tuareg Camel Spearmens				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Bayezid al Ashqar, general, male, age 28, x 251, y 57 
 army
 unit		ME Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Sundak Ciller, general, male, age 20, x 259, y 64 
@@ -4174,6 +4514,17 @@ unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Camel Riders				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Orhan Bulent, general, male, age 34, x 257, y 73 
 army
@@ -4183,6 +4534,17 @@ unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction turks, Qalawun al Zahiri, general, male, age 23, x 265, y 80 
@@ -4197,6 +4559,16 @@ unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction milan, Giulio Perego, general, male, age 30, x 131, y 92 
 army
@@ -4204,6 +4576,14 @@ unit		Sergeant Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Peasants				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
+unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hre, Friedrich Ruesdorf, general, male, age 26, x 129, y 119 
 army
@@ -4215,6 +4595,18 @@ unit		Crossbow Militia				exp 1 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction denmark, Jon Loftsson, general, male, age 28, x 142, y 187 
 army
@@ -4225,6 +4617,17 @@ unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Dismounted Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Dismounted Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Dismounted Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction denmark, Sighvat Bolverksson, general, male, age 25, x 167, y 183 
 army
@@ -4232,6 +4635,14 @@ unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Dismounted Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Dismounted Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction denmark, Inge Skovgaard, general, male, age 29, x 188, y 186 
 army
@@ -4239,6 +4650,14 @@ unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Dismounted Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Dismounted Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Huscarls				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction poland, Leszek Herman, general, male, age 27, x 181, y 174 
 army
@@ -4246,6 +4665,14 @@ unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasants				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction poland, Sobislaw Wallach, general, male, age 25, x 169, y 151 
 army
@@ -4253,6 +4680,14 @@ unit		EE Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasants				exp 0 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
+unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction spain, El_Cid, named character, male, age 40, x 92, y 83 
 traits GoodCommander 4 , GoodAttacker 3 , PublicFaith 3 , BattleChivalry 4 , StrategyChivalry 3 , ReligiousActivity 2 , ReligionStarter 1 
@@ -4272,6 +4707,14 @@ unit		Town Militia				exp 1 armour 0 weapon_lvl 0
 unit		Crossbow Militia				exp 1 armour 0 weapon_lvl 0
 unit		Javelinmen				exp 1 armour 0 weapon_lvl 0
 unit		Javelinmen				exp 1 armour 0 weapon_lvl 0
+unit		Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Javelinmen				exp 0 armour 0 weapon_lvl 0
+unit		Jinetes				exp 0 armour 0 weapon_lvl 0
+unit		Jinetes				exp 0 armour 0 weapon_lvl 0
+unit		Jinetes				exp 0 armour 0 weapon_lvl 0
+unit		Jinetes				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction france, Lanfrank Mauclerc, general, male, age 34, x 94, y 130 
 army
@@ -4280,6 +4723,15 @@ unit		Crossbowmen				exp 1 armour 0 weapon_lvl 0
 unit		Crossbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction france, Remon de Champagne, general, male, age 28, x 115, y 143 
 army
@@ -4291,6 +4743,18 @@ unit		Armored Sergeants				exp 1 armour 0 weapon_lvl 0
 unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 2 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction france, Junien Tanlay, general, male, age 24, x 120, y 144 
 army
@@ -4301,6 +4765,17 @@ unit		Crossbowmen				exp 1 armour 0 weapon_lvl 0
 unit		Crossbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Armored Sergeants				exp 1 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction scotland, Stuart Maknauchtan, general, male, age 32, x 99, y 181 
 army
@@ -4310,6 +4785,16 @@ unit		Highlanders				exp 1 armour 0 weapon_lvl 0
 unit		Highland Rabble				exp 0 armour 0 weapon_lvl 0
 unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
 unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
+unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
+unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
+unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
+unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
+unit		Highland Archers				exp 0 armour 0 weapon_lvl 0
+unit		Highlanders				exp 0 armour 0 weapon_lvl 0
+unit		Highlanders				exp 0 armour 0 weapon_lvl 0
+unit		Highlanders				exp 0 armour 0 weapon_lvl 0
+unit		Highlanders				exp 0 armour 0 weapon_lvl 0
+unit		Highlanders				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction england, Aelfgar Hewlinge, general, male, age 29, x 94, y 157 
 army
@@ -4319,6 +4804,16 @@ unit		Welsh Longbowmen				exp 1 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 1 armour 0 weapon_lvl 0
 unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Peasants				exp 1 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction england, Arthur of York, general, male, age 31, x 106, y 164 
 army
@@ -4327,12 +4822,29 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Archer Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasants				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction venice, Blasio Tasso, general, male, age 28, x 142, y 100 
 army
 unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
 unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
 unit		Italian Spear Militia				exp 1 armour 0 weapon_lvl 0
+unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
+unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Italian Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Crossbowmen				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction hre, Sifridus, general, male, age 29, x 141, y 154 
@@ -4341,6 +4853,14 @@ unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
+unit		Slav Mercenaries				exp 0 armour 0 weapon_lvl 0
 
 character	sub_faction france, Perrin Tanlay, general, male, age 26, x 97, y 114 
 army
@@ -4348,6 +4868,14 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Crossbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Crossbowmen				exp 1 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Flemish Pikemen				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 
 
 

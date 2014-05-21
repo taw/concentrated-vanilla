@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<root>
+   <recruitment>
+      <recruitment_slots uint="1"/>
+      <retraining_slots uint="1"/>
+      <deplenish_pools_with_caps bool="false"/>
+      <clear_pools_with_caps bool="false"/>
+      <add_initial_with_caps bool="true"/>
+      <add_disband_no_caps bool="true"/>
+      <force_clamp_to_max bool="false"/>
+      <deplenish_multiplier float="0.9"/>
+      <deplenish_offset float="-0.2"/>
+      <percentage_pool_reduction_lost uint="10"/>
+      <percentage_pool_reduction_occupy uint="20"/>
+      <percentage_pool_reduction_sack uint="45"/>
+      <percentage_pool_reduction_exterminate uint="100"/>
+      <max_agents_per_turn uint="1"/>
+   </recruitment>
+   <religion>
+      <max_witches_per_region uint="1"/>
+      <max_witches uint="20"/>
+      <max_heretics_per_region uint="1"/>
+      <max_heretics uint="80"/>
+      <max_heretics_conversion_modifier float="1.0"/>
+      <max_inquisitors_per_region uint="1"/>
+      <max_inquisitors uint="40"/>
+      <heretic_conversion_rate_modifier float="0.0075"/>
+      <heretic_conversion_rate_offset float="0.025"/>
+      <witch_conversion_rate_modifier float="0.0"/>
+      <witch_conversion_rate_offset float="0.02"/>
+      <inquisitor_conversion_rate_modifier float="0.010"/>
+      <inquisitor_conversion_rate_offset float="0.04"/>
+      <priest_conversion_rate_modifier float="0.004"/>
+      <priest_conversion_rate_offset float="0.015"/>
+      <witch_creation_modifier float="1.0"/>
+      <heretic_creation_modifier float="0.4"/>
+      <inquisitor_creation_modifier float="0.3"/>
+      <min_cardinal_piety uint="5"/>
+      <convert_to_heretic_base_modifier float="10.0"/>
+      <convert_to_heretic_unorthodox_modifier float="0.7"/>
+      <inquisitor_turn_start uint="20"/>
+      <inquisitor_target_crusades bool="false"/>
+   </religion>
+   <bribery>
+      <bribe_to_family_tree bool="false"/>
+      <base_character_chance float="0.4"/>
+      <religion_modifier float="0.66"/>
+      <combined_attribute_modifier float="0.2"/>
+      <briber_attribute_divisor float="3.0"/>
+      <bribee_attribute_divisor float="3.0"/>
+      <army_size_modifier float="0.035"/>
+      <base_settlement_chance float="0.8"/>
+      <settlement_loyalty_modifier float="0.01"/>
+      <settlement_population_modifier float="0.0001"/>
+      <faction_standing_divisor float="10.0"/>
+      <max_bribe_chance float="100.0"/>
+      <min_bribe_chance float="1.0"/>
+      <bribe_chance_modifier float="1.0"/>
+   </bribery>
+   <family_tree>
+      <max_age uint="90"/>
+      <max_age_for_marriage_for_male uint="75"/>
+      <max_age_for_marriage_for_female uint="40"/>
+      <max_age_before_death uint="105"/>
+      <max_age_of_child uint="10"/>
+      <old_age uint="60"/>
+      <age_of_manhood uint="16"/>
+      <daughters_age_of_consent uint="16"/>
+      <daughters_retirement_age uint="40"/>
+      <age_difference_min int="-10"/>
+      <age_difference_max int="30"/>
+      <parent_to_child_min_age_diff uint="12"/>
+      <min_adoption_age uint="20"/>
+      <max_adoption_age uint="30"/>
+      <max_age_for_conception uint="50"/>
+      <age_of_manhood_close uint="14"/>
+      <max_number_of_children uint="4"/>
+   </family_tree>
+   <diplomacy>
+      <max_diplomacy_items uint="8"/>
+      <enemies_reject_gifts bool="false"/>
+      <use_balance_owed bool="false"/>
+   </diplomacy>
+   <missions>
+      <null_mission_score float="25.0"/>
+   </missions>
+   <display>
+      <character_selection_radius float="0.3"/>
+      <character_selection_height float="1.3"/>
+      <character_selection_height_crouching float="1.0"/>
+      <diplomacy_scroll_height uint="768"/>
+      <recruitment_sort_simple bool="false"/>
+      <faction_standing_min float="-1.0"/>
+      <faction_standing_max float="1.0"/>
+      <use_orig_rebel_faction_models bool="true"/>
+      <keep_original_heretic_portraits bool=false/>
+      <alt_sett_order_colours bool=false/>
+   </display>
+   <ransom>
+      <captor_release_chance_base float="50.0"/>
+      <captor_release_chance_chiv_mod float="12.0"/>
+      <captor_ransom_chance_base float="60.0"/>
+      <captor_ransom_chance_chiv_mod float="-5.0"/>
+      <captor_ransom_chance_tm_mod float="10.0"/>
+      <captive_ransom_chance_base float="40.0"/>
+      <captive_ransom_chance_chiv_mod float="6.67"/>
+      <captive_ransom_chance_tm_mod float="-10.0"/>
+      <captive_ransom_chance_msm_mod float="10.0"/>
+      <captive_ransom_for_slave bool="false"/>
+   </ransom>
+   <autoresolve>
+      <min_capture_percent float="5.0"/>
+      <max_capture_percent float="30.0"/>
+      <lopsided_thresh float="1.5"/>
+      <lopsided_hn_mod float="3.0"/>
+      <separation_missile_add uint="1"/>
+      <naval_sink_modifier float="1.5"/>
+      <naval_sink_offset float="15.0"/>
+      <naval_sink_max float="100.0"/>
+   </autoresolve>
+   <settlement>
+      <sack_money_modifier float="0.4"/>
+      <exterminate_money_modifier float="0.5"/>
+      <chiv_spf_modifier float="1.0"/>
+      <chiv_sof_modifier float="1.0"/>
+      <dread_sof_modifier float="-1.0"/>
+      <piety_cor_sif_modifier float="1.0"/>
+      <piety_admin_sif_modifier float="1.0"/>
+      <port_to_port_mp_min float="100.0"/>
+      <heresy_unrest_modifier float="30.0"/>
+      <religion_unrest_modifier float="20.0"/>
+      <siege_gear_required_for_city_level string="huge_city"/>
+      <siege_gear_required_for_castle_level string="moot_and_bailey"/>
+      <no_towers_only_for_city_level string="huge_city"/>
+      <no_towers_only_for_castle_level string="moot_and_bailey"/>
+      <min_turn_keep_rebel_garrison int="999"/>
+   </settlement>
+   <revolt>
+      <end_turn_modifier float="2"/>
+      <excommunicated_modifier float="15"/>
+      <new_leader_modifier float="10"/>
+      <max_effective_loyalty float="7.0"/>
+      <rebel_region_modifier float="2.0"/>
+      <shadow_region_modifier float="2.0"/>
+      <rebel_border_modifier float="1.1"/>
+      <shadow_border_modifier float="1.1"/>
+      <num_units_modifier float="1.05"/>
+      <captain_modifier float="0.4"/>
+      <min_revolt_chance float="0.0"/>
+      <max_revolt_chance float="80.0"/>
+      <ai_revolt_modifier float="0.25"/>
+      <revolt_additional_armies bool="false"/>
+      <revolt_crusading_armies bool="false"/>
+   </revolt>
+   <characters>
+      <agents_can_hide bool="false"/>
+   </characters>
+   <hordes>
+      <end_target_faction_bonus int="-300"/>
+      <start_target_faction_bonus int="-500"/>
+      <farming_level_bonus int="50"/>
+      <shared_target_bonus int="-1000"/>
+      <disbanding_horde_bonus int="-500"/>
+      <starting_region_bonus int="-700"/>
+      <horde_target_resource_bonus int="1000"/>
+   </hordes>
+   <merchants>
+      <base_income_modifier float="0.7"/>
+      <trade_bonus_offset float="10.0"/>
+   </merchants>
+   <agents>
+      <denounce_inquisitor_base_chance float="35.0"/>
+      <denounce_priest_base_chance float="33.0"/>
+      <denounce_attack_modifier float="1.0"/>
+      <denounce_defence_modifier float="1.0"/>
+      <denounce_chance_min int="5"/>
+      <denounce_chance_max int="95"/>
+      <denounce_heretic_attemp_modifier float="1.5"/>
+      <denounce_character_attemp_modifier float="0.5"/>
+      <assassinate_base_chance float="33"/>
+      <assassinate_attack_modifier float="0.8"/>
+      <assassinate_defence_modifier float="0.8"/>
+      <assassinate_public_modifier float="0.25"/>
+      <assassinate_personal_modifier float="0.25"/>
+      <assassinate_counter_spy_modifier float="1.0"/>
+      <assassinate_agent_modifier float="1.24"/>
+      <assassinate_own_region_modifier float="0.75"/>
+      <assassinate_assassinate_attr_modifier float="0.18"/>
+      <assassinate_chance_min int="5"/>
+      <assassinate_chance_max int="95"/>
+      <acquisition_base_chance float="40.0"/>
+      <acquisition_level_modifier float="5.0"/>
+      <acquisition_attack_trade_rights_modifier float="1.3"/>
+      <acquisition_defence_trade_rights_modifier float="0.7"/>
+      <acquisition_chance_min int="5"/>
+      <acquisition_chance_max int="95"/>
+      <inquisitor_crt_heresy_divisor float="1.0"/>
+      <inquisitor_crt_pfp_modifier float="0.5"/>
+      <inquisitor_crt_pfp_modifier_min float="0.0"/>
+      <inquisitor_crt_pfp_modifier_max float="1.0"/>
+      <inquisitor_crt_chance_min float="0.0"/>
+      <inquisitor_crt_chance_max float="0.1"/>
+      <inquisitor_target_leaders bool="false"/>
+      <inquisitor_target_heirs bool="false"/>
+   </agents>
+   <crusades>
+      <required_jihad_piety int="2"/>
+      <max_disband_progress float="0"/>
+      <near_target_no_disband_distance float="1000.0"/>
+      <disband_progress_window float="0"/>
+      <crusade_called_start_turn float="1"/>
+      <jihad_called_start_turn float="1"/>
+      <movement_points_modifier float="2.0"/>
+   </crusades>
+</root>

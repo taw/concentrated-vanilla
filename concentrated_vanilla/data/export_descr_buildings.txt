@@ -22,7 +22,7 @@ building core_building
                 tower_level 1
                 free_upkeep bonus 4
                 happiness_bonus bonus 1
-                recruitment_slots 1
+                recruitment_slots 2
             }
             material wooden
             construction  1 
@@ -53,7 +53,7 @@ building core_building
                 tower_level 1
                 free_upkeep bonus 6
                 happiness_bonus bonus 1
-                recruitment_slots 2
+                recruitment_slots 3
             }
             material wooden
             construction  1 
@@ -103,7 +103,7 @@ building core_building
                 gate_strength 1
                 free_upkeep bonus 8
                 happiness_bonus bonus 1
-                recruitment_slots 2
+                recruitment_slots 5
             }
             material stone
             construction  1 
@@ -152,7 +152,7 @@ building core_building
                 gate_strength 2
                 free_upkeep bonus 10
                 happiness_bonus bonus 2
-                recruitment_slots 3
+                recruitment_slots 7
             }
             material stone
             construction  1 
@@ -208,7 +208,7 @@ building core_building
                 gate_strength 2
                 free_upkeep bonus 12
                 happiness_bonus bonus 3
-                recruitment_slots 3
+                recruitment_slots 9
             }
             material stone
             construction  1 
@@ -256,7 +256,7 @@ building core_castle_building
                 tower_level 1
                 law_bonus bonus 1
                 free_upkeep bonus 1
-                recruitment_slots 1
+                recruitment_slots 2
             }
             material wooden
             construction  1 
@@ -310,7 +310,7 @@ building core_castle_building
                 tower_level 1
                 law_bonus bonus 2
                 free_upkeep bonus 2
-                recruitment_slots 2
+                recruitment_slots 3
             }
             material wooden
             construction  1 
@@ -368,7 +368,7 @@ building core_castle_building
                 gate_strength 1
                 law_bonus bonus 3
                 free_upkeep bonus 4
-                recruitment_slots 3
+                recruitment_slots 5
             }
             material stone
             construction  1 
@@ -462,7 +462,7 @@ building core_castle_building
                 gate_strength 2
                 law_bonus bonus 4
                 free_upkeep bonus 7
-                recruitment_slots 3
+                recruitment_slots 7
             }
             material stone
             construction  1 
@@ -575,7 +575,7 @@ building core_castle_building
                 gate_strength 2
                 law_bonus bonus 5
                 free_upkeep bonus 12
-                recruitment_slots 3
+                recruitment_slots 9
             }
             material stone
             construction  1 
@@ -2834,13 +2834,7 @@ building market
         {
             capability
             {
-                agent merchant  0  requires factions { northern_european, } 
-                agent merchant  0  requires factions { middle_eastern, } 
-                agent merchant  0  requires factions { eastern_european, } 
-                agent merchant  0  requires factions { greek, } 
-                agent merchant  0  requires factions { southern_european, } 
                 trade_base_income_bonus bonus 2
-                agent_limit merchant 1
             }
             material wooden
             construction  1 
@@ -2855,13 +2849,7 @@ building market
         {
             capability
             {
-                agent merchant  0  requires factions { northern_european, } 
-                agent merchant  0  requires factions { middle_eastern, } 
-                agent merchant  0  requires factions { eastern_european, } 
-                agent merchant  0  requires factions { greek, } 
-                agent merchant  0  requires factions { southern_european, } 
                 trade_base_income_bonus bonus 3
-                agent_limit merchant 1
             }
             material wooden
             construction  1 
@@ -2876,13 +2864,7 @@ building market
         {
             capability
             {
-                agent merchant  0  requires factions { northern_european, } 
-                agent merchant  0  requires factions { middle_eastern, } 
-                agent merchant  0  requires factions { eastern_european, } 
-                agent merchant  0  requires factions { greek, } 
-                agent merchant  0  requires factions { southern_european, } 
                 trade_base_income_bonus bonus 4
-                agent_limit merchant 1
             }
             material wooden
             construction  1 
@@ -2897,13 +2879,7 @@ building market
         {
             capability
             {
-                agent merchant  0  requires factions { northern_european, } 
-                agent merchant  0  requires factions { middle_eastern, } 
-                agent merchant  0  requires factions { eastern_european, } 
-                agent merchant  0  requires factions { greek, } 
-                agent merchant  0  requires factions { southern_european, } 
                 trade_base_income_bonus bonus 5
-                agent_limit merchant 1
             }
             material wooden
             construction  1 
@@ -2918,13 +2894,7 @@ building market
         {
             capability
             {
-                agent merchant  0  requires factions { northern_european, } 
-                agent merchant  0  requires factions { middle_eastern, } 
-                agent merchant  0  requires factions { eastern_european, } 
-                agent merchant  0  requires factions { greek, } 
-                agent merchant  0  requires factions { southern_european, } 
                 trade_base_income_bonus bonus 6
-                agent_limit merchant 1
             }
             material wooden
             construction  1 
@@ -3108,7 +3078,7 @@ building hinterland_mines
             }
             material wooden
             construction  1 
-            cost  6000 
+            cost  3000 
             settlement_min large_town
             upgrades
             {
@@ -3124,7 +3094,7 @@ building hinterland_mines
             }
             material wooden
             construction  1 
-            cost  10500 
+            cost  5250 
             settlement_min city
             upgrades
             {
@@ -3149,7 +3119,7 @@ building hinterland_castle_mines
             }
             material wooden
             construction  1 
-            cost  6000 
+            cost  3000 
             settlement_min large_town
             upgrades
             {
@@ -3165,7 +3135,7 @@ building hinterland_castle_mines
             }
             material wooden
             construction  1 
-            cost  10500 
+            cost  5250 
             settlement_min city
             upgrades
             {
@@ -3325,7 +3295,7 @@ building temple_catholic
                 agent priest  0  requires factions { hungary, poland, } 
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 happiness_bonus bonus 1
-                religion_level bonus 1
+                religion_level bonus 2
                 pope_disapproval 1
                 agent_limit priest 1
             }
@@ -3347,7 +3317,7 @@ building temple_catholic
                 agent priest  0  requires factions { hungary, poland, } 
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 happiness_bonus bonus 1
-                religion_level bonus 2
+                religion_level bonus 4
                 agent_limit priest 1
                 pope_disapproval 1
             }
@@ -3369,7 +3339,7 @@ building temple_catholic
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 recruit_pool "Armored Clergy"  1   0.2   2  0  requires factions { denmark, } 
                 happiness_bonus bonus 2
-                religion_level bonus 3
+                religion_level bonus 6
                 agent_limit priest 2
                 pope_disapproval 1
             }
@@ -3391,7 +3361,7 @@ building temple_catholic
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 recruit_pool "Armored Clergy"  1   0.4   3  0  requires factions { denmark, } 
                 happiness_bonus bonus 2
-                religion_level bonus 4
+                religion_level bonus 8
                 agent_limit priest 2
                 pope_disapproval 1
                 pope_approval 1
@@ -3415,7 +3385,7 @@ building temple_catholic
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 recruit_pool "Armored Clergy"  1   0.4   3  1  requires factions { denmark, } 
                 happiness_bonus bonus 3
-                religion_level bonus 5
+                religion_level bonus 10
                 agent_limit priest 2
                 pope_disapproval 1
                 pope_approval 1
@@ -3449,7 +3419,7 @@ building temple_catholic_castle
                 agent priest  0  requires factions { hungary, poland, } 
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 happiness_bonus bonus 1
-                religion_level bonus 2
+                religion_level bonus 4
                 pope_disapproval 1
                 agent_limit priest 1
             }
@@ -3471,7 +3441,7 @@ building temple_catholic_castle
                 agent priest  0  requires factions { hungary, poland, } 
                 agent priest  0  requires factions { papal_states, portugal, spain, sicily, milan, venice, } 
                 happiness_bonus bonus 1
-                religion_level bonus 3
+                religion_level bonus 6
                 agent_limit priest 1
                 pope_disapproval 1
             }
@@ -3502,7 +3472,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 1
-                religion_level bonus 2
+                religion_level bonus 4
                 agent_limit priest 1
             }
             material wooden
@@ -3522,7 +3492,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 1
-                religion_level bonus 4
+                religion_level bonus 8
                 agent_limit priest 1
             }
             material wooden
@@ -3541,7 +3511,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 2
-                religion_level bonus 6
+                religion_level bonus 12
                 agent_limit priest 2
             }
             material wooden
@@ -3560,7 +3530,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 2
-                religion_level bonus 8
+                religion_level bonus 16
                 agent_limit priest 2
             }
             material wooden
@@ -3579,7 +3549,7 @@ building temple_orthodox
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 3
-                religion_level bonus 10
+                religion_level bonus 20
                 agent_limit priest 2
             }
             material wooden
@@ -3609,7 +3579,7 @@ building temple_orthodox_castle
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 1
-                religion_level bonus 4
+                religion_level bonus 8
                 agent_limit priest 1
             }
             material wooden
@@ -3629,7 +3599,7 @@ building temple_orthodox_castle
                 agent priest  0  requires factions { russia, } 
                 agent priest  0  requires factions { byzantium, } 
                 happiness_bonus bonus 1
-                religion_level bonus 6
+                religion_level bonus 12
                 agent_limit priest 1
             }
             material wooden
@@ -3658,7 +3628,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 1
-                religion_level bonus 2
+                religion_level bonus 4
                 agent_limit priest 1
             }
             material wooden
@@ -3677,7 +3647,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 1
-                religion_level bonus 4
+                religion_level bonus 8
                 agent_limit priest 1
             }
             material wooden
@@ -3695,7 +3665,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 2
-                religion_level bonus 6
+                religion_level bonus 12
                 agent_limit priest 2
             }
             material wooden
@@ -3713,7 +3683,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 2
-                religion_level bonus 8
+                religion_level bonus 16
                 agent_limit priest 2
             }
             material wooden
@@ -3731,7 +3701,7 @@ building temple_muslim
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 3
-                religion_level bonus 10
+                religion_level bonus 20
                 agent_limit priest 2
             }
             material wooden
@@ -3760,7 +3730,7 @@ building temple_muslim_castle
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 1
-                religion_level bonus 4
+                religion_level bonus 8
                 agent_limit priest 1
             }
             material wooden
@@ -3779,7 +3749,7 @@ building temple_muslim_castle
             {
                 agent priest  0  requires factions { egypt, moors, turks, } 
                 happiness_bonus bonus 1
-                religion_level bonus 6
+                religion_level bonus 12
                 agent_limit priest 1
             }
             material wooden
@@ -3824,15 +3794,10 @@ building taverns
             capability
             {
                 agent spy  0  requires factions { northern_european, } 
-                agent assassin  0  requires factions { northern_european, } 
                 agent spy  0  requires factions { middle_eastern, } 
-                agent assassin  0  requires factions { middle_eastern, } 
                 agent spy  0  requires factions { eastern_european, } 
-                agent assassin  0  requires factions { eastern_european, } 
                 agent spy  0  requires factions { greek, } 
-                agent assassin  0  requires factions { greek, } 
                 agent spy  0  requires factions { southern_european, } 
-                agent assassin  0  requires factions { southern_european, } 
                 happiness_bonus bonus 2
             }
             material wooden
@@ -3849,15 +3814,10 @@ building taverns
             capability
             {
                 agent spy  0  requires factions { northern_european, } 
-                agent assassin  0  requires factions { northern_european, } 
                 agent spy  0  requires factions { middle_eastern, } 
-                agent assassin  0  requires factions { middle_eastern, } 
                 agent spy  0  requires factions { eastern_european, } 
-                agent assassin  0  requires factions { eastern_european, } 
                 agent spy  0  requires factions { greek, } 
-                agent assassin  0  requires factions { greek, } 
                 agent spy  0  requires factions { southern_european, } 
-                agent assassin  0  requires factions { southern_european, } 
                 recruit_pool "Transilvanian Peasants"  1   0.4   3  0  requires factions { hungary, } 
                 happiness_bonus bonus 3
             }
@@ -3875,15 +3835,10 @@ building taverns
             capability
             {
                 agent spy  0  requires factions { northern_european, } 
-                agent assassin  0  requires factions { northern_european, } 
                 agent spy  0  requires factions { middle_eastern, } 
-                agent assassin  0  requires factions { middle_eastern, } 
                 agent spy  0  requires factions { eastern_european, } 
-                agent assassin  0  requires factions { eastern_european, } 
                 agent spy  0  requires factions { greek, } 
-                agent assassin  0  requires factions { greek, } 
                 agent spy  0  requires factions { southern_european, } 
-                agent assassin  0  requires factions { southern_european, } 
                 recruit_pool "Transilvanian Peasants"  1   0.5   4  0  requires factions { hungary, } 
                 happiness_bonus bonus 4
             }
@@ -3901,15 +3856,10 @@ building taverns
             capability
             {
                 agent spy  0  requires factions { northern_european, } 
-                agent assassin  0  requires factions { northern_european, } 
                 agent spy  0  requires factions { middle_eastern, } 
-                agent assassin  0  requires factions { middle_eastern, } 
                 agent spy  0  requires factions { eastern_european, } 
-                agent assassin  0  requires factions { eastern_european, } 
                 agent spy  0  requires factions { greek, } 
-                agent assassin  0  requires factions { greek, } 
                 agent spy  0  requires factions { southern_european, } 
-                agent assassin  0  requires factions { southern_european, } 
                 recruit_pool "Transilvanian Peasants"  1   0.5   4  0  requires factions { hungary, } 
                 happiness_bonus bonus 5
             }
@@ -4100,7 +4050,6 @@ building bank
             capability
             {
                 trade_base_income_bonus bonus 2
-                agent_limit merchant 1
             }
             material wooden
             construction  1 
@@ -4116,7 +4065,6 @@ building bank
             capability
             {
                 trade_base_income_bonus bonus 3
-                agent_limit merchant 2
             }
             material wooden
             construction  1 
@@ -4317,10 +4265,8 @@ building castle_academic
             {
                 agent spy  0  requires factions { northern_european, } 
                 agent diplomat  0  requires factions { northern_european, } 
-                agent assassin  0  requires factions { northern_european, } 
                 agent spy  0  requires factions { eastern_european, } 
                 agent diplomat  0  requires factions { eastern_european, } 
-                agent assassin  0  requires factions { eastern_european, } 
             }
             material wooden
             construction  1 
@@ -5428,7 +5374,7 @@ building temple_pagan
             capability
             {
                 happiness_bonus bonus 2
-                religion_level bonus 10
+                religion_level bonus 20
                 law_bonus bonus 5
             }
             material wooden

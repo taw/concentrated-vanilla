@@ -34,7 +34,7 @@ large_town
 }
 castle
 {
-	normal				data/models_strat/residences/southern_european_castle.CAS,	settlement_eastern_level_3
+	normal				data/models_strat/residences/southern_european_castle.cas,	settlement_eastern_level_3
 	card				data/ui/southern_european/cities/graeco-roman_large_town.tga
 }
 city
@@ -44,7 +44,7 @@ city
 }
 fortress
 {
-	normal				data/models_strat/residences/southern_european_large_castle.CAS,			settlement_eastern_level_4
+	normal				data/models_strat/residences/southern_european_large_castle.cas,			settlement_eastern_level_4
 	card				data/ui/southern_european/cities/graeco-roman_city.tga
 }
 large_city
@@ -54,7 +54,7 @@ large_city
 }
 citadel
 {
-	normal				data/models_strat/residences/southern_european_fortress.CAS,	settlement_eastern_level_5
+	normal				data/models_strat/residences/southern_european_fortress.cas,	settlement_eastern_level_5
 	card				data/ui/southern_european/cities/graeco-roman_large_city.tga
 }
 huge_city
@@ -75,7 +75,7 @@ port_land			data/models_strat/residences/SE_port_04_wall.CAS,				port_roman_leve
 port_sea			data/models_strat/residences/SE_port_04_buildings.CAS,
 watchtower			data/models_strat/residences/SE_watchtower.CAS,					watchtower_roman
 watchtower_cost		200
-spy				spy.tga				spy_info.tga			spy.tga			700	1	1
+spy				spy.tga				spy_info.tga			spy.tga			350	1	1
 assassin		assassin.tga		assassin_info.tga		assassin.tga	500	1	1
 diplomat		diplomat.tga		diplomat_info.tga		diplomat.tga	250	1	1
 admiral			admiral.tga		admiral_info.tga		admiral.tga	100	1	1
@@ -155,7 +155,7 @@ port_land			data/models_strat/residences/NE_port_04_buildings.CAS,					port_barb
 port_sea			data/models_strat/residences/NE_port_04_wall.CAS
 watchtower			data/models_strat/residences/NE_watchtower.CAS,					watchtower_barbarian
 watchtower_cost		200
-spy				spy.tga				spy_info.tga			spy.tga			700	1	1
+spy				spy.tga				spy_info.tga			spy.tga			350	1	1
 assassin		assassin.tga		assassin_info.tga		assassin.tga	500	1	1
 diplomat		diplomat.tga		diplomat_info.tga		diplomat.tga	250	1	1
 admiral			admiral.tga		admiral_info.tga		admiral.tga	100	1	1
@@ -210,7 +210,7 @@ port_land			data/models_strat/residences/eastern_port_03_land.CAS,				port_easte
 port_sea			data/models_strat/residences/eastern_port_03_sea.CAS
 watchtower			data/models_strat/residences/SE_watchtower.CAS,				watchtower_eastern
 watchtower_cost		200
-spy				spy.tga				spy_info.tga			spy.tga			700	1	1
+spy				spy.tga				spy_info.tga			spy.tga			350	1	1
 assassin		assassin.tga		assassin_info.tga		assassin.tga	500	1	1
 diplomat		diplomat.tga		diplomat_info.tga		diplomat.tga	250	1	1
 admiral			admiral.tga		admiral_info.tga		admiral.tga	100	1	1
@@ -249,7 +249,7 @@ large_town
 }
 castle
 {
-	normal				data/models_strat/residences/southern_european_castle.CAS,	settlement_eastern_level_3
+	normal				data/models_strat/residences/greek_castle.CAS,	settlement_eastern_level_3
 	card				data/ui/southern_european/cities/graeco-roman_large_town.tga
 }
 city
@@ -259,7 +259,7 @@ city
 }
 fortress
 {
-	normal				data/models_strat/residences/southern_european_large_castle.CAS,			settlement_eastern_level_4
+	normal				data/models_strat/residences/greek_large_castle.cas,			settlement_eastern_level_4
 	card				data/ui/southern_european/cities/graeco-roman_city.tga
 }
 large_city
@@ -269,7 +269,7 @@ large_city
 }
 citadel
 {
-	normal				data/models_strat/residences/southern_european_fortress.CAS,	settlement_eastern_level_5
+	normal				data/models_strat/residences/greek_fortress.CAS,	settlement_eastern_level_5
 	card				data/ui/southern_european/cities/graeco-roman_large_city.tga
 }
 huge_city
@@ -290,7 +290,7 @@ port_land			data/models_strat/residences/SE_port_04_wall.CAS,				port_roman_leve
 port_sea			data/models_strat/residences/SE_port_04_buildings.CAS,
 watchtower			data/models_strat/residences/SE_watchtower.CAS,					watchtower_roman
 watchtower_cost		200
-spy				spy.tga				spy_info.tga			spy.tga			700	1	1
+spy				spy.tga				spy_info.tga			spy.tga			350	1	1
 assassin		assassin.tga		assassin_info.tga		assassin.tga	500	1	1
 diplomat		diplomat.tga		diplomat_info.tga		diplomat.tga	250	1	1
 admiral			admiral.tga		admiral_info.tga		admiral.tga	100	1	1
@@ -309,52 +309,52 @@ village
 }
 moot_and_bailey
 {
-	normal				data/models_strat/residences/northern_european_wooden_castle.CAS,		settlement_eastern_level_1
+	normal				data/models_strat/residences/eastern_european_wooden_castle.CAS,		settlement_eastern_level_1
 	card				data/ui/southern_european/cities/graeco-roman_village.tga
 }
 town
 {
-	normal				data/models_strat/residences/northern_european_town.CAS,			settlement_eastern_level_2
+	normal				data/models_strat/residences/eastern_european_town.cas,			settlement_eastern_level_2
 	card				data/ui/southern_european/cities/graeco-roman_town.tga
 }
 wooden_castle
 {
-	normal				data/models_strat/residences/northern_european_stone_keep.CAS,			settlement_eastern_level_2
+	normal				data/models_strat/residences/eastern_european_stone_keep.cas,			settlement_eastern_level_2
 	card				data/ui/southern_european/cities/graeco-roman_town.tga
 }
 large_town
 {
-	normal				data/models_strat/residences/northern_european_large_town.CAS,	settlement_eastern_level_3
+	normal				data/models_strat/residences/eastern_european_large_town.cas,	settlement_eastern_level_3
 	card				data/ui/southern_european/cities/graeco-roman_large_town.tga
 }
 castle
 {
-	normal				data/models_strat/residences/northern_european_castle.CAS,	settlement_eastern_level_3
+	normal				data/models_strat/residences/eastern_european_castle.CAS,	settlement_eastern_level_3
 	card				data/ui/southern_european/cities/graeco-roman_large_town.tga
 }
 city
 {
-	normal				data/models_strat/residences/northern_european_city.CAS,			settlement_eastern_level_4
+	normal				data/models_strat/residences/eastern_european_city.CAS,			settlement_eastern_level_4
 	card				data/ui/southern_european/cities/graeco-roman_city.tga
 }
 fortress
 {
-	normal				data/models_strat/residences/northern_european_large_castle.CAS,			settlement_eastern_level_4
+	normal				data/models_strat/residences/eastern_european_large_castle.CAS,			settlement_eastern_level_4
 	card				data/ui/southern_european/cities/graeco-roman_city.tga
 }
 large_city
 {
-	normal				data/models_strat/residences/northern_european_large_city.CAS,	settlement_eastern_level_5
+	normal				data/models_strat/residences/eastern_european_large_city.CAS,	settlement_eastern_level_5
 	card				data/ui/southern_european/cities/graeco-roman_large_city.tga
 }
 citadel
 {
-	normal				data/models_strat/residences/northern_european_fortress.CAS,	settlement_eastern_level_5
+	normal				data/models_strat/residences/eastern_european_fortress.CAS,	settlement_eastern_level_5
 	card				data/ui/southern_european/cities/graeco-roman_large_city.tga
 }
 huge_city
 {
-	normal				data/models_strat/residences/northern_european_huge_city.CAS,		settlement_eastern_level_6
+	normal				data/models_strat/residences/eastern_european_huge_city.CAS,		settlement_eastern_level_6
 	card				data/ui/southern_european/cities/graeco-roman_huge_city.tga
 }
 }
@@ -370,7 +370,7 @@ port_land			data/models_strat/residences/NE_port_04_buildings.CAS,					port_barb
 port_sea			data/models_strat/residences/NE_port_04_wall.CAS
 watchtower			data/models_strat/residences/NE_watchtower.CAS,					watchtower_barbarian
 watchtower_cost		200
-spy				spy.tga				spy_info.tga			spy.tga			700	1	1
+spy				spy.tga				spy_info.tga			spy.tga			350	1	1
 assassin		assassin.tga		assassin_info.tga		assassin.tga	500	1	1
 diplomat		diplomat.tga		diplomat_info.tga		diplomat.tga	250	1	1
 admiral			admiral.tga		admiral_info.tga		admiral.tga	100	1	1
@@ -450,7 +450,7 @@ port_land			data/models_strat/residences/ME_port_04_buildings.CAS,				port_easte
 port_sea			data/models_strat/residences/ME_port_04_wall.CAS
 watchtower			data/models_strat/residences/ME_watchtower.CAS,				watchtower_eastern
 watchtower_cost		200
-spy				spy.tga				spy_info.tga			spy.tga			700	1	1
+spy				spy.tga				spy_info.tga			spy.tga			350	1	1
 assassin		assassin.tga		assassin_info.tga		assassin.tga	500	1	1
 diplomat		diplomat.tga		diplomat_info.tga		diplomat.tga	250	1	1
 admiral			admiral.tga		admiral_info.tga		admiral.tga	100	1	1

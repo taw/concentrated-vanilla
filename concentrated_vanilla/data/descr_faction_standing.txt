@@ -256,8 +256,8 @@ Trigger 0050_P_General_Arrives_Crusade_Target
 
     Condition IsCrusade
 
-    FactionStanding factions { papal_states } 0.02
-    FactionStanding factions { papal_states } per_unit 0.002
+    FactionStanding factions { papal_states } 0.1
+    FactionStanding factions { papal_states } per_unit 0.001
 
 ;------------------------------------------
 Trigger 0051_P_Heir_Arrives_Crusade_Target
@@ -317,7 +317,7 @@ Trigger 0057_P_Character_Attacks_Crusading_General
 
     Condition IsTargetOnCrusade
 
-    FactionStanding factions { papal_states } -0.4
+    FactionStanding factions { papal_states } -0.8
 
 ;------------------------------------------
 Trigger 0058_P_Crusade_Attacks_Orthodox_General
@@ -577,7 +577,7 @@ Trigger 0131_Fail_Pope_Mod_Penalty_Only
 
     Condition PaybackID pope_mod_penalty_only
 
-    FactionStanding factions { papal_states } -0.1
+    FactionStanding factions { papal_states } -0.15
 
 ;------------------------------------------
 Trigger 0132_Fail_Pope_Mod_Penalty_Min_Reward
@@ -585,15 +585,15 @@ Trigger 0132_Fail_Pope_Mod_Penalty_Min_Reward
 
     Condition PaybackID pope_mod_penalty_min_reward
 
-    FactionStanding factions { papal_states } -0.1
 
+    FactionStanding factions { papal_states } -0.15
 ;------------------------------------------
 Trigger 0133_Fail_Pope_Rome_Mod_Penalty_Only
     WhenToTest LeaderMissionFailed
 
     Condition PaybackID pope_rome_mod_penalty_only
 
-    FactionStanding factions { papal_states } -0.1
+    FactionStanding factions { papal_states } -0.15
 
 ;------------------------------------------
 Trigger 0134_Fail_Pope_Cardinal_Mod_Penalty_Only
@@ -601,7 +601,7 @@ Trigger 0134_Fail_Pope_Cardinal_Mod_Penalty_Only
 
     Condition PaybackID pope_cardinal_mod_penalty_only
 
-    FactionStanding factions { papal_states } -0.1
+    FactionStanding factions { papal_states } -0.15
 
 ;------------------------------------------
 Trigger 0135_Fail_Pope_Cardinal_Mod_Penalty_Min_Reward
@@ -609,7 +609,7 @@ Trigger 0135_Fail_Pope_Cardinal_Mod_Penalty_Min_Reward
 
     Condition PaybackID pope_cardinal_mod_penalty_min_reward
 
-    FactionStanding factions { papal_states } -0.1
+    FactionStanding factions { papal_states } -0.15
 
 ;------------------------------------------
 Trigger 0136_Fail_Pope_Major_Penalty_Only
@@ -617,7 +617,7 @@ Trigger 0136_Fail_Pope_Major_Penalty_Only
 
     Condition PaybackID pope_major_penalty_only
 
-    FactionStanding factions { papal_states } -0.2
+    FactionStanding factions { papal_states } -0.3
 
 ;------------------------------------------
 Trigger 0137_Fail_Pope_Rome_Major_Penalty_Only
@@ -625,7 +625,7 @@ Trigger 0137_Fail_Pope_Rome_Major_Penalty_Only
 
     Condition PaybackID pope_rome_major_penalty_only
 
-    FactionStanding factions { papal_states } -0.2
+    FactionStanding factions { papal_states } -0.5
 
     
 
@@ -690,7 +690,7 @@ Trigger 0038_P_Successful_Diplomacy
     Condition MissionSucceeded
           and TargetFactionType papal_states
 
-    FactionStanding factions { papal_states } 0.06
+    FactionStanding factions { papal_states } 0.05
 
 ;------------------------------------------
 Trigger 0039_P_War_Declared
@@ -698,7 +698,7 @@ Trigger 0039_P_War_Declared
 
     Condition  TargetFactionType papal_states
 
-    FactionStanding factions { papal_states } -0.3
+    FactionStanding factions { papal_states } -0.5
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -748,7 +748,7 @@ Trigger 0044_P_At_War_Pope_Elected
 Trigger 0045_P_Voted_For_Pope
     WhenToTest VotedForPope
 
-    FactionStanding factions { papal_states } 0.2
+    FactionStanding factions { papal_states } 0.35
 
 
 ;;;;;;;;;;
@@ -797,7 +797,7 @@ Trigger 0100_T_Invaded_Settlement
 		and TargetFactionReligion catholic
 		and not TargetFactionExcommunicated
 
-    FactionStanding factions { papal_states } -0.08
+    FactionStanding factions { papal_states } -0.05
 
 ;------------------------------------------
 Trigger 0101_T_Invaded_Fort
@@ -807,7 +807,7 @@ Trigger 0101_T_Invaded_Fort
 		and TargetFactionReligion catholic
 		and not TargetFactionExcommunicated
 
-    FactionStanding factions { papal_states } -0.03
+    FactionStanding factions { papal_states } -0.025
 
 ;------------------------------------------
 Trigger 0102_T_Invaded_Watchtower
@@ -817,7 +817,7 @@ Trigger 0102_T_Invaded_Watchtower
 		and TargetFactionReligion catholic
 		and not TargetFactionExcommunicated
 
-    FactionStanding factions { papal_states } -0.03
+    FactionStanding factions { papal_states } -0.0125
 
 ;------------------------------------------
 Trigger 0103_T_Declared_War
@@ -827,7 +827,7 @@ Trigger 0103_T_Declared_War
 		and TargetFactionReligion catholic
 		and not TargetFactionExcommunicated
 
-    FactionStanding factions { papal_states } -0.08
+    FactionStanding factions { papal_states } -0.05
 
 ;------------------------------------------
 Trigger 0104_T_Instigate_Siege
@@ -837,7 +837,7 @@ Trigger 0104_T_Instigate_Siege
 		and TargetFactionReligion catholic
 		and not TargetFactionExcommunicated
 
-    FactionStanding factions { papal_states } -0.02
+    FactionStanding factions { papal_states } -0.05
 
 ;------------------------------------------
 Trigger 0105_T_Threaten_War
@@ -847,7 +847,7 @@ Trigger 0105_T_Threaten_War
 		and TargetFactionReligion catholic
 		and not TargetFactionExcommunicated
 
-    FactionStanding factions { papal_states } -0.02
+    FactionStanding factions { papal_states } -0.0125
 
 ;------------------------------------------
 Trigger 0106_T_Undeclared_Attack
@@ -867,7 +867,7 @@ Trigger 0107_T_INSTIGATE_ASSAULT
 		and TargetFactionReligion catholic
 		and not TargetFactionExcommunicated
 
-    FactionStanding factions { papal_states } -0.01
+    FactionStanding factions { papal_states } -0.025
 
 ;------------------------------------------
 Trigger 0108_T_BLOCKADE
@@ -877,7 +877,7 @@ Trigger 0108_T_BLOCKADE
 		and TargetFactionReligion catholic
 		and not TargetFactionExcommunicated
 
-    FactionStanding factions { papal_states } -0.03
+    FactionStanding factions { papal_states } -0.0125
 
     
   
@@ -900,7 +900,7 @@ Trigger 0050_T_Invaded_Fort
     Condition TransgressionName = TC_INVADED_FORT
 
     FactionStanding target_faction normalise -1.0 10
-    FactionStanding target_allies normalise -1.0 80
+    FactionStanding target_allies normalise -1.0 800
 
 ;------------------------------------------
 Trigger 0051_T_Stole_Back_Settlement
@@ -985,9 +985,9 @@ Trigger 0056_T_Nullified_Alliance
 
     Condition TransgressionName = TC_NULLIFIED_ALLIANCE
 
-    FactionStanding global -0.1
-    FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 20
+    FactionStanding global -0.05
+    FactionStanding target_faction normalise -0.4 5
+    FactionStanding target_allies normalise -0.2 20
     FactionStanding target_enemies normalise 1.0 20
 
 ;------------------------------------------
@@ -997,8 +997,8 @@ Trigger 0057_T_Broke_Treaty_terms
     Condition TransgressionName = TC_BROKE_TREATY_TERMS
 
     FactionStanding global -0.15
-    FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_faction normalise -0.25 5
+    FactionStanding target_allies normalise -0.25 40
 
 ;------------------------------------------
 ;Trigger 0058_T_Diplomatic_Insult	; fired for every 1000 gold diplomacy proposal under balanced - 1
@@ -1006,7 +1006,7 @@ Trigger 0057_T_Broke_Treaty_terms
 ;
 ;    Condition TransgressionName = TC_DIPLOMATIC_INSULT
 ;
-;    FactionStanding target_faction -0.07
+;    FactionStanding target_faction -0.001
 
 ;------------------------------------------
 Trigger 0059_T_Dishonour
@@ -1014,8 +1014,8 @@ Trigger 0059_T_Dishonour
 
     Condition TransgressionName = TC_DISHONOUR
 
-    FactionStanding target_faction normalise -1.0 10
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_faction normalise -0.8 10
+    FactionStanding target_allies normalise -0.8 40
 
 ;------------------------------------------
 Trigger 0060_T_Declared_War
@@ -1023,9 +1023,9 @@ Trigger 0060_T_Declared_War
 
     Condition TransgressionName = TC_DECLARED_WAR
 
-    FactionStanding target_faction normalise -1.0 4
-    FactionStanding target_allies normalise -1.0 20
-    FactionStanding target_enemies normalise 1.0 20
+    FactionStanding target_faction normalise -0.8 4
+    FactionStanding target_allies normalise -0.8 20
+    FactionStanding target_enemies normalise 0.6 20
 
 ;------------------------------------------
 Trigger 0061_T_Major_Assassination_Attempt
@@ -1033,8 +1033,8 @@ Trigger 0061_T_Major_Assassination_Attempt
 
     Condition TransgressionName = TC_MAJOR_ASSASSINATION_ATTEMPT
 
-    FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_faction normalise -0.8 5
+    FactionStanding target_allies normalise -0.8 40
 
 ;------------------------------------------
 Trigger 0062_T_Minor_Assassination_Attempt
@@ -1042,8 +1042,8 @@ Trigger 0062_T_Minor_Assassination_Attempt
 
     Condition TransgressionName = TC_MINOR_ASSASSINATION_ATTEMPT
 
-    FactionStanding target_faction normalise -1.0 20
-    FactionStanding target_allies normalise -1.0 80
+    FactionStanding target_faction normalise -0.4 20
+    FactionStanding target_allies normalise -0.4 80
 
 ;------------------------------------------
 Trigger 0063_T_Sabotage
@@ -1051,8 +1051,8 @@ Trigger 0063_T_Sabotage
 
     Condition TransgressionName = TC_SABOTAGE
 
-    FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_faction normalise -0.4 5
+    FactionStanding target_allies normalise -0.4 40
 
 ;------------------------------------------
 Trigger 0064_T_Bribed_Away_Army
@@ -1060,7 +1060,7 @@ Trigger 0064_T_Bribed_Away_Army
 
     Condition TransgressionName = TC_BRIBED_AWAY_ARMY
 
-    FactionStanding target_faction normalise -1.0 10
+    FactionStanding target_faction normalise -0.5 10
 
 ;------------------------------------------
 Trigger 0065_T_Bribed_Away_Character
@@ -1068,7 +1068,7 @@ Trigger 0065_T_Bribed_Away_Character
 
     Condition TransgressionName = TC_BRIBED_AWAY_CHARACTER
 
-    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_faction normalise -0.7 5
 
 ;------------------------------------------
 Trigger 0066_T_Bribed_Away_Settlement
@@ -1077,7 +1077,7 @@ Trigger 0066_T_Bribed_Away_Settlement
     Condition TransgressionName = TC_BRIBED_AWAY_SETTLEMENT
 
     FactionStanding global -0.15
-    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_faction normalise -0.8 5
 
 ;------------------------------------------
 Trigger 0067_T_Bribed_Away_Fort
@@ -1085,7 +1085,7 @@ Trigger 0067_T_Bribed_Away_Fort
 
     Condition TransgressionName = TC_BRIBED_AWAY_FORT
 
-    FactionStanding target_faction normalise -1.0 10
+    FactionStanding target_faction normalise -0.75 10
 
 ;------------------------------------------
 Trigger 0068_T_Battle_Engagement
@@ -1094,9 +1094,9 @@ Trigger 0068_T_Battle_Engagement
     Condition TransgressionName = TC_BATTLE_ENGAGEMENT
         and not TargetFactionType slave
 
-    FactionStanding target_faction normalise -1.0 10
-    FactionStanding target_allies normalise -1.0 80
-    FactionStanding target_enemies normalise 1.0 80
+    FactionStanding target_faction normalise -0.8 10
+    FactionStanding target_allies normalise -0.6 80
+    FactionStanding target_enemies normalise 0.4 80
 
 ;------------------------------------------
 Trigger 0069_T_Instigate_Siege
@@ -1105,7 +1105,7 @@ Trigger 0069_T_Instigate_Siege
     Condition TransgressionName = TC_INSTIGATE_SIEGE
 
     FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_allies normalise -0.8 40
 
 ;------------------------------------------
 Trigger 0070_T_Spying
@@ -1113,8 +1113,8 @@ Trigger 0070_T_Spying
 
     Condition TransgressionName = TC_SPYING
 
-    FactionStanding target_faction normalise -1.0 20
-    FactionStanding target_allies normalise -1.0 80
+    FactionStanding target_faction normalise -0.2 20
+    FactionStanding target_allies normalise -0.1 80
 
 ;------------------------------------------
 Trigger 0071_T_Threaten_War
@@ -1122,7 +1122,7 @@ Trigger 0071_T_Threaten_War
 
     Condition TransgressionName = TC_THREATEN_WAR
 
-    FactionStanding target_faction normalise -1.0 5
+    FactionStanding target_faction normalise -0.6 5
 
 ;------------------------------------------
 Trigger 0072_T_Undeclared_Attack
@@ -1131,7 +1131,7 @@ Trigger 0072_T_Undeclared_Attack
     Condition TransgressionName = TC_UNDECLARED_ATTACK
 
     FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_allies normalise -0.8 40
 
 ;------------------------------------------
 Trigger 0072_T_Undeclared_Attack_Withdraw
@@ -1139,8 +1139,8 @@ Trigger 0072_T_Undeclared_Attack_Withdraw
 
     Condition TransgressionName = TC_UNDECLARED_ATTACK_WITHDRAW
 
-    FactionStanding target_faction normalise -1.0 10
-    FactionStanding target_allies normalise -1.0 80
+    FactionStanding target_faction normalise -0.6 10
+    FactionStanding target_allies normalise -0.4 80
 
 ;------------------------------------------
 Trigger 0073_T_INSTIGATE_ASSAULT
@@ -1148,8 +1148,8 @@ Trigger 0073_T_INSTIGATE_ASSAULT
 
     Condition TransgressionName = TC_INSTIGATE_ASSAULT
 
-    FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_faction normalise -0.75 5
+    FactionStanding target_allies normalise -0.6 40
 
 ;------------------------------------------
 Trigger 0074_T_BLOCKADE
@@ -1157,8 +1157,8 @@ Trigger 0074_T_BLOCKADE
 
     Condition TransgressionName = TC_BLOCKADE
 
-    FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_faction normalise -0.5 5
+    FactionStanding target_allies normalise -0.25 40
 
 
 
@@ -1173,9 +1173,9 @@ Trigger 0078b_DT_Break_Alliance_War
     Condition TransgressionName = TC_BROKE_ALLIANCE
         and DiplomaticStanceFactions = AtWar
 
-    FactionStanding global -0.5
+    FactionStanding global -0.2
     FactionStanding target_faction normalise -1.0 5
-    FactionStanding target_allies normalise -1.0 20
+    FactionStanding target_allies normalise -0.8 20
 
 ;------------------------------------------
 Trigger 0078c_DT_Break_Alliance_Neutral
@@ -1184,9 +1184,9 @@ Trigger 0078c_DT_Break_Alliance_Neutral
     Condition TransgressionName = TC_BROKE_ALLIANCE
         and DiplomaticStanceFactions = Neutral
 
-    FactionStanding global -0.1
-    FactionStanding target_faction normalise -1.0 10
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding global -0.05
+    FactionStanding target_faction normalise -0.8 10
+    FactionStanding target_allies normalise -0.5 40
 
 
 
@@ -1199,8 +1199,8 @@ Trigger 0078c_DT_Break_Alliance_Neutral
 Trigger 0079_F_Trade_Agreement
     WhenToTest FactionTradeAgreementMade
 
-    FactionStanding target_faction 0.07
-    FactionStanding target_allies normalise 1.0 50
+    FactionStanding target_faction 0.05
+    FactionStanding target_allies normalise 0.6 50
 
 ;------------------------------------------
 Trigger 0080_F_Military_Assistance
@@ -1208,9 +1208,9 @@ Trigger 0080_F_Military_Assistance
 
     Condition ForgivenessName = FC_MILITARY_ASSISTANCE
 
-    FactionStanding global 0.1
-    FactionStanding target_faction 0.2
-    FactionStanding target_allies normalise 1.0 20
+    FactionStanding global 0.2
+    FactionStanding target_faction 0.4
+    FactionStanding target_allies normalise 0.8 20
 
 ;------------------------------------------
 Trigger 0081_F_Obvious_Bribe	; fired for every 1000 gold given as gift
@@ -1218,7 +1218,7 @@ Trigger 0081_F_Obvious_Bribe	; fired for every 1000 gold given as gift
 
     Condition ForgivenessName = FC_OBVIOUS_BRIBE
 
-    FactionStanding target_faction normalise 1.0 50
+    FactionStanding target_faction normalise 0.5 50
 
 ;------------------------------------------
 ;Trigger 0082_F_Update_Attitude
@@ -1235,15 +1235,15 @@ Trigger 0082b_F_Alliance_Declared
 
     Condition not TargetFactionType papal_states
 
-    FactionStanding target_faction 0.2
-    FactionStanding target_allies normalise 1.0 50
+    FactionStanding target_faction 0.4
+    FactionStanding target_allies normalise 0.4 50
 
 ; Inter faction marriage increases relationships
 ;------------------------------------------
 Trigger 0082c_P_Faction_Marriage
     WhenToTest InterFactionMarriage
 
-    FactionStanding target_faction 0.2
+    FactionStanding target_faction 0.4
 
 
 
@@ -1270,7 +1270,7 @@ Trigger 0083_Demeanour
 Trigger 0083b_Update_Allies
     WhenToTest FactionTurnStart
 
-    FactionStanding allies normalise 1.0 20
+    FactionStanding allies normalise 0.8 50
 
 
 ; Make enemy factions like us a bit less
@@ -1280,7 +1280,7 @@ Trigger 0084b_Update_Enemies
 
     Condition not FactionType slave
 
-    FactionStanding enemies normalise -1.0 20
+    FactionStanding enemies normalise -0.8 20
 
 
 ; Make allies of our allies like us a bit more
@@ -1290,7 +1290,7 @@ Trigger 0083c_Update_Allies_Allies
 
     Condition DiplomaticStanceFactions = Allied
 
-    FactionStanding target_allies normalise 1.0 100
+    FactionStanding target_allies normalise 0.8 100
 
 
 ; Make enemies of our allies like us a bit less
@@ -1300,7 +1300,7 @@ Trigger 0084c_Update_Allies_Enemies
 
     Condition DiplomaticStanceFactions = Allied
 
-    FactionStanding target_enemies normalise -1.0 100
+    FactionStanding target_enemies normalise -0.8 100
 
 
 ; Make allies of our enemies like us a bit less
@@ -1310,7 +1310,7 @@ Trigger 0083d_Update_Enemies_Allies
 
     Condition DiplomaticStanceFactions = AtWar
 
-    FactionStanding target_allies normalise -1.0 100
+    FactionStanding target_allies normalise -0.8 100
 
 
 ; Make enemies of our enemies like us a bit more
@@ -1321,7 +1321,7 @@ Trigger 0084d_Update_Enemies_Enemies
     Condition DiplomaticStanceFactions = AtWar
           and not TargetFactionType slave
 
-    FactionStanding target_enemies normalise 1.0 100
+    FactionStanding target_enemies normalise 0.8 150
 
 
 ; Make other Catholic factions like the pope a bit more
@@ -1339,7 +1339,7 @@ Trigger 0084_Update_Papal
 Trigger 0085_Update_Religion
     WhenToTest FactionTurnStart
 
-    FactionStanding own_religion normalise 1.0 100
+    FactionStanding own_religion normalise 0.8 100
 
 
 ; Make factions get a case of the 'tall poppy' syndrome.  get narky about the larger factions
@@ -1383,7 +1383,7 @@ Trigger 0089_Update_Band_Together1
         and FactionScorePercent overall < 30
         and FactionScoreRank overall > 3
 
-    FactionStanding exclude_factions { } normalise 1.0 60
+    FactionStanding exclude_factions { } normalise 1.0 40
 
 ;------------------------------------------
 Trigger 0090_Update_Band_Together2
@@ -1393,7 +1393,7 @@ Trigger 0090_Update_Band_Together2
         and FactionScorePercent overall < 20
         and FactionScoreRank overall > 4
 
-    FactionStanding exclude_factions { } normalise 1.0 45
+    FactionStanding exclude_factions { } normalise 1.0 25
 
 ;------------------------------------------
 Trigger 0091_Update_BandTogether3
@@ -1403,7 +1403,7 @@ Trigger 0091_Update_BandTogether3
         and FactionScorePercent overall < 10
         and FactionScoreRank overall > 5
 
-    FactionStanding exclude_factions { } normalise 1.0 30
+    FactionStanding exclude_factions { } normalise 1.0 10
 
 
 ; Adjust the AI relationships towards each faction based on difficulty level (AI factions have normal difficulty)
@@ -1429,7 +1429,7 @@ Trigger 0094_Update_Hard_Difficulty
 
     Condition CampaignDifficulty = hard
 
-    FactionStanding exclude_factions { } normalise -0.5 50
+    FactionStanding exclude_factions { } normalise 0.0 50
 
 ;------------------------------------------
 Trigger 0095_Update_Very_Hard_Difficulty
@@ -1437,13 +1437,13 @@ Trigger 0095_Update_Very_Hard_Difficulty
 
     Condition CampaignDifficulty = very_hard
 
-    FactionStanding exclude_factions { } normalise -1.0 40
+    FactionStanding exclude_factions { } normalise -0.5 50
 
 ;------------------------------------------
 Trigger 0096_Increase_Global_Standing_New_Turn
     WhenToTest FactionTurnStart
 
-    FactionStanding global normalise 0.0 200
+    FactionStanding global normalise 0.05 200
 
 ;------------------------------------------
 Trigger 0097_Increase_Global_Standing_When_Allied
@@ -1451,7 +1451,7 @@ Trigger 0097_Increase_Global_Standing_When_Allied
 
     Condition DiplomaticStanceFactions = Allied
 
-    FactionStanding global normalise 1.0 400
+    FactionStanding global normalise 1.0 300
 
 ;------------------------------------------
 Trigger 0098_Decrease_Global_Standing_When_War
@@ -1471,9 +1471,9 @@ Trigger 0099_prisoners_released_increase_global
     Condition RansomType release
           and NumCapturedSoldiers > 80
 
-    FactionStanding global 0.025
-    FactionStanding target_faction normalise 1.0 20
-    FactionStanding target_allies normalise 1.0 40
+    FactionStanding global 0.03
+    FactionStanding target_faction normalise 0.8 20
+    FactionStanding target_allies normalise 0.6 40
 
 ;------------------------------------------
 Trigger 0100_prisoners_executed_decrease_global
@@ -1483,8 +1483,8 @@ Trigger 0100_prisoners_executed_decrease_global
           and NumCapturedSoldiers > 80
 
     FactionStanding global -0.025
-    FactionStanding target_faction normalise -1.0 20
-    FactionStanding target_allies normalise -1.0 40
+    FactionStanding target_faction normalise -0.8 20
+    FactionStanding target_allies normalise -0.6 40
 
 ;------------------------------------------
 Trigger 0099b_prisoners_released_increase_global
@@ -1513,7 +1513,7 @@ Trigger 0099c_characters_released_increase_global
     Condition RansomType release
           and NumCapturedCharacters > 0
 
-    FactionStanding global 0.025
+    FactionStanding global 0.05
     FactionStanding target_faction normalise 1.0 20
     FactionStanding target_allies normalise 1.0 40
 
@@ -1524,7 +1524,7 @@ Trigger 0100c_characters_executed_decrease_global
     Condition RansomType execute
           and NumCapturedCharacters > 0
 
-    FactionStanding global -0.025
+    FactionStanding global -0.05
     FactionStanding target_faction normalise -1.0 20
     FactionStanding target_allies normalise -1.0 40
 
@@ -1532,19 +1532,19 @@ Trigger 0100c_characters_executed_decrease_global
 Trigger 0101_sack_settlement_decrease_global
     WhenToTest SackSettlement
 
-    FactionStanding global -0.02
-    FactionStanding target_faction normalise -1.0 20
-    FactionStanding target_allies normalise -1.0 40
-;    FactionStanding target_enemies normalise 1.0 40
+    FactionStanding global -0.01
+    FactionStanding target_faction normalise -1.0 40
+    FactionStanding target_allies normalise -1.0 80
+;    FactionStanding target_enemies normalise 1.0 80
 
 ;------------------------------------------
 Trigger 0102_extermination_decrease_global
     WhenToTest ExterminatePopulation
 
-    FactionStanding global -0.05
-    FactionStanding target_faction normalise -1.0 10
-    FactionStanding target_allies normalise -1.0 20
-;    FactionStanding target_enemies normalise 1.0 20
+    FactionStanding global -0.04
+    FactionStanding target_faction normalise -1.0 20
+    FactionStanding target_allies normalise -1.0 40
+;    FactionStanding target_enemies normalise 1.0 40
 
 ;------------------------------------------
 Trigger 0103_occupy_settlement_increase_global
@@ -1590,14 +1590,14 @@ Trigger 0105_Update_Trustworthy_Factions_Major
 
     Condition GlobalStanding > 0.4
 
-    FactionStanding exclude_factions { } normalise 1.0 50
+    FactionStanding exclude_factions { } normalise 1.0 40
 
 Trigger 0106_Update_Trustworthy_Factions_Minor
     WhenToTest FactionTurnStart
 
     Condition GlobalStanding > 0.1
 
-    FactionStanding exclude_factions { } normalise 1.0 100
+    FactionStanding exclude_factions { } normalise 1.0 80
 
 ; make factions like untrustworthy factions less
 ;---------------------------------------------
@@ -1606,14 +1606,14 @@ Trigger 0107_Update_Untrustworthy_Factions_Major
 
     Condition GlobalStanding < -0.4
 
-    FactionStanding exclude_factions { } normalise -1.0 50
+    FactionStanding exclude_factions { } normalise -1.0 40
 
 Trigger 0108_Update_Untrustworthy_Factions_Minor
     WhenToTest FactionTurnStart
 
     Condition GlobalStanding < 0.1
 
-    FactionStanding exclude_factions { } normalise -1.0 100
+    FactionStanding exclude_factions { } normalise -1.0 80
 
 ; make existing inter faction marriages improve relationships
 ;---------------------------------------------

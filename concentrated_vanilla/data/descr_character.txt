@@ -41,14 +41,14 @@
 ;
 ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-starting_action_points	140	; default value for all characters and pathfinding calculations
+starting_action_points	120	; default value for all characters and pathfinding calculations
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 type			named character
 
 actions			moving_normal, moving_quickmarch, garrison, assault, attack, besiege, entrench, ambush, diplomacy, bribe, exchange, building_fort, building_watchtower
 wage_base		200
-starting_action_points	140
+starting_action_points	120
 
 faction			venice
 dictionary		15
@@ -200,7 +200,7 @@ type			general
 
 actions	moving_normal, moving_quickmarch, garrison, assault, attack, besiege, entrench, ambush, exchange
 wage_base		0
-starting_action_points	140
+starting_action_points	120
 
 faction			venice
 dictionary		15
@@ -351,8 +351,8 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 type			spy
 
 actions			moving_normal, spying
-wage_base		200
-starting_action_points	196
+wage_base		100
+starting_action_points	504
 
 faction			venice
 dictionary		15
@@ -456,7 +456,7 @@ type			assassin
 
 actions			moving_normal, assassinate, sabotage
 wage_base		200
-starting_action_points	196
+starting_action_points	168
 
 faction			venice
 dictionary		15
@@ -561,7 +561,7 @@ type			diplomat
 
 actions			moving_normal, diplomacy, bribe
 wage_base		50
-starting_action_points	140
+starting_action_points	600
 
 faction			venice
 dictionary		15
@@ -664,7 +664,7 @@ type			admiral
 
 actions			moving_normal, quick_sail, blockade, disembark, exchange
 wage_base		50
-starting_action_points	140
+starting_action_points	120
 
 faction			venice
 dictionary		15
@@ -768,7 +768,7 @@ type			princess
 
 actions			moving_normal, diplomacy, bribe, marry
 wage_base		250
-starting_action_points	140
+starting_action_points	600
 
 faction			venice
 dictionary		15
@@ -871,7 +871,7 @@ type			merchant
 
 actions			moving_normal, acquire
 wage_base		0
-starting_action_points	175
+starting_action_points	450
 
 faction			venice
 dictionary		15
@@ -974,7 +974,7 @@ type			priest
 
 actions			moving_normal, denounce
 wage_base		100
-starting_action_points	140
+starting_action_points	120
 
 faction			venice
 dictionary		15
@@ -1125,7 +1125,7 @@ type			heretic
 
 actions			moving_normal
 wage_base		0
-starting_action_points	140
+starting_action_points	120
 
 faction			slave
 dictionary		2
@@ -1136,7 +1136,7 @@ type			witch
 
 actions			moving_normal
 wage_base		0
-starting_action_points	140
+starting_action_points	120
 
 faction			slave
 dictionary		2
@@ -1147,10 +1147,9 @@ type			inquisitor
 
 actions			moving_normal, denounce
 wage_base		0
-starting_action_points	140
+starting_action_points	120
 
 faction			papal_states
 dictionary		15
 strat_model		inquisitor
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
