@@ -3103,7 +3103,7 @@ building hinterland_mines
             }
             material wooden
             construction  1 
-            cost  4000 
+            cost  3000 
             settlement_min large_town
             upgrades
             {
@@ -3119,7 +3119,7 @@ building hinterland_mines
             }
             material wooden
             construction  1 
-            cost  7000 
+            cost  5250 
             settlement_min city
             upgrades
             {
@@ -3144,7 +3144,7 @@ building hinterland_castle_mines
             }
             material wooden
             construction  1 
-            cost  4000 
+            cost  3000 
             settlement_min large_town
             upgrades
             {
@@ -3160,7 +3160,7 @@ building hinterland_castle_mines
             }
             material wooden
             construction  1 
-            cost  7000 
+            cost  5250 
             settlement_min city
             upgrades
             {
