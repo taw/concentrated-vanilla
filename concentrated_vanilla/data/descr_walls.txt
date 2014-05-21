@@ -16,7 +16,7 @@ gates
 {
 	gate  short_wooden
 	{
-		full_health 200
+		full_health 400
 		height 10.0		; TODO -
 		pursuit_lockout_radius	80.0
 		blocked_lockout_radius	70.0
@@ -24,7 +24,7 @@ gates
 
 	gate  medium_wooden
 	{
-		full_health 200
+		full_health 400
 		height 10.0		; TODO -
 		pursuit_lockout_radius	80.0
 		blocked_lockout_radius	70.0
@@ -33,7 +33,7 @@ gates
 
 	gate  huge_wooden
 	{
-		full_health 300
+		full_health 600
 		height 10.0		; TODO -
 		pursuit_lockout_radius	80.0
 		blocked_lockout_radius	70.0
@@ -41,7 +41,7 @@ gates
 
 	gate  medium_reinforced
 	{
-		full_health 300
+		full_health 600
 		height 10.0		; TODO -
 		pursuit_lockout_radius	80.0
 		blocked_lockout_radius	70.0
@@ -49,7 +49,7 @@ gates
 
 	gate  huge_reinforced
 	{
-		full_health 400
+		full_health 800
 		height 10.0		; TODO -
 		pursuit_lockout_radius	80.0
 		blocked_lockout_radius	70.0
@@ -58,7 +58,7 @@ gates
 
 	gate  medium_iron
 	{
-		full_health 400
+		full_health 800
 		height 10.0		; TODO -
 		pursuit_lockout_radius	80.0
 		blocked_lockout_radius	70.0
@@ -66,7 +66,7 @@ gates
 
 	gate  huge_iron
 	{
-		full_health 500
+		full_health 1000
 		height 10.0		; TODO -
 		pursuit_lockout_radius	80.0
 		blocked_lockout_radius	70.0
@@ -82,14 +82,14 @@ wall
 
 	wall
 	{
-		full_health 125
+		full_health 250
 		battle_stats flammability_medium impact_damage_high
 		localised_name wall
 	}
 
 	gateway
 	{
-		full_health 10
+		full_health 20
 		battle_stats  flammability_medium impact_damage_high
 		localised_name gateway
 		projectile_impacts_all_hit_gate
@@ -97,8 +97,8 @@ wall
 	}
 	tower
 	{
-		full_health 60
-		control_area_radius 30
+		full_health 120
+		control_area_radius 1200
 		manned 1
 		battle_stats  flammability_medium impact_damage_high
 		localised_name tower
@@ -128,14 +128,14 @@ wall
 
 	wall
 	{
-		full_health 250
+		full_health 500
 		battle_stats flammability_medium impact_damage_high
 		localised_name wall
 	}
 
 	gateway
 	{
-		full_health 10
+		full_health 20
 		battle_stats flammability_medium impact_damage_high
 		localised_name gateway
 		projectile_impacts_all_hit_gate
@@ -145,8 +145,8 @@ wall
 	}
 	tower
 	{
-		full_health 125
-		control_area_radius 30
+		full_health 250
+		control_area_radius 1200
 		manned 1
 		battle_stats  flammability_medium impact_damage_high
 		localised_name tower
@@ -176,13 +176,13 @@ wall
 
 	wall
 	{
-		full_health 500
+		full_health 1000
 		battle_stats flammability_none impact_damage_high
 		localised_name wall
 	}
 	gateway
 	{
-		full_health 500
+		full_health 1000
 		battle_stats flammability_none impact_damage_high
 		localised_name gateway
 		medium_wooden
@@ -191,8 +191,8 @@ wall
 	}
 	tower
 	{
-		full_health 250
-		control_area_radius 30
+		full_health 500
+		control_area_radius 1200
 		manned 1
 		battle_stats flammability_none impact_damage_high
 		localised_name tower
@@ -234,13 +234,13 @@ wall
 
 	wall
 	{
-		full_health 1500
+		full_health 3000
 		battle_stats flammability_none impact_damage_high
 		localised_name wall
 	}
 	gateway
 	{
-		full_health 1500
+		full_health 3000
 		battle_stats flammability_none impact_damage_high
 		localised_name gateway
 		medium_wooden
@@ -249,8 +249,8 @@ wall
 	}
 	tower
 	{
-		full_health 750
-		control_area_radius 30
+		full_health 1500
+		control_area_radius 1200
 		manned 1
 		battle_stats flammability_none impact_damage_high
 		localised_name tower
@@ -306,13 +306,13 @@ wall
 
 	wall
 	{
-		full_health 2000
+		full_health 4000
 		battle_stats flammability_none impact_damage_high
 		localised_name wall
 	}
 	gateway
 	{
-		full_health 2000
+		full_health 4000
 		battle_stats flammability_none impact_damage_high
 		localised_name gateway
 		huge_wooden
@@ -321,8 +321,8 @@ wall
 	}
 	tower
 	{
-		full_health 1000
-		control_area_radius 30
+		full_health 2000
+		control_area_radius 1200
 		manned 1
 		battle_stats flammability_none impact_damage_high
 		localised_name tower
