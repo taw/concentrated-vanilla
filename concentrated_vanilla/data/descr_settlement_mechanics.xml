@@ -28,7 +28,7 @@
          <pip_modifier value="0.5"/>
       </factor>
       <factor name="SPF_TAX_RATE_BONUS">
-         <pip_modifier value="2.0"/>
+         <pip_modifier value="1.0"/>
       </factor>
       <factor name="SPF_BUILDINGS_FUN">
          <pip_modifier value="0.5"/>
@@ -54,7 +54,7 @@
          <pip_modifier value="0.75"/>
       </factor>
       <factor name="SPF_TAX_RATE_PENALTY">
-         <pip_modifier value="2.0"/>
+         <pip_modifier value="1.0"/>
       </factor>
       <factor name="SOF_GARRISON">
          <pip_modifier value="1.0"/>

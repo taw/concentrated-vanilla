@@ -112,10 +112,10 @@ wall
 			fire_angle	90
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  1333	   833
-			fire_rate normal 1000	   833
-			fire_rate large  666       833
-			fire_rate huge   500       833
+			fire_rate small  1000	   1250
+			fire_rate normal 750	   1250
+			fire_rate large  500       1250
+			fire_rate huge   375       1250
 		}
 	}
 }
@@ -160,10 +160,10 @@ wall
 			fire_angle	90
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  1333	   833
-			fire_rate normal 1000	   833
-			fire_rate large  666       833
-			fire_rate huge   500       833
+			fire_rate small  1000	   1250
+			fire_rate normal 750	   1250
+			fire_rate large  500       1250
+			fire_rate huge   375       1250
 		}
 	}
 }
@@ -206,10 +206,10 @@ wall
 			fire_angle	90
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  1333	   833
-			fire_rate normal 1000	   833
-			fire_rate large  666       833
-			fire_rate huge   500       833
+			fire_rate small  1000	   1250
+			fire_rate normal 750	   1250
+			fire_rate large  500       1250
+			fire_rate huge   375       1250
 		}
 		level
 		{
@@ -219,10 +219,10 @@ wall
 			fire_angle	45
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  3000	   	 4333		
-			fire_rate normal 2000	   	 3666
-			fire_rate large  1333        3000
-			fire_rate huge   1000        2000
+			fire_rate small  2250	   	 6500		
+			fire_rate normal 1500	   	 5500
+			fire_rate large  1000        4500
+			fire_rate huge   750        3000
 		}
 	}
 }
@@ -264,10 +264,10 @@ wall
 			fire_angle	90
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  2666	   833
-			fire_rate normal 1000	   833
-			fire_rate large  1000       833
-			fire_rate huge   666       833
+			fire_rate small  2000	   1250
+			fire_rate normal 750	   1250
+			fire_rate large  750       1250
+			fire_rate huge   500       1250
 		}
 
 		level
@@ -278,10 +278,10 @@ wall
 			fire_angle	45
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  3000	   	 4333		
-			fire_rate normal 2000	   	 3666
-			fire_rate large  1333        3000
-			fire_rate huge   1000        2000
+			fire_rate small  2250	   	 6500		
+			fire_rate normal 1500	   	 5500
+			fire_rate large  1000        4500
+			fire_rate huge   750        3000
 		}
 		level
 		{
@@ -291,10 +291,10 @@ wall
 			fire_angle	45
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  13333	   10666
-			fire_rate normal 10666	   10666
-			fire_rate large  9333        10666
-			fire_rate huge   8000        10666
+			fire_rate small  10000	   16000
+			fire_rate normal 8000	   16000
+			fire_rate large  7000        16000
+			fire_rate huge   6000        16000
 		}
 	}
 }
@@ -336,10 +336,10 @@ wall
 			fire_angle	90
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  2666	   833
-			fire_rate normal 1000	   833
-			fire_rate large  1000       833
-			fire_rate huge   666       833
+			fire_rate small  2000	   1250
+			fire_rate normal 750	   1250
+			fire_rate large  750       1250
+			fire_rate huge   500       1250
 		}
 		level
 		{
@@ -349,10 +349,10 @@ wall
 			fire_angle	45
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  3000	   	 4333		
-			fire_rate normal 2000	   	 3666
-			fire_rate large  1333        3000
-			fire_rate huge   1000        2000
+			fire_rate small  2250	   	 6500		
+			fire_rate normal 1500	   	 5500
+			fire_rate large  1000        4500
+			fire_rate huge   750        3000
 		}
 		
 
@@ -364,10 +364,10 @@ wall
 			fire_angle	45
 
 			; unit size 	 reload_ms flaming_reload_ms 
-			fire_rate small  13333	   10666
-			fire_rate normal 10666	   10666
-			fire_rate large  9333        10666
-			fire_rate huge   8000        10666
+			fire_rate small  10000	   16000
+			fire_rate normal 8000	   16000
+			fire_rate large  7000        16000
+			fire_rate huge   6000        16000
 		}
 	}
 }

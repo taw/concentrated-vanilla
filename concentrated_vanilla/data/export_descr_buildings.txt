@@ -20,7 +20,7 @@ building core_building
                 recruit_pool "Peasant Spearmen"  1   0.2   2  0  requires factions { Saxons, } 
                 wall_level 0
                 tower_level 1
-                free_upkeep bonus 2
+                free_upkeep bonus 4
                 happiness_bonus bonus 1
                 recruitment_slots 1
             }
@@ -51,7 +51,7 @@ building core_building
                 wall_level 1
                 gate_strength 1
                 tower_level 1
-                free_upkeep bonus 3
+                free_upkeep bonus 6
                 happiness_bonus bonus 1
                 recruitment_slots 2
             }
@@ -101,7 +101,7 @@ building core_building
                 wall_level 2
                 tower_level 1
                 gate_strength 1
-                free_upkeep bonus 4
+                free_upkeep bonus 8
                 happiness_bonus bonus 1
                 recruitment_slots 2
             }
@@ -150,7 +150,7 @@ building core_building
                 wall_level 3
                 tower_level 1
                 gate_strength 2
-                free_upkeep bonus 5
+                free_upkeep bonus 10
                 happiness_bonus bonus 2
                 recruitment_slots 3
             }
@@ -206,7 +206,7 @@ building core_building
                 wall_level 4
                 tower_level 1
                 gate_strength 2
-                free_upkeep bonus 6
+                free_upkeep bonus 12
                 happiness_bonus bonus 3
                 recruitment_slots 3
             }
@@ -255,6 +255,7 @@ building core_castle_building
                 wall_level 0
                 tower_level 1
                 law_bonus bonus 1
+                free_upkeep bonus 1
                 recruitment_slots 1
             }
             material wooden
@@ -308,6 +309,7 @@ building core_castle_building
                 gate_strength 1
                 tower_level 1
                 law_bonus bonus 2
+                free_upkeep bonus 2
                 recruitment_slots 2
             }
             material wooden
@@ -365,6 +367,7 @@ building core_castle_building
                 tower_level 1
                 gate_strength 1
                 law_bonus bonus 3
+                free_upkeep bonus 4
                 recruitment_slots 3
             }
             material stone
@@ -458,6 +461,7 @@ building core_castle_building
                 tower_level 1
                 gate_strength 2
                 law_bonus bonus 4
+                free_upkeep bonus 7
                 recruitment_slots 3
             }
             material stone
@@ -570,6 +574,7 @@ building core_castle_building
                 tower_level 1
                 gate_strength 2
                 law_bonus bonus 5
+                free_upkeep bonus 12
                 recruitment_slots 3
             }
             material stone
