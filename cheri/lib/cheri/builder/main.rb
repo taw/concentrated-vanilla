@@ -38,7 +38,7 @@ class << self
     # top level (in Object). method_missing will be inherited, but will
     # behave normally (just calls super if @__cheri_cfg not installed)
     unless clazz == Object
-      clazz.module_eval do 
+      clazz.module_eval do
         class << self
           def inherited(subclass)
             cfg = @__cheri_cfg
@@ -52,12 +52,12 @@ class << self
             super
           end
           private :inherited
-        end      
+        end
       end
     end
     super
   end
-  private :append_features  
+  private :append_features
 
   # call-seq:
   #   Cheri::Builder.module_included(module, class) -> Cheri::Builder
@@ -65,11 +65,11 @@ class << self
   # Installs the specified module as a Cheri builder for the specified class.  Note
   # that the 'included module' needn't be included, or even a module, in order to
   # participate as a Cheri builder, though normally it will be both.
-  # 
+  #
   # Modules should hook the <tt>append_features</tt> method, rather than <tt>included</tt>;
   # the former allows inclusion to be aborted if exceptional conditions arise, whereas
   # the latter is called after the fact:
-  # 
+  #
   #   module MyBuilder
   #     include Cheri::Builder
   #     class << self
@@ -79,10 +79,10 @@ class << self
   #       end
   #       private :append_features
   #     end #self
-  #   
+  #
   #   end #MyBuilder
-  # 
-  # Builders installed for a class will be inherited by its subclasses, with the 
+  #
+  # Builders installed for a class will be inherited by its subclasses, with the
   # exception of those installed for class Object; inclusion of Builder modules in
   # Object is discouraged, but is permitted so simple scripts can include builders
   # at the top level rather than having to define a class.  But really, don't do it.
@@ -100,7 +100,7 @@ class << self
     # TODO: usage message if no args or block supplied
     Generator.new(*r,&k).run
   end
-  
+
 end #self
 
 
@@ -109,16 +109,16 @@ end #self
 
   # call-seq:
   #   method_missing(symbol [, *args] [, &block]) -> result (if method matched)
-  #   
+  #
   def method_missing(sym,*r,&k)
     # get the context for the current thread
     if (ctx = __cheri_ctx)
       # send to the context for processing
       matched, result = ctx.send(sym,*r,&k)
-      # return the result if sym matched      
+      # return the result if sym matched
       return result if matched
     end
-    
+
     # nothing matches, probable NameError/NoMethodError
     super
   end
@@ -126,7 +126,7 @@ end #self
 
   # call-seq:
   #   cheri([*args] [, &block]) -> CheriProxy if no block given, else result of block
-  #   
+  #
   def cheri(*r,&k)
     if (ctx = __cheri_ctx)
       if k
@@ -162,7 +162,7 @@ module CheriModule
 
   # Returns CheriFactory
   def self.factory
-    CheriFactory  
+    CheriFactory
   end
 
   # Factory used by cheri(){} method - searches all installed
@@ -174,7 +174,7 @@ module CheriModule
       ctx.cfg.mods.reverse_each do |m|
         if m != CheriModule && m.respond_to?(:factory) && (f = m.factory)
           if (b = f.builder(ctx,*r,&k))
-            return b        
+            return b
           end
         end
       end
@@ -188,7 +188,7 @@ class BaseProxy
   alias_method :__methods__,:methods
   keep = /^(__|<|>|=)|^(class|inspect|to_s)$|(\?|!|=)$/
   instance_methods.each do |m|
-    undef_method m unless m =~ keep  
+    undef_method m unless m =~ keep
   end
 
 class << self
@@ -210,35 +210,35 @@ end #self
 
   # override to return builder module
   def mod
-    CheriModule  
+    CheriModule
   end
   private :mod
 
   # call-seq:
   #   vget(:@var) -> @var in client instance
-  #   
+  #
   # Returns the value of the specified instance variable in client. Provided
-  # for use when instance_eval / instance_exec are used to evaluate blocks 
+  # for use when instance_eval / instance_exec are used to evaluate blocks
   # (:block_method => :eval or :block_method => :exec)
   def vget(sym)
     @ctx.client.instance_variable_get(sym)
   end
-  
+
   # call-seq:
   #   vset(:@var, value) -> @var in client instance
-  #   
+  #
   # Sets the value of the specified instance variable in client. Provided
-  # for use when instance_eval / instance_exec are used to evaluate blocks 
+  # for use when instance_eval / instance_exec are used to evaluate blocks
   # (:block_method => :eval or :block_method => :exec)
   def vset(sym,val)
-    @ctx.client.instance_variable_set(sym,val)  
+    @ctx.client.instance_variable_set(sym,val)
   end
 
   # prevent mind-boggling circular displays in IRB
   def inspect
-    "#<#{self.class}:instance>"  
-  end  
-  
+    "#<#{self.class}:instance>"
+  end
+
   def method_missing(*r,&k)
     @ctx.msend(mod,*r,&k)
   end
@@ -280,10 +280,10 @@ class CheriFrame
   include Frame
   def initialize(ctx,*r,&k)
     super
-    @obj = ctx[:cheri_proxy] ||= CheriProxy.new(ctx,*r)  
+    @obj = ctx[:cheri_proxy] ||= CheriProxy.new(ctx,*r)
   end
   def mod
-    CheriModule  
+    CheriModule
   end
 end #CheriFrame
 
@@ -308,12 +308,12 @@ class BaseOptions < Hash
     raise Cheri.type_error(value,TrueClass,FalseClass,NilClass) unless true == value || false == value
     value
   end
-  
+
   def validate_boolean_nil(value)
     raise Cheri.type_error(value,TrueClass,FalseClass,NilClass) unless true == value || false == value || nil == value
     value
   end
-  
+
   def validate_fixnum(value)
     raise Cheri.type_error(value,Fixnum) unless Fixnum === value
     value
@@ -323,12 +323,12 @@ class BaseOptions < Hash
     raise Cheri.type_error(value,Fixnum) unless Fixnum === value || nil == value
     value
   end
-  
+
   def validate_symbol(value)
     raise Cheri.type_error(value,Symbol) unless Symbol === value
     value
   end
-  
+
   def validate_string(value)
     raise Cheri.type_error(value,String) unless String === value
     value
@@ -340,13 +340,13 @@ class BaseOptions < Hash
     other.each_pair {|k,v| opts.store(k,v) }
     opts
   end
-  
+
   def merge!(other)
     raise Cheri.type_error(other,self.class,Hash) unless Hash === other
     other.each_pair {|k,v| store(k,v) }
     self
   end
-  
+
   def ingest_args(*args)
     args.each do |arg|
       if Symbol === arg
@@ -361,7 +361,7 @@ class BaseOptions < Hash
   end
 end #BaseOptions
 
-module DefaultConsumer 
+module DefaultConsumer
 G = 'get_' #:nodoc:
 S = 'set_' #:nodoc:
 I = 'is_'  #:nodoc:
@@ -403,7 +403,7 @@ I = 'is_'  #:nodoc:
       if k && res
 
         # TODO: update comments
-        # 
+        #
         # get a cheri_yield builder for the return value and run it. the
         # builder is obtained through the context rather than created directly,
         # as different builders are used for different types of objects (Java vs.
@@ -421,9 +421,9 @@ end #DefaultConsumer
 # TODO: comments
 # The connecter of last resort
 DefaultConnecter = TypeConnecter.new do
-  Eq = '=' 
+  Eq = '='
   St = 'set_'
-  
+
   type Object do
     connect Object do |parent,obj,sym,props|
       if parent.respond_to?(snd = (s = sym.to_s) + Eq) ||
@@ -431,8 +431,8 @@ DefaultConnecter = TypeConnecter.new do
           parent.respond_to?(snd = :add)
         parent.__send__(snd,obj) rescue nil
       end
-      nil 
-    end  
+      nil
+    end
   end
 end
 
@@ -449,7 +449,7 @@ class AbstractConstantResolver
   def resolve_ctor(clazz,args)
     false
   end
-  
+
   def resolve_meth(object,method_name,args)
     false
   end
@@ -486,7 +486,7 @@ end #CherifyFactory
 # TODO: comments
 module CheriYieldFactory # < Cheri::AbstractFactory
   def self.builder(context,sym,*args,&block)
-    return nil unless sym == :cheri_yield    
+    return nil unless sym == :cheri_yield
     raise Cheri.argument_error(args.length, 1) unless args.length == 1
     CheriYieldBuilder.new(context,sym,*args,&block)
   end
@@ -508,7 +508,7 @@ end
 class Aggregate < Array
   def initialize(*args,&k)
     args.each do |a|
-      self << a    
+      self << a
     end
     yield self if block_given?
   end
@@ -526,8 +526,8 @@ class SuperFactory < Aggregate
       if (b = f.builder(ctx,sym,*r,&k))
         return b
       end
-    end 
-    nil 
+    end
+    nil
   end
 end #SuperFactory
 
@@ -536,7 +536,7 @@ end #SuperFactory
 class SuperConnecter < Aggregate
   def prepare(*r)
     each do |ctr|
-      return true if ctr.prepare(*r)    
+      return true if ctr.prepare(*r)
     end
     false
   end
@@ -549,7 +549,7 @@ class SuperConsumer < Aggregate
       c, v = cns.consume(*r,&k)
       return c,v if c
     end
-    return false, nil     
+    return false, nil
   end
 end #SuperConsumer
 
@@ -558,7 +558,7 @@ end #SuperConsumer
 class SuperResolver < Aggregate
   def resolve_ctor(*r)
     each do |rsv|
-      return true if rsv.resolve_ctor(*r)    
+      return true if rsv.resolve_ctor(*r)
     end
     false
   end
@@ -572,7 +572,7 @@ end
 
 
 DefaultFactory = SuperFactory.new do |f|
-  f << CherifyFactory  
+  f << CherifyFactory
   f << CheriYieldFactory
 end
 
@@ -593,60 +593,64 @@ class BuildType
     @flags = BLD_DEFAULT
     instance_eval(&k) if k
   end
-    
+
   def clazz
     @clazz
   end
-    
+
   def sym
-    @sym    
+    @sym
   end
-    
+
   def sym=(sym)
     raise Cheri.type_error(sym,Symbol) unless Symbol === sym
     @sym = sym
   end
-    
+
   def flags
     @flags || BLD_DEFAULT
   end
-    
+
   def build_as(*opts)
     @flags = 0
     opts.each do |opt|
       raise Cheri.type_error(opt,Symbol) unless Symbol === opt
       case opt
-        when :parent     : @flags |= BLD_PARENT
-        when :child      : @flags |= BLD_CHILD
-        when :parent_any : @flags |= BLD_ANY
-        when :default    : @flags |= BLD_DEFAULT
+        when :parent
+          @flags |= BLD_PARENT
+        when :child
+          @flags |= BLD_CHILD
+        when :parent_any
+          @flags |= BLD_ANY
+        when :default
+          @flags |= BLD_DEFAULT
         else
           raise ArgumentError,"invalid build_as type: #{opt}"
       end
     end
     @flags = BLD_DEFAULT if @flags == 0
   end
-  
+
   def parent?
     (@flags & BLD_PARENT) != 0
   end
-  
+
   def child?
     (@flags & BLD_CHILD) != 0
   end
-  
+
   def any?
     (@flags & BLD_ANY) != 0
   end
-    
+
   def ==(other)
     if BuildType === other
-      @clazz == other.clazz 
+      @clazz == other.clazz
     else
       @clazz == other
     end
   end
-    
+
   def eql?(other)
     if BuildType === other
       @clazz.eql?(other.clazz)
@@ -654,7 +658,7 @@ class BuildType
       @clazz.eql?(other)
     end
   end
-  
+
 end #BuildType
 
 class BuildTypes < Hash

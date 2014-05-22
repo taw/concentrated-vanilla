@@ -34,7 +34,7 @@ module Content
     super
     @args.each do |arg|
       add arg
-    end if @args  
+    end if @args
   end
 
  # Adds +value+ to the content array (@cont) for this object if #add?(+value+)
@@ -90,30 +90,30 @@ module Attributes
     end
   end
   alias_method :[]=, :set
-  
+
   # Override to validate each attribute before it is set. The default
   # implementation accepts any name/value.
   def set?(name,value)
     true
   end
   private :set?
-  
+
   # Returns the attibutes hash (@attrs), if any.
   def attrs
-    @attrs  
+    @attrs
   end
-  
+
   # Returns the attribute value for +name+, or +nil+ if not set.
   def [](name)
     @attrs[name] if @attrs
   end
-  
+
  # Iterates over the attributes hash (@attrs) for this object. Equivalent to
  # calling #attrs#each_pair.
   def each_attr
     @attrs.each_pair do |n,v|
       yield n,v
-    end if @attrs && block_given?  
+    end if @attrs && block_given?
   end
 
 end #Attributes
@@ -169,7 +169,7 @@ module MarkupMethods
         empty_s(str)
         str << 10
       end
-    end  
+    end
     str
   end
 
@@ -177,9 +177,9 @@ module MarkupMethods
   # Strings automatically. Implemented this way rather than through alias_method
   # to counter the possibility that overriders will forget to re-alias to_str.
   def to_str(str='')
-    to_s(str)  
+    to_s(str)
   end
-  
+
   # Append value to the supplied output stream +ios+.  If  #esc is overridden
   # value will be escaped first.
   def to_io(ios)
@@ -212,7 +212,7 @@ module MarkupMethods
         empty_io(ios)
         ios << LF
       end
-    end  
+    end
     ios
   end
 
@@ -220,42 +220,42 @@ module MarkupMethods
   def open_s(str)
     str << ?< << (@tag ||= (@ns && :no_ns != @ns ? "#{@ns}:#{@sym}" : @sym.to_s))
   end
-  
+
   # Append open tag (<tagname) to +ios+ using +<<+.
   def open_io(ios)
     ios << TO << (@tag ||= (@ns && :no_ns != @ns ? "#{@ns}:#{@sym}" : @sym.to_s))
   end
-  
+
   # Append close tag (</tagname>) to +str+ using +<<+.
   def close_s(str)
     str << TC << @tag << ?>
   end
-  
+
   # Append close tag (</tagname>) to +ios+ using +<<+.  (Use slightly faster
   # #close_s for strings.)
   def close_io(ios)
-    ios << TC << @tag << TE  
+    ios << TC << @tag << TE
   end
-  
+
   # Append empty close tag (...></tagname>) to +str+. Note that HTML/XML elements
   # with empty content models should close with <tt>' />'</tt> instead.
   def empty_s(str)
     str << TEC << @tag << ?>
   end
-  
+
   # Append empty close tag (...></tagname>) to +ios+. Note that HTML/XML elements
   # with empty content models should close with <tt>' />'</tt> instead.
   def empty_io(ios)
     ios << TEC << @tag << TE
   end
-  
+
   def indent_s(str)
     if (ind = margin + (indent * depth)) > 0
-      str << Markup.sp(ind)    
+      str << Markup.sp(ind)
     end
   end
   alias_method :indent_io,:indent_s
-  
+
   # Writes attributes to a new string, or appends to an existing string
   # (using <<) if supplied.
   def attr_s(str='')
@@ -280,8 +280,9 @@ module MarkupMethods
   def cont_s(str='')
     @cont.each do |v|
       case v
-        when String : esc(v,str)
-        when Markup 
+        when String
+          esc(v,str)
+        when Markup
           v.data! if @data
           v.depth = depth + 1
           v.to_s(str)
@@ -299,7 +300,8 @@ module MarkupMethods
   def cont_io(ios)
     @cont.each do |v|
       case v
-        when String : ios << esc(v)
+        when String
+          ios << esc(v)
         when Markup
           v.data! if @data
           v.depth = depth + 1
@@ -320,23 +322,23 @@ module MarkupMethods
   end
 
   def format?
-    @fmt  
+    @fmt
   end
-  
+
   def format!
-    @fmt = true  
+    @fmt = true
   end
-  
+
   def format=(fmt)
     @fmt = fmt
   end
-  
+
   # Returns +true+ if content includes any non-Markup data. Not calling this cdata, as
   # that might not be accurate. Used by formatting code.
   def data?
-    @data  
+    @data
   end
-  
+
   # Indicate that this element is embedded in data (mixed content) and should
   # therefore not be formatted.  This element should convey this to its
   # child elements, if any.
@@ -344,44 +346,44 @@ module MarkupMethods
     @data = true
     @fmt = false
   end
-  
+
   def margin
     @mrg || @ctx[:margin] || 0
   end
 
   def margin=(n)
-    @mrg = n  
+    @mrg = n
   end
-  
+
   def indent
     @idt || @ctx[:indent] || 0
   end
-  
+
   def indent=(n)
-    @idt = n  
+    @idt = n
   end
-  
+
   def depth
-    @dpt || 0  
+    @dpt || 0
   end
-  
+
   def depth=(n)
-    @dpt = n  
+    @dpt = n
   end
 
   def tag
-    @tag  
+    @tag
   end
-  
+
   def tag=(tag)
     @tag = tag
   end
-  
+
   # namespace
   def ns
     @ns
   end
-  
+
   # set namespace
   def ns=(ns)
     @ns = ns
@@ -416,11 +418,11 @@ module EmptyMarkup
   # :stopdoc:
   TCE = ' />'.freeze
   # :startdoc:
-  
+
   def add?(value)
     false
   end
-  
+
   def empty_s(str='')
     str << TCE
   end
@@ -441,10 +443,10 @@ module Comment
   # :startdoc:
 
   def set?(n,v)
-    raise MarkupException,"attribute not allowed for comment #{@sym}: #{n}=#{v}"  
+    raise MarkupException,"attribute not allowed for comment #{@sym}: #{n}=#{v}"
   end
   private :set?
-  
+
   def to_s(str='')
     return to_io(str) unless String === str
     unless @fmt
@@ -463,10 +465,10 @@ module Comment
       else
         str << CCLF
       end
-    end  
+    end
     str
   end
-  
+
   def to_io(ios)
     unless @fmt
       ios << CO
@@ -484,7 +486,7 @@ module Comment
       else
         ios << CCLF
       end
-    end  
+    end
     ios
   end
 
@@ -500,7 +502,7 @@ module Comment
           else
             esc(v,str)
           end
-        when Markup 
+        when Markup
           v.data! if @data
           v.depth = depth + 1
           v.to_s(str)
@@ -544,7 +546,7 @@ module MarkupBuilder
   include Markup
 
   def object
-    self  
+    self
   end
 
   def run
@@ -560,7 +562,7 @@ module MarkupLikeBuilder
   include MarkupLike
 
   def object
-    self  
+    self
   end
 
   def run
@@ -576,7 +578,7 @@ module EmptyMarkupBuilder
   include EmptyMarkup
 
   def object
-    self  
+    self
   end
 
   def run
@@ -593,7 +595,7 @@ module CommentBuilder
   include Comment
 
   def object
-    self  
+    self
   end
 
   def run

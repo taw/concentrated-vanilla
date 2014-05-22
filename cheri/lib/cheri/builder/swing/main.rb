@@ -55,23 +55,23 @@ class << self
     super
   end
   private :append_features
-  
+
   def factory
-    SwingFactory  
+    SwingFactory
   end
-  
+
   def connecter
-    SwingConnecter  
+    SwingConnecter
   end
-  
+
   def consumer
     SwingConsumer
   end
 
   def resolver
-    SwingResolver  
+    SwingResolver
   end
-    
+
   # a bit expensive, but only used by cherify/cheri_yield
   def swing?(obj)
     obj.respond_to?(:java_class) &&
@@ -99,7 +99,7 @@ end #self
 
   # call-seq:
   #   swing([*args] [, &block]) -> SwingProxy if no block given, else result of block
-  #   
+  #
   def swing(*r,&k)
     if ctx = __cheri_ctx
       if k
@@ -127,7 +127,7 @@ class BaseBuilder < Cheri::Java::Builder::BaseBuilder
   end
 
   def any?
-    @any  
+    @any
   end
 
 private
@@ -169,7 +169,7 @@ end #ProcBuilder
 class PropAwareClassBuilder < ClassBuilder
 private
   def create
-    if Hash === @props    
+    if Hash === @props
       @args << @props
       @props = nil
     end
@@ -280,19 +280,24 @@ class << self
   end
   def names
     @names ||= @procs.keys
-  end  
+  end
 end #self
 
 @procs[:box_layout] =
   Proc.new do |obj,axis|
     iaxis = case axis
-      when :X_AXIS : X_AXIS
-      when :Y_AXIS : Y_AXIS
-      when :LINE_AXIS : LINE_AXIS
-      when :PAGE_AXIS : PAGE_AXIS
-      else axis    
+      when :X_AXIS
+        X_AXIS
+      when :Y_AXIS
+        Y_AXIS
+      when :LINE_AXIS
+        LINE_AXIS
+      when :PAGE_AXIS
+        PAGE_AXIS
+      else
+        axis
     end
-    box_layout.new(obj.kind_of?(RPC) ? obj.content_pane : obj,iaxis) 
+    box_layout.new(obj.kind_of?(RPC) ? obj.content_pane : obj,iaxis)
   end
 @procs[:x_box] = @procs[:h_box] = @procs[:horizontal_box] = Proc.new { box.new(X_AXIS) }
 @procs[:y_box] = @procs[:v_box] = @procs[:vertical_box] = Proc.new { box.new(Y_AXIS) }
@@ -310,13 +315,13 @@ end #self
     p.setLayout(box_layout.new(p,Y_AXIS))
     p
   end
-@procs[:line_panel] = 
+@procs[:line_panel] =
   Proc.new do |*args|
     p = panel.new(*args)
     p.setLayout(box_layout.new(p,LINE_AXIS))
     p
   end
-@procs[:page_panel] = 
+@procs[:page_panel] =
   Proc.new do |*args|
     p = panel.new(*args)
     p.setLayout(box_layout.new(p,PAGE_AXIS))
@@ -329,11 +334,11 @@ end #self
   Proc.new do |*args|
     box.createHorizontalStrut(*args)
   end
-@procs[:y_strut] = @procs[:v_strut] = @procs[:vertical_strut] = 
+@procs[:y_strut] = @procs[:v_strut] = @procs[:vertical_strut] =
   Proc.new do |*args|
     box.createVerticalStrut(*args)
   end
-@procs[:rigid_area] = @procs[:spacer] = 
+@procs[:rigid_area] = @procs[:spacer] =
   Proc.new do |*args|
     box.createRigidArea(dimension.new(*args))
   end
@@ -346,7 +351,7 @@ end #self
     box.createRigidArea(dimension.new(0,args[0]))
   end
 @procs[:filler] =
-  Proc.new do |*args| 
+  Proc.new do |*args|
     box::Filler.new(dimension.new(args[0],args[1]),
                     dimension.new(args[2],args[3]),
                     dimension.new(args[4],args[5]))
@@ -358,7 +363,7 @@ end #BoxComponentFactory
 
 module DialogComponentFactory
 CJava = Cheri::Java
-  
+
 end #DialogComponentFactory
 
 
@@ -385,11 +390,11 @@ class SwingProxy < Cheri::AWT::AWTProxy
     super
     if Hash === r.last
       @ctx.auto!(mod) if r.last[:auto]
-    end  
+    end
   end
 
   def mod
-    Cheri::Swing  
+    Cheri::Swing
   end
   private :mod
 
@@ -413,7 +418,7 @@ class SwingFrame
   include Cheri::Builder::Frame
   def initialize(ctx,*r,&k)
     super
-    @obj = ctx[:swing_proxy] ||= SwingProxy.new(ctx,*r)  
+    @obj = ctx[:swing_proxy] ||= SwingProxy.new(ctx,*r)
   end
 
   def mod
@@ -450,11 +455,15 @@ module AlignMethodConsumer
       else
         raise ArgumentError,"invalid argument for align: #{arg}" unless arg.instance_of?(Symbol)
         case arg
-          when :TOP : y_val = TOP
-          when :BOTTOM : y_val = BOTTOM
-          when :LEFT : x_val = LEFT
-          when :RIGHT : x_val = RIGHT
-          when :CENTER :
+          when :TOP
+            y_val = TOP
+          when :BOTTOM
+            y_val = BOTTOM
+          when :LEFT
+            x_val = LEFT
+          when :RIGHT
+            x_val = RIGHT
+          when :CENTER
             if argc ==2
               i == 0 ? x_val = CENTER : y_val = CENTER
             else
