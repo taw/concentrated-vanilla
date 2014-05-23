@@ -37,19 +37,31 @@ class ModInstaller
     @steam_kingdoms_path ||= (hklm.open('SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 4780')["InstallLocation"] rescue nil)
   end
 
+  def standard_install_path
+    return nil unless @windows
+    [
+      "c:/Program Files/SEGA/Medieval II Total War",
+      "c:/Program Files (x86)/SEGA/Medieval II Total War",
+    ].each{|dir|
+      return dir if File.exist?("#{dir}/medieval2.exe")
+    }
+    return nil
+  end
+
   def detect_medieval_2!
     if @windows
       puts "You're running Windows"
       puts "Retail Medieval 2 path: `#{retail_path}'"
       puts "Steam Medieval 2 path: `#{steam_m2_path}'"
       puts "Steam Kingdoms path: `#{steam_kingdoms_path}'"
+      puts "Standard install path: `#{standard_install_path}'"
     else
       puts "Windows not detected"
     end
   end
   
   def target_directory
-    @target_directory ||= [retail_path, steam_m2_path, steam_kingdoms_path].compact[0]
+    @target_directory ||= [retail_path, steam_m2_path, steam_kingdoms_path, standard_install_path].compact[0]
   end
   
   def installable?
