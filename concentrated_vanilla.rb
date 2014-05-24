@@ -3034,7 +3034,6 @@ Trigger fertility_women
           [e, name, *data]
         end
       }
-      # @@@
       gd.to_s
     }
   end
