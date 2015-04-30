@@ -1774,7 +1774,8 @@ class M2TW_Mod < Mod
       mult = normal
       mult = bodyguard if para =~ /\Atype\s*.*Bodyguard/
       para = para.sub(/(stat_cost\s*)([0-9, ]*)/) {
-        pre, data = $1, $2.split(/,\s*/).map{|x|x.to_i}
+        pre = $1
+        data = $2.split(/,\s*/).map{|x|x.to_i}
         # 0=turns(1), 6=custom battle too-many-same-units penalty(4)
         [1,2,3,4,5,7].each{|i| data[i] = (data[i]*mult).to_i}
         "#{pre}#{data.join(', ')}"
