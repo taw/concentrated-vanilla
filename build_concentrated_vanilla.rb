@@ -82,7 +82,7 @@ M2TW_Mod.new({
   long_campaign_regions_to_take!(50)
 
   ### Captain obvious
-  reduce_captain_obvious!
+  # reduce_captain_obvious!
   # remove_useless_sounds!
 
   ### Crusades

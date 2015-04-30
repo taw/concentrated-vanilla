@@ -6,5 +6,5 @@ M2TW_Mod.new do
   ### Setup map
   add_regions!
   show_date_as_year!
-  reduce_captain_obvious!
+  # reduce_captain_obvious!
 end

@@ -192,7 +192,7 @@ def build_mod!(settings)
     long_campaign_regions_to_take! s["regions_to_take"].to_i
 
     ### Captain obvious
-    reduce_captain_obvious!
+    # reduce_captain_obvious!
     
     ### Crusades
     fast_crusades! if s["fast_crusades"]

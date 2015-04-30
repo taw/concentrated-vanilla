@@ -18,7 +18,7 @@ class Float
   def round2
     (self*100).round.to_i / 100.0
   end
-  def to_s_without_e_notation 
+  def to_s_without_e_notation
     # This is such a pile of fail of a conversion, ...
     # represent as integer if possible
     ("%.12f" % self).sub(/0*\z/, "").sub(/\.\z/, "")
@@ -85,7 +85,7 @@ class Mod
       value.gsub("\n", "\r\n")
     end
   end
-  
+
   def decode_file(value, enc)
     if enc == 'utf16'
       value.unpack("v*").pack("U*").gsub("\r", "")
@@ -107,7 +107,7 @@ class Mod
   def modify(name)
     @files[name] = yield(@files[name])
   end
-  
+
   def modify_by_line(name)
     @files[name] = yield(@files[name].split(/\n/)).join("\n") + "\n"
   end
@@ -292,11 +292,11 @@ module ScenarioBuilder
     modify('strat'){|file|
       header   = []
       parts    = []
-      
+
       lines = file.split(/\n/)
 
       header << lines.shift while lines[0] !~ /\Afaction/
-      
+
       while true
         case lines[0]
         when /\A\s*\z/
@@ -328,11 +328,11 @@ module ScenarioBuilder
           raise "FAIL: #{lines[0]}"
         end
       end
-      
+
       footer = lines
-      
+
       parts = yield(parts)
-      
+
       (header + parts.map{|tag, *data| data}.flatten + footer).join("\n") + "\n"
     }
   end
@@ -396,7 +396,7 @@ module ScenarioBuilder
     raise "Couldn't extract #{name}(#{region_name})" unless all_extracted_regions.size == 1
     all_extracted_regions[0]
   end
-  
+
   def add_basic_garrison!(faction, faction_name, x, y)
     basic_units = {
       "hungary"      => ["EE Spear Militia", "EE Spear Militia", "Bosnian Archers", "Bosnian Archers"],
@@ -419,7 +419,7 @@ module ScenarioBuilder
       "denmark"      => ["Spear Militia", "Spear Militia", "Norse Archers", "Norse Archers"],
       "slave"        => ["Town Militia", "Town Militia", "Peasant Archers", "Peasant Archers"], # should depend on culture
     }[faction_name]
-    
+
     raise "Don't know basic units for #{faction_name}" unless basic_units
 
     age = 20 + (x+y) % 41
@@ -434,7 +434,7 @@ module ScenarioBuilder
 
     faction[:characters] << [x,y,army]
   end
-  
+
   def add_basic_garrisons!(factions)
     factions.each{|faction|
       name = faction[:name]
@@ -450,7 +450,7 @@ module ScenarioBuilder
       }
     }
   end
-  
+
   def move_army!(faction,x0,y0,x1,y1)
     ok = false
     faction[:characters].each{|c|
@@ -463,7 +463,7 @@ module ScenarioBuilder
 
     raise "Couldn't find army at #{x0},#{y0}" unless ok
   end
-  
+
   def byzantine_scenario!
     modify_scenario!{|factions|
       byz     = factions.find{|f| f[:name] == "byzantium"}
@@ -473,7 +473,7 @@ module ScenarioBuilder
       rebel   = factions.find{|f| f[:name] == "slave"}
       egypt   = factions.find{|f| f[:name] == "egypt"}
       russia  = factions.find{|f| f[:name] == "russia"}
-      
+
       byz[:characters].delete_if{|c|
         %W[Nicosia Nicaea Thessalonica].any?{|cn| c[0,2] == campaign_map[cn][:loc]} or
         c[0,2] == [194, 80]
@@ -525,7 +525,7 @@ module ScenarioBuilder
       st
     }
   end
-  
+
   def delete_all_characters_if!(factions)
     factions.each{|faction|
       faction[:characters] = faction[:characters].select{|c|
@@ -533,7 +533,7 @@ module ScenarioBuilder
       }
     }
   end
-  
+
   def all_settlements_outside_americas(factions)
     factions.map{|faction|
       faction[:settlements].map{|s| campaign_map[s[0]][:city]}
@@ -546,13 +546,13 @@ module ScenarioBuilder
       "Caribbean",
     ]
   end
-  
+
   def move_character!(character, x, y)
     character[0] = x
     character[1] = y
     character[2][0].sub!(/x \d+, y \d+(\s*)\z/){ "x #{x}, y #{y}#{$1}"} or raise "Bad character line: #{character[2][0]}"
   end
-  
+
   def random_seed!(seed)
     if seed =~ /\A\d+\z/
       srand(seed.to_i)
@@ -560,14 +560,14 @@ module ScenarioBuilder
       srand(Digest::MD5.hexdigest(seed).to_i(16))
     end
   end
-  
+
   def neighbour_settlements(settlements, lvl)
     lvl.times{
       settlements = Set[*settlements.map{|s| campaign_map[s][:neighbours] }.inject(Set[], &:+)]
     }
     settlements
   end
-  
+
   def random_faction_sizes(faction_size_ranges, settlements_count)
     faction_sizes = {}
     faction_size_ranges.each{|name, size_range|
@@ -576,7 +576,7 @@ module ScenarioBuilder
     faction_sizes["slave"] = [settlements_count - faction_sizes.values.inject(&:+), 0].max
     faction_sizes
   end
-  
+
   def prepare_allocation_requests(faction_size_ranges, settlements_count, allocate_rebels_last)
     faction_sizes = random_faction_sizes(faction_size_ranges, settlements_count)
     allocation_requests  = []
@@ -591,17 +591,17 @@ module ScenarioBuilder
           allocation_requests << [2, rand, name]
         }
       end
-    }   
+    }
     allocation_requests.sort.map{|req| req[-1]}
   end
-  
+
   def allocate_settlements_by_cluster!(factions, faction_size_ranges, fully_random_ratio, allocate_rebels_last)
     available = Set[*all_settlements_outside_americas(factions)]
     settlements = Hash[available.map{|s| [s, extract_settlement(factions, s)]}]
-    
+
     allocation = Hash.new{|ht,k| ht[k] = []}
     allocation_requests = prepare_allocation_requests(faction_size_ranges, settlements.size, allocate_rebels_last)
-    
+
     until allocation_requests.empty?
       if available.empty?
         warn "Trying to allocate #{allocation_requests.size} more settlements, but none left"
@@ -628,7 +628,7 @@ module ScenarioBuilder
       available.delete s
       pp [:allocating_settlement_for, name, s, pool_name]
     end
-    
+
     allocation.each{|name, ss|
       # pp [:allocated, {name => ss}]
       factions.find{|f| f[:name] == name}[:settlements] += ss.map{|s| settlements.delete(s)}
@@ -646,7 +646,7 @@ module ScenarioBuilder
       ]
     }
   end
-  
+
   # For some reason Durazzo is missing
   def fix_durazzo! factions
     rebels = factions.find{|f| f[:name] == "slave"}
@@ -669,16 +669,16 @@ module ScenarioBuilder
 
   def relocate_characters_to_settlements!(factions)
     delete_all_characters_if!(factions){|fn, x, y, c| c[0] =~ /\b(admiral)\b/ and fn != "aztecs"}
-    
+
     factions.each{|faction|
       name = faction[:name]
       next if %W[aztecs mongols timurids].include?(name)
       settlement_xys = faction[:settlements].map{|s| campaign_map[s[0]][:loc]}
 
       main_characters = []
-      
+
       charas = []
-      
+
       faction[:characters].each{|c|
         if c[2][0] =~ /,\s*(merchant|diplomat|spy|priest|princess)\s*,/
           x,y = settlement_xys.random_element
@@ -689,11 +689,11 @@ module ScenarioBuilder
         end
       }
       main_characters = sort_characters_by_importance(main_characters)
-      
+
       all_extra_slots = faction[:settlements].map{|s|
         campaign_map[s[0]][:extra_slots]
       }.inject([], &:+).shuffle
-      
+
       main_characters.each_with_index{|c,i|
         xy = settlement_xys[i]
         if xy
@@ -707,17 +707,17 @@ module ScenarioBuilder
         elsif !all_extra_slots.empty?
           move_character! c, *all_extra_slots.shift
           charas << c
-        else          
+        else
           pp [:no_place_to_put, name, c[2][0]]
           move_character! c, *settlement_xys[0]
           charas << c
         end
       }
-      
+
       faction[:characters] = charas
     }
   end
-  
+
   def faction_name_to_religion
     unless @faction_name_to_religion
        @faction_name_to_religion = Hash[
@@ -734,7 +734,7 @@ module ScenarioBuilder
       "orthodox" => %W[small_church_o church_o abbey_o cathedral_o huge_cathedral_o],
       "muslim"   => %W[small_masjid masjid minareted_masjid jama great_jama],
     }
-    
+
     # puts ""
     factions.each{|faction|
       name = faction[:name]
@@ -755,7 +755,7 @@ module ScenarioBuilder
       }
     }
   end
-  
+
   def random_scenario!(faction_size_ranges, fully_random_ratio, allocate_rebels_last)
     modify_scenario!{|factions|
       fix_durazzo! factions
@@ -795,13 +795,13 @@ module CastlesAndCitiesAreSameThing
     c = c.gsub(/\bc_(\S+) castle/){ "#{$1} city" }
     c = c.gsub(/\bc_(\S+)\b/){ $1 }
     c = c.sub("building #{castle}", "building #{town}")
-    
+
     ## Information loss necessary to make it compatible
     bx = b
     cx = c
     bx = bx.gsub("settlement_min huge_city", "settlement_min large_city")
     # cx = cx.gsub("settlement_min huge_city", "settlement_min large_city")
-    
+
     ht[town] = b
     ht.delete(castle)
     if bx != cx
@@ -833,16 +833,16 @@ module CastlesAndCitiesAreSameThing
       ht.delete('temple_muslim_castle')
       ht.delete('temple_orthodox_castle')
       ht.delete('temple_catholic_castle')
-      
+
       building_disable_conversion(ht, 'temple_muslim')
       building_disable_conversion(ht, 'temple_orthodox')
       building_disable_conversion(ht, 'temple_catholic')
       building_disable_conversion(ht, 'core_building')
-      
+
       # Conversions are out
       ht.delete 'convert_to_city'
       ht.delete 'convert_to_castle'
-      
+
       # puts ht.keys.grep(/castle/)
       ht.to_a
     }
@@ -1040,7 +1040,7 @@ module SimplifyBuildingTree
         pools.to_a.sort.each{|(a,c,e,g),(b,d,f)|
           cap << "#{a}#{b}#{c}#{d.to_s_without_e_notation}#{e}#{f.to_s_without_e_notation}#{g}"
         }
-        
+
         header+ cap.sort.map{|x| " "*16+x}.join("\n") + "\n" + trailer
       else
         "#{header}#{origcapa}#{trailer}"
@@ -1062,7 +1062,7 @@ module SimplifyBuildingTree
       }
     }
   end
-  
+
   def simplify_building_tree_1_type!
     buildings_to_kill = %W[
         tower
@@ -1213,13 +1213,13 @@ end
 
 # All functionality related to adding new settlements/regions
 # It needs some serious cleanup but first let's see if it even works at all
-# 
+#
 # CHECK: cat output/concentrated_vanilla/data/world/maps/base/descr_regions.txt  | gr '\d \d' | sort | uniq -d
-# 
+#
 # FIXME: Add settlements:
 # * Caucasus/Black Sea coast
 # * maybe Damietta
-# 
+#
 # FIXME:
 # * city vs castle
 # * do not default to just towns
@@ -1255,7 +1255,7 @@ module CampaignMapModding
     level          = opts[:level]
     population     = opts[:population]
     buildings      = opts[:buildings]
-    
+
     x              = opts[:x]
     y              = opts[:y]
     units          = opts[:units]
@@ -1268,11 +1268,11 @@ module CampaignMapModding
     modify('region_name_lookup'){|file|
       file + "#{name}_Province\n#{name}\n"
     }
-    
+
     modify('imperial_region_name_lookup'){|file|
       file + "{#{name}}#{name}\n{#{name}_Province}#{name} Region\n"
     }
-    
+
     modify('regions'){|file|
       file + "#{name}_Province
 \t#{name}
@@ -1285,7 +1285,7 @@ module CampaignMapModding
 \t#{religion}
 "
     }
-    
+
     modify('strat'){|file|
       buildings = buildings.map{|b|
 "\tbuilding
@@ -1293,10 +1293,10 @@ module CampaignMapModding
 \t\ttype #{b}
 \t}\n"
       }.join
-      
+
       raise "Parse errar" unless file =~ /(\A.*faction\s+slave.*?)(settlement.*\z)/m
       a, b = $1, $2
-      
+
       this_settlement = "settlement
 {
 \tlevel #{level}
@@ -1311,12 +1311,12 @@ module CampaignMapModding
 "
       a + this_settlement + b
     }
-    
+
     if x and y and units and commander_name
       modify('strat'){|file|
         raise "Parse errar" unless file =~ /(\A.*faction\s+slave.*?)(character.*\z)/m
         a, b = $1, $2
-      
+
         this_army = "character\tsub_faction #{faction}, #{commander_name} Chieftain, general, male, age 30, x #{x}, y #{y}\narmy\n" +
         units.map{|u|
           "unit\t\t#{u}\t\t\t\texp 0 armour 0 weapon_lvl 0\n"
@@ -1326,7 +1326,7 @@ module CampaignMapModding
       }
     end
   end
-  
+
   def add_regions!
     add_regions_to_merc_pool!({
       "Fes"       => "North_Africa",
@@ -1403,7 +1403,7 @@ module CampaignMapModding
       :level => "village",
       :buildings => [],
       :population => 400,
-      :x => 65  + 6, 
+      :x => 65  + 6,
       :y => 62 - 13,
       :commander_name => "Tashfin Mammeri",
       :units => [
@@ -1466,7 +1466,7 @@ module CampaignMapModding
     })
     change_region_resources!{|name, res| # They end up being in Belgrade region
       if name == "Zagreb"
-        res - ['gold', 'timber'] 
+        res - ['gold', 'timber']
       else
         res
       end
@@ -1488,22 +1488,22 @@ class M2TW_Mod < Mod
   include SimplifyBuildingTree
   include CampaignMapModding
   include ScenarioBuilder
-  
+
   def search_path
     # bai+bai2 are merged.
     # bai2 is super-passive but it has nice nice bettle pathfinding adjustments
     [
       ('Cities_Castles_Strat_v1.0/data' if @mod_settings[:strat]),
-      ('better_bai' if @mod_settings[:bai]), 
+      ('better_bai' if @mod_settings[:bai]),
       ('better_bai2' if @mod_settings[:bai]),
       ('better_cai' if @mod_settings[:cai]),
       'vanilla',
     ].compact
   end
-  
+
   def open_files!
     @encodings['imperial_region_name_lookup'] = 'utf16'
-    
+
     open 'character', 'descr_character.txt'
     open 'engines', 'descr_engines.txt'
     open 'settlement', 'descr_settlement_mechanics.xml'
@@ -1516,15 +1516,15 @@ class M2TW_Mod < Mod
     open 'standing', 'descr_faction_standing.txt'
     open 'regions', 'descr_regions.txt', 'world/maps/base'
     open 'rebels', 'descr_rebel_factions.txt'
-    open 'sounds', 'descr_sounds_units.txt'
+    #open 'sounds', 'descr_sounds_units.txt'
     open 'dbxml', 'descr_campaign_db.xml'
     open 'battle_config', 'battle_config.xml'
     open 'factions', 'descr_sm_factions.txt'
     open 'recruitment', 'descr_recruitment.xml'
-    open 'battle_events', 'export_descr_sounds_units_battle_events.txt'
+    #open 'battle_events', 'export_descr_sounds_units_battle_events.txt'
     open 'projectile', 'descr_projectile.txt'
-    open 'guilds', 'export_descr_guilds.txt' 
-    
+    open 'guilds', 'export_descr_guilds.txt'
+
     # Imperial campaign
     open 'strat', 'descr_strat.txt', 'world/maps/campaign/imperial_campaign'
     open 'mercenaries', 'descr_mercenaries.txt', 'world/maps/campaign/imperial_campaign'
@@ -1532,7 +1532,7 @@ class M2TW_Mod < Mod
     open 'win_conditions', 'descr_win_conditions.txt', 'world/maps/campaign/imperial_campaign'
     open 'region_name_lookup', 'descr_regions_and_settlement_name_lookup.txt', 'world/maps/campaign/imperial_campaign'
     open 'imperial_region_name_lookup', 'imperial_campaign_regions_and_settlement_names.txt', 'text'
-    
+
     # We need to copy stuff from better_bai anyway
     open 'ai_battle', 'config_ai_battle.xml'
     open 'ai_formations', 'descr_formations_ai.txt'
@@ -1540,17 +1540,17 @@ class M2TW_Mod < Mod
     open 'pathfinding', 'descr_pathfinding.txt' # bai1 only
     open 'map_mods', 'descr_battle_map_movement_modifiers.txt'  # bai2 only
     # +battle_config
-    
+
     # We need to copy stuff from better_cai anyway
     open 'dbaixml', 'descr_campaign_ai_db.xml'
     open' diplomacy', 'descr_diplomacy.xml'
     # +standing
-    
+
     copy_mod_skeleton!
     copy_new_models!
     remove_game_generated_files!
   end
-  
+
   def copy_mod_skeleton!
     mod_skeleton = Pathname("data/mod_skeleton")
     mod_build_dir = Pathname("output")
@@ -1565,7 +1565,7 @@ class M2TW_Mod < Mod
     FileUtils.cp "data/more_regions/map_regions.tga",
                  "output/mods/concentrated_vanilla/data/world/maps/base/map_regions.tga"
   end
-  
+
   def copy_new_models!
     models_path = "data/Cities_Castles_Strat_v1.0/data/models_strat"
     models_target_path = "output/mods/concentrated_vanilla/data"
@@ -1596,7 +1596,7 @@ class M2TW_Mod < Mod
       file.sub(%r[(<retraining slots_required=")\d+("/>)]){"#{$1}0#{$2}"}
     }
   end
-  
+
   def nerf_rams!
     #Rams should really suck - 20% attack, 50% health
     modify('engines'){|file|
@@ -1644,14 +1644,14 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def campaign_movement_speed!(mult)
     # Everyone move mult times faster
     modify('character'){|file|
       file.gsub(/^(starting_action_points\s+)(\d+)/){"#{$1}#{(mult*$2.to_i).to_i}"}
     }
   end
-  
+
   def agent_speed!(name, mult)
     modify('character'){|file|
       cur = false
@@ -1666,7 +1666,7 @@ class M2TW_Mod < Mod
       }.join("\n")
     }
   end
-  
+
   def wall_strength!(wall_mult, tower_mult)
     # Gates and walls 5x stronger
     # towers 0% stronger
@@ -1727,7 +1727,7 @@ class M2TW_Mod < Mod
       }.gsub(/(cost\s+)(\d+)/) {"#{$1}#{(cost_mult*$2.to_i).to_i}"}
     }
   end
-  
+
   def mine_resource!(mult)
     # Mines levels are 2x, for total of 3x more money
     modify('buildings'){|file|
@@ -1824,7 +1824,7 @@ class M2TW_Mod < Mod
       file.gsub(/^((?:pirate|brigand)_spawn_value\s+)(\d+)/){"#{$1}#{($2.to_i*mult).to_i}"}
     }
   end
-  
+
   def king_purse!(mult)
     # Double king's purse to help small countries
     modify('strat'){|file|
@@ -1900,7 +1900,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def fix_rubber_swords!
     modify('units'){|file|
       file.gsub(/(.*\S.*\n)+/) {|para|
@@ -1940,20 +1940,20 @@ class M2TW_Mod < Mod
       res + ['no_brigands', 'no_pirates']
     }
   end
-  
+
   def crusades_everywhere!
     change_region_resources!{|name, res|
       res += ['crusade', 'jihad', 'horde_target'] unless res.include? 'america'
       res
     }
   end
-  
+
   def no_siege!
     modify('buildings'){|file|
       file.sub(/^building siege.*?^\}\n/m, '').sub(/^building castle_siege.*?^\}\n/m, '')
     }
   end
-  
+
   def all_mercenaries_available!
     modify('mercenaries'){|file|
       file.gsub(/^\s+unit.*$/){|line|
@@ -1961,7 +1961,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def more_mercenaries!(speed_mod, max_mod, init_to_max_ratio)
     modify('mercenaries'){|file|
       file.gsub(/(replenish\s+)([0-9.]+)(\s*-\s*)([0-9.]+)(\s+max\s+)(\d+)(\s+initial\s+)(\d+)/){
@@ -1974,13 +1974,14 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def mod_mercenary_cost!(recruitment_mod, upkeep_mod)
     modify('units'){|file|
       file.gsub(/(.*\S.*\n)+/) {|para|
         if para =~ /^attributes.*\bmercenary_unit\b/
           para = para.sub(/(stat_cost\s*)([0-9, ]*)/) {
-            pre, data = $1, $2.split(/,\s*/).map(&:to_i)
+            pre = $1
+            data = $2.split(/,\s*/).map(&:to_i)
             data[1] = (data[1] * recruitment_mod).round.to_i
             data[2] = (data[2] * upkeep_mod).round.to_i
             "#{pre}#{data.join(', ')}"
@@ -1995,29 +1996,30 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def mod_unit_upgrade_cost!(upgrade_mod)
     modify('units'){|file|
       file.gsub(/(^stat_cost\s*)([0-9, ]*)/) {
-        pre, data = $1, $2.split(/,\s*/).map(&:to_i)
+        pre = $1
+        data = $2.split(/,\s*/).map(&:to_i)
         data[3] = (data[3] * upgrade_mod).round.to_i
         data[4] = (data[4] * upgrade_mod).round.to_i
         "#{pre}#{data.join(', ')}"
       }
     }
   end
-  
+
   def all_buildings_available!
     modify('buildings'){|file|
       file.gsub(/ and event_counter (?:first_printing_press|gunpowder_discovered|world_is_round) 1/, '')
     }
   end
 
-  def reduce_captain_obvious!
-    modify('sounds'){|file|
-      file.gsub(/(unit_under_attack_delay )(\d+)/){ "#{$1}#{$2.to_i*100}"}
-    }
-  end
+  #def reduce_captain_obvious!
+  #  modify('sounds'){|file|
+  #    file.gsub(/(unit_under_attack_delay )(\d+)/){ "#{$1}#{$2.to_i*100}"}
+  #  }
+  #end
   # def more_rebels!
   #   modify('rebels'){|file|
   #     file.gsub(/(chance\s+)3/){ "#{$1}50"}
@@ -2041,13 +2043,13 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def min_jihad_piety!(piety)
     modify('dbxml'){|file|
       file.sub(/<required_jihad_piety\s+int="\d+"\/>/, "<required_jihad_piety int=\"#{piety}\"/>")
     }
   end
-  
+
   def change_resource_values!
     modify('resources'){|file|
       file.gsub(/^(type\s*)(\S+)(\s*trade_value\s*)(\d+)/){
@@ -2076,13 +2078,13 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def villages_800_people!
     modify('settlement'){|file|
       file.gsub('="400"', '="800"')
     }
   end
-  
+
   # Balanced - biases towards growth, taxable income, trade level bonuses (roads), walls and xp bonus buildings
   # Religious - biases towards growth, loyalty, taxable income, farming, walls and law
   # Trader - biases towards growth, trade level, trade base, weapon upgrades, games, races and xp bonus buildings
@@ -2091,7 +2093,7 @@ class M2TW_Mod < Mod
   # Craftsman - biases towards walls, races, taxable income, weapon upgrades, xp bonuses, mines, health and growth
   # Sailor - biases towards sea trade, taxable income, walls, growth, trade
   # Fortified - biases towards walls, taxable income, growth, loyalty, defenses, bodyguards and law
-  
+
   # Smith - exactly level
   # Mao - biased towards mass troops, light infantry
   # Genghis - biased towards missile cavalry and light cavalry
@@ -2099,13 +2101,13 @@ class M2TW_Mod < Mod
   # Napoleon - biased towards a mix of light and heavy infantry, light cavalry
   # Henry - biased towards heavy and light cavalry, missile infantry
   # Caesar - biased towards heavy infantry, light cavalry, siege artillery
-    
+
   def ai_personality!(a, b)
      modify('strat'){|file|
        file.gsub(/^(faction\s*\S+,\s*)balanced\s*smith/){ "#{$1}#{a} #{b}" }
      }
   end
-  
+
   def start_war!(faction1, faction2)
     modify('strat'){|file|
       file.gsub(/^(faction_relationships\s+(\S+),\s+at_war_with\s+.*)(\n)/){
@@ -2119,7 +2121,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def change_faction_religion!(faction, religion)
     modify_by_line('factions'){|lines|
       cur = false
@@ -2134,7 +2136,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def population!(province, size)
     modify_by_line('strat'){|lines|
       cur = false
@@ -2149,7 +2151,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def building!(province, bfrom, bto)
     modify_by_line('strat'){|lines|
       cur = false
@@ -2173,14 +2175,14 @@ class M2TW_Mod < Mod
       ht["temple_catholic_castle"].gsub!(/sicily, /, "")
       ht["temple_muslim"].gsub!(/(factions \{)/){ "#{$1} sicily," }
       ht["temple_muslim_castle"].gsub!(/(factions \{)/){ "#{$1} sicily," }
-      ht.to_a 
+      ht.to_a
     }
     change_faction_religion!("sicily", "islam")
     start_war!("sicily", "papal_states")
     population!("Roman_Province", 24000)
     building!("Roman_Province", "core_building stone_wall", "core_building huge_stone_wall")
   end
-  
+
   def modify_standings!
     modify('strat'){|file|
       file.sub(/((?:faction_standings.*\n)+)/){
@@ -2203,12 +2205,12 @@ class M2TW_Mod < Mod
           res += b
           res + "\n"
         }.join
-        
+
         #standings_block
       }
     }
   end
-  
+
   def start_wars!
     wars = [
       ["england", "france"],
@@ -2250,7 +2252,7 @@ class M2TW_Mod < Mod
       st
     }
   end
-  
+
   def artillery_size!(soldier_mult, item_mult)
     modify('units'){|file|
       file.gsub(/(.*\S.*\n)+/) {|para|
@@ -2263,7 +2265,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def religion_bonus!(mult)
     modify('buildings'){|file|
       file.gsub(/(\breligion_level\s+bonus\s+)(\d+)/){
@@ -2271,7 +2273,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def low_morale!
     # Rescale 1..11 to 1..6
     modify("units"){|file|
@@ -2280,7 +2282,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def sally_out_ratio!(ratio)
     modify('ai_battle'){|file|
       file.gsub(%r[(<sally-out-ratio>)(\d+\.\d+)(</sally-out-ratio>)]){ "#{$1}#{ratio}#{$3}"}
@@ -2292,7 +2294,7 @@ class M2TW_Mod < Mod
       file.gsub(%r[(<friendly-to-enemy-strength-ratio>)(\d+\.\d+)(</friendly-to-enemy-strength-ratio>)]){ "#{$1}#{ratio}#{$3}"}
     }
   end
-  
+
   def no_crusade_disband!
      modify('dbxml'){|file|
        file = file.sub(/<max_disband_progress float="\S+?"\/>/, '<max_disband_progress float="0"/>')
@@ -2319,7 +2321,7 @@ class M2TW_Mod < Mod
       # * large_town = wooden_wall      = castle
       # * city       = stone_wall
       # * large_city = large_stone_wall
-    
+
       para = para.sub(/(population\s+)(\d+)/){ "#{$1}#{$2.to_i * 2}" }
       para = para.sub(/(level\s+)(\S+)/){ $1 + (levels[levels.index($2)+1] || levels[-1]) }
       para = para.sub(/(type core_building\s+)(\S+)/){ $1 + (core[core.index($2)+1] || core[-1]) }
@@ -2333,58 +2335,58 @@ class M2TW_Mod < Mod
           $1
         }
       end
-      
+
       para
     }
   end
-  
-  def remove_useless_sounds!
-    # Sadly this just kills all sounds, the only way is probably
-    # using a "blank" sound instead
-    modify('battle_events'){|file|
-      remove_sounds = %W[
-        Player_Army_Tired
-        Player_Under_Attack_Idle
-        Enemy_Ladders_Attacking_Walls
-        Enemy_Siege_Towers_Attacking_Walls
-        Enemy_Siege_Towers_Destroyed
-        Enemy_Walls_Breached_By_Player
-        Enemy_Walls_Captured_By_Player
-        Player_Ammo_Low
-        Player_Ammo_Depleted
-        Player_Army_Routing
-        Player_Ladders_Attacking_Walls
-        Player_Ram_Attacking_Gate
-        Player_Ram_Breached_Gate
-        Player_Breached_Gate
-        Enemy_Ram_Attacking_Gate
-        Enemy_Ram_Breached_Gate
-        Enemy_Breached_Gate
-        Player_Siege_Towers_Attacking_Walls
-        Player_Siege_Towers_Destroyed
-        Player_Walls_Breached_By_Enemy
-        Player_Walls_Captured_By_Enemy
-        Player_Walls_Undermined_By_Enemy
-        Player_Cavalry_Almost_Depleted
-        Player_Infantry_Almost_Depleted
-        Player_Missile_Units_Almost_Depleted
-        Player_Army_Half_Gone
-        Enemy_Army_Half_Gone
-        Player_Siege_Ammunition
-        Player_Winning_Combat
-        Player_Losing_Combat
-        Player_Tide_Of_Battle_Up
-        Player_Tide_Of_Battle_Down
-      ]
-      file.gsub(/^(\s+notification\s+(\S+)\s+\d+\s+event\s+folder\s+\S+\s+\S+\s+end\s*?\n)/){
-        if remove_sounds.include?($2)
-          ""
-        else
-          $1
-        end
-      }
-    }
-  end
+
+  #def remove_useless_sounds!
+  #  # Sadly this just kills all sounds, the only way is probably
+  #  # using a "blank" sound instead
+  #  modify('battle_events'){|file|
+  #    remove_sounds = %W[
+  #      Player_Army_Tired
+  #      Player_Under_Attack_Idle
+  #      Enemy_Ladders_Attacking_Walls
+  #      Enemy_Siege_Towers_Attacking_Walls
+  #      Enemy_Siege_Towers_Destroyed
+  #      Enemy_Walls_Breached_By_Player
+  #      Enemy_Walls_Captured_By_Player
+  #      Player_Ammo_Low
+  #      Player_Ammo_Depleted
+  #      Player_Army_Routing
+  #      Player_Ladders_Attacking_Walls
+  #      Player_Ram_Attacking_Gate
+  #      Player_Ram_Breached_Gate
+  #      Player_Breached_Gate
+  #      Enemy_Ram_Attacking_Gate
+  #      Enemy_Ram_Breached_Gate
+  #      Enemy_Breached_Gate
+  #      Player_Siege_Towers_Attacking_Walls
+  #      Player_Siege_Towers_Destroyed
+  #      Player_Walls_Breached_By_Enemy
+  #      Player_Walls_Captured_By_Enemy
+  #      Player_Walls_Undermined_By_Enemy
+  #      Player_Cavalry_Almost_Depleted
+  #      Player_Infantry_Almost_Depleted
+  #      Player_Missile_Units_Almost_Depleted
+  #      Player_Army_Half_Gone
+  #      Enemy_Army_Half_Gone
+  #      Player_Siege_Ammunition
+  #      Player_Winning_Combat
+  #      Player_Losing_Combat
+  #      Player_Tide_Of_Battle_Up
+  #      Player_Tide_Of_Battle_Down
+  #    ]
+  #    file.gsub(/^(\s+notification\s+(\S+)\s+\d+\s+event\s+folder\s+\S+\s+\S+\s+end\s*?\n)/){
+  #      if remove_sounds.include?($2)
+  #        ""
+  #      else
+  #        $1
+  #      end
+  #    }
+  #  }
+  #end
 
   def simplify_unit_tree!
     units = [
@@ -2505,7 +2507,7 @@ class M2TW_Mod < Mod
       file
     }
   end
-  
+
   def unit_cost!(build_mod=1.0, upkeep_mod=1.0)
     modify('units'){|file|
       file.gsub(/^(stat_cost\s+\d+,\s+)(\d+)(,\s+)(\d+)/){
@@ -2513,7 +2515,7 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
+
   def remove_siege_units!
     units = [
       "Ballista",
@@ -2536,14 +2538,14 @@ class M2TW_Mod < Mod
       }
     }
   end
-  
-  
+
+
   def show_date_as_year!
     modify('strat'){|file|
       file.sub(/^show_date_as_turns\s*/, "")
     }
   end
-  
+
   def move_event!(name, date_range)
     year0 = 1080
     date1 = date_range.begin - year0
@@ -2568,19 +2570,19 @@ class M2TW_Mod < Mod
   def high_fertility!
     modify('character_traits'){|file|
       file + "
-;------------------------------------------                                                                                                                  
-Trigger fertility_men                                                                                                                                        
+;------------------------------------------
+Trigger fertility_men
   WhenToTest CharacterTurnEnd
-  
+
   Condition IsGeneral
-  
+
   Affects Fertile 1 Chance 50
-  
+
 Trigger fertility_women
   WhenToTest CharacterTurnEnd
-  
+
   Condition AgentType = princess
-  
+
   Affects FertileWoman 1 Chance 50
 "
     }
@@ -2591,7 +2593,7 @@ Trigger fertility_women
       file = file.sub(%r[(<naval_sink_max\s+float\s*=\s*")[^\"]*("\s*/>)]){ "#{$1}100.0#{$2}" }
     }
   end
-  
+
   def increase_unit_defense!
     modify('units'){|file|
       # armour, skill, shield
@@ -2602,7 +2604,7 @@ Trigger fertility_women
       }
     }
   end
-  
+
   def mod_unit_attack!(mod=0.5)
     modify('units'){|file|
       file.gsub(/(stat_(?:pri|sec|ter)\s*)(\d+)/){
@@ -2623,7 +2625,7 @@ Trigger fertility_women
     }
     #stat_charge_distance
   end
-  
+
 
   def select_more_units(sub_faction, unit_types)
     # 3..10 (where the fuck is there 10 ???)
@@ -2634,7 +2636,7 @@ Trigger fertility_women
     # Old:  0  1  2  3  4  5  6  7  8  9 10
     # New1: 4  6  8 10 12 14 16 18 20 20 20
     # New2: 2  4  6  8 10 12 14 16 18 20 20
- 
+
     avail = case sub_faction
     when 'poland'
       ["Polish Nobles", "Lithuanian Cavalry", "Lithuanian Archers", "Lithuanian Archers"]
@@ -2644,7 +2646,7 @@ Trigger fertility_women
       ["Byzantine Cavalry", "Trebizond Archers", "Trebizond Archers", "Byzantine Spearmen"]
     when 'denmark'
       ["Huscarls", "Norse Swordsmen", "Viking Raiders", "Viking Raiders"]
-    when 'france' 
+    when 'france'
       ["Mailed Knights", "Flemish Pikemen"]
     when 'scotland'
       ["Highlanders", "Highland Archers"]
@@ -2695,12 +2697,12 @@ Trigger fertility_women
         l
       end
     }.compact
-    
+
     units = case faction
     when 'russia'
       [
         'EE Basilisk', 'EE Basilisk','EE Basilisk', 'EE Basilisk',
-        'Tsars Guard', 'Tsars Guard', 'Tsars Guard', 'Tsars Guard', 'Tsars Guard', 
+        'Tsars Guard', 'Tsars Guard', 'Tsars Guard', 'Tsars Guard', 'Tsars Guard',
         'Cossack Musketeers','Cossack Musketeers','Cossack Musketeers','Cossack Musketeers',
         'Berdiche Axemen','Berdiche Axemen','Berdiche Axemen','Berdiche Axemen',
         'Dismounted Dvor', 'Dismounted Dvor',
@@ -2710,8 +2712,8 @@ Trigger fertility_women
         'EE Basilisk', 'EE Basilisk',
         'Battlefield Assassins', "Battlefield Assassins",
         "Hussars", "Hussars",
-        'Royal Banderium', 'Royal Banderium', 'Royal Banderium', 'Royal Banderium', 
-        'Hungarian Nobles', 'Hungarian Nobles', 'Hungarian Nobles', 'Hungarian Nobles', 
+        'Royal Banderium', 'Royal Banderium', 'Royal Banderium', 'Royal Banderium',
+        'Hungarian Nobles', 'Hungarian Nobles', 'Hungarian Nobles', 'Hungarian Nobles',
         'Dismounted E Chivalric Knights', 'Dismounted E Chivalric Knights',
         'Dismounted E Chivalric Knights', 'Dismounted E Chivalric Knights',
         'Dismounted E Chivalric Knights',
@@ -2719,10 +2721,10 @@ Trigger fertility_women
     when 'turks'
       [
         'ME Monster Bombard', 'ME Monster Bombard',
-        'Quapukulu', 'Quapukulu', 'Quapukulu', 'Quapukulu', 'Quapukulu', 
+        'Quapukulu', 'Quapukulu', 'Quapukulu', 'Quapukulu', 'Quapukulu',
         'Sipahis','Sipahis','Sipahis','Sipahis',
         'Janissary Heavy Inf', 'Janissary Heavy Inf', 'Janissary Heavy Inf', 'Janissary Heavy Inf',
-        'Ottoman Infantry', 'Ottoman Infantry', 'Ottoman Infantry', 'Ottoman Infantry', 
+        'Ottoman Infantry', 'Ottoman Infantry', 'Ottoman Infantry', 'Ottoman Infantry',
       ]
     when 'milan'
       [
@@ -2752,8 +2754,8 @@ Trigger fertility_women
     when 'scotland'
       [
         'NE Culverin', 'NE Mortar',
-        'Noble Pikemen', 'Noble Pikemen', 'Noble Pikemen', 'Noble Pikemen', 'Noble Pikemen', 'Noble Pikemen', 
-        'Highland Nobles','Highland Nobles','Highland Nobles', 
+        'Noble Pikemen', 'Noble Pikemen', 'Noble Pikemen', 'Noble Pikemen', 'Noble Pikemen', 'Noble Pikemen',
+        'Highland Nobles','Highland Nobles','Highland Nobles',
         'Noble Swordsmen','Noble Swordsmen','Noble Swordsmen','Noble Swordsmen',
         'Noble Highland Archers', 'Noble Highland Archers', 'Noble Highland Archers', 'Noble Highland Archers',
       ]
@@ -2769,16 +2771,16 @@ Trigger fertility_women
     when 'egypt'
       [
         'ME Cannon', 'ME Cannon',
-        'Royal Mamluks', 'Royal Mamluks', 'Royal Mamluks', 'Royal Mamluks', 'Royal Mamluks', 
+        'Royal Mamluks', 'Royal Mamluks', 'Royal Mamluks', 'Royal Mamluks', 'Royal Mamluks',
         'Mamluk Archers','Mamluk Archers','Mamluk Archers','Mamluk Archers','Mamluk Archers',
         'Naffatun', 'Naffatun',
         'Sudanese Gunners', 'Sudanese Gunners', 'Tabardariyya', 'Tabardariyya', 'Tabardariyya',
-      ]      
+      ]
     when 'spain'
       [
         'NE Basilisk', 'NE Basilisk',
         'Knights of Santiago', 'Knights of Santiago', 'Knights of Santiago', 'Knights of Santiago',
-        'Jinetes', 'Jinetes', 'Jinetes', 'Jinetes', 'Jinetes', 
+        'Jinetes', 'Jinetes', 'Jinetes', 'Jinetes', 'Jinetes',
         'Tercio Pikemen', 'Tercio Pikemen', 'Tercio Pikemen', 'Tercio Pikemen',
         'Musketeers', 'Musketeers', 'Musketeers', 'Musketeers',
       ]
@@ -2795,7 +2797,7 @@ Trigger fertility_women
         'Dismounted English Knights', 'Dismounted English Knights', 'Dismounted English Knights',
         'Dismounted English Knights', 'Dismounted English Knights', 'Dismounted English Knights',
         'Yeoman Archers', 'Yeoman Archers', 'Yeoman Archers', 'Yeoman Archers', 'Yeoman Archers',
-        'Sherwood Archers', 'Sherwood Archers', 'Sherwood Archers', 'Sherwood Archers',        
+        'Sherwood Archers', 'Sherwood Archers', 'Sherwood Archers', 'Sherwood Archers',
       ]
     when 'hre'
       [
@@ -2809,7 +2811,7 @@ Trigger fertility_women
       [
         'Carroccio Standard V', 'NE Culverin', 'NE Mortar',
         'Venetian Heavy Infantry', 'Venetian Heavy Infantry', 'Venetian Heavy Infantry', 'Venetian Heavy Infantry',
-        'Mounted Crossbowmen', 'Mounted Crossbowmen', 'Mounted Crossbowmen', 'Mounted Crossbowmen', 
+        'Mounted Crossbowmen', 'Mounted Crossbowmen', 'Mounted Crossbowmen', 'Mounted Crossbowmen',
         'Pavise Crossbow Militia', 'Pavise Crossbow Militia', 'Pavise Crossbow Militia', 'Pavise Crossbow Militia',
         'Venetian Archers', 'Venetian Archers', 'Venetian Archers', 'Venetian Archers',
       ]
@@ -2826,7 +2828,7 @@ Trigger fertility_women
       [
         'Great Cross', 'NE Culverin', 'NE Mortar',
         'Crusader Knights', 'Crusader Knights', 'Crusader Knights', 'Crusader Knights',
-        'Crusader Knights', 'Crusader Knights', 'Crusader Knights', 
+        'Crusader Knights', 'Crusader Knights', 'Crusader Knights',
         'Papal Guard', 'Papal Guard', 'Papal Guard', 'Papal Guard',
         'Papal Guard', 'Papal Guard', 'Papal Guard', 'Papal Guard', 'Papal Guard',
       ]
@@ -2835,7 +2837,7 @@ Trigger fertility_women
         'NE Cannon', 'NE Mortar',
         'Norman Knights','Norman Knights','Norman Knights','Norman Knights',
         'Norman Knights','Norman Knights','Norman Knights','Norman Knights',
-        'Dismounted Norman Knights', 'Dismounted Norman Knights', 'Dismounted Norman Knights', 
+        'Dismounted Norman Knights', 'Dismounted Norman Knights', 'Dismounted Norman Knights',
         'Sicilian Muslim Archers', 'Sicilian Muslim Archers', 'Sicilian Muslim Archers',
         'Sicilian Muslim Archers', 'Sicilian Muslim Archers', 'Sicilian Muslim Archers',
       ]
@@ -2850,16 +2852,16 @@ Trigger fertility_women
     else
       []
     end
-    
+
     puts "#{faction} #{units.size}" if units.size != 19
-    
+
     lines += units.map{|u|
       "unit\t\t#{u}\t\t\texp 6 armour 1 weapon_lvl 1"
     }
 
     lines.join("\n") + "\n"
   end
-    
+
   def epic_armies!
     puts ""
     modify('strat'){|file|
@@ -2872,12 +2874,12 @@ Trigger fertility_women
         name = $1
         if para =~ /Factionleader|Factionheir/ and faction != 'aztecs'
           para = make_army_epic(para, faction)
-        end  
+        end
         para
       }
     }
   end
-  
+
   def more_initial_rebels!
     modify('strat'){|file|
       file.gsub(/(.*\S.*\n)+/){|para|
@@ -2898,7 +2900,7 @@ Trigger fertility_women
       }
     }
   end
-  
+
   def add_buildings!(ht)
     level_names = parse_level_names
     ht = ht.dup
@@ -2914,15 +2916,15 @@ Trigger fertility_women
           "        }\n"
         }.join
         para = para.sub(/(^\})/){ txt + $1 }
-      end      
+      end
       para
     }
     unless ht.keys.empty?
       warn "Buildings not added in: #{ht.keys.join(' ')}"
     end
-    
+
   end
-  
+
   def parse_level_names
     rv = {}
     modify('buildings'){|file|
@@ -2936,18 +2938,18 @@ Trigger fertility_women
           building = nil
         end
       }
-      file 
+      file
     }
     rv
   end
-  
+
   def add_guilds!
     add_buildings!({
       "Bran" => {"guild_assassins_guild" => 2},
       # "Acre" => {"guild_assassins_muslim_guild" => 1}, # seem broken ?
       "Paris" => {"guild_theologians_guild" => 2},
       "Florence" => {"guild_theologians_guild" => 1},
-      "Venice" => {"guild_merchants_guild" => 1}, 
+      "Venice" => {"guild_merchants_guild" => 1},
       "Milan" => {"guild_merchants_guild" => 1},
       "Genoa" => {"guild_explorers_guild" => 1},
       "Lisbon" => {"guild_explorers_guild" => 1},
@@ -2966,7 +2968,7 @@ Trigger fertility_women
       "Constantinople" => {"guild_masons_guild" => 1},
     })
   end
-  
+
   def increase_artillery_accuracy!(factor=2.0)
     modify('projectile'){|file|
       file.gsub(/(.*\S.*\n)+/){|para|
@@ -2981,7 +2983,7 @@ Trigger fertility_women
       }
     }
   end
-  
+
   def better_guild_units!
     modify('units'){|file|
       file.gsub(/(.*\S.*\n)+/) {|para|
@@ -3011,7 +3013,7 @@ Trigger fertility_women
     #   ht.to_a
     # }
   end
-  
+
   def alt_guild_system!
     modify('guilds'){|file|
       gd = GuildData.new(file)
@@ -3019,7 +3021,7 @@ Trigger fertility_women
       gd.to_s
     }
   end
-  
+
   def easy_guilds!
     modify('guilds'){|file|
       gd = GuildData.new(file)
@@ -3037,7 +3039,7 @@ Trigger fertility_women
       gd.to_s
     }
   end
-  
+
   def older_cardinals!
     # Aging cardinals by 20+ doesn't give factions enough time to make good priests
     modify('strat'){|file|
@@ -3057,7 +3059,7 @@ Trigger fertility_women
       }.join("\n")
     }
   end
-  
+
   # arrows faster and strong against low level units, bad against heavily armored units
   def rebalance_wall_arrows!(power)
     modify('walls'){|file|
@@ -3072,7 +3074,7 @@ Trigger fertility_women
       }.join("\n")
     }
   end
-  
+
   def long_campaign_regions_to_take!(count)
     modify('win_conditions'){|file|
       file.gsub(/(.*\S.*\n)+/) {|para|
@@ -3094,7 +3096,7 @@ Trigger fertility_women
       }
     }
   end
-  
+
   def do_not_start_skirmishing!
     modify('units'){|file|
       file.gsub(/(.*\S.*\n)+/) {|para|
