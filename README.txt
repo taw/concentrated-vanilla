@@ -1,8 +1,8 @@
-== Concentrated Vanilla mod ==
+### Concentrated Vanilla mod
 
 Concentrated Vanilla mod is meant to enhance vanilla gameplay, and fix the worst bugs, imbalances, and other problematic areas without straying too far from vanilla experience.
 
-== Installation ==
+### Installation
 
 Installation - step 1 (all versions)
 
@@ -29,7 +29,7 @@ Edit medieval2.cfg and paste this there:
 
     Then start Medieval 2 as normally.
 
-== Mod history ==
+### Mod history
 
 I wrote about old versions of the mod here:
 
@@ -42,7 +42,7 @@ I wrote about old versions of the mod here:
 0.04 http://t-a-w.blogspot.com/2009/03/medieval-2-total-war-concentrated.html
 0.01 http://t-a-w.blogspot.com/2009/01/medieval-2-total-war-concentrated.html
 
-== Credits ==
+### Credits
 
 Concentrated Vanilla uses some files from the following minimods:
 
